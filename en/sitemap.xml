@@ -17,6 +17,16 @@
   </url><url>
     <loc>https://nullshow.github.io/p/mytest/</loc>
     <lastmod>2025-09-14T10:36:38+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/p/mytest/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/p/mytest/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/post/</loc>
     <lastmod>2025-09-14T10:36:38+02:00</lastmod>
@@ -72,18 +82,68 @@
   </url><url>
     <loc>https://nullshow.github.io/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/css/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/css/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/html/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/html/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/markdown/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/p/markdown-syntax-guide/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/p/markdown-syntax-guide/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/p/markdown-syntax-guide/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/categories/syntax/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/categories/syntax/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
@@ -100,24 +160,94 @@
   </url><url>
     <loc>https://nullshow.github.io/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/categories/themes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/categories/themes/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/themes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/themes/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/privacy/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/privacy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/privacy/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/p/rich-content/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/p/rich-content/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/p/rich-content/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/shortcodes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/shortcodes/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/p/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/p/placeholder-text/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/p/placeholder-text/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/tag-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/tag-with-whitespaces/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/tag-with-whitespaces/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/categories/test/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
@@ -134,42 +264,92 @@
   </url><url>
     <loc>https://nullshow.github.io/categories/test-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/categories/test-with-whitespaces/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/categories/test-with-whitespaces/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/text/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/text/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/p/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/p/math-typesetting/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/p/math-typesetting/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/tags/emoji/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/tags/emoji/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/tags/emoji/"
+                />
   </url><url>
     <loc>https://nullshow.github.io/p/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshow.github.io/zh-cn/p/emoji-support/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshow.github.io/p/emoji-support/"
+                />
   </url><url>
-    <loc>https://nullshow.github.io/about-%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://nullshow.github.io/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://nullshow.github.io/zh-cn/about-%E5%85%B3%E4%BA%8E/"
+                href="https://nullshow.github.io/zh-cn/%E5%85%B3%E4%BA%8E/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nullshow.github.io/about-%E5%85%B3%E4%BA%8E/"
+                href="https://nullshow.github.io/about/"
                 />
   </url><url>
-    <loc>https://nullshow.github.io/links-%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/</loc>
+    <loc>https://nullshow.github.io/links/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://nullshow.github.io/zh-cn/links-%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"
+                href="https://nullshow.github.io/zh-cn/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nullshow.github.io/links-%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"
+                href="https://nullshow.github.io/links/"
                 />
   </url><url>
     <loc>https://nullshow.github.io/search/</loc>
