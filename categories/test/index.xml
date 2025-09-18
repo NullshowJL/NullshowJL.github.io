@@ -149,7 +149,7 @@
 &lt;h3 id=&#34;知识点&#34;&gt;知识点
 &lt;/h3&gt;&lt;h4 id=&#34;easyx-的坐标系&#34;&gt;EasyX 的坐标系
 &lt;/h4&gt;&lt;p&gt;EasyX 的坐标系在屏幕左上方，x 轴的正方向向右，y 轴的正方向向下。&lt;/p&gt;
-&lt;img src=&#34;C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20250915132044062.png&#34; alt=&#34;image-20250915132044062&#34; style=&#34;zoom:30%;&#34; /&gt;
+&lt;img src=&#34;D:\My_Website\hugo_extended_withdeploy_0.150.0_windows-amd64\tech_blog\content\zh-cn\post\【从零开始的C++游戏开发】- 基础\image-20250915132044062.png&#34; alt=&#34;坐标系&#34; style=&#34;zoom:30%;&#34; /&gt;
 &lt;h4 id=&#34;渲染缓冲区&#34;&gt;渲染缓冲区
 &lt;/h4&gt;&lt;p&gt;可以把渲染缓冲区想象成一块巨大的画布，调用Draw逻辑的过程就是在“画布”上画画。先绘制的内容会被后绘制的内容覆盖，而调用&lt;code&gt;cleardevice()&lt;/code&gt;就等于是用当前的填充颜色（默认黑色）将“画布”覆盖了一遍。&lt;/p&gt;
 &lt;p&gt;调用&lt;code&gt;BeginBatchDraw()&lt;/code&gt;就相当于EasyX为我们新建了一块画布，而这块画布就是新的渲染缓冲区。它和窗口的渲染缓冲区不一样的是，它是不可见的。随后执行的所有Draw逻辑，都会绘制在这块新的画布上。当调用&lt;code&gt;FlushBatchDraw()&lt;/code&gt;和&lt;code&gt;EndBatchDraw()&lt;/code&gt;时，EasyX会将这两块画布进行迅速交换，这一过程非常迅速以至于我们是看不见的。所以这样就解决因为绘制频繁而导致的画面闪烁问题。&lt;/p&gt;
@@ -279,7 +279,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;细化读取操作部分逻辑&#34;&gt;细化读取操作部分逻辑
 &lt;/h4&gt;&lt;p&gt;鼠标的坐标在窗口其实是像素点的坐标，于是需要将鼠标的坐标转化为棋盘的网格。用图展示其对应的关系：&lt;/p&gt;
-&lt;img src=&#34;C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20250915194915206.png&#34; alt=&#34;image-20250915194915206&#34; style=&#34;zoom:30%;&#34; /&gt;
+&lt;img src=&#34;D:\My_Website\hugo_extended_withdeploy_0.150.0_windows-amd64\tech_blog\content\zh-cn\post\【从零开始的C++游戏开发】- 基础\image-20250915194915206.png&#34; alt=&#34;image-20250915194915206&#34; style=&#34;zoom:30%;&#34; /&gt;
 &lt;p&gt;对应的代码可以表示为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -331,9 +331,9 @@
 &lt;/div&gt;&lt;h4 id=&#34;细化绘制部分的逻辑&#34;&gt;细化绘制部分的逻辑
 &lt;/h4&gt;&lt;p&gt;__棋盘的绘制：__直接只用&lt;code&gt;line()&lt;/code&gt;对应相应的像素坐标。&lt;/p&gt;
 &lt;p&gt;__x棋子的绘制：__同样使用&lt;code&gt;line()&lt;/code&gt;绘制，只不过使用的是对角线的像素坐标。&lt;/p&gt;
-&lt;img src=&#34;C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20250915200611419.png&#34; alt=&#34;image-20250915200611419&#34; style=&#34;zoom:30%;&#34; /&gt;
+&lt;img src=&#34;D:\My_Website\hugo_extended_withdeploy_0.150.0_windows-amd64\tech_blog\content\zh-cn\post\【从零开始的C++游戏开发】- 基础\image-20250915200611419.png&#34; alt=&#34;image-20250915200611419&#34; style=&#34;zoom:30%;&#34; /&gt;
 &lt;p&gt;__o棋子的绘制：__使用&lt;code&gt;circle()&lt;/code&gt;绘制，圆心的x和y分别要在各自棋盘格子像素点的基础上多加100个像素单位。&lt;/p&gt;
-&lt;img src=&#34;C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20250915201039024.png&#34; alt=&#34;image-20250915201039024&#34; style=&#34;zoom:30%;&#34; /&gt;
+&lt;img src=&#34;D:\My_Website\hugo_extended_withdeploy_0.150.0_windows-amd64\tech_blog\content\zh-cn\post\【从零开始的C++游戏开发】- 基础\image-20250915201039024.png&#34; alt=&#34;image-20250915201039024&#34; style=&#34;zoom:30%;&#34; /&gt;
 &lt;p&gt;__提示信息的绘制：__为了在更通用的编码环境下使用，用了并不常见的类型和函数，但是和C中的&lt;code&gt;printf()&lt;/code&gt;类似。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
