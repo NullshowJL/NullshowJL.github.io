@@ -180,20 +180,20 @@
 &lt;/h3&gt;&lt;p&gt;玩家在3*3的棋盘上轮流下子，用O和X表示各自的棋子，如果一方任意三个相同的棋子连成一条直线或斜线时，这一方获胜；如果9个网格均被棋子填充但是却未出现获胜方时，则为平局。此demo只实现本地人人对战。&lt;/p&gt;
 &lt;h3 id=&#34;设计思路-1&#34;&gt;设计思路
 &lt;/h3&gt;&lt;h4 id=&#34;游戏主循环中三要素的设计&#34;&gt;游戏主循环中三要素的设计
-&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;读取操作：&lt;/strong&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;读取操作&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;对鼠标左键按下的消息进行处理。当鼠标左键点击空白的棋盘格子时，执行落子操作。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;数据处理：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据处理&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;对游戏结束条件进行检测。游戏结束条件为三颗同类型的棋子连成一条直线/斜线，或者棋盘被填满。游戏结束时，使用弹窗。告诉玩家游戏结果，然后退出主循环。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;绘制画面：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;绘制画面&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;用&lt;code&gt;line()&lt;/code&gt;将窗口绘制为3*3的网格棋盘。同样用&lt;code&gt;line()&lt;/code&gt;在网格上绘制出交叉的对角线代表一方玩家执的X棋子。用&lt;code&gt;circle()&lt;/code&gt;绘制出另一方玩家执的O棋子。&lt;/p&gt;
 &lt;p&gt;在窗口左上角输出一行文字，告诉玩家即将落子的棋子类型。&lt;/p&gt;
 &lt;h4 id=&#34;数据结构&#34;&gt;数据结构
-&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;棋盘和棋子:&lt;/strong&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;棋盘和棋子&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;用二维数组&lt;code&gt;char board_data[3][3]&lt;/code&gt;代表棋盘，用字符&lt;code&gt;char &#39;X&#39;&lt;/code&gt;和&lt;code&gt;char &#39;O&#39;&lt;/code&gt;代表棋子，而还未落子的格子用&lt;code&gt;char &#39;-&#39;&lt;/code&gt;表示。&lt;/p&gt;
 &lt;h4 id=&#34;游戏结束&#34;&gt;游戏结束
 &lt;/h4&gt;&lt;p&gt;分类讨论游戏结束的情况。&lt;/p&gt;
-&lt;p&gt;__情况一：__某一方获胜。只需对X字符和O字符分别进行穷举判定。共8种。&lt;/p&gt;
-&lt;p&gt;__情况二：__平局。棋盘中没有一个格子是字符-且没有玩家获胜的情况。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;情况一&lt;/strong&gt;：_某一方获胜。只需对X字符和O字符分别进行穷举判定。共8种。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;情况二&lt;/strong&gt;：平局。棋盘中没有一个格子是字符-且没有玩家获胜的情况。&lt;/p&gt;
 &lt;h3 id=&#34;开发流程-1&#34;&gt;开发流程
 &lt;/h3&gt;&lt;h4 id=&#34;遵循的总体思路&#34;&gt;遵循的总体思路
 &lt;/h4&gt;&lt;p&gt;先框架后细化。&lt;/p&gt;
@@ -329,12 +329,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;细化绘制部分的逻辑&#34;&gt;细化绘制部分的逻辑
-&lt;/h4&gt;&lt;p&gt;__棋盘的绘制：__直接只用&lt;code&gt;line()&lt;/code&gt;对应相应的像素坐标。&lt;/p&gt;
-&lt;p&gt;__x棋子的绘制：__同样使用&lt;code&gt;line()&lt;/code&gt;绘制，只不过使用的是对角线的像素坐标。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;棋盘的绘制&lt;/strong&gt;：直接只用&lt;code&gt;line()&lt;/code&gt;对应相应的像素坐标。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;X 棋子的绘制&lt;/strong&gt;：同样使用&lt;code&gt;line()&lt;/code&gt;绘制，只不过使用的是对角线的像素坐标。&lt;/p&gt;
 &lt;img src=&#34;image-20250915200611419.png&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
-&lt;p&gt;__o棋子的绘制：__使用&lt;code&gt;circle()&lt;/code&gt;绘制，圆心的x和y分别要在各自棋盘格子像素点的基础上多加100个像素单位。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;O 棋子的绘制&lt;/strong&gt;：使用&lt;code&gt;circle()&lt;/code&gt;绘制，圆心的x和y分别要在各自棋盘格子像素点的基础上多加100个像素单位。&lt;/p&gt;
 &lt;img src=&#34;image-20250915201039024.png&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
-&lt;p&gt;__提示信息的绘制：__为了在更通用的编码环境下使用，用了并不常见的类型和函数，但是和C中的&lt;code&gt;printf()&lt;/code&gt;类似。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提示信息的绘制&lt;/strong&gt;：为了在更通用的编码环境下使用，用了并不常见的类型和函数，但是和C中的&lt;code&gt;printf()&lt;/code&gt;类似。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -345,7 +345,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;_stprintf_s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;当前棋子类型：%c&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;current_piece&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一些美化字体的函数：&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一些美化字体的函数&lt;/strong&gt;：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -357,9 +357,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;优化&#34;&gt;优化
-&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;最后一枚落子不绘制：&lt;/strong&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;最后一枚落子不绘制&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;如果胜负判断放在最后，那么由于&lt;code&gt;MB_OK&lt;/code&gt;弹窗会等待玩家点击，点击后直接退出程序，会跳过最后一枚棋子的绘制。为了解决这个问题，这里简单粗暴的将绘制函数放在胜负判断的逻辑之前。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;CPU占用高：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CPU占用高&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;计算机在执行&lt;code&gt;while循环&lt;/code&gt;时速度较快，我们编写的主循环在顷刻间已经执行完了成千上万次，占用了大量的CPU时间片。对于大部分物理刷新率仅有&lt;code&gt;60Hz&lt;/code&gt;的显示设备来说，这是一种性能浪费。简单粗暴的解决方法是使用&lt;code&gt;sleep(15)&lt;/code&gt;，让程序在每一次循环结束后强制等待15ms。但这不是推荐的做法。因为随游戏体量的增大，程序每次执行主循环所执行的计算任务可能是不同的，涉及到操作系统CPU计算资源的分配，会导致每次执行主循环所实际消耗的时间可能是不一样的。所以我们需要根据每一帧执行的实际耗时，动态计算在这之后要休眠多长时间。推荐的做法是我们自己设置帧率。用到的函数是&lt;code&gt;GetTickCount()&lt;/code&gt;，它可以获取程序自运行开始以来到现在的毫秒数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
