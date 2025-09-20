@@ -855,26 +855,166 @@
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
         <guid>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;关于&#34;&gt;关于
+&lt;/h2&gt;&lt;p&gt;TODO&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;p&gt;博客产量热力图&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div id=&#34;heatmap&#34; style=&#34;max-width: 680px; height: 188px; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;heatmap&#34; style=&#34;width: 100%; height: 280px;&#34;&gt;&lt;/div&gt;
+
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+  
+  window.addEventListener(&#39;DOMContentLoaded&#39;, function () {
+    const chartDom = document.getElementById(&#39;heatmap&#39;);
+    if (!chartDom) return;
+
+    const myChart = echarts.init(chartDom);
+    window.addEventListener(&#39;resize&#39;, () =&gt; myChart.resize());
+
+    const dataMap = new Map();
+
+    
+    
+    {
+      const key = &#34;2025-09-18&#34;;
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = &#34;\/p\/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80\/&#34;;
+      const title = &#34;【从零开始的C\u002b\u002b游戏开发】- 基础&#34;;
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = &#34;2025-09-14&#34;;
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = &#34;\/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97\/&#34;;
+      const title = &#34;更新日志&#34;;
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = &#34;2019-05-28&#34;;
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = &#34;\/archives\/&#34;;
+      const title = &#34;归档&#34;;
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = &#34;2019-02-28&#34;;
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = &#34;\/%E5%85%B3%E4%BA%8E\/&#34;;
+      const title = &#34;关于&#34;;
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = &#34;0001-01-01&#34;;
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = &#34;\/%E9%93%BE%E6%8E%A5\/&#34;;
+      const title = &#34;链接&#34;;
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = &#34;0001-01-01&#34;;
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = &#34;\/search\/&#34;;
+      const title = &#34;搜索&#34;;
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+
+    const data = [];
+    for (const [key, value] of dataMap.entries()) {
+      data.push([key, value.count]);
+    }
+
+    
+    const pad = (n) =&gt; (n &lt; 10 ? &#39;0&#39; + n : &#39;&#39; + n);
+    const fmt = (d) =&gt; `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    const end = new Date();
+    const start = new Date(end.getFullYear() - 1, end.getMonth(), end.getDate());
+
+    
+    const articleEl = document.querySelector(&#39;article, .post-content, .post, .content, .markdown-body, .prose&#39;);
+    
+    const baseTextColor = &#39;hsl(30, 10%, 65%)&#39;; 
+
+    const option = {
+      textStyle: { color: baseTextColor },
+      title: {
+        top: 0,
+        left: &#39;center&#39;,
+        text: &#39;博客发布频率热力图&#39;,
+        textStyle: { color: baseTextColor }
+      },
+      tooltip: {
+        formatter: function (params) {
+          const post = dataMap.get(params.data?.[0]);
+          if (!post) return &#39;当天无文章&#39;;
+          return `发布 ${post.count} 篇文章`;
+        },
+        textStyle: { color: baseTextColor }
+      },
+      visualMap: {
+        min: 0,
+        max: 5,
+        type: &#39;piecewise&#39;,
+        orient: &#39;horizontal&#39;,
+        left: &#39;center&#39;,
+        top: 30,
+        inRange: { color: [&#39;#cce5df&#39;, &#39;#7AA874&#39;] },
+        splitNumber: 5,
+        text: [&#39;篇数&#39;, &#39;&#39;],
+        showLabel: true,
+        itemGap: 20,
+        textStyle: { color: baseTextColor }
+      },
+      calendar: {
+        top: 80,
+        left: 20,
+        right: 4,
+        cellSize: [&#39;auto&#39;, 12],
+        range: [fmt(start), fmt(end)],
+        itemStyle: {
+          color: &#39;#F1F1F1&#39;,
+          borderWidth: 2.5,
+          borderColor: &#39;#fff&#39;
+        },
+        yearLabel: { show: false, color: baseTextColor },
+        monthLabel: { color: baseTextColor },
+        dayLabel: { color: baseTextColor },
+        splitLine: { lineStyle: { color: &#39;rgba(0, 0, 0, 0.0)&#39; } }
+      },
+      series: [{
+        type: &#39;heatmap&#39;,
+        coordinateSystem: &#39;calendar&#39;,
+        data: data
+      }]
+    };
+
+    myChart.setOption(option);
+
+    
+    myChart.on(&#39;click&#39;, function (params) {
+      const post = dataMap.get(params.data?.[0]);
+      if (post &amp;&amp; post.link) window.open(post.link, &#39;_blank&#39;);
+    });
+  });
+&lt;/script&gt;
 </description>
         </item>
         <item>

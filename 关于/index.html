@@ -10,7 +10,7 @@
 <meta property='og:description' content="Hugo, the world's fastest framework for building websites">
 <meta property='og:url' content='https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:published_time' content='2019-02-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-09-14T11:22:06&#43;02:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:published_time' content='2019-02-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-09-20T15:11:59&#43;02:00'/>
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="Hugo, the world's fastest framework for building websites">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -401,26 +401,166 @@ version: "3.1"
     <section class="article-content">
     
     
-    <p>Written in Go, Hugo is an open source static site generator available under the <a class="link" href="https://github.com/gohugoio/hugo/blob/master/LICENSE"  target="_blank" rel="noopener"
-    >Apache License 2.0.</a> Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.</p>
-<p>Hugo makes use of a variety of open source projects including:</p>
-<ul>
-<li><a class="link" href="https://github.com/yuin/goldmark"  target="_blank" rel="noopener"
-    >https://github.com/yuin/goldmark</a></li>
-<li><a class="link" href="https://github.com/alecthomas/chroma"  target="_blank" rel="noopener"
-    >https://github.com/alecthomas/chroma</a></li>
-<li><a class="link" href="https://github.com/muesli/smartcrop"  target="_blank" rel="noopener"
-    >https://github.com/muesli/smartcrop</a></li>
-<li><a class="link" href="https://github.com/spf13/cobra"  target="_blank" rel="noopener"
-    >https://github.com/spf13/cobra</a></li>
-<li><a class="link" href="https://github.com/spf13/viper"  target="_blank" rel="noopener"
-    >https://github.com/spf13/viper</a></li>
-</ul>
-<p>Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.</p>
-<p>Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.</p>
-<p>Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.</p>
-<p>Learn more and contribute on <a class="link" href="https://github.com/gohugoio"  target="_blank" rel="noopener"
-    >GitHub</a>.</p>
+    <h2 id="关于">关于
+</h2><p>TODO</p>
+<blockquote class="alert alert-note">
+    <p>博客产量热力图</p></blockquote>
+<div id="heatmap" style="max-width: 680px; height: 188px; margin: auto;"></div>
+<div id="heatmap" style="width: 100%; height: 280px;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+<script>
+  
+  window.addEventListener('DOMContentLoaded', function () {
+    const chartDom = document.getElementById('heatmap');
+    if (!chartDom) return;
+
+    const myChart = echarts.init(chartDom);
+    window.addEventListener('resize', () => myChart.resize());
+
+    const dataMap = new Map();
+
+    
+    
+    {
+      const key = "2025-09-18";
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = "\/p\/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80\/";
+      const title = "【从零开始的C\u002b\u002b游戏开发】- 基础";
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = "2025-09-14";
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = "\/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97\/";
+      const title = "更新日志";
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = "2019-05-28";
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = "\/archives\/";
+      const title = "归档";
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = "2019-02-28";
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = "\/%E5%85%B3%E4%BA%8E\/";
+      const title = "关于";
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = "0001-01-01";
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = "\/%E9%93%BE%E6%8E%A5\/";
+      const title = "链接";
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+    {
+      const key = "0001-01-01";
+      const prev = dataMap.get(key);
+      const count = prev ? prev.count + 1 : 1;
+      const link = "\/search\/";
+      const title = "搜索";
+      
+      dataMap.set(key, { count, link, title });
+    }
+    
+
+    const data = [];
+    for (const [key, value] of dataMap.entries()) {
+      data.push([key, value.count]);
+    }
+
+    
+    const pad = (n) => (n < 10 ? '0' + n : '' + n);
+    const fmt = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    const end = new Date();
+    const start = new Date(end.getFullYear() - 1, end.getMonth(), end.getDate());
+
+    
+    const articleEl = document.querySelector('article, .post-content, .post, .content, .markdown-body, .prose');
+    
+    const baseTextColor = 'hsl(30, 10%, 65%)'; 
+
+    const option = {
+      textStyle: { color: baseTextColor },
+      title: {
+        top: 0,
+        left: 'center',
+        text: '博客发布频率热力图',
+        textStyle: { color: baseTextColor }
+      },
+      tooltip: {
+        formatter: function (params) {
+          const post = dataMap.get(params.data?.[0]);
+          if (!post) return '当天无文章';
+          return `发布 ${post.count} 篇文章`;
+        },
+        textStyle: { color: baseTextColor }
+      },
+      visualMap: {
+        min: 0,
+        max: 5,
+        type: 'piecewise',
+        orient: 'horizontal',
+        left: 'center',
+        top: 30,
+        inRange: { color: ['#cce5df', '#7AA874'] },
+        splitNumber: 5,
+        text: ['篇数', ''],
+        showLabel: true,
+        itemGap: 20,
+        textStyle: { color: baseTextColor }
+      },
+      calendar: {
+        top: 80,
+        left: 20,
+        right: 4,
+        cellSize: ['auto', 12],
+        range: [fmt(start), fmt(end)],
+        itemStyle: {
+          color: '#F1F1F1',
+          borderWidth: 2.5,
+          borderColor: '#fff'
+        },
+        yearLabel: { show: false, color: baseTextColor },
+        monthLabel: { color: baseTextColor },
+        dayLabel: { color: baseTextColor },
+        splitLine: { lineStyle: { color: 'rgba(0, 0, 0, 0.0)' } }
+      },
+      series: [{
+        type: 'heatmap',
+        coordinateSystem: 'calendar',
+        data: data
+      }]
+    };
+
+    myChart.setOption(option);
+
+    
+    myChart.on('click', function (params) {
+      const post = dataMap.get(params.data?.[0]);
+      if (post && post.link) window.open(post.link, '_blank');
+    });
+  });
+</script>
 
 </section>
 
@@ -450,7 +590,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Sep 14, 2025 11:22 &#43;0200
+            最后更新于 Sep 20, 2025 15:11 &#43;0200
         </span>
     </section></footer>
 
