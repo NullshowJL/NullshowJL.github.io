@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Fri, 19 Sep 2025 23:24:34 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Sep 2025 10:38:00 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【从零开始的C&#43;&#43;游戏开发】- 基础</title>
         <link>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
@@ -175,7 +175,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在主循环开始之前，我们需要先对游戏数据进行初始化，所以这部分一般放置于&lt;code&gt;BeginBatchDraw()&lt;/code&gt;之前。&lt;/p&gt;
-&lt;p&gt;在主循环结束之后，需要相应地对游戏资源进行释放。`&lt;/p&gt;
+&lt;p&gt;在主循环结束之后，需要相应地对游戏资源进行释放。&lt;/p&gt;
 &lt;h2 id=&#34;demo2---井字棋游戏&#34;&gt;Demo2 - 井字棋游戏
 &lt;/h2&gt;&lt;h3 id=&#34;游戏介绍&#34;&gt;游戏介绍
 &lt;/h3&gt;&lt;p&gt;玩家在3*3的棋盘上轮流下子，用O和X表示各自的棋子，如果一方任意三个相同的棋子连成一条直线或斜线时，这一方获胜；如果9个网格均被棋子填充但是却未出现获胜方时，则为平局。此demo只实现本地人人对战。&lt;/p&gt;
@@ -193,7 +193,7 @@
 &lt;p&gt;用二维数组&lt;code&gt;char board_data[3][3]&lt;/code&gt;代表棋盘，用字符&lt;code&gt;char &#39;X&#39;&lt;/code&gt;和&lt;code&gt;char &#39;O&#39;&lt;/code&gt;代表棋子，而还未落子的格子用&lt;code&gt;char &#39;-&#39;&lt;/code&gt;表示。&lt;/p&gt;
 &lt;h4 id=&#34;游戏结束&#34;&gt;游戏结束
 &lt;/h4&gt;&lt;p&gt;分类讨论游戏结束的情况。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;情况一&lt;/strong&gt;：_某一方获胜。只需对X字符和O字符分别进行穷举判定。共8种。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;情况一&lt;/strong&gt;：某一方获胜。只需对X字符和O字符分别进行穷举判定。共8种。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;情况二&lt;/strong&gt;：平局。棋盘中没有一个格子是字符-且没有玩家获胜的情况。&lt;/p&gt;
 &lt;h3 id=&#34;开发流程-1&#34;&gt;开发流程
 &lt;/h3&gt;&lt;h4 id=&#34;遵循的总体思路&#34;&gt;遵循的总体思路
