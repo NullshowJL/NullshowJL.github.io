@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 20 Sep 2025 15:11:59 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Sep 2025 16:32:46 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>更新日志</title>
         <link>https://nullshowjl.github.io/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</link>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
@@ -32,7 +32,8 @@
           &lt;td style=&#34;text-align: left&#34;&gt;左侧栏增加 &lt;strong&gt;更新日志&lt;/strong&gt;；更换了字体；网站鼠标使用自定义图标&lt;/td&gt;
           &lt;td&gt;2025.09.17&lt;/td&gt;
           &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-stack-theme/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客 莱特雷-letere&lt;/a&gt;】&lt;/td&gt;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；指针素材来源【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1xz4y157ob?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;B站 xe08&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;文章底部添加 &lt;strong&gt;最后更新时间&lt;/strong&gt;；&lt;strong&gt;归档&lt;/strong&gt; 和 &lt;strong&gt;链接&lt;/strong&gt; 部分分3栏显示；文章页面只显示 &lt;strong&gt;当前目录&lt;/strong&gt; 的内容；添加 &lt;strong&gt;回到顶部&lt;/strong&gt; 按钮；使用 &lt;strong&gt;macOS风格&lt;/strong&gt; 的代码块；自定义 &lt;strong&gt;MD引用块&lt;/strong&gt; 颜色模板；代码块太长自动折叠；中/英/代码分别显示各自的字体&lt;/td&gt;
@@ -45,12 +46,17 @@
           &lt;td&gt;2025.09.19&lt;/td&gt;
           &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://www.xalaok.top/post/stack-modify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;博客 Naive Koala&lt;/a&gt;】、【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/tags/hugo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客 莱特雷-letere&lt;/a&gt;】&lt;/td&gt;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；动态背景来源参考【&lt;a class=&#34;link&#34; href=&#34;https://github.com/VincentGarreau&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub VincentGarreau&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;实现 &lt;strong&gt;主页文章标题和图片&lt;/strong&gt; 动画效果；实现 &lt;strong&gt;回到顶部&lt;/strong&gt; 按钮动画效果；实现 &lt;strong&gt;首页加载动画&lt;/strong&gt; 效果；添加网站底部 &lt;strong&gt;小鱼游动&lt;/strong&gt; 动画；添加 &lt;strong&gt;左侧菜单栏&lt;/strong&gt; 动画；在 &lt;strong&gt;关于&lt;/strong&gt; 页面添加 &lt;strong&gt;博客文章热力图&lt;/strong&gt;；&lt;/td&gt;
+          &lt;td&gt;2025.09.20&lt;/td&gt;
+          &lt;td&gt;动画来源参考【&lt;a class=&#34;link&#34; href=&#34;https://uiverse.io/shadowfax29/slippery-bullfrog-20&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;UIverse&lt;/a&gt;】；小鱼游动代码来源参考【&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Jsenna/article/details/120836708&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSDN Jsenna&lt;/a&gt;】；教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/page-loading/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；热力图代码参考【&lt;a class=&#34;link&#34; href=&#34;https://blog.douchi.space/hugo-blog-heatmap/#gsc.tab=0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 椒盐豆豉&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
@@ -95,160 +101,150 @@
 &lt;blockquote class=&#34;alert alert-note&#34;&gt;
     &lt;p&gt;博客产量热力图&lt;/p&gt;&lt;/blockquote&gt;
 &lt;div id=&#34;heatmap&#34; style=&#34;max-width: 680px; height: 188px; margin: auto;&#34;&gt;&lt;/div&gt;
-&lt;div id=&#34;heatmap&#34; style=&#34;width: 100%; height: 280px;&#34;&gt;&lt;/div&gt;
-
+&lt;div id=&#34;heatmap&#34; style=&#34;
+  max-width: 600px;
+  height: 180px;
+  padding: 2px;
+  text-align: center;
+  color: hsl(30, 10%, 65%);&#34;&gt;&lt;/div&gt;
 &lt;script src=&#34;https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+  var chartDom = document.getElementById(&#39;heatmap&#39;);
+  var myChart = echarts.init(chartDom);
+  window.onresize = function() {
+      myChart.resize();
+  };
+  var option;
+
   
-  window.addEventListener(&#39;DOMContentLoaded&#39;, function () {
-    const chartDom = document.getElementById(&#39;heatmap&#39;);
-    if (!chartDom) return;
-
-    const myChart = echarts.init(chartDom);
-    window.addEventListener(&#39;resize&#39;, () =&gt; myChart.resize());
-
-    const dataMap = new Map();
-
-    
-    
-    {
-      const key = &#34;2025-09-18&#34;;
-      const prev = dataMap.get(key);
-      const count = prev ? prev.count + 1 : 1;
-      const link = &#34;\/p\/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80\/&#34;;
-      const title = &#34;【从零开始的C\u002b\u002b游戏开发】- 基础&#34;;
-      
-      dataMap.set(key, { count, link, title });
-    }
-    
-    {
-      const key = &#34;2025-09-14&#34;;
-      const prev = dataMap.get(key);
-      const count = prev ? prev.count + 1 : 1;
-      const link = &#34;\/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97\/&#34;;
-      const title = &#34;更新日志&#34;;
-      
-      dataMap.set(key, { count, link, title });
-    }
-    
-    {
-      const key = &#34;2019-05-28&#34;;
-      const prev = dataMap.get(key);
-      const count = prev ? prev.count + 1 : 1;
-      const link = &#34;\/archives\/&#34;;
-      const title = &#34;归档&#34;;
-      
-      dataMap.set(key, { count, link, title });
-    }
-    
-    {
-      const key = &#34;2019-02-28&#34;;
-      const prev = dataMap.get(key);
-      const count = prev ? prev.count + 1 : 1;
-      const link = &#34;\/%E5%85%B3%E4%BA%8E\/&#34;;
-      const title = &#34;关于&#34;;
-      
-      dataMap.set(key, { count, link, title });
-    }
-    
-    {
-      const key = &#34;0001-01-01&#34;;
-      const prev = dataMap.get(key);
-      const count = prev ? prev.count + 1 : 1;
-      const link = &#34;\/%E9%93%BE%E6%8E%A5\/&#34;;
-      const title = &#34;链接&#34;;
-      
-      dataMap.set(key, { count, link, title });
-    }
-    
-    {
-      const key = &#34;0001-01-01&#34;;
-      const prev = dataMap.get(key);
-      const count = prev ? prev.count + 1 : 1;
-      const link = &#34;\/search\/&#34;;
-      const title = &#34;搜索&#34;;
-      
-      dataMap.set(key, { count, link, title });
-    }
-    
-
-    const data = [];
-    for (const [key, value] of dataMap.entries()) {
-      data.push([key, value.count]);
-    }
+  
+  
+  
+  
+  
+  var dataMap = new Map();
+  
+    var key = &#34;2025-09-18&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;4.6&#34;;
+    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
+    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
 
     
-    const pad = (n) =&gt; (n &lt; 10 ? &#39;0&#39; + n : &#39;&#39; + n);
-    const fmt = (d) =&gt; `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-    const end = new Date();
-    const start = new Date(end.getFullYear() - 1, end.getMonth(), end.getDate());
-
     
-    const articleEl = document.querySelector(&#39;article, .post-content, .post, .content, .markdown-body, .prose&#39;);
-    
-    const baseTextColor = &#39;hsl(30, 10%, 65%)&#39;; 
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }var data = [];
+  for (const [key, value] of dataMap.entries()) {
+    data.push([key, value.wordCount]);
+  }
 
-    const option = {
-      textStyle: { color: baseTextColor },
-      title: {
+  var startDate = new Date();
+  var year_Mill = startDate.setFullYear((startDate.getFullYear() - 1));
+  var startDate = +new Date(year_Mill);
+  var endDate = +new Date();
+
+  var dayTime = 3600 * 24 * 1000;
+  startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
+  endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
+
+  
+  function heatmap_width(months){
+    var startDate = new Date();
+    var mill = startDate.setMonth((startDate.getMonth() - months));
+    var endDate = +new Date();
+    startDate = +new Date(mill);
+
+    endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
+    startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
+
+    var showmonth = [];
+    showmonth.push([
+        startDate,
+        endDate
+    ]);
+    return showmonth
+  };
+
+  function getRangeArr() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth &gt;= 600) {
+      return heatmap_width(12);
+    } else if (windowWidth &gt;= 400) {
+      return heatmap_width(9);
+    } else {
+      return heatmap_width(6);
+    }
+  }
+
+  var baseTextColor = &#39;hsl(30, 10%, 65%)&#39;;
+
+  option = {
+    textStyle: { color: baseTextColor },
+    title: {
         top: 0,
         left: &#39;center&#39;,
-        text: &#39;博客发布频率热力图&#39;,
+        text: &#39;博客产量&#39;,
         textStyle: { color: baseTextColor }
+    },
+    tooltip: {
+      formatter: function (p) {
+        const post = dataMap.get(p.data[0]);
+        return post.title + &#39; | &#39; + post.wordCount + &#39; 千字&#39;;
       },
-      tooltip: {
-        formatter: function (params) {
-          const post = dataMap.get(params.data?.[0]);
-          if (!post) return &#39;当天无文章&#39;;
-          return `发布 ${post.count} 篇文章`;
-        },
-        textStyle: { color: baseTextColor }
-      },
-      visualMap: {
+      textStyle: { color: baseTextColor }
+    },
+    visualMap: {
         min: 0,
-        max: 5,
+        max: 10,
         type: &#39;piecewise&#39;,
         orient: &#39;horizontal&#39;,
         left: &#39;center&#39;,
         top: 30,
-        inRange: { color: [&#39;#cce5df&#39;, &#39;#7AA874&#39;] },
-        splitNumber: 5,
-        text: [&#39;篇数&#39;, &#39;&#39;],
+        inRange: {
+          
+          color: [&#39;#7aa8744c&#39;, &#39;#7AA874&#39; ]
+        },
+        splitNumber: 4,
+        text: [&#39;千字&#39;, &#39;&#39;],
         showLabel: true,
         itemGap: 20,
         textStyle: { color: baseTextColor }
-      },
-      calendar: {
+    },
+    calendar: {
         top: 80,
         left: 20,
         right: 4,
         cellSize: [&#39;auto&#39;, 12],
-        range: [fmt(start), fmt(end)],
+        range: getRangeArr(),
         itemStyle: {
-          color: &#39;#F1F1F1&#39;,
-          borderWidth: 2.5,
-          borderColor: &#39;#fff&#39;
+            color: &#39;#F1F1F1&#39;,
+            borderWidth: 2.5,
+            borderColor: &#39;#fff&#39;,
         },
         yearLabel: { show: false, color: baseTextColor },
         monthLabel: { color: baseTextColor },
         dayLabel: { color: baseTextColor },
-        splitLine: { lineStyle: { color: &#39;rgba(0, 0, 0, 0.0)&#39; } }
-      },
-      series: [{
+        splitLine: {
+          lineStyle: {
+            color: &#39;rgba(0, 0, 0, 0.0)&#39;,
+          }
+        }
+    },
+    series: {
         type: &#39;heatmap&#39;,
         coordinateSystem: &#39;calendar&#39;,
-        data: data
-      }]
-    };
-
-    myChart.setOption(option);
-
-    
-    myChart.on(&#39;click&#39;, function (params) {
-      const post = dataMap.get(params.data?.[0]);
-      if (post &amp;&amp; post.link) window.open(post.link, &#39;_blank&#39;);
-    });
-  });
+        data: data,
+    }
+  };
+  myChart.setOption(option);
+  myChart.on(&#39;click&#39;, function(params) {
+    if (params.componentType === &#39;series&#39;) {
+      const post = dataMap.get(params.data[0]);
+      const link = window.location.origin + post.link;
+      window.open(link, &#39;_blank&#39;).focus();
+    }
+});
 &lt;/script&gt;
 </description>
         </item>
