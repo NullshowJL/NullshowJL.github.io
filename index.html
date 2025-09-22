@@ -7,11 +7,11 @@
 
 <link rel='canonical' href='https://nullshowjl.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.d0424a5145e95e7e6e5c9daf4be19b83ab43142779d4cc95750ab95309ca2fa7.css"><meta property='og:title' content="Nullshow的技术博客">
+<link rel="stylesheet" href="/scss/style.min.2774cb84c939d1b8ff8b49309d6bff0931f1e42db9ba8b06fe150a3b4c6f1e31.css"><meta property='og:title' content="Nullshow的技术博客">
 <meta property='og:description' content="分享和记录我在开发和学习中的笔记、经验和感悟~">
 <meta property='og:url' content='https://nullshowjl.github.io/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-09-22T16:32:46&#43;02:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-09-22T22:41:59&#43;02:00 '/>
 <meta name="twitter:title" content="Nullshow的技术博客">
 <meta name="twitter:description" content="分享和记录我在开发和学习中的笔记、经验和感悟~"><link rel="alternate" type="application/rss&#43;xml" href="https://nullshowjl.github.io/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -395,26 +395,6 @@
                     </a>
                 </li>
             
-                <li>
-                    <a 
-                        href='https://twitter.com'
-                        target="_blank"
-                        title="Twitter"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-brand-twitter">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
         </ol><ol class="menu" id="main-menu">
         
         
@@ -748,7 +728,7 @@ version: "3.1"
     
     <header class="article-category">
         
-            <a href="/categories/study-notes/" >
+            <a href="/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
                 Study Notes
             </a>
         
@@ -1064,10 +1044,12 @@ version: "3.1"
          
         max-height: 400px;
         overflow: hidden;
+        position: relative;  
     }
 
     .code-show {
         max-height: none !important;
+        overflow: visible !important;  
     }
 
     .code-more-box {
@@ -1110,6 +1092,10 @@ version: "3.1"
     }
     codeBlocks.forEach(codeBlock => {
       
+      if (codeBlock.querySelector('.code-more-box')) {
+        return;
+      }
+      
       if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
         return;
       }
@@ -1122,14 +1108,15 @@ version: "3.1"
       codeMoreBtn.classList.add('code-more-btn');
       codeMoreBtn.addEventListener('click', () => {
         codeBlock.classList.add('code-show');
-        codeMoreBox.style.display = 'none';
+        
+        codeMoreBox.remove();
         
         window.dispatchEvent(new Event('resize'))
       })
       
       let img = document.createElement('img');
       img.classList.add('code-more-img');
-      img.src = "https://nullshowjl.github.io/icons/codeMore.png"
+      img.src = "https:\/\/nullshowjl.github.io\/icons\/codeMore.png";
       
       codeMoreBtn.appendChild(img);
       codeMoreBox.appendChild(codeMoreBtn);
@@ -1408,10 +1395,12 @@ version: "3.1"
          
         max-height: 400px;
         overflow: hidden;
+        position: relative;  
     }
 
     .code-show {
         max-height: none !important;
+        overflow: visible !important;  
     }
 
     .code-more-box {
@@ -1454,6 +1443,10 @@ version: "3.1"
     }
     codeBlocks.forEach(codeBlock => {
       
+      if (codeBlock.querySelector('.code-more-box')) {
+        return;
+      }
+      
       if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
         return;
       }
@@ -1466,14 +1459,15 @@ version: "3.1"
       codeMoreBtn.classList.add('code-more-btn');
       codeMoreBtn.addEventListener('click', () => {
         codeBlock.classList.add('code-show');
-        codeMoreBox.style.display = 'none';
+        
+        codeMoreBox.remove();
         
         window.dispatchEvent(new Event('resize'))
       })
       
       let img = document.createElement('img');
       img.classList.add('code-more-img');
-      img.src = "https://nullshowjl.github.io/icons/codeMore.png"
+      img.src = "https:\/\/nullshowjl.github.io\/icons\/codeMore.png";
       
       codeMoreBtn.appendChild(img);
       codeMoreBox.appendChild(codeMoreBtn);
