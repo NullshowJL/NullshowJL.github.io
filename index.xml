@@ -7,6 +7,179 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright><atom:link href="https://nullshowjl.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于</title>
+        <link>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
+&lt;/h2&gt;&lt;p&gt;🥷 一枚半路出家的半野生程序员。&lt;/p&gt;
+&lt;p&gt;⌨️ 编程生涯始于游戏开发，但对多个领域保持兴趣。&lt;/p&gt;
+&lt;p&gt;🎒 上了很久的学，结果发现知道的东西大都来自于自学。&lt;/p&gt;
+&lt;p&gt;🍵 曾经喜欢健身和旅行，现在更喜欢肥宅做的一切事情。&lt;/p&gt;
+&lt;p&gt;🐱 永远热爱动物。&lt;/p&gt;
+&lt;p&gt;📚 永远热爱阅读。&lt;/p&gt;
+&lt;h2 id=&#34;关于小站&#34;&gt;关于小站
+&lt;/h2&gt;&lt;h3 id=&#34;内容&#34;&gt;内容
+&lt;/h3&gt;&lt;p&gt;以前做文艺青年的时候喜欢分享自己的生活，现在只分享自己的学习和工作。&lt;/p&gt;
+&lt;h3 id=&#34;名字nullshow&#34;&gt;名字Nullshow
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;null&lt;/strong&gt; 是为“空”，代表我对人生的看法，同时也提醒我自己始终要保持空杯心态。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt; 是我中文名字的谐音。&lt;strong&gt;Nullshow&lt;/strong&gt; 的发音和我小时候的外号接近，让我想起了无忧无虑的童年。&lt;/p&gt;
+&lt;h3 id=&#34;插图&#34;&gt;插图
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt; 的插图均来自于丰子恺（1898~1975），是中国漫画艺术的先驱。他的画作大多取材于生活，简单传神、富有童趣。他与我是同乡，用他的画作既是一种对他的致敬，也提醒我自己，在学习和工作外，要时刻留意和品味日常生活的美好。&lt;/p&gt;
+&lt;h3 id=&#34;感恩&#34;&gt;感恩
+&lt;/h3&gt;&lt;p&gt;本站的创建、灵感来源和开发受益于许多网上大佬们无形的启发和帮助，这让我深深感受到开源和分享的魔力。在这个科技革命的时代里，AI让一切都变得简单、让一切都加速发展。我希望自己不是被时代浪潮裹挟而行的，而是能踏浪前行。欢迎你在这个激动人心的时代加入我的旅程！&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;p&gt;博客产量热力图&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div id=&#34;heatmap&#34; style=&#34;max-width: 680px; height: 188px; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;heatmap&#34; style=&#34;
+  max-width: 600px;
+  height: 180px;
+  padding: 2px;
+  text-align: center;
+  color: hsl(30, 10%, 65%);&#34;&gt;&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+  var chartDom = document.getElementById(&#39;heatmap&#39;);
+  var myChart = echarts.init(chartDom);
+  window.onresize = function() {
+      myChart.resize();
+  };
+  var option;
+
+  
+  
+  
+  
+  
+  
+  var dataMap = new Map();
+  
+    var key = &#34;2025-09-18&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;4.6&#34;;
+    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
+    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }var data = [];
+  for (const [key, value] of dataMap.entries()) {
+    data.push([key, value.wordCount]);
+  }
+
+  var startDate = new Date();
+  var year_Mill = startDate.setFullYear((startDate.getFullYear() - 1));
+  var startDate = +new Date(year_Mill);
+  var endDate = +new Date();
+
+  var dayTime = 3600 * 24 * 1000;
+  startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
+  endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
+
+  
+  function heatmap_width(months){
+    var startDate = new Date();
+    var mill = startDate.setMonth((startDate.getMonth() - months));
+    var endDate = +new Date();
+    startDate = +new Date(mill);
+
+    endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
+    startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
+
+    var showmonth = [];
+    showmonth.push([
+        startDate,
+        endDate
+    ]);
+    return showmonth
+  };
+
+  function getRangeArr() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth &gt;= 600) {
+      return heatmap_width(12);
+    } else if (windowWidth &gt;= 400) {
+      return heatmap_width(9);
+    } else {
+      return heatmap_width(6);
+    }
+  }
+
+  var baseTextColor = &#39;hsl(30, 10%, 65%)&#39;;
+
+  option = {
+    textStyle: { color: baseTextColor },
+    title: {
+        top: 0,
+        left: &#39;center&#39;,
+        text: &#39;博客产量&#39;,
+        textStyle: { color: baseTextColor }
+    },
+    tooltip: {
+      formatter: function (p) {
+        const post = dataMap.get(p.data[0]);
+        return post.title + &#39; | &#39; + post.wordCount + &#39; 千字&#39;;
+      },
+      textStyle: { color: baseTextColor }
+    },
+    visualMap: {
+        min: 0,
+        max: 10,
+        type: &#39;piecewise&#39;,
+        orient: &#39;horizontal&#39;,
+        left: &#39;center&#39;,
+        top: 30,
+        inRange: {
+          
+          color: [&#39;#7aa8744c&#39;, &#39;#7AA874&#39; ]
+        },
+        splitNumber: 4,
+        text: [&#39;千字&#39;, &#39;&#39;],
+        showLabel: true,
+        itemGap: 20,
+        textStyle: { color: baseTextColor }
+    },
+    calendar: {
+        top: 80,
+        left: 20,
+        right: 4,
+        cellSize: [&#39;auto&#39;, 12],
+        range: getRangeArr(),
+        itemStyle: {
+            color: &#39;#F1F1F1&#39;,
+            borderWidth: 2.5,
+            borderColor: &#39;#fff&#39;,
+        },
+        yearLabel: { show: false, color: baseTextColor },
+        monthLabel: { color: baseTextColor },
+        dayLabel: { color: baseTextColor },
+        splitLine: {
+          lineStyle: {
+            color: &#39;rgba(0, 0, 0, 0.0)&#39;,
+          }
+        }
+    },
+    series: {
+        type: &#39;heatmap&#39;,
+        coordinateSystem: &#39;calendar&#39;,
+        data: data,
+    }
+  };
+  myChart.setOption(option);
+  myChart.on(&#39;click&#39;, function(params) {
+    if (params.componentType === &#39;series&#39;) {
+      const post = dataMap.get(params.data[0]);
+      const link = window.location.origin + post.link;
+      window.open(link, &#39;_blank&#39;).focus();
+    }
+});
+&lt;/script&gt;
+</description>
+        </item>
+        <item>
         <title>【从零开始的C&#43;&#43;游戏开发】- 基础</title>
         <link>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
@@ -854,164 +1027,6 @@
         
         <guid>https://nullshowjl.github.io/archives/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>关于</title>
-        <link>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</link>
-        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;h2 id=&#34;关于&#34;&gt;关于
-&lt;/h2&gt;&lt;p&gt;TODO&lt;/p&gt;
-&lt;blockquote class=&#34;alert alert-note&#34;&gt;
-    &lt;p&gt;博客产量热力图&lt;/p&gt;&lt;/blockquote&gt;
-&lt;div id=&#34;heatmap&#34; style=&#34;max-width: 680px; height: 188px; margin: auto;&#34;&gt;&lt;/div&gt;
-&lt;div id=&#34;heatmap&#34; style=&#34;
-  max-width: 600px;
-  height: 180px;
-  padding: 2px;
-  text-align: center;
-  color: hsl(30, 10%, 65%);&#34;&gt;&lt;/div&gt;
-&lt;script src=&#34;https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js&#34;&gt;&lt;/script&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-  var chartDom = document.getElementById(&#39;heatmap&#39;);
-  var myChart = echarts.init(chartDom);
-  window.onresize = function() {
-      myChart.resize();
-  };
-  var option;
-
-  
-  
-  
-  
-  
-  
-  var dataMap = new Map();
-  
-    var key = &#34;2025-09-18&#34;;
-    var value = dataMap.get(key);
-    var wordCount = &#34;4.6&#34;;
-    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
-    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
-
-    
-    
-    if (value == null || wordCount &gt; value[0]) {
-      dataMap.set(key, {wordCount, link, title});
-    }var data = [];
-  for (const [key, value] of dataMap.entries()) {
-    data.push([key, value.wordCount]);
-  }
-
-  var startDate = new Date();
-  var year_Mill = startDate.setFullYear((startDate.getFullYear() - 1));
-  var startDate = +new Date(year_Mill);
-  var endDate = +new Date();
-
-  var dayTime = 3600 * 24 * 1000;
-  startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
-  endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
-
-  
-  function heatmap_width(months){
-    var startDate = new Date();
-    var mill = startDate.setMonth((startDate.getMonth() - months));
-    var endDate = +new Date();
-    startDate = +new Date(mill);
-
-    endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
-    startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
-
-    var showmonth = [];
-    showmonth.push([
-        startDate,
-        endDate
-    ]);
-    return showmonth
-  };
-
-  function getRangeArr() {
-    const windowWidth = window.innerWidth;
-    if (windowWidth &gt;= 600) {
-      return heatmap_width(12);
-    } else if (windowWidth &gt;= 400) {
-      return heatmap_width(9);
-    } else {
-      return heatmap_width(6);
-    }
-  }
-
-  var baseTextColor = &#39;hsl(30, 10%, 65%)&#39;;
-
-  option = {
-    textStyle: { color: baseTextColor },
-    title: {
-        top: 0,
-        left: &#39;center&#39;,
-        text: &#39;博客产量&#39;,
-        textStyle: { color: baseTextColor }
-    },
-    tooltip: {
-      formatter: function (p) {
-        const post = dataMap.get(p.data[0]);
-        return post.title + &#39; | &#39; + post.wordCount + &#39; 千字&#39;;
-      },
-      textStyle: { color: baseTextColor }
-    },
-    visualMap: {
-        min: 0,
-        max: 10,
-        type: &#39;piecewise&#39;,
-        orient: &#39;horizontal&#39;,
-        left: &#39;center&#39;,
-        top: 30,
-        inRange: {
-          
-          color: [&#39;#7aa8744c&#39;, &#39;#7AA874&#39; ]
-        },
-        splitNumber: 4,
-        text: [&#39;千字&#39;, &#39;&#39;],
-        showLabel: true,
-        itemGap: 20,
-        textStyle: { color: baseTextColor }
-    },
-    calendar: {
-        top: 80,
-        left: 20,
-        right: 4,
-        cellSize: [&#39;auto&#39;, 12],
-        range: getRangeArr(),
-        itemStyle: {
-            color: &#39;#F1F1F1&#39;,
-            borderWidth: 2.5,
-            borderColor: &#39;#fff&#39;,
-        },
-        yearLabel: { show: false, color: baseTextColor },
-        monthLabel: { color: baseTextColor },
-        dayLabel: { color: baseTextColor },
-        splitLine: {
-          lineStyle: {
-            color: &#39;rgba(0, 0, 0, 0.0)&#39;,
-          }
-        }
-    },
-    series: {
-        type: &#39;heatmap&#39;,
-        coordinateSystem: &#39;calendar&#39;,
-        data: data,
-    }
-  };
-  myChart.setOption(option);
-  myChart.on(&#39;click&#39;, function(params) {
-    if (params.componentType === &#39;series&#39;) {
-      const post = dataMap.get(params.data[0]);
-      const link = window.location.origin + post.link;
-      window.open(link, &#39;_blank&#39;).focus();
-    }
-});
-&lt;/script&gt;
-</description>
         </item>
         <item>
         <title>链接</title>
