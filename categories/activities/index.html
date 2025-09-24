@@ -10,7 +10,7 @@
 <meta property='og:description' content="记录我参加的一些活动">
 <meta property='og:url' content='https://nullshowjl.github.io/categories/activities/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-09-23T20:11:16&#43;02:00 '/><meta property='og:image' content='https://nullshowjl.github.io/categories/activities/fengzikai-activity.jpg' />
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-09-24T22:48:15&#43;02:00 '/><meta property='og:image' content='https://nullshowjl.github.io/categories/activities/fengzikai-activity.jpg' />
 <meta name="twitter:title" content="Category: Activities - Nullshow的技术博客">
 <meta name="twitter:description" content="记录我参加的一些活动"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/categories/activities/fengzikai-activity.jpg' /><link rel="alternate" type="application/rss&#43;xml" href="https://nullshowjl.github.io/categories/activities/index.xml">
@@ -136,7 +136,7 @@
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
+            <a href='/about/' >
                 
                 
                 
@@ -231,7 +231,7 @@ version: "3.1"
         
         
         <li >
-            <a href='/%E9%93%BE%E6%8E%A5/' >
+            <a href='/links/' >
                 
                 
                 
@@ -345,7 +345,7 @@ version: "3.1"
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">1</span>
+                            <span class="count">2</span>
                         
                     </a> 
                 </div>
@@ -371,6 +371,10 @@ version: "3.1"
     <h2 class="widget-title section-title">分类</h2>
 
     <div class="tagCloud-tags">
+        
+            <a href="/categories/dev-log/" class="font_size_1">
+                Dev Log
+            </a>
         
             <a href="/categories/study-notes/" class="font_size_1">
                 Study Notes
@@ -407,6 +411,14 @@ version: "3.1"
         
             <a href="/tags/game-dev/" class="font_size_1">
                 Game Dev
+            </a>
+        
+            <a href="/tags/hugo/" class="font_size_1">
+                Hugo
+            </a>
+        
+            <a href="/tags/web-dev/" class="font_size_1">
+                Web Dev
             </a>
         
     </div>
@@ -479,31 +491,62 @@ version: "3.1"
         document.head.appendChild(customFont);
     }());
 </script>
+
 <script>
-    
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        
+        path: {
+            homePath: "/",
+            
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: "https://nullshowjl.github.io/waifu/waifu.css",
+            tipsJsonPath: "https://nullshowjl.github.io/waifu/waifu-tips.json",
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        
+        drag: {
+            enable: true,
+            direction: ["x", "y"]
+        },
+        
+        switchType: "order"
+    }
 
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
 
-    
-    
-    const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
-    
-    const cssPath = "https://nullshowjl.github.io/waifu/waifu.css"
-    const waifuTipsJsonPath = "https://nullshowjl.github.io/waifu/waifu-tips.json"
-
-    
     
     function loadExternalResource(url, type) {
         return new Promise((resolve, reject) => {
             let tag;
-
-            if (type === 'css') {
-                tag = document.createElement('link');
-                tag.rel = 'stylesheet';
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
                 tag.href = url;
             }
-            else if (type === 'js') {
-                tag = document.createElement('script');
-                tag.type = 'module';
+            else if (type === "js") {
+                tag = document.createElement("script");
                 tag.src = url;
             }
             if (tag) {
@@ -513,43 +556,9 @@ version: "3.1"
             }
         });
     }
-
-    (async () => {
-        
-        
-        
-
-        
-        
-        const OriginalImage = window.Image;
-        window.Image = function (...args) {
-            const img = new OriginalImage(...args);
-            img.crossOrigin = "anonymous";
-            return img;
-        };
-        window.Image.prototype = OriginalImage.prototype;
-        
-        
-        await Promise.all([
-            loadExternalResource(cssPath, 'css'),
-            loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
-        ]);
-        
-        
-        initWidget({
-            waifuPath: waifuTipsJsonPath,
-            
-            cubism2Path: live2d_path + 'live2d.min.js',
-            cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
-            tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
-            logLevel: 'warn',
-            drag: false,
-        });
-    })();
-
-    console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
-
 </script>
+
+
 
 
 <style>
@@ -830,31 +839,62 @@ version: "3.1"
 
 
 
-        <script>
-    
+        
+<script>
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        
+        path: {
+            homePath: "/",
+            
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: "https://nullshowjl.github.io/waifu/waifu.css",
+            tipsJsonPath: "https://nullshowjl.github.io/waifu/waifu-tips.json",
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        
+        drag: {
+            enable: true,
+            direction: ["x", "y"]
+        },
+        
+        switchType: "order"
+    }
 
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
 
-    
-    
-    const live2d_path = 'https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.6/dist/';
-    
-    const cssPath = "https://nullshowjl.github.io/waifu/waifu.css"
-    const waifuTipsJsonPath = "https://nullshowjl.github.io/waifu/waifu-tips.json"
-
-    
     
     function loadExternalResource(url, type) {
         return new Promise((resolve, reject) => {
             let tag;
-
-            if (type === 'css') {
-                tag = document.createElement('link');
-                tag.rel = 'stylesheet';
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
                 tag.href = url;
             }
-            else if (type === 'js') {
-                tag = document.createElement('script');
-                tag.type = 'module';
+            else if (type === "js") {
+                tag = document.createElement("script");
                 tag.src = url;
             }
             if (tag) {
@@ -864,43 +904,9 @@ version: "3.1"
             }
         });
     }
-
-    (async () => {
-        
-        
-        
-
-        
-        
-        const OriginalImage = window.Image;
-        window.Image = function (...args) {
-            const img = new OriginalImage(...args);
-            img.crossOrigin = "anonymous";
-            return img;
-        };
-        window.Image.prototype = OriginalImage.prototype;
-        
-        
-        await Promise.all([
-            loadExternalResource(cssPath, 'css'),
-            loadExternalResource(live2d_path + 'waifu-tips.js', 'js')
-        ]);
-        
-        
-        initWidget({
-            waifuPath: waifuTipsJsonPath,
-            
-            cubism2Path: live2d_path + 'live2d.min.js',
-            cubism5Path: 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js',
-            tools: ['hitokoto', 'asteroids', 'switch-model', 'switch-texture', 'photo', 'info', 'quit'],
-            logLevel: 'warn',
-            drag: false,
-        });
-    })();
-
-    console.log(`\n%cLive2D%cWidget%c\n`, 'padding: 8px; background: #cd3e45; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #ff5450; font-size: large; color: #eee;', '');
-
 </script>
+
+
 
 
 <style>
@@ -1178,6 +1184,7 @@ version: "3.1"
         }
     };
 </script>
+
 
 
     </body>

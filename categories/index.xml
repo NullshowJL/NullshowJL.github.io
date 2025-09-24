@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Mon, 22 Sep 2025 22:41:59 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 24 Sep 2025 22:48:15 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Dev Log</title>
+        <link>https://nullshowjl.github.io/categories/dev-log/</link>
+        <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
+        
+        <guid>https://nullshowjl.github.io/categories/dev-log/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Activities</title>
         <link>https://nullshowjl.github.io/categories/activities/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

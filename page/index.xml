@@ -7,12 +7,12 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Tue, 23 Sep 2025 20:11:16 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 24 Sep 2025 22:48:15 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
-        <link>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://nullshowjl.github.io/about/</link>
         <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://nullshowjl.github.io/about/</guid>
         <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
 &lt;/h2&gt;&lt;p&gt;🥷 一枚半路出家的半野生程序员。&lt;/p&gt;
 &lt;p&gt;⌨️ 编程生涯始于游戏开发，但对多个领域保持兴趣。&lt;/p&gt;
@@ -62,6 +62,17 @@
     var wordCount = &#34;4.6&#34;;
     var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
     var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2025-09-18&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;1.9&#34;;
+    var link = &#34;/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/&#34;;
+    var title = &#34;【日志】我的技术博客网站&#34;;
 
     
     
@@ -212,7 +223,7 @@
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;文章底部添加 &lt;strong&gt;最后更新时间&lt;/strong&gt;；&lt;strong&gt;归档&lt;/strong&gt; 和 &lt;strong&gt;链接&lt;/strong&gt; 部分分3栏显示；文章页面只显示 &lt;strong&gt;当前目录&lt;/strong&gt; 的内容；添加 &lt;strong&gt;回到顶部&lt;/strong&gt; 按钮；使用 &lt;strong&gt;macOS风格&lt;/strong&gt; 的代码块；自定义 &lt;strong&gt;MD引用块&lt;/strong&gt; 颜色模板；代码块太长自动折叠；中/英/代码分别显示各自的字体&lt;/td&gt;
           &lt;td&gt;2025.09.18&lt;/td&gt;
-          &lt;td&gt;部分教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-stack-theme/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+          &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-stack-theme/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;博客 莱特雷-letere&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
@@ -220,20 +231,72 @@
           &lt;td&gt;2025.09.19&lt;/td&gt;
           &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://www.xalaok.top/post/stack-modify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;博客 Naive Koala&lt;/a&gt;】、【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/tags/hugo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客 莱特雷-letere&lt;/a&gt;】；动态背景来源参考【&lt;a class=&#34;link&#34; href=&#34;https://github.com/VincentGarreau&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；动态背景来源【&lt;a class=&#34;link&#34; href=&#34;https://github.com/VincentGarreau&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub VincentGarreau&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;实现 &lt;strong&gt;主页文章标题和图片&lt;/strong&gt; 动画效果；实现 &lt;strong&gt;回到顶部&lt;/strong&gt; 按钮动画效果；实现 &lt;strong&gt;首页加载动画&lt;/strong&gt; 效果；添加网站底部 &lt;strong&gt;小鱼游动&lt;/strong&gt; 动画；添加 &lt;strong&gt;左侧菜单栏&lt;/strong&gt; 动画；在 &lt;strong&gt;关于&lt;/strong&gt; 页面添加 &lt;strong&gt;博客文章热力图&lt;/strong&gt;；&lt;/td&gt;
           &lt;td&gt;2025.09.20&lt;/td&gt;
-          &lt;td&gt;动画来源参考【&lt;a class=&#34;link&#34; href=&#34;https://uiverse.io/shadowfax29/slippery-bullfrog-20&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;UIverse&lt;/a&gt;】；小鱼游动代码来源参考【&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Jsenna/article/details/120836708&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+          &lt;td&gt;动画来源【&lt;a class=&#34;link&#34; href=&#34;https://uiverse.io/shadowfax29/slippery-bullfrog-20&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;UIverse&lt;/a&gt;】；小鱼游动代码来源【&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Jsenna/article/details/120836708&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CSDN Jsenna&lt;/a&gt;】；教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/page-loading/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客 莱特雷-letere&lt;/a&gt;】；热力图代码参考【&lt;a class=&#34;link&#34; href=&#34;https://blog.douchi.space/hugo-blog-heatmap/#gsc.tab=0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；热力图代码来源【&lt;a class=&#34;link&#34; href=&#34;https://blog.douchi.space/hugo-blog-heatmap/#gsc.tab=0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;博客 椒盐豆豉&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;添加 &lt;strong&gt;RSS&lt;/strong&gt; 功能中英文版对应订阅，实现头像下方小图标悬停动画；widget2D模型改为 &lt;strong&gt;moc3&lt;/strong&gt;，添加自定义模型&lt;/td&gt;
+          &lt;td&gt;2025.09.23&lt;/td&gt;
+          &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/live2d-moc3/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1vf421X7Hn/?vd_source=25d94d3057857348a68699c1cf009900&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;B站 darkjungle8&lt;/a&gt;】&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;live2D文本适配Stack主题&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;站内私信系统&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;统一 &lt;strong&gt;链接&lt;/strong&gt; 页面的图片大小 64*64&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;添加评论功能&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;考虑使用Remark42&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;左侧边栏的“暗色模式”改进：显示不同图标和文本&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;链接&lt;/strong&gt; 的分类管理&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;模型只在主页加载一次，即使跳转页面也保留而不是频繁加载&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;添加打赏功能&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
@@ -266,10 +329,10 @@
         </item>
         <item>
         <title>链接</title>
-        <link>https://nullshowjl.github.io/%E9%93%BE%E6%8E%A5/</link>
+        <link>https://nullshowjl.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://nullshowjl.github.io/%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://nullshowjl.github.io/links/</guid>
         <description>&lt;p&gt;放了一些常用的技术链接、设计网站和常看的大佬博客。&lt;/p&gt;
 </description>
         </item>

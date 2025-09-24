@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 20 Sep 2025 10:38:00 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 24 Sep 2025 22:48:15 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>C&#43;&#43;</title>
         <link>https://nullshowjl.github.io/tags/c&#43;&#43;/</link>
         <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
@@ -29,6 +29,22 @@
         <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
         
         <guid>https://nullshowjl.github.io/tags/game-dev/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hugo</title>
+        <link>https://nullshowjl.github.io/tags/hugo/</link>
+        <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
+        
+        <guid>https://nullshowjl.github.io/tags/hugo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Web Dev</title>
+        <link>https://nullshowjl.github.io/tags/web-dev/</link>
+        <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
+        
+        <guid>https://nullshowjl.github.io/tags/web-dev/</guid>
         <description></description>
         </item>
         

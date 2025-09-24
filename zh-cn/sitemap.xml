@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nullshowjl.github.io/page/</loc>
-    <lastmod>2025-09-23T20:11:16+02:00</lastmod>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,8 +15,8 @@
                 href="https://nullshowjl.github.io/page/"
                 />
   </url><url>
-    <loc>https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/</loc>
-    <lastmod>2025-09-23T20:11:16+02:00</lastmod>
+    <loc>https://nullshowjl.github.io/about/</loc>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -25,17 +25,20 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://nullshowjl.github.io/%E5%85%B3%E4%BA%8E/"
+                href="https://nullshowjl.github.io/about/"
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-09-20T10:38:00+02:00</lastmod>
   </url><url>
+    <loc>https://nullshowjl.github.io/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
+  </url><url>
     <loc>https://nullshowjl.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2025-09-20T10:38:00+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/categories/</loc>
-    <lastmod>2025-09-22T22:41:59+02:00</lastmod>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -47,14 +50,20 @@
                 href="https://nullshowjl.github.io/categories/"
                 />
   </url><url>
+    <loc>https://nullshowjl.github.io/categories/dev-log/</loc>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
+  </url><url>
     <loc>https://nullshowjl.github.io/tags/easyx/</loc>
     <lastmod>2025-09-20T10:38:00+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/tags/game-dev/</loc>
     <lastmod>2025-09-20T10:38:00+02:00</lastmod>
   </url><url>
+    <loc>https://nullshowjl.github.io/tags/hugo/</loc>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
+  </url><url>
     <loc>https://nullshowjl.github.io/post/</loc>
-    <lastmod>2025-09-20T10:38:00+02:00</lastmod>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -67,7 +76,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/tags/</loc>
-    <lastmod>2025-09-20T10:38:00+02:00</lastmod>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -79,8 +88,11 @@
                 href="https://nullshowjl.github.io/tags/"
                 />
   </url><url>
+    <loc>https://nullshowjl.github.io/tags/web-dev/</loc>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
+  </url><url>
     <loc>https://nullshowjl.github.io/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2025-09-22T16:32:46+02:00</lastmod>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -130,8 +142,8 @@
     <loc>https://nullshowjl.github.io/categories/study-notes/</loc>
     <lastmod>2025-09-22T22:41:59+02:00</lastmod>
   </url><url>
-    <loc>https://nullshowjl.github.io/%E9%93%BE%E6%8E%A5/</loc>
-    <lastmod>2025-09-22T22:41:59+02:00</lastmod>
+    <loc>https://nullshowjl.github.io/links/</loc>
+    <lastmod>2025-09-24T22:48:15+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -140,7 +152,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://nullshowjl.github.io/%E9%93%BE%E6%8E%A5/"
+                href="https://nullshowjl.github.io/links/"
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/search/</loc>
