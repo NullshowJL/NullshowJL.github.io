@@ -7,6 +7,277 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright><atom:link href="https://nullshowjl.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【开发日志】我的技术博客网站</title>
+        <link>https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+        <pubDate>Wed, 24 Sep 2025 09:01:30 +0200</pubDate>
+        
+        <guid>https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+        <description>&lt;img src="https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/blog.jpg" alt="Featured image of post 【开发日志】我的技术博客网站" /&gt;&lt;h2 id=&#34;概览&#34;&gt;概览
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目目标&lt;/strong&gt;：从零开始开发一个个人博客网站，用来记录和分享我在学习、开发中的笔记 、历程和感悟，也是 portfolio 的一部分&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;技术栈&lt;/strong&gt;：GitHub Page + Hugo，在Stack theme基础上进行轻量定制修改&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开始时间&lt;/strong&gt;：2025-09-14&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当前状态&lt;/strong&gt;：进行中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;学习资源&lt;/strong&gt;：Hugo官方文档、stack主题文档、B站及网上各位大佬的教程&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;仓库链接&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://github.com/NullshowJL/NullshowJL.github.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;时间线阶段一&#34;&gt;时间线——阶段一
+&lt;/h2&gt;&lt;h3 id=&#34;2025-09-14&#34;&gt;2025-09-14
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;创建网站并完成自动部署&lt;/li&gt;
+&lt;li&gt;添加基础版 &lt;strong&gt;看板娘&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;中英语切换时找不到网页&lt;/li&gt;
+&lt;li&gt;icon小图标在网站标签不显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;在VS Code中使用Github copilot，帮我写了转换语言的js文件&lt;/li&gt;
+&lt;li&gt;用在别人网页中成功显示的小图标进行测试，排除了图片本身的问题；后来因为处理别的模块，没有在意icon小图标，一段时间后自动显示出来了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;思考/收获：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;需要边开发边系统学习web programming，才能“知其然，知其所以然”，而不是百分之百依赖AI&lt;/li&gt;
+&lt;li&gt;Github Pages的部署很快，但是在网页显示没有那么及时；如果检查了仓库已经推送上去了，如果此时效果还未显示，不要着急，等一等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-16&#34;&gt;2025-09-16
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;左边侧栏添加 &lt;strong&gt;更新日志&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;上传第一篇博客（中文版）&lt;/li&gt;
+&lt;li&gt;修改字体&lt;/li&gt;
+&lt;li&gt;使用自定义鼠标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;自定义鼠标不显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;查看了教程博客的评论区，发现可能是图片的问题。使用了教程博主的图片素材测试，发现确实如此&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;遇到问题可以看文章或者视频的评论区，常有启发和收获，因为我遇到过的问题也许别人早就遇到并解决了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-18&#34;&gt;2025-09-18
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：做完一系列基础美化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不知道如何能使每个语言、代码都显示对应的字体&lt;/li&gt;
+&lt;li&gt;自动部署时遇到 &lt;strong&gt;语法报错&lt;/strong&gt; 失败&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用Copilot生成代码建议解决了字体问题&lt;/li&gt;
+&lt;li&gt;语法报错是和缩进有关的，用VS Code它会自动按照它认为对的格式，但其实是错的。换成 &lt;strong&gt;记事本&lt;/strong&gt; 解决&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端的语言和缩进也是有关系的，以后需要用 &lt;strong&gt;记事本&lt;/strong&gt; 或者其他编辑器操作，尽量不用VS Code避免类似情况发生&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-19&#34;&gt;2025-09-19
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;继续做基础美化&lt;/li&gt;
+&lt;li&gt;调整 &lt;strong&gt;背景颜色&lt;/strong&gt; 图标和文本&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;动态背景&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;文章浏览量&lt;/strong&gt; 统计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;调整背景颜色时先遇到了两个图标同时显示的问题，解决后发现 &lt;strong&gt;文本格式&lt;/strong&gt; 没有和左侧菜单栏的其他项目文本对齐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
+    &lt;p&gt;尝试解决了很久没有成功，先放一放，等学一段时间前端后再回过头来尝试解决&lt;/p&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-20&#34;&gt;2025-09-20
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;继续做基础美化&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;主页加载动画&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;网站底部动画&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;博客发表热力图&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;网站底部出现不是博客内容的文字&lt;/li&gt;
+&lt;li&gt;想为 &lt;strong&gt;头像&lt;/strong&gt; 下的小图标增加动画效果，但是没有实现效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用AI排查出是&lt;code&gt;custom.html&lt;/code&gt;的注释问题，我想当然地使用了&lt;code&gt;C++&lt;/code&gt;的注释，但是被浏览器当做文本处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;小图标&lt;/strong&gt; 的动画效果在学完一些前端后再尝试解决（9-23已解决）&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每种语言的注释格式看来相差挺大的，需要小心严格遵循对应的语法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-22&#34;&gt;2025-09-22
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;继续做基础美化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt; 页面的卡片图片无法统一大小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
+    &lt;ul&gt;
+&lt;li&gt;尝试解决后仍然失败，先用调整每张图片的方法暂时处理，等学完一些前端后再继续尝试统一处理&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-23&#34;&gt;2025-09-23
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;添加RSS，实现根据语言订阅不同版本&lt;/li&gt;
+&lt;li&gt;虚拟人物widget2D改为 &lt;strong&gt;moc3&lt;/strong&gt; 版本&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;网站底部动画&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;添加 &lt;strong&gt;博客发表热力图&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;虚拟人物无法加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过浏览器 &lt;strong&gt;开发者工具&lt;/strong&gt; debug，获取error信息后结合AI排查出model存放地址的文件夹后少写&lt;code&gt;\&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在写文件地址时要小心核对&lt;/li&gt;
+&lt;li&gt;使用开发者工具debug很有用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-24&#34;&gt;2025-09-24
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引入新的虚拟人物模型，并将所有模型参数配置成自己喜欢的样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新的虚拟人物无法加载&lt;/li&gt;
+&lt;li&gt;通过CDN工具 &lt;strong&gt;jsDelivr&lt;/strong&gt; 加载时发现它不加载新推送的文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过浏览器 &lt;strong&gt;开发者工具&lt;/strong&gt; 的报错信息发现，新模型加载失败是因为该模型过大导致，所以决定放弃使用这个新模型&lt;/li&gt;
+&lt;li&gt;询问AI得知，&lt;strong&gt;jsDelivr&lt;/strong&gt; 出于稳定性的考虑，一旦tag（缓存）建立，就不会自动更新，即使删除并重建tag。如果版本号一致，那么它只会加载老版本的快照。最后采用了 &lt;strong&gt;精准&lt;/strong&gt; 加载的方法处理，因为不想在仓库留下一堆无用的文件和tag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一次意识到文件大小在网络传输时的重要性。就像我在玩Brotato这样Roguelike的后面几关时注意到大量游戏资源的管理是游戏开发的一个重点一样，每一个编程方向虽有其共性，但也有其特别需要关注的点，这些点需要在实战中慢慢体会&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;阶段小结一&#34;&gt;阶段小结一
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目前进展&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;完成个人技术博客的初步开发，包括自动部署和一定程度的美化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;收获&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;了解静态网站生成器的基本原理（配置 → 模板 → 渲染）&lt;/li&gt;
+&lt;li&gt;初步掌握GitHub Pages 部署流程&lt;/li&gt;
+&lt;li&gt;这一阶段没有学习过任何前端的内容，所以所有开发都是参考了网上大佬们的教程、以及在AI的帮助下完成的。在这一过程中学会了 &lt;strong&gt;如何向AI更精准地提问&lt;/strong&gt;，让它来帮助我解决问题的能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;下一步计划&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;系统学习前端，并尝试解决阶段一未解决的问题&lt;/li&gt;
+&lt;li&gt;阅读/ 理解 &lt;strong&gt;魔改部分&lt;/strong&gt; 代码&lt;/li&gt;
+&lt;li&gt;按照 &lt;em&gt;&lt;strong&gt;TODO list&lt;/strong&gt;&lt;/em&gt; 持续更新本站&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>关于</title>
         <link>https://nullshowjl.github.io/about/</link>
         <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
@@ -56,11 +327,11 @@
   
   var dataMap = new Map();
   
-    var key = &#34;2025-09-18&#34;;
+    var key = &#34;2025-09-24&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;4.6&#34;;
-    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
-    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
+    var wordCount = &#34;1.9&#34;;
+    var link = &#34;/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/&#34;;
+    var title = &#34;【开发日志】我的技术博客网站&#34;;
 
     
     
@@ -69,9 +340,9 @@
     }
     var key = &#34;2025-09-18&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;1.9&#34;;
-    var link = &#34;/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/&#34;;
-    var title = &#34;【日志】我的技术博客网站&#34;;
+    var wordCount = &#34;4.6&#34;;
+    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
+    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
 
     
     
@@ -197,7 +468,7 @@
         <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
         
         <guid>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;img src="https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/tictactoe.jpg" alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】- 基础" /&gt;&lt;h2 id=&#34;概览&#34;&gt;概览
+        <description>&lt;img src="https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/tictactoe.webp" alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】- 基础" /&gt;&lt;h2 id=&#34;概览&#34;&gt;概览
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;技术栈&lt;/strong&gt;：C++ + EasyX&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;项目目标&lt;/strong&gt;：完成 EasyX 环境搭建，完成两个小demo（跟随鼠标的小球、井字棋），理解游戏循环的雏形&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;课程来源&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1iQ4y1s7Qj?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -334,7 +605,7 @@
 &lt;h3 id=&#34;知识点&#34;&gt;知识点
 &lt;/h3&gt;&lt;h4 id=&#34;easyx-的坐标系&#34;&gt;EasyX 的坐标系
 &lt;/h4&gt;&lt;p&gt;EasyX 的坐标系在屏幕左上方，x 轴的正方向向右，y 轴的正方向向下。&lt;/p&gt;
-&lt;img src=&#34;image-20250915132044062.png&#34; alt=&#34;坐标系&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;image-20250915132044062.webp&#34; alt=&#34;坐标系&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;h4 id=&#34;渲染缓冲区&#34;&gt;渲染缓冲区
 &lt;/h4&gt;&lt;p&gt;可以把渲染缓冲区想象成一块巨大的画布，调用Draw逻辑的过程就是在“画布”上画画。先绘制的内容会被后绘制的内容覆盖，而调用&lt;code&gt;cleardevice()&lt;/code&gt;就等于是用当前的填充颜色（默认黑色）将“画布”覆盖了一遍。&lt;/p&gt;
 &lt;p&gt;调用&lt;code&gt;BeginBatchDraw()&lt;/code&gt;就相当于EasyX为我们新建了一块画布，而这块画布就是新的渲染缓冲区。它和窗口的渲染缓冲区不一样的是，它是不可见的。随后执行的所有Draw逻辑，都会绘制在这块新的画布上。当调用&lt;code&gt;FlushBatchDraw()&lt;/code&gt;和&lt;code&gt;EndBatchDraw()&lt;/code&gt;时，EasyX会将这两块画布进行迅速交换，这一过程非常迅速以至于我们是看不见的。所以这样就解决因为绘制频繁而导致的画面闪烁问题。&lt;/p&gt;
@@ -464,7 +735,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;细化读取操作部分逻辑&#34;&gt;细化读取操作部分逻辑
 &lt;/h4&gt;&lt;p&gt;鼠标的坐标在窗口其实是像素点的坐标，于是需要将鼠标的坐标转化为棋盘的网格。用图展示其对应的关系：&lt;/p&gt;
-&lt;img src=&#34;image-20250915194915206.png&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;image-20250915194915206.webp&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;p&gt;对应的代码可以表示为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -516,9 +787,9 @@
 &lt;/div&gt;&lt;h4 id=&#34;细化绘制部分的逻辑&#34;&gt;细化绘制部分的逻辑
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;棋盘的绘制&lt;/strong&gt;：直接只用&lt;code&gt;line()&lt;/code&gt;对应相应的像素坐标。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;X 棋子的绘制&lt;/strong&gt;：同样使用&lt;code&gt;line()&lt;/code&gt;绘制，只不过使用的是对角线的像素坐标。&lt;/p&gt;
-&lt;img src=&#34;image-20250915200611419.png&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;image-20250915200611419.webp&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;p&gt;&lt;strong&gt;O 棋子的绘制&lt;/strong&gt;：使用&lt;code&gt;circle()&lt;/code&gt;绘制，圆心的x和y分别要在各自棋盘格子像素点的基础上多加100个像素单位。&lt;/p&gt;
-&lt;img src=&#34;image-20250915201039024.png&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
+&lt;img src=&#34;image-20250915201039024.webp&#34; alt=&#34;&#34; style=&#34;zoom:33%;&#34; /&gt;
 &lt;p&gt;&lt;strong&gt;提示信息的绘制&lt;/strong&gt;：为了在更通用的编码环境下使用，用了并不常见的类型和函数，但是和C中的&lt;code&gt;printf()&lt;/code&gt;类似。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -958,278 +1229,6 @@
 </description>
         </item>
         <item>
-        <title>【日志】我的技术博客网站</title>
-        <link>https://nullshowjl.github.io/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
-        <pubDate>Thu, 18 Sep 2025 09:01:30 +0200</pubDate>
-        
-        <guid>https://nullshowjl.github.io/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
-        <description>&lt;img src="https://nullshowjl.github.io/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/blog.webp" alt="Featured image of post 【日志】我的技术博客网站" /&gt;&lt;h2 id=&#34;概览&#34;&gt;概览
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;项目目标&lt;/strong&gt;：从零开始开发一个个人博客网站，用来记录和分享我在学习、开发中的笔记 、历程和感悟，也是 portfolio 的一部分&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;技术栈&lt;/strong&gt;：GitHub Page + Hugo，在Stack theme基础上进行轻量定制修改&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;开始时间&lt;/strong&gt;：2025-09-14&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;当前状态&lt;/strong&gt;：进行中&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;学习资源&lt;/strong&gt;：Hugo官方文档、stack主题文档、B站及网上各位大佬的教程&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;仓库链接&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://github.com/NullshowJL/NullshowJL.github.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;时间线阶段一&#34;&gt;时间线——阶段一
-&lt;/h2&gt;&lt;h3 id=&#34;2025-09-14&#34;&gt;2025-09-14
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;创建网站并完成自动部署&lt;/li&gt;
-&lt;li&gt;添加基础版 &lt;strong&gt;看板娘&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;中英语切换时找不到网页&lt;/li&gt;
-&lt;li&gt;icon小图标在网站标签不显示&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;在VS Code中使用Github copilot，帮我写了转换语言的js文件&lt;/li&gt;
-&lt;li&gt;用在别人网页中成功显示的小图标进行测试，排除了图片本身的问题；后来因为处理别的模块，没有在意icon小图标，一段时间后自动显示出来了&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;思考/收获：&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;需要边开发边系统学习web programming，才能“知其然，知其所以然”，而不是百分之百依赖AI&lt;/li&gt;
-&lt;li&gt;Github Pages的部署很快，但是在网页显示没有那么及时；如果检查了仓库已经推送上去了，如果此时效果还未显示，不要着急，等一等&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-16&#34;&gt;2025-09-16
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;左边侧栏添加 &lt;strong&gt;更新日志&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;上传第一篇博客（中文版）&lt;/li&gt;
-&lt;li&gt;修改字体&lt;/li&gt;
-&lt;li&gt;使用自定义鼠标&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;自定义鼠标不显示&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;查看了教程博客的评论区，发现可能是图片的问题。使用了教程博主的图片素材测试，发现确实如此&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;遇到问题可以看文章或者视频的评论区，常有启发和收获，因为我遇到过的问题也许别人早就遇到并解决了&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-18&#34;&gt;2025-09-18
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：做完一系列基础美化&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不知道如何能使每个语言、代码都显示对应的字体&lt;/li&gt;
-&lt;li&gt;自动部署时遇到 &lt;strong&gt;语法报错&lt;/strong&gt; 失败&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用Copilot生成代码建议解决了字体问题&lt;/li&gt;
-&lt;li&gt;语法报错是和缩进有关的，用VS Code它会自动按照它认为对的格式，但其实是错的。换成 &lt;strong&gt;记事本&lt;/strong&gt; 解决&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;前端的语言和缩进也是有关系的，以后需要用 &lt;strong&gt;记事本&lt;/strong&gt; 或者其他编辑器操作，尽量不用VS Code避免类似情况发生&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-19&#34;&gt;2025-09-19
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;继续做基础美化&lt;/li&gt;
-&lt;li&gt;调整 &lt;strong&gt;背景颜色&lt;/strong&gt; 图标和文本&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;动态背景&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;文章浏览量&lt;/strong&gt; 统计&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;调整背景颜色时先遇到了两个图标同时显示的问题，解决后发现 &lt;strong&gt;文本格式&lt;/strong&gt; 没有和左侧菜单栏的其他项目文本对齐&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
-&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
-    &lt;p&gt;尝试解决了很久没有成功，先放一放，等学一段时间前端后再回过头来尝试解决&lt;/p&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-20&#34;&gt;2025-09-20
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;继续做基础美化&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;主页加载动画&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;网站底部动画&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;博客发表热力图&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;网站底部出现不是博客内容的文字&lt;/li&gt;
-&lt;li&gt;想为 &lt;strong&gt;头像&lt;/strong&gt; 下的小图标增加动画效果，但是没有实现效果&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;利用AI排查出是&lt;code&gt;custom.html&lt;/code&gt;的注释问题，我想当然地使用了&lt;code&gt;C++&lt;/code&gt;的注释，但是被浏览器当做文本处理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
-&lt;blockquote class=&#34;alert alert-note&#34;&gt;
-    &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;小图标&lt;/strong&gt; 的动画效果在学完一些前端后再尝试解决（9-23已解决）&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;每种语言的注释格式看来相差挺大的，需要小心严格遵循对应的语法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-22&#34;&gt;2025-09-22
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;继续做基础美化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt; 页面的卡片图片无法统一大小&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
-&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
-    &lt;ul&gt;
-&lt;li&gt;尝试解决后仍然失败，先用调整每张图片的方法暂时处理，等学完一些前端后再继续尝试统一处理&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-23&#34;&gt;2025-09-23
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;添加RSS，实现根据语言订阅不同版本&lt;/li&gt;
-&lt;li&gt;虚拟人物widget2D改为 &lt;strong&gt;moc3&lt;/strong&gt; 版本&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;网站底部动画&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;添加 &lt;strong&gt;博客发表热力图&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;虚拟人物无法加载&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过浏览器 &lt;strong&gt;开发者工具&lt;/strong&gt; debug，获取error信息后结合AI排查出model存放地址的文件夹后少写&lt;code&gt;\&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在写文件地址时要小心核对&lt;/li&gt;
-&lt;li&gt;使用开发者工具debug很有用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2025-09-24&#34;&gt;2025-09-24
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;引入新的虚拟人物模型，并将所有模型参数配置成自己喜欢的样式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;新的虚拟人物无法加载&lt;/li&gt;
-&lt;li&gt;通过CDN工具 &lt;strong&gt;jsDelivr&lt;/strong&gt; 加载时发现它不加载新推送的文件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过浏览器 &lt;strong&gt;开发者工具&lt;/strong&gt; 的报错信息发现，新模型加载失败是因为该模型过大导致，所以决定放弃使用这个新模型&lt;/li&gt;
-&lt;li&gt;询问AI得知，&lt;strong&gt;jsDelivr&lt;/strong&gt; 出于稳定性的考虑，一旦tag（缓存）建立，就不会自动更新，即使删除并重建tag。如果版本号一致，那么它只会加载老版本的快照。最后采用了 &lt;strong&gt;精准&lt;/strong&gt; 加载的方法处理，因为不想在仓库留下一堆无用的文件和tag&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第一次意识到文件大小在网络传输时的重要性。就像我在玩Brotato这样Roguelike的后面几关时注意到大量游戏资源的管理是游戏开发的一个重点一样，每一个编程方向虽有其共性，但也有其特别需要关注的点，这些点需要在实战中慢慢体会&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;阶段小结一&#34;&gt;阶段小结一
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;目前进展&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;完成个人技术博客的初步开发，包括自动部署和一定程度的美化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;收获&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;了解静态网站生成器的基本原理（配置 → 模板 → 渲染）&lt;/li&gt;
-&lt;li&gt;初步掌握GitHub Pages 部署流程&lt;/li&gt;
-&lt;li&gt;这一阶段没有学习过任何前端的内容，所以所有开发都是参考了网上大佬们的教程、以及在AI的帮助下完成的。在这一过程中学会了 &lt;strong&gt;如何向AI更精准地提问&lt;/strong&gt;，让它来帮助我解决问题的能力&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;下一步计划&lt;/strong&gt;：
-&lt;ul&gt;
-&lt;li&gt;系统学习前端，并尝试解决阶段一未解决的问题&lt;/li&gt;
-&lt;li&gt;阅读/ 理解 &lt;strong&gt;魔改部分&lt;/strong&gt; 代码&lt;/li&gt;
-&lt;li&gt;按照 &lt;em&gt;&lt;strong&gt;TODO list&lt;/strong&gt;&lt;/em&gt; 持续更新本站&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>更新日志</title>
         <link>https://nullshowjl.github.io/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</link>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
@@ -1298,42 +1297,42 @@
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;live2D文本适配Stack主题&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;站内私信系统&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;统一 &lt;strong&gt;链接&lt;/strong&gt; 页面的图片大小 64*64&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;添加评论功能&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;考虑使用Remark42&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;左侧边栏的“暗色模式”改进：显示不同图标和文本&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;链接&lt;/strong&gt; 的分类管理&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;模型只在主页加载一次，即使跳转页面也保留而不是频繁加载&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;添加打赏功能&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
@@ -1354,6 +1353,22 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;TODO&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;live2D
+&lt;ul&gt;
+&lt;li&gt;文本适配stack主题&lt;/li&gt;
+&lt;li&gt;实现中英文页面显示对应语言的文本&lt;/li&gt;
+&lt;li&gt;模型只在主页加载一次，即使跳转页面也保留而不是频繁加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;添加评论功能（考虑使用Remark42）&lt;/li&gt;
+&lt;li&gt;添加站内私信系统&lt;/li&gt;
+&lt;li&gt;统一 &lt;strong&gt;链接&lt;/strong&gt; 页面的图片大小 64*64&lt;/li&gt;
+&lt;li&gt;左侧边栏的“暗色模式”改进：显示不同图标和文本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt; 页面的分类管理&lt;/li&gt;
+&lt;li&gt;添加打赏功能&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

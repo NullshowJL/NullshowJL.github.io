@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Wed, 24 Sep 2025 22:48:15 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 25 Sep 2025 00:33:52 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
         <link>https://nullshowjl.github.io/about/</link>
         <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
@@ -57,11 +57,11 @@
   
   var dataMap = new Map();
   
-    var key = &#34;2025-09-18&#34;;
+    var key = &#34;2025-09-24&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;4.6&#34;;
-    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
-    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
+    var wordCount = &#34;1.9&#34;;
+    var link = &#34;/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/&#34;;
+    var title = &#34;【开发日志】我的技术博客网站&#34;;
 
     
     
@@ -70,9 +70,9 @@
     }
     var key = &#34;2025-09-18&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;1.9&#34;;
-    var link = &#34;/p/%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/&#34;;
-    var title = &#34;【日志】我的技术博客网站&#34;;
+    var wordCount = &#34;4.6&#34;;
+    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80/&#34;;
+    var title = &#34;【从零开始的C++游戏开发】- 基础&#34;;
 
     
     
@@ -261,42 +261,42 @@
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;live2D文本适配Stack主题&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;站内私信系统&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;统一 &lt;strong&gt;链接&lt;/strong&gt; 页面的图片大小 64*64&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;添加评论功能&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;考虑使用Remark42&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;左侧边栏的“暗色模式”改进：显示不同图标和文本&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;链接&lt;/strong&gt; 的分类管理&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;模型只在主页加载一次，即使跳转页面也保留而不是频繁加载&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;添加打赏功能&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
@@ -317,6 +317,22 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;TODO&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;live2D
+&lt;ul&gt;
+&lt;li&gt;文本适配stack主题&lt;/li&gt;
+&lt;li&gt;实现中英文页面显示对应语言的文本&lt;/li&gt;
+&lt;li&gt;模型只在主页加载一次，即使跳转页面也保留而不是频繁加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;添加评论功能（考虑使用Remark42）&lt;/li&gt;
+&lt;li&gt;添加站内私信系统&lt;/li&gt;
+&lt;li&gt;统一 &lt;strong&gt;链接&lt;/strong&gt; 页面的图片大小 64*64&lt;/li&gt;
+&lt;li&gt;左侧边栏的“暗色模式”改进：显示不同图标和文本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt; 页面的分类管理&lt;/li&gt;
+&lt;li&gt;添加打赏功能&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
