@@ -480,6 +480,17 @@ version: "3.1"
   
   var dataMap = new Map();
   
+    var key = "2025-09-28";
+    var value = dataMap.get(key);
+    var wordCount = "1.0";
+    var link = "/p/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD%E5%B8%B8%E7%94%A8%E8%A1%A8%E8%BE%BE/";
+    var title = "【专业英语】常用表达";
+
+    
+    
+    if (value == null || wordCount > value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = "2025-09-24";
     var value = dataMap.get(key);
     var wordCount = "1.9";
