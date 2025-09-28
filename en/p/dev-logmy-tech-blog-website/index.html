@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Record development process of this website">
+<title>【Dev Log】My Tech Blog Website</title>
+
+<link rel='canonical' href='https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac7cb9b0b2a62c6ec16555594a01bdcbdfa955f0feb53069b01eadd96fe1a194.css"><meta property='og:title' content="【Dev Log】My Tech Blog Website">
+<meta property='og:description' content="Record development process of this website">
+<meta property='og:url' content='https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/'>
+<meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Web Dev' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2025-09-24T09:11:30&#43;02:00'/><meta property='article:modified_time' content='2025-09-28T22:49:43&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/blog-en.webp' />
+<meta name="twitter:title" content="【Dev Log】My Tech Blog Website">
+<meta name="twitter:description" content="Record development process of this website"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/blog-en.webp' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+        
+        <figure class="site-avatar">
+            <a href="/en/">
+                
+                
+
+                
+                
+                <img src="/img/avatar_hu_707be34854ee244.png" width="300"
+                     height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                
+            </a>
+            
+            <span class="emoji">✍️</span>
+            
+        </figure>
+        
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Nullshow&#39;s Tech Blog</a></h1>
+            <h2 class="site-description">Sharing and documenting my notes, experiences, and reflections from development and learning~</h2>
+        </div>
+    </header><ol class="menu-social">
+        
+        
+        
+        <li>
+            <a href='https://github.com/NullshowJL'
+                target="_blank" 
+                title="GitHub" 
+               rel="me">
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-brand-github">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li>
+            <a href='/en/index.xml'
+                target="_blank" 
+                title="RSS" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss" class="icon-tabler-brand-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+                
+            </a>
+        </li>
+        
+    </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-home">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-user">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/update-log/' >
+                
+                
+                
+                <!--
+unicode: "fea7"
+version: "3.1"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ class="icon-tabler-logs">
+  <path d="M4 12h.01" />
+  <path d="M4 6h.01" />
+  <path d="M4 18h.01" />
+  <path d="M8 18h2" />
+  <path d="M8 12h2" />
+  <path d="M8 6h2" />
+  <path d="M14 6h6" />
+  <path d="M14 12h6" />
+  <path d="M14 18h6" />
+</svg>
+
+                
+                <span>Update Log</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-archives">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-search">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-link">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                        <option value="https://nullshowjl.github.io/en/"  selected>English</option>
+                        
+                        <option value="https://nullshowjl.github.io/" >中文</option>
+                        
+                    </select>
+                </li>
+                
+                
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-left">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-right">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-hash">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#timeline--phase-one">Timeline &ndash; Phase One</a>
+      <ol>
+        <li><a href="#2025-09-14">2025-09-14</a></li>
+        <li><a href="#2025-09-16">2025-09-16</a></li>
+        <li><a href="#2025-09-18">2025-09-18</a></li>
+        <li><a href="#2025-09-19">2025-09-19</a></li>
+        <li><a href="#2025-09-20">2025-09-20</a></li>
+        <li><a href="#2025-09-22">2025-09-22</a></li>
+        <li><a href="#2025-09-23">2025-09-23</a></li>
+        <li><a href="#2025-09-24">2025-09-24</a></li>
+      </ol>
+    </li>
+    <li><a href="#phase-one-summary">Phase One Summary</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/dev-logmy-tech-blog-website/">
+                <img src="/en/p/dev-logmy-tech-blog-website/blog-en_hu_72094602522c260e.webp"
+                        srcset="/en/p/dev-logmy-tech-blog-website/blog-en_hu_72094602522c260e.webp 800w, /en/p/dev-logmy-tech-blog-website/blog-en_hu_9541486f0ca11ba0.webp 1600w"
+                        width="800" 
+                        height="240" 
+                        loading="lazy"
+                        alt="Featured image of post 【Dev Log】My Tech Blog Website" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/dev-logs/" >
+                Dev Logs
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/dev-logmy-tech-blog-website/">【Dev Log】My Tech Blog Website</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Record development process of this website
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+<footer class="article-time">
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-date">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+        <time class="article-time--published">Sep 24, 2025</time>
+    </div>
+    
+
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--reading">
+            4 minute read
+        </time>
+    </div>
+    
+
+    
+    <div id="viewCount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye" class="icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+        <time class="article-time--reading">
+            
+            <span id="vercount_value_page_pv">loading... </span> views
+        </time>
+    </div>
+
+</footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="overview">Overview
+</h2><ul>
+<li><strong>Project Goal</strong>: Build a personal blog website from scratch to document and share my learning notes, development journey, and reflections. It also serves as part of my portfolio.</li>
+<li><strong>Tech Stack</strong>: GitHub Pages + Hugo, with lightweight customizations based on the Stack theme.</li>
+<li><strong>Start Date</strong>: 2025-09-14</li>
+<li><strong>Current Status</strong>: In progress</li>
+<li><strong>Learning Resources</strong>: Hugo official docs, Stack theme docs, tutorials from Bilibili and other creators online.</li>
+<li><strong>Repository</strong>: <a class="link" href="https://github.com/NullshowJL/NullshowJL.github.io"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h2 id="timeline--phase-one">Timeline &ndash; Phase One
+</h2><h3 id="2025-09-14">2025-09-14
+</h3><ul>
+<li><strong>Goals</strong>：
+<ul>
+<li>Set up the site and enable auto-deployment</li>
+<li>Add a basic version of the <strong>animated character widget</strong></li>
+</ul>
+</li>
+<li><strong>Issues</strong>：
+<ul>
+<li>Page not found when switching between Chinese and English</li>
+<li>Website tab icon not showing</li>
+</ul>
+</li>
+<li><strong>Solutions</strong>:
+<ul>
+<li>Used GitHub Copilot in VS Code to help write a JS file for language switching</li>
+<li>Tested with icons that worked on other websites to rule out image issues; the icon eventually appeared after I worked on other modules</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Thoughts</strong>:
+<ul>
+<li>I need to learn web programming systematically while developing, so I can understand not just how things work, but why</li>
+<li>GitHub Pages deploys quickly, but changes may take time to show. If the repo is updated but the site hasn’t refreshed, just wait a bit</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-16">2025-09-16
+</h3><ul>
+<li><strong>Goals</strong>:
+<ul>
+<li>Add an <strong>Update Log</strong> to the sidebar</li>
+<li>Upload the first blog post (Chinese version)</li>
+<li>Change fonts</li>
+<li>Use a custom cursor</li>
+</ul>
+</li>
+<li><strong>Issue</strong>:
+<ul>
+<li>Custom cursor not showing</li>
+</ul>
+</li>
+<li><strong>Solution</strong>:
+<ul>
+<li>Found in the tutorial’s comment section that the issue might be with the image. Tested with the blogger’s image and it worked</li>
+</ul>
+</li>
+<li><strong>Thoughts</strong>:
+<ul>
+<li>Comments under articles or videos can be very helpful—others may have already solved the same problem</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-18">2025-09-18
+</h3><ul>
+<li><strong>Goal</strong>:
+<ul>
+<li>Finish a round of basic visual improvements</li>
+</ul>
+</li>
+<li><strong>Issues</strong>:
+<ul>
+<li>Unsure how to apply specific fonts to different languages and code blocks</li>
+<li><strong>Syntax error</strong> during auto-deployment</li>
+</ul>
+</li>
+<li><strong>Solutions</strong>:
+<ul>
+<li>Used Copilot’s suggestions to fix the font issue</li>
+<li>Syntax error was due to indentation. VS Code auto-formatted incorrectly, so I switched to <strong>Notepad</strong> to fix it</li>
+</ul>
+</li>
+<li><strong>Thoughts</strong>:
+<ul>
+<li>Front-end code is sensitive to indentation. Better to use <strong>Notepad</strong> or other editors instead of VS Code for certain tasks</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-19">2025-09-19
+</h3><ul>
+<li>
+<p><strong>Goals</strong>:</p>
+<ul>
+<li>Continue visual improvements</li>
+<li>Adjust icons and text for <strong>Color Scheme</strong></li>
+<li>Add <strong>dynamic background</strong></li>
+<li>Add <strong>blog view counter</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Issue</strong>:</p>
+<ul>
+<li>After fixing overlapping icons, <strong>text formatting</strong> still didn’t align with other sidebar items</li>
+</ul>
+</li>
+<li>
+<p><strong>Notes</strong>：</p>
+<blockquote class="alert alert-warn">
+    <p>Tried for quite a while without success &ndash; I&rsquo;ll leave it for now and revisit it after I’ve studied more front-end</p></blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-20">2025-09-20
+</h3><ul>
+<li>
+<p><strong>Goals</strong>:</p>
+<ul>
+<li>Continue visual improvements</li>
+<li>Add <strong>homepage loading animation</strong></li>
+<li>Add <strong>footer animation</strong></li>
+<li>Add <strong>blog post heatmap</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Issues</strong>:</p>
+<ul>
+<li>Unrelated text appeared at the bottom of the site</li>
+<li>Tried adding animation to the <strong>icon below the avatar</strong> but it didn’t work</li>
+</ul>
+</li>
+<li>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>AI helped identify the issue: I used <code>C++</code> style comments in <code>custom.html</code>, which browsers treated as text</li>
+</ul>
+</li>
+<li>
+<p><strong>Notes</strong>：</p>
+<blockquote class="alert alert-note">
+    <ul>
+<li>Will revisit the <strong>small icon animation</strong> after learning more front-end (fixed on 9-23)</li>
+</ul></blockquote>
+</li>
+<li>
+<p><strong>Thoughts</strong>:</p>
+<ul>
+<li>Comment syntax varies a lot between languages - important to follow the correct format strictly</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-22">2025-09-22
+</h3><ul>
+<li>
+<p><strong>Goal</strong>：</p>
+<ul>
+<li>Continue visual improvements</li>
+</ul>
+</li>
+<li>
+<p><strong>Issue</strong>：</p>
+<ul>
+<li><strong>Link</strong> page card images couldn’t be resized uniformly</li>
+</ul>
+</li>
+<li>
+<p><strong>Notes</strong>：</p>
+<blockquote class="alert alert-warn">
+    <ul>
+<li>Still couldn’t solve the issue, so I’ve manually adjusted each image for now. Will come back to unify the layout after I’ve learned more front-end</li>
+</ul></blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-23">2025-09-23
+</h3><ul>
+<li>
+<p><strong>Goals</strong>:</p>
+<ul>
+<li>Add RSS feeds for language-specific subscriptions</li>
+<li>Upgrade character widget2D to <strong>moc3</strong> version</li>
+<li>Add <strong>footer animation</strong></li>
+<li>Add <strong>blog post heatmap</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Issue</strong>:</p>
+<ul>
+<li>Character model failed to load</li>
+</ul>
+</li>
+<li>
+<p><strong>Solution</strong>:</p>
+<ul>
+<li>Used browser <strong>dev tools</strong> to debug. AI helped identify a missing <code>\</code> in the model folder path</li>
+</ul>
+</li>
+<li>
+<p><strong>Thoughts</strong>:</p>
+<ul>
+<li>Always double-check file paths</li>
+<li>Dev tools are super useful for debugging</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2025-09-24">2025-09-24
+</h3><ul>
+<li>
+<p><strong>Goals</strong>:</p>
+<ul>
+<li>Add a new character model and customize all parameters</li>
+</ul>
+</li>
+<li>
+<p><strong>Issues</strong>:</p>
+<ul>
+<li>New model failed to load</li>
+<li><strong>jsDelivr</strong> didn’t load newly pushed files</li>
+</ul>
+</li>
+<li>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li><strong>Dev tools</strong> showed the model was too large, so I decided to abandon it</li>
+<li>Learned from AI that <strong>jsDelivr</strong> caches tags and doesn’t auto-update. Used <strong>precise loading</strong> to avoid cluttering the repo</li>
+</ul>
+</li>
+<li>
+<p><strong>Thoughts</strong>:</p>
+<ul>
+<li>First time realizing how important file size is for web delivery. Just like managing game assets in later stages of <strong>Brotato</strong>, each programming domain has its own key concerns that you only grasp through hands-on experience</li>
+</ul>
+</li>
+</ul>
+<h2 id="phase-one-summary">Phase One Summary
+</h2><ul>
+<li>
+<p><strong>Progress</strong>:</p>
+<ul>
+<li>Finished initial setup of the tech blog, including auto-deployment and basic visual customization</li>
+</ul>
+</li>
+<li>
+<p><strong>Takeaways</strong>:</p>
+<ul>
+<li>Learned the basics of static site generators (config → template → render)</li>
+<li>Got familiar with GitHub Pages deployment</li>
+<li>Didn’t study front-end formally during this phase—relied on tutorials and AI. Learned <strong>how to ask AI better questions</strong> to solve problems</li>
+</ul>
+</li>
+<li>
+<p><strong>Next Steps</strong>:</p>
+<ul>
+<li>Study front-end systematically and revisit unresolved issues</li>
+<li>Read and understand the <strong>customized parts</strong> of the code</li>
+<li>Keep updating the site based on my <em><strong>TODO list</strong></em></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/web-dev/">Web Dev</a>
+        
+            <a href="/en/tags/hugo/">Hugo</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-copyright">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Sep 28, 2025 22:49 &#43;0200
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Nullshow
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script>
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        
+        path: {
+            homePath: "/",
+            
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: "https://nullshowjl.github.io/waifu/waifu.css",
+            tipsJsonPath: "https://nullshowjl.github.io/waifu/waifu-tips.json",
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        
+        drag: {
+            enable: true,
+            direction: ["x", "y"]
+        },
+        
+        switchType: "order"
+    }
+
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            }
+            else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+</script>
+
+
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+     	font-family: 'Inter';
+    	src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
+    }
+
+    @font-face {
+    font-family: 'JetBrainsMono';
+    src: url(https://nullshowjl.github.io/font/JetBrainsMono.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Inter', 'WenKai', sans-serif;
+        --code-font-family: 'JetBrainsMono';
+    }
+
+    body {
+   	 font-family: 'Inter', 'WenKai', sans-serif;
+  	font-display: swap;
+    }
+
+    code, pre {
+    	font-family: var(--code-font-family), monospace;
+	white-space: pre;  
+  	tab-size: 4;        
+    }
+</style>
+
+
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol
+
+    {
+        display: none;
+    }
+
+    .open {
+        display: block;
+    }
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function () {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+                openUl.forEach((ul) => {
+                    ul.classList.remove("open")
+                })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://nullshowjl.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script>
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function () {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;  
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;  
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.querySelector('.code-more-box')) {
+        return;
+      }
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        
+        codeMoreBox.remove();
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https:\/\/nullshowjl.github.io\/icons\/codeMore.png";
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article = document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+<div id="particles-js"></div>
+
+<script src=https://nullshowjl.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://nullshowjl.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+
+        
+<script>
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        
+        path: {
+            homePath: "/",
+            
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: "https://nullshowjl.github.io/waifu/waifu.css",
+            tipsJsonPath: "https://nullshowjl.github.io/waifu/waifu-tips.json",
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        
+        drag: {
+            enable: true,
+            direction: ["x", "y"]
+        },
+        
+        switchType: "order"
+    }
+
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            }
+            else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+</script>
+
+
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+     	font-family: 'Inter';
+    	src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
+    }
+
+    @font-face {
+    font-family: 'JetBrainsMono';
+    src: url(https://nullshowjl.github.io/font/JetBrainsMono.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Inter', 'WenKai', sans-serif;
+        --code-font-family: 'JetBrainsMono';
+    }
+
+    body {
+   	 font-family: 'Inter', 'WenKai', sans-serif;
+  	font-display: swap;
+    }
+
+    code, pre {
+    	font-family: var(--code-font-family), monospace;
+	white-space: pre;  
+  	tab-size: 4;        
+    }
+</style>
+
+
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol
+
+    {
+        display: none;
+    }
+
+    .open {
+        display: block;
+    }
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function () {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+                openUl.forEach((ul) => {
+                    ul.classList.remove("open")
+                })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://nullshowjl.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script>
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function () {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;  
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;  
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.querySelector('.code-more-box')) {
+        return;
+      }
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        
+        codeMoreBox.remove();
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https:\/\/nullshowjl.github.io\/icons\/codeMore.png";
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article = document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+<div id="particles-js"></div>
+
+<script src=https://nullshowjl.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://nullshowjl.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+
+    </body>
+</html>
+
+

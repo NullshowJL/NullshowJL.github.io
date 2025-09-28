@@ -7,7 +7,258 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 20 Sep 2025 12:56:52 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 28 Sep 2025 22:49:43 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://nullshowjl.github.io/en/about/</link>
+        <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://nullshowjl.github.io/en/about/</guid>
+        <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me
+&lt;/h2&gt;&lt;p&gt;🥷 A self-taught, semi-wild programmer who came into tech a bit unconventionally.&lt;/p&gt;
+&lt;p&gt;⌨️ Started out in game development, but curious about many fields.&lt;/p&gt;
+&lt;p&gt;🎒 Spent years in school &amp;ndash; only to realize most of what I know came from self-learning.&lt;/p&gt;
+&lt;p&gt;🍵 Used to love fitness and travel. These days, I’m all about the cozy indoor life.&lt;/p&gt;
+&lt;p&gt;🐱 Forever an animal lover.&lt;/p&gt;
+&lt;p&gt;📚  Forever a book lover.&lt;/p&gt;
+&lt;h2 id=&#34;about-this-site&#34;&gt;About This Site
+&lt;/h2&gt;&lt;h3 id=&#34;content&#34;&gt;Content
+&lt;/h3&gt;&lt;p&gt;Back when I was more of an artsy type, I enjoyed sharing bits of my personal life. These days, I focus on documenting my learning and work.&lt;/p&gt;
+&lt;h3 id=&#34;the-name-nullshow&#34;&gt;The Name: Nullshow
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;null&lt;/strong&gt; stands for “empty”—a reflection of how I view life, and a reminder to always keep a beginner’s mindset.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt;  sounds like part of my Chinese name. The pronunciation of &lt;strong&gt;Nullshow&lt;/strong&gt; is close to a childhood nickname, which brings back memories of carefree days.&lt;/p&gt;
+&lt;h3 id=&#34;illustrations&#34;&gt;Illustrations
+&lt;/h3&gt;&lt;p&gt;All &lt;strong&gt;category&lt;/strong&gt; illustrations come from Feng Zikai (1898–1975), a pioneer of Chinese comic art. His works are drawn from everyday life—simple, expressive, and full of childlike charm. He was from the same hometown as me. Using his art is both a tribute and a reminder to stay mindful of the beauty in daily life, beyond study and work.&lt;/p&gt;
+&lt;h3 id=&#34;gratitude&#34;&gt;Gratitude
+&lt;/h3&gt;&lt;p&gt;This site was built with inspiration and silent help from many brilliant minds online. It’s made me truly appreciate the power of open-source and sharing. In this era of technological revolution, AI is making everything simpler and faster. I hope I’m not just swept along by the tide &amp;ndash; but riding the wave with intention.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Thanks for joining me on this journey in such an exciting time.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;p&gt;Blog Production Heatmap&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div id=&#34;heatmap&#34; style=&#34;max-width: 680px; height: 188px; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;heatmap&#34; style=&#34;
+  max-width: 600px;
+  height: 180px;
+  padding: 2px;
+  text-align: center;
+  color: hsl(30, 10%, 65%);&#34;&gt;&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+  var chartDom = document.getElementById(&#39;heatmap&#39;);
+  var myChart = echarts.init(chartDom);
+  window.onresize = function() {
+      myChart.resize();
+  };
+  var option;
+
+  
+  
+  
+  
+  
+  
+  var dataMap = new Map();
+  
+    var key = &#34;2025-09-28&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;1.0&#34;;
+    var link = &#34;/en/p/english-for-developersexpressions-for-dev-life/&#34;;
+    var title = &#34;【English for Developers】Expressions for Dev Life&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2025-09-24&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;0.7&#34;;
+    var link = &#34;/en/p/dev-logmy-tech-blog-website/&#34;;
+    var title = &#34;【Dev Log】My Tech Blog Website&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2025-09-18&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;2.3&#34;;
+    var link = &#34;/en/p/c-game-dev-from-scratch-fundamental/&#34;;
+    var title = &#34;【C++ Game Dev from Scratch】- Fundamental&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2019-03-11&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;0.6&#34;;
+    var link = &#34;/en/p/markdown-syntax-guide/&#34;;
+    var title = &#34;Markdown Syntax Guide&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2019-03-10&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;0.4&#34;;
+    var link = &#34;/en/p/rich-content/&#34;;
+    var title = &#34;Rich Content&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2019-03-09&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;0.3&#34;;
+    var link = &#34;/en/p/placeholder-text/&#34;;
+    var title = &#34;Placeholder Text&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2019-03-08&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;0.1&#34;;
+    var link = &#34;/en/p/math-typesetting/&#34;;
+    var title = &#34;Math Typesetting&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2019-03-05&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;0.1&#34;;
+    var link = &#34;/en/p/emoji-support/&#34;;
+    var title = &#34;Emoji Support&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }var data = [];
+  for (const [key, value] of dataMap.entries()) {
+    data.push([key, value.wordCount]);
+  }
+
+  var startDate = new Date();
+  var year_Mill = startDate.setFullYear((startDate.getFullYear() - 1));
+  var startDate = +new Date(year_Mill);
+  var endDate = +new Date();
+
+  var dayTime = 3600 * 24 * 1000;
+  startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
+  endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
+
+  
+  function heatmap_width(months){
+    var startDate = new Date();
+    var mill = startDate.setMonth((startDate.getMonth() - months));
+    var endDate = +new Date();
+    startDate = +new Date(mill);
+
+    endDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, endDate);
+    startDate = echarts.format.formatTime(&#39;yyyy-MM-dd&#39;, startDate);
+
+    var showmonth = [];
+    showmonth.push([
+        startDate,
+        endDate
+    ]);
+    return showmonth
+  };
+
+  function getRangeArr() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth &gt;= 600) {
+      return heatmap_width(12);
+    } else if (windowWidth &gt;= 400) {
+      return heatmap_width(9);
+    } else {
+      return heatmap_width(6);
+    }
+  }
+
+  var baseTextColor = &#39;hsl(30, 10%, 65%)&#39;;
+
+  option = {
+    textStyle: { color: baseTextColor },
+    title: {
+        top: 0,
+        left: &#39;center&#39;,
+        text: &#39;博客产量&#39;,
+        textStyle: { color: baseTextColor }
+    },
+    tooltip: {
+      formatter: function (p) {
+        const post = dataMap.get(p.data[0]);
+        return post.title + &#39; | &#39; + post.wordCount + &#39; 千字&#39;;
+      },
+      textStyle: { color: baseTextColor }
+    },
+    visualMap: {
+        min: 0,
+        max: 10,
+        type: &#39;piecewise&#39;,
+        orient: &#39;horizontal&#39;,
+        left: &#39;center&#39;,
+        top: 30,
+        inRange: {
+          
+          color: [&#39;#7aa8744c&#39;, &#39;#7AA874&#39; ]
+        },
+        splitNumber: 4,
+        text: [&#39;千字&#39;, &#39;&#39;],
+        showLabel: true,
+        itemGap: 20,
+        textStyle: { color: baseTextColor }
+    },
+    calendar: {
+        top: 80,
+        left: 20,
+        right: 4,
+        cellSize: [&#39;auto&#39;, 12],
+        range: getRangeArr(),
+        itemStyle: {
+            color: &#39;#F1F1F1&#39;,
+            borderWidth: 2.5,
+            borderColor: &#39;#fff&#39;,
+        },
+        yearLabel: { show: false, color: baseTextColor },
+        monthLabel: { color: baseTextColor },
+        dayLabel: { color: baseTextColor },
+        splitLine: {
+          lineStyle: {
+            color: &#39;rgba(0, 0, 0, 0.0)&#39;,
+          }
+        }
+    },
+    series: {
+        type: &#39;heatmap&#39;,
+        coordinateSystem: &#39;calendar&#39;,
+        data: data,
+    }
+  };
+  myChart.setOption(option);
+  myChart.on(&#39;click&#39;, function(params) {
+    if (params.componentType === &#39;series&#39;) {
+      const post = dataMap.get(params.data[0]);
+      const link = window.location.origin + post.link;
+      window.open(link, &#39;_blank&#39;).focus();
+    }
+});
+&lt;/script&gt;
+</description>
+        </item>
+        <item>
         <title>Update Log</title>
         <link>https://nullshowjl.github.io/en/update-log/</link>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
@@ -23,34 +274,47 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Initial site setup, &lt;strong&gt;auto-deployment&lt;/strong&gt;, and &lt;strong&gt;launch&lt;/strong&gt;; Added &lt;strong&gt;language switch&lt;/strong&gt; (Chinese/English)；Integrated a &lt;strong&gt;basic 2D character widget&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;2025.09.14&lt;/td&gt;
+          &lt;td&gt;Tutorial reference 【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bilibili：Letere-莱特雷&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Added &lt;strong&gt;Update Log&lt;/strong&gt; to the left sidebar; Changed site fonts; Customized mouse cursor&lt;/td&gt;
+          &lt;td&gt;2025.09.17&lt;/td&gt;
+          &lt;td&gt;Tutorial reference【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-stack-theme/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 莱特雷-letere&lt;/a&gt;】；Cursor asset【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1xz4y157ob?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bilibili xe08&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Added &lt;strong&gt;Last Updated&lt;/strong&gt; info at the bottom of articles; Displayed &lt;strong&gt;Archive&lt;/strong&gt; and &lt;strong&gt;Links&lt;/strong&gt; sections in three columns; Article pages now only show content from the &lt;strong&gt;current section&lt;/strong&gt;; Added a &lt;strong&gt;Back to Top&lt;/strong&gt; button; Used &lt;strong&gt;macOS-style&lt;/strong&gt; code blocks; Customized &lt;strong&gt;Markdown quote block&lt;/strong&gt; color templates; Long code blocks now auto-collapse; Chinese, English, and code text each use their own font&lt;/td&gt;
+          &lt;td&gt;2025.09.18&lt;/td&gt;
+          &lt;td&gt;Tutorial reference【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-stack-theme/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 莱特雷-letere&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Added spinning animation to homepage &lt;strong&gt;avatar&lt;/strong&gt;; Added card zoom effect to &lt;strong&gt;archive page&lt;/strong&gt;; Added animation to homepage &lt;strong&gt;right-side navigation bar&lt;/strong&gt;; Enabled &lt;strong&gt;article view count&lt;/strong&gt; tracking; Added &lt;strong&gt;dynamic background&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;2025.09.19&lt;/td&gt;
+          &lt;td&gt;Tutorial references【&lt;a class=&#34;link&#34; href=&#34;https://www.xalaok.top/post/stack-modify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog Naive Koala&lt;/a&gt;】、【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/tags/hugo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 莱特雷-letere&lt;/a&gt;】；Background source【&lt;a class=&#34;link&#34; href=&#34;https://github.com/VincentGarreau&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub VincentGarreau&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Added animation for &lt;strong&gt;homepage article titles and images&lt;/strong&gt;; Added animation to the &lt;strong&gt;Back to Top&lt;/strong&gt; button; Added &lt;strong&gt;homepage loading animation&lt;/strong&gt;; Added &lt;strong&gt;swimming fish animation&lt;/strong&gt; to site footer; Added animation to the &lt;strong&gt;left sidebar menu&lt;/strong&gt;; Added &lt;strong&gt;blog post heatmap&lt;/strong&gt; to the About page&lt;/td&gt;
+          &lt;td&gt;2025.09.20&lt;/td&gt;
+          &lt;td&gt;Animation source【&lt;a class=&#34;link&#34; href=&#34;https://uiverse.io/shadowfax29/slippery-bullfrog-20&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;UIverse&lt;/a&gt;】；Fish animation code【&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Jsenna/article/details/120836708&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSDN Jsenna&lt;/a&gt;】；Tutorial reference【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/page-loading/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 莱特雷-letere&lt;/a&gt;】；Heatmap code sourc【&lt;a class=&#34;link&#34; href=&#34;https://blog.douchi.space/hugo-blog-heatmap/#gsc.tab=0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 椒盐豆豉&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Added &lt;strong&gt;RSS&lt;/strong&gt; functionality with separate feeds for Chinese and English; Enabled hover animation for small icons below the avatar; Switched widget2D model format to &lt;strong&gt;moc3&lt;/strong&gt;, and added a custom model&lt;/td&gt;
+          &lt;td&gt;2025.09.23&lt;/td&gt;
+          &lt;td&gt;Tutorial reference【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/live2d-moc3/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 莱特雷-letere&lt;/a&gt;】；【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1vf421X7Hn/?vd_source=25d94d3057857348a68699c1cf009900&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bilibili darkjungle8&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;&lt;/td&gt;
@@ -69,6 +333,23 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;TODO&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;live2D&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Adapt text styling to match the Stack theme&lt;/li&gt;
+&lt;li&gt;Display language-specific text on Chinese and English pages&lt;/li&gt;
+&lt;li&gt;Load the model only once on the homepage and keep it persistent across page transitions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Add a comment system (consider using Remark42)&lt;/li&gt;
+&lt;li&gt;Add an internal messaging system&lt;/li&gt;
+&lt;li&gt;Standardize image size on the &lt;strong&gt;Links&lt;/strong&gt; page to 64×64&lt;/li&gt;
+&lt;li&gt;Improve dark mode toggle in the left sidebar: show different icons and labels&lt;/li&gt;
+&lt;li&gt;Add category management to the &lt;strong&gt;Links&lt;/strong&gt; page&lt;/li&gt;
+&lt;li&gt;Add a donation feature&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;(Planned for Phase 2 development: November 2025)&lt;/em&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -78,34 +359,6 @@
         
         <guid>https://nullshowjl.github.io/en/archives/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>About</title>
-        <link>https://nullshowjl.github.io/en/about/</link>
-        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://nullshowjl.github.io/en/about/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>Links</title>

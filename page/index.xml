@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sun, 28 Sep 2025 11:18:44 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 28 Sep 2025 22:49:43 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
         <link>https://nullshowjl.github.io/about/</link>
         <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
@@ -30,7 +30,7 @@
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt; 的插图均来自于丰子恺（1898~1975）——中国漫画艺术的先驱。他的画作大多取材于生活，简单传神、富有童趣。他与我是同乡，用他的画作既是一种对他的致敬，也提醒我自己，在学习和工作外，要时刻留意和品味日常生活的美好。&lt;/p&gt;
 &lt;h3 id=&#34;感恩&#34;&gt;感恩
 &lt;/h3&gt;&lt;p&gt;本站的创建、灵感来源和开发受益于许多网上大佬们无形的启发和帮助，这让我深深感受到开源和分享的魔力。在这个科技革命的时代里，AI让一切都变得简单、让一切都加速发展。我希望自己不是被时代浪潮裹挟而行的，而是能踏浪前行。&lt;/p&gt;
-&lt;p&gt;欢迎你在这个激动人心的时代加入我的旅程。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;欢迎你在这个激动人心的时代加入我的旅程。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote class=&#34;alert alert-note&#34;&gt;
     &lt;p&gt;博客产量热力图&lt;/p&gt;&lt;/blockquote&gt;
 &lt;div id=&#34;heatmap&#34; style=&#34;max-width: 680px; height: 188px; margin: auto;&#34;&gt;&lt;/div&gt;
@@ -219,7 +219,7 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;网站的初步创建、自动部署和上线；实现中英文切换；添加基础版2D虚拟人物widget&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;网站的初步创建、&lt;strong&gt;自动部署和上线&lt;/strong&gt;；实现&lt;strong&gt;中英文切换&lt;/strong&gt;；添加基础版&lt;strong&gt;2D虚拟人物widget&lt;/strong&gt;&lt;/td&gt;
           &lt;td&gt;2025.09.14&lt;/td&gt;
           &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;B站up主：Letere-莱特雷&lt;/a&gt;】&lt;/td&gt;

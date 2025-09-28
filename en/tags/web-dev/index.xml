@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Web Dev on Nullshow&#39;s Tech Blog</title>
+        <link>https://nullshowjl.github.io/en/tags/web-dev/</link>
+        <description>Recent content in Web Dev on Nullshow&#39;s Tech Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Nullshow</copyright>
+        <lastBuildDate>Sun, 28 Sep 2025 22:49:43 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/tags/web-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【Dev Log】My Tech Blog Website</title>
+        <link>https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/</link>
+        <pubDate>Wed, 24 Sep 2025 09:11:30 +0200</pubDate>
+        
+        <guid>https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/</guid>
+        <description>&lt;img src="https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/blog-en.webp" alt="Featured image of post 【Dev Log】My Tech Blog Website" /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Project Goal&lt;/strong&gt;: Build a personal blog website from scratch to document and share my learning notes, development journey, and reflections. It also serves as part of my portfolio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;: GitHub Pages + Hugo, with lightweight customizations based on the Stack theme.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start Date&lt;/strong&gt;: 2025-09-14&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Current Status&lt;/strong&gt;: In progress&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Learning Resources&lt;/strong&gt;: Hugo official docs, Stack theme docs, tutorials from Bilibili and other creators online.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://github.com/NullshowJL/NullshowJL.github.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;timeline--phase-one&#34;&gt;Timeline &amp;ndash; Phase One
+&lt;/h2&gt;&lt;h3 id=&#34;2025-09-14&#34;&gt;2025-09-14
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goals&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;Set up the site and enable auto-deployment&lt;/li&gt;
+&lt;li&gt;Add a basic version of the &lt;strong&gt;animated character widget&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;Page not found when switching between Chinese and English&lt;/li&gt;
+&lt;li&gt;Website tab icon not showing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Solutions&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Used GitHub Copilot in VS Code to help write a JS file for language switching&lt;/li&gt;
+&lt;li&gt;Tested with icons that worked on other websites to rule out image issues; the icon eventually appeared after I worked on other modules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;I need to learn web programming systematically while developing, so I can understand not just how things work, but why&lt;/li&gt;
+&lt;li&gt;GitHub Pages deploys quickly, but changes may take time to show. If the repo is updated but the site hasn’t refreshed, just wait a bit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-16&#34;&gt;2025-09-16
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goals&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Add an &lt;strong&gt;Update Log&lt;/strong&gt; to the sidebar&lt;/li&gt;
+&lt;li&gt;Upload the first blog post (Chinese version)&lt;/li&gt;
+&lt;li&gt;Change fonts&lt;/li&gt;
+&lt;li&gt;Use a custom cursor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Issue&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Custom cursor not showing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Solution&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Found in the tutorial’s comment section that the issue might be with the image. Tested with the blogger’s image and it worked&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Comments under articles or videos can be very helpful—others may have already solved the same problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-18&#34;&gt;2025-09-18
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Goal&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Finish a round of basic visual improvements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Issues&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Unsure how to apply specific fonts to different languages and code blocks&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Syntax error&lt;/strong&gt; during auto-deployment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Solutions&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Used Copilot’s suggestions to fix the font issue&lt;/li&gt;
+&lt;li&gt;Syntax error was due to indentation. VS Code auto-formatted incorrectly, so I switched to &lt;strong&gt;Notepad&lt;/strong&gt; to fix it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Front-end code is sensitive to indentation. Better to use &lt;strong&gt;Notepad&lt;/strong&gt; or other editors instead of VS Code for certain tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-19&#34;&gt;2025-09-19
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goals&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue visual improvements&lt;/li&gt;
+&lt;li&gt;Adjust icons and text for &lt;strong&gt;Color Scheme&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;dynamic background&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;blog view counter&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issue&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After fixing overlapping icons, &lt;strong&gt;text formatting&lt;/strong&gt; still didn’t align with other sidebar items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
+    &lt;p&gt;Tried for quite a while without success &amp;ndash; I&amp;rsquo;ll leave it for now and revisit it after I’ve studied more front-end&lt;/p&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-20&#34;&gt;2025-09-20
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goals&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue visual improvements&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;homepage loading animation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;footer animation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;blog post heatmap&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issues&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unrelated text appeared at the bottom of the site&lt;/li&gt;
+&lt;li&gt;Tried adding animation to the &lt;strong&gt;icon below the avatar&lt;/strong&gt; but it didn’t work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI helped identify the issue: I used &lt;code&gt;C++&lt;/code&gt; style comments in &lt;code&gt;custom.html&lt;/code&gt;, which browsers treated as text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-note&#34;&gt;
+    &lt;ul&gt;
+&lt;li&gt;Will revisit the &lt;strong&gt;small icon animation&lt;/strong&gt; after learning more front-end (fixed on 9-23)&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comment syntax varies a lot between languages - important to follow the correct format strictly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-22&#34;&gt;2025-09-22
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goal&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue visual improvements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issue&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Link&lt;/strong&gt; page card images couldn’t be resized uniformly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote class=&#34;alert alert-warn&#34;&gt;
+    &lt;ul&gt;
+&lt;li&gt;Still couldn’t solve the issue, so I’ve manually adjusted each image for now. Will come back to unify the layout after I’ve learned more front-end&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-23&#34;&gt;2025-09-23
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goals&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add RSS feeds for language-specific subscriptions&lt;/li&gt;
+&lt;li&gt;Upgrade character widget2D to &lt;strong&gt;moc3&lt;/strong&gt; version&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;footer animation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;strong&gt;blog post heatmap&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issue&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Character model failed to load&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used browser &lt;strong&gt;dev tools&lt;/strong&gt; to debug. AI helped identify a missing &lt;code&gt;\&lt;/code&gt; in the model folder path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always double-check file paths&lt;/li&gt;
+&lt;li&gt;Dev tools are super useful for debugging&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-24&#34;&gt;2025-09-24
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goals&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a new character model and customize all parameters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issues&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New model failed to load&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;jsDelivr&lt;/strong&gt; didn’t load newly pushed files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solutions&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dev tools&lt;/strong&gt; showed the model was too large, so I decided to abandon it&lt;/li&gt;
+&lt;li&gt;Learned from AI that &lt;strong&gt;jsDelivr&lt;/strong&gt; caches tags and doesn’t auto-update. Used &lt;strong&gt;precise loading&lt;/strong&gt; to avoid cluttering the repo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First time realizing how important file size is for web delivery. Just like managing game assets in later stages of &lt;strong&gt;Brotato&lt;/strong&gt;, each programming domain has its own key concerns that you only grasp through hands-on experience&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;phase-one-summary&#34;&gt;Phase One Summary
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Progress&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Finished initial setup of the tech blog, including auto-deployment and basic visual customization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Takeaways&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learned the basics of static site generators (config → template → render)&lt;/li&gt;
+&lt;li&gt;Got familiar with GitHub Pages deployment&lt;/li&gt;
+&lt;li&gt;Didn’t study front-end formally during this phase—relied on tutorials and AI. Learned &lt;strong&gt;how to ask AI better questions&lt;/strong&gt; to solve problems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Next Steps&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Study front-end systematically and revisit unresolved issues&lt;/li&gt;
+&lt;li&gt;Read and understand the &lt;strong&gt;customized parts&lt;/strong&gt; of the code&lt;/li&gt;
+&lt;li&gt;Keep updating the site based on my &lt;em&gt;&lt;strong&gt;TODO list&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
