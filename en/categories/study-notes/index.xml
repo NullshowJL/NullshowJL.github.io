@@ -6,8 +6,7 @@
         <description>Recent content in Study Notes on Nullshow&#39;s Tech Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>Nullshow</copyright>
-        <lastBuildDate>Sun, 28 Sep 2025 22:49:43 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/categories/study-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>Nullshow</copyright><atom:link href="https://nullshowjl.github.io/en/categories/study-notes/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【English for Developers】Expressions for Dev Life</title>
         <link>https://nullshowjl.github.io/en/p/english-for-developersexpressions-for-dev-life/</link>
         <pubDate>Sun, 28 Sep 2025 10:28:14 +0200</pubDate>
@@ -309,12 +308,12 @@
 </description>
         </item>
         <item>
-        <title>【C&#43;&#43; Game Dev from Scratch】- Fundamental</title>
-        <link>https://nullshowjl.github.io/en/p/c-game-dev-from-scratch-fundamental/</link>
+        <title>【C&#43;&#43; Game Dev from Scratch】Fundamental</title>
+        <link>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/</link>
         <pubDate>Thu, 18 Sep 2025 09:11:30 +0200</pubDate>
         
-        <guid>https://nullshowjl.github.io/en/p/c-game-dev-from-scratch-fundamental/</guid>
-        <description>&lt;img src="https://nullshowjl.github.io/en/p/c-game-dev-from-scratch-fundamental/tictactoe-en.webp" alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】- Fundamental" /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview
+        <guid>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/</guid>
+        <description>&lt;img src="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/tictactoe-en.webp" alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Fundamental" /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;：C++ + EasyX&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Project Goal&lt;/strong&gt;: Set up the EasyX environment and complete two small demos (a circle that follows the mouse, and a tic-tac-toe game). Understand the basic structure of a game loop.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Course Source&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1iQ4y1s7Qj?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

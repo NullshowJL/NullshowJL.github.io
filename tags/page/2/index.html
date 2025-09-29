@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://nullshowjl.github.io/tags/'>
 
-<link rel="stylesheet" href="/scss/style.min.ac7cb9b0b2a62c6ec16555594a01bdcbdfa955f0feb53069b01eadd96fe1a194.css"><meta property='og:title' content="Tags">
+<link rel="stylesheet" href="/scss/style.min.cc18b66b565dd15a0f57e809af4b56ad38515e11ba273fb51b745393e406878d.css"><meta property='og:title' content="Tags">
 <meta property='og:description' content="分享和记录我在开发和学习中的笔记、经验和感悟~">
 <meta property='og:url' content='https://nullshowjl.github.io/tags/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-09-28T22:49:43&#43;02:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-09-29T22:31:39&#43;02:00 '/>
 <meta name="twitter:title" content="Tags">
 <meta name="twitter:description" content="分享和记录我在开发和学习中的笔记、经验和感悟~"><link rel="alternate" type="application/rss&#43;xml" href="https://nullshowjl.github.io/tags/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -130,6 +130,18 @@
 
                 
                 <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>作品集</span>
             </a>
         </li>
         
@@ -500,18 +512,57 @@ version: "3.1"
     </nav>
 
 <footer class="site-footer">
+       
+    <section class="totalcount">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        发表了3篇文章 ·
+        总计1万0千字
+        <br>
+    </section>
+
+
+    
+    <section class="running-time">
+        本博客已运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+
     <section class="copyright">
-        &copy; 
+        &copy;
         
         2025 Nullshow
     </section>
-    
+
     <section class="powerby">
         使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
-</footer>
 
+</footer>
 
             </main>
         </div>
@@ -541,20 +592,20 @@ version: "3.1"
             
             modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
             cssPath: "https://nullshowjl.github.io/waifu/waifu.css",
-            tipsJsonPath: "https://nullshowjl.github.io/waifu/waifu-tips.json",
-            tipsJsPath: cdnPath + "/waifu-tips.js",
-            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+    tipsJsonPath: { { (resources.Get "waifu/waifu-tips.json").Permalink } },
+    tipsJsPath: cdnPath + "/waifu-tips.js",
+        live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
             live2dSdkPath: cdnPath + "/live2d-sdk.js"
         },
-        
-        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+    
+    tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
         
         drag: {
-            enable: true,
+        enable: true,
             direction: ["x", "y"]
-        },
-        
-        switchType: "order"
+    },
+    
+    switchType: "order"
     }
 
     
@@ -608,13 +659,13 @@ version: "3.1"
     }
 
     @font-face {
-     	font-family: 'Inter';
-    	src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
+        font-family: 'Inter';
+        src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
     }
 
     @font-face {
-    font-family: 'JetBrainsMono';
-    src: url(https://nullshowjl.github.io/font/JetBrainsMono.ttf) format('truetype');
+        font-family: 'JetBrainsMono';
+        src: url(https://nullshowjl.github.io/font/JetBrainsMono.ttf) format('truetype');
     }
 
     :root {
@@ -623,20 +674,24 @@ version: "3.1"
     }
 
     body {
-   	 font-family: 'Inter', 'WenKai', sans-serif;
-  	font-display: swap;
+        font-family: 'Inter', 'WenKai', sans-serif;
+        font-display: swap;
     }
 
-    code, pre {
-    	font-family: var(--code-font-family), monospace;
-	white-space: pre;  
-  	tab-size: 4;        
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
     }
 </style>
 
 
 <style>
-    #TableOfContents > ul, ol {
+    #TableOfContents > ul,
+    #TableOfContents > ol {
         ul, ol
 
     {
@@ -651,106 +706,86 @@ version: "3.1"
 
 <script>
     function initTocHide() {
-        
-        let toc = document.querySelector(".widget--toc");
-        if (!toc) {
-            return;
-        }
-        
-        window.addEventListener('scroll', function () {
-            
-            let openUl = document.querySelectorAll(".open");
-            if (openUl.length > 0) {
-                openUl.forEach((ul) => {
-                    ul.classList.remove("open")
-                })
-            }
-            
-            let currentLi = document.querySelector(".active-class");
-            if (!currentLi) {
-                return
-            }
-            
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
             if (currentLi.children.length > 1) {
-                currentLi.children[1].classList.add("open")
+                currentLi.children[1].classList.add("open");
             }
-            
+
             let ul = currentLi.parentElement;
-            do {
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
                 ul.classList.add("open");
-                ul = ul.parentElement.parentElement
-            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+                ul = ul.parentElement?.parentElement;
+            }
         });
     }
-    initTocHide()
+
+    initTocHide();
 </script>
 
 
 <style>
-    #backTopBtn {
-        display: none;
-        position: fixed;
-        bottom: 30px;
-        z-index: 99;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        background-image: url(https://nullshowjl.github.io/icons/backTop.svg);
-    }
+  #backTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+    background-size: cover;
+  }
 </style>
 
 <script>
-    
-
     function initScrollTop() {
-        let rightSideBar = document.querySelector(".right-sidebar");
-        if (!rightSideBar) {
-            return;
-        }
-        
-        let btn = document.createElement("div");
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
         btn.id = "backTopBtn";
-        btn.onclick = backToTop
-        rightSideBar.appendChild(btn)
-        
-        window.onscroll = function () {
-            
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
         };
     }
 
-    
-
     function backToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" })
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     initScrollTop();
 </script>
 
 
-
 <style>
     .highlight {
-         
         max-height: 400px;
         overflow: hidden;
-        position: relative;  
+        position: relative;
     }
 
     .code-show {
         max-height: none !important;
-        overflow: visible !important;  
+        overflow: visible !important;
     }
 
     .code-more-box {
         width: 100%;
         padding-top: 78px;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
         position: absolute;
         left: 0;
         right: 0;
@@ -771,7 +806,7 @@ version: "3.1"
     }
 
     .code-more-img {
-        cursor: pointer !important;
+        cursor: pointer;
         display: block;
         margin: auto;
         width: 22px;
@@ -781,42 +816,33 @@ version: "3.1"
 
 <script>
   function initCodeMoreBox() {
-    let codeBlocks = document.querySelectorAll(".highlight");
-    if (!codeBlocks) {
-      return;
-    }
-    codeBlocks.forEach(codeBlock => {
-      
-      if (codeBlock.querySelector('.code-more-box')) {
-        return;
-      }
-      
-      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
-        return;
-      }
-      
-      
-      let codeMoreBox = document.createElement('div');
-      codeMoreBox.classList.add('code-more-box');
-      
-      let codeMoreBtn = document.createElement('span');
-      codeMoreBtn.classList.add('code-more-btn');
-      codeMoreBtn.addEventListener('click', () => {
-        codeBlock.classList.add('code-show');
-        
-        codeMoreBox.remove();
-        
-        window.dispatchEvent(new Event('resize'))
-      })
-      
-      let img = document.createElement('img');
-      img.classList.add('code-more-img');
-      img.src = "https:\/\/nullshowjl.github.io\/icons\/codeMore.png";
-      
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
       codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
       codeMoreBox.appendChild(codeMoreBtn);
-      codeBlock.appendChild(codeMoreBox)
-    })
+      codeBlock.appendChild(codeMoreBox);
+    });
   }
 
   initCodeMoreBox();
@@ -827,16 +853,14 @@ version: "3.1"
 
 <script>
     function showHideView() {
-        
-        let viewCounts = document.querySelectorAll("#viewCount");
-        if (viewCounts) {
-            
-            let article = document.querySelector(".article-page");
-            if (!article) {
-                viewCounts.forEach(ele => {
-                    ele.style.display = 'none';
-                });
-            }
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
         }
     }
 
@@ -846,11 +870,12 @@ version: "3.1"
 
 
 
+
 <div id="particles-js"></div>
 
-<script src=https://nullshowjl.github.io/background/particles.min.js></script>
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
 <script>
-  particlesJS.load('particles-js', "https://nullshowjl.github.io/background/particlesjs-config.json", function() {
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
     console.log('particles.js loaded - callback');
   });
 </script>
@@ -861,6 +886,7 @@ version: "3.1"
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
         z-index: -1;
     }
 </style>
@@ -877,6 +903,32 @@ version: "3.1"
     };
 </script>
 
+
+<script>
+    const startDate = new Date('2025/09/14');
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+    let days = now.getDate() - startDate.getDate();
+
+    if (days < 0) {
+        months -= 1;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
+    }
+
+    if (months < 0) {
+        years -= 1;
+        months += 12;
+    }
+
+    const result = `${years}年${months}月${days}天`;
+    const runningEl = document.getElementById('runningdays');
+    if (runningEl) {
+        runningEl.innerHTML = result;
+    }
+</script>
 
 
         
@@ -889,20 +941,20 @@ version: "3.1"
             
             modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
             cssPath: "https://nullshowjl.github.io/waifu/waifu.css",
-            tipsJsonPath: "https://nullshowjl.github.io/waifu/waifu-tips.json",
-            tipsJsPath: cdnPath + "/waifu-tips.js",
-            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+    tipsJsonPath: { { (resources.Get "waifu/waifu-tips.json").Permalink } },
+    tipsJsPath: cdnPath + "/waifu-tips.js",
+        live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
             live2dSdkPath: cdnPath + "/live2d-sdk.js"
         },
-        
-        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+    
+    tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
         
         drag: {
-            enable: true,
+        enable: true,
             direction: ["x", "y"]
-        },
-        
-        switchType: "order"
+    },
+    
+    switchType: "order"
     }
 
     
@@ -956,13 +1008,13 @@ version: "3.1"
     }
 
     @font-face {
-     	font-family: 'Inter';
-    	src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
+        font-family: 'Inter';
+        src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
     }
 
     @font-face {
-    font-family: 'JetBrainsMono';
-    src: url(https://nullshowjl.github.io/font/JetBrainsMono.ttf) format('truetype');
+        font-family: 'JetBrainsMono';
+        src: url(https://nullshowjl.github.io/font/JetBrainsMono.ttf) format('truetype');
     }
 
     :root {
@@ -971,20 +1023,24 @@ version: "3.1"
     }
 
     body {
-   	 font-family: 'Inter', 'WenKai', sans-serif;
-  	font-display: swap;
+        font-family: 'Inter', 'WenKai', sans-serif;
+        font-display: swap;
     }
 
-    code, pre {
-    	font-family: var(--code-font-family), monospace;
-	white-space: pre;  
-  	tab-size: 4;        
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
     }
 </style>
 
 
 <style>
-    #TableOfContents > ul, ol {
+    #TableOfContents > ul,
+    #TableOfContents > ol {
         ul, ol
 
     {
@@ -999,106 +1055,86 @@ version: "3.1"
 
 <script>
     function initTocHide() {
-        
-        let toc = document.querySelector(".widget--toc");
-        if (!toc) {
-            return;
-        }
-        
-        window.addEventListener('scroll', function () {
-            
-            let openUl = document.querySelectorAll(".open");
-            if (openUl.length > 0) {
-                openUl.forEach((ul) => {
-                    ul.classList.remove("open")
-                })
-            }
-            
-            let currentLi = document.querySelector(".active-class");
-            if (!currentLi) {
-                return
-            }
-            
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
             if (currentLi.children.length > 1) {
-                currentLi.children[1].classList.add("open")
+                currentLi.children[1].classList.add("open");
             }
-            
+
             let ul = currentLi.parentElement;
-            do {
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
                 ul.classList.add("open");
-                ul = ul.parentElement.parentElement
-            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+                ul = ul.parentElement?.parentElement;
+            }
         });
     }
-    initTocHide()
+
+    initTocHide();
 </script>
 
 
 <style>
-    #backTopBtn {
-        display: none;
-        position: fixed;
-        bottom: 30px;
-        z-index: 99;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        background-image: url(https://nullshowjl.github.io/icons/backTop.svg);
-    }
+  #backTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+    background-size: cover;
+  }
 </style>
 
 <script>
-    
-
     function initScrollTop() {
-        let rightSideBar = document.querySelector(".right-sidebar");
-        if (!rightSideBar) {
-            return;
-        }
-        
-        let btn = document.createElement("div");
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
         btn.id = "backTopBtn";
-        btn.onclick = backToTop
-        rightSideBar.appendChild(btn)
-        
-        window.onscroll = function () {
-            
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
         };
     }
 
-    
-
     function backToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" })
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     initScrollTop();
 </script>
 
 
-
 <style>
     .highlight {
-         
         max-height: 400px;
         overflow: hidden;
-        position: relative;  
+        position: relative;
     }
 
     .code-show {
         max-height: none !important;
-        overflow: visible !important;  
+        overflow: visible !important;
     }
 
     .code-more-box {
         width: 100%;
         padding-top: 78px;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
         position: absolute;
         left: 0;
         right: 0;
@@ -1119,7 +1155,7 @@ version: "3.1"
     }
 
     .code-more-img {
-        cursor: pointer !important;
+        cursor: pointer;
         display: block;
         margin: auto;
         width: 22px;
@@ -1129,42 +1165,33 @@ version: "3.1"
 
 <script>
   function initCodeMoreBox() {
-    let codeBlocks = document.querySelectorAll(".highlight");
-    if (!codeBlocks) {
-      return;
-    }
-    codeBlocks.forEach(codeBlock => {
-      
-      if (codeBlock.querySelector('.code-more-box')) {
-        return;
-      }
-      
-      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
-        return;
-      }
-      
-      
-      let codeMoreBox = document.createElement('div');
-      codeMoreBox.classList.add('code-more-box');
-      
-      let codeMoreBtn = document.createElement('span');
-      codeMoreBtn.classList.add('code-more-btn');
-      codeMoreBtn.addEventListener('click', () => {
-        codeBlock.classList.add('code-show');
-        
-        codeMoreBox.remove();
-        
-        window.dispatchEvent(new Event('resize'))
-      })
-      
-      let img = document.createElement('img');
-      img.classList.add('code-more-img');
-      img.src = "https:\/\/nullshowjl.github.io\/icons\/codeMore.png";
-      
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
       codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
       codeMoreBox.appendChild(codeMoreBtn);
-      codeBlock.appendChild(codeMoreBox)
-    })
+      codeBlock.appendChild(codeMoreBox);
+    });
   }
 
   initCodeMoreBox();
@@ -1175,16 +1202,14 @@ version: "3.1"
 
 <script>
     function showHideView() {
-        
-        let viewCounts = document.querySelectorAll("#viewCount");
-        if (viewCounts) {
-            
-            let article = document.querySelector(".article-page");
-            if (!article) {
-                viewCounts.forEach(ele => {
-                    ele.style.display = 'none';
-                });
-            }
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
         }
     }
 
@@ -1194,11 +1219,12 @@ version: "3.1"
 
 
 
+
 <div id="particles-js"></div>
 
-<script src=https://nullshowjl.github.io/background/particles.min.js></script>
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
 <script>
-  particlesJS.load('particles-js', "https://nullshowjl.github.io/background/particlesjs-config.json", function() {
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
     console.log('particles.js loaded - callback');
   });
 </script>
@@ -1209,6 +1235,7 @@ version: "3.1"
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
         z-index: -1;
     }
 </style>
@@ -1225,6 +1252,32 @@ version: "3.1"
     };
 </script>
 
+
+<script>
+    const startDate = new Date('2025/09/14');
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+    let days = now.getDate() - startDate.getDate();
+
+    if (days < 0) {
+        months -= 1;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
+    }
+
+    if (months < 0) {
+        years -= 1;
+        months += 12;
+    }
+
+    const result = `${years}年${months}月${days}天`;
+    const runningEl = document.getElementById('runningdays');
+    if (runningEl) {
+        runningEl.innerHTML = result;
+    }
+</script>
 
 
     </body>
