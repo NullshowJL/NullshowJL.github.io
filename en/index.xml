@@ -554,6 +554,35 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-29&#34;&gt;2025-09-29
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goals&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;strong&gt;runtime statistics&lt;/strong&gt; and &lt;strong&gt;article count&lt;/strong&gt; to the bottom of the webpage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issues&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chinese characters appeared as garbled text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solutions&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Followed AI’s suggestion to inspect the file using VS Code. Found that the encoding was incorrect under UTF-8. After adjusting the encoding, the characters displayed correctly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Opening the file in VS 2022 did not reveal any encoding issues, but VS Code clearly exposed the problem&lt;/li&gt;
+&lt;li&gt;However, after editing in VS Code, clicking &lt;strong&gt;Save&lt;/strong&gt; would automatically change the file format, causing Hugo to fail during compilation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;phase-one-summary&#34;&gt;Phase One Summary
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -644,7 +673,7 @@
     }
     var key = &#34;2025-09-24&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;0.7&#34;;
+    var wordCount = &#34;0.8&#34;;
     var link = &#34;/en/p/dev-logmy-tech-blog-website/&#34;;
     var title = &#34;【Dev Log】My Tech Blog Website&#34;;
 
@@ -1608,7 +1637,7 @@
     &gt;Bilibili darkjungle8&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;Add site &lt;strong&gt;uptime&lt;/strong&gt;, &lt;strong&gt;total number of published articles&lt;/strong&gt;, and &lt;strong&gt;word count&lt;/strong&gt; information to the website footer; Added &lt;strong&gt;Portfolio&lt;/strong&gt; to the left sidebar&lt;/td&gt;
+          &lt;td&gt;Add site &lt;strong&gt;uptime&lt;/strong&gt;, &lt;strong&gt;total number of published articles&lt;/strong&gt;, and &lt;strong&gt;word count&lt;/strong&gt; information to the website footer; Added &lt;strong&gt;numbered tags&lt;/strong&gt; to the top section of the &lt;strong&gt;archive&lt;/strong&gt; page; Added &lt;strong&gt;Portfolio&lt;/strong&gt; to the left sidebar&lt;/td&gt;
           &lt;td&gt;2025.09.29&lt;/td&gt;
           &lt;td&gt;Tutorial reference【&lt;a class=&#34;link&#34; href=&#34;https://thirdshire.com/hugo-stack-renovation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Blog 第三夏尔 | Third Shire&lt;/a&gt;】&lt;/td&gt;
@@ -1640,6 +1669,7 @@
 &lt;li&gt;Improve dark mode toggle in the left sidebar: show different icons and labels&lt;/li&gt;
 &lt;li&gt;Add category management to the &lt;strong&gt;Links&lt;/strong&gt; page&lt;/li&gt;
 &lt;li&gt;Add a donation feature&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;runtime&lt;/strong&gt; and &lt;strong&gt;article statistics&lt;/strong&gt; displayed at the bottom of the page automatically switch between Chinese and English based on the selected language version&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;(Planned for Phase 2 development: November 2025)&lt;/em&gt;&lt;/p&gt;
 </description>

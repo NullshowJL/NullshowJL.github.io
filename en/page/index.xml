@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Mon, 29 Sep 2025 22:31:39 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 Oct 2025 02:07:10 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About</title>
         <link>https://nullshowjl.github.io/en/about/</link>
         <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
@@ -70,7 +70,7 @@
     }
     var key = &#34;2025-09-24&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;0.7&#34;;
+    var wordCount = &#34;0.8&#34;;
     var link = &#34;/en/p/dev-logmy-tech-blog-website/&#34;;
     var title = &#34;【Dev Log】My Tech Blog Website&#34;;
 
@@ -273,7 +273,7 @@
     &gt;Bilibili darkjungle8&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;Add site &lt;strong&gt;uptime&lt;/strong&gt;, &lt;strong&gt;total number of published articles&lt;/strong&gt;, and &lt;strong&gt;word count&lt;/strong&gt; information to the website footer; Added &lt;strong&gt;Portfolio&lt;/strong&gt; to the left sidebar&lt;/td&gt;
+          &lt;td&gt;Add site &lt;strong&gt;uptime&lt;/strong&gt;, &lt;strong&gt;total number of published articles&lt;/strong&gt;, and &lt;strong&gt;word count&lt;/strong&gt; information to the website footer; Added &lt;strong&gt;numbered tags&lt;/strong&gt; to the top section of the &lt;strong&gt;archive&lt;/strong&gt; page; Added &lt;strong&gt;Portfolio&lt;/strong&gt; to the left sidebar&lt;/td&gt;
           &lt;td&gt;2025.09.29&lt;/td&gt;
           &lt;td&gt;Tutorial reference【&lt;a class=&#34;link&#34; href=&#34;https://thirdshire.com/hugo-stack-renovation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Blog 第三夏尔 | Third Shire&lt;/a&gt;】&lt;/td&gt;
@@ -305,6 +305,7 @@
 &lt;li&gt;Improve dark mode toggle in the left sidebar: show different icons and labels&lt;/li&gt;
 &lt;li&gt;Add category management to the &lt;strong&gt;Links&lt;/strong&gt; page&lt;/li&gt;
 &lt;li&gt;Add a donation feature&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;runtime&lt;/strong&gt; and &lt;strong&gt;article statistics&lt;/strong&gt; displayed at the bottom of the page automatically switch between Chinese and English based on the selected language version&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;(Planned for Phase 2 development: November 2025)&lt;/em&gt;&lt;/p&gt;
 </description>

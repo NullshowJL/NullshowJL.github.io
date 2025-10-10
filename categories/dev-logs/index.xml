@@ -253,6 +253,35 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-29&#34;&gt;2025-09-29
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;网页底部添加 &lt;strong&gt;运行时间&lt;/strong&gt;、&lt;strong&gt;文章篇数&lt;/strong&gt; 统计等信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;遇到的问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中文显示乱码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;听从AI的建议用VS Code打开文件检查，发现在UTF-8下是乱码。修改后正常显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;思考/收获&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;发现用VS 2022打开并没有出现乱码，但是VS Code可以显示这一问题&lt;/li&gt;
+&lt;li&gt;只是在使用完VS Code，一点击 &lt;strong&gt;保存&lt;/strong&gt;，它又会擅自更改格式，导致hugo无法编译&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;阶段小结一&#34;&gt;阶段小结一
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;目前进展&lt;/strong&gt;：

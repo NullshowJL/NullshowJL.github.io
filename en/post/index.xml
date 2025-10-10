@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Mon, 29 Sep 2025 22:31:39 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 Oct 2025 02:07:10 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【English for Developers】Expressions for Dev Life</title>
         <link>https://nullshowjl.github.io/en/p/english-for-developersexpressions-for-dev-life/</link>
         <pubDate>Sun, 28 Sep 2025 10:28:14 +0200</pubDate>
@@ -552,6 +552,35 @@
 &lt;p&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;First time realizing how important file size is for web delivery. Just like managing game assets in later stages of &lt;strong&gt;Brotato&lt;/strong&gt;, each programming domain has its own key concerns that you only grasp through hands-on experience&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2025-09-29&#34;&gt;2025-09-29
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Goals&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add &lt;strong&gt;runtime statistics&lt;/strong&gt; and &lt;strong&gt;article count&lt;/strong&gt; to the bottom of the webpage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Issues&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chinese characters appeared as garbled text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solutions&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Followed AI’s suggestion to inspect the file using VS Code. Found that the encoding was incorrect under UTF-8. After adjusting the encoding, the characters displayed correctly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Thoughts&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Opening the file in VS 2022 did not reveal any encoding issues, but VS Code clearly exposed the problem&lt;/li&gt;
+&lt;li&gt;However, after editing in VS Code, clicking &lt;strong&gt;Save&lt;/strong&gt; would automatically change the file format, causing Hugo to fail during compilation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

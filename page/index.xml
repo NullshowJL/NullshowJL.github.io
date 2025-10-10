@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Mon, 29 Sep 2025 22:31:39 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 Oct 2025 02:07:10 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>作品集</title>
         <link>https://nullshowjl.github.io/portfolio/</link>
         <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
@@ -180,6 +180,17 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2025-10-08&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;9.7&#34;;
+    var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/&#34;;
+    var title = &#34;【从零开始的C++游戏开发】提瓦特幸存者&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = &#34;2025-09-28&#34;;
     var value = dataMap.get(key);
     var wordCount = &#34;1.0&#34;;
@@ -193,7 +204,7 @@
     }
     var key = &#34;2025-09-24&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;1.9&#34;;
+    var wordCount = &#34;2.1&#34;;
     var link = &#34;/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/&#34;;
     var title = &#34;【开发日志】我的技术博客网站&#34;;
 
@@ -385,7 +396,7 @@
     &gt;B站 darkjungle8&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;在网站底部添加 &lt;strong&gt;网站运行时间&lt;/strong&gt;、&lt;strong&gt;发表文章篇数、字数&lt;/strong&gt; 信息；左侧栏增加 &lt;strong&gt;作品集&lt;/strong&gt;；&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;在网站底部添加 &lt;strong&gt;网站运行时间&lt;/strong&gt;、&lt;strong&gt;发表文章篇数、字数&lt;/strong&gt; 信息；&lt;strong&gt;归档&lt;/strong&gt; 页面上部增加 &lt;strong&gt;带数字的标签&lt;/strong&gt;；左侧栏增加 &lt;strong&gt;作品集&lt;/strong&gt;；&lt;/td&gt;
           &lt;td&gt;2025.09.29&lt;/td&gt;
           &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://thirdshire.com/hugo-stack-renovation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;博客 第三夏尔 | Third Shire&lt;/a&gt;】&lt;/td&gt;
@@ -467,6 +478,7 @@
 &lt;li&gt;左侧边栏的“暗色模式”改进：显示不同图标和文本&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt; 页面的分类管理&lt;/li&gt;
 &lt;li&gt;添加打赏功能&lt;/li&gt;
+&lt;li&gt;页面底部的 &lt;strong&gt;运行时间&lt;/strong&gt;、&lt;strong&gt;文章统计&lt;/strong&gt;信息可以随中/英文版自动切换为相应语言&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;（计划第二阶段开发时间：2025.11）&lt;/em&gt;&lt;/p&gt;
 </description>
