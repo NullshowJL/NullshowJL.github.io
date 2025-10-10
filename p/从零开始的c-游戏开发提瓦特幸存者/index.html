@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/'>
 
-<link rel="stylesheet" href="/scss/style.min.2794e3547cad122e9beb997d0cc22ec6f60f446234b71def48ada271c4eff8e1.css"><meta property='og:title' content="【从零开始的C++游戏开发】提瓦特幸存者">
+<link rel="stylesheet" href="/scss/style.min.0fc1d5f59456d189d9d1a72bc13375c1c99a43eb236ef37016e73da0cb16e0fb.css"><meta property='og:title' content="【从零开始的C++游戏开发】提瓦特幸存者">
 <meta property='og:description' content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-08T10:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-10T02:07:10&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-08T10:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-10T20:18:00&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
 <meta name="twitter:title" content="【从零开始的C++游戏开发】提瓦特幸存者">
 <meta name="twitter:description" content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
@@ -378,8 +378,22 @@ version: "3.1"
         </li>
       </ol>
     </li>
-    <li><a href="#番外篇角色动画特效和像素缓冲区">番外篇：角色动画特效和像素缓冲区</a></li>
-    <li><a href="#完整源码">完整源码</a></li>
+    <li><a href="#番外篇角色动画特效和像素缓冲区">番外篇：角色动画特效和像素缓冲区</a>
+      <ol>
+        <li><a href="#色彩知识补充">色彩知识补充</a></li>
+        <li><a href="#图像翻转效果的实现">图像翻转效果的实现</a></li>
+        <li><a href="#获取每一个像素颜色的rgb分量">获取每一个像素颜色的RGB分量</a></li>
+        <li><a href="#图片闪烁效果的实现">图片闪烁效果的实现</a></li>
+        <li><a href="#冻结效果的实现">冻结效果的实现</a>
+          <ol>
+            <li><a href="#alpha混合的原理">Alpha混合的原理</a></li>
+            <li><a href="#具体实现">具体实现</a></li>
+            <li><a href="#优化给冰冻状态增加高亮效果">优化：给冰冻状态增加高亮效果</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#项目主体部分的完整源码">项目主体部分的完整源码</a></li>
     <li><a href="#复盘和总结">复盘和总结</a></li>
   </ol>
 </nav>
@@ -461,7 +475,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            阅读时长: 20 分钟
+            阅读时长: 27 分钟
         </time>
     </div>
     
@@ -486,11 +500,20 @@ version: "3.1"
     <section class="article-content">
     
     
-    <h2 id="概览">概览
+    <p><strong>目录</strong></p>
+<ul>
+<li><a class="link" href="#%e6%a6%82%e8%a7%88" >概览</a></li>
+<li><a class="link" href="#%e6%a0%b8%e5%bf%83%e7%8e%a9%e6%b3%95" >核心玩法</a></li>
+<li><a class="link" href="#%e9%a1%b9%e7%9b%ae%e4%b8%bb%e4%bd%93%e5%bc%80%e5%8f%91" >项目主体开发</a></li>
+<li><a class="link" href="#%e7%95%aa%e5%a4%96%e7%af%87%e8%a7%92%e8%89%b2%e5%8a%a8%e7%94%bb%e7%89%b9%e6%95%88%e5%92%8c%e5%83%8f%e7%b4%a0%e7%bc%93%e5%86%b2%e5%8c%ba" >番外篇：角色动画特效和像素缓冲区</a></li>
+<li><a class="link" href="#%e9%a1%b9%e7%9b%ae%e4%b8%bb%e4%bd%93%e9%83%a8%e5%88%86%e7%9a%84%e5%ae%8c%e6%95%b4%e6%ba%90%e7%a0%81" >项目主体部分的完整源码</a></li>
+<li><a class="link" href="#%e5%a4%8d%e7%9b%98%e5%92%8c%e6%80%bb%e7%bb%93" >复盘和总结</a></li>
+</ul>
+<h2 id="概览">概览
 </h2><p><strong>技术栈</strong>：C++ + EasyX</p>
 <p><strong>项目目标</strong>：设计游戏的动画框架，接入键盘的按键操作，提供更具交互性的玩法。在数据和逻辑层面，实现简单的2D平面内的碰撞检查；实现敌人的随机生成和索敌跟踪逻辑。添加音乐和音效，丰富游戏的完成度。添加主菜单界面。使用享元模式来优化程序性能。</p>
 <p><strong>课程来源</strong>：<a class="link" href="https://www.bilibili.com/video/BV1eM4m1S74K/?share_source=copy_web"  target="_blank" rel="noopener"
-    >B站-VoidMatrix</a></p>
+    >B站-Voidmatrix</a></p>
 <h2 id="核心玩法">核心玩法
 </h2><p>玩家点击 <strong>开始</strong> 按钮进入游戏，使用 <strong>上 下 左 右</strong> 按键控制角色移动。在玩家角色的周围会有一圈子弹，野猪敌人会从屏幕外源源不断地涌向玩家。当子弹碰到敌人后，会击杀敌人并增加游戏得分。当敌人碰触到玩家角色时，游戏结束。</p>
 <h2 id="项目主体开发">项目主体开发
@@ -1832,7 +1855,433 @@ version: "3.1"
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="番外篇角色动画特效和像素缓冲区">番外篇：角色动画特效和像素缓冲区
-</h2><h2 id="完整源码">完整源码
+</h2><h3 id="色彩知识补充">色彩知识补充
+</h3><p>图片的最小单位是像素，像素的色彩由三原色红、绿、蓝（Red Green Blue），也就是我们常说的“RGB”，经过不同强度的各原色混合得到。如果用一个Color的结构体，可以这样表示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Color</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">g</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>“图片”本质上就是由这些像素所构成的二维数组。一张像素为 <code>100*100</code> 的图片可以等价为 <code>Color image[100][100];</code> 那么在窗口中绘制一张图片的过程就是将这个小一点的二维数组拷贝到窗口这个大一点的二维数组的过程。而绘制的坐标则决定了像素数组位置的索引EasyX的 <code>IMAGE</code> 类中，有一个 <code>DWORD* m_pBuffer;</code> 的指针，用来指向存储图片像素色彩的缓冲区地址。由因为二维数组在内存中的存储其实是按照从左到右、从上到下的方式连续存储的，所以如果我们想要访问 <code>(x, y)</code> 位置的像素颜色的值，用二维数组表示的代码是 <code>Color pix_color = image[y][x]</code> ，在EasyX中需要转化为 <code>DWORD pix_color = buffer[y * width + x]</code> （width为图片宽度）。而这个指向像素缓冲区的指针，则可以由EasyX提供的接口 <code>DWORD* GetImageBuffer(IMAGE* PImg = NULL)</code> 获取。所以，如果要获得 <code>image</code> 这张图片的色彩缓冲区，可以这样写 <code>DWORD* buffer = GetImageBuffer(&amp;image)</code>，缓冲区中的每一个 <code>DWORD </code>类型的元素都占据四个字节，存储RGBA（RGB色彩元素和透明通道）的信息。</p>
+<h3 id="图像翻转效果的实现">图像翻转效果的实现
+</h3><p>首先加载原始的图片素材，此例中为玩家向左的动画图片。然后定义玩家角色向右的动画序列帧数组，遍历每一张向左的图片并进行翻转。需要注意的是，首先我们需要使用了 <code>Resize</code> 来向右的序列帧图片调整为相同的大小，因为定义的<code>IMAGE</code> 对象如果没有使用其他对象进行拷贝构造或者使用 <code>loadimage</code> 函数进行加载的话，内部的像素缓存区默认是不存在的，所以 <code>Resize</code> 的过程同时也是对 <code>IMAGE</code> 对象进行内存分配的过程。接着，我们获取向左的图片和向右的图片的像素缓冲区，遍历图片像素缓冲区中的每一个像素，将它从向左的图片中拷贝到向右的图片中对应的位置上。那么在x轴上的元素在翻转后的位置索引为 <code>width - 1 - x</code>。具体的实现是这样的：</p>
+<p>加载向左的动画帧图片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_left</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 加载玩家向左的动画
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="n">TCHAR</span> <span class="n">img_path</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_stprintf_s</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/paimon_left_&amp;d.png&#34;</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loadimage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">img_path</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>实现向右翻转的动画帧图片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_right</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getwidth</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getheight</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Resize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_right</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>	<span class="c1">// 调整向右动画图片尺寸，同时为向右的图片开辟内存空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 遍历两套图片的色彩缓冲区，逐行进行水平翻转
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 并将相应索引上的像素信息拷贝给向右图片，完成翻转
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_left_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_right_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_right</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">idx_left_img</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>					<span class="c1">// 源像素索引（向左图片）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">idx_right_img</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">);</span>	<span class="c1">// 目标像素索引（向右图片）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">color_buffer_right_img</span><span class="p">[</span><span class="n">idx_right_img</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_buffer_left_img</span><span class="p">[</span><span class="n">idx_left_img</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取每一个像素颜色的rgb分量">获取每一个像素颜色的RGB分量
+</h3><p>EasyX提供了 <code>GetGValue</code> <code>GetRValue</code> 和<code>GetBValue</code> 这三个宏来分别获取分量值。但需要特别注意的是，常用的COLORREF（一种表示颜色的类型，本质上是32位的整数）在内存中的表示形式为 <code>0xbbggrr</code> ，里面的红色和蓝色是对调的，所以我们在用EasyX的三个宏获取RGB分量时要需要调换R和B的位置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">DWORD</span> <span class="n">pix_color</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">[</span><span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="n">GetBValue</span><span class="p">(</span><span class="n">pix_color</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">BYTE</span> <span class="n">g</span> <span class="o">=</span> <span class="n">GetGValue</span><span class="p">(</span><span class="n">pix_color</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="n">GetRValue</span><span class="p">(</span><span class="n">pix_color</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="图片闪烁效果的实现">图片闪烁效果的实现
+</h3><p>本质上就是切换图片正常状态的序列帧和其纯白色的剪影序列帧即可。剪影序列帧也是可以通过操作渲染缓冲区进行动态生成。那么如何将像素的颜色设置为纯白色呢？首先可以使用RGB宏组合出COLORREF类型的值，然后使用BGR交换红色和蓝色的顺序，最后设置其透明通道的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 前半部分获得标准顺序RGB的白色：0x00FFFFFF
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 后半部分构造alpha通道（透明度）：(BYTE)(255)是8位的255，代表完全不透明，向左位移24位，得到0xFF000000
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 前后部分用按位或进行合并，得到0xFFFFFFFF，即完全不透明的纯白色
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">DWORD</span> <span class="n">white_pix</span> <span class="o">=</span> <span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么实现图片闪烁的具体思路就是：先定义一个剪影序列帧的图片数组，然后同样遍历每一张原始图片素材，使用 <code>Resize</code> 将它们设置为相同大小并开辟内存空间。然后分别获取它们的色彩缓冲区，在两层循环中先判断当前位置的颜色是否为白色，如果不是则设置为白色：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_left_sketch</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 生成玩家向左动画的剪影
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 调整剪影动画图片尺寸大小同时开辟内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getwidth</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getheight</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Resize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left_sketch</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 获取两套图片的色彩缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_raw_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_sketch_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left_sketch</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 遍历图片的色彩缓冲区，将透明度不为0的像素设置为白色
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">((</span><span class="n">color_buffer_raw_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span>	<span class="c1">// if的判断条件为真，即像素不为0（白色）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">color_buffer_sketch_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="冻结效果的实现">冻结效果的实现
+</h3><h4 id="alpha混合的原理">Alpha混合的原理
+</h4><p>EasyX在绘制图片是不考虑透明度的，那么透明度存在时的色彩计算公式为 <code>最终颜色 = 源颜色 * Alpha + 目标颜色 * （1 - Alpha）</code> 此处的Alpha值不是0 - 255，而是0 - 1的浮点数。 也就是说，如果将一张纯绿色的图片绘制到一张纯红色背景图片上时，覆盖位置的颜色可以进行这样的计算：</p>
+<figure style="text-align: center;">
+  <img src="teyvat4.webp" alt="不考虑Alpha混合图片叠加效果" style="zoom:33%;" />
+  <figcaption style="font-size: 0.9em; color: #A0AEC0;">不考虑 Alpha 混合的图片叠加效果</figcaption>
+</figure>
+<figure style="text-align: center;">
+  <img src="teyvat5.webp" alt="考虑Alpha混合图片叠加效果" style="zoom:33%;" />
+  <figcaption style="font-size: 0.9em; color: #A0AEC0;">考虑 Alpha 混合的图片叠加效果及其计算公式</figcaption>
+</figure>
+<p>所以冰冻效果的实现思路，可以将一张冰冻的图片，以半透明的方式贴附在正常显示的图片之上。</p>
+<h4 id="具体实现">具体实现
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 拷贝当前帧用于后续处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">IMAGE</span> <span class="nf">img_current_frame</span><span class="p">(</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getwidth</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getheight</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 获取当前帧图片和冰冻图片的色彩缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_ice_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_ice</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_frame_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_current_frame</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 遍历当前帧的色彩缓冲区，将不透明的区域进行混叠
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">RATIO</span> <span class="o">=</span> <span class="mf">0.25f</span><span class="p">;</span>	<span class="c1">// 混叠比例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">DWORD</span> <span class="n">color_ice_img</span> <span class="o">=</span> <span class="n">color_buffer_ice_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DWORD</span> <span class="n">color_frame_img</span> <span class="o">=</span> <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="n">color_frame_img</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span>	<span class="c1">// 0xFF000000为透明通道
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 注意：色彩缓冲区中颜色存储的顺序是BGR，所以获取时需要调换B和R的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetBValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetBValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="n">BYTE</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetGValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetGValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetRValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetRValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 与透明通道叠加
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="优化给冰冻状态增加高亮效果">优化：给冰冻状态增加高亮效果
+</h4><p>思路：用一条白色扫描线从上至下扫描图片，为了让效果更逼真，我们对混叠后的贴图先进行亮度提取，只有亮度大于一定阈值的部分才会显示为白色条带，所以调整后的完整代码是这样的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">RenderFrozenPlayer</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">const</span> <span class="n">POINT</span> <span class="n">position</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1075</span><span class="p">,</span> <span class="mi">345</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// 动画帧索引
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">anim_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// 动画计时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">frozen_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// 冰冻状态计时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">THICKNESS</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>	<span class="c1">// 扫描线宽度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">hightlight_pos_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">// 扫描线竖直坐标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">bool</span> <span class="n">is_frozen</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">// 当前是否正在冰冻
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 如果没有处于冰冻状态则更新动画计时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="n">is_frozen</span><span class="p">)</span> <span class="o">%%</span> <span class="p">(</span><span class="o">++</span><span class="n">anim_timer</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">counter</span> <span class="o">=</span> <span class="p">(</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 更新冻结计时器并重置扫描线位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">frozen_timer</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">is_frozen</span> <span class="o">=</span> <span class="o">!</span><span class="n">is_frozen</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">highlight_pos_y</span> <span class="o">=</span> <span class="o">-</span><span class="n">THICKNESS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 绘制玩家脚底阴影
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">putimage_alpha</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">80</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">80</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_shadow</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 根据当前是否处于冰冻状态渲染不同的动画帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">is_frozen</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 拷贝当前帧用于后续处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">IMAGE</span> <span class="n">img_current_frame</span><span class="p">(</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getwidth</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getheight</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 更新高亮扫描线竖直坐标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">highlight_pos_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">highlight_pos_y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取当前帧图片和冰冻图片的色彩缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_ice_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_ice</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_frame_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_current_frame</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">RATIO</span> <span class="o">=</span> <span class="mf">0.25f</span><span class="p">;</span>		<span class="c1">// 混叠比例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">THRESHOLD</span> <span class="o">=</span> <span class="mf">0.84f</span><span class="p">;</span>	<span class="c1">// 高亮阈值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">DWORD</span> <span class="n">color_ice_img</span> <span class="o">=</span> <span class="n">color_buffer_ice_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="n">DWORD</span> <span class="n">color_frame_img</span> <span class="o">=</span> <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">((</span><span class="n">color_frame_img</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span>	<span class="c1">// 0xFF000000为透明通道
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 注意：色彩缓冲区中颜色存储的顺序是BGR，所以获取时需要调换B和R的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetBValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">                                    <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetBValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">BYTE</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetGValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">                                    <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetGValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetRValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">                                    <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetRValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 如果高亮扫描线处的像素亮度大于阈值，则直接将该像素设置为白色
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="k">if</span> <span class="p">((</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">hightlight_pos_y</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">highlight_pos_y</span> <span class="o">+</span> <span class="n">THICKNESS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                       <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="n">r</span> <span class="o">/</span> <span class="mf">255.0f</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2126f</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="mf">255.0f</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.7152f</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">/</span> <span class="mf">255.0f</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0722f</span> 
+</span></span><span class="line"><span class="cl">                           <span class="o">&gt;=</span> <span class="n">TRESHOLD</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    	<span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl">                            <span class="o">=</span> <span class="p">(</span><span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">putimage_alpha</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_current_frame</span><span class="p">);</span>	
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="n">putimage_alpha</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于RGB色彩分量的亮度计算时，每个颜色前的系数来自于经验公式。</p>
+<h2 id="项目主体部分的完整源码">项目主体部分的完整源码
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
@@ -3240,7 +3689,8 @@ version: "3.1"
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="复盘和总结">复盘和总结
-</h2>
+</h2><p>虽然这个项目的实现还是基于初学者的直觉进行开发，并未做太多架构上的设计，但是我还是学到了很多。老师同样是从游戏的框架开始，渐渐细化每个模块，同时他清晰展示了每一部分遇到了怎样的问题，可以用怎样的思路解决问题，对我自己的开发具有很大的参考价值。同时还让我详细了解了动画的底层实现，补充了颜色和像素的知识，帮我复习了向量运动和2D碰撞。以一个非常浅显又实操的例子让我明白了享元模式和设计模式的作用。经常会有一种醍醐灌顶、拨开云雾见青天的感觉。接下来需要进一步补充的地方，一是关于3D的碰撞检测等，3D的内容在学校里以非常传统的读教科书做题的方式学过一遍，但是没有开发中的例子所以印象不深，感觉现在已经全忘了。二是游戏开发的设计模式，在读书的时候也是按照最传统的方式看书回答问题，但那时的感觉基本是看天书一般，蒙着做的题目，所以应该会继续学习这位老师相关的设计模式课程，让自己在实战中有更深刻的理解。</p>
+
 </section>
 
 
@@ -3279,7 +3729,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Oct 10, 2025 02:07 &#43;0200
+            最后更新于 Oct 10, 2025 20:18 &#43;0200
         </span>
     </section></footer>
 
@@ -3383,7 +3833,7 @@ version: "3.1"
         
 
         发表了4篇文章 ·
-        总计2万0千字
+        总计2万3千字
         <br>
     </section>
 
@@ -3492,7 +3942,7 @@ version: "3.1"
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.755a1a1acaa996ead77338b5a104158d9c984cdb91486ddb4e1650dfa16111d9.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

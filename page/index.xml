@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Fri, 10 Oct 2025 02:07:10 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 Oct 2025 20:18:00 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>作品集</title>
         <link>https://nullshowjl.github.io/portfolio/</link>
         <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
@@ -182,7 +182,7 @@
   
     var key = &#34;2025-10-08&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;9.7&#34;;
+    var wordCount = &#34;13.2&#34;;
     var link = &#34;/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/&#34;;
     var title = &#34;【从零开始的C++游戏开发】提瓦特幸存者&#34;;
 
@@ -392,7 +392,7 @@
           &lt;td style=&#34;text-align: left&#34;&gt;添加 &lt;strong&gt;RSS&lt;/strong&gt; 功能中英文版对应订阅，实现头像下方小图标悬停动画；widget2D模型改为 &lt;strong&gt;moc3&lt;/strong&gt;，添加自定义模型&lt;/td&gt;
           &lt;td&gt;2025.09.23&lt;/td&gt;
           &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/live2d-moc3/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客 莱特雷-letere&lt;/a&gt;】；【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1vf421X7Hn/?vd_source=25d94d3057857348a68699c1cf009900&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 莱特雷-letere&lt;/a&gt;】；模型来源【&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1vf421X7Hn/?vd_source=25d94d3057857348a68699c1cf009900&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;B站 darkjungle8&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
@@ -402,9 +402,11 @@
     &gt;博客 第三夏尔 | Third Shire&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;调整 &lt;strong&gt;代码块&lt;/strong&gt; 部分的字体和大小，增加所用编程语言的标识&lt;/td&gt;
+          &lt;td&gt;2025.10.09&lt;/td&gt;
+          &lt;td&gt;教程参考【&lt;a class=&#34;link&#34; href=&#34;https://www.xalaok.top/post/stack-modify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 Naive Koala&lt;/a&gt;】；【&lt;a class=&#34;link&#34; href=&#34;https://thirdshire.com/hugo-stack-renovation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客 第三夏尔 | Third Shire&lt;/a&gt;】&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;

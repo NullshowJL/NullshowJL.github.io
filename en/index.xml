@@ -827,7 +827,7 @@
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;：C++ + EasyX&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Project Goal&lt;/strong&gt;: Set up the EasyX environment and complete two small demos (a circle that follows the mouse, and a tic-tac-toe game). Understand the basic structure of a game loop.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Course Source&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1iQ4y1s7Qj?vd_source=b1a61d6b078b6e795dda5bac409d910e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Bilibli-VoidMatrix&lt;/a&gt;&lt;/p&gt;
+    &gt;Bilibili-Voidmatrix&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;environment-setup&#34;&gt;Environment Setup
 &lt;/h2&gt;&lt;p&gt;EasyX: Just search for “EasyX” and download it directly from the official site.&lt;/p&gt;
 &lt;p&gt;To use EasyX functions, include &lt;code&gt;&amp;lt;graphics.h&amp;gt;&lt;/code&gt; in your header file.&lt;/p&gt;
