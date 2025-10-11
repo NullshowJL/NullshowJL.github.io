@@ -12,7 +12,13 @@
         <pubDate>Wed, 24 Sep 2025 09:11:30 +0200</pubDate>
         
         <guid>https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/</guid>
-        <description>&lt;img src="https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/blog-en.webp" alt="Featured image of post 【Dev Log】My Tech Blog Website" /&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview
+        <description>&lt;img src="https://nullshowjl.github.io/en/p/dev-logmy-tech-blog-website/blog-en.webp" alt="Featured image of post 【Dev Log】My Tech Blog Website" /&gt;&lt;p&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#Overview&#34; &gt;Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#timeline---phase-one&#34; &gt;Timeline - Phase One&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#phase-one-summary&#34; &gt;Phase One Summary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Project Goal&lt;/strong&gt;: Build a personal blog website from scratch to document and share my learning notes, development journey, and reflections. It also serves as part of my portfolio.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;: GitHub Pages + Hugo, with lightweight customizations based on the Stack theme.&lt;/li&gt;
@@ -22,7 +28,7 @@
 &lt;li&gt;&lt;strong&gt;Repository&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://github.com/NullshowJL/NullshowJL.github.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;timeline--phase-one&#34;&gt;Timeline &amp;ndash; Phase One
+&lt;h2 id=&#34;timeline---phase-one&#34;&gt;Timeline - Phase One
 &lt;/h2&gt;&lt;h3 id=&#34;2025-09-14&#34;&gt;2025-09-14
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Goals&lt;/strong&gt;：

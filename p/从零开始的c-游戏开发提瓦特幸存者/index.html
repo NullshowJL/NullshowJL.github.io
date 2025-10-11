@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/'>
 
-<link rel="stylesheet" href="/scss/style.min.0fc1d5f59456d189d9d1a72bc13375c1c99a43eb236ef37016e73da0cb16e0fb.css"><meta property='og:title' content="【从零开始的C++游戏开发】提瓦特幸存者">
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【从零开始的C++游戏开发】提瓦特幸存者">
 <meta property='og:description' content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-08T10:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-10T20:18:00&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-08T10:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-11T09:23:12&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
 <meta name="twitter:title" content="【从零开始的C++游戏开发】提瓦特幸存者">
 <meta name="twitter:description" content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
@@ -1075,6 +1075,8 @@ version: "3.1"
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animation</span>
@@ -1101,7 +1103,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">timer</span> <span class="o">&gt;=</span> <span class="n">interval_ms</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">idx_frame</span> <span class="o">=</span> <span class="p">(</span><span class="n">idx_frame</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">frame_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">            <span class="n">timer</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">// 绘制每一帧图片
@@ -1118,7 +1120,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">IMAGE</span><span class="o">*&gt;</span> <span class="n">frame_list</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">interval_ms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// 帧间隔
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="实现角色移动">实现角色移动
@@ -1251,11 +1255,11 @@ version: "3.1"
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dir_x</span> <span class="o">=</span> <span class="n">is_move_right</span> <span class="o">-</span> <span class="n">is_move_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dir_y</span> <span class="o">=</span> <span class="n">is_move_down</span> <span class="o">-</span> <span class="n">is_move_up</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">len_dir</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">die_x</span> <span class="o">*</span> <span class="n">die_x</span> <span class="o">+</span> <span class="n">dir_y</span> <span class="o">+</span> <span class="n">dir_y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">len_dir</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dir_x</span> <span class="o">*</span> <span class="n">dir_x</span> <span class="o">+</span> <span class="n">dir_y</span> <span class="o">+</span> <span class="n">dir_y</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">len_dir</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">nomalized_x</span> <span class="o">=</span> <span class="n">dir_x</span> <span class="o">/</span> <span class="n">len_dir</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">nomalized_y</span> <span class="o">=</span> <span class="n">dir_y</span> <span class="o">/</span> <span class="n">len_dir</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">normalized_x</span> <span class="o">=</span> <span class="n">dir_x</span> <span class="o">/</span> <span class="n">len_dir</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">normalized_y</span> <span class="o">=</span> <span class="n">dir_y</span> <span class="o">/</span> <span class="n">len_dir</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">player_pos</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">PLAYER_SPEED</span> <span class="o">*</span> <span class="n">normalized_x</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">player_pos</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">PLAYER_SPEED</span> <span class="o">*</span> <span class="n">normalized_y</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1799,7 +1803,7 @@ version: "3.1"
 </div><h4 id="按钮类的设计">按钮类的设计
 </h4><p>按钮的状态有三种：Idle、Hover和Pushed，理清这三者的跳转关系来编写玩家输入的代码：</p>
 <img src="teyvat3.webp" alt="" style="zoom:60%;" />
-<p>相应的，我们需要处理的情况也有三种：鼠标移动、左键按下、左键抬起</p>
+<p>相应的，我们需要处理的情况也有三种：鼠标移动、左键按下、左键抬起：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -3729,7 +3733,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Oct 10, 2025 20:18 &#43;0200
+            最后更新于 Oct 11, 2025 09:23 &#43;0200
         </span>
     </section></footer>
 
@@ -4101,18 +4105,18 @@ version: "3.1"
 
 
 <style>
-  #backTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
-    background-size: cover;
-  }
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
 </style>
 
 <script>
@@ -4449,18 +4453,18 @@ version: "3.1"
 
 
 <style>
-  #backTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
-    background-size: cover;
-  }
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
 </style>
 
 <script>

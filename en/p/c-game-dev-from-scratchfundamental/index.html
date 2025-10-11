@@ -6,11 +6,11 @@
 
 <link rel='canonical' href='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/'>
 
-<link rel="stylesheet" href="/scss/style.min.0fc1d5f59456d189d9d1a72bc13375c1c99a43eb236ef37016e73da0cb16e0fb.css"><meta property='og:title' content="【C++ Game Dev from Scratch】Fundamental">
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【C++ Game Dev from Scratch】Fundamental">
 <meta property='og:description' content="Circle following the mouse, the implementation of Tic-Tac-Toe. Notes for Episode 0 of this tutorial series">
 <meta property='og:url' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/'>
 <meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-09-18T09:11:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-10T20:18:00&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/tictactoe-en.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-09-18T09:11:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-11T09:23:12&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/tictactoe-en.webp' />
 <meta name="twitter:title" content="【C++ Game Dev from Scratch】Fundamental">
 <meta name="twitter:description" content="Circle following the mouse, the implementation of Tic-Tac-Toe. Notes for Episode 0 of this tutorial series"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/tictactoe-en.webp' />
@@ -342,7 +342,7 @@ version: "3.1"
     <li><a href="#environment-setup">Environment Setup</a></li>
     <li><a href="#demo1---circle-follows-mouse">Demo1 - Circle Follows Mouse</a>
       <ol>
-        <li><a href="#design-concept">Design Concept</a></li>
+        <li><a href="#design-approach">Design Approach</a></li>
         <li><a href="#development-steps">Development Steps</a>
           <ol>
             <li><a href="#initialize-window-and-main-loop">Initialize Window and Main Loop</a></li>
@@ -365,7 +365,7 @@ version: "3.1"
     <li><a href="#demo2---tic-tac-toe-game">Demo2 - Tic-Tac-Toe Game</a>
       <ol>
         <li><a href="#game-description">Game Description</a></li>
-        <li><a href="#design-concept-1">Design Concept</a>
+        <li><a href="#design-approach-1">Design Approach</a>
           <ol>
             <li><a href="#three-core-elements-in-the-game-loop">Three Core Elements in the Game Loop</a></li>
             <li><a href="#data-structures">Data Structures</a></li>
@@ -491,7 +491,15 @@ version: "3.1"
     <section class="article-content">
     
     
-    <h2 id="overview">Overview
+    <p><strong>Table of Contents</strong></p>
+<ul>
+<li><a class="link" href="#overview" >Overview</a></li>
+<li><a class="link" href="#environment-setup" >Environment Setup</a></li>
+<li><a class="link" href="#demo1---circle-follows-mouse" >Demo1 - Circle Follows Mouse</a></li>
+<li><a class="link" href="#demo2---tic-tac-toe-game" >Demo2 - Tic-Tac-Toe Game</a></li>
+<li><a class="link" href="#reflection-and-summary" >Reflection and Summary</a></li>
+</ul>
+<h2 id="overview">Overview
 </h2><p><strong>Tech Stack</strong>：C++ + EasyX</p>
 <p><strong>Project Goal</strong>: Set up the EasyX environment and complete two small demos (a circle that follows the mouse, and a tic-tac-toe game). Understand the basic structure of a game loop.</p>
 <p><strong>Course Source</strong>：<a class="link" href="https://www.bilibili.com/video/BV1iQ4y1s7Qj?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
@@ -500,7 +508,7 @@ version: "3.1"
 </h2><p>EasyX: Just search for “EasyX” and download it directly from the official site.</p>
 <p>To use EasyX functions, include <code>&lt;graphics.h&gt;</code> in your header file.</p>
 <h2 id="demo1---circle-follows-mouse">Demo1 - Circle Follows Mouse
-</h2><h3 id="design-concept">Design Concept
+</h2><h3 id="design-approach">Design Approach
 </h3><ul>
 <li>Create a window and set up the main game loop</li>
 <li>Draw a circle that follows the mouse</li>
@@ -659,7 +667,7 @@ version: "3.1"
 <h2 id="demo2---tic-tac-toe-game">Demo2 - Tic-Tac-Toe Game
 </h2><h3 id="game-description">Game Description
 </h3><p>Players take turns placing X or O on a 3 * 3 grid. If one player gets three in a row (horizontal, vertical, or diagonal), they win. If all nine cells are filled with no winner, it’s a draw. This demo supports local two-player mode only.</p>
-<h3 id="design-concept-1">Design Concept
+<h3 id="design-approach-1">Design Approach
 </h3><h4 id="three-core-elements-in-the-game-loop">Three Core Elements in the Game Loop
 </h4><p><strong>Input</strong>: Handle mouse left-clicks. If a blank cell is clicked, place a piece.</p>
 <p><strong>Data Processing</strong>: Check for game-over conditions: three matching pieces in a line or full board. If the game ends, show a popup and exit the loop.</p>
@@ -1283,7 +1291,7 @@ version: "3.1"
 
 
         <span>
-            Last updated on Oct 10, 2025 20:18 &#43;0200
+            Last updated on Oct 11, 2025 09:23 &#43;0200
         </span>
     </section></footer>
 
@@ -1299,6 +1307,30 @@ version: "3.1"
     <h2 class="section-title">Related content</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/teyvat0.2074225f101a4c9d2f4143010a76f8b3_hu_b0a14c165a37bd82.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors"
+                        
+                        data-hash="md5-IHQiXxAaTJ0vQUMBCnb4sw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -1359,9 +1391,11 @@ version: "3.1"
         
         
         
+        
+        
 
-        发表了4篇文章 ·
-        总计0万5千字
+        发表了5篇文章 ·
+        总计1万4千字
         <br>
     </section>
 
@@ -1629,18 +1663,18 @@ version: "3.1"
 
 
 <style>
-  #backTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
-    background-size: cover;
-  }
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
 </style>
 
 <script>
@@ -1977,18 +2011,18 @@ version: "3.1"
 
 
 <style>
-  #backTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
-    background-size: cover;
-  }
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
 </style>
 
 <script>
