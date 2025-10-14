@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="制作一个简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记">
 <title>【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者</title>
 
 <link rel='canonical' href='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/'>
 
 <link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【从零开始的C++游戏开发】提瓦特幸存者">
-<meta property='og:description' content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记">
+<meta property='og:description' content="制作一个简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-08T10:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-11T09:23:12&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-08T10:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-14T22:00:24&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
 <meta name="twitter:title" content="【从零开始的C++游戏开发】提瓦特幸存者">
-<meta name="twitter:description" content="简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="制作一个简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -439,7 +439,7 @@ version: "3.1"
     
         
         <h3 class="article-subtitle">
-            简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记
+            制作一个简单版类吸血鬼幸存者游戏，这一系列教程第1集的笔记
         </h3>
         
     </div>
@@ -744,7 +744,7 @@ version: "3.1"
 <p>优化：性能提升</p>
 <ul>
 <li>解决思路：使用 <strong>享元模式</strong> 优化资源加载</li>
-<li>注意：不能再Animation中释放其持有的Atlas，因为它是共享的，所以只能由更上层的代码控制</li>
+<li>注意：不能在Animation中释放其持有的Atlas，因为它是共享的，所以只能由更上层的代码控制</li>
 </ul>
 </li>
 <li>
@@ -2218,7 +2218,7 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">bool</span> <span class="n">is_frozen</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">// 当前是否正在冰冻
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
 </span></span><span class="line"><span class="cl">    <span class="c1">// 如果没有处于冰冻状态则更新动画计时器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="n">is_frozen</span><span class="p">)</span> <span class="o">%%</span> <span class="p">(</span><span class="o">++</span><span class="n">anim_timer</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="n">is_frozen</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">++</span><span class="n">anim_timer</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">        <span class="n">counter</span> <span class="o">=</span> <span class="p">(</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 更新冻结计时器并重置扫描线位置
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">frozen_timer</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
@@ -3733,7 +3733,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Oct 11, 2025 09:23 &#43;0200
+            最后更新于 Oct 14, 2025 22:00 &#43;0200
         </span>
     </section></footer>
 
@@ -3749,6 +3749,54 @@ version: "3.1"
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/plant0.1b012a76c5604bf796bf2aca3a991558_hu_dadf13eb43295ceb.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现"
+                        
+                        data-hash="md5-GwEqdsVgS/eWvyrKOpkVWA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/plant0.ec0863682fef9b7bb25dd0aa71367140_hu_c5cb516139d84f9a.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计"
+                        
+                        data-hash="md5-7AhjaC/vm3uyXdCqcTZxQA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -3835,9 +3883,13 @@ version: "3.1"
         
         
         
+        
+        
+        
+        
 
-        发表了4篇文章 ·
-        总计2万3千字
+        发表了6篇文章 ·
+        总计4万4千字
         <br>
     </section>
 

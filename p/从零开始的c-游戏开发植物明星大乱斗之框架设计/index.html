@@ -1,0 +1,3124 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的上半部分">
+<title>【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计</title>
+
+<link rel='canonical' href='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/'>
+
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【从零开始的C++游戏开发】植物明星大乱斗之框架设计">
+<meta property='og:description' content="制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的上半部分">
+<meta property='og:url' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/'>
+<meta property='og:site_name' content='Nullshow的技术博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-11T09:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-14T22:00:24&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/plant0.webp' />
+<meta name="twitter:title" content="【从零开始的C++游戏开发】植物明星大乱斗之框架设计">
+<meta name="twitter:description" content="制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的上半部分"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/plant0.webp' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+        
+        <figure class="site-avatar">
+            <a href="/">
+                
+                
+
+                
+                
+                <img src="/img/avatar_hu_707be34854ee244.png" width="300"
+                     height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                
+            </a>
+            
+            <span class="emoji">✍️</span>
+            
+        </figure>
+        
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Nullshow的技术博客</a></h1>
+            <h2 class="site-description">分享和记录我在开发和学习中的笔记、经验和感悟~</h2>
+        </div>
+    </header><ol class="menu-social">
+        
+        
+        
+        <li>
+            <a href='https://gitee.com/nullshow'
+                target="_blank" 
+                title="Gitee" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hexagon-letter-g" class="icon-tabler-hexagon-letter-g"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" /><path d="M14 8h-2a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2v-4h-1" /></svg>
+                
+            </a>
+        </li>
+        
+        
+        
+        <li>
+            <a href='https://github.com/NullshowJL'
+                target="_blank" 
+                title="GitHub" 
+               rel="me">
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-brand-github">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li>
+            <a href='/index.xml'
+                target="_blank" 
+                title="RSS" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss" class="icon-tabler-brand-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+                
+            </a>
+        </li>
+        
+    </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-home">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>作品集</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-user">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/' >
+                
+                
+                
+                <!--
+unicode: "fea7"
+version: "3.1"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ class="icon-tabler-logs">
+  <path d="M4 12h.01" />
+  <path d="M4 6h.01" />
+  <path d="M4 18h.01" />
+  <path d="M8 18h2" />
+  <path d="M8 12h2" />
+  <path d="M8 6h2" />
+  <path d="M14 6h6" />
+  <path d="M14 12h6" />
+  <path d="M14 18h6" />
+</svg>
+
+                
+                <span>更新日志</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-archives">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-search">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-link">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                        <option value="https://nullshowjl.github.io/en/" >English</option>
+                        
+                        <option value="https://nullshowjl.github.io/"  selected>中文</option>
+                        
+                    </select>
+                </li>
+                
+                
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-left">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-right">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-hash">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#核心玩法">核心玩法</a></li>
+    <li><a href="#设计思路">设计思路</a>
+      <ol>
+        <li><a href="#多个头文件的使用">多个头文件的使用</a></li>
+        <li><a href="#游戏主框架的设计">游戏主框架的设计</a></li>
+        <li><a href="#各个对象类的设计">各个对象/类的设计</a></li>
+      </ol>
+    </li>
+    <li><a href="#开发流程---框架部分">开发流程 - 框架部分</a></li>
+    <li><a href="#关键步骤和解决思路---框架部分">关键步骤和解决思路 - 框架部分</a>
+      <ol>
+        <li><a href="#场景设计">场景设计</a>
+          <ol>
+            <li><a href="#scene基类">Scene基类</a></li>
+            <li><a href="#主菜单场景类menuscene">主菜单场景类MenuScene</a></li>
+            <li><a href="#场景管理器的实现">场景管理器的实现</a></li>
+          </ol>
+        </li>
+        <li><a href="#资源加载部分的设计">资源加载部分的设计</a>
+          <ol>
+            <li><a href="#atlas类的实现">Atlas类的实现</a></li>
+            <li><a href="#资源的加载">资源的加载</a></li>
+            <li><a href="#animation类的实现">Animation类的实现</a></li>
+          </ol>
+        </li>
+        <li><a href="#摄像机的设计">摄像机的设计</a>
+          <ol>
+            <li><a href="#窗口坐标系和世界坐标系">窗口坐标系和世界坐标系</a></li>
+            <li><a href="#vector2类的实现">Vector2类的实现</a></li>
+            <li><a href="#摄像机类的实现">摄像机类的实现</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/plant0_hu_ebb39a6729f7a111.webp"
+                        srcset="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/plant0_hu_ebb39a6729f7a111.webp 800w, /p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/plant0_hu_4c3097d5fc7100ae.webp 1600w"
+                        width="800" 
+                        height="240" 
+                        loading="lazy"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
+                Study Notes
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的上半部分
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+<footer class="article-time">
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-date">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+        <time class="article-time--published">Oct 11, 2025</time>
+    </div>
+    
+
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--reading">
+            阅读时长: 17 分钟
+        </time>
+    </div>
+    
+
+    
+    <div id="viewCount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye" class="icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+        <time class="article-time--reading">
+            
+            <span id="vercount_value_page_pv">loading... </span> views
+        </time>
+    </div>
+
+</footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><strong>目录</strong></p>
+<ul>
+<li><a class="link" href="#%e6%a6%82%e8%a7%88" >概览</a></li>
+<li><a class="link" href="#%e6%a0%b8%e5%bf%83%e7%8e%a9%e6%b3%95" >核心玩法</a></li>
+<li><a class="link" href="#%e8%ae%be%e8%ae%a1%e6%80%9d%e8%b7%af" >设计思路</a></li>
+<li><a class="link" href="#%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b---%e6%a1%86%e6%9e%b6%e9%83%a8%e5%88%86" >开发流程 - 框架部分</a></li>
+<li><a class="link" href="#%e5%85%b3%e9%94%ae%e6%ad%a5%e9%aa%a4%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af---%e6%a1%86%e6%9e%b6%e9%83%a8%e5%88%86" >关键步骤和解决思路 - 框架部分</a></li>
+</ul>
+<p>此项目大约有两千余行代码且知识点繁多，所以分为两篇来写。这一篇是上半部分，介绍整个项目的概况，在关键步骤的内容上则侧重框架部分的设计和实现。</p>
+<h2 id="概览">概览
+</h2><p><strong>技术栈</strong>：C++ + EasyX</p>
+<p><strong>项目目标</strong>：使用多个头文件的项目组织结构，引入“场景”这一设计来划分游戏的不同阶段，实现功能间的解耦合。了解简单的物理模拟实现思路，并完成单向碰撞平台的功能。封装 <strong>摄像机</strong>、<strong>定时器</strong> 和 <strong>粒子系统</strong> 等在游戏开发中热度很高的功能，进一步推进项目作品水准的专业化。同时，实现更灵动的动画效果和更丰富的音效，提升项目的完成度。</p>
+<p><strong>课程来源</strong>：<a class="link" href="https://www.bilibili.com/video/BV1jx4y1t7eP?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
+    >B站-Voidmatrix</a></p>
+<h2 id="核心玩法">核心玩法
+</h2><p>两位玩家可以使用不同的角色进行本地双人对战，在平台间跳跃和移动，使用效果各异的普通攻击和特殊攻击给对方造成伤害，并获取能量奖励，能量蓄满后可以释放不同技能。生命值归零或坠落到平台下方的玩家会被击败。</p>
+<h2 id="设计思路">设计思路
+</h2><h3 id="多个头文件的使用">多个头文件的使用
+</h3><p>随着项目体量的增大，如果将全部的代码都放到 <code>main.cpp</code> 中会显得十分臃肿，不仅会导致命名空间和依赖关系混乱，在调试和修改时也不容易定位具体的代码位置，所以需要将它们“分而治之”。所以本项目开始会将游戏不同阶段的代码放到不同的类中进行封装，并将不同的类代码存放在不同的头文件中。</p>
+<p><strong>雷点——重复引用</strong>：</p>
+<p>当我们使用 <code>#include</code> 去包含头文件时，编译器会将所有的这个头文件中的内容原封不动地替换在 <code>#include</code> 地位置，这个过程是一个纯粹的文本内容的复制粘贴。所以，我们一个头文件 <code>A.h</code> 中包含了头文件<code>B.h</code>，<code>main.cpp</code>又同时包含了<code>A.h</code>和<code>B.h</code>，由于<code>A.h</code>中已经有了<code>B.h</code>的内容，所以在<code>main.cpp</code>中会有两份<code>B.h</code>的内容，如果涉及到类定义等代码，就会出现重复定义的问题，导致编译器无法编译。</p>
+<p><strong>避坑方法</strong>：</p>
+<ul>
+<li>
+<p>使用预处理指令 <code>#pragma once</code>：编译器会确保同一个头文件里的内容不会被重复包含两次</p>
+</li>
+<li>
+<p>使用 <code>#ifndef</code>指令对头文件的内容进行包含：如果没有定义对应头文件名称的宏就定义这个宏并包含代码文件，反之则不进行任何操作</p>
+<p>完整的写法示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#ifndef _SCENE_H_
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define _SCENE_H_
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endlif </span><span class="c1">// !_SCENE_H_
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>这两种方法在绝大多数情况下是可以互相替换的。</p>
+<p><strong>两者的区别</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th><code>#ifndef</code> / <code>#define</code></th>
+          <th><code>#pragma once</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>兼容性</td>
+          <td>所有标准 C/C++ 编译器都支持</td>
+          <td>大多数现代编译器支持，但不是标准</td>
+      </tr>
+      <tr>
+          <td>实现方式</td>
+          <td>通过宏定义判断是否已包含</td>
+          <td>编译器内部记录是否已处理该文件</td>
+      </tr>
+      <tr>
+          <td>文件名依赖</td>
+          <td>不依赖文件名，只依赖宏名</td>
+          <td>依赖文件路径，可能受硬链接或符号链接影响</td>
+      </tr>
+      <tr>
+          <td>冲突风险</td>
+          <td>宏名需唯一，命名冲突可能导致问题</td>
+          <td>无需命名，避免冲突</td>
+      </tr>
+      <tr>
+          <td>编译速度</td>
+          <td>稍慢（需解析宏）</td>
+          <td>更快（直接跳过）</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="游戏主框架的设计">游戏主框架的设计
+</h3><p>创建窗口、创建游戏主循环和稳定帧率，这个写法基本是游戏开发框架的固定格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//========= 初始化数据 ==========
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">initgraph</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">is_running</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">int</span> <span class="n">FPS</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">ExMessage</span> <span class="n">msg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">BeginBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">is_running</span><span class="p">)</span>	<span class="c1">// 游戏主循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">//========= 处理输入 =========
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>	
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">//======== 处理更新 =========
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">		<span class="n">cleardevice</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">//======== 处理渲染 =========
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		
+</span></span><span class="line"><span class="cl">		<span class="n">FlushBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//========= 稳定帧率 =========
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">DWORD</span> <span class="n">end_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">delta_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">delta_time</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">FPS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Sleep</span><span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="n">FPS</span> <span class="o">-</span> <span class="n">delta_time</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">EndBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="各个对象类的设计">各个对象/类的设计
+</h3><p>本项目开始引入架构概念，从分析功能入手，设计良好的程序结构，让项目扩展性更好且更利于在开发中调试。</p>
+<ul>
+<li>场景基类
+<ul>
+<li>游戏主菜单</li>
+<li>玩家角色选择菜单</li>
+<li>局内场景</li>
+</ul>
+</li>
+<li>场景管理器</li>
+<li>图集类</li>
+<li>动画类</li>
+<li>二维向量类</li>
+<li>摄像机类</li>
+<li>定时器类</li>
+<li>平台类</li>
+<li>玩家基类
+<ul>
+<li>豌豆射手类</li>
+<li>向日葵类</li>
+</ul>
+</li>
+<li>玩家ID枚举类</li>
+<li>子弹基类
+<ul>
+<li>豌豆子弹类</li>
+<li>日光炸弹类</li>
+<li>超级日光炸弹类</li>
+</ul>
+</li>
+<li>玩家状态栏类</li>
+<li>粒子类</li>
+</ul>
+<h2 id="开发流程---框架部分">开发流程 - 框架部分
+</h2><ul>
+<li>游戏框架的设计</li>
+<li>场景框架的设计
+<ul>
+<li>解决思路：使用各个游戏子类继承基类Scene的方式，对场景进行更灵活的管理</li>
+<li>问题：如何实现场景间的切换
+<ul>
+<li>解决思路：使用场景管理器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>资源加载的实现
+<ul>
+<li>问题1：如何方便动画管理，并实现资源的可复用性
+<ul>
+<li>解决思路：Atlas类和Animation类</li>
+</ul>
+</li>
+<li>问题2：敌人死亡时的动画逻辑应该怎么写才能播放死亡动画？
+<ul>
+<li>解决思路：使用回调函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>问题：怎样让游戏画面更加灵活和自然
+<ul>
+<li>解决思路：实现摄像机类</li>
+<li>问题：如何更精确地记录摄像机的位置
+<ul>
+<li>解决思路：不使用EasyX自带的POINT类（坐标数据类型为整型），封装一个Vector2类，其坐标位置为浮点数类型</li>
+</ul>
+</li>
+<li>问题：如何表达打击的视觉特效
+<ul>
+<li>解决思路：实现摄像机抖动效果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>问题：除了动画和摄像机抖动外，还有很多场景需要用到定时器（比如玩家特殊技能、攻击冷却时间等）
+<ul>
+<li>解决思路：为了复用的方便，封装定时器类，对有时效性的功能提供相对统一的管理模式</li>
+</ul>
+</li>
+</ul>
+<h2 id="关键步骤和解决思路---框架部分">关键步骤和解决思路 - 框架部分
+</h2><h3 id="场景设计">场景设计
+</h3><p>如果将场景比喻成舞台上的一幕，那么在不同的慕中会有不同的“剧本”逻辑和不同的角色登场，这些角色就是游戏开发中常说的 <strong>GameObject</strong>，玩家、敌人、子弹、道具&hellip;&hellip;等等这些从概念上都属于GameObject的范畴，接受着不同的场景剧本的指挥、进行不同逻辑的演出。</p>
+<p>所以一个游戏从程序的流程上可以划分出 <strong>游戏主菜单</strong>、<strong>玩家角色选择界面</strong>、<strong>游戏局内界面</strong>，由此可以定义Scene这个基类，主菜单、角色选择场景和局内游戏场景分别可以继承自Scene这个基类，实现不同的事件处理和绘图逻辑。</p>
+<h4 id="scene基类">Scene基类
+</h4><p>将所有的成员方法都定义为虚方法，那么具体的游戏场景类在继承了这个基类后，就可以通过重写自己相应的方法实现自己的逻辑。Scene基类在这个过程中，就像是其他具体用于实例化的场景子类的模板</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Scene</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Scene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Scene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_enter</span><span class="p">()</span> <span class="p">{};</span> 					<span class="c1">// 进入场景
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span> <span class="p">{};</span>			<span class="c1">// 处理更新
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_draw</span><span class="p">()</span> <span class="p">{};</span>						<span class="c1">// 处理渲染
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_input</span><span class="p">(</span><span class="k">const</span> <span class="n">ExMessage</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{};</span>	<span class="c1">// 处理玩家输入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_exit</span><span class="p">()</span> <span class="p">{};</span> 						<span class="c1">// 退出场景
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="主菜单场景类menuscene">主菜单场景类MenuScene
+</h4><p>可以重写所需要的成员方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MenuScene</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Scene</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">MenuScene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">MenuScene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 重写Scene基类中必要的虚函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">on_enter</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;进入主菜单&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;主菜单正在运行......&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_draw</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">outtxtxy</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="s">&#34;主菜单绘制内容&#34;</span><span class="p">))</span><span class="err">；</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_input</span><span class="p">(</span><span class="k">const</span> <span class="n">ExMessage</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_exit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;主菜单退出&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 <code>main.cpp</code> 中实例化：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">initgraph</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="n">EW_SHOWCONSOLE</span><span class="p">);</span>	<span class="c1">// 保留控制台界面 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">BeginBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Scene</span><span class="o">*</span> <span class="n">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MenuScene</span><span class="p">();</span>	<span class="c1">//在主循环前实例化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">running</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">frame_start_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">scene</span><span class="o">-&gt;</span><span class="n">on_input</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// 游戏逻辑的更新
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">scene</span><span class="o">-&gt;</span><span class="n">on_update</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">cleardevice</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">		<span class="c1">// 绘制游戏页面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">scene</span><span class="o">-&gt;</span><span class="n">on_draw</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">		<span class="n">FlushBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">frame_end_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">frame_delta_time</span> <span class="o">=</span> <span class="n">frame_end_time</span> <span class="o">-</span> <span class="n">frame_start_time</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">frame_delta_time</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">FPS</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Sleep</span><span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="n">FPS</span> <span class="o">-</span> <span class="n">frame_delta_time</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">EndBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>所有的场景子类的设计逻辑都一样。</p>
+<h4 id="场景管理器的实现">场景管理器的实现
+</h4><p>游戏程序是一个巨大的死循环，也是一个巨大的状态机。不同的游戏场景代表着不同状态，管理着这些状态的状态机，在游戏开发中被称为 <strong>场景管理器</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SceneManager</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="k">enum</span> <span class="k">class</span> <span class="nc">SceneType</span>	<span class="c1">// 标记当前场景状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Menu</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Game</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Selector</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">SceneManager</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">SceneManager</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 设置当前场景
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">set_current_scene</span><span class="p">(</span><span class="n">Scene</span><span class="o">*</span> <span class="n">scene</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span> <span class="o">=</span> <span class="n">scene</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span><span class="o">-&gt;</span><span class="n">on_enter</span><span class="p">();</span>	<span class="c1">// 确保场景执行流程完整
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切换场景（先退出现在的场景，然后选择、进入新的场景）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">switch_to</span><span class="p">(</span><span class="n">SceneType</span> <span class="n">type</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span><span class="o">-&gt;</span><span class="n">on_exit</span><span class="p">();</span>	<span class="c1">// 先退出当前场景
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">switch</span> <span class="p">(</span><span class="n">type</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">SceneType</span><span class="o">::</span><span class="nl">Menu</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">current_scene</span> <span class="o">=</span> <span class="n">menu_scene</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">SceneType</span><span class="o">::</span><span class="nl">Game</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">current_scene</span> <span class="o">=</span> <span class="n">game_scene</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">SceneType</span><span class="o">::</span><span class="nl">Selector</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">current_scene</span> <span class="o">=</span> <span class="n">selector_scene</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span><span class="o">-&gt;</span><span class="n">on_enter</span><span class="p">();</span>	<span class="c1">// 找到需要的新的场景后，进入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span><span class="o">-&gt;</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_draw</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span><span class="o">-&gt;</span><span class="n">on_draw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_input</span><span class="p">(</span><span class="k">const</span> <span class="n">ExMessage</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">current_scene</span><span class="o">-&gt;</span><span class="n">on_input</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Scene</span><span class="o">*</span> <span class="n">current_scene</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>on_enter</code> 和 <code>on_exit</code>在功能上和构造函数和析构函数类似，都是用来初始化和释放资源的，所以为什么不直接使用构造函数和析构函数呢？原因是，构造函数和析构函数决定着场景对象在内存中的生命周期。如果直接使用构造函数和析构函数来执行进入和退出的全部逻辑，那么我们在场景跳转时就需要不断地构造新的对象、释放旧的对象，这并不是性能友好的行为。同时，随着程序逻辑越来越复杂，可能会存在有些资源在不同场景之间都有引用，也就是说，<strong>场景内对象的生命周期可能会长于场景对象本身的生命周期</strong> 的情况，这也对内存管理提出了更高的要求。所以采用这种方式是更通用且简明的设计思路：场景对象的生命周期与游戏的生命周期相同。也就是说，在游戏初始化时创建所有的场景对象，在游戏退出时释放所有的场景对象，而在游戏内部的场景跳转过程中，我们避免对场景类构造函数和析构函数的调用，转而提供语义明确的 <code>on_exit</code> 和 <code>on_enter</code> 方法。在这两个方法中，我们也要尽可能避免对场景内部的成员的对象进行构造和析构，而是取而代之，<strong>重置它们的状态</strong>。</p>
+<p>举个例子：在游戏场景对象中有一个玩家对象成员，当玩家生命值归零时，程序从游戏场景跳转到主菜单场景。如果我们使用构造函数和析构函数的设计思路，那么就需要在这时 <code>delete</code> 游戏场景对象并且 <code>new</code> 一个主菜单场景对象，这样才能确保当我们再次回到游戏场景时，游戏场景中的玩家对象生命值是正常的，而不是上次退出时的0。而如果我们使用<code>on_exit</code> 和 <code>on_enter</code> 的思路，就不需要频繁地构造和释放场景对象：在场景进入时只需重置玩家生命值变量的值，也就是重置场景内部的状态，就可以同样达到“焕然一新”的效果。</p>
+<p><strong>为什么在设置当前场景时参数是场景指针，而跳转场景时用场景枚举呢？</strong></p>
+<p>采用这样设计的原因：设置当前场景的方法一般只在游戏初始化时设置场景管理器的入口场景时才被调用，与子场景实例化几乎同时进行，所以直接使用指针更加方便。而跳转场景的方法一般是在不同的子场景内部更新时被调用，子场景之间持有彼此的引用，如果也用指针容易出现内存问题，所以使用枚举来屏蔽管理器内部的指针操作。</p>
+<p>至此，<code>main</code> 中的场景部分代码就可以完全交给场景管理器执行了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">menu_scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MenuScene</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">game_scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GameScene</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">selector_scene</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SelectorScene</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">scene_manager</span><span class="p">.</span><span class="n">set_current_scene</span><span class="p">(</span><span class="n">menu_scene</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">BeginBatchDraw</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">running</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DWORD</span> <span class="n">frame_start_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scene_manager</span><span class="p">.</span><span class="n">on_input</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">scene_manager</span><span class="p">.</span><span class="n">on_update</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">cleardevice</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">scene_manager</span><span class="p">.</span><span class="n">on_draw</span><span class="p">(</span><span class="n">main_camera</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">FlushBatchDraw</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>具体的场景跳转逻辑则放到各个场景的<code>on_input</code> 消息处理逻辑中完成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// MenuScene.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">on_input</span><span class="p">(</span><span class="k">const</span> <span class="n">ExMessage</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">message</span> <span class="o">==</span> <span class="n">WM_KEYUP</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scene_manager</span><span class="p">.</span><span class="n">switch_to</span><span class="p">(</span><span class="n">SceneManager</span><span class="o">::</span><span class="n">SceneType</span><span class="o">::</span><span class="n">Selector</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="资源加载部分的设计">资源加载部分的设计
+</h3><h4 id="atlas类的实现">Atlas类的实现
+</h4><p>Atlas类可以看作是有一个装载具有相关性的一系列图片资源的容器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Atlas</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Atlas</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Atlas</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">load_from_file</span><span class="p">(</span><span class="n">LPCTSTR</span> <span class="n">path_template</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 注意：在加载前，先清空图片对象列表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 并将列表长度设置为指定大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 这样可以避免load_from_file函数在重复调用时出现内部数据与预期不符的问题
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">img_list</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>		
+</span></span><span class="line"><span class="cl">		<span class="n">img_list</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">TCHAR</span> <span class="n">path_file</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">_stprintf_s</span><span class="p">(</span><span class="n">path_file</span><span class="p">,</span> <span class="n">path_template</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">loadimage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">path_file</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">clear</span><span class="p">()</span>	<span class="c1">// 清空图集中已加载的图片对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">img_list</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">size_t</span> <span class="nf">get_size</span><span class="p">()</span>	<span class="c1">// 获取图集中图片的数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">img_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="nf">get_image</span><span class="p">(</span><span class="kt">int</span> <span class="n">idx</span><span class="p">)</span>	<span class="c1">// 获取实际渲染的动画帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="n">img_list</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="o">&amp;</span><span class="n">img_list</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>	<span class="c1">// 返回对应索引图片的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 向图集中添加已有的图片对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 看似和从文件加载图片的方法功能上有重复
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 但在生成水平翻转的动画图集时很有用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">add_image</span><span class="p">(</span><span class="k">const</span> <span class="n">IMAGE</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">)</span>	
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">img_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">img</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">IMAGE</span><span class="o">&gt;</span> <span class="n">img_list</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="资源的加载">资源的加载
+</h4><p>在正式开始写Animation类前，还需要一个处理动画帧的水平翻转，这样就无需准备两套动画素材了。图片素材的翻转需要对图片像素进行逐个处理，是一个比较耗时的操作，所以需要放在 <strong>游戏初始化阶段</strong> 进行，不要放到游戏已经开始的帧更新中进行。这个函数是一个工具类函数，我们放到 <code>util.h</code> 中方便所有工程中的成员调用。具体的实现在本站另一篇文章 <strong><a class="link" href="https://nullshowjl.github.io/p/%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e7%9a%84c-%e6%b8%b8%e6%88%8f%e5%bc%80%e5%8f%91%e6%8f%90%e7%93%a6%e7%89%b9%e5%b9%b8%e5%ad%98%e8%80%85/"  target="_blank" rel="noopener"
+    >提瓦特幸存者</a></strong> 中有详细讲解，此处不再赘述。在 <code>main.cpp</code> 中，我们把 <code>flip_atlas</code>作为全局函数，这样方便在游戏主循环前直接调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// main.cpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">flip_atlas</span><span class="p">(</span><span class="n">Atlas</span><span class="o">&amp;</span> <span class="n">src</span><span class="p">,</span> <span class="n">Atlas</span><span class="o">&amp;</span> <span class="n">dst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">dst</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span> <span class="c1">// 避免重复使用同一个容器产生问题
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">src</span><span class="p">.</span><span class="n">get_size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span> <span class="n">img_flipped</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">flip_image</span><span class="p">(</span><span class="n">src</span><span class="p">.</span><span class="n">get_image</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">img_flipped</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">dst</span><span class="p">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">img_flipped</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此项目暂时在 <code>main.cpp</code> 中通过一个全局函数加载了全部资源。需要注意的是，资源的名称务必要做到“有意义”、“有规律”。可以这样命名：<code>文件类型_角色名_朝向</code>，比如 <code>Atlas atlas_peashooter_idle_left;</code> 力求 <strong>见名知意</strong>，虽然看着有些冗长，但实际上将大大提高我们在开发时借助编辑器查找的效率，并方便我们在出现问题时根据它们的语义进行排查。资源加载部分的逻辑包括三个部分：加载游戏字体、加载和处理图片素材、加载音效。音效的处理同样使用 <code>mciSendString</code>，不要忘记包含对应的库。</p>
+<h4 id="animation类的实现">Animation类的实现
+</h4><p>Animation类可以看作是决定实际渲染图集的轻量控制器。它的所有功能都是在Atlas类之上实现的。关于这个类的设计同样从 <strong>成员变量</strong> 和 <strong>成员函数</strong> 两方面入手。成员变量决定这个类的数据属性，成员函数则是根据这些数据属性选择对外提供何种的 <strong>增删查改</strong> 接口。需要注意的是，由于动画在播放时，帧索引的推进是自动进行的，不需要外部进行set设置，所以成员方法对帧相关的方法只提供了 <code>get_idx_frame</code> 和 <code>get_frame</code> 两个get方法。动画类最重要的更新和绘制两个函数 <code>on_update</code> 和 <code>on_draw</code>，也在本站文章《<a class="link" href="https://nullshowjl.github.io/p/%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e7%9a%84c-%e6%b8%b8%e6%88%8f%e5%bc%80%e5%8f%91%e6%8f%90%e7%93%a6%e7%89%b9%e5%b9%b8%e5%ad%98%e8%80%85/"  target="_blank" rel="noopener"
+    >提瓦特幸存者</a>》中有详细讲解，此处也不再赘述。</p>
+<p><strong>游戏中诸如敌人和子弹等物体在生命周期结束时消失的动画逻辑应该怎么写呢？</strong></p>
+<p>要解决这个问题，我们不能在敌人死亡时直接删除Enemy对象，而是延后这些存在消失动画的物体被删除的时间。也就是说，当敌人生命值归零时进入死亡状态，同时播放死亡动画，而当死亡动画播放结束后，再将敌人对象从内存中移除。这就需要 <strong>动画层面提供一个动画播放结束的消息</strong>。这里提供一个思路：使用 <strong>回调函数</strong>。</p>
+<h5 id="回调函数">回调函数
+</h5><p>回调函数就是一个使用参数传递的函数对象，我们可以把它保存起来，然后再合适的时候调用它。这样就可以让函数内部的逻辑在这个“合适的时候”才被执行。比如，处理敌人死亡的情景为例，我们可以把删除敌人的逻辑定义为函数，以回调函数的形式保存在动画对象内部。当死亡动画播放结束后，这个函数被调用，删除敌人的逻辑被执行，这样就达成了我们的目的。记得先在开始处包含头文件 <code>#include &lt;functional&gt;</code>，具体的实现可以这样写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animation</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="p">......</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="n">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">timer</span> <span class="o">&gt;</span> <span class="n">interval</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">idx_frame</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">idx_frame</span> <span class="o">&gt;=</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_size</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">idx_frame</span> <span class="o">=</span> <span class="n">is_loop</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_loop</span> <span class="o">&amp;&amp;</span> <span class="n">callback</span><span class="p">)</span> <span class="c1">// 如果动画无需循环播放，且回调函数存在，那么调用回调函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="n">callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_callback</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">-&gt;</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="p">......</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span> <span class="c1">// 利用回调函数实现玩家在播放完动画后再死亡（销毁）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Animation类的完整代码是这样的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animation</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Animation</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Animation</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">reset</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_atlas</span><span class="p">(</span><span class="n">Atlas</span><span class="o">*</span> <span class="n">new_atlas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reset</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">atlas</span> <span class="o">=</span> <span class="n">new_atlas</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_loop</span><span class="p">(</span><span class="kt">bool</span> <span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">is_loop</span> <span class="o">=</span> <span class="n">flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_interval</span><span class="p">(</span><span class="kt">int</span> <span class="n">ms</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">interval</span> <span class="o">=</span> <span class="n">ms</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="nf">get_idx_frame</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">idx_frame</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="nf">get_frame</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_image</span><span class="p">(</span><span class="n">idx_frame</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">check_finished</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">is_loop</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="p">(</span><span class="n">idx_frame</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">timer</span> <span class="o">&gt;</span> <span class="n">interval</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">idx_frame</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">idx_frame</span> <span class="o">&gt;=</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_size</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">idx_frame</span> <span class="o">=</span> <span class="n">is_loop</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_loop</span> <span class="o">&amp;&amp;</span> <span class="n">callback</span><span class="p">)</span> <span class="c1">// 如果动画无需循环播放，且回调函数存在，那么调用回调函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="n">callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_draw</span><span class="p">(</span><span class="k">const</span> <span class="n">Camera</span><span class="o">&amp;</span> <span class="n">camera</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">atlas</span><span class="o">-&gt;</span><span class="n">get_image</span><span class="p">(</span><span class="n">idx_frame</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_callback</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">-&gt;</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_loop</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// 是否循环播放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		 <span class="c1">// 计时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	 <span class="c1">// 帧间隔
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	 <span class="c1">// 帧索引
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span> <span class="c1">// 利用回调函数实现玩家在播放完动画后再死亡（销毁）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="摄像机的设计">摄像机的设计
+</h3><h4 id="窗口坐标系和世界坐标系">窗口坐标系和世界坐标系
+</h4><p>EasyX的窗口原点在平面左上角，它的窗口坐标系就是这样的：</p>
+<figure style="text-align: center;">
+  <img src="plant1.webp" alt="EasyX窗口坐标系" style="zoom:33%;" />
+  <figcaption style="font-size: 0.9em; color: #A0AEC0;">EasyX窗口坐标系</figcaption>
+</figure>
+<p>而世界坐标系则是更广阔的坐标系。就像我们把场景中包括玩家角色在内的诸多物体放置到一个虚拟的世界中一样。这个世界有多大，那么世界坐标系的取值范围就有多大。玩家的移动、碰撞，各类机关、道具的触发，乃至于整个游戏世界的运行逻辑，都是在世界坐标系这套框架下运转的。而只有在需要绘制游戏画面时，我们才需要考虑将它们放置到窗口坐标系下进行绘图等操作。而摄像机可以看作是一个世界坐标系和窗口坐标系之间转换的媒介。这个思路也和游戏开发的设计理念 <strong>数据和渲染分离</strong> 一致。</p>
+<p>那么，在不考虑画面缩放的情况下，也就是摄像机的宽高和窗口的宽高一致时，我们就可以将摄像机看作是整个世界中的一个点，当我们需要实现摄像机跟随玩家移动的横板卷轴游戏时，只需要让摄像机跟随玩家移动，也就是这个点的坐标和玩家坐标保持一致。在渲染游戏内其他内容时，我们只需要把场景中其他物体的世界坐标与这个摄像机位点的世界坐标作差，得出的坐标就是我们传递给绘图函数的窗口坐标。注意，这是一个非常重要的概念：<code>窗口坐标 = 世界坐标 - 摄像机坐标</code>。</p>
+<h4 id="vector2类的实现">Vector2类的实现
+</h4><p>为了使用浮点数来更精确地控制摄像机的位置，我们先来封装一个在游戏中极其常用的二维向量类。为了方便我们和常见的数字类型进行相似的运算操作，我们在这个类里进行了运算符重载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vector2</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Vector2</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">)</span> <span class="c1">// 再写一个带参的构造函数，方便直接初始化x和y的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="o">:</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="n">y</span><span class="p">){</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">//======== 运算符重载 ========
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 方便执行和常见运算符类似的操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">vec</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">vec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">x</span> <span class="o">+=</span> <span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+=</span> <span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">vec</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="k">operator</span><span class="o">-=</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">vec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">x</span> <span class="o">-=</span> <span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-=</span> <span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">vec</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="kt">float</span> <span class="n">val</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">val</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="k">operator</span><span class="o">*=</span><span class="p">(</span><span class="kt">float</span> <span class="n">val</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">x</span> <span class="o">*=</span> <span class="n">val</span><span class="p">,</span> <span class="n">y</span> <span class="o">*=</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">float</span> <span class="nf">length</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="nf">normalize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">float</span> <span class="n">len</span> <span class="o">=</span> <span class="n">length</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">Vector2</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">len</span><span class="p">,</span> <span class="n">y</span> <span class="o">/</span> <span class="n">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="摄像机类的实现">摄像机类的实现
+</h4><h5 id="摄像机抖动效果">摄像机抖动效果
+</h5><p>在游戏中的应用十分常见。在使用枪械射击或者表达爆炸或冲击波时，游戏设计者们通常会让玩家的画面快速震动一段时间，来透过屏幕表达一种力量感。这是一种实现起来比较简单但表现效果很不错的视觉特效。</p>
+<h5 id="实现思路">实现思路
+</h5><p>摄像机的抖动只会持续一段时间，在抖动一段时间后我们需要结束这种效果。所以和动画的实现类似，我们需要一个定时器来控制抖动特效开始和结束的时刻。</p>
+<h5 id="定时器类的实现">定时器类的实现
+</h5><p>通用定时器类的设计思路有两种：一种是 <strong>继承</strong>，另一种是 <strong>回调</strong>。</p>
+<p><strong>继承的实现思路</strong>：</p>
+<p>提供一个定时器基类，在 <code>on_update</code> 中执行定时器时间到达时的逻辑，这部分具体的逻辑封装在 <code>callback</code> 成员方法中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Timer</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Timer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Timer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ......
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">callback</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 执行定时器时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">；</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果我们想实现特定的定时器逻辑，那么只需要将这个特定的定时器继承自Timer基类，并重写 <code>callback</code> 方法。在使用时就能借助多态特性，执行重写后的定时器逻辑。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyTimer</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Timer</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyTimer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">MyTimer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"> <span class="k">protected</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">callback</span><span class="p">()</span> <span class="k">override</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 执行自定义的定时器逻辑
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">；</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">Timer</span><span class="o">*</span> <span class="n">my_timer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyTimer</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>回调的实现思路</strong>：</p>
+<p>和Animation类播放结束的回调函数类似。通过 <code>set_call_back</code> 成员方法将回调函数保存在对象内部，并在合适的时候调用它。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Timer</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Timer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Timer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ......
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">set_callback</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">-&gt;</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在使用时只需向对象中注册自己的回调函数即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">Timer</span> <span class="n">my_timer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">mu_timer</span><span class="p">.</span><span class="n">set_back</span><span class="p">([]()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 执行自定义的定时器逻辑              
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">})</span><span class="err">；</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>两相对比，使用回调函数的定时器实现在代码上更加简洁。如果我们需要多个执行不同逻辑的定时器，如果使用继承的思路，那么就需要写多个不同的定时器子类。而使用回调的方法，我们只需要实例化定时器对象后编写一个lambda函数。所以从代码设计的角度，像通用定时器这种只需扩展回调方法逻辑而无需扩展数据成员内容的类，我们就会更倾向于使用回调函数的思路而不是使用类继承的思路去处理。这不仅让代码编写的量更少更轻松、在语义上也更加明确。</p>
+<p>定时器类的完整代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 通用定时器类
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 不同的定时后的逻辑用回调函数实现
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Timer</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Timer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Timer</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">restart</span><span class="p">()</span> <span class="c1">// 重置定时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pass_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">shotted</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_wait_time</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">wait_time</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_one_shot</span><span class="p">(</span><span class="kt">bool</span> <span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">one_shot</span> <span class="o">=</span> <span class="n">flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_callback</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">-&gt;</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">pause</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">paused</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">resume</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">paused</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">paused</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">pass_time</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">pass_time</span> <span class="o">&gt;=</span> <span class="n">wait_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">one_shot</span> <span class="o">||</span> <span class="p">(</span><span class="n">one_shot</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">shotted</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">callback</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">callback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="n">shotted</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">pass_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">pass_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// 已经过去的时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">wait_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// 等待时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">paused</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>		<span class="c1">// 是否赞同
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">shotted</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>		<span class="c1">// 是否触发
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">one_shot</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>		<span class="c1">// 是否单次触发
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>	<span class="c1">// 触发回调函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="包含通用定时器的摄像机类">包含通用定时器的摄像机类
+</h5><p><strong>摄像机抖动效果的设计思路</strong>：</p>
+<p>如果想让整个世界，即屏幕上所有的内容都进行抖动的话，只需要让摄像机坐标抖动即可。简而言之，摄像机抖动的特效只需要快速改变Camera对象的坐标即可。那么我们以什么样的规律进行改变呢？一种相对简单的思路是，我们可以在摄像机仍在抖动的帧中，在以抖动强度为半径的圆内随机设置摄像机的位置，因为帧更新的速度很快，所以在宏观上就可以做到抖动的效果。除此之外，如果希望在更大幅度的抖动时更加平滑，我们可以使用 <strong>柏林函数</strong> 等噪声算法取代随机数，这部分内容涉及到更多算法的实现。在本项目这种小幅度摄像机抖动的场景下画面效果提升并不明显，所以此项目采用随机数的实现思路。</p>
+<p>摄像机类的完整代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Camera</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Camera</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer_shake</span><span class="p">.</span><span class="n">set_one_shot</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer_shake</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">is_shaking</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">reset</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Camera</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">get_position</span><span class="p">()</span> <span class="k">const</span> <span class="c1">// 前一个const：返回一个不可修改的 Vector2 引用；后一个const：表示该函数不会修改类成员，可用于 const 对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">reset</span><span class="p">()</span> <span class="c1">// 将摄像机的位置归零
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer_shake</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">is_shaking</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">50</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">101</span><span class="p">)</span> <span class="o">/</span> <span class="mf">50.0f</span> <span class="o">*</span> <span class="n">shaking_strength</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">50</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">101</span><span class="p">)</span> <span class="o">/</span> <span class="mf">50.0f</span> <span class="o">*</span> <span class="n">shaking_strength</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 设置摄像机开始抖动的属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 参数：strength-抖动强度；duration-抖动持续时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">shake</span><span class="p">(</span><span class="kt">float</span> <span class="n">strength</span><span class="p">,</span> <span class="kt">int</span> <span class="n">duration</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">is_shaking</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">shaking_strength</span> <span class="o">=</span> <span class="n">strength</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">timer_shake</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="n">duration</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">timer_shake</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>			<span class="c1">// 摄像机的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 实现摄像机的抖动效果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Timer</span> <span class="n">timer_shake</span><span class="p">;</span>			<span class="c1">// 摄像机抖动定时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">is_shaking</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">float</span> <span class="n">shaking_strength</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 摄像机抖动幅度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 <code>on_update</code> 中，将摄像机的位置在抖动强度为半径的圆内进行随机设置。在抖动强度 <code>shaking_strength</code> 前乘以的这个随机系数是描述了一个单位圆的范围，取值范围为 -1.0 到 1.0 的浮点数。</p>
+<img src="plant2.webp" alt="" style="zoom:33%;" />
+<p>至此，游戏框架部分的搭建完成，这一项目的下半部分笔记请继续阅读本站文章《<a class="link" href="https://nullshowjl.github.io/p/%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e7%9a%84c-%e6%b8%b8%e6%88%8f%e5%bc%80%e5%8f%91%e6%a4%8d%e7%89%a9%e6%98%8e%e6%98%9f%e5%a4%a7%e4%b9%b1%e6%96%97%e4%b9%8bgameplay%e5%b1%82%e5%ae%9e%e7%8e%b0/"  target="_blank" rel="noopener"
+    >植物明星大乱斗之Gameplay层实现</a>》。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/game-dev/">Game Dev</a>
+        
+            <a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>
+        
+            <a href="/tags/easyx/">EasyX</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-copyright">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Oct 14, 2025 22:00 &#43;0200
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/plant0.1b012a76c5604bf796bf2aca3a991558_hu_dadf13eb43295ceb.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现"
+                        
+                        data-hash="md5-GwEqdsVgS/eWvyrKOpkVWA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/teyvat0.320e6c19460333b34d72f9882077e6e3_hu_88b89f716f8e65a6.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者"
+                        
+                        data-hash="md5-Mg5sGUYDM7NNcvmIIHfm4w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/tictactoe.a2ea06cd2ac9a81a050fadd3f675c4b2_hu_378fd7ae78b7df54.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】基础"
+                        
+                        data-hash="md5-ouoGzSrJqBoFD63T9nXEsg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD%E5%B8%B8%E7%94%A8%E8%A1%A8%E8%BE%BE/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD%E5%B8%B8%E7%94%A8%E8%A1%A8%E8%BE%BE/professional-english.d708a4c3991d98aef759c057e7702d4d_hu_6d5279b494df629e.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【专业英语】常用表达"
+                        
+                        data-hash="md5-1wikw5kdmK73WcBX53AtTQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【专业英语】常用表达</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+       
+    <section class="totalcount">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        发表了6篇文章 ·
+        总计4万4千字
+        <br>
+    </section>
+
+
+    
+    <section class="running-time">
+        本博客已运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+
+    <section class="copyright">
+        &copy;
+        
+        2025 Nullshow
+    </section>
+
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.755a1a1acaa996ead77338b5a104158d9c984cdb91486ddb4e1650dfa16111d9.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'JetBrainsMono';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Inter', 'WenKai', sans-serif;
+        --code-font-family: 'JetBrainsMono';
+    }
+
+    body {
+        font-family: 'Inter', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+        
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url(https://nullshowjl.github.io/font/Inter.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'JetBrainsMono';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Inter', 'WenKai', sans-serif;
+        --code-font-family: 'JetBrainsMono';
+    }
+
+    body {
+        font-family: 'Inter', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+    </body>
+</html>
+
+
