@@ -3,10 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/c&#43;&#43;/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -19,7 +19,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/categories/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -32,7 +32,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/easyx/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -45,7 +45,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/game-dev/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -58,7 +58,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/post/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -71,7 +71,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -84,10 +84,36 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchteyvat-survivors/</loc>
     <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/page/</loc>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/page/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/portfolio/</loc>
+    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/portfolio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/portfolio/"
+                />
   </url><url>
     <loc>https://nullshowjl.github.io/en/p/english-for-developersexpressions-for-dev-life/</loc>
     <lastmod>2025-10-15T21:11:57+02:00</lastmod>
@@ -145,19 +171,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nullshowjl.github.io/en/about/"
-                />
-  </url><url>
-    <loc>https://nullshowjl.github.io/en/page/</loc>
-    <lastmod>2025-10-11T09:23:12+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/page/"
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchfundamental/</loc>

@@ -14,14 +14,14 @@
         <guid>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/</guid>
         <description>&lt;img src="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.webp" alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer" /&gt;&lt;p&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow--%e2%80%93gameplay-layer&#34; &gt;Development Workflow – Gameplay Layer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow---gameplay-layer&#34; &gt;Development Workflow – Gameplay Layer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#key-steps-and-solutions---gameplay-layer&#34; &gt;Key Steps and Solutions – Gameplay Layer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#overall-code-review-and-source-code&#34; &gt;Overall Code Review and Source Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#reflection-and-summary&#34; &gt;Reflection and Summary&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This article dives into the implementation of the gameplay layer in detail and concludes with a link to the full project source code. If you’d like to revisit the overall project structure and framework design, check out the companion post: &lt;a class=&#34;link&#34; href=&#34;https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;em&gt;&lt;strong&gt;Plant Star Brawl - Framework Design&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;development-workflow--gameplay-layer&#34;&gt;Development Workflow – Gameplay Layer
+&lt;h2 id=&#34;development-workflow---gameplay-layer&#34;&gt;Development Workflow - Gameplay Layer
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Main Menu and Character Selection Screens&lt;/strong&gt;&lt;/p&gt;
@@ -113,7 +113,7 @@
 &lt;p&gt;&lt;strong&gt;Win/Loss Detection and Endgame Effects&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;key-steps-and-solutions--gameplay-layer&#34;&gt;Key Steps and Solutions – Gameplay Layer
+&lt;h2 id=&#34;key-steps-and-solutions---gameplay-layer&#34;&gt;Key Steps and Solutions - Gameplay Layer
 &lt;/h2&gt;&lt;h3 id=&#34;building-the-main-menu-scene-and-character-selection-scene&#34;&gt;Building the Main Menu Scene and Character Selection Scene
 &lt;/h3&gt;&lt;h4 id=&#34;handling-the-camera&#34;&gt;Handling the Camera
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Where should the main camera be placed?&lt;/strong&gt;&lt;/p&gt;
@@ -1986,8 +1986,8 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#overview&#34; &gt;Overview&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#core-gameplay&#34; &gt;Core Gameplay&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#design-approach&#34; &gt;Design Approach&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow--%e2%80%93framework&#34; &gt;Development Workflow – Framework&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#key-steps-and-solutions--%e2%80%93framework&#34; &gt;Key Steps and Solutions – Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow---framework&#34; &gt;Development Workflow – Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#key-steps-and-solutions---framework&#34; &gt;Key Steps and Solutions – Framework&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This project spans over 2,000 lines of code and covers a wide range of concepts, so I’ve split the write-up into two parts. This first post provides an overview of the entire project, with a focus on the design and implementation of the framework-related components.&lt;/p&gt;
 &lt;h2 id=&#34;overview&#34;&gt;Overview
@@ -2190,7 +2190,7 @@
 &lt;li&gt;Status Bar Class&lt;/li&gt;
 &lt;li&gt;Particle Class&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;development-workflow--framework&#34;&gt;Development Workflow – Framework
+&lt;h2 id=&#34;development-workflow---framework&#34;&gt;Development Workflow - Framework
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Game Framework Design&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scene System Architecture&lt;/strong&gt;
@@ -2242,7 +2242,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;key-steps-and-solutions--framework&#34;&gt;Key Steps and Solutions – Framework
+&lt;h2 id=&#34;key-steps-and-solutions---framework&#34;&gt;Key Steps and Solutions - Framework
 &lt;/h2&gt;&lt;h3 id=&#34;scene-system-design&#34;&gt;Scene System Design
 &lt;/h3&gt;&lt;p&gt;If we think of a scene as a stage in a play, then each scene has its own “script” logic and a unique cast of characters. These characters are what game developers commonly refer to as &lt;strong&gt;GameObjects&lt;/strong&gt;—players, enemies, bullets, items, and so on. Conceptually, they all fall under the GameObject category, each performing different logic under the direction of the scene’s script.&lt;/p&gt;
 &lt;p&gt;From a programming perspective, a game can be divided into several stages: the &lt;strong&gt;main menu&lt;/strong&gt;, the &lt;strong&gt;character selection screen&lt;/strong&gt;, and the &lt;strong&gt;in-game scene&lt;/strong&gt;. Based on this, we define a base &lt;code&gt;Scene&lt;/code&gt; class. The main menu, character selection, and gameplay scenes can each inherit from this base class to implement their own event handling and rendering logic.&lt;/p&gt;
@@ -6851,6 +6851,129 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 &lt;/h2&gt;&lt;p&gt;Although this project was developed largely based on beginner-level intuition without much architectural planning, I still learned a great deal. The instructor started with the overall game framework and gradually refined each module, clearly demonstrating the problems encountered in each part and the thought process behind solving them. This was highly valuable for my own development practice.&lt;/p&gt;
 &lt;p&gt;I also gained a deeper understanding of how animations work at the pixel level, supplemented my knowledge of color and image buffers, and reviewed key concepts like vector motion and 2D collision detection. Through a simple yet hands-on example, I finally grasped the purpose of the Flyweight pattern and design patterns in general. It often felt like a moment of sudden clarity—like fog lifting to reveal the sky.&lt;/p&gt;
 &lt;p&gt;Looking ahead, there are two areas I need to explore further. First is 3D collision detection and related topics. Although I studied them in school through traditional textbook exercises, I didn’t encounter any real development examples, so my memory is vague and I feel like I’ve forgotten most of it. Second is design patterns in game development. Back then, I read the books and answered questions in a very mechanical way, often feeling lost and confused. I plan to continue learning from this instructor’s design pattern courses to gain a more practical and intuitive understanding through real-world application.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Portfolio</title>
+        <link>https://nullshowjl.github.io/en/portfolio/</link>
+        <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://nullshowjl.github.io/en/portfolio/</guid>
+        <description>&lt;h2 id=&#34;daily-dash&#34;&gt;Daily Dash
+&lt;/h2&gt;&lt;p&gt;🏃‍♀️ 单机跑酷游戏&lt;/p&gt;
+&lt;h3 id=&#34;项目信息&#34;&gt;项目信息
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类型&lt;/th&gt;
+          &lt;th&gt;技术栈&lt;/th&gt;
+          &lt;th&gt;职责&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;单机平台跑酷游戏&lt;/td&gt;
+          &lt;td&gt;C++ + raylib&lt;/td&gt;
+          &lt;td&gt;独立项目&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;项目简介&#34;&gt;项目简介
+&lt;/h3&gt;&lt;p&gt;本项目是我在游戏设计专业二年级期间独立完成的作品。玩家角色自动奔跑，途中需躲避敌人、跳跃障碍，并最终抵达终点。游戏节奏紧凑，适合快速上手与反复挑战。&lt;/p&gt;
+&lt;h3 id=&#34;项目亮点&#34;&gt;项目亮点
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;实现了多层背景的自动滚动效果，增强视觉动感&lt;/li&gt;
+&lt;li&gt;编写了敌人AI逻辑，包括移动、碰撞判定与触发机制&lt;/li&gt;
+&lt;li&gt;设计并实现了本地排行榜系统，记录玩家得分&lt;/li&gt;
+&lt;li&gt;使用文本文件进行数据存储与读取，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;复盘&#34;&gt;复盘
+&lt;/h3&gt;&lt;p&gt;为了在5周内完成项目，我采用了快速开发方式，优先实现核心玩法。但由于缺乏模块化设计，后期功能扩展和维护变得困难，暴露了架构设计的重要性。&lt;/p&gt;
+&lt;h3 id=&#34;下一步计划&#34;&gt;下一步计划
+&lt;/h3&gt;&lt;p&gt;下一步计划包括采用对象池优化敌人生成逻辑，提升性能与资源管理效率；同时重新调整项目架构，进行模块化重构，使代码更接近商业级水准，并为后续关卡扩展做好准备。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;（预计完成时间：2025年11月）&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;游戏视频展示&#34;&gt;游戏视频展示
+&lt;/h3&gt;&lt;p&gt;（中文版放bilibili的，英文版放YouTube的）&lt;/p&gt;
+&lt;p&gt;🔗 查看源码 on GitHub&lt;/p&gt;
+&lt;h2 id=&#34;动物世界&#34;&gt;动物世界
+&lt;/h2&gt;&lt;p&gt;🐄 多种算法实现&lt;/p&gt;
+&lt;h3 id=&#34;项目信息-1&#34;&gt;项目信息
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类型&lt;/th&gt;
+          &lt;th&gt;技术栈&lt;/th&gt;
+          &lt;th&gt;职责&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;算法实现&lt;/td&gt;
+          &lt;td&gt;C++ + raylib&lt;/td&gt;
+          &lt;td&gt;独立项目&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;项目简介-1&#34;&gt;项目简介
+&lt;/h3&gt;&lt;p&gt;本项目是我在游戏设计专业二年级期间独立完成的作品，旨在模拟一个动态生态系统。草、羊、狼和乌鸦各自遵循不同的行为模式：草会生长并扩散；羊会寻找并吃草、逃避狼、繁殖或漫游；狼会追捕羊、繁殖或漫游；乌鸦则随机飞进飞出场景。通过这些行为的交互，草原生态逐渐形成一种动态平衡。&lt;/p&gt;
+&lt;h3 id=&#34;项目亮点-1&#34;&gt;项目亮点
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用有限状态机（FSM）管理动物行为逻辑，实现清晰的状态切换与响应机制&lt;/li&gt;
+&lt;li&gt;应用 Boid 算法模拟乌鸦的群体飞行行为，增强自然感与动态表现&lt;/li&gt;
+&lt;li&gt;构建了基础生态循环机制，支持草扩散、动物繁殖与资源消耗&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;复盘-1&#34;&gt;复盘
+&lt;/h3&gt;&lt;p&gt;下一步计划包括重构项目架构，实现模块化与可扩展性；同时加入图片与动画资源，提升视觉表现力与用户理解度，使项目更接近商业原型的标准。&lt;/p&gt;
+&lt;h3 id=&#34;下一步计划-1&#34;&gt;下一步计划
+&lt;/h3&gt;&lt;p&gt;重新调整项目架构，进行模块化重构，使代码更接近商业级水准。加入图片和动画来表示不同的动/植物以及其相应的行为。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;（预计完成时间：2025年12月）&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;视频展示&#34;&gt;视频展示
+&lt;/h3&gt;&lt;p&gt;（中文版放bilibili的，英文版放YouTube的）&lt;/p&gt;
+&lt;p&gt;🔗 查看源码 on GitHub&lt;/p&gt;
+&lt;h2 id=&#34;hum-to-heal&#34;&gt;Hum to Heal
+&lt;/h2&gt;&lt;p&gt;🎵 多人协作拍手音游，探索音乐与互动的治愈力量&lt;/p&gt;
+&lt;h3 id=&#34;项目信息-2&#34;&gt;项目信息
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类型&lt;/th&gt;
+          &lt;th&gt;技术栈&lt;/th&gt;
+          &lt;th&gt;展出经历&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Arcade 音游&lt;/td&gt;
+          &lt;td&gt;Unity + C#&lt;/td&gt;
+          &lt;td&gt;2023 Gotland Game Conference&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;项目简介-2&#34;&gt;项目简介
+&lt;/h3&gt;&lt;p&gt;本项目是我在游戏设计专业一年级期间完成的作品。玩家站在机器四角，通过相邻两人的拍手击中音符块，形成节奏配合。该设计鼓励玩家之间的互动与节奏感，既适合好友一起玩，也能作为陌生人之间的破冰方式。展会现场反响热烈，吸引大量观众试玩。&lt;/p&gt;
+&lt;h3 id=&#34;职责&#34;&gt;职责
+&lt;/h3&gt;&lt;p&gt;本项目由我与三名同学合作完成（分别负责游戏策划和美术设计与实现、arcade设备建造、项目管理），我独立承担全部编程与技术实现工作，包括音符判定、节奏同步、玩家输入逻辑等。同时，我设计并制作了玩家道具“手套”，将物理反馈与游戏机制结合，增强玩家沉浸感。&lt;/p&gt;
+&lt;h3 id=&#34;复盘-2&#34;&gt;复盘
+&lt;/h3&gt;&lt;p&gt;为了在10周内完成展出版本，我们在部分功能上做了妥协。例如，长音符的实现则以两根短音符替代，影响了节奏连贯性与玩家反馈。&lt;/p&gt;
+&lt;h3 id=&#34;下一步计划-2&#34;&gt;下一步计划
+&lt;/h3&gt;&lt;p&gt;下一步计划包括完善长音符的实现，以提升节奏表现力和玩家反馈体验；同时采用对象池优化音符生成逻辑，提升性能；重新调整架构，为后续关卡扩展做好准备。&lt;/p&gt;
+&lt;p&gt;（预计完成时间：2026.1）&lt;/p&gt;
+&lt;h3 id=&#34;游戏视频展示-1&#34;&gt;游戏视频展示
+&lt;/h3&gt;&lt;p&gt;放一个视频链接（中文版放bilibili的，英文版放YouTube的）&lt;/p&gt;
+&lt;p&gt;🔗 查看源码 on GitHub&lt;/p&gt;
+&lt;h2 id=&#34;当前探索领域&#34;&gt;当前探索领域
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;这些方向将持续推进，并在未来项目中逐步体现成果&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;游戏开发&#34;&gt;游戏开发
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;正在系统学习游戏架构设计与模块化原则，目标是重构现有项目以提升可维护性与扩展性&lt;/li&gt;
+&lt;li&gt;探索并掌握常用设计模式，如状态机、观察者、组件系统等，用于优化游戏逻辑&lt;/li&gt;
+&lt;li&gt;当前专注于 C++ 实现，后续计划系统学习主流游戏引擎（Unity、Unreal、Cocos、Godot），拓展跨平台开发能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;前端开发&#34;&gt;前端开发
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;系统学习前端开发基础与进阶知识，用以优化本站的视觉表现与交互体验&lt;/li&gt;
+&lt;li&gt;计划使用 Hugo 更复杂的主题，开发独立的 Portfolio + CV 网站，实现更强的内容组织与样式定制&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

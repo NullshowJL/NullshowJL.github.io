@@ -14,14 +14,14 @@
         <guid>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/</guid>
         <description>&lt;img src="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.webp" alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer" /&gt;&lt;p&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow--%e2%80%93gameplay-layer&#34; &gt;Development Workflow – Gameplay Layer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow---gameplay-layer&#34; &gt;Development Workflow – Gameplay Layer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#key-steps-and-solutions---gameplay-layer&#34; &gt;Key Steps and Solutions – Gameplay Layer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#overall-code-review-and-source-code&#34; &gt;Overall Code Review and Source Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#reflection-and-summary&#34; &gt;Reflection and Summary&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This article dives into the implementation of the gameplay layer in detail and concludes with a link to the full project source code. If you’d like to revisit the overall project structure and framework design, check out the companion post: &lt;a class=&#34;link&#34; href=&#34;https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;em&gt;&lt;strong&gt;Plant Star Brawl - Framework Design&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;development-workflow--gameplay-layer&#34;&gt;Development Workflow – Gameplay Layer
+&lt;h2 id=&#34;development-workflow---gameplay-layer&#34;&gt;Development Workflow - Gameplay Layer
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Main Menu and Character Selection Screens&lt;/strong&gt;&lt;/p&gt;
@@ -113,7 +113,7 @@
 &lt;p&gt;&lt;strong&gt;Win/Loss Detection and Endgame Effects&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;key-steps-and-solutions--gameplay-layer&#34;&gt;Key Steps and Solutions – Gameplay Layer
+&lt;h2 id=&#34;key-steps-and-solutions---gameplay-layer&#34;&gt;Key Steps and Solutions - Gameplay Layer
 &lt;/h2&gt;&lt;h3 id=&#34;building-the-main-menu-scene-and-character-selection-scene&#34;&gt;Building the Main Menu Scene and Character Selection Scene
 &lt;/h3&gt;&lt;h4 id=&#34;handling-the-camera&#34;&gt;Handling the Camera
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Where should the main camera be placed?&lt;/strong&gt;&lt;/p&gt;
@@ -1986,8 +1986,8 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#overview&#34; &gt;Overview&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#core-gameplay&#34; &gt;Core Gameplay&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#design-approach&#34; &gt;Design Approach&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow--%e2%80%93framework&#34; &gt;Development Workflow – Framework&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#key-steps-and-solutions--%e2%80%93framework&#34; &gt;Key Steps and Solutions – Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#development-workflow---framework&#34; &gt;Development Workflow – Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#key-steps-and-solutions---framework&#34; &gt;Key Steps and Solutions – Framework&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This project spans over 2,000 lines of code and covers a wide range of concepts, so I’ve split the write-up into two parts. This first post provides an overview of the entire project, with a focus on the design and implementation of the framework-related components.&lt;/p&gt;
 &lt;h2 id=&#34;overview&#34;&gt;Overview
@@ -2190,7 +2190,7 @@
 &lt;li&gt;Status Bar Class&lt;/li&gt;
 &lt;li&gt;Particle Class&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;development-workflow--framework&#34;&gt;Development Workflow – Framework
+&lt;h2 id=&#34;development-workflow---framework&#34;&gt;Development Workflow - Framework
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Game Framework Design&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Scene System Architecture&lt;/strong&gt;
@@ -2242,7 +2242,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;key-steps-and-solutions--framework&#34;&gt;Key Steps and Solutions – Framework
+&lt;h2 id=&#34;key-steps-and-solutions---framework&#34;&gt;Key Steps and Solutions - Framework
 &lt;/h2&gt;&lt;h3 id=&#34;scene-system-design&#34;&gt;Scene System Design
 &lt;/h3&gt;&lt;p&gt;If we think of a scene as a stage in a play, then each scene has its own “script” logic and a unique cast of characters. These characters are what game developers commonly refer to as &lt;strong&gt;GameObjects&lt;/strong&gt;—players, enemies, bullets, items, and so on. Conceptually, they all fall under the GameObject category, each performing different logic under the direction of the scene’s script.&lt;/p&gt;
 &lt;p&gt;From a programming perspective, a game can be divided into several stages: the &lt;strong&gt;main menu&lt;/strong&gt;, the &lt;strong&gt;character selection screen&lt;/strong&gt;, and the &lt;strong&gt;in-game scene&lt;/strong&gt;. Based on this, we define a base &lt;code&gt;Scene&lt;/code&gt; class. The main menu, character selection, and gameplay scenes can each inherit from this base class to implement their own event handling and rendering logic.&lt;/p&gt;

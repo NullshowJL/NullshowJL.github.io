@@ -10,7 +10,7 @@
 <meta property='og:description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from the second project of this tutorial series.">
 <meta property='og:url' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/'>
 <meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-11T09:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-16T11:10:15&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-11T09:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-16T22:22:33&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.webp' />
 <meta name="twitter:title" content="【C++ Game Dev from Scratch】Plant Star Brawl - Framework Design">
 <meta name="twitter:description" content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from the second project of this tutorial series."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.webp' />
@@ -166,6 +166,18 @@
 
                 
                 <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/portfolio/' >
+                
+                
+                
+                <span style="color:red;">SVG NOT FOUND: device-gamepadDaily</span>
+                
+                <span>Portfolio</span>
             </a>
         </li>
         
@@ -347,8 +359,8 @@ version: "3.1"
         <li><a href="#objectclass-design">Object/Class Design</a></li>
       </ol>
     </li>
-    <li><a href="#development-workflow--framework">Development Workflow – Framework</a></li>
-    <li><a href="#key-steps-and-solutions--framework">Key Steps and Solutions – Framework</a>
+    <li><a href="#development-workflow---framework">Development Workflow - Framework</a></li>
+    <li><a href="#key-steps-and-solutions---framework">Key Steps and Solutions - Framework</a>
       <ol>
         <li><a href="#scene-system-design">Scene System Design</a>
           <ol>
@@ -484,8 +496,8 @@ version: "3.1"
 <li><a class="link" href="#overview" >Overview</a></li>
 <li><a class="link" href="#core-gameplay" >Core Gameplay</a></li>
 <li><a class="link" href="#design-approach" >Design Approach</a></li>
-<li><a class="link" href="#development-workflow--%e2%80%93framework" >Development Workflow – Framework</a></li>
-<li><a class="link" href="#key-steps-and-solutions--%e2%80%93framework" >Key Steps and Solutions – Framework</a></li>
+<li><a class="link" href="#development-workflow---framework" >Development Workflow – Framework</a></li>
+<li><a class="link" href="#key-steps-and-solutions---framework" >Key Steps and Solutions – Framework</a></li>
 </ul>
 <p>This project spans over 2,000 lines of code and covers a wide range of concepts, so I’ve split the write-up into two parts. This first post provides an overview of the entire project, with a focus on the design and implementation of the framework-related components.</p>
 <h2 id="overview">Overview
@@ -688,7 +700,7 @@ version: "3.1"
 <li>Status Bar Class</li>
 <li>Particle Class</li>
 </ul>
-<h2 id="development-workflow--framework">Development Workflow – Framework
+<h2 id="development-workflow---framework">Development Workflow - Framework
 </h2><ul>
 <li><strong>Game Framework Design</strong></li>
 <li><strong>Scene System Architecture</strong>
@@ -740,7 +752,7 @@ version: "3.1"
 </ul>
 </li>
 </ul>
-<h2 id="key-steps-and-solutions--framework">Key Steps and Solutions – Framework
+<h2 id="key-steps-and-solutions---framework">Key Steps and Solutions - Framework
 </h2><h3 id="scene-system-design">Scene System Design
 </h3><p>If we think of a scene as a stage in a play, then each scene has its own “script” logic and a unique cast of characters. These characters are what game developers commonly refer to as <strong>GameObjects</strong>—players, enemies, bullets, items, and so on. Conceptually, they all fall under the GameObject category, each performing different logic under the direction of the scene’s script.</p>
 <p>From a programming perspective, a game can be divided into several stages: the <strong>main menu</strong>, the <strong>character selection screen</strong>, and the <strong>in-game scene</strong>. Based on this, we define a base <code>Scene</code> class. The main menu, character selection, and gameplay scenes can each inherit from this base class to implement their own event handling and rendering logic.</p>
@@ -2177,7 +2189,7 @@ version: "3.1"
 
 
         <span>
-            Last updated on Oct 16, 2025 11:10 &#43;0200
+            Last updated on Oct 16, 2025 22:22 &#43;0200
         </span>
     </section></footer>
 
@@ -2331,9 +2343,11 @@ version: "3.1"
         
         
         
+        
+        
 
         发表了7篇文章 ·
-        总计2万6千字
+        总计2万7千字
         <br>
     </section>
 
