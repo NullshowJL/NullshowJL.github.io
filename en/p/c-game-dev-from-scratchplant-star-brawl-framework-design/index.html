@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from Episode 2 of this tutorial series.">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from the second project of this tutorial series.">
 <title>【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design</title>
 
 <link rel='canonical' href='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/'>
 
 <link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【C++ Game Dev from Scratch】Plant Star Brawl - Framework Design">
-<meta property='og:description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from Episode 2 of this tutorial series.">
+<meta property='og:description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from the second project of this tutorial series.">
 <meta property='og:url' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/'>
 <meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-11T09:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-15T21:11:57&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-11T09:47:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-16T11:10:15&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.webp' />
 <meta name="twitter:title" content="【C++ Game Dev from Scratch】Plant Star Brawl - Framework Design">
-<meta name="twitter:description" content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from Episode 2 of this tutorial series."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from the second project of this tutorial series."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -352,7 +352,7 @@ version: "3.1"
       <ol>
         <li><a href="#scene-system-design">Scene System Design</a>
           <ol>
-            <li><a href="#base-scene-class">Base <code>Scene</code> Class</a></li>
+            <li><a href="#scene-base-class"><code>Scene</code> Base Class</a></li>
             <li><a href="#menuscene-class-main-menu-scene"><code>MenuScene</code> Class (Main Menu Scene)</a></li>
             <li><a href="#implementing-the-scene-manager">Implementing the Scene Manager</a></li>
           </ol>
@@ -418,7 +418,7 @@ version: "3.1"
     
         
         <h3 class="article-subtitle">
-            Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from Episode 2 of this tutorial series.
+            Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the first half of my notes from the second project of this tutorial series.
         </h3>
         
     </div>
@@ -454,7 +454,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            11 minute read
+            10 minute read
         </time>
     </div>
     
@@ -479,20 +479,20 @@ version: "3.1"
     <section class="article-content">
     
     
-    <p><strong>目录</strong></p>
+    <p><strong>Table of Contents</strong></p>
 <ul>
-<li><a class="link" href="#Overview" >Overview</a></li>
-<li>[Core Gameplay](#Core Gameplay)</li>
-<li>[Design Approach](#Design Approach)</li>
-<li>[Development Workflow – Framework](#Development Workflow – Framework)</li>
-<li>[Key Steps and Solutions – Framework](#Key Steps and Solutions – Framework)</li>
+<li><a class="link" href="#overview" >Overview</a></li>
+<li><a class="link" href="#core-gameplay" >Core Gameplay</a></li>
+<li><a class="link" href="#design-approach" >Design Approach</a></li>
+<li><a class="link" href="#development-workflow--%e2%80%93framework" >Development Workflow – Framework</a></li>
+<li><a class="link" href="#key-steps-and-solutions--%e2%80%93framework" >Key Steps and Solutions – Framework</a></li>
 </ul>
 <p>This project spans over 2,000 lines of code and covers a wide range of concepts, so I’ve split the write-up into two parts. This first post provides an overview of the entire project, with a focus on the design and implementation of the framework-related components.</p>
 <h2 id="overview">Overview
 </h2><p><strong>Tech Stack</strong>: C++ + EasyX</p>
 <p><strong>Project Goal</strong>: The project is organized using multiple header files, with a modular structure that introduces the concept of “scenes” to separate different stages of gameplay and decouple core functionalities. It explores basic physics simulation techniques and implements one-way collision platforms. Popular game development features like the <strong>camera</strong>, <strong>timer</strong>, and <strong>particle system</strong> are encapsulated to enhance the project’s level of polish and professionalism. Additionally, smoother animations and richer sound effects are integrated to improve the overall completeness of the game.</p>
 <p><strong>Course Source</strong>：<a class="link" href="https://www.bilibili.com/video/BV1jx4y1t7eP?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
-    >B站-Voidmatrix</a></p>
+    >Bilibili-Voidmatrix</a></p>
 <h2 id="core-gameplay">Core Gameplay
 </h2><p>Two players can choose different characters for local multiplayer battles. They jump and move between platforms, using a variety of normal and special attacks to damage their opponent and earn energy rewards. Once enough energy is accumulated, players can unleash unique skills. A player is defeated either by falling off the platform or when their health reaches zero.</p>
 <h2 id="design-approach">Design Approach
@@ -657,7 +657,7 @@ version: "3.1"
 </div><h3 id="objectclass-design">Object/Class Design
 </h3><p>This project introduces architectural concepts by analyzing core functionalities and designing a well-structured program layout. The goal is to improve scalability and make debugging during development more manageable.</p>
 <ul>
-<li>Base Scene Class
+<li>Scene Base Class
 <ul>
 <li>Menu Scene Class</li>
 <li>Selector Scene Class</li>
@@ -671,14 +671,14 @@ version: "3.1"
 <li>Camera Class</li>
 <li>Timer Class</li>
 <li>Platform Class</li>
-<li>Base Player Class
+<li>Player Base Class
 <ul>
 <li>Peashooter Class</li>
 <li>Sunflower Class</li>
 </ul>
 </li>
 <li>Player ID Enumeration Class</li>
-<li>Base Bullet Class
+<li>Bullet Base Class
 <ul>
 <li>Pea Bullet Class</li>
 <li>Sun Bullet Class</li>
@@ -744,7 +744,7 @@ version: "3.1"
 </h2><h3 id="scene-system-design">Scene System Design
 </h3><p>If we think of a scene as a stage in a play, then each scene has its own “script” logic and a unique cast of characters. These characters are what game developers commonly refer to as <strong>GameObjects</strong>—players, enemies, bullets, items, and so on. Conceptually, they all fall under the GameObject category, each performing different logic under the direction of the scene’s script.</p>
 <p>From a programming perspective, a game can be divided into several stages: the <strong>main menu</strong>, the <strong>character selection screen</strong>, and the <strong>in-game scene</strong>. Based on this, we define a base <code>Scene</code> class. The main menu, character selection, and gameplay scenes can each inherit from this base class to implement their own event handling and rendering logic.</p>
-<h4 id="base-scene-class">Base <code>Scene</code> Class
+<h4 id="scene-base-class"><code>Scene</code> Base Class
 </h4><p>All member functions are defined as virtual, allowing each specific scene class to override them with its own logic. The <code>Scene</code> base class serves as a template for all concrete scene subclasses.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1253,7 +1253,7 @@ version: "3.1"
 </div><h4 id="resource-loading-strategy">Resource Loading Strategy
 </h4><p>Before implementing the <code>Animation</code> class, we need a way to horizontally flip animation frames. This avoids the need for duplicate assets. Since pixel-level flipping is computationally expensive, it should be done during <strong>game initialization</strong>, not during frame updates.</p>
 <p>This flipping function is a utility and should be placed in <code>util.h</code> for easy access across the project. A detailed explanation is available in another post: <a class="link" href="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchteyvat-survivors/"  target="_blank" rel="noopener"
-    >Teyvat Survivor</a>.</p>
+    ><em><strong>Teyvat Survivor</strong></em></a>.</p>
 <p>In <code>main.cpp</code>, we define <code>flip_atlas</code> as a global function so it can be called before the main loop:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1305,8 +1305,6 @@ version: "3.1"
 <p><strong>How should we handle disappearing animations for objects like enemies or bullets when their lifecycle ends?</strong></p>
 <p>We shouldn’t delete the <code>Enemy</code> object immediately upon death. Instead, we delay deletion until the death animation finishes. This requires the animation system to <strong>signal when playback is complete</strong>.</p>
 <p>A common solution: use <strong>callback functions</strong>.</p>
-<h5 id="回调函数">回调函数
-</h5><p>回调函数就是一个使用参数传递的函数对象，我们可以把它保存起来，然后再合适的时候调用它。这样就可以让函数内部的逻辑在这个“合适的时候”才被执行。比如，处理敌人死亡的情景为例，我们可以把删除敌人的逻辑定义为函数，以回调函数的形式保存在动画对象内部。当死亡动画播放结束后，这个函数被调用，删除敌人的逻辑被执行，这样就达成了我们的目的。记得先在开始处包含头文件 <code>#include &lt;functional&gt;</code>，具体的实现可以这样写：</p>
 <h5 id="callback-functions">Callback Functions
 </h5><p>A callback is a function object passed as a parameter and stored for later execution. This allows logic to be triggered at the “right moment.”</p>
 <p>For example, when an enemy dies, we define the deletion logic as a function and store it in the animation object. Once the death animation finishes, the callback is invoked to remove the enemy.</p>
@@ -1571,7 +1569,6 @@ version: "3.1"
 </figure>
 <p>In contrast, the <strong>world coordinate system</strong> represents a much larger virtual space. Think of it as the entire game world where all objects—players, enemies, bullets, items—are placed and interact. Player movement, collisions, triggers, and all game logic operate within this world space. Only when rendering the game do we need to convert world coordinates into window coordinates.</p>
 <p>The <strong>camera</strong> acts as a bridge between these two systems. This aligns with the game development principle of <strong>separating data from rendering</strong>.</p>
-<p>那么，在不考虑画面缩放的情况下，也就是摄像机的宽高和窗口的宽高一致时，我们就可以将摄像机看作是整个世界中的一个点，当我们需要实现摄像机跟随玩家移动的横板卷轴游戏时，只需要让摄像机跟随玩家移动，也就是这个点的坐标和玩家坐标保持一致。在渲染游戏内其他内容时，我们只需要把场景中其他物体的世界坐标与这个摄像机位点的世界坐标作差，得出的坐标就是我们传递给绘图函数的窗口坐标。注意，这是一个非常重要的概念：<code>窗口坐标 = 世界坐标 - 摄像机坐标</code>。</p>
 <p>When we ignore zooming (i.e., the camera’s width and height match the window’s), we can treat the camera as a single point in the world. In a side-scrolling game, for example, the camera simply follows the player’s position. To render other objects, we subtract the camera’s world position from each object’s world position to get their window coordinates.</p>
 <blockquote class="alert alert-note">
     <p><em><strong>Key concept:</strong></em></p>
@@ -2139,8 +2136,8 @@ version: "3.1"
 </div>
 </div><p>In the <code>on_update</code> method, the camera’s position is randomly set within a circle defined by the shake intensity. The random coefficient before <code>shaking_strength</code> represents a value in the range of -1.0 to 1.0, simulating a unit circle.</p>
 <img src="plant2.webp" alt="" style="zoom:33%;" />
-<p>With this, the core game framework is complete. For the second half of this project, covering gameplay implementation, continue reading the companion article:《<a class="link" href="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl---gameplay-layer/"  target="_blank" rel="noopener"
-    >Plant Star Brawl - Gameplay Layer</a>》。</p>
+<p>With this, the core game framework is complete. For the second half of this project, covering gameplay implementation, continue reading the companion article: <a class="link" href="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/"  target="_blank" rel="noopener"
+    ><em><strong>Plant Star Brawl - Gameplay Layer</strong></em></a>.</p>
 
 </section>
 
@@ -2180,7 +2177,7 @@ version: "3.1"
 
 
         <span>
-            Last updated on Oct 15, 2025 21:11 &#43;0200
+            Last updated on Oct 16, 2025 11:10 &#43;0200
         </span>
     </section></footer>
 
@@ -2199,15 +2196,15 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
         
         
             <div class="article-image">
-                <img src="/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.e96e49817326b44b0b37f8ca149de357_hu_f847329bde6c0b16.webp" 
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_f847329bde6c0b16.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer"
                         
                         data-hash="md5-6W5JgXMmtEsLN/jKFJ3jVw==">
                 
@@ -2215,7 +2212,7 @@ version: "3.1"
         
 
         <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</h2>
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</h2>
         </div>
     </a>
 </article>
@@ -2336,7 +2333,7 @@ version: "3.1"
         
 
         发表了7篇文章 ·
-        总计3万2千字
+        总计2万6千字
         <br>
     </section>
 

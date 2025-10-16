@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的下半部分">
-<title>【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the second half of my notes from the second project of this tutorial series.">
+<title>【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</title>
 
-<link rel='canonical' href='https://nullshowjl.github.io/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/'>
+<link rel='canonical' href='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/'>
 
-<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【从零开始的C++游戏开发】植物明星大乱斗之Gameplay层实现">
-<meta property='og:description' content="制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的下半部分">
-<meta property='og:url' content='https://nullshowjl.github.io/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/'>
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【C++ Game Dev from Scratch】Plant Star Brawl - Gameplay Layer">
+<meta property='og:description' content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the second half of my notes from the second project of this tutorial series.">
+<meta property='og:url' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/'>
 <meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-12T09:17:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-15T21:11:57&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.webp' />
-<meta name="twitter:title" content="【从零开始的C++游戏开发】植物明星大乱斗之Gameplay层实现">
-<meta name="twitter:description" content="制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的下半部分"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='EasyX' /><meta property='article:published_time' content='2025-10-12T09:17:30&#43;02:00'/><meta property='article:modified_time' content='2025-10-16T11:10:15&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.webp' />
+<meta name="twitter:title" content="【C++ Game Dev from Scratch】Plant Star Brawl - Gameplay Layer">
+<meta name="twitter:description" content="Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the second half of my notes from the second project of this tutorial series."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -338,56 +338,57 @@ version: "3.1"
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#开发流程---gameplay层">开发流程 - Gameplay层</a></li>
-    <li><a href="#关键步骤和解决思路---gameplay层">关键步骤和解决思路 - Gameplay层</a>
+    <li><a href="#development-workflow--gameplay-layer">Development Workflow – Gameplay Layer</a></li>
+    <li><a href="#key-steps-and-solutions--gameplay-layer">Key Steps and Solutions – Gameplay Layer</a>
       <ol>
-        <li><a href="#主菜单界面和角色选择界面的搭建">主菜单界面和角色选择界面的搭建</a>
+        <li><a href="#building-the-main-menu-scene-and-character-selection-scene">Building the Main Menu Scene and Character Selection Scene</a>
           <ol>
-            <li><a href="#摄像机的处理">摄像机的处理</a></li>
-            <li><a href="#主菜单界面的实现">主菜单界面的实现</a></li>
-            <li><a href="#角色选择界面的实现">角色选择界面的实现</a></li>
+            <li><a href="#handling-the-camera">Handling the Camera</a></li>
+            <li><a href="#implementing-the-main-menu-scene">Implementing the Main Menu Scene</a></li>
+            <li><a href="#implementing-the-selector-scene">Implementing the Selector Scene</a></li>
           </ol>
         </li>
-        <li><a href="#物理引擎的实现">物理引擎的实现</a>
+        <li><a href="#physics-engine-implementation">Physics Engine Implementation</a>
           <ol>
-            <li><a href="#平台类的设计">平台类的设计</a></li>
-            <li><a href="#玩家基类的设计">玩家基类的设计</a></li>
-            <li><a href="#平台单向碰撞检测和重力模拟">平台单向碰撞检测和重力模拟</a></li>
+            <li><a href="#platform-class-design">Platform Class Design</a></li>
+            <li><a href="#player-base-class-design">Player Base Class Design</a></li>
+            <li><a href="#one-way-platform-collision-and-gravity-simulation">One-Way Platform Collision and Gravity Simulation</a></li>
           </ol>
         </li>
-        <li><a href="#角色技能设计">角色技能设计</a>
+        <li><a href="#character-skill-system">Character Skill System</a>
           <ol>
-            <li><a href="#玩家技能的程序功能需求">玩家技能的程序功能需求</a></li>
-            <li><a href="#子弹碰到敌人后消失的逻辑实现">子弹碰到敌人后消失的逻辑实现</a></li>
-            <li><a href="#豌豆子弹类的设计">豌豆子弹类的设计</a></li>
-            <li><a href="#日光炸弹类的实现">日光炸弹类的实现</a></li>
-            <li><a href="#超级日光炸弹类的实现">超级日光炸弹类的实现</a></li>
-            <li><a href="#技能系统">技能系统</a></li>
-            <li><a href="#无敌状态的实现">无敌状态的实现</a></li>
+            <li><a href="#functional-requirements">Functional Requirements</a></li>
+            <li><a href="#bullet-deactivation-and-removal-logic">Bullet Deactivation and Removal Logic</a></li>
+            <li><a href="#full-bullet-base-class">Full Bullet Base Class</a></li>
+            <li><a href="#pea-bullet-class-design">Pea Bullet Class Design</a></li>
+            <li><a href="#sun-bullet-class-implementation">Sun Bullet Class Implementation</a></li>
+            <li><a href="#sun-bullet-ex-class-implementation">Sun Bullet Ex Class Implementation</a></li>
+            <li><a href="#skill-system">Skill System</a></li>
+            <li><a href="#invulnerability-state-implementation">Invulnerability State Implementation</a></li>
           </ol>
         </li>
-        <li><a href="#粒子系统的实现">粒子系统的实现</a></li>
+        <li><a href="#particle-system-implementation">Particle System Implementation</a></li>
       </ol>
     </li>
-    <li><a href="#代码总体回顾及源码">代码总体回顾及源码</a>
+    <li><a href="#overall-code-review-and-source-code">Overall Code Review and Source Code</a>
       <ol>
-        <li><a href="#scene-基类">Scene 基类</a></li>
-        <li><a href="#main-函数">main 函数</a></li>
-        <li><a href="#atlas-图集类">Atlas 图集类</a></li>
-        <li><a href="#camera-摄像机类">Camera 摄像机类</a></li>
-        <li><a href="#timer-定时器类-和-vector2-二维向量类">Timer 定时器类 和 Vector2 二维向量类</a></li>
-        <li><a href="#场景子类menusceneselectorscene和gamescene">场景子类：MenuScene、SelectorScene和GameScene</a></li>
-        <li><a href="#player-玩家基类">Player 玩家基类</a></li>
-        <li><a href="#peashooter-子类-和-sunflower-子类">Peashooter 子类 和 Sunflower 子类</a></li>
-        <li><a href="#bullet-子弹基类">Bullet 子弹基类</a></li>
-        <li><a href="#peabullet-子类-和-sunbullet-子类sunbulletex-子类">PeaBullet 子类 和 SunBullet 子类、SunBulletEx 子类</a></li>
-        <li><a href="#particle-粒子类">Particle 粒子类</a></li>
-        <li><a href="#platform-平台类">Platform 平台类</a></li>
-        <li><a href="#statusbar-玩家状态类">StatusBar 玩家状态类</a></li>
-        <li><a href="#完整源码">完整源码</a></li>
+        <li><a href="#scene-base-class">Scene Base Class</a></li>
+        <li><a href="#main-function">Main Function</a></li>
+        <li><a href="#atlas-class">Atlas Class</a></li>
+        <li><a href="#camera-class">Camera Class</a></li>
+        <li><a href="#timer-and-vector2-classes">Timer and Vector2 Classes</a></li>
+        <li><a href="#scene-subclasses-menuscene-selectorscene-gamescene">Scene Subclasses: MenuScene, SelectorScene, GameScene</a></li>
+        <li><a href="#player-base-class">Player Base Class</a></li>
+        <li><a href="#peashooter-and-sunflower-subclasses">Peashooter and Sunflower Subclasses</a></li>
+        <li><a href="#bullet-base-class">Bullet Base Class</a></li>
+        <li><a href="#peabullet-sunbullet-and-sunbulletex-subclasses">PeaBullet, SunBullet, and SunBulletEx Subclasses</a></li>
+        <li><a href="#particle-class">Particle Class</a></li>
+        <li><a href="#platform-class">Platform Class</a></li>
+        <li><a href="#statusbar-class">StatusBar Class</a></li>
+        <li><a href="#full-source-code">Full Source Code</a></li>
       </ol>
     </li>
-    <li><a href="#复盘和总结">复盘和总结</a></li>
+    <li><a href="#reflection-and-summary">Reflection and Summary</a></li>
   </ol>
 </nav>
         </div>
@@ -402,13 +403,13 @@ version: "3.1"
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">
-                <img src="/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover_hu_5c6515f1215a1dc9.webp"
-                        srcset="/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover_hu_5c6515f1215a1dc9.webp 800w, /en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover_hu_2d86bc8aa73f0807.webp 1600w"
+            <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_5c6515f1215a1dc9.webp"
+                        srcset="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_5c6515f1215a1dc9.webp 800w, /en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_2d86bc8aa73f0807.webp 1600w"
                         width="800" 
                         height="240" 
                         loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现" />
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer" />
                 
             </a>
         </div>
@@ -427,12 +428,12 @@ version: "3.1"
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/en/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</a>
+            <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            制作一个简单版大乱斗玩法的双人平台射击游戏。这是这一系列教程第2集笔记的下半部分
+            Creating a simplified two-player platform shooter inspired by Super Smash Bros. mechanics. This post covers the second half of my notes from the second project of this tutorial series.
         </h3>
         
     </div>
@@ -468,7 +469,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            25 minute read
+            31 minute read
         </time>
     </div>
     
@@ -493,105 +494,120 @@ version: "3.1"
     <section class="article-content">
     
     
-    <p><strong>目录</strong></p>
+    <p><strong>Table of Contents</strong></p>
 <ul>
-<li><a class="link" href="%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b---Gameplay%e5%b1%82" >开发流程 - Gameplay层</a></li>
-<li><a class="link" href="#%e5%85%b3%e9%94%ae%e6%ad%a5%e9%aa%a4%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af---gameplay%e5%b1%82" >关键步骤和解决思路 - Gameplay层</a></li>
-<li><a class="link" href="#%e4%bb%a3%e7%a0%81%e6%80%bb%e4%bd%93%e5%9b%9e%e9%a1%be%e5%8f%8a%e6%ba%90%e7%a0%81" >代码总体回顾及源码</a></li>
-<li><a class="link" href="#%e5%a4%8d%e7%9b%98%e5%92%8c%e6%80%bb%e7%bb%93" >复盘和总结</a></li>
+<li><a class="link" href="#development-workflow--%e2%80%93gameplay-layer" >Development Workflow – Gameplay Layer</a></li>
+<li><a class="link" href="#key-steps-and-solutions---gameplay-layer" >Key Steps and Solutions – Gameplay Layer</a></li>
+<li><a class="link" href="#overall-code-review-and-source-code" >Overall Code Review and Source Code</a></li>
+<li><a class="link" href="#reflection-and-summary" >Reflection and Summary</a></li>
 </ul>
-<p>这一篇将详细展示Gameplay的实现思路，并在结尾处附上项目的完整源码。如需回顾整个项目的概况和整体框架的实现，请阅读本站文章《<a class="link" href="https://nullshowjl.github.io/p/%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e7%9a%84c-%e6%b8%b8%e6%88%8f%e5%bc%80%e5%8f%91%e6%a4%8d%e7%89%a9%e6%98%8e%e6%98%9f%e5%a4%a7%e4%b9%b1%e6%96%97%e4%b9%8b%e6%a1%86%e6%9e%b6%e8%ae%be%e8%ae%a1/"  target="_blank" rel="noopener"
-    >植物明星大乱斗之框架设计</a>》。</p>
-<h2 id="开发流程---gameplay层">开发流程 - Gameplay层
+<p>This article dives into the implementation of the gameplay layer in detail and concludes with a link to the full project source code. If you’d like to revisit the overall project structure and framework design, check out the companion post: <a class="link" href="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/"  target="_blank" rel="noopener"
+    ><em><strong>Plant Star Brawl - Framework Design</strong></em></a>.</p>
+<h2 id="development-workflow--gameplay-layer">Development Workflow – Gameplay Layer
 </h2><ul>
-<li>主菜单界面和玩家选择界面的实现
+<li>
+<p><strong>Main Menu and Character Selection Screens</strong></p>
 <ul>
-<li>问题1：此项目封装了摄像机类，那么负责游戏渲染的主摄像机应该放在哪里呢？</li>
-<li>解决思路：将摄像机以参数的形式传递给渲染的函数</li>
-<li>问题2：如何让文本看起来有立体效果？
+<li>Challenge 1: Where should the main camera be placed, given that the project uses a camera class?
 <ul>
-<li>解决思路：渲染两遍文本（比如一遍在原始位置渲染白色，另一遍在斜下方偏移一点的地方渲染灰色）</li>
+<li>Solution: Pass the camera as a parameter to rendering functions.</li>
 </ul>
 </li>
-<li>问题3：如何让选择界面的背景上有滚动剪影的效果
+<li>Challenge  2: How can we give text a 3D or embossed effect?
 <ul>
-<li>解决思路：同一张图片绘制两次</li>
+<li>Solution: Render the text twice—once in white at the original position, and once in gray slightly offset downward and to the right.</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>游戏局内场景搭建和物理模拟实现
+<li>Challenge  3: How can we create a scrolling silhouette effect on the selection screen background
 <ul>
-<li>问题1：如何模拟“重力”效果？
-<ul>
-<li>解决思路：”重力“的体现为下坠+停止，封装平台类</li>
-</ul>
-</li>
-<li>问题2：如何对物理碰撞数据进行可视化检查？
-<ul>
-<li>解决思路：实现一个简单的”调试模式“</li>
-</ul>
-</li>
-<li>问题3：玩家在某些下落情况下会出现突然向上瞬移的情况
-<ul>
-<li>解决思路：确保上一帧玩家的脚底位置，决定是否要在这一帧修正玩家的脚底位置</li>
-</ul>
-</li>
-<li>问题4：玩家出现连环跳
-<ul>
-<li>解决思路：确保玩家在竖直方向速度为0时，才能继续执行跳跃逻辑</li>
+<li>Solution: Draw the same image twice with offset positions to simulate motion.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>子弹基类的实现
+<li>
+<p><strong>In-Game Scene Setup and Physics Simulation</strong></p>
 <ul>
-<li>游戏玩法的本质是通过抛射物似的子弹给对手造成伤害
+<li>Challenge 1: How do we simulate gravity?
 <ul>
-<li>思路：创建子弹基类，不同的具体子弹继承自这个基类</li>
+<li>Solution: Gravity is represented by falling and stopping. Encapsulate platform logic in a dedicated class.</li>
 </ul>
 </li>
-<li>问题：子弹在碰撞后消失的逻辑该怎么写？
+<li>Challenge 2: How can we visually inspect collision data?
 <ul>
-<li>解决思路：与玩家死亡播放动画的情况类似，使用回调函数解决</li>
+<li>Solution: Implement a simple debug mode to visualize hitboxes and physics boundaries.</li>
 </ul>
 </li>
-<li>子弹删除逻辑的优化</li>
-</ul>
-</li>
-<li>豌豆子弹类的实现</li>
-<li>日光炸弹类、超级日光炸弹类的实现
+<li>Issue 1: Why does the player sometimes teleport upward during a fall?
 <ul>
-<li>注意：爆炸动画时素材位置的偏移调整</li>
+<li>Solution: Use the player’s foot position from the previous frame to determine whether to correct their position in the current frame.</li>
 </ul>
 </li>
-<li>攻击技能的实现
+<li>Issue 2: How do we prevent repeated jumping (multi-jump bugs)?
 <ul>
-<li>使用定时器来记录冷却时间</li>
+<li>Solution: Ensure the player can only jump when their vertical velocity is zero.</li>
 </ul>
 </li>
-<li>无敌帧的实现
+</ul>
+<p><strong>Bullet Base Class Implementation</strong></p>
 <ul>
-<li>思路：在播放动画时，间隔显示不同的图片：正常图片 和 纯白的剪影图片</li>
+<li>Core Gameplay Mechanic: Players deal damage using projectile-like bullets.
+<ul>
+<li>Solution: Create a base <code>Bullet</code> class, with specific bullet types inheriting from it.</li>
 </ul>
 </li>
-<li>玩家状态栏的实现（生命值、能量值）</li>
-<li>粒子系统的实现</li>
-<li>胜负检定和结算动效</li>
+<li>Challenge: How should bullets disappear after collision?
+<ul>
+<li>Solution: Use callback functions, similar to how death animations are handled for players.</li>
 </ul>
-<h2 id="关键步骤和解决思路---gameplay层">关键步骤和解决思路 - Gameplay层
-</h2><h3 id="主菜单界面和角色选择界面的搭建">主菜单界面和角色选择界面的搭建
-</h3><h4 id="摄像机的处理">摄像机的处理
-</h4><p><strong>主摄像机怎么放比较好呢？</strong></p>
-<p>因为我们在此项目中封装了摄像机类，那么就需要确保每一个场景在执行渲染时，都可以获取到游戏的摄像机对象，从而根据它的位置实时渲染游戏画面。有三个思路实现：</p>
-<h5 id="思路-1">思路 1：
-</h5><p>将摄像机定义在场景内部，让它作为场景类的成员变量存在。但这样的设计就很难在不同场景间共享摄像机的数据了。</p>
-<h5 id="思路-2">思路 2：
-</h5><p>把摄像机对象定义为全局变量，和此项目中图片等资源一样，我们可以通过 <code>extern</code> 关键字获取它。不过，全局变量终究是一种杂乱的设计，与我们想要尽量封装数据、减少全局变量的目标相悖。</p>
-<h5 id="思路-3">思路 3：
-</h5><p>参考帧更新中将时间的流逝 <code>delta</code> 以参数的方式传递给函数的思路 <code>void on_update(int delta)</code> ，我们选择把摄像机对象也作为参数在渲染时传递进来 <code>void on_draw(const Camera&amp; camera)</code>。</p>
-<h4 id="主菜单界面的实现">主菜单界面的实现
-</h4><p>确定了摄像机的处理方法后，主菜单的完整代码是这样的：</p>
+</li>
+<li>Bullet Deletion Optimization</li>
+</ul>
+</li>
+<li>
+<p><strong>Pea Bullet Subclass Implementation</strong></p>
+</li>
+<li>
+<p><strong>Sun Bullet Subclass, Sun Bullet Ex Subclass Implementation</strong></p>
+<ul>
+<li>Note: Adjust sprite offsets during explosion animations for accurate visual alignment.</li>
+</ul>
+</li>
+<li>
+<p><strong>Attack Skill System</strong></p>
+<ul>
+<li>Use timers to track cooldown durations for special abilities</li>
+</ul>
+</li>
+<li>
+<p><strong>Invincibility Frames</strong></p>
+<ul>
+<li>Solution: During certain animations, alternate between normal sprites and pure white silhouettes to indicate invulnerability.</li>
+</ul>
+</li>
+<li>
+<p><strong>Player Status Bar (Health and energy levels)</strong></p>
+</li>
+<li>
+<p><strong>Particle System</strong></p>
+</li>
+<li>
+<p><strong>Win/Loss Detection and Endgame Effects</strong></p>
+</li>
+</ul>
+<h2 id="key-steps-and-solutions--gameplay-layer">Key Steps and Solutions – Gameplay Layer
+</h2><h3 id="building-the-main-menu-scene-and-character-selection-scene">Building the Main Menu Scene and Character Selection Scene
+</h3><h4 id="handling-the-camera">Handling the Camera
+</h4><p><strong>Where should the main camera be placed?</strong></p>
+<p>Since this project includes a dedicated <code>Camera</code> class, each scene must be able to access the camera object during rendering to draw the game world relative to its position. There are three possible approaches:</p>
+<h5 id="option-1">Option 1:
+</h5><p>Define the camera as a member variable inside each scene class. However, this makes it difficult to share camera data across scenes.</p>
+<h5 id="option-2">Option 2:
+</h5><p>Define the camera as a global variable, similar to how image resources are handled. We could use the <code>extern</code> keyword to access it. But global variables tend to clutter the design and conflict with our goal of encapsulating data and minimizing global state.</p>
+<h5 id="option-3">Option 3:
+</h5><p>Take inspiration from how <code>delta</code> (elapsed time) is passed into update functions like <code>void on_update(int delta)</code>. We apply the same idea to rendering: pass the camera as a parameter using <code>void on_draw(const Camera&amp; camera)</code>.</p>
+<h4 id="implementing-the-main-menu-scene">Implementing the Main Menu Scene
+</h4><p>Once the camera handling strategy is decided, here’s the full implementation of the main menu scene:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -643,7 +659,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">MenuScene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">MenuScene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 重写Scene基类中必要的虚函数
+</span></span><span class="line"><span class="cl">	<span class="c1">// Override necessary virtual functions from the base Scene class
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">on_enter</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play bgm_menu repeat from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
@@ -674,9 +690,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="角色选择界面的实现">角色选择界面的实现
-</h4><h5 id="角色种类的设计技巧">角色种类的设计技巧
-</h5><p>我们首先用枚举定义了玩家可选择的角色种类。此处为什么要加上一个名为“无效”的玩家呢？它可以作为确保我们在实现选择玩家的时候，我们的选择不会越界。</p>
+</div><h4 id="implementing-the-selector-scene">Implementing the Selector Scene
+</h4><h5 id="character-type-design-tip">Character Type Design Tip
+</h5><p>We start by defining an enumeration for the available player character types. Why include an “Invalid” character type? It acts as a safeguard to ensure that selection logic doesn’t go out of bounds. This helps prevent bugs when navigating the character list and makes the system more robust.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -695,7 +711,15 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>以玩家1的向左切换为例，我们首先将玩家角色类型的枚举变量转为 <code>int</code> 类型并减小1，然后加上同样转为 <code>int</code> 类型的 <code>Invalid</code> 枚举，来确保这个值始终大于等于0。随后将这个得到的值对 <code>Invalid</code> 枚举对应的 <code>int</code> 类型进行取模，确保最终的结果不会大于或等于 <code>Invalid</code> 的值。最后，将这一波操作得到的 <code>int</code> 值再转为 <code>PlayerType</code> 枚举类后赋值给玩家1的角色类型变量。这样我们就可以确保在按下向左切换键后，玩家类型发生了变化，同时这个值还在枚举类的第一个值和最后一个值之间，即 <code>[Peashooter, Invalid)</code>的前闭后开区间。</p>
+</div><p><strong>Example: Switching Player 1’s Character to the Left</strong></p>
+<p>To implement leftward character selection for Player 1, we follow a safe and bounded approach using the <code>PlayerType</code> enumeration:</p>
+<ol>
+<li><strong>Convert the current enum value to an</strong> <code>int</code> <strong>and subtract 1</strong>   This moves the selection one step to the left.</li>
+<li><strong>Add the</strong> <code>int</code> <strong>value of</strong> <code>PlayerType::Invalid</code>   This ensures the result is non-negative, even if the original value was 0.</li>
+<li><strong>Take the result modulo</strong> <code>PlayerType::Invalid</code>   This wraps the value around if it goes below the first valid type, keeping it within bounds.</li>
+<li><strong>Cast the final result back to</strong> <code>PlayerType</code>   This gives us a valid enum value within the range <code>[Peashooter, Invalid)</code>—a half-open interval that excludes the <code>Invalid</code> sentinel.</li>
+</ol>
+<p>This technique guarantees that the selected character type always stays within the valid range, and avoids out-of-bounds errors when navigating the character list.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -722,12 +746,14 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="将摄像机封装进animation类">将摄像机封装进Animation类
-</h5><p>因为所有的动画渲染时都需要先获取摄像机的位置，并且这部分逻辑在所有渲染动画时都要使用。那么根据 <strong>面向对象的封装特性</strong>，我们干脆把获取摄像机位置、并与自身坐标作差的这部分逻辑，直接放到Animation类中，于是动画类的 <code>on_draw</code>方法需要改成 <code>void on_draw(const Camera&amp; camera, int x, int y) const</code> 。</p>
-<h5 id="背景剪影滚动效果的实现">背景剪影滚动效果的实现
-</h5><p>一种比较简单的实现思路是将这张图片渲染两次。我们想象一条用来定位的竖直线条，这根线条从矩形的左侧滚向矩形的右侧。当达到矩形右侧时，线条又会闪现回到矩形左侧。我们在线的左侧绘制一次图片，然后在线的右侧又绘制一次图片，这样就实现了图片的连续滚动效果。</p>
+</div><h5 id="integrating-the-camera-into-the-animation-class">Integrating the Camera into the <code>Animation</code> Class
+</h5><p>Since every animation needs to access the camera’s position during rendering, and this logic is repeated across all animation draws, we apply <strong>object-oriented encapsulation</strong> to streamline it.</p>
+<p>Instead of calculating <code>world position - camera position</code> externally, we move this logic into the <code>Animation</code> class itself. As a result, the <code>on_draw</code> method is updated to: <code>void on_draw(const Camera&amp; camera, int x, int y) const</code> . This allows each animation to handle its own coordinate transformation internally, keeping rendering logic clean and consistent.</p>
+<h5 id="implementing-the-scrolling-silhouette-background-effect">Implementing the Scrolling Silhouette Background Effect
+</h5><p>A simple way to create a scrolling background is to render the same image twice. Imagine a vertical reference line moving from the left edge of the screen to the right. When it reaches the far edge, it jumps back to the start.</p>
+<p>We draw one copy of the image to the left of the line, and another to the right. This creates a seamless scrolling loop.</p>
 <img src="plant1.gif" alt="" style="zoom:100%;" />
-<p>数据更新部分具体的代码是这样的：</p>
+<p><strong>Update Logic</strong>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -749,7 +775,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">animation_peashooter</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">animation_sunflower</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 背景滚动效果
+</span></span><span class="line"><span class="cl">	<span class="c1">// Scroll background horizontally
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">selector_background_scroll_offset_x</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">selector_background_scroll_offset_x</span> <span class="o">&gt;=</span> <span class="n">img_peashooter_selector_background_left</span><span class="p">.</span><span class="n">getwidth</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
@@ -758,7 +784,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>在绘制部分，我们首先需要重载一个 <code>putimage_alpha</code> 函数来对图片进行裁剪绘制：</p>
+</div><p>To render cropped sections of an image with alpha blending, we overload <code>putimage_alpha</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -781,7 +807,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>然后在玩家1的背景图上滚动玩家2的剪影，在玩家2的背景图上滚动玩家1的剪影。所以最终的绘制部分代码是这样的：</p>
+</div><p>We scroll Player 2’s silhouette across Player 1’s background, and vice versa:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -838,7 +864,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">img_P1_selector_background</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">img_P2_selector_background</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="c1">// 互相为对方的滚动背景图赋值
+</span></span><span class="line"><span class="cl">	<span class="c1">// Assign scrolling backgrounds based on opponent&#39;s character
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">switch</span> <span class="p">(</span><span class="n">player_type_2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="n">PlayerType</span><span class="o">::</span><span class="nl">Peashooter</span><span class="p">:</span>
@@ -866,9 +892,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="n">putimage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_selector_background</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 绘制动态背景图
+</span></span><span class="line"><span class="cl">	<span class="n">putimage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_selector_background</span><span class="p">);</span>  <span class="c1">// Draw static background	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Draw dynamic scrolling silhouettes
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">img_P2_selector_background</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="p">,</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
@@ -876,17 +902,18 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">selector_background_scroll_offset_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P1_selector_background</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="n">img_P1_selector_background</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">pos_img_VS</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pos_img_VS</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_VS</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">pos_img_VS</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pos_img_VS</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_VS</span><span class="p">);</span> <span class="c1">// Draw &#34;VS&#34; graphic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="物理引擎的实现">物理引擎的实现
-</h3><h4 id="平台类的设计">平台类的设计
-</h4><p>从功能入手考虑”平台“碰撞器的设计。在大多数2D平台类游戏的设计中，平台大多数被设计成 <strong>单向碰撞</strong>，也就是说，玩家从上方坠落时可以正常落到平台上；而当玩家从平台下方向上跳跃时，就可以穿过平台站立在平台上。所以我们只需要考虑玩家可以”站在哪里“即可，于是将平台碰撞器抽象为 <strong>一条线</strong>。</p>
-<p>此处需要注意的是，虽然我们在碰撞器的结构体中已经记录了平台的位置，但是还是需要单独去记录平台的渲染位置。这是因为平台的图片素材是有厚度的，并且这些图片的最顶部不一定就是碰撞线所处的位置。一般来说，<strong>碰撞的检测线位于平台图片内部稍偏上一点</strong> 的地方，这样在画面上才更符合玩家的直觉。同时，这种平台类的设计也和我们总体的设计思路 <strong>数据逻辑和渲染分离</strong> 相一致。当我们在碰撞检测时，我们只需要关注<code>CollisionShape</code> 的数据部分；当我们进行绘图时，我们也只需要关注图片和绘制位置的信息即可。这就进一步实践了 <strong>解耦合</strong>。</p>
-<p>为物理碰撞添加一个简单的调式模式，只需要在该模式下绘制出碰撞器的形状即可。最终，平台类的完整代码是这样的：</p>
+</div><h3 id="physics-engine-implementation">Physics Engine Implementation
+</h3><h4 id="platform-class-design">Platform Class Design
+</h4><p>We start by designing the platform collider based on its functional role. In most 2D platformer games, platforms are typically <strong>one-way colliders</strong>—players can land on them from above, but jump through them from below. This means we only need to determine where the player can “stand,” so we abstract the platform collider as a <strong>single horizontal line</strong>.</p>
+<p>It’s important to note that while the platform’s position is stored in the collider structure, we still need to separately track its rendering position. This is because the platform image has thickness, and its top edge may not align with the collision line. Typically, the <strong>collision line is slightly above the visible top of the platform image</strong>, which better matches player expectations visually.</p>
+<p>This design also aligns with our broader architectural principle of <strong>separating data logic from rendering</strong>. During collision detection, we only care about the <code>CollisionShape</code> data. During rendering, we only care about the image and its draw position. This reinforces <strong>decoupling</strong> and keeps the code clean.</p>
+<p>To support debugging, we add a simple debug mode that draws the collision line when enabled. Here’s the full implementation of the <code>Platform</code> class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -933,7 +960,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Platform</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span> 
-</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="nc">CollisionShape</span> <span class="c1">// 描述碰撞器形状
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="nc">CollisionShape</span> <span class="c1">// Describes the collider shape
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">float</span> <span class="n">y</span><span class="p">;</span> 
 </span></span><span class="line"><span class="cl">		<span class="kt">float</span> <span class="n">x_left</span><span class="p">;</span>
@@ -942,7 +969,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">CollisionShape</span> <span class="n">shape</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 数据逻辑和渲染分离，实现解耦合
+</span></span><span class="line"><span class="cl">	<span class="c1">// Decoupled logic and rendering
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">img</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">POINT</span> <span class="n">render_position</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl">
@@ -954,7 +981,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">render_position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">render_position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">img</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// 根据是否在debug模式来决定是否要绘制碰撞线
+</span></span><span class="line"><span class="cl">		<span class="c1">// Draw collision line if debug mode is enabled
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">is_debug</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">setlinecolor</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
@@ -967,10 +994,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="玩家基类的设计">玩家基类的设计
-</h4><p>把所有玩家都具备的数据和逻辑封装在玩家基类中。而豌豆射手、向日葵等具体的角色，则分别继承自Player基类，实现自己的逻辑。</p>
-<p><strong>如何实例化玩家对象？</strong></p>
-<p>因为有两个类别的玩家角色，游戏中具体实例化哪个玩家类，取决于玩家在游戏的选角阶段选择了哪一个角色，所以我们需要在玩家角色选择界面执行这部分的逻辑。同时，我们还需要在游戏局内的场景中使用它们。所以最简单的思路就是把它和之前那些生命周期同样跨越多个场景的对象一样，定义在全局环境中。所以在角色选择界面的相关代码是这样的：</p>
+</div><h4 id="player-base-class-design">Player Base Class Design
+</h4><p>All shared data and logic for players are encapsulated in a base <code>Player</code> class. Specific characters like Peashooter and Sunflower inherit from this base and implement their own behavior.</p>
+<p><strong>How are player objects instantiated?</strong></p>
+<p>Since there are two player types, the actual class to instantiate depends on the character selected during the character selection phase. This logic belongs in the selector scene, but the instantiated player objects are also needed in the gameplay scene. The simplest solution is to define them globally, just like other cross-scene resources.</p>
+<p>Here’s how the instantiation logic looks in the selector scene:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1012,7 +1040,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="n">on_exit</span><span class="p">()</span> 
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 根据玩家选择的角色，实例化对应的玩家对象，用于Game Scene中
+</span></span><span class="line"><span class="cl">        <span class="c1">// Instantiate player objects based on selected character types
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">switch</span> <span class="p">(</span><span class="n">player_type_1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="n">PlayerType</span><span class="o">::</span><span class="nl">Peashooter</span><span class="p">:</span>
@@ -1037,10 +1065,13 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>另外，我们还需要记录玩家在世界坐标中的位置 <code>Vector2 position;</code> 另外需要添加玩家角色的动画相关的定义，这些动画具体使用哪个图集渲染，放到具体的子类中实现。读取玩家的按键操作并将按键消息映射到对应的逻辑这部分代码也应该放到玩家基类中。那么与玩家键位控制相关的玩家序号该怎么写呢？在设计上，我们把 <strong>玩家序号</strong> 作为玩家对象的一个成员，只需要在按键操作时根据序号执行不同逻辑即可。</p>
-<h4 id="平台单向碰撞检测和重力模拟">平台单向碰撞检测和重力模拟
-</h4><h5 id="重力模拟">重力模拟
-</h5><p>在自由落体的过程中，有两个关键的值：重力加速度和物体当前的速度。在整个重力模拟的过程中，场景中的物体始终都在受到重力加速度的牵引，并且有着向着竖直方向加速的趋势。所以在玩家类中还需要定义重力常量 <code>const float gravity = 1.6e-3f;	</code> 注意，这个数值看似很大，但其实是在游戏开发中很常见的情况。受限于我们游戏世界的尺寸、画面比例乃至于玩家手感的优化，重力极有可能被调整为一个“四不像”的数值，作为开发者，我们只需要让玩家等物体在这个值的影响下展现出正确的效果即可。和物理相关的所有代码，我们都会写在 <code>void move_and_collide(int delta)</code> 这个函数中。于是，重力的模拟只需要用两行代码即可实现：</p>
+</div><p>In addition, each player needs to store their position in world coordinates using <code>Vector2 position;</code>. Animation definitions should also be included, with each subclass specifying which atlas to use for rendering.</p>
+<p>Handling player input and mapping key events to gameplay logic should be implemented in the base class. To differentiate controls between Player 1 and Player 2, we assign a <strong>player index</strong> as a member variable. This allows input handling logic to branch based on the player’s identity.</p>
+<h4 id="one-way-platform-collision-and-gravity-simulation">One-Way Platform Collision and Gravity Simulation
+</h4><h5 id="gravity-simulation">Gravity Simulation
+</h5><p>In a free-fall scenario, two key values govern motion: gravitational acceleration and the object’s current velocity. Throughout the simulation, objects in the scene are constantly pulled downward by gravity, accelerating vertically over time.</p>
+<p>To model this, we define a gravity constant in the <code>Player</code> class: <code>const float gravity = 1.6e-3f;	</code>. This value may seem arbitrary, but in game development, gravity is often tuned to suit the game world’s scale, visual proportions, and player feel. It doesn’t need to match real-world physics—it just needs to produce the right gameplay effect.</p>
+<p>All physics-related logic is placed in the <code>move_and_collide(int delta)</code> method. Gravity simulation itself only requires two lines:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1065,13 +1096,19 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="c1">// ......
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="平台单向碰撞检测">平台单向碰撞检测
-</h5><p>玩家和平台的碰撞只需要判断直线和矩形是否在水平方向发生重合即可。具体方法：取二者最右边界的值和二者最左边界的值作差，如果结果小于二者宽度之和，那么这两个图形在水平方向上有重合部分，也就是说，玩家角色和该平台在水平方向上发生了碰撞：</p>
+</div><h5 id="one-way-platform-collision-detection">One-Way Platform Collision Detection
+</h5><p>To detect collisions between the player and platforms, we check for horizontal overlap between a rectangle (the player) and a line (the platform). Specifically:</p>
+<ul>
+<li>Calculate the difference between the rightmost and leftmost edges of both shapes.</li>
+<li>If this difference is less than the sum of their widths, they overlap horizontally.</li>
+</ul>
 <img src="plant2.webp" alt="" style="zoom:33%;" />
-<p>竖直方向上的碰撞更为简单：只需要确保平台碰撞检测线的 y 坐标，是否处于玩家矩形的上下边界之间即可。而当玩家和平台在水平和竖直方向上都有重合时，我们才能判断二者发生了碰撞。</p>
-<p>接下来，我们需要考虑如何对玩家的坐标进行修正了。既然玩家已经碰到了平台，那么玩家无论已经落下多少距离，都应该停在平台之上。如果我们只是简单粗暴地将玩家的脚底位置设置到平台上，那么在某些情况下可能会发生“穿模”的bug：玩家向上跳起，但是只有身体的一部分穿过了平台，然后开始下落，这时玩家的速度向下，同时和平台发生了碰撞，满足了目前代码的碰撞条件，如果此时直接将玩家设置到平台之上的话，那么会出现刚刚开始下落的玩家一瞬间被移到了平台之上。</p>
+<p>Vertical collision is simpler: check whether the platform’s Y-coordinate lies between the player’s top and bottom edges. Only when both horizontal and vertical conditions are met do we consider a collision.</p>
+<p><strong>Position Correction Logic</strong></p>
+<p>Once a collision is detected, we need to adjust the player’s position so they land on the platform. However, naïvely snapping the player’s feet to the platform can cause visual glitches—especially when the player jumps upward and only partially intersects the platform before falling.</p>
 <img src="plant3.gif" alt="" style="zoom:80%;" />
-<p>所以，我们需要确保只有玩家的整个身体都穿过了平台，随后开始下落时，才能判断玩家和平台发生了碰撞。也就是说，我们需要先获取上一帧玩家脚底的位置，只有它位于平台上方了，并且这一帧满足我们先前讨论的所有条件，才会执行修正玩家脚底坐标的逻辑。于是，完善后的代码是这样的：</p>
+<p>To fix this, we ensure that the player’s entire body has passed through the platform before snapping them onto it. We calculate the player’s foot position from the previous frame and only apply correction if it was above the platform.</p>
+<p>Here’s the refined collision logic:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1111,7 +1148,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">position</span> <span class="o">+=</span> <span class="n">velocity</span> <span class="o">*</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// 碰撞检测
+</span></span><span class="line"><span class="cl">    <span class="c1">// Collision detection
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Platform</span><span class="o">&amp;</span> <span class="nl">platform</span> <span class="p">:</span> <span class="n">platform_list</span><span class="p">)</span>
@@ -1122,11 +1159,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">is_collide_x</span> <span class="o">&amp;&amp;</span> <span class="n">is_collide_y</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="c1">// 需要根据前一帧的脚底位置是否高于平台位置，来判断要不要将玩家的最终位置放在平台上
+</span></span><span class="line"><span class="cl">                <span class="c1">//  Check previous frame’s foot position to avoid snapping mid-jump
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="kt">float</span> <span class="n">delta_pos_y</span> <span class="o">=</span> <span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="kt">float</span> <span class="n">last_tick_foot_pos_y</span> <span class="o">=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">delta_pos_y</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">last_tick_foot_pos_y</span> <span class="o">&lt;=</span> <span class="n">shape</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="c1">// 玩家在上一帧跳跃高度高于平台
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">last_tick_foot_pos_y</span> <span class="o">&lt;=</span> <span class="n">shape</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">shape</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -1138,15 +1175,24 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="角色技能设计">角色技能设计
-</h3><h4 id="玩家技能的程序功能需求">玩家技能的程序功能需求
-</h4><p>此项目中有两种玩家角色：豌豆射手和向日葵。这两种角色都有普通攻击和特殊攻击两种攻击方式。</p>
-<p><strong>豌豆射手</strong>：可以向自己的面朝的方向发射豌豆子弹，子弹命中对方可以积攒能量。能量值蓄满后可以释放特殊攻击技能，快速喷射出一连串的豌豆子弹。</p>
-<p><strong>向日葵</strong>：普通攻击向着自己面朝的斜上方抛射日光炸弹。日光炸弹会受重力影响呈不太容易瞄准的曲线运动，但它在击中敌人后造成的伤害和奖励的能量更高。向日葵同样可以在能量集满后释放特殊攻击技能——在对手的头顶出召唤出巨大的日光炸弹，这个大日光炸弹有着更大的伤害范围和更高额的能量回馈。</p>
-<p>从游戏设计的角度，无论何种类型的玩家角色，其核心都是使用抛射物给对手造成伤害的玩法。于是，我们就可以对场景中所有的抛射物进行大一统，它们的差异无非是在动画贴图和伤害范围等数值上等等。我们可以创建Bullet基类，豌豆子弹和日光炸弹、超大型日光炸弹则分别继承这个子弹基类，然后实现各自具体的更新和渲染逻辑。</p>
-<h4 id="子弹碰到敌人后消失的逻辑实现">子弹碰到敌人后消失的逻辑实现
-</h4><p>类似于在动画类设计时玩家死亡消失的思路，子弹在碰到敌人后就应该被立即设置为无效的状态，从而防止其在后续的帧更新时与敌人发生多次碰撞。但是由于我们需要播放豌豆子弹的破裂动画和日光炸弹的爆炸动画，所以不能立即将子弹对象从场景中删除。也就是说，场景中的每一个子弹对象都有三个阶段：正常状态、无效状态、可以被删除的状态。</p>
-<p><strong>正常状态</strong> 中，我们播放子弹的动画，并在每一帧中检测它与玩家的碰撞。当它与目标玩家发生碰撞后，进入到 <strong>无效状态</strong>，此时，我们不再对子弹进行碰撞检测，同时播放子弹销毁的动画。在动画播放结束后，子弹进入到可以被删除的状态，从而在场景更新时被移除掉。所以子弹的成员变量可以这样设计：</p>
+</div><h3 id="character-skill-system">Character Skill System
+</h3><h4 id="functional-requirements">Functional Requirements
+</h4><p>This project features two playable characters: Peashooter and Sunflower. Each has a basic attack and a special skill.</p>
+<ul>
+<li><strong>Peashooter</strong>: Fires pea bullets in the direction they’re facing. Hitting the opponent builds energy. Once full, Peashooter unleashes a rapid burst of pea bullets as a special attack.</li>
+<li><strong>Sunflower</strong>: Throws sun bombs diagonally upward. These projectiles are affected by gravity, making them harder to aim but more rewarding. When energy is full, Sunflower summons a giant sun bomb above the opponent’s head, dealing massive area damage and granting high energy returns.</li>
+</ul>
+<p>From a design perspective, both characters rely on projectile-based combat. This allows us to unify all projectile logic under a single base class: <code>Bullet</code>.</p>
+<p>Each projectile type—pea bullet, sun bomb, super sun bomb—can inherit from <code>Bullet</code> and implement its own update and rendering logic. Differences like animation, damage radius, and behavior are handled in the subclasses.</p>
+<h4 id="bullet-deactivation-and-removal-logic">Bullet Deactivation and Removal Logic
+</h4><p>Just like how we handle player death animations in the <code>Animation</code> class, bullets should be marked as invalid immediately upon hitting an enemy. This prevents them from colliding multiple times in subsequent frames. However, since we want to play destruction animations—like the pea bullet shattering or the sun bomb exploding—we can’t remove the bullet object from the scene right away.</p>
+<p>Instead, each bullet goes through three distinct states:</p>
+<ol>
+<li><strong>Active</strong>: The bullet is moving and checking for collisions.</li>
+<li><strong>Inactive</strong>: The bullet has collided and is playing its destruction animation. Collision checks are disabled.</li>
+<li><strong>Removable</strong>: The animation has finished, and the bullet can now be deleted from the scene.</li>
+</ol>
+<p>This state logic is reflected in the bullet’s member variables:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1162,29 +1208,43 @@ version: "3.1"
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Bullet.h
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">protected</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">size</span><span class="p">;</span>						<span class="c1">// 子弹碰撞器尺寸
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>					<span class="c1">// 子弹位置
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">velocity</span><span class="p">;</span>					<span class="c1">// 子弹速度
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>					<span class="c1">// 子弹杀伤力
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">size</span><span class="p">;</span>						<span class="c1">// Bullet collider size
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>					<span class="c1">// Bullet position
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">velocity</span><span class="p">;</span>					<span class="c1">// Bullet velocity
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>					<span class="c1">// Damage value
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 子弹的三个状态：有效、无效、可以被删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>					<span class="c1">// 子弹是否有效
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>			<span class="c1">// 子弹是否可以被移除
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>					<span class="c1">// Whether the bullet is still active
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>			<span class="c1">//  Whether the bullet can be deleted
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>			<span class="c1">// 子弹碰撞的回调函数
+</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>			<span class="c1">// Collision callback
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="n">PlayerID</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">PlayerID</span><span class="o">::</span><span class="n">P1</span><span class="p">;</span>	<span class="c1">// 子弹碰撞的目标玩家的ID
+</span></span><span class="line"><span class="cl">	<span class="n">PlayerID</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">PlayerID</span><span class="o">::</span><span class="n">P1</span><span class="p">;</span>	<span class="c1">// Target player ID
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="子弹消失逻辑的优化">子弹消失逻辑的优化
-</h5><p>如果子弹只有在碰撞到玩家后才被销毁，那么没有发生碰撞的子弹就永远不会被删除掉，造成内存泄漏。所以我们还需要对已经飞到屏幕外不可见的子弹对象进行销毁。这部分的逻辑同样是所有继承自<code>Bullet</code> 基类的子类通用的内容，所以我们还需要定义 <code>check_if_exceeds_screen</code> 这一方法，在内部检测子弹的矩形边界是否已经位于屏幕矩形之外。</p>
-<p>完整的子弹基类的代码是这样的：</p>
+</div><h5 id="optimizing-bullet-removal">Optimizing Bullet Removal
+</h5><p>If bullets are only removed upon collision, those that miss will remain in memory indefinitely—leading to memory leaks. To prevent this, we also check whether a bullet has moved off-screen. This logic is common to all bullet types, so we define a helper method in the base class:</p>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">check_if_exceeds_screen</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">getwidth</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">||</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">getheight</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="full-bullet-base-class">Full Bullet Base Class
+</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
@@ -1314,7 +1374,7 @@ version: "3.1"
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">extern</span> <span class="kt">bool</span> <span class="n">is_debug</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Bullet基类
+</span></span><span class="line"><span class="cl"><span class="c1">// Bullet Base Class
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Bullet</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -1327,9 +1387,10 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">			<span class="n">callback</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">check_collision</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">)</span> <span class="c1">// 子弹中心坐标是否进入玩家碰撞体内部
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">check_collision</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="c1">// Check if bullet center is inside the target&#39;s bounding box
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span>
 </span></span><span class="line"><span class="cl">			<span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">x</span>
 </span></span><span class="line"><span class="cl">			<span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span>
 </span></span><span class="line"><span class="cl">			<span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
@@ -1352,7 +1413,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="p">}</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_damage</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">// Setters and getters
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">set_damage</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">damage</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -1399,8 +1461,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">-&gt;</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 设置子弹是否可以继续碰撞
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">set_valid</span><span class="p">(</span><span class="kt">bool</span> <span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_valid</span><span class="p">(</span><span class="kt">bool</span> <span class="n">flag</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">valid</span> <span class="o">=</span> <span class="n">flag</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -1423,25 +1484,27 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">size</span><span class="p">;</span>						<span class="c1">// 子弹碰撞器尺寸
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">size</span><span class="p">;</span>						
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">velocity</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>					<span class="c1">// 子弹杀伤力
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 子弹的三个状态：有效、无效、可以被删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>					<span class="c1">// 子弹是否有效
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>			<span class="c1">// 子弹是否可以被移除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>			<span class="c1">// 子弹碰撞的回调函数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="n">PlayerID</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">PlayerID</span><span class="o">::</span><span class="n">P1</span><span class="p">;</span>	<span class="c1">// 子弹碰撞的目标玩家的ID
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>					
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>				
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>			
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>		
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">PlayerID</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">PlayerID</span><span class="o">::</span><span class="n">P1</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote class="alert alert-tip">
-    <p>注意：刚开始时，我们通常无法一次性地、 <strong>自顶而下</strong> 地这样设计一个游戏对象类。类的设计往往是 <strong>边写边改</strong>，然后通过后续使用时的查漏补缺来完善基类的内容。自顶而下地设计，在很多程度上是对编程经验的考验，随着不断地练习和经验的累积，会对这种思路越来越熟悉。</p></blockquote>
-<h4 id="豌豆子弹类的设计">豌豆子弹类的设计
-</h4><p>豌豆射手只会发射一种类型的子弹，普通攻击和特殊攻击无非是子弹发射频率的不同。我们用三种不同的音效资源在豌豆子弹发生碰撞时进行随机播放，这种设计在游戏开发中很常见。比如游戏中角色的脚步声或者是射击时的枪声，都可以使用不同的音效进行播放，这种随机的效果音会让游戏显得更加自然和灵动。所以，我们需要在豌豆子弹子类中重写 <code>on_colide</code> 方法来为豌豆子弹添加不同的破碎声音。需要注意的是，我们在 <strong>重写父类方法且还是需要执行父类逻辑时，需要显式地调用父类的方法</strong>。于是，完整的豌豆子弹子类是这样的：</p>
+    <p><em><strong>Note</strong></em>:</p>
+<p>In practice, it&rsquo;s rare to design a game object class completely top-down from the start. Class design is often an iterative process—built and refined as the project evolves. We typically start with a rough structure and improve it through trial, error, and usage. Top-down design requires experience and foresight, but with continued practice, you&rsquo;ll become more comfortable and confident in applying this approach.</p></blockquote>
+<h4 id="pea-bullet-class-design">Pea Bullet Class Design
+</h4><p>The Peashooter character fires only one type of bullet. The difference between normal and special attacks lies in the firing rate. To make the game feel more dynamic, we use three different sound effects and randomly play one when a pea bullet hits its target. This technique is common in game development—for example, footsteps or gunshots often use varied audio clips to make the experience feel more natural and lively.</p>
+<p>To implement this, we override the <code>on_collide</code> method in the <code>PeaBullet</code> subclass and add randomized sound playback. Importantly, when overriding a method but still needing to execute the base class logic, we must explicitly call the parent method.</p>
+<p>Here’s the complete implementation of the <code>PeaBullet</code> subclass:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1521,8 +1584,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">PeaBullet</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span>	<span class="c1">// Set bullet size
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">		<span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">animation_break</span><span class="p">.</span><span class="n">set_atlas</span><span class="p">(</span><span class="o">&amp;</span><span class="n">atlas_pea_break</span><span class="p">);</span>
@@ -1535,11 +1598,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">position</span> <span class="o">+=</span> <span class="n">velocity</span> <span class="o">*</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">delta</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">position</span> <span class="o">+=</span> <span class="n">velocity</span> <span class="o">*</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">delta</span><span class="p">;</span>	 <span class="c1">// Move bullet
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">valid</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">			<span class="n">animation_break</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="n">animation_break</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>	<span class="c1">// Play destruction animation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">check_if_exceeds_screen</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">			<span class="n">can_remove</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -1557,8 +1620,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_collide</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">Bullet</span><span class="o">::</span><span class="n">on_collide</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">Bullet</span><span class="o">::</span><span class="n">on_collide</span><span class="p">();</span>	<span class="c1">// Call base class logic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">		<span class="k">switch</span> <span class="p">(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
@@ -1574,17 +1637,17 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	<span class="n">Animation</span> <span class="n">animation_break</span><span class="p">;</span>	<span class="c1">// 豌豆子弹破碎动画
+</span></span><span class="line"><span class="cl">	<span class="n">Animation</span> <span class="n">animation_break</span><span class="p">;</span>	<span class="c1">// Destruction animation
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote class="alert alert-note">
-    <p>在 <code>Bullet</code> 基类的基础上， <code>PeaBullet</code> 子类只是简单扩展了一部分自己独有的逻辑，就可以相对简明地实现完整的子弹功能了。这正是面向对象中 <strong>继承</strong> 的魅力所在。</p></blockquote>
-<h4 id="日光炸弹类的实现">日光炸弹类的实现
-</h4><p>需要注意的是，爆炸动画的序列帧素材尺寸时略大于日光炸弹默认动画序列帧尺寸的，所以为了确保日光炸弹在爆炸时渲染的效果正确，我们就要保证这两个动画所在的矩形的中心对齐。而在EasyX中，我们渲染的坐标原点是矩形左上角的坐标，所以我们在爆炸动画渲染时加上一个小小的位置偏移，确保画面效果正确。</p>
+    <p>Building on the <code>Bullet</code> base class, the <code>PeaBullet</code> subclass only needs to extend a few unique behaviors to deliver a complete projectile implementation. This elegantly demonstrates the power of <strong>inheritance</strong> in object-oriented design: shared logic lives in the base class, while specialized behavior is layered on top with minimal duplication. It’s a clean, maintainable approach that scales well as new projectile types are introduced.</p></blockquote>
+<h4 id="sun-bullet-class-implementation">Sun Bullet Class Implementation
+</h4><p>One important detail when implementing the sun bomb is that its explosion animation frames are slightly larger than its idle animation frames. To ensure the explosion renders correctly, we need to align the centers of both animation rectangles. Since EasyX uses the top-left corner as the origin for rendering, we apply a small positional offset during the explosion animation to visually center it.</p>
 <img src="plant4.gif" alt="" style="zoom:80%;" />
-<p>另外，在豌豆子弹的 <code>on_update</code> 方法中，我们根据其速度不断更新它的位置，也就是说，无论豌豆子弹是否发生了碰撞，都会一直向前飞翔。配合豌豆子弹破碎后的动画，我们就顺手实现了子弹碰撞后的飞溅效果。日光炸弹爆炸后的动画有所不同，它应该留在原地而不会继续受重力的影响而运动。</p>
-<p>完整的日光炸弹类的代码是这样的：</p>
+<p>Unlike the pea bullet, which continues flying after impact to simulate a splash effect, the sun bomb should remain stationary once it explodes. It’s affected by gravity while active, but its explosion animation plays in place.</p>
+<p>Here’s the full implementation of the <code>SunBullet</code> class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1668,8 +1731,6 @@ version: "3.1"
 </span><span class="lnt">79
 </span><span class="lnt">80
 </span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// SunBullet.h
@@ -1696,7 +1757,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">animation_explode</span><span class="p">.</span><span class="n">set_loop</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="n">animation_explode</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// 处理爆炸和idle时图片的偏移问题
+</span></span><span class="line"><span class="cl">		<span class="c1">//  Calculate offset to center explosion animation
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_idle</span> <span class="o">=</span> <span class="n">animation_idle</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_explode</span> <span class="o">=</span> <span class="n">animation_explode</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">explode_render_offset</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">frame_idle</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">frame_explode</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="p">;</span>
@@ -1714,8 +1775,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">			<span class="n">position</span> <span class="o">+=</span> <span class="n">velocity</span> <span class="o">*</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// 更新动画状态
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">valid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">valid</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">			<span class="n">animation_explode</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="k">else</span>
 </span></span><span class="line"><span class="cl">			<span class="n">animation_idle</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
@@ -1741,26 +1801,25 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">Bullet</span><span class="o">::</span><span class="n">on_collide</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="n">main_camera</span><span class="p">.</span><span class="n">shake</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>	<span class="c1">// 摄像机在爆炸时的抖动效果
+</span></span><span class="line"><span class="cl">		<span class="n">main_camera</span><span class="p">.</span><span class="n">shake</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>	<span class="c1">// Camera shake effect
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play sun_explode from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">float</span> <span class="n">gravity</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="n">f</span><span class="p">;</span>	<span class="c1">// 日光炸弹的重力
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">float</span> <span class="n">gravity</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="n">f</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	<span class="n">Animation</span> <span class="n">animation_idle</span><span class="p">;</span>		<span class="c1">// 日光炸弹的默认动画
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Animation</span> <span class="n">animation_explode</span><span class="p">;</span>	<span class="c1">// 日光炸弹的爆炸动画
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">explode_render_offset</span><span class="p">;</span>	<span class="c1">// 爆炸时动画的渲染偏移（爆炸的图片略大于idle图片
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>									<span class="c1">// 使其图片中心点重合，更符合玩家的直觉
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Animation</span> <span class="n">animation_idle</span><span class="p">;</span>		
+</span></span><span class="line"><span class="cl">	<span class="n">Animation</span> <span class="n">animation_explode</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">explode_render_offset</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="超级日光炸弹类的实现">超级日光炸弹类的实现
-</h4><p>在我们的游戏中，向日葵的特殊技能是可以从屏幕外召唤超级大的日光炸弹。比起普通攻击召唤的小型炸弹，这个炸弹更大更强。它不会受到重力影响，而是缓慢下落，更多的是起到封走位的作用，方便抛射的小型日光炸弹更容易命中对手。</p>
-<p>我们希望超级日光炸弹的碰撞检测范围更大一些，那么就不再将子弹的中心位置坐标作为碰撞检测点了，而是使用矩形边界作为碰撞检测的范围。于是我们就需要重写 <code>check_collision</code> 的方法了。</p>
-<p>超级日光炸弹类是这样的：</p>
+</div><h4 id="sun-bullet-ex-class-implementation">Sun Bullet Ex Class Implementation
+</h4><p>Sunflower’s special skill summons a massive sun bomb from off-screen. Unlike the standard sun bomb, this projectile is larger, stronger, and unaffected by gravity. It descends slowly, acting as a zoning tool to restrict enemy movement and make smaller bombs easier to land.</p>
+<p>To give it a broader hitbox, we override the <code>check_collision</code> method to use rectangle-based collision detection instead of a single center point.</p>
+<p>Here’s the full implementation of the <code>SunBulletEx</code> class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1846,9 +1905,11 @@ version: "3.1"
 </span><span class="lnt">81
 </span><span class="lnt">82
 </span><span class="lnt">83
+</span><span class="lnt">84
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_ex</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// SunBulletEx.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_ex</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_ex_explode</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Camera</span> <span class="n">main_camera</span><span class="p">;</span>
@@ -1870,7 +1931,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">animation_explode</span><span class="p">.</span><span class="n">set_loop</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="n">animation_explode</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">		<span class="c1">// 处理爆炸和idle时图片的偏移问题
+</span></span><span class="line"><span class="cl">		<span class="c1">// Calculate offset to center explosion animation
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_idle</span> <span class="o">=</span> <span class="n">animation_idle</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_explode</span> <span class="o">=</span> <span class="n">animation_explode</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">explode_render_offset</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">frame_idle</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">frame_explode</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="p">;</span>
@@ -1916,8 +1977,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play sun_explode_ex from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">check_collision</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">)</span>	<span class="c1">// 将碰撞范围扩展为一个矩形，而不是子弹的中心点
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">check_collision</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">is_collide_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">			<span class="o">-</span> <span class="n">min</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">is_collide_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
@@ -1934,15 +1995,31 @@ version: "3.1"
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote class="alert alert-note">
-    <p>从设计角度讲，超级日光炸弹完全可以通过继承普通日光炸弹来简化代码。但此项目还是采用这种相对扁平的类继承关系，确保整体的代码结构易于理解。</p></blockquote>
-<h4 id="技能系统">技能系统
-</h4><p>在 <code>Player</code> 基类中添加 <code>virtual void on_attack</code> 和 <code>virtual void on_attack_ex</code> 两个虚函数，然后在具体的玩家子类中重写这两个虚函数的逻辑，就可以完成角色的普通攻击和特殊攻击了。</p>
-<h5 id="冷却时间的实现思路">冷却时间的实现思路
-</h5><p>角色的普通攻击一般是存在冷却时间的，在冷却时间内，无论如何按键都无法触发攻击效果，所以我们定义一个布尔变量 <code>can_attack</code> 用来标识角色当前是否可以释放普通攻击，使用一个定时器来记录角色普通攻击的冷却时间，用一个 <code>int</code> 变量来标识玩家普通攻击的冷却时间毫秒数。这样，我们就只需要在按键消息触发时，检查当前是否可以执行普通攻击，如果可以执行，则翻转这个布尔变量并重置定时器的时间，当定时器时间到达后，再恢复玩家可攻击的状态。这样，我们就实现了普通攻击的冷却效果。</p>
-<h4 id="无敌状态的实现">无敌状态的实现
-</h4><p>我们用两个布尔变量来标识角色当前是否处于“无敌状态” <code>bool is_invulnaerable = false;</code> 和当前帧是否需要显示玩家剪影 <code>bool is_showing_sketch_frame = false;</code> 我们希望当玩家处于无敌帧时，出现闪烁的动画效果，那么就需要不断切换显示当前动画序列帧和剪影动画序列帧：</p>
+    <p>From a design perspective, the super sun bomb could inherit from the standard sun bomb to reduce duplication. However, this project opts for a flatter inheritance structure to keep the codebase easier to read and maintain.</p></blockquote>
+<h4 id="skill-system">Skill System
+</h4><p>To implement character skills, we define two virtual methods in the <code>Player</code> base class:  <code>virtual void on_attack</code> and <code>virtual void on_attack_ex</code>. Each player subclass overrides these methods to implement its own normal and special attack logic. This keeps the skill system extensible and cleanly separated across character types.</p>
+<h5 id="attack-cooldown-implementation">Attack Cooldown Implementation
+</h5><p>Most characters in action games have a cooldown period between normal attacks. During this time, pressing the attack key has no effect. To implement this, we define a boolean flag <code>can_attack</code> to indicate whether the character is currently allowed to perform a normal attack. We also use a timer to track the cooldown duration, represented by an <code>int</code> value in milliseconds.</p>
+<p>The logic is simple:</p>
+<ul>
+<li>When an attack input is received, check if <code>can_attack</code> is true.</li>
+<li>If so, flip the flag to false and start the cooldown timer.</li>
+<li>Once the timer completes, reset <code>can_attack</code> to true.</li>
+</ul>
+<p>This ensures that attacks can only be triggered after the cooldown period has passed.</p>
+<h4 id="invulnerability-state-implementation">Invulnerability State Implementation
+</h4><p>To implement temporary invincibility (often triggered after taking damage), we use two boolean flags:</p>
+<ul>
+<li><code>bool is_invulnerable = false;</code> — indicates whether the character is currently invincible.</li>
+<li><code>bool is_showing_sketch_frame = false;</code> — controls whether the character should render as a white silhouette for visual feedback.</li>
+</ul>
 <img src="plant5.gif" alt="" style="zoom:80%;" />
-<p>我们通过添加两个定时器来控制玩家退出无敌状态以及闪烁时两种不同序列帧的切换功能：<code>Timer timer_ivulnerable; Timer timer_invulnerable_blink;</code> 于是在定时器的部分在 <code>Player</code> 类的构造函数里进行初始化：</p>
+<p>We use two timers to manage the invulnerability logic:</p>
+<ul>
+<li><code>timer_invulnerable</code> — controls the duration of invincibility.</li>
+<li><code>timer_invulnerable_blink</code> — toggles between normal and sketch-frame rendering to create a blinking effect.</li>
+</ul>
+<p>Here’s how these timers are initialized in the <code>Player</code> constructor:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1976,6 +2053,7 @@ version: "3.1"
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
+</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
@@ -1983,7 +2061,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="n">current_animation</span> <span class="o">=</span> <span class="n">is_facing_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 初始化普通攻击冷却相关成员变量
+</span></span><span class="line"><span class="cl">	<span class="c1">// Initialize attack cooldown timer
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="n">attack_cd</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_one_shot</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
@@ -1991,16 +2069,17 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">			<span class="n">can_attack</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 初始化无敌时间定时器
+</span></span><span class="line"><span class="cl">	<span class="c1">// Initialize invulnerability timer
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="mi">750</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_one_shot</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">is_invulnerable</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">			<span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// 无敌结束时确保不再显示剪影
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">});</span>
+</span></span><span class="line"><span class="cl">			<span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// Ensure sketch frame is disabled when invulnerability ends
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">		<span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 初始化无敌动画闪烁定时器
+</span></span><span class="line"><span class="cl">	<span class="c1">// Initialize blink timer for invulnerability animation
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="mi">75</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
@@ -2011,8 +2090,8 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>在 <code>on_update</code> 中对定时器进行更新。在 <code>Util.h</code> 添加一个工具函数，实现将图片处理为纯白色的剪影效果。我们读取图片对象的像素色彩缓存区，将所有像素设置为白色即可，详细的解释请见本站文章《<a class="link" href="https://nullshowjl.github.io/p/%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e7%9a%84c-%e6%b8%b8%e6%88%8f%e5%bc%80%e5%8f%91%e6%8f%90%e7%93%a6%e7%89%b9%e5%b9%b8%e5%ad%98%e8%80%85/"  target="_blank" rel="noopener"
-    >提瓦特幸存者</a>》的“番外篇”部分。</p>
+</div><p>To render the character as a white silhouette during invulnerability, we add a utility function in <code>Util.h</code>. This function processes the image’s pixel buffer and sets all pixels to white. For a detailed explanation, refer to the bonus section of the article <a class="link" href="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchteyvat-survivors/"  target="_blank" rel="noopener"
+    ><em><strong>Teyvat Survivors</strong></em></a>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2055,7 +2134,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>那么，在 <code>on_update</code> 中就可以添加是否需要显示剪影图片的代码：</p>
+</div><p>In the <code>on_update</code> method, we update all timers accordingly.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2077,8 +2156,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
-</span></span><span class="line"><span class="cl">    <span class="c1">// 是否需要显示剪影图片
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 仅在无敌且需要显示剪影的帧，生成剪影图片
+</span></span><span class="line"><span class="cl">    <span class="c1">// Whether to render the sketch (silhouette) image
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Only generate the sketch frame when the player is invulnerable and blinking
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">is_showing_sketch_frame</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="n">sketch_image</span><span class="p">(</span><span class="n">current_animation</span><span class="o">-&gt;</span><span class="n">get_frame</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">img_sketch</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    
@@ -2086,7 +2165,7 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>并在 <code>on_draw</code> 中进行相应绘制：</p>
+</div><p>We apply the sketch rendering logic inside the <code>on_draw</code> method:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2115,8 +2194,7 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>最后，在 <code>Player</code> 类中添加触发无敌状态的逻辑入口：</p>
-<p>添加一个让玩家进入无敌状态的方法：</p>
+</div><p>To activate invulnerability after taking damage, we add a dedicated method to the <code>Player</code> class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2136,12 +2214,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="n">is_invulnerable</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>    <span class="c1">// 立即进入“显示剪影”的半帧
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span> <span class="c1">// 开始闪烁
+</span></span><span class="line"><span class="cl">    <span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>    <span class="c1">// Immediately enter sketch frame mode
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span> <span class="c1">// Start blinking effect
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>然后在 <code>move_and collide</code> 方法的子弹碰撞部分，在子弹发生碰撞后添加让玩家进入无敌状态的代码：</p>
+</div><p>Then, inside the <code>move_and_collide</code> method, we update the bullet collision logic to trigger invulnerability when the player is hit:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2170,7 +2248,6 @@ version: "3.1"
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
@@ -2179,8 +2256,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        
-</span></span><span class="line"><span class="cl">    <span class="c1">// 玩家被子弹射中受到伤害
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_invulnerable</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_invulnerable</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="n">Bullet</span><span class="o">*</span> <span class="nl">bullet</span> <span class="p">:</span> <span class="n">bullet_list</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
@@ -2189,7 +2265,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">bullet</span><span class="o">-&gt;</span><span class="n">check_collision</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">			<span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="n">make_invulnerable</span><span class="p">();</span>		<span class="c1">// 开启角色无敌状态
+</span></span><span class="line"><span class="cl">				<span class="n">make_invulnerable</span><span class="p">();</span>		<span class="c1">// Activate invulnerability
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">				<span class="n">bullet</span><span class="o">-&gt;</span><span class="n">on_collide</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">				<span class="n">bullet</span><span class="o">-&gt;</span><span class="n">set_valid</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
@@ -2202,12 +2278,14 @@ version: "3.1"
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>	
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="粒子系统的实现">粒子系统的实现
-</h3><p><strong>粒子系统</strong> 是一种使用大量微小粒子的图元作为基本元素来描述不规则对象的技术。在很多游戏中，烟雾、火焰、雨雪等效果的实现都是依托在粒子系统上完成的。在分析和解剖粒子系统时，我们可以从两个角度入手：<strong>粒子对象</strong> 本身和 <strong>粒子发射器</strong>。</p>
-<p><strong>粒子对象</strong>：通常由动画、物理和生命周期等众多属性来描述。</p>
-<p><strong>粒子发射器</strong>：决定粒子对象的生成方式。如粒子的发生频率、发射方向和初始速度等。</p>
-<p>我们将尝试封装一个简单可用的粒子系统。粒子对象可以看作是一个特殊的动画对象，它与角色、子弹等动画的区别在于，粒子在发射后，世界坐标的位置就固定下来了，不会随着游戏的更新而移动。在播放完自身的动画后，粒子的寿命便终止了，就可以从场景中被移除掉了。</p>
-<p>完整的粒子类代码是这样的：</p>
+</div><h3 id="particle-system-implementation">Particle System Implementation
+</h3><p>A <strong>particle system</strong> is a technique that uses large numbers of small graphical elements (particles) to simulate complex visual effects like smoke, fire, rain, or explosions. When designing a particle system, we typically break it down into two components:</p>
+<ul>
+<li><strong>Particle objects</strong>: Represent individual particles, each with properties like animation, physics, and lifespan.</li>
+<li><strong>Particle emitters</strong>: Control how particles are generated—frequency, direction, initial velocity, etc.</li>
+</ul>
+<p>In this project, we implement a lightweight particle system. Each particle behaves like a specialized animated object. Unlike characters or bullets, particles remain fixed in world space once emitted. After their animation finishes, they expire and are removed from the scene.</p>
+<p>Here’s the complete <code>Particle</code> class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2323,63 +2401,60 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// 粒子动画播放定时器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">lifespan</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// 单帧粒子动画持续时间
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// 当前正在播放的动画帧
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>		<span class="c1">// 粒子的世界坐标
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>		<span class="c1">// 粒子对象是否有效
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>	<span class="c1">// 粒子动画所使用的图集
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// Frame timer
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">lifespan</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Duration per frame in milliseconds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Current animation frame index
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>		<span class="c1">// World-space position
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>		<span class="c1">// Whether the particle is still active
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>	<span class="c1">// Animation atlas
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="代码总体回顾及源码">代码总体回顾及源码
-</h2><h3 id="scene-基类">Scene 基类
-</h3><p>在这个项目中首次引入了场景设计的概念。游戏的不同阶段和不同界面对应到不同的场景中。在场景基类 <code>Scene.h</code> 中，<code>on_enter</code> 和 <code>on_exit</code> 方法分别对应着场景的初始化逻辑和退出逻辑。<code>on_input</code>、<code>on_update</code>和 <code>on_draw</code>  分别对应主循环的输入、更新和绘图三个阶段并传入了各自所需的参数。具体的场景子类只需要继承后重写自己的逻辑即可。而场景管理器的设计则用来控制游戏当前正在运行的场景。我们在跳转场景时使用了枚举来屏蔽具体的场景指针，而场景管理器同样有 <code>on_input</code>、<code>on_update</code>和 <code>on_draw</code> 三个方法来调用当前场景实例的对应逻辑 。</p>
-<h3 id="main-函数">main 函数
-</h3><p>在 <code>main.cpp</code> 中，主要实现了两部分功能：<strong>资源加载</strong> 和 <strong>游戏入口函数</strong>。首先加载游戏所需的像素字体，随后加载游戏中动画的图片资源并对需要进行左右朝向翻转的素材进行了处理，最后再载入游戏的背景音乐和音效。在进程的入口函数中，我们调用资源加载函数并实例化此场景，最后在游戏的主循环中调用场景管理器的各个阶段逻辑入口方法。</p>
-<h3 id="atlas-图集类">Atlas 图集类
-</h3><p>在游戏的动画实现上，首先封装了<code>Atlas</code> 图集类。图集更像是容器的概念，用来批量加载和存储一套动画所需的图片素材。而 <code>Animation</code> 动画类则更像是一个只记录动画当前播放进度的轻量管理器。在渲染时具体绘制哪张图片则需要实时地去对应的图集类中获取。除此之外，<code>Animation类</code> 还记录着帧间隔、循环播放和播放结束逻辑等动画数据。</p>
-<h3 id="camera-摄像机类">Camera 摄像机类
-</h3><p>在动画渲染时，使用自行封装的 <code>Camera</code> 摄像机对象。摄像机在此项目的设计中只是充当了绘图时的相对定位锚点，当这个定位点的位置在一定范围内随机跳跃时，我们绘图的内容也在快速地抖动，这就实现了摄像机震动的效果。为了更简洁地编写使用摄像机进行绘图的代码，在 <code>Util.h</code> 中实现了使用摄像机进行透明贴图绘制的函数重载，以及翻转图片和生成纯白剪影效果的图像处理代码逻辑。</p>
-<h3 id="timer-定时器类-和-vector2-二维向量类">Timer 定时器类 和 Vector2 二维向量类
-</h3><p>除此之外，游戏框架基础架构还有两个很关键的封装：定时器类和二维向量类。在 <code>Timer.h</code> 中封装了定时器的逻辑：定时器是一个在游戏中记录时间流逝的对象，当时间到达预设的时间的那一帧便会调用指定的回调函数逻辑。二维向量类则封装着和2D向量有关的数学运算：除去四则运算的重载外，还有获取向量长度以及标准化向量的方法。</p>
-<h3 id="场景子类menusceneselectorscene和gamescene">场景子类：MenuScene、SelectorScene和GameScene
-</h3><p>游戏启动后首先来到菜单场景。菜单场景十分简单，只需要播放音乐并处理跳转逻辑即可。而在随后的角色选择场景，我们使用了大量代码来实现硬编码的界面元素布局、在绘图时需要根据玩家选择的不同角色枚举值绘制不同的角色对象和动态的背景图、在输入时也是根据玩家1和玩家2的不同键位的键码值将角色的枚举值循环切换。而在角色选择界面退出时，我们根据当前两位玩家的枚举值来实例化不同的角色并设置头像和玩家ID。玩家ID也是使用枚举进行记录的，我们在 <code>PlayerID.h</code> 中进行了定义。</p>
-<p>在游戏的局内场景中，我们需要处理的逻辑可以分为三部分：</p>
+</div><h2 id="overall-code-review-and-source-code">Overall Code Review and Source Code
+</h2><h3 id="scene-base-class">Scene Base Class
+</h3><p>This project introduces the concept of scene management for the first time. Each stage or interface in the game corresponds to a distinct scene. In the base class <code>Scene.h</code>, the <code>on_enter</code> and <code>on_exit</code> methods handle scene initialization and teardown respectively. The <code>on_input</code>, <code>on_update</code>, and <code>on_draw</code> methods correspond to the input, update, and rendering phases of the main loop, each receiving the necessary parameters. Subclasses only need to override these methods to implement their own logic.</p>
+<p>The scene manager controls which scene is currently active. When switching scenes, we use an enum to abstract away direct scene pointers. The manager itself also exposes <code>on_input</code>, <code>on_update</code>, and <code>on_draw</code> methods that delegate to the current scene instance.</p>
+<h3 id="main-function">Main Function
+</h3><p>In <code>main.cpp</code>, we implement two core responsibilities: <strong>resource loading</strong> and <strong>game entry point</strong>. First, we load pixel fonts and animation assets, including mirrored versions for directional rendering. Then we load background music and sound effects. In the entry function, we initialize resources, instantiate the initial scene, and invoke the scene manager’s lifecycle methods within the main game loop.</p>
+<h3 id="atlas-class">Atlas Class
+</h3><p>For animation handling, we encapsulate an <code>Atlas</code> class that acts as a container for loading and storing image sequences. The <code>Animation</code> class is a lightweight manager that tracks playback progress. It doesn’t store image data directly—instead, it queries the atlas for the current frame. The animation class also handles frame intervals, looping, and end-of-playback callbacks.</p>
+<h3 id="camera-class">Camera Class
+</h3><p>Rendering uses a custom <code>Camera</code> class that serves as an anchor for relative positioning. By randomly jittering the camera’s position within a small range, we simulate a screen shake effect. To simplify camera-based rendering, we overload utility functions in <code>Util.h</code> for alpha blending, image flipping, and generating white silhouette effects.</p>
+<h3 id="timer-and-vector2-classes">Timer and Vector2 Classes
+</h3><p>Two foundational utility classes support the framework: <code>Timer</code> and <code>Vector2</code>. The <code>Timer</code> class tracks elapsed time and triggers callbacks when a preset duration is reached. The <code>Vector2</code> class handles 2D vector math, including overloaded arithmetic operators, length calculation, and normalization.</p>
+<h3 id="scene-subclasses-menuscene-selectorscene-gamescene">Scene Subclasses: MenuScene, SelectorScene, GameScene
+</h3><p>The game starts in the menu scene, which simply plays music and handles scene transitions. The character selection scene uses hardcoded layout logic to render UI elements, dynamically draws character previews based on player choices, and handles input for both players using separate key mappings. Upon exiting the selection scene, we instantiate the chosen characters and assign their avatars and player IDs, which are defined in <code>PlayerID.h</code>.</p>
+<p>The in-game scene handles three main areas:</p>
 <ul>
-<li>
-<p>与游戏世界相关的内容，如背景图和平台</p>
-</li>
-<li>
-<p>与玩家角色相关的内容，如角色本身和飞行在场景中的子弹</p>
-</li>
-<li>
-<p>与游戏胜负相关的内容，如实时监测角色的位置和生命值，并在游戏结束时渲染结算条幅</p>
-</li>
+<li>World elements like background and platforms</li>
+<li>Player-related elements like characters and bullets</li>
+<li>Game state elements like health tracking and victory conditions</li>
 </ul>
-<p>调试模式的开启与关闭也是在游戏场景中进行控制的。</p>
-<h3 id="player-玩家基类">Player 玩家基类
-</h3><p>在玩家角色的设计中，我们定义了Player基类来描述共有的逻辑。在画面表现上，玩家角色拥有闲置、奔跑、攻击、死亡等不同的动画效果，以及起跳、落地和奔跑时的粒子特效等内容。在数据逻辑上，玩家的普通攻击和特殊攻击分别由冷却时间定时器和能量值进行控制。奔跑、起跳和落地等逻辑也封装成对应的方法，方便触发时在其中修改角色速度和更新特效动画。除此之外，玩家角色在受伤后会有一小段无敌时间并产生闪烁的画面效果，我们同样使用定时器来进行控制。</p>
-<p>与物理模拟相关的逻辑封装到了 <code>move_and_collide</code> 方法中：我们根据重力和当前的速度值更新了玩家的位置 ，并进行了平台和子弹的碰撞检测。</p>
-<h3 id="peashooter-子类-和-sunflower-子类">Peashooter 子类 和 Sunflower 子类
-</h3><p>有了Player基类的基础，豌豆射手的子类实现就简单很多了，只需要配置其动画属性并设置攻击时角色在场景中生成子弹的逻辑。我们还用了随机音效来优化游戏效果。</p>
-<p>向日葵子类的实现也是同理：在配置完成动画属性后，重写其普通攻击和特殊攻击的逻辑。只不过向日葵在特殊攻击时头顶会有额外的“日”字动画，所以我们重写了它的渲染方法。</p>
-<h3 id="bullet-子弹基类">Bullet 子弹基类
-</h3><p>对于玩家角色所发射的子弹同样定义了Bullet基类进行抽象。子弹与玩家一样，需要在游戏场景中连贯运动，还需要模拟受重力影响的抛射，所以我们还是优先描述其速度，并在更新时记录其位置。 除此之外，子弹还要有伤害值、碰撞目标和碰撞回调等字段。</p>
-<h3 id="peabullet-子类-和-sunbullet-子类sunbulletex-子类">PeaBullet 子类 和 SunBullet 子类、SunBulletEx 子类
-</h3><p>在豌豆子弹的实现中，我们重写了破碎的方法，播放了随机的音效，并在渲染时根据当前是否已经破碎选择了不同的渲染逻辑。小型热光炸弹也是相似的思路，只不过我们需要在它未碰到爆炸时模拟受重力影响的坠落运动，并在爆炸时调整爆炸动画的中心位置对齐。大型热光炸弹与小型热光炸弹除去尺寸、动画等数值字段不同外，更新时的区别是需要让它匀速竖直下落而不是在重力影响下加速运动。</p>
-<h3 id="particle-粒子类">Particle 粒子类
-</h3><p>粒子对象在目前的设计中可以看作是一种特殊的动画对象，它在自身的动画播放结束后生命周期便结束了。所以在更新时的逻辑与动画对象十分相似。</p>
-<h3 id="platform-平台类">Platform 平台类
-</h3><p>平台对象Platform在数据层面本质是一条存在于世界中的水平直线，在渲染时我们使用平台图片素材进行绘制并根据当前是否启用了调试选择绘制额外的信息。</p>
-<h3 id="statusbar-玩家状态类">StatusBar 玩家状态类
-</h3><p>玩家的状态栏组件有三部分构成：玩家头像、生命值状态条和能量值状态条。在游戏场景运行的过程中，我们实时地从对应的玩家对象中读取这些字段的数据并显示到界面组件上。</p>
-<p>至此，这一项目的笔记全部完结。</p>
-<h3 id="完整源码">完整源码
+<p>Debug mode toggling is also managed within the game scene.</p>
+<h3 id="player-base-class">Player Base Class
+</h3><p>The <code>Player</code> base class encapsulates shared logic for all characters. Visually, players have animations for idle, running, attacking, and dying, along with particle effects for jumping, landing, and running. Logically, normal and special attacks are controlled via cooldown timers and energy values. Movement actions like jumping and landing are wrapped in dedicated methods for easy triggering and animation updates.</p>
+<p>Damage triggers a brief invulnerability period with a blinking visual effect, managed by timers. Physics simulation is handled in the <code>move_and_collide</code> method, which updates position based on gravity and velocity, and performs collision checks with platforms and bullets.</p>
+<h3 id="peashooter-and-sunflower-subclasses">Peashooter and Sunflower Subclasses
+</h3><p>With the base class in place, implementing the Peashooter is straightforward—just configure its animations and define bullet spawning logic. We also use randomized sound effects to enhance feedback.</p>
+<p>Sunflower follows a similar pattern, but its special attack includes an extra “sun” animation above the character’s head, requiring a custom rendering override.</p>
+<h3 id="bullet-base-class">Bullet Base Class
+</h3><p>Bullets are abstracted via the <code>Bullet</code> base class. Like players, bullets move through the scene and may be affected by gravity. We track velocity and update position accordingly. Bullets also store damage values, target IDs, and collision callbacks.</p>
+<h3 id="peabullet-sunbullet-and-sunbulletex-subclasses">PeaBullet, SunBullet, and SunBulletEx Subclasses
+</h3><p>The PeaBullet subclass overrides the collision method to play randomized sound effects and switches rendering logic based on whether the bullet has shattered. The SunBullet simulates gravity until impact, then plays an explosion animation with center alignment adjustments. The SunBulletEx is larger and stronger, descending at a constant speed rather than accelerating under gravity.</p>
+<h3 id="particle-class">Particle Class
+</h3><p>Particles are treated as lightweight animated objects. Once their animation finishes, they expire and are removed from the scene. Their update logic closely resembles that of the <code>Animation</code> class.</p>
+<h3 id="platform-class">Platform Class
+</h3><p>Platforms are represented as horizontal lines in world space. For rendering, we use image assets and optionally draw debug overlays depending on the debug mode.</p>
+<h3 id="statusbar-class">StatusBar Class
+</h3><p>Each player’s status bar consists of three components: avatar, health bar, and energy bar. During gameplay, we continuously read these values from the player object and render them in the UI.</p>
+<p>With that, this project’s notes are complete.</p>
+<h3 id="full-source-code">Full Source Code
 </h3><p><a class="link" href="https://github.com/NullshowJL/Game-Plant-Star-Brawl"  target="_blank" rel="noopener"
     >on GitHub</a></p>
-<h2 id="复盘和总结">复盘和总结
-</h2><p>这是我第一次学习一个完整的游戏项目是如何自顶而下设计的。一开始的框架部分感觉很难想到，也因为缺少像游戏层这样可以频繁而又直观快捷地进行测试而感到没有把握。但是一旦基础的框架搭建完成，后面的游戏层实现就变成了水到渠成的事情，有一种顺风顺水的畅快感。即使有了前面 <strong>提瓦特幸存者</strong> 项目的基础，这个项目还是充斥着大量的实现细节，稍不留神就会出现意想不到的bug，有一些实现思路如果让我自己来想的话也很难想到或者很容易踩坑，好在老师讲解清晰、代码简明易懂，让人很好理解。这个项目再次让我深深意识到自己目前在编程的认知阶段：懂了一点后发现，自己不懂的和不足的还有很多很多。所以需要持续保持锤炼和学习。</p>
+<h2 id="reflection-and-summary">Reflection and Summary
+</h2><p>This was my first time studying how a complete game project is designed from the top down. At the beginning, the framework felt abstract and hard to grasp—especially without something like the gameplay layer to test things frequently and intuitively. I often felt unsure of whether I was on the right track. But once the foundational structure was in place, building out the gameplay layer became a smooth and satisfying process. Everything started to click into place.</p>
+<p>Even with the experience I gained from the previous <em>Teyvat Survivor</em> project, this one was filled with intricate implementation details. A single oversight could easily lead to unexpected bugs. Some of the design ideas would have been difficult—or even impossible—for me to come up with on my own without falling into common pitfalls. Thankfully, the instructor’s explanations were clear, and the code was clean and easy to follow, which made the learning process much more approachable.</p>
+<p>This project made me realize once again where I currently stand in my programming journey: just when I feel like I’ve understood something, I discover how much more there is that I don’t know. And that’s okay. It’s a reminder to keep sharpening my skills and stay committed to continuous learning.</p>
 
 </section>
 
@@ -2419,7 +2494,7 @@ version: "3.1"
 
 
         <span>
-            Last updated on Oct 15, 2025 21:11 &#43;0200
+            Last updated on Oct 16, 2025 11:10 &#43;0200
         </span>
     </section></footer>
 
@@ -2575,7 +2650,7 @@ version: "3.1"
         
 
         发表了7篇文章 ·
-        总计3万2千字
+        总计2万6千字
         <br>
     </section>
 
