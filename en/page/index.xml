@@ -202,6 +202,17 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2025-10-17&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;3.7&#34;;
+    var link = &#34;/en/p/c-syntaxsmart-pointer/&#34;;
+    var title = &#34;【C++ Syntax】Smart Pointer&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = &#34;2025-10-12&#34;;
     var value = dataMap.get(key);
     var wordCount = &#34;6.5&#34;;
