@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <loc>https://nullshowjl.github.io/p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/tags/c&#43;&#43;/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,7 +19,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/categories/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -30,6 +30,38 @@
                 hreflang="zh-cn"
                 href="https://nullshowjl.github.io/categories/"
                 />
+  </url><url>
+    <loc>https://nullshowjl.github.io/post/</loc>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/post/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/tags/syntax/</loc>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
+  </url><url>
+    <loc>https://nullshowjl.github.io/tags/</loc>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/tags/easyx/</loc>
     <lastmod>2025-10-16T11:10:15+02:00</lastmod>
@@ -57,32 +89,6 @@
                 href="https://nullshowjl.github.io/tags/game-dev/"
                 />
   </url><url>
-    <loc>https://nullshowjl.github.io/post/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/post/"
-                />
-  </url><url>
-    <loc>https://nullshowjl.github.io/tags/</loc>
-    <lastmod>2025-10-16T11:10:15+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/tags/"
-                />
-  </url><url>
     <loc>https://nullshowjl.github.io/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2025-10-16T11:10:15+02:00</lastmod>
   </url><url>
@@ -90,7 +96,7 @@
     <lastmod>2025-10-16T11:10:15+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/page/</loc>
-    <lastmod>2025-10-16T23:42:50+02:00</lastmod>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -103,7 +109,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/portfolio/</loc>
-    <lastmod>2025-10-16T23:42:50+02:00</lastmod>
+    <lastmod>2025-10-18T19:02:58+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

@@ -267,17 +267,6 @@
     
     if (value == null || wordCount &gt; value[0]) {
       dataMap.set(key, {wordCount, link, title});
-    }
-    var key = &#34;2019-03-10&#34;;
-    var value = dataMap.get(key);
-    var wordCount = &#34;0.4&#34;;
-    var link = &#34;/en/p/rich-content/&#34;;
-    var title = &#34;Rich Content&#34;;
-
-    
-    
-    if (value == null || wordCount &gt; value[0]) {
-      dataMap.set(key, {wordCount, link, title});
     }var data = [];
   for (const [key, value] of dataMap.entries()) {
     data.push([key, value.wordCount]);
