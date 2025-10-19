@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sun, 19 Oct 2025 18:33:30 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 19 Oct 2025 19:48:51 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【算法实现】Boids群体行为算法</title>
         <link>https://nullshowjl.github.io/p/%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0boids%E7%BE%A4%E4%BD%93%E8%A1%8C%E4%B8%BA%E7%AE%97%E6%B3%95/</link>
         <pubDate>Sat, 18 Oct 2025 20:37:14 +0200</pubDate>
@@ -16,7 +16,7 @@
         <description>&lt;img src="https://nullshowjl.github.io/p/%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0boids%E7%BE%A4%E4%BD%93%E8%A1%8C%E4%B8%BA%E7%AE%97%E6%B3%95/cover.webp" alt="Featured image of post 【算法实现】Boids群体行为算法" /&gt;&lt;p&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e7%ae%97%e6%b3%95%e7%ae%80%e4%bb%8b&#34; &gt;算法简介&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e4%b8%89%e6%9d%a1%e8%a7%84%e5%88%99%e8%af%a6%e8%a7%a3&#34; &gt;规则详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e8%a7%84%e5%88%99%e8%af%a6%e8%a7%a3&#34; &gt;规则详解&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#%e5%ae%8c%e6%95%b4%e5%ae%9e%e7%8e%b0&#34; &gt;完整实现&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;学习资源参考&lt;/strong&gt;：&lt;/p&gt;
@@ -200,7 +200,7 @@
 &lt;/div&gt;&lt;blockquote class=&#34;alert alert-tip&#34;&gt;
     &lt;ul&gt;
 &lt;li&gt;这三条规则互相博弈，仅依靠最基础的数学和向量运算，就让简单个体涌现出复杂的 &lt;strong&gt;群体智慧&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;在不同情景下的集群模拟，本质上是对这三条规则的“参数微调”。比如 &lt;strong&gt;鱼群&lt;/strong&gt;，我们常需要模拟水中阻力导致的间距不规则，这可以通过降低”对齐规则“强度实现，让鱼群在拐弯时出现”尾部延迟“的真实感；如一些鼠群或者僵尸群，则可以加大”聚集规则“的权重，让怪群可以如流水般快速绕过障碍物；在一些需要打造较强科技感的场景中，我们可以让群体尽量保持尖锐的三角锥形态，这可以通过在聚集规则之上添加形状进行约束。&lt;/li&gt;
+&lt;li&gt;在不同情景下的集群模拟，本质上是对这三条规则的“参数微调”。比如鱼群，我们常需要模拟水中阻力导致的间距不规则，这可以通过降低“对齐规则”强度实现，让鱼群在拐弯时出现“尾部延迟”的真实感；如一些 鼠群 或者僵尸群，则可以加大“聚集规则”的权重，让怪群可以如流水般快速绕过障碍物；在一些需要打造较强科技感的场景中，我们可以让群体尽量保持尖锐的三角锥形态，这可以通过在聚集规则之上添加形状进行约束。&lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;完整实现&#34;&gt;完整实现
 &lt;/h2&gt;&lt;h3 id=&#34;实现思路和流程&#34;&gt;实现思路和流程
@@ -460,8 +460,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/br&gt;
-&lt;p&gt;在”聚集规则“中，&lt;code&gt;maxForce&lt;/code&gt; 不是特别重要，重要的是 &lt;code&gt;perceptionRadius&lt;/code&gt; 的数值大小，决定了boid能够”看到多大范围“，从而产生聚集行为。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;在”聚集规则“中，&lt;code&gt;maxForce&lt;/code&gt; 不是特别重要，重要的是 &lt;code&gt;perceptionRadius&lt;/code&gt; 的数值大小，决定了boid能够”看到多大范围“，从而产生聚集行为。&lt;/p&gt;
 &lt;img src=&#34;boids6.gif&#34; alt=&#34;&#34; style=&#34;zoom:60%;&#34;/&gt;
 &lt;p&gt;将两条规则结合起来也非常简单，使用初中物理知识：作用在一个物体上的作用力等于两个作用力之和。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

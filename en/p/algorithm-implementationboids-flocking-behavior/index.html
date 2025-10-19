@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Introduction and implementation of the Boids Algorithm">
+<title>【Algorithm Implementation】Boids Flocking Behavior</title>
+
+<link rel='canonical' href='https://nullshowjl.github.io/en/p/algorithm-implementationboids-flocking-behavior/'>
+
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【Algorithm Implementation】Boids Flocking Behavior">
+<meta property='og:description' content="Introduction and implementation of the Boids Algorithm">
+<meta property='og:url' content='https://nullshowjl.github.io/en/p/algorithm-implementationboids-flocking-behavior/'>
+<meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='JavaScript' /><meta property='article:tag' content='Algorithm' /><meta property='article:published_time' content='2025-10-18T20:37:14&#43;02:00'/><meta property='article:modified_time' content='2025-10-19T19:48:51&#43;02:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/algorithm-implementationboids-flocking-behavior/cover.webp' />
+<meta name="twitter:title" content="【Algorithm Implementation】Boids Flocking Behavior">
+<meta name="twitter:description" content="Introduction and implementation of the Boids Algorithm"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/algorithm-implementationboids-flocking-behavior/cover.webp' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+        
+        <figure class="site-avatar">
+            <a href="/en/">
+                
+                
+
+                
+                
+                <img src="/img/avatar_hu_707be34854ee244.png" width="300"
+                     height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                
+            </a>
+            
+            <span class="emoji">✍️</span>
+            
+        </figure>
+        
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Nullshow&#39;s Tech Blog</a></h1>
+            <h2 class="site-description">Sharing and documenting my notes, experiences, and reflections from development and learning~</h2>
+        </div>
+    </header><ol class="menu-social">
+        
+        
+        
+        <li>
+            <a href='https://gitee.com/nullshow'
+                target="_blank" 
+                title="Gitee" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hexagon-letter-g" class="icon-tabler-hexagon-letter-g"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" /><path d="M14 8h-2a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2v-4h-1" /></svg>
+                
+            </a>
+        </li>
+        
+        
+        
+        <li>
+            <a href='https://github.com/NullshowJL'
+                target="_blank" 
+                title="GitHub" 
+               rel="me">
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-brand-github">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li>
+            <a href='/en/index.xml'
+                target="_blank" 
+                title="RSS" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss" class="icon-tabler-brand-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+                
+            </a>
+        </li>
+        
+    </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-home">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-user">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>Portfolio</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/update-log/' >
+                
+                
+                
+                <!--
+unicode: "fea7"
+version: "3.1"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ class="icon-tabler-logs">
+  <path d="M4 12h.01" />
+  <path d="M4 6h.01" />
+  <path d="M4 18h.01" />
+  <path d="M8 18h2" />
+  <path d="M8 12h2" />
+  <path d="M8 6h2" />
+  <path d="M14 6h6" />
+  <path d="M14 12h6" />
+  <path d="M14 18h6" />
+</svg>
+
+                
+                <span>Update Log</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-archives">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-search">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-link">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                        <option value="https://nullshowjl.github.io/en/"  selected>English</option>
+                        
+                        <option value="https://nullshowjl.github.io/" >中文</option>
+                        
+                    </select>
+                </li>
+                
+                
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-left">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-right">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-hash">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#algorithm-overview">Algorithm Overview</a></li>
+    <li><a href="#detailed-explanation-of-the-rules">Detailed Explanation of the Rules</a>
+      <ol>
+        <li><a href="#separation-rule">Separation Rule</a></li>
+        <li><a href="#alignment-rule">Alignment Rule</a></li>
+        <li><a href="#cohesion-rule">Cohesion Rule</a></li>
+      </ol>
+    </li>
+    <li><a href="#full-implementation">Full Implementation</a>
+      <ol>
+        <li><a href="#implementation-approach-and-workflow">Implementation Approach and Workflow</a>
+          <ol>
+            <li><a href="#creating-the-boid-class">Creating the <code>Boid</code> Class</a></li>
+            <li><a href="#implementing-the-alignment-rule">Implementing the Alignment Rule</a></li>
+            <li><a href="#implementing-the-cohesion-rule">Implementing the Cohesion Rule</a></li>
+            <li><a href="#implementing-the-separation-rule">Implementing the Separation Rule</a></li>
+          </ol>
+        </li>
+        <li><a href="#full-source-code">Full Source Code</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/algorithm-implementationboids-flocking-behavior/">
+                <img src="/en/p/algorithm-implementationboids-flocking-behavior/cover_hu_676d2b0b3e59219.webp"
+                        srcset="/en/p/algorithm-implementationboids-flocking-behavior/cover_hu_676d2b0b3e59219.webp 800w, /en/p/algorithm-implementationboids-flocking-behavior/cover_hu_6958deaf55880d61.webp 1600w"
+                        width="800" 
+                        height="240" 
+                        loading="lazy"
+                        alt="Featured image of post 【Algorithm Implementation】Boids Flocking Behavior" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
+                Study Notes
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/algorithm-implementationboids-flocking-behavior/">【Algorithm Implementation】Boids Flocking Behavior</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Introduction and implementation of the Boids Algorithm
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+<footer class="article-time">
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-date">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+        <time class="article-time--published">Oct 18, 2025</time>
+    </div>
+    
+
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--reading">
+            6 minute read
+        </time>
+    </div>
+    
+
+    
+    <div id="viewCount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye" class="icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+        <time class="article-time--reading">
+            
+            <span id="vercount_value_page_pv">loading... </span> views
+        </time>
+    </div>
+
+</footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><strong>Table of Contents</strong></p>
+<ul>
+<li>[Algorithm Overview](#Algorithm Overview)</li>
+<li><a class="link" href="#detailed-explanation-of-the-rules" >Detailed Explanation of the Rules</a></li>
+<li><a class="link" href="#full-implementation" >Full Implementation</a></li>
+</ul>
+<p><strong>Reference Resources</strong>:</p>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1XgM1zQEF5?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
+    >Bilibili-Voidmatrix</a></li>
+<li><a class="link" href="https://www.youtube.com/watch?v=mhjuuHl6qHM&amp;t=127s"  target="_blank" rel="noopener"
+    >YouTube-The Coding Train</a></li>
+</ul>
+<h2 id="algorithm-overview">Algorithm Overview
+</h2><p>In 1987, computer scientist Craig Reynolds published a paper on simulating flocking behavior in birds. In it, he introduced an algorithm called <strong>Boids</strong>, which quickly found applications in movies and games. For example, it was used to animate bat and penguin swarms in <em>Batman Returns</em> (1992), and bird-like creatures in <em>Half-Life</em> (1998).</p>
+<p>The Boids algorithm is based on a decentralized idea: it defines the behavior of each individual, without directly modeling the group. The “flock” is simply the visual result of many individuals following simple rules. Each Boid follows three basic principles:</p>
+<ol>
+<li><strong>Separation</strong>: Move away from nearby Boids to avoid crowding.</li>
+<li><strong>Alignment</strong>: Steer toward the average heading of nearby Boids.</li>
+<li><strong>Cohesion</strong>: Move toward the average position of nearby Boids.</li>
+</ol>
+<h2 id="detailed-explanation-of-the-rules">Detailed Explanation of the Rules
+</h2><h3 id="separation-rule">Separation Rule
+</h3><p>One key behavior in a flock is that each individual tends to move away from nearby neighbors—similar to how like poles of magnets repel each other. The closer they are, the stronger this repelling force becomes. This rule helps prevent collisions and overlapping between Boids.</p>
+<img src="boids1.gif" alt="" style="zoom:60%;"/>
+<p>Here’s how the separation rule can be implemented in code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Separation Rule
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Vector2D</span> <span class="nf">separation</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Boid</span><span class="o">&gt;&amp;</span> <span class="n">boids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2D</span> <span class="n">separation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Boid</span><span class="o">&amp;</span> <span class="nl">b</span> <span class="p">:</span> <span class="n">boids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">position</span> <span class="o">-</span> <span class="n">position</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">separation_distance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Vector2D</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">position</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">separation</span> <span class="o">=</span> <span class="n">separation</span> <span class="o">+</span> <span class="n">diff</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0f</span> <span class="o">/</span> <span class="n">distance</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">separation</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="alignment-rule">Alignment Rule
+</h3><p>In flocking simulations, alignment helps control how each individual adjusts its direction of movement. Intuitively, we often judge whether a group is truly a “flock” or just a random crowd based on whether its members are moving in a similar direction.</p>
+<img src="boids2.gif" alt="" style="zoom:60%;"/>
+<p>Alignment rule can be implemented like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Alignment Rule
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Vector2D</span> <span class="nf">alignment</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Boid</span><span class="o">&gt;&amp;</span> <span class="n">boids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2D</span> <span class="n">avg_velocity</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">total_neighbors</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Boid</span><span class="o">&amp;</span> <span class="nl">b</span> <span class="p">:</span> <span class="n">boids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">position</span> <span class="o">-</span> <span class="n">position</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">neighbor_distance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">avg_velocity</span> <span class="o">=</span> <span class="n">avg_velocity</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">velocity</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">total_neighbors</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">total_neighbors</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">avg_velocity</span> <span class="o">=</span> <span class="n">avg_velocity</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0f</span> <span class="o">/</span> <span class="n">total_neighbors</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">avg_velocity</span> <span class="o">-</span> <span class="n">velocity</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Vector2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="cohesion-rule">Cohesion Rule
+</h3><p>与分离规则相反，聚集规则是一种凝聚力，像磁铁的异性相吸。它保证了集群中的个体不会因为分离规则而过度分散，导致无法产生“邻居个体”。</p>
+<p>The cohesion rule works in the opposite way to separation—it acts like an attractive force, similar to how opposite poles of magnets pull toward each other. It helps prevent individuals from spreading out too far due to separation, ensuring that each Boid still has nearby neighbors to interact with.</p>
+<img src="boids3.gif" alt="" style="zoom:60%;"/>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Cohesion Rule
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Vector2D</span> <span class="nf">cohesion</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Boid</span><span class="o">&gt;&amp;</span> <span class="n">boids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2D</span> <span class="n">center_of_mass</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">total_neighbors</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Boid</span><span class="o">&amp;</span> <span class="nl">b</span> <span class="p">:</span> <span class="n">boids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">position</span> <span class="o">-</span> <span class="n">position</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">neighbor_distance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">center_of_mass</span> <span class="o">=</span> <span class="n">center_of_mass</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">total_neighbors</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">total_neighbors</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">center_of_mass</span> <span class="o">=</span> <span class="n">center_of_mass</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0f</span> <span class="o">/</span> <span class="n">total_neighbors</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">center_of_mass</span> <span class="o">-</span> <span class="n">position</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Vector2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-tip">
+    <ul>
+<li>These three rules constantly interact and balance each other. With just basic math and vector operations, simple individuals can exhibit surprisingly complex <strong>collective intelligence</strong>.</li>
+<li>In different scenarios, flocking behavior is essentially shaped by fine-tuning the parameters of these rules. For example, in fish schools, we often simulate uneven spacing caused by water resistance by reducing the strength of the alignment rule—this creates a realistic “tail lag” effect when turning. In mouse swarms or zombie hordes, increasing the weight of the cohesion rule helps the group flow smoothly around obstacles like a stream of liquid. In sci-fi-style scenes, we might want the flock to maintain a sharp, triangular formation—this can be achieved by adding shape constraints on top of the cohesion rule.</li>
+</ul></blockquote>
+<h2 id="full-implementation">Full Implementation
+</h2><h3 id="implementation-approach-and-workflow">Implementation Approach and Workflow
+</h3><h4 id="creating-the-boid-class">Creating the <code>Boid</code> Class
+</h4><p>Each individual in the flock needs three key properties: position, velocity, and acceleration. All three are represented as 2D vectors, since this project implements the Boids algorithm in a 2D visual space.</p>
+<p>Here’s how the <code>Boid</code> class can be defined:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// boid.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Boid</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">constructor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">(</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>    <span class="c1">// Position of the boid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span> <span class="o">=</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">Vector</span><span class="p">.</span><span class="nx">random2D</span><span class="p">();</span>    				<span class="c1">// Initial velocity of the boid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span> <span class="p">))</span>  				<span class="c1">// Assign each boid a slightly different speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>						<span class="c1">// Acceleration of the boid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nx">update</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nx">show</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stroke</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">point</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Suppose we have 100 boids in total. In <code>sketch.js</code>, we can use an array to store them like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// sketch.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">flock</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">createCanvas</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">360</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">flock</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Boid</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">background</span><span class="p">(</span><span class="mi">51</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">boid</span> <span class="k">of</span> <span class="nx">flock</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">boid</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">boid</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now you can see the result looks like this:</p>
+<img src="boids4.gif" alt="" style="zoom:60%;"/>
+<h4 id="implementing-the-alignment-rule">Implementing the Alignment Rule
+</h4><p>“Alignment is the simplest of the three rules, so we’ll start with it.</p>
+<p><strong>How it works</strong>: For each Boid, we check a circular area around it—using the Boid’s position as the center and a fixed radius. We then calculate the average velocity of all other Boids within that circle (its neighbors). This average velocity becomes the target direction the Boid should steer toward. By comparing its current velocity with the target, we can compute the steering force needed to adjust its movement.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// boid.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">align</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">perceptionRadius</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>        		<span class="c1">// A circular detection range with a radius of 50 pixels 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">steering</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>    		<span class="c1">// The desired steering velocity for this boid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    		<span class="c1">// Number of neighboring boids
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">other</span> <span class="k">of</span> <span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">dist</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">other</span> <span class="o">!=</span> <span class="k">this</span> <span class="o">&amp;&amp;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">perceptionRadius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">other</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>   <span class="c1">// Add the velocity of each neighbor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">total</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">steering</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>                <span class="c1">// Calculate the average velocity of nearby boids
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">steering</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>     <span class="c1">// Set the magnitude to the boid’s max speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>        <span class="c1">// Target velocity minus current velocity = steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">steering</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span><span class="p">);</span>      <span class="c1">// Limit the steering force to avoid sharp turns
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">steering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">flock</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">alignment</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">align</span><span class="p">(</span><span class="nx">boids</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span> <span class="o">=</span> <span class="nx">alignment</span><span class="p">;</span>  <span class="c1">// Apply the alignment steering force as acceleration
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    								<span class="c1">// Force = mass × acceleration; assuming mass = 1, force equals acceleration
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now let’s add an effect where boids can “fly in and out” of the screen:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// boid.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">edges</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">width</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">height</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This gives us the following alignment effect:</p>
+<img src="boids5.gif" alt="" style="zoom:60%;"/>
+<h4 id="implementing-the-cohesion-rule">Implementing the Cohesion Rule
+</h4><p>This rule is similar to the alignment rule, but instead of calculating the average velocity of nearby Boids, we calculate their average position. This “target position” becomes the point the Boid should move toward to stay close to the group.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">cohesion</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">perceptionRadius</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>       
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">steering</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>   
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">other</span> <span class="k">of</span> <span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">dist</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">other</span> <span class="o">!=</span> <span class="k">this</span> <span class="o">&amp;&amp;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">perceptionRadius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>   <span class="c1">// Add the positions of nearby boids
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">total</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">steering</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>                <span class="c1">// Calculate the average position (target position)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>        <span class="c1">// Target position - current position = desired movement direction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">steering</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>     <span class="c1">// Set the desired speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>        <span class="c1">// Desired velocity - current velocity = steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">steering</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span><span class="p">);</span>      <span class="c1">// Limit the steering force to avoid sharp turns
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">steering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In the cohesion rule, <code>maxForce</code> isn’t the most critical factor. What really matters is the value of <code>perceptionRadius</code>, which determines how far a Boid can “see” its surroundings—and that directly affects its tendency to flock together.</p>
+<img src="boids6.gif" alt="" style="zoom:60%;"/>
+<p>Combining the two rules is quite straightforward. Just like in basic physics, the total force acting on an object is the sum of all individual forces.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// boid.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">flock</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">alignment</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">align</span><span class="p">(</span><span class="nx">boids</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">cohesion</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cohesion</span><span class="p">(</span><span class="nx">boids</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Add the two forces together to get the combined steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">alignment</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cohesion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>With both rules in effect, the flock now moves along trajectories like this:</p>
+<img src="boids7.gif" alt="" style="zoom:60%;"/>
+<h4 id="implementing-the-separation-rule">Implementing the Separation Rule
+</h4><p>Under the separation rule, we calculate the desired velocity of a Boid like this:</p>
+<img src="boids8.webp" alt="" style="zoom:60%;"/>
+<p>In essence, <code>separation</code> is the opposite of <code>cohesion</code>. So we can implement <code>separation</code> using a similar approach to <code>cohesion</code>, but instead of steering toward the average position of neighbors, we steer away from them.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// boid.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">separation</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">let</span> <span class="nx">perceptionRadius</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>       
+</span></span><span class="line"><span class="cl">   <span class="kd">let</span> <span class="nx">steering</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>   
+</span></span><span class="line"><span class="cl">   <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    
+</span></span><span class="line"><span class="cl">   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">other</span> <span class="k">of</span> <span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">       <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">dist</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">       <span class="k">if</span> <span class="p">(</span><span class="nx">other</span> <span class="o">!=</span> <span class="k">this</span> <span class="o">&amp;&amp;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">perceptionRadius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">           <span class="kd">let</span> <span class="nx">diff</span> <span class="o">=</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">Vector</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span> <span class="c1">// Boid position minus neighbor position gives the desired velocity (steering away from the neighbor)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="nx">diff</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>  <span class="c1">// The farther a neighbor is, the less influence it has; the closer it is, the stronger the effect  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="nx">steering</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">diff</span><span class="p">);</span>    
+</span></span><span class="line"><span class="cl">           <span class="nx">total</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">       <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">steering</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>                
+</span></span><span class="line"><span class="cl">       <span class="nx">steering</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>     
+</span></span><span class="line"><span class="cl">       <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>       
+</span></span><span class="line"><span class="cl">       <span class="nx">steering</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span><span class="p">);</span>      
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="nx">steering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This is the resulting effect of the separation rule:</p>
+<img src="boids9.gif" alt="" style="zoom:60%;"/>
+<p>With that, the basic version of the Boids algorithm is complete. By adjusting the weights of the three rules—alignment, cohesion, and separation—we can fine-tune the flocking behavior to suit different scenarios.</p>
+<img src="boids10.gif" alt="" style="zoom:60%;"/>
+<h3 id="full-source-code">Full Source Code
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// boid.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Boid</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">constructor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="nx">width</span><span class="p">),</span> <span class="nx">random</span><span class="p">(</span><span class="nx">height</span><span class="p">));</span>    <span class="c1">// Initial position of the boid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span> <span class="o">=</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">Vector</span><span class="p">.</span><span class="nx">random2D</span><span class="p">();</span>    <span class="c1">// Initial velocity
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>     <span class="c1">// Assign each boid a different speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>      <span class="c1">// Initial acceleration
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>                     <span class="c1">// Maximum steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>                       <span class="c1">// Maximum speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Create a wrap-around effect when boids fly off the screen
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">edges</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">width</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">height</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">align</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">perceptionRadius</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>        		<span class="c1">// Radius of the detection circle 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">let</span> <span class="nx">steering</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>    		<span class="c1">// Desired steering velocity
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    	    <span class="c1">// Number of neighbors
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">other</span> <span class="k">of</span> <span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">dist</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">other</span> <span class="o">!=</span> <span class="k">this</span> <span class="o">&amp;&amp;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">perceptionRadius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">steering</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">other</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>   <span class="c1">// Sum up neighbors&#39; velocities
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">total</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>                <span class="c1">// Average velocity of nearby boids
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">steering</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>     <span class="c1">// Normalize to max speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>        <span class="c1">// Desired velocity - current velocity = steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">steering</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span><span class="p">);</span>      <span class="c1">// Limit the steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">steering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">cohesion</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">perceptionRadius</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>       
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">steering</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>   
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">other</span> <span class="k">of</span> <span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">dist</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">other</span> <span class="o">!=</span> <span class="k">this</span> <span class="o">&amp;&amp;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">perceptionRadius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">steering</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>   <span class="c1">// Sum up neighbors&#39; positions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">total</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>                <span class="c1">// Average position (center of mass)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>        <span class="c1">// Target position - current position = desired movement
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">steering</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>     <span class="c1">// Normalize to max speed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>        <span class="c1">// Desired velocity - current velocity = steering force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">steering</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span><span class="p">);</span>      <span class="c1">// Limit the cohesion force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">steering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">separation</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">perceptionRadius</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>       
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">steering</span> <span class="o">=</span> <span class="nx">createVector</span><span class="p">();</span>   
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">other</span> <span class="k">of</span> <span class="nx">boids</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">dist</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">other</span> <span class="o">!=</span> <span class="k">this</span> <span class="o">&amp;&amp;</span> <span class="nx">d</span> <span class="o">&lt;</span> <span class="nx">perceptionRadius</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kd">let</span> <span class="nx">diff</span> <span class="o">=</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">Vector</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">,</span> <span class="nx">other</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span> <span class="c1">// Vector pointing away from neighbor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">diff</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>  <span class="c1">// Weight by inverse distance  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">steering</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">diff</span><span class="p">);</span>    
+</span></span><span class="line"><span class="cl">                <span class="nx">total</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">div</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span>                
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">setMag</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>     
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>       
+</span></span><span class="line"><span class="cl">            <span class="nx">steering</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxForce</span><span class="p">);</span>      
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">steering</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">flock</span><span class="p">(</span><span class="nx">boids</span><span class="p">){</span>   
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">alignment</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">align</span><span class="p">(</span><span class="nx">boids</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">cohesion</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cohesion</span><span class="p">(</span><span class="nx">boids</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">separation</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">separation</span><span class="p">(</span><span class="nx">boids</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Apply rule weights
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">alignment</span><span class="p">.</span><span class="nx">mult</span><span class="p">(</span><span class="nx">alignSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cohesion</span><span class="p">.</span><span class="nx">mult</span><span class="p">(</span><span class="nx">cohesionSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">separation</span><span class="p">.</span><span class="nx">mult</span><span class="p">(</span><span class="nx">separationSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Combine all steering forces
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">alignment</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cohesion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">separation</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">update</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">maxSpeed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>          <span class="c1">// Reset acceleration to avoid compounding force
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">stroke</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">point</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// sketch.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">flock</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">alignSlider</span><span class="p">,</span> <span class="nx">cohesionSlider</span><span class="p">,</span> <span class="nx">separationSlider</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">createCanvas</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">360</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">alignSlider</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cohesionSlider</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">separationSlider</span> <span class="o">=</span> <span class="nx">createSlider</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">flock</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Boid</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">background</span><span class="p">(</span><span class="mi">51</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">boid</span> <span class="k">of</span> <span class="nx">flock</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">boid</span><span class="p">.</span><span class="nx">edges</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">boid</span><span class="p">.</span><span class="nx">flock</span><span class="p">(</span><span class="nx">flock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">boid</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">boid</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/javascript/">JavaScript</a>
+        
+            <a href="/en/tags/algorithm/">Algorithm</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-copyright">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Oct 19, 2025 19:48 &#43;0200
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-syntaxsmart-pointer/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-syntaxsmart-pointer/cover.c2d6bbaddbba8a5650d918e15736971f_hu_6021b341494e9474.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Syntax】Smart Pointer"
+                        
+                        data-hash="md5-wta7rdu6ilZQ2RjhVzaXHw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Syntax】Smart Pointer</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_f847329bde6c0b16.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer"
+                        
+                        data-hash="md5-6W5JgXMmtEsLN/jKFJ3jVw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_14c732af37c360d2.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design"
+                        
+                        data-hash="md5-tKyNI1R&#43;WLj&#43;pVsJSHaWZQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_b0a14c165a37bd82.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors"
+                        
+                        data-hash="md5-IHQiXxAaTJ0vQUMBCnb4sw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/english-for-developersexpressions-for-dev-life/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/english-for-developersexpressions-for-dev-life/cover.6fcf406002e44b12aac9dbd6ca56d67c_hu_1b739d5272377acb.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【English for Developers】Expressions for Dev Life"
+                        
+                        data-hash="md5-b89AYALkSxKqydvWylbWfA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【English for Developers】Expressions for Dev Life</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+       
+    <section class="totalcount">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        发表了8篇文章 ·
+        总计3万3千字
+        <br>
+    </section>
+
+
+    
+    <section class="running-time">
+        本博客已运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+
+    <section class="copyright">
+        &copy;
+        
+        2025 Nullshow
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.711fbb0ee2e4cf3223d76423fbe2fc4e019ec898fb854a9d7bea4eb3169278df.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Mate';
+        src: url(https://nullshowjl.github.io/font/Mate.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'SourceCodePro';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Mate', 'WenKai', sans-serif;
+        --code-font-family: 'SourceCodePro';
+    }
+
+    body {
+        font-family: 'Mate', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+        
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Mate';
+        src: url(https://nullshowjl.github.io/font/Mate.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'SourceCodePro';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Mate', 'WenKai', sans-serif;
+        --code-font-family: 'SourceCodePro';
+    }
+
+    body {
+        font-family: 'Mate', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+    </body>
+</html>
+
+

@@ -2,6 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nullshowjl.github.io/en/p/algorithm-implementationboids-flocking-behavior/</loc>
+    <lastmod>2025-10-19T19:48:51+02:00</lastmod>
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/tags/algorithm/</loc>
+    <lastmod>2025-10-19T19:48:51+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/algorithm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/algorithm/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/categories/</loc>
+    <lastmod>2025-10-19T19:48:51+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/categories/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/tags/javascript/</loc>
+    <lastmod>2025-10-19T19:48:51+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/javascript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/javascript/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/post/</loc>
+    <lastmod>2025-10-19T19:48:51+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/post/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/tags/</loc>
+    <lastmod>2025-10-19T19:48:51+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/"
+                />
+  </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-syntaxsmart-pointer/</loc>
     <lastmod>2025-10-18T20:22:13+02:00</lastmod>
   </url><url>
@@ -18,32 +86,6 @@
                 href="https://nullshowjl.github.io/en/tags/c&#43;&#43;/"
                 />
   </url><url>
-    <loc>https://nullshowjl.github.io/en/categories/</loc>
-    <lastmod>2025-10-18T20:22:13+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/categories/"
-                />
-  </url><url>
-    <loc>https://nullshowjl.github.io/en/post/</loc>
-    <lastmod>2025-10-18T20:22:13+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/post/"
-                />
-  </url><url>
     <loc>https://nullshowjl.github.io/en/tags/syntax/</loc>
     <lastmod>2025-10-18T20:22:13+02:00</lastmod>
     <xhtml:link
@@ -55,19 +97,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nullshowjl.github.io/en/tags/syntax/"
-                />
-  </url><url>
-    <loc>https://nullshowjl.github.io/en/tags/</loc>
-    <lastmod>2025-10-18T20:22:13+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/</loc>
