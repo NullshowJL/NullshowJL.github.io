@@ -206,6 +206,17 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2025-10-18&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;3.5&#34;;
+    var link = &#34;/p/%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0boids%E7%BE%A4%E4%BD%93%E8%A1%8C%E4%B8%BA%E7%AE%97%E6%B3%95/&#34;;
+    var title = &#34;【算法实现】Boids群体行为算法&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = &#34;2025-10-17&#34;;
     var value = dataMap.get(key);
     var wordCount = &#34;5.3&#34;;
