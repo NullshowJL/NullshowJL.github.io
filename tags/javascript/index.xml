@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sun, 19 Oct 2025 19:48:51 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 22 Nov 2025 16:25:00 +0100</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【算法实现】Boids群体行为算法</title>
         <link>https://nullshowjl.github.io/p/%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0boids%E7%BE%A4%E4%BD%93%E8%A1%8C%E4%B8%BA%E7%AE%97%E6%B3%95/</link>
         <pubDate>Sat, 18 Oct 2025 20:37:14 +0200</pubDate>
@@ -200,7 +200,7 @@
 &lt;/div&gt;&lt;blockquote class=&#34;alert alert-tip&#34;&gt;
     &lt;ul&gt;
 &lt;li&gt;这三条规则互相博弈，仅依靠最基础的数学和向量运算，就让简单个体涌现出复杂的 &lt;strong&gt;群体智慧&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;在不同情景下的集群模拟，本质上是对这三条规则的“参数微调”。比如鱼群，我们常需要模拟水中阻力导致的间距不规则，这可以通过降低“对齐规则”强度实现，让鱼群在拐弯时出现“尾部延迟”的真实感；如一些 鼠群 或者僵尸群，则可以加大“聚集规则”的权重，让怪群可以如流水般快速绕过障碍物；在一些需要打造较强科技感的场景中，我们可以让群体尽量保持尖锐的三角锥形态，这可以通过在聚集规则之上添加形状进行约束。&lt;/li&gt;
+&lt;li&gt;在不同情景下的集群模拟，本质上是对这三条规则的“参数微调”。比如鱼群，我们常需要模拟水中阻力导致的间距不规则，这可以通过降低“对齐规则”强度实现，让鱼群在拐弯时出现“尾部延迟”的真实感；如一些鼠群或者僵尸群，则可以加大“聚集规则”的权重，让怪群可以如流水般快速绕过障碍物；在一些需要打造较强科技感的场景中，我们可以让群体尽量保持尖锐的三角锥形态，这可以通过在聚集规则之上添加形状进行约束。&lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;完整实现&#34;&gt;完整实现
 &lt;/h2&gt;&lt;h3 id=&#34;实现思路和流程&#34;&gt;实现思路和流程

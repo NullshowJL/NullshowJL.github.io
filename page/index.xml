@@ -206,6 +206,17 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2025-11-22&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;1.5&#34;;
+    var link = &#34;/p/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAsdl2/&#34;;
+    var title = &#34;【环境搭建】SDL2&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = &#34;2025-10-18&#34;;
     var value = dataMap.get(key);
     var wordCount = &#34;3.5&#34;;
