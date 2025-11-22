@@ -33,6 +33,16 @@
   </url><url>
     <loc>https://nullshowjl.github.io/tags/sdl/</loc>
     <lastmod>2025-11-22T16:25:00+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/sdl/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/sdl/"
+                />
   </url><url>
     <loc>https://nullshowjl.github.io/tags/</loc>
     <lastmod>2025-11-22T16:25:00+01:00</lastmod>
@@ -49,6 +59,16 @@
   </url><url>
     <loc>https://nullshowjl.github.io/tags/visual-studio/</loc>
     <lastmod>2025-11-22T16:25:00+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/visual-studio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/visual-studio/"
+                />
   </url><url>
     <loc>https://nullshowjl.github.io/p/%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0boids%E7%BE%A4%E4%BD%93%E8%A1%8C%E4%B8%BA%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2025-11-22T16:25:00+01:00</lastmod>

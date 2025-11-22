@@ -7,6 +7,97 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright><atom:link href="https://nullshowjl.github.io/en/categories/study-notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【Environment Setup 】SDL2</title>
+        <link>https://nullshowjl.github.io/en/p/environment-setup-sdl2/</link>
+        <pubDate>Sat, 22 Nov 2025 14:00:30 +0200</pubDate>
+        
+        <guid>https://nullshowjl.github.io/en/p/environment-setup-sdl2/</guid>
+        <description>&lt;img src="https://nullshowjl.github.io/en/p/environment-setup-sdl2/cover.webp" alt="Featured image of post 【Environment Setup 】SDL2" /&gt;&lt;p&gt;&lt;strong&gt;Course Source&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/cheese/play/ss18350?bsource=link_copy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bilibili-Voidmatrix&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sdl-library&#34;&gt;SDL Library
+&lt;/h2&gt;&lt;h3 id=&#34;introduction&#34;&gt;Introduction
+&lt;/h3&gt;&lt;p&gt;SDL stands for &lt;strong&gt;Simple DirectMedia Layer&lt;/strong&gt;. It is a lightweight framework that makes it possible to run the same code on different operating systems and hardware. In other words, once you build a project with SDL, you can compile and run it across multiple platforms. The interface is written in C, so it is clear and easy to use.&lt;/p&gt;
+&lt;p&gt;Commonly used add‑on libraries include &lt;strong&gt;SDL_image&lt;/strong&gt; (for loading images), &lt;strong&gt;SDL_ttf&lt;/strong&gt; (for fonts), and &lt;strong&gt;SDL_mixer&lt;/strong&gt; (for audio). SDL also provides &lt;strong&gt;SDL_Renderer&lt;/strong&gt;, which wraps graphics APIs such as OpenGL, Vulkan, and DirectX. On each platform, SDL chooses the right backend automatically.&lt;/p&gt;
+&lt;p&gt;SDL is widely used and trusted in the industry. Many game engines and projects are built on top of it, showing that it is a mature and reliable technology.&lt;/p&gt;
+&lt;h3 id=&#34;getting--downloading&#34;&gt;Getting / Downloading
+&lt;/h3&gt;&lt;p&gt;Go to the official &lt;a class=&#34;link&#34; href=&#34;https://github.com/libsdl-org/SDL&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SDL GitHub repository&lt;/a&gt;. Open the &lt;strong&gt;Releases&lt;/strong&gt; section and download the latest version marked &lt;strong&gt;Latest&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;c1.png&#34; alt=&#34;&#34; style=&#34;zoom:60%;&#34; /&gt;
+&lt;p&gt;After opening the page, choose the version that matches your operating system. Since this project uses &lt;strong&gt;SDL2&lt;/strong&gt; (note that &lt;strong&gt;SDL3&lt;/strong&gt; is already available), select the latest release that starts with &lt;strong&gt;2&lt;/strong&gt;. As the project is developed with &lt;strong&gt;Visual Studio&lt;/strong&gt;, download the corresponding version listed below.&lt;/p&gt;
+&lt;img src=&#34;c2.webp&#34; alt=&#34;&#34; style=&#34;zoom:60%;&#34; /&gt;
+&lt;p&gt;Similarly, install &lt;a class=&#34;link&#34; href=&#34;https://github.com/libsdl-org/SDL_ttf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SDL_ttf&lt;/a&gt; (text rendering), &lt;a class=&#34;link&#34; href=&#34;https://github.com/libsdl-org/SDL_image&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SDL_image&lt;/a&gt; (image rendering), &lt;a class=&#34;link&#34; href=&#34;https://github.com/libsdl-org/SDL_mixer&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SDL_mixer&lt;/a&gt; (audio decoding), and &lt;a class=&#34;link&#34; href=&#34;https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SDL_gfx&lt;/a&gt; (basic primitive drawing). Note that this project uses &lt;strong&gt;SDL2&lt;/strong&gt;, so all of these libraries should be installed in their SDL2 versions. If you are using &lt;strong&gt;SDL3&lt;/strong&gt;, make sure to install the corresponding SDL3 versions instead. Also, SDL_gfx is hosted on a separate website, while the other three are available on GitHub.&lt;/p&gt;
+&lt;p&gt;In addition, you will need &lt;a class=&#34;link&#34; href=&#34;https://github.com/DaveGamble/cJSON&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cJSON&lt;/a&gt;, which can be obtained in a similar way.&lt;/p&gt;
+&lt;h2 id=&#34;development-environment-setup&#34;&gt;Development Environment Setup
+&lt;/h2&gt;&lt;h3 id=&#34;general-configuration&#34;&gt;General Configuration
+&lt;/h3&gt;&lt;p&gt;Right‑click the project name (not the “solution name”), go to &lt;strong&gt;Properties&lt;/strong&gt;, then under &lt;strong&gt;C/C++ → Code Generation&lt;/strong&gt;, change &lt;strong&gt;Runtime Library&lt;/strong&gt; to &lt;strong&gt;MT&lt;/strong&gt;. Finally, click &lt;strong&gt;OK&lt;/strong&gt; or &lt;strong&gt;Apply&lt;/strong&gt; in the lower‑right corner of the dialog. This setting helps prevent DLL missing errors on computers that do not have Visual Studio or the related C++ libraries installed.&lt;/p&gt;
+&lt;img src=&#34;c3.webp&#34; alt=&#34;&#34; style=&#34;zoom:60%;&#34; /&gt;
+&lt;h3 id=&#34;配置第三方库&#34;&gt;配置第三方库
+&lt;/h3&gt;&lt;h3 id=&#34;configuring-thirdparty-libraries&#34;&gt;Configuring Third‑Party Libraries
+&lt;/h3&gt;&lt;p&gt;Place all SDL‑related files into a single folder to make future management easier. In the example below, the solution is named &lt;strong&gt;“TowerDefence”&lt;/strong&gt;, and it contains two projects: &lt;strong&gt;“Demo”&lt;/strong&gt; and &lt;strong&gt;“TowerDefence”&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;c4.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34; /&gt;
+&lt;img src=&#34;c5.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34; /&gt;
+&lt;p&gt;Next, configure the settings in the order used by C++ compilation: &lt;strong&gt;header files, library files, and dynamic link libraries&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;header-file-configuration&#34;&gt;Header File Configuration
+&lt;/h4&gt;&lt;p&gt;Open the &lt;strong&gt;Properties&lt;/strong&gt; window in the same way as before. Go to &lt;strong&gt;C/C++&lt;/strong&gt;, and in the first line on the right, add the relevant SDL header files. Note that by default, Visual Studio uses absolute paths when adding files. For flexibility, change them to &lt;strong&gt;relative paths&lt;/strong&gt;:&lt;/p&gt;
+&lt;img src=&#34;c6.webp&#34; alt=&#34;&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;Once this is done, Visual Studio will be able to recognize header files such as &lt;code&gt;SDL.h&lt;/code&gt;. One important detail to note is that SDL also defines its own &lt;code&gt;main&lt;/code&gt; function. To avoid conflicts, add the following line at the very beginning of your code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SDL_MAIN_HANDLED	&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// SDL有自己的main函数定义，使用这个宏来避免冲突
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;SDL.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;SDL_image.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;SDL_mixer.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;SDL_ttf.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Welcome to Demo!&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;// Game initialization and main loop would go here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;setting-library-files-in-the-linker&#34;&gt;Setting Library Files in the Linker
+&lt;/h4&gt;&lt;p&gt;Again, open the &lt;strong&gt;Properties&lt;/strong&gt; window. Go to &lt;strong&gt;Linker → General&lt;/strong&gt;, and on the right side locate &lt;strong&gt;Additional Library Directories&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;c7.webp&#34; alt=&#34;&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;blockquote class=&#34;alert alert-tip&#34;&gt;
+    &lt;p&gt;Since my computer is 64‑bit (x64), the 32‑bit (x86) files are not needed and can be safely removed (no need to add them).&lt;/p&gt;&lt;/blockquote&gt;
+&lt;img src=&#34;c8.webp&#34; alt=&#34;&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;h4 id=&#34;setting-up-dynamic-link-libraries&#34;&gt;Setting Up Dynamic Link Libraries
+&lt;/h4&gt;&lt;p&gt;Open the &lt;strong&gt;lib&lt;/strong&gt; folder inside each SDL package, locate the corresponding &lt;strong&gt;.dll&lt;/strong&gt; files, and copy them into your project folder (in this example, the &lt;strong&gt;Demo&lt;/strong&gt; project).&lt;/p&gt;
+&lt;img src=&#34;c11.webp&#34; alt=&#34;&#34; style=&#34;zoom:63%;&#34; /&gt;
+&lt;img src=&#34;c10.webp&#34; alt=&#34;&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;Note that &lt;strong&gt;SDL_gfx&lt;/strong&gt; does not provide dynamic link libraries, so there are no DLL files.&lt;/p&gt;
+&lt;h4 id=&#34;setting-up-cjson&#34;&gt;Setting up cJSON
+&lt;/h4&gt;&lt;p&gt;In the &lt;strong&gt;Solution Explorer&lt;/strong&gt;, under &lt;strong&gt;Source Files&lt;/strong&gt;, create a new filter. Then simply drag and drop the cJSON source files into it.&lt;/p&gt;
+&lt;img src=&#34;c12.webp&#34; alt=&#34;&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;p&gt;At this point, the full SDL2 package has been successfully configured in Visual Studio.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>【Algorithm Implementation】Boids Flocking Behavior</title>
         <link>https://nullshowjl.github.io/en/p/algorithm-implementationboids-flocking-behavior/</link>
         <pubDate>Sat, 18 Oct 2025 20:37:14 +0200</pubDate>
