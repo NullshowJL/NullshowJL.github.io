@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Thu, 16 Oct 2025 23:42:50 +0200</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 29 Nov 2025 09:19:26 +0100</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Portfolio</title>
         <link>https://nullshowjl.github.io/en/portfolio/</link>
         <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
@@ -71,84 +71,119 @@
 
 &lt;p&gt;🔗 &lt;strong&gt;Source Code&lt;/strong&gt; on &lt;a class=&#34;link&#34; href=&#34;https://github.com/NullshowJL/Game-Daily-Rush&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;动物世界&#34;&gt;动物世界
-&lt;/h2&gt;&lt;p&gt;🐄 多种算法实现&lt;/p&gt;
-&lt;h3 id=&#34;项目信息&#34;&gt;项目信息
+&lt;h2 id=&#34;animal-world&#34;&gt;&lt;strong&gt;Animal World&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;🐄 Implementation of FSM and Boids Algorithm&lt;/p&gt;
+&lt;h3 id=&#34;project-overview-1&#34;&gt;Project Overview
 &lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;类型&lt;/th&gt;
-          &lt;th&gt;技术栈&lt;/th&gt;
-          &lt;th&gt;职责&lt;/th&gt;
+          &lt;th&gt;Category&lt;/th&gt;
+          &lt;th&gt;Tech Stack&lt;/th&gt;
+          &lt;th&gt;Role&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;算法实现&lt;/td&gt;
+          &lt;td&gt;Algorithm Implementation&lt;/td&gt;
           &lt;td&gt;C++ + raylib&lt;/td&gt;
-          &lt;td&gt;独立项目&lt;/td&gt;
+          &lt;td&gt;Solo Project&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;项目简介&#34;&gt;项目简介
-&lt;/h3&gt;&lt;p&gt;本项目是我在游戏设计专业二年级期间独立完成的作品，旨在模拟一个动态生态系统。草、羊、狼和乌鸦各自遵循不同的行为模式：草会生长并扩散；羊会寻找并吃草、逃避狼、繁殖或漫游；狼会追捕羊、繁殖或漫游；乌鸦则随机飞进飞出场景。通过这些行为的交互，草原生态逐渐形成一种动态平衡。&lt;/p&gt;
-&lt;h3 id=&#34;项目亮点&#34;&gt;项目亮点
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;使用有限状态机（FSM）管理动物行为逻辑，实现清晰的状态切换与响应机制&lt;/li&gt;
-&lt;li&gt;应用 Boid 算法模拟乌鸦的群体飞行行为，增强自然感与动态表现&lt;/li&gt;
-&lt;li&gt;构建了基础生态循环机制，支持草扩散、动物繁殖与资源消耗&lt;/li&gt;
+&lt;h3 id=&#34;project-description-1&#34;&gt;Project Description
+&lt;/h3&gt;&lt;p&gt;This project was independently completed during my second year in the Game Design program, with the goal of simulating a dynamic ecosystem. Grass, sheep, wolves, and crows each follow distinct behavioral patterns:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Grass grows and spreads&lt;/li&gt;
+&lt;li&gt;Sheep search for and eat grass, avoid wolves, reproduce, or wander&lt;/li&gt;
+&lt;li&gt;Wolves hunt sheep, reproduce, or wander&lt;/li&gt;
+&lt;li&gt;Crows randomly fly in and out of the scene&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;复盘&#34;&gt;复盘
-&lt;/h3&gt;&lt;p&gt;下一步计划包括重构项目架构，实现模块化与可扩展性；同时加入图片与动画资源，提升视觉表现力与用户理解度，使项目更接近商业原型的标准。&lt;/p&gt;
-&lt;h3 id=&#34;下一步计划&#34;&gt;下一步计划
-&lt;/h3&gt;&lt;p&gt;重新调整项目架构，进行模块化重构，使代码更接近商业级水准。加入图片和动画来表示不同的动/植物以及其相应的行为。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;（预计完成时间：2025年12月）&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;视频展示&#34;&gt;视频展示
-&lt;/h3&gt;&lt;p&gt;（中文版放bilibili的，英文版放YouTube的）&lt;/p&gt;
-&lt;p&gt;🔗 查看源码 on GitHub&lt;/p&gt;
+&lt;p&gt;Through the interaction of these behaviors, the grassland ecosystem gradually develops into a state of dynamic balance.&lt;/p&gt;
+&lt;h3 id=&#34;highlights-1&#34;&gt;Highlights
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Utilized a &lt;strong&gt;Finite State Machine (FSM)&lt;/strong&gt; to manage animal behavior logic, enabling clear state transitions and responsive mechanisms&lt;/li&gt;
+&lt;li&gt;Applied the &lt;strong&gt;Boids algorithm&lt;/strong&gt; to simulate flocking behavior of crows, enhancing realism and dynamic expression&lt;/li&gt;
+&lt;li&gt;Built a foundational ecological cycle system supporting grass growth and spread, animal reproduction, and resource consumption&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;retrospective-1&#34;&gt;Retrospective
+&lt;/h3&gt;&lt;p&gt;The next steps include refactoring the project architecture to achieve modularity and scalability. In addition, incorporating images and animation assets will improve visual presentation and user comprehension, bringing the project closer to the standards of a commercial prototype.&lt;/p&gt;
+&lt;h3 id=&#34;next-steps-1&#34;&gt;Next Steps
+&lt;/h3&gt;&lt;p&gt;Restructure the project architecture through modular refactoring to raise the codebase toward commercial-level quality. Add images and animations to represent different animals and plants along with their corresponding behaviors.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Estimated completion: February 2026)&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;showcase&#34;&gt;Showcase
+&lt;/h3&gt;&lt;img src=&#34;animal-world.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34; /&gt;
+&lt;p&gt;🔗 &lt;strong&gt;Source code&lt;/strong&gt; on &lt;a class=&#34;link&#34; href=&#34;https://github.com/NullshowJL/Game-Animal-World&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hum-to-heal&#34;&gt;Hum to Heal
-&lt;/h2&gt;&lt;p&gt;🎵 多人协作拍手音游，探索音乐与互动的治愈力量&lt;/p&gt;
-&lt;h3 id=&#34;项目信息-1&#34;&gt;项目信息
+&lt;/h2&gt;&lt;p&gt;🎵 Collaborative Rhythm Game with hand-clapping, exploring the healing power of music and interaction&lt;/p&gt;
+&lt;h3 id=&#34;project-overview-2&#34;&gt;Project Overview
 &lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;类型&lt;/th&gt;
-          &lt;th&gt;技术栈&lt;/th&gt;
-          &lt;th&gt;展出经历&lt;/th&gt;
+          &lt;th&gt;Category&lt;/th&gt;
+          &lt;th&gt;Tech Stack&lt;/th&gt;
+          &lt;th&gt;Showcase Experience&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;Arcade 音游&lt;/td&gt;
+          &lt;td&gt;Arcade Rhythm Game&lt;/td&gt;
           &lt;td&gt;Unity + C#&lt;/td&gt;
           &lt;td&gt;2023 Gotland Game Conference&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;项目简介-1&#34;&gt;项目简介
-&lt;/h3&gt;&lt;p&gt;本项目是我在游戏设计专业一年级期间完成的作品。玩家站在机器四角，通过相邻两人的拍手击中音符块，形成节奏配合。该设计鼓励玩家之间的互动与节奏感，既适合好友一起玩，也能作为陌生人之间的破冰方式。展会现场反响热烈，吸引大量观众试玩。&lt;/p&gt;
-&lt;h3 id=&#34;职责&#34;&gt;职责
-&lt;/h3&gt;&lt;p&gt;本项目由我与三名同学合作完成（分别负责游戏策划和美术设计与实现、arcade设备建造、项目管理），我独立承担全部编程与技术实现工作，包括音符判定、节奏同步、玩家输入逻辑等。同时，我设计并制作了玩家道具“手套”，将物理反馈与游戏机制结合，增强玩家沉浸感。&lt;/p&gt;
-&lt;h3 id=&#34;复盘-1&#34;&gt;复盘
-&lt;/h3&gt;&lt;p&gt;为了在10周内完成展出版本，我们在部分功能上做了妥协。例如，长音符的实现则以两根短音符替代，影响了节奏连贯性与玩家反馈。&lt;/p&gt;
-&lt;h3 id=&#34;下一步计划-1&#34;&gt;下一步计划
-&lt;/h3&gt;&lt;p&gt;下一步计划包括完善长音符的实现，以提升节奏表现力和玩家反馈体验；同时采用对象池优化音符生成逻辑，提升性能；重新调整架构，为后续关卡扩展做好准备。&lt;/p&gt;
-&lt;p&gt;（预计完成时间：2026.1）&lt;/p&gt;
-&lt;h3 id=&#34;游戏视频展示&#34;&gt;游戏视频展示
-&lt;/h3&gt;&lt;p&gt;放一个视频链接（中文版放bilibili的，英文版放YouTube的）&lt;/p&gt;
-&lt;p&gt;🔗 查看源码 on GitHub&lt;/p&gt;
-&lt;h2 id=&#34;当前探索领域&#34;&gt;当前探索领域
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;这些方向将持续推进，并在未来项目中逐步体现成果&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;游戏开发&#34;&gt;游戏开发
+&lt;h3 id=&#34;project-description-2&#34;&gt;Project Description
+&lt;/h3&gt;&lt;p&gt;This project was completed during my first year in the Game Design program. Players stand at the four corners of the machine and clap hands with adjacent partners to hit note blocks, creating rhythmic coordination. The design encourages interaction and a sense of rhythm among players, making it enjoyable for friends to play together while also serving as an icebreaker for strangers. At the exhibition, the project received enthusiastic feedback and attracted a large number of visitors to try it out.&lt;/p&gt;
+&lt;h3 id=&#34;role&#34;&gt;Role
+&lt;/h3&gt;&lt;p&gt;This project was developed in collaboration with five classmates, who respectively took charge of game design and art implementation, arcade device construction, and project management, etc. I independently handled all programming and technical implementation, including note detection, rhythm synchronization, and player input logic. In addition, I designed and created a player accessory—gloves—that integrate physical feedback with game mechanics, enhancing immersion and player experience.&lt;/p&gt;
+&lt;h3 id=&#34;game-showcase&#34;&gt;Game Showcase
+&lt;/h3&gt;&lt;figure style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;h1.webp&#34; alt=&#34;Level Selection Screen&#34; style=&#34;zoom:33%;&#34; /&gt;
+  &lt;figcaption style=&#34;font-size: 0.9em; color: #A0AEC0;&#34;&gt;Level Selection Screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;h2.webp&#34; alt=&#34;Tutorial Screen&#34; style=&#34;zoom:33%;&#34; /&gt;
+  &lt;figcaption style=&#34;font-size: 0.9em; color: #A0AEC0;&#34;&gt;Tutorial Screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;h3.webp&#34; alt=&#34;1st Level Game Screen&#34; style=&#34;zoom:33%;&#34; /&gt;
+  &lt;figcaption style=&#34;font-size: 0.9em; color: #A0AEC0;&#34;&gt;1st Level Game Screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;h4.webp&#34; alt=&#34;2nd Level Game Screen&#34; style=&#34;zoom:33%;&#34; /&gt;
+  &lt;figcaption style=&#34;font-size: 0.9em; color: #A0AEC0;&#34;&gt;2nd Level Game Screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;h5.webp&#34; alt=&#34;3nd Level Game Screen&#34; style=&#34;zoom:33%;&#34; /&gt;
+  &lt;figcaption style=&#34;font-size: 0.9em; color: #A0AEC0;&#34;&gt;3nd Level Game Screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure style=&#34;text-align: center;&#34;&gt;
+  &lt;img src=&#34;h6.jpg&#34; alt=&#34;Team and Event Day&#34; style=&#34;zoom:21%;&#34; /&gt;
+  &lt;figcaption style=&#34;font-size: 0.9em; color: #A0AEC0;&#34;&gt;Team and Event Day&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3 id=&#34;video-effects&#34;&gt;Video Effects
+&lt;/h3&gt;&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/GeJHPinTda0&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;current-exploration-areas&#34;&gt;Current Exploration Areas
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;These directions will continue to evolve and gradually be reflected in future projects.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;game-development&#34;&gt;Game Development
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;正在系统学习游戏架构设计与模块化原则，目标是重构现有项目以提升可维护性与扩展性&lt;/li&gt;
-&lt;li&gt;探索并掌握常用设计模式，如状态机、观察者、组件系统等，用于优化游戏逻辑&lt;/li&gt;
-&lt;li&gt;当前专注于 C++ 实现，后续计划系统学习主流游戏引擎（Unity、Unreal、Cocos、Godot），拓展跨平台开发能力&lt;/li&gt;
+&lt;li&gt;Systematically studying game architecture design and modular principles, with the goal of refactoring existing projects to improve maintainability and scalability.&lt;/li&gt;
+&lt;li&gt;Exploring and mastering common design patterns such as state machines, observers, and component systems to optimize game logic.&lt;/li&gt;
+&lt;li&gt;Developing mobile games using the &lt;strong&gt;Cocos Creator&lt;/strong&gt; engine.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;前端开发&#34;&gt;前端开发
+&lt;h3 id=&#34;front-end-development&#34;&gt;Front-End Development
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;系统学习前端开发基础与进阶知识，用以优化本站的视觉表现与交互体验&lt;/li&gt;
-&lt;li&gt;计划使用 Hugo 更复杂的主题，开发独立的 Portfolio + CV 网站，实现更强的内容组织与样式定制&lt;/li&gt;
+&lt;li&gt;Systematically learning both foundational and advanced front-end development knowledge to enhance the visual presentation and interactive experience of this site.&lt;/li&gt;
+&lt;li&gt;Planning to use more complex &lt;strong&gt;Hugo&lt;/strong&gt; themes to build an independent Portfolio + CV website, enabling stronger content organization and customized styling.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

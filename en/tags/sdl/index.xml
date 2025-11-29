@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 22 Nov 2025 16:50:15 +0100</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/tags/sdl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 29 Nov 2025 09:19:26 +0100</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/tags/sdl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【Environment Setup 】SDL2</title>
         <link>https://nullshowjl.github.io/en/p/environment-setup-sdl2/</link>
         <pubDate>Sat, 22 Nov 2025 14:00:30 +0200</pubDate>
@@ -37,8 +37,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;general-configuration&#34;&gt;General Configuration
 &lt;/h3&gt;&lt;p&gt;Right‑click the project name (not the “solution name”), go to &lt;strong&gt;Properties&lt;/strong&gt;, then under &lt;strong&gt;C/C++ → Code Generation&lt;/strong&gt;, change &lt;strong&gt;Runtime Library&lt;/strong&gt; to &lt;strong&gt;MT&lt;/strong&gt;. Finally, click &lt;strong&gt;OK&lt;/strong&gt; or &lt;strong&gt;Apply&lt;/strong&gt; in the lower‑right corner of the dialog. This setting helps prevent DLL missing errors on computers that do not have Visual Studio or the related C++ libraries installed.&lt;/p&gt;
 &lt;img src=&#34;c3.webp&#34; alt=&#34;&#34; style=&#34;zoom:60%;&#34; /&gt;
-&lt;h3 id=&#34;配置第三方库&#34;&gt;配置第三方库
-&lt;/h3&gt;&lt;h3 id=&#34;configuring-thirdparty-libraries&#34;&gt;Configuring Third‑Party Libraries
+&lt;h3 id=&#34;configuring-thirdparty-libraries&#34;&gt;Configuring Third‑Party Libraries
 &lt;/h3&gt;&lt;p&gt;Place all SDL‑related files into a single folder to make future management easier. In the example below, the solution is named &lt;strong&gt;“TowerDefence”&lt;/strong&gt;, and it contains two projects: &lt;strong&gt;“Demo”&lt;/strong&gt; and &lt;strong&gt;“TowerDefence”&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;c4.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34; /&gt;
 &lt;img src=&#34;c5.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34; /&gt;
