@@ -59,7 +59,7 @@
 
                 
                 
-                <img src="/img/avatar_hu_707be34854ee244.png" width="300"
+                <img src="/img/avatar_hu_7adbda40a4f6f680.png" width="300"
                      height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
                 
@@ -178,6 +178,18 @@
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
                 
                 <span>Portfolio</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/study-journey/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
+                
+                <span>Study Journey</span>
             </a>
         </li>
         
@@ -416,8 +428,8 @@ version: "3.1"
     <header class="article-header">
         <div class="article-image">
             <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
-                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_5c6515f1215a1dc9.webp"
-                        srcset="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_5c6515f1215a1dc9.webp 800w, /en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_2d86bc8aa73f0807.webp 1600w"
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_50c1d848ae194fd2.webp"
+                        srcset="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_50c1d848ae194fd2.webp 800w, /en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover_hu_17e88d4819f496d.webp 1600w"
                         width="800" 
                         height="240" 
                         loading="lazy"
@@ -672,7 +684,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">MenuScene</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Override necessary virtual functions from the base Scene class
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">on_enter</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_enter</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play bgm_menu repeat from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -750,12 +762,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">vkcode</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mh">0x41</span><span class="o">:</span> <span class="c1">// &#39;A&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">is_btn_1P_left_down</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">is_btn_1P_left_down</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="n">player_type_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">PlayerType</span><span class="p">)(((</span><span class="kt">int</span><span class="p">)</span><span class="n">PlayerType</span><span class="o">::</span><span class="n">Invalid</span> <span class="o">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">player_type_1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">PlayerType</span><span class="o">::</span><span class="n">Invalid</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play ui_switch from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">     <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="integrating-the-camera-into-the-animation-class">Integrating the Camera into the <code>Animation</code> Class
@@ -788,7 +800,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">animation_sunflower</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Scroll background horizontally
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">selector_background_scroll_offset_x</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">selector_background_scroll_offset_x</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">selector_background_scroll_offset_x</span> <span class="o">&gt;=</span> <span class="n">img_peashooter_selector_background_left</span><span class="p">.</span><span class="n">getwidth</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">selector_background_scroll_offset_x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -877,7 +889,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">img_P2_selector_background</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">	<span class="c1">// Assign scrolling backgrounds based on opponent&#39;s character
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">switch</span> <span class="p">(</span><span class="n">player_type_2</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="p">(</span><span class="n">player_type_2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="n">PlayerType</span><span class="o">::</span><span class="nl">Peashooter</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">		<span class="n">img_P1_selector_background</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">img_peashooter_selector_background_right</span><span class="p">;</span>
@@ -905,9 +917,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="n">putimage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_selector_background</span><span class="p">);</span>  <span class="c1">// Draw static background	
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Draw dynamic scrolling silhouettes
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">img_P2_selector_background</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="n">img_P2_selector_background</span><span class="p">,</span> <span class="n">selector_background_scroll_offset_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">selector_background_scroll_offset_x</span> <span class="o">-</span> <span class="n">img_P1_selector_background</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_P1_selector_background</span><span class="p">);</span>
@@ -915,9 +927,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="mi">0</span><span class="p">,</span> <span class="n">img_P1_selector_background</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">pos_img_VS</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pos_img_VS</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_VS</span><span class="p">);</span> <span class="c1">// Draw &#34;VS&#34; graphic
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="physics-engine-implementation">Physics Engine Implementation
@@ -973,7 +985,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span> 
 </span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="nc">CollisionShape</span> <span class="c1">// Describes the collider shape
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">float</span> <span class="n">y</span><span class="p">;</span> 
 </span></span><span class="line"><span class="cl">		<span class="kt">float</span> <span class="n">x_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">float</span> <span class="n">x_right</span><span class="p">;</span>
@@ -982,7 +994,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">CollisionShape</span> <span class="n">shape</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// Decoupled logic and rendering
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">img</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">img</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">POINT</span> <span class="n">render_position</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
@@ -994,7 +1006,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">render_position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">render_position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">img</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">// Draw collision line if debug mode is enabled
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">is_debug</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">is_debug</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">setlinecolor</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">			<span class="n">line</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">shape</span><span class="p">.</span><span class="n">x_left</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">shape</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">shape</span><span class="p">.</span><span class="n">x_right</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">shape</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
@@ -1046,14 +1058,14 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// SelectorScene.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">SelectorScene</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Scene</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SelectorScene</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Scene</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="n">on_exit</span><span class="p">()</span> 
+</span></span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">on_exit</span><span class="p">()</span> 
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Instantiate player objects based on selected character types
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">switch</span> <span class="p">(</span><span class="n">player_type_1</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">        <span class="k">switch</span> <span class="p">(</span><span class="n">player_type_1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="n">PlayerType</span><span class="o">::</span><span class="nl">Peashooter</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="n">player_1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PeashooterPlayer</span><span class="p">();</span>
@@ -1074,7 +1086,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>In addition, each player needs to store their position in world coordinates using <code>Vector2 position;</code>. Animation definitions should also be included, with each subclass specifying which atlas to use for rendering.</p>
@@ -1099,7 +1111,7 @@ version: "3.1"
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
 </span></span></span><span class="line"><span class="cl"><span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">protected</span><span class="o">:</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="n">move_and_collide</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">gravity</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
@@ -1161,7 +1173,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="n">position</span> <span class="o">+=</span> <span class="n">velocity</span> <span class="o">*</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Collision detection
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Platform</span><span class="o">&amp;</span> <span class="nl">platform</span> <span class="p">:</span> <span class="n">platform_list</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
@@ -1172,7 +1184,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">is_collide_x</span> <span class="o">&amp;&amp;</span> <span class="n">is_collide_y</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="c1">//  Check previous frame’s foot position to avoid snapping mid-jump
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="kt">float</span> <span class="n">delta_pos_y</span> <span class="o">=</span> <span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">                <span class="kt">float</span> <span class="n">delta_pos_y</span> <span class="o">=</span> <span class="n">velocity</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="kt">float</span> <span class="n">last_tick_foot_pos_y</span> <span class="o">=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">delta_pos_y</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">last_tick_foot_pos_y</span> <span class="o">&lt;=</span> <span class="n">shape</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                <span class="p">{</span>
@@ -1223,17 +1235,17 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Bullet.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">protected</span><span class="o">:</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">size</span><span class="p">;</span>						<span class="c1">// Bullet collider size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>					<span class="c1">// Bullet position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">velocity</span><span class="p">;</span>					<span class="c1">// Bullet velocity
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>					<span class="c1">// Damage value
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>					<span class="c1">// Bullet position
+</span></span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">velocity</span><span class="p">;</span>					<span class="c1">// Bullet velocity
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>					<span class="c1">// Damage value
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>					<span class="c1">// Whether the bullet is still active
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>			<span class="c1">//  Whether the bullet can be deleted
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>			<span class="c1">//  Whether the bullet can be deleted
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">callback</span><span class="p">;</span>			<span class="c1">// Collision callback
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="n">PlayerID</span> <span class="n">target_id</span> <span class="o">=</span> <span class="n">PlayerID</span><span class="o">::</span><span class="n">P1</span><span class="p">;</span>	<span class="c1">// Target player ID
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -1387,7 +1399,7 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">extern</span> <span class="kt">bool</span> <span class="n">is_debug</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Bullet Base Class
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Bullet</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Bullet</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Bullet</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
@@ -1402,7 +1414,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">check_collision</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">size</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">         <span class="c1">// Check if bullet center is inside the target&#39;s bounding box
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span>
 </span></span><span class="line"><span class="cl">			<span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">x</span>
 </span></span><span class="line"><span class="cl">			<span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span>
 </span></span><span class="line"><span class="cl">			<span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
@@ -1426,7 +1438,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">     <span class="c1">// Setters and getters
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">set_damage</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">set_damage</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">damage</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -1587,7 +1599,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// PeaBullet.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">IMAGE</span> <span class="n">img_pea</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_pea_break</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -1597,7 +1609,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">PeaBullet</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span>	<span class="c1">// Set bullet size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">damage</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">animation_break</span><span class="p">.</span><span class="n">set_atlas</span><span class="p">(</span><span class="o">&amp;</span><span class="n">atlas_pea_break</span><span class="p">);</span>
@@ -1611,10 +1623,10 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">position</span> <span class="o">+=</span> <span class="n">velocity</span> <span class="o">*</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">delta</span><span class="p">;</span>	 <span class="c1">// Move bullet
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">valid</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">			<span class="n">animation_break</span><span class="p">.</span><span class="n">on_update</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>	<span class="c1">// Play destruction animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">check_if_exceeds_screen</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">			<span class="n">can_remove</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -1633,7 +1645,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">on_collide</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">Bullet</span><span class="o">::</span><span class="n">on_collide</span><span class="p">();</span>	<span class="c1">// Call base class logic
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="k">switch</span> <span class="p">(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
@@ -1650,7 +1662,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Animation</span> <span class="n">animation_break</span><span class="p">;</span>	<span class="c1">// Destruction animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote class="alert alert-note">
@@ -1746,7 +1758,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// SunBullet.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_explode</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -1770,7 +1782,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">animation_explode</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">//  Calculate offset to center explosion animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_idle</span> <span class="o">=</span> <span class="n">animation_idle</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_idle</span> <span class="o">=</span> <span class="n">animation_idle</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_explode</span> <span class="o">=</span> <span class="n">animation_explode</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">explode_render_offset</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">frame_idle</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">frame_explode</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="n">explode_render_offset</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">frame_idle</span><span class="o">-&gt;</span><span class="n">getheight</span><span class="p">()</span> <span class="o">-</span> <span class="n">frame_explode</span><span class="o">-&gt;</span><span class="n">getheight</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="p">;</span>
@@ -1814,7 +1826,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">Bullet</span><span class="o">::</span><span class="n">on_collide</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">main_camera</span><span class="p">.</span><span class="n">shake</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>	<span class="c1">// Camera shake effect
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play sun_explode from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -1921,7 +1933,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// SunBulletEx.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_ex</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_ex</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Atlas</span> <span class="n">atlas_sun_ex_explode</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="n">Camera</span> <span class="n">main_camera</span><span class="p">;</span>
@@ -1944,7 +1956,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="n">animation_explode</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span> <span class="p">{</span> <span class="n">can_remove</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">// Calculate offset to center explosion animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_idle</span> <span class="o">=</span> <span class="n">animation_idle</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_idle</span> <span class="o">=</span> <span class="n">animation_idle</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">IMAGE</span><span class="o">*</span> <span class="n">frame_explode</span> <span class="o">=</span> <span class="n">animation_explode</span><span class="p">.</span><span class="n">get_frame</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">explode_render_offset</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">frame_idle</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">()</span> <span class="o">-</span> <span class="n">frame_explode</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="n">explode_render_offset</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">frame_idle</span><span class="o">-&gt;</span><span class="n">getheight</span><span class="p">()</span> <span class="o">-</span> <span class="n">frame_explode</span><span class="o">-&gt;</span><span class="n">getheight</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="p">;</span>
@@ -2069,12 +2081,12 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Player</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">Player</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="n">current_animation</span> <span class="o">=</span> <span class="n">is_facing_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Initialize attack cooldown timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="n">attack_cd</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="n">attack_cd</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_one_shot</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_attack_cd</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
@@ -2082,24 +2094,24 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">		<span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Initialize invulnerability timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="mi">750</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="mi">750</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_one_shot</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">is_invulnerable</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">			<span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// Ensure sketch frame is disabled when invulnerability ends
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">});</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">});</span>
 </span></span><span class="line"><span class="cl">		<span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Initialize blink timer for invulnerability animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="mi">75</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">set_wait_time</span><span class="p">(</span><span class="mi">75</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">set_callback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]()</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="o">!</span><span class="n">is_showing_sketch_frame</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="p">});</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>To render the character as a white silhouette during invulnerability, we add a utility function in <code>Util.h</code>. This function processes the image’s pixel buffer and sets all pixels to white. For a detailed explanation, refer to the bonus section of the article <a class="link" href="https://nullshowjl.github.io/en/p/c-game-dev-from-scratchteyvat-survivors/"  target="_blank" rel="noopener"
@@ -2127,7 +2139,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Util.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sketch_image</span><span class="p">(</span><span class="n">IMAGE</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">IMAGE</span><span class="o">*</span> <span class="n">dst</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">sketch_image</span><span class="p">(</span><span class="n">IMAGE</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">IMAGE</span><span class="o">*</span> <span class="n">dst</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">src</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">src</span><span class="o">-&gt;</span><span class="n">getheight</span><span class="p">();</span>
@@ -2164,17 +2176,17 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_update</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// Whether to render the sketch (silhouette) image
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Only generate the sketch frame when the player is invulnerable and blinking
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">is_showing_sketch_frame</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="c1">// Only generate the sketch frame when the player is invulnerable and blinking
+</span></span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">is_showing_sketch_frame</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="n">sketch_image</span><span class="p">(</span><span class="n">current_animation</span><span class="o">-&gt;</span><span class="n">get_frame</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">img_sketch</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>We apply the sketch rendering logic inside the <code>on_draw</code> method:</p>
@@ -2194,16 +2206,16 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_draw</span><span class="p">(</span><span class="k">const</span> <span class="n">Camera</span><span class="o">&amp;</span> <span class="n">camera</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">on_draw</span><span class="p">(</span><span class="k">const</span> <span class="n">Camera</span><span class="o">&amp;</span> <span class="n">camera</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">hp</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">is_invulnerable</span> <span class="o">&amp;&amp;</span> <span class="n">is_showing_sketch_frame</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">hp</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">is_invulnerable</span> <span class="o">&amp;&amp;</span> <span class="n">is_showing_sketch_frame</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_sketch</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="k">else</span>
 </span></span><span class="line"><span class="cl">		<span class="n">current_animation</span><span class="o">-&gt;</span><span class="n">on_draw</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>To activate invulnerability after taking damage, we add a dedicated method to the <code>Player</code> class:</p>
@@ -2221,14 +2233,14 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">make_invulnerable</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">make_invulnerable</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">is_invulnerable</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">timer_invulnerable</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">is_showing_sketch_frame</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>    <span class="c1">// Immediately enter sketch frame mode
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span> <span class="c1">// Start blinking effect
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">timer_invulnerable_blink</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span> <span class="c1">// Start blinking effect
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then, inside the <code>move_and_collide</code> method, we update the bullet collision logic to trigger invulnerability when the player is hit:</p>
@@ -2263,11 +2275,11 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Player.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">move_and_collide</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">move_and_collide</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        
+</span></span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_invulnerable</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="n">Bullet</span><span class="o">*</span> <span class="nl">bullet</span> <span class="p">:</span> <span class="n">bullet_list</span><span class="p">)</span>
@@ -2278,16 +2290,16 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">bullet</span><span class="o">-&gt;</span><span class="n">check_collision</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">			<span class="p">{</span>
 </span></span><span class="line"><span class="cl">				<span class="n">make_invulnerable</span><span class="p">();</span>		<span class="c1">// Activate invulnerability
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">				<span class="n">bullet</span><span class="o">-&gt;</span><span class="n">on_collide</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">				<span class="n">bullet</span><span class="o">-&gt;</span><span class="n">set_valid</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">				<span class="n">hp</span> <span class="o">-=</span> <span class="n">bullet</span><span class="o">-&gt;</span><span class="n">get_damage</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">			<span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">		<span class="p">}</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>	
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>	
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="particle-system-implementation">Particle System Implementation
@@ -2414,12 +2426,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// Frame timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">lifespan</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Duration per frame in milliseconds
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Current animation frame index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>		<span class="c1">// World-space position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>		<span class="c1">// Whether the particle is still active
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>	<span class="c1">// Animation atlas
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">lifespan</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Duration per frame in milliseconds
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Current animation frame index
+</span></span></span><span class="line"><span class="cl">	<span class="n">Vector2</span> <span class="n">position</span><span class="p">;</span>		<span class="c1">// World-space position
+</span></span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">valid</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>		<span class="c1">// Whether the particle is still active
+</span></span></span><span class="line"><span class="cl">	<span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>	<span class="c1">// Animation atlas
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="overall-code-review-and-source-code">Overall Code Review and Source Code
@@ -2529,7 +2541,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_14c732af37c360d2.webp" 
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_e5d83f6feaae04dc.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2553,7 +2565,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_b0a14c165a37bd82.webp" 
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_6ae5d33c4eb615a7.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2577,7 +2589,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_6768cc0990888c2b.webp" 
+                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_56e39fb92708d9cb.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2597,11 +2609,35 @@ version: "3.1"
             
                 
 <article class="has-image">
+    <a href="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.9d88b009e10e58d65c068a49f8bcecd4_hu_6e3415ec20f88f5b.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【学习日志】SOLID原则项目实践"
+                        
+                        data-hash="md5-nYiwCeEOWNZcBopJ&#43;Lzs1A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【学习日志】SOLID原则项目实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/en/p/c-syntaxsmart-pointer/">
         
         
             <div class="article-image">
-                <img src="/en/p/c-syntaxsmart-pointer/cover.c2d6bbaddbba8a5650d918e15736971f_hu_6021b341494e9474.webp" 
+                <img src="/en/p/c-syntaxsmart-pointer/cover.c2d6bbaddbba8a5650d918e15736971f_hu_fde0b61f1abca2a1.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2614,30 +2650,6 @@ version: "3.1"
 
         <div class="article-details">
             <h2 class="article-title">【C&#43;&#43; Syntax】Smart Pointer</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/en/p/environment-setup-sdl2/">
-        
-        
-            <div class="article-image">
-                <img src="/en/p/environment-setup-sdl2/cover.469bf4d7f42db8fc9eda308d55ed74ec_hu_d98104b5f057749b.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【Environment Setup 】SDL2"
-                        
-                        data-hash="md5-Rpv01/QtuPye2jCNVe107A==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【Environment Setup 】SDL2</h2>
         </div>
     </a>
 </article>
@@ -2690,9 +2702,13 @@ version: "3.1"
         
         
         
+        
+        
+        
+        
 
-        发表了9篇文章 ·
-        总计3万3千字
+        发表了10篇文章 ·
+        总计3万7千字
         <br>
     </section>
 
@@ -2706,7 +2722,9 @@ version: "3.1"
     <section class="copyright">
         &copy;
         
-        2025 Nullshow
+        2025 -
+        
+        2026 Nullshow
     </section>
 
     <section class="powerby">

@@ -2,11 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nullshowjl.github.io/en/p/environment-setup-sdl2/</loc>
-    <lastmod>2025-11-29T09:19:26+01:00</lastmod>
+    <loc>https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/"
+                />
   </url><url>
     <loc>https://nullshowjl.github.io/en/categories/</loc>
-    <lastmod>2025-11-29T09:19:26+01:00</lastmod>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -18,18 +28,89 @@
                 href="https://nullshowjl.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://nullshowjl.github.io/en/post/</loc>
-    <lastmod>2025-11-29T09:19:26+01:00</lastmod>
+    <loc>https://nullshowjl.github.io/en/tags/game-dev/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://nullshowjl.github.io/post/"
+                href="https://nullshowjl.github.io/tags/game-dev/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nullshowjl.github.io/en/post/"
+                href="https://nullshowjl.github.io/en/tags/game-dev/"
                 />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/post/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/tags/solid/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/solid/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/solid/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/tags/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/tags/unity/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/tags/unity/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/tags/unity/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/page/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/page/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/study-journey/</loc>
+    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://nullshowjl.github.io/%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nullshowjl.github.io/en/study-journey/"
+                />
+  </url><url>
+    <loc>https://nullshowjl.github.io/en/p/environment-setup-sdl2/</loc>
+    <lastmod>2025-11-29T09:19:26+01:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/sdl/</loc>
     <lastmod>2025-11-29T09:19:26+01:00</lastmod>
@@ -42,19 +123,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nullshowjl.github.io/en/tags/sdl/"
-                />
-  </url><url>
-    <loc>https://nullshowjl.github.io/en/tags/</loc>
-    <lastmod>2025-11-29T09:19:26+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/visual-studio/</loc>
@@ -144,37 +212,11 @@
                 href="https://nullshowjl.github.io/en/tags/easyx/"
                 />
   </url><url>
-    <loc>https://nullshowjl.github.io/en/tags/game-dev/</loc>
-    <lastmod>2025-10-16T22:22:33+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/tags/game-dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/tags/game-dev/"
-                />
-  </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/</loc>
     <lastmod>2025-10-16T22:22:33+02:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/en/p/c-game-dev-from-scratchteyvat-survivors/</loc>
     <lastmod>2025-10-16T11:10:15+02:00</lastmod>
-  </url><url>
-    <loc>https://nullshowjl.github.io/en/page/</loc>
-    <lastmod>2025-11-29T09:19:26+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/page/"
-                />
   </url><url>
     <loc>https://nullshowjl.github.io/en/portfolio/</loc>
     <lastmod>2025-11-29T09:19:26+01:00</lastmod>

@@ -59,7 +59,7 @@
 
                 
                 
-                <img src="/img/avatar_hu_707be34854ee244.png" width="300"
+                <img src="/img/avatar_hu_7adbda40a4f6f680.png" width="300"
                      height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
                 
@@ -178,6 +178,18 @@
 
                 
                 <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
+                
+                <span>学习历程</span>
             </a>
         </li>
         
@@ -397,8 +409,8 @@ version: "3.1"
     <header class="article-header">
         <div class="article-image">
             <a href="/p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">
-                <img src="/p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/cover_hu_625b1f4b371d30f6.webp"
-                        srcset="/p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/cover_hu_625b1f4b371d30f6.webp 800w, /p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/cover_hu_a8fa6415467b6a03.webp 1600w"
+                <img src="/p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/cover_hu_86ba21deb321eb20.webp"
+                        srcset="/p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/cover_hu_86ba21deb321eb20.webp 800w, /p/c-%E8%AF%AD%E6%B3%95%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/cover_hu_2bf3616c2e0f067f.webp 1600w"
                         width="800" 
                         height="240" 
                         loading="lazy"
@@ -555,7 +567,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 捕获异常
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">try</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">try</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">func</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -627,11 +639,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="k">try</span>	<span class="c1">// 在func中加捕异常，避免p不被释放
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">div</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">(</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>	<span class="c1">// 此处也可以写为捕获任意异常：catch (...)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
@@ -644,7 +656,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 捕获异常
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">try</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">try</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">func</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -757,14 +769,14 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">   
 </span></span><span class="line"><span class="cl">    <span class="c1">// 不用捕异常，改用智能指针
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">SmartPtr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">SmartPtr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">div</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 捕获异常
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">try</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">try</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">func</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -837,7 +849,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// 重载操作符&amp;和*，让SmartPtr具备指针的行为
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;}</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;}</span>
 </span></span><span class="line"><span class="cl">	<span class="n">T</span><span class="o">*</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="n">_ptr</span><span class="p">;}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
@@ -948,7 +960,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// C++98 管理权转移 auto_ptr
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">namespace</span> <span class="n">my_smart_pointer</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="n">my_smart_pointer</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">auto_ptr</span>
@@ -962,23 +974,23 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    	<span class="o">:</span><span class="n">_ptr</span><span class="p">(</span><span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">// 管理权转移
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">            <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="n">auto_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">auto_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">ap</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">// 是否自己给自己赋值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">ap</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">ap</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="c1">// 释放当前对象中资源
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">_ptr</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">_ptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="p">}</span>        	
 </span></span><span class="line"><span class="cl">                
 </span></span><span class="line"><span class="cl">                <span class="c1">// 转移ap中资源到当前对象中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">_ptr</span> <span class="o">=</span> <span class="n">ap</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">                <span class="n">_ptr</span> <span class="o">=</span> <span class="n">ap</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="n">ap</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
@@ -995,7 +1007,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">// 像指针一样使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        	<span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
@@ -1030,14 +1042,14 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// main.cpp
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">auto_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp1</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">());</span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">auto_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp2</span><span class="p">(</span><span class="n">sp1</span><span class="p">);</span> <span class="c1">// 管理权转移
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// sp1悬空，不能再赋值了
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//*sp1 = 10; 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">*</span><span class="n">sp2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="c1">//*sp1 = 10; 
+</span></span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">sp2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">sp2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">sp1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -1105,7 +1117,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// 像指针一样使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
@@ -1227,10 +1239,10 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">sp</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">//if (this != &amp;sp)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">_ptr</span> <span class="o">!=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span> 
+</span></span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">_ptr</span> <span class="o">!=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="n">Release</span><span class="p">();</span>	<span class="c1">// 先释放自己先前在管理着的资源
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">_ptr</span> <span class="o">=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">                <span class="n">_ptr</span> <span class="o">=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="n">_pRefCount</span> <span class="o">=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_pRefCount</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="o">++</span><span class="p">(</span><span class="o">*</span><span class="n">_pRefCount</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
@@ -1251,7 +1263,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">// 像指针一样使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
@@ -1396,7 +1408,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="kt">void</span> <span class="nf">Release</span><span class="p">()</span>	<span class="c1">// 减计数需要锁保护
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">_pmtx</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">            <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">--</span><span class="p">(</span><span class="o">*</span><span class="n">_pRefCount</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">_ptr</span><span class="p">)</span>
@@ -1420,7 +1432,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="kt">void</span> <span class="nf">AddRef</span><span class="p">()</span>	<span class="c1">// 加计数也需要锁保护
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">_pmtx</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">            <span class="o">++</span><span class="p">(</span><span class="o">*</span><span class="n">_pRefCount</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">            <span class="n">_pmtx</span><span class="o">-&gt;</span><span class="n">unlock</span><span class="p">();</span>
@@ -1429,7 +1441,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">sp</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">//if (this != &amp;sp)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">_ptr</span> <span class="o">!=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">_ptr</span> <span class="o">!=</span> <span class="n">sp</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="n">Release</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
@@ -1452,7 +1464,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">// 像指针一样使用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
@@ -1520,7 +1532,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">node2</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">   
 </span></span><span class="line"><span class="cl">    <span class="c1">// 循环引用，导致资源无法被释放
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">node1</span><span class="o">-&gt;</span><span class="n">_next</span> <span class="o">=</span> <span class="n">node2</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">node1</span><span class="o">-&gt;</span><span class="n">_next</span> <span class="o">=</span> <span class="n">node2</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">node2</span><span class="o">-&gt;</span><span class="n">_prev</span> <span class="o">=</span> <span class="n">node1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">node1</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
@@ -1654,7 +1666,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">_data</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">&gt;</span> <span class="n">_prev</span><span class="p">;</span>	<span class="c1">// 此处的 shared_ptr 改为 weak_ptr
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">&gt;</span> <span class="n">_next</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">&gt;</span> <span class="n">_next</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">ListNode</span><span class="p">(){</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;~ListNode()&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
@@ -1737,7 +1749,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 仿函数的删除器
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">FreeFunc</span> 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">operator</span><span class="p">()(</span><span class="n">T</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span>
@@ -1816,7 +1828,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">div</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
@@ -1833,13 +1845,13 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="n">mtx</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">div</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>	<span class="c1">// 如果div抛异常，会导致下面的unlock不执行（死锁）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">mtx</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">mtx</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 捕获异常
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">try</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">try</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">func</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -1888,22 +1900,22 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="o">:</span><span class="n">_lock</span><span class="p">(</span><span class="n">lock</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">_lock</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>	<span class="c1">// 将加锁放在构造函数中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">LockGuard</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;解锁&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">_lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>	<span class="c1">// 将解锁放在析构函数中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// 不允许拷贝，不允许赋值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">LockGuard</span><span class="p">(</span><span class="n">LockGuard</span><span class="o">&lt;</span><span class="n">Lock</span><span class="o">&gt;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">LockGuard</span><span class="p">(</span><span class="n">LockGuard</span><span class="o">&lt;</span><span class="n">Lock</span><span class="o">&gt;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">LockGuard</span><span class="o">&lt;</span><span class="n">Lock</span><span class="o">&gt;&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">LockGuard</span><span class="o">&lt;</span><span class="n">Lock</span><span class="o">&gt;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Lock</span><span class="o">&amp;</span> <span class="n">_lock</span><span class="p">;</span>	<span class="c1">// 锁不允许拷贝，这是成员变量设为引用的一个例子
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    				<span class="c1">// 这样也可以确保程序所用的是同一把锁
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    				<span class="c1">// 这样也可以确保程序所用的是同一把锁
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>将 <code>LockGuard</code> 类用于 <code>func</code> 函数中：</p>
@@ -1922,7 +1934,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">LockGuard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock_guard</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>	<span class="c1">// 使用LockGuard管理加锁和解锁
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">div</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>	
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -2004,7 +2016,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.1b012a76c5604bf796bf2aca3a991558_hu_dadf13eb43295ceb.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.1b012a76c5604bf796bf2aca3a991558_hu_ff7b20efb25024f9.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2028,7 +2040,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/cover.ec0863682fef9b7bb25dd0aa71367140_hu_c5cb516139d84f9a.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/cover.ec0863682fef9b7bb25dd0aa71367140_hu_5306f28b8aa9e474.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2052,7 +2064,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/cover.320e6c19460333b34d72f9882077e6e3_hu_88b89f716f8e65a6.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/cover.320e6c19460333b34d72f9882077e6e3_hu_8388bbd5ce560c6b.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2076,7 +2088,7 @@ version: "3.1"
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/cover.a2ea06cd2ac9a81a050fadd3f675c4b2_hu_378fd7ae78b7df54.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/cover.a2ea06cd2ac9a81a050fadd3f675c4b2_hu_3bbe836a0980eab5.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -2096,23 +2108,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/p/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAsdl2/">
+    <a href="/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
         
         
             <div class="article-image">
-                <img src="/p/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAsdl2/cover.d522e86858de733418e97ac132d09a20_hu_fbf03fa16433e604.webp" 
+                <img src="/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.692841708aeddf19659467c6f14cb721_hu_82e846adb3b35da9.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【环境搭建】SDL2"
+                        alt="Featured image of post 【学习日志】SOLID原则项目实践"
                         
-                        data-hash="md5-1SLoaFjeczQY6XrBMtCaIA==">
+                        data-hash="md5-aShBcIrt3xlllGfG8Uy3IQ==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【环境搭建】SDL2</h2>
+            <h2 class="article-title">【学习日志】SOLID原则项目实践</h2>
         </div>
     </a>
 </article>
@@ -2165,9 +2177,17 @@ version: "3.1"
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
 
-        发表了9篇文章 ·
-        总计5万4千字
+        发表了12篇文章 ·
+        总计6万8千字
         <br>
     </section>
 
@@ -2181,7 +2201,9 @@ version: "3.1"
     <section class="copyright">
         &copy;
         
-        2025 Nullshow
+        2025 -
+        
+        2026 Nullshow
     </section>
 
     <section class="powerby">

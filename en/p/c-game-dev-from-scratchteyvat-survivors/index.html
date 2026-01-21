@@ -59,7 +59,7 @@
 
                 
                 
-                <img src="/img/avatar_hu_707be34854ee244.png" width="300"
+                <img src="/img/avatar_hu_7adbda40a4f6f680.png" width="300"
                      height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
                 
@@ -178,6 +178,18 @@
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
                 
                 <span>Portfolio</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/study-journey/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
+                
+                <span>Study Journey</span>
             </a>
         </li>
         
@@ -410,8 +422,8 @@ version: "3.1"
     <header class="article-header">
         <div class="article-image">
             <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
-                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover_hu_7e334941f610e5d8.webp"
-                        srcset="/en/p/c-game-dev-from-scratchteyvat-survivors/cover_hu_7e334941f610e5d8.webp 800w, /en/p/c-game-dev-from-scratchteyvat-survivors/cover_hu_64cc478d10644b6a.webp 1600w"
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover_hu_933adb6747e69a16.webp"
+                        srcset="/en/p/c-game-dev-from-scratchteyvat-survivors/cover_hu_933adb6747e69a16.webp 800w, /en/p/c-game-dev-from-scratchteyvat-survivors/cover_hu_9913de8abd0e74a1.webp 1600w"
                         width="800" 
                         height="240" 
                         loading="lazy"
@@ -569,7 +581,7 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//========= Initialize data ==========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">initgraph</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">initgraph</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">is_running</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">int</span> <span class="n">FPS</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
@@ -579,25 +591,25 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="n">BeginBatchDraw</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">   
 </span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">is_running</span><span class="p">)</span>	<span class="c1">// Main game loop
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">//========= Handle input =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			
 </span></span><span class="line"><span class="cl">		<span class="p">}</span>	
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">//======== Handle update =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">cleardevice</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">//======== Handle rendering =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		
+</span></span></span><span class="line"><span class="cl">		
 </span></span><span class="line"><span class="cl">		<span class="n">FlushBatchDraw</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">//========= Stabilize frame rate =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">DWORD</span> <span class="n">end_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">end_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">delta_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">delta_time</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">FPS</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
@@ -752,13 +764,13 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Load image from file (supports bmp/gif/jpg/png/tif/emf/wmf/ico)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">loadimage</span><span class="p">(</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">loadimage</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span><span class="o">*</span> <span class="n">pDstImg</span><span class="p">,</span>			<span class="c1">// Pointer to the IMAGE object that stores the image
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">LPCTSTR</span> <span class="n">pImgFile</span><span class="p">,</span>		<span class="c1">// File path of the image
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">nWidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>			<span class="c1">// Optional: stretch width度
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">nHeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>		<span class="c1">// Optional: stretch height
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">bResize</span> <span class="o">=</span> <span class="nb">false</span>	<span class="c1">// Optional: resize IMAGE to fit image size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">LPCTSTR</span> <span class="n">pImgFile</span><span class="p">,</span>		<span class="c1">// File path of the image
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">nWidth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>			<span class="c1">// Optional: stretch width度
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">nHeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>		<span class="c1">// Optional: stretch height
+</span></span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">bResize</span> <span class="o">=</span> <span class="nb">false</span>	<span class="c1">// Optional: resize IMAGE to fit image size
+</span></span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>A few things to note:</p>
@@ -792,11 +804,11 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// 绘制图像
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">putimage</span><span class="p">(</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">putimage</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">dstX</span><span class="p">,</span>				<span class="c1">// X coordinate on screen
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">dstY</span><span class="p">,</span>				<span class="c1">// Y coordinate on screen
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">IMAGE</span> <span class="o">*</span><span class="n">pSrcImg</span><span class="p">,</span>			<span class="c1">// Pointer to the IMAGE object to draw
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">DWORD</span> <span class="n">dwRop</span> <span class="o">=</span> <span class="n">SRCCOPY</span>	<span class="o">//</span> <span class="n">Raster</span> <span class="n">operation</span> <span class="n">code</span> <span class="p">(</span><span class="n">usually</span> <span class="n">ignored</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">dstY</span><span class="p">,</span>				<span class="c1">// Y coordinate on screen
+</span></span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span> <span class="o">*</span><span class="n">pSrcImg</span><span class="p">,</span>			<span class="c1">// Pointer to the IMAGE object to draw
+</span></span></span><span class="line"><span class="cl">	<span class="n">DWORD</span> <span class="n">dwRop</span> <span class="o">=</span> <span class="n">SRCCOPY</span>	<span class="o">//</span> <span class="n">Raster</span> <span class="n">operation</span> <span class="n">code</span> <span class="p">(</span><span class="n">usually</span> <span class="n">ignored</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -820,11 +832,11 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Load image
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">IMAGE</span> <span class="n">img</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">loadimage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="s">&#34;test.jpg&#34;</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Draw image
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">putimage</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">putimage</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>If the image is  <code>300 * 300</code> pixels, it will appear at position (100, 200) on the game screen like this:</p>
@@ -845,7 +857,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#pragma comment(lib, &#34;MSIMG32.LIB&#34;) 
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">putimage_alpha</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="n">IMAGE</span><span class="o">*</span> <span class="n">img</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">getwidth</span><span class="p">();</span>
@@ -897,9 +909,9 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">idx_current_anim</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// 1. Index of the current animation frame
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">PLAYER_ANIM_NUM</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>	<span class="c1">// Total number of animation frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">.....</span>
@@ -912,9 +924,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">        <span class="k">static</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// 2. Counts how many game frames have passed
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                <span class="c1">// &#39;static&#39; ensures it&#39;s initialized only once
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// Switch animation frame every 5 game frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">counter</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">                                <span class="c1">// &#39;static&#39; ensures it&#39;s initialized only once
+</span></span></span><span class="line"><span class="cl">        <span class="c1">// Switch animation frame every 5 game frames
+</span></span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">counter</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="n">idx_current_anim</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="err">（</span><span class="n">idx_current_anim</span> <span class="o">%</span> <span class="n">PLAYER_ANIM_NUM</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
@@ -951,7 +963,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">PLAYER_ANIM_NUM</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>	<span class="c1">// Total number of animation frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">PLAYER_ANIM_NUM</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_right</span><span class="p">[</span><span class="n">PLAYER_ANIM_NUM</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
@@ -1007,21 +1019,21 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">......</span>
 </span></span><span class="line"><span class="cl">   
 </span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">is_running</span><span class="p">)</span>	<span class="c1">// Main game loop
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">DWORD</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">GetTickCount</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">//========= Handle Input =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span><span class="n">peekmessage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			
 </span></span><span class="line"><span class="cl">		<span class="p">}</span>	
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">//======== Update =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="n">cleardevice</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">//======== Render =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">putimage_alpha</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">idx_current_anim</span><span class="p">]);</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">putimage_alpha</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">idx_current_anim</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">		<span class="n">FlushBatchDraw</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
@@ -1088,7 +1100,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Animation</span><span class="p">(</span><span class="n">LPCTSTR</span> <span class="n">path</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">interval</span><span class="p">)</span>	<span class="c1">// Load animation frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">interval_ms</span> <span class="o">=</span> <span class="n">interval</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="n">TCHAR</span> <span class="n">path_file</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
@@ -1103,7 +1115,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">Play</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>	<span class="c1">// Play animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">timer</span> <span class="o">+=</span> <span class="n">delta</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">timer</span> <span class="o">&gt;=</span> <span class="n">interval_ms</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
@@ -1112,11 +1124,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">//  Render current frame
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">pitimage_alpha</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">frame_list</span><span class="p">[</span><span class="n">idx_frame</span><span class="p">]);</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">pitimage_alpha</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">frame_list</span><span class="p">[</span><span class="n">idx_frame</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Animation</span><span class="p">()</span>	<span class="c1">// Release resources
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">frame_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">delete</span> <span class="n">frame_list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
@@ -1124,10 +1136,10 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">IMAGE</span><span class="o">*&gt;</span> <span class="n">frame_list</span><span class="p">;</span>	<span class="c1">// List of animation frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">interval_ms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Time between frames (in milliseconds)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>              <span class="c1">// Time accumulator
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>          <span class="c1">// Current frame index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">interval_ms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Time between frames (in milliseconds)
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>              <span class="c1">// Time accumulator
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>          <span class="c1">// Current frame index
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="implementing-player-movement">Implementing Player Movement
@@ -1315,26 +1327,26 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="n">Player</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">          <span class="c1">// Initialize resources: animation frames, image assets, etc.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">Player</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Release resources
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">ProcessEvent</span><span class="p">(</span><span class="k">const</span> <span class="n">ExMessage</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Handle player input
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">Move</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Handle player movement
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">Draw</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Render the player
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>   
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>   
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Internal data members
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">......</span>
+</span></span></span><span class="line"><span class="cl">    <span class="p">......</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -1378,7 +1390,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Define spawn edges
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">SpawnEdge</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="k">class</span> <span class="nc">SpawnEdge</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Up</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Down</span><span class="p">,</span>
@@ -1387,9 +1399,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Randomly select one edge
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">SpawnEdge</span> <span class="n">edge</span> <span class="o">=</span> <span class="p">(</span><span class="n">SpawnEdge</span><span class="p">)(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">SpawnEdge</span> <span class="n">edge</span> <span class="o">=</span> <span class="p">(</span><span class="n">SpawnEdge</span><span class="p">)(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// Assign spawn coordinates based on selected edge
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">switch</span> <span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="p">(</span><span class="n">edge</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="n">SpawnEdge</span><span class="o">::</span><span class="nl">Up</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">WINDOW_WIDTH</span><span class="p">;</span>
@@ -1453,7 +1465,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Update facing direction based on horizontal movement
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">dir_x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dir_x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="n">facing_left</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dir_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="n">facing_left</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
@@ -1476,9 +1488,9 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">CheckBulletCollision</span><span class="p">(</span><span class="k">const</span> <span class="n">Bullet</span><span class="o">&amp;</span> <span class="n">bullet</span><span class="p">)</span> <span class="c1">// &#39;const&#39; ensures the bullet won&#39;t be modified
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Treat the bullet as a point and check if it&#39;s inside the enemy&#39;s rectangle
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">bool</span> <span class="n">is_overlap_x</span> <span class="o">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">is_overlap_x</span> <span class="o">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">is_overlap_y</span> <span class="o">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&amp;&amp;</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">is_overlap_x</span> <span class="o">&amp;&amp;</span> <span class="n">is_overlap_y</span><span class="p">;</span>
@@ -1504,7 +1516,7 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">CheckPlayerCollision</span><span class="p">(</span><span class="k">const</span> <span class="n">Player</span><span class="o">&amp;</span> <span class="n">player</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// Use the enemy&#39;s center point as the collision point
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">POINT</span> <span class="n">check_position</span> <span class="o">=</span> <span class="p">{</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">POINT</span> <span class="n">check_position</span> <span class="o">=</span> <span class="p">{</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_overlap_x</span> <span class="o">=</span> <span class="n">check_position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">check_position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">x</span> <span class="o">+</span> <span class="n">player</span><span class="p">.</span><span class="n">FRAME_WIDTH</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_overlap_y</span> <span class="o">=</span> <span class="n">check_position</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">y</span> <span class="o">&amp;&amp;</span> <span class="n">check_position</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">y</span> <span class="o">+</span> <span class="n">player</span><span class="p">.</span><span class="n">FRAME_HEIGHT</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	
@@ -1541,16 +1553,16 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//  Update bullet positions
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">UpdateBullets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Bullet</span><span class="o">&gt;&amp;</span> <span class="n">bullet_list</span><span class="p">,</span> <span class="k">const</span> <span class="n">Player</span><span class="o">&amp;</span> <span class="n">player</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">UpdateBullets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Bullet</span><span class="o">&gt;&amp;</span> <span class="n">bullet_list</span><span class="p">,</span> <span class="k">const</span> <span class="n">Player</span><span class="o">&amp;</span> <span class="n">player</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// Create a pulsating effect for visual flair
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">double</span> <span class="n">RADIAL_SPEED</span> <span class="o">=</span> <span class="mf">0.0045</span><span class="p">;</span> <span class="c1">// Speed of radial oscillation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">double</span> <span class="n">TANGENT_SPEED</span> <span class="o">=</span> <span class="mf">0.0055</span><span class="p">;</span> <span class="c1">// Speed of tangential rotation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">double</span> <span class="n">RADIAL_SPEED</span> <span class="o">=</span> <span class="mf">0.0045</span><span class="p">;</span> <span class="c1">// Speed of radial oscillation
+</span></span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">double</span> <span class="n">TANGENT_SPEED</span> <span class="o">=</span> <span class="mf">0.0055</span><span class="p">;</span> <span class="c1">// Speed of tangential rotation
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">radian_interval</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">/</span> <span class="n">bullet_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="c1">// Angular spacing between bullets
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Update each bullet&#39;s position based on the player&#39;s location
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">POINT</span> <span class="n">player_position</span> <span class="o">=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">();</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">POINT</span> <span class="n">player_position</span> <span class="o">=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">BULLET_BASE_RADIUS</span> <span class="o">+</span> <span class="n">BULLET_RADIUS_CHANGE_RANGE</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">GetTickCount</span><span class="p">()</span> <span class="o">*</span> <span class="n">RADIAL_SPEED</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">bullet_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
@@ -1580,14 +1592,14 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Iterate through the enemy list and remove defeated enemies
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// Avoid using iterators since the 												// container is modified during iteration
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// Avoid using iterators since the 												// container is modified during iteration
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Enemy</span><span class="o">*</span> <span class="n">enemy</span> <span class="o">=</span> <span class="n">enemy_list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">enemy</span><span class="o">-&gt;</span><span class="n">CheckAlive</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Swap with the last element and remove it
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// * This is an efficient deletion method when element order doesn&#39;t matter
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">swap</span><span class="p">(</span><span class="n">enemy_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
+</span></span></span><span class="line"><span class="cl">		<span class="c1">// * This is an efficient deletion method when element order doesn&#39;t matter
+</span></span></span><span class="line"><span class="cl">		<span class="n">swap</span><span class="p">(</span><span class="n">enemy_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
 </span></span><span class="line"><span class="cl">		<span class="n">enemy_list</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">		<span class="k">delete</span> <span class="n">enemy</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
@@ -1606,10 +1618,10 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Open the bgm.mp3 file located in the mus folder and assign it the alias &#34;bgm&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;open mus/bgm.mp3 alias bgm&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>	<span class="c1">// Load sound
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl"><span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;open mus/bgm.mp3 alias bgm&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>	<span class="c1">// Load sound
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Play the sound with alias &#34;bgm&#34; in a loop starting from the beginning
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play bgm repeat from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>		<span class="c1">// Remove &#39;repeat&#39; if looping is not needed	
+</span></span></span><span class="line"><span class="cl"><span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play bgm repeat from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>		<span class="c1">// Remove &#39;repeat&#39; if looping is not needed	
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="performance-optimization-using-the-flyweight-pattern">Performance Optimization: Using the Flyweight Pattern
@@ -1627,12 +1639,12 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//========= Typical Implementation =========
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">Tree</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Tree</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Model</span> <span class="n">model</span><span class="p">;</span>	<span class="c1">// Tree model
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Texture</span> <span class="n">texture</span><span class="p">;</span><span class="c1">// Tree texture
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>	<span class="c1">// Tree position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">Texture</span> <span class="n">texture</span><span class="p">;</span><span class="c1">// Tree texture
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>	<span class="c1">// Tree position
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1656,21 +1668,21 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//======= Flyweight Implementation =======
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Shared asset structure
 </span></span></span><span class="line"><span class="cl"><span class="c1">// All trees use the same TreeAsset instance for model and texture
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">TreeAsset</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">TreeAsset</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Model</span> <span class="n">model</span><span class="p">;</span>	<span class="c1">// Tree model
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Texture</span> <span class="n">texture</span><span class="p">;</span><span class="c1">// Tree texture
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">Texture</span> <span class="n">texture</span><span class="p">;</span><span class="c1">// Tree texture
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Tree instance structure
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">Tree</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Tree</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">TreeAsset</span><span class="o">*</span> <span class="n">asset</span><span class="p">;</span>	<span class="c1">// Pointer to shared asset
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>		<span class="c1">// Tree position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>		<span class="c1">// Tree position
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>In this project, we refactor the <code>Animation</code> class to separate shared and instance-specific data. The shared data—<code>std::vector&lt;IMAGE*&gt; frame_list</code>—is stored in an <code>Atlas</code> class, while each enemy instance maintains its own animation state.</p>
@@ -1709,13 +1721,13 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Optimized resource loading
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Atlas</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Atlas</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Atlas</span><span class="p">(</span><span class="n">LPCTSTR</span> <span class="n">path</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Load image frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">TCHAR</span> <span class="n">path_file</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">TCHAR</span> <span class="n">path_file</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">_stprintf_s</span><span class="p">(</span><span class="n">path_file</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
@@ -1788,11 +1800,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Animation</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span> <span class="c1">// The atlas is shared, so we don&#39;t delete it here
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>							<span class="c1">// It should be released at a higher level (e.g., in main)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>							<span class="c1">// Also, we didn&#39;t allocate it with &#39;new&#39; here
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">							<span class="c1">// It should be released at a higher level (e.g., in main)
+</span></span></span><span class="line"><span class="cl">							<span class="c1">// Also, we didn&#39;t allocate it with &#39;new&#39; here
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Play animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">Play</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">delta_time</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">Play</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">delta_time</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">timer</span> <span class="o">+=</span> <span class="n">delta_time</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">timer</span> <span class="o">&gt;=</span> <span class="n">interval_ms</span><span class="p">)</span>
@@ -1806,12 +1818,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">interval_ms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">// Frame interval
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Animation timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 	<span class="c1">// Current frame index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Animation timer
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 	<span class="c1">// Current frame index
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Atlas</span><span class="o">*</span> <span class="n">anim_atlas</span><span class="p">;</span> 	<span class="c1">// Pointer to shared atlas
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="button-class-design">Button Class Design
@@ -1921,7 +1933,7 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_left</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Load player left-facing animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="n">TCHAR</span> <span class="n">img_path</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">    <span class="n">_stprintf_s</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/paimon_left_&amp;d.png&#34;</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
@@ -1962,17 +1974,17 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getwidth</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getheight</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Resize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_right</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>	<span class="c1">// Resize and allocate memory for right-facing image
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// Flip each row horizontally
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_left_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_left_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_right_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_right</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">idx_left_img</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>					<span class="c1">// Source pixel index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">idx_right_img</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">);</span>	<span class="c1">// Target pixel index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">color_buffer_right_img</span><span class="p">[</span><span class="n">idx_right_img</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_buffer_left_img</span><span class="p">[</span><span class="n">idx_left_img</span><span class="p">];</span>
+</span></span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">idx_right_img</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">);</span>	<span class="c1">// Target pixel index
+</span></span></span><span class="line"><span class="cl">            <span class="n">color_buffer_right_img</span><span class="p">[</span><span class="n">idx_right_img</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_buffer_left_img</span><span class="p">[</span><span class="n">idx_left_img</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -2008,7 +2020,7 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// RGB(255, 255, 255) gives 0x00FFFFFF
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Adding full opacity: (BYTE)(255) &lt;&lt; 24 = 0xFF000000
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Combined: 0xFFFFFFFF = fully opaque white
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">DWORD</span> <span class="n">white_pix</span> <span class="o">=</span> <span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">DWORD</span> <span class="n">white_pix</span> <span class="o">=</span> <span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>To implement the image flicker effect, the basic idea is to first define an array of silhouette animation frames. Then, for each original image frame, use <code>Resize</code> to match its size and allocate memory for the silhouette frame. After that, retrieve the color buffers of both the original and silhouette images. In a nested loop, check the color of each pixel—if the pixel is not already white, set it to pure white：</p>
@@ -2041,12 +2053,12 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="n">img_player_left_sketch</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Generate silhouette frames for left-facing animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getwidth</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getheight</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Resize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left_sketch</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>	<span class="c1">// Allocate memory and set size
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_raw_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_sketch_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_player_left_sketch</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    
@@ -2056,7 +2068,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">((</span><span class="n">color_buffer_raw_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span>	<span class="c1">// If pixel is not fully transparent
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">color_buffer_sketch_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">                <span class="n">color_buffer_sketch_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -2108,7 +2120,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// Copy current frame for processing
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">IMAGE</span> <span class="nf">img_current_frame</span><span class="p">(</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">IMAGE</span> <span class="nf">img_current_frame</span><span class="p">(</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getwidth</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getheight</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
@@ -2116,22 +2128,22 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl"><span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_frame_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_current_frame</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Traverse the color buffer of the current frame and blend the non-transparent regions
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">width</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">RATIO</span> <span class="o">=</span> <span class="mf">0.25f</span><span class="p">;</span>	<span class="c1">// Blend ratio
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">DWORD</span> <span class="n">color_ice_img</span> <span class="o">=</span> <span class="n">color_buffer_ice_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">DWORD</span> <span class="n">color_ice_img</span> <span class="o">=</span> <span class="n">color_buffer_ice_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">        <span class="n">DWORD</span> <span class="n">color_frame_img</span> <span class="o">=</span> <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="n">color_frame_img</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span>	<span class="c1">// 0xFF000000: Alpha channel
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">// Note: The color buffer stores pixel data in BGR order, so you need to swap the red and blue channels when retrieving color values.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetBValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetBValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
+</span></span></span><span class="line"><span class="cl">            <span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetBValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetBValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">            <span class="n">BYTE</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetGValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetGValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">            <span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetRValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetRValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">// Blend with the Alpha channel
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">            <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">BGR</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">|</span> <span class="p">(((</span><span class="n">DWORD</span><span class="p">)(</span><span class="n">BYTE</span><span class="p">)(</span><span class="mi">255</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -2224,38 +2236,38 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">const</span> <span class="n">POINT</span> <span class="n">position</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1075</span><span class="p">,</span> <span class="mi">345</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">// Animation frame index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">anim_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Animation timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">frozen_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// Freeze state timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">THICKNESS</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>	<span class="c1">// Scanline thickness
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">int</span> <span class="n">hightlight_pos_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">// Vertical position of the scanline
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">static</span> <span class="kt">bool</span> <span class="n">is_frozen</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">// Whether the player is currently frozen
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">anim_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>		<span class="c1">// Animation timer
+</span></span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">frozen_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// Freeze state timer
+</span></span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">THICKNESS</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>	<span class="c1">// Scanline thickness
+</span></span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">hightlight_pos_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">// Vertical position of the scanline
+</span></span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">bool</span> <span class="n">is_frozen</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">// Whether the player is currently frozen
+</span></span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// If not frozen, update animation timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="n">is_frozen</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">++</span><span class="n">anim_timer</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="n">is_frozen</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">++</span><span class="n">anim_timer</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">        <span class="n">counter</span> <span class="o">=</span> <span class="p">(</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Update freeze timer and reset scanline position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">frozen_timer</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">frozen_timer</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">is_frozen</span> <span class="o">=</span> <span class="o">!</span><span class="n">is_frozen</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">highlight_pos_y</span> <span class="o">=</span> <span class="o">-</span><span class="n">THICKNESS</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// Draw shadow beneath the player
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">putimage_alpha</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">80</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">80</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_shadow</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">    <span class="n">putimage_alpha</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">80</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">80</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_shadow</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="c1">// Render different animation frames depending on freeze state
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">is_frozen</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">is_frozen</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// Copy current frame for further processing
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">IMAGE</span> <span class="n">img_current_frame</span><span class="p">(</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">IMAGE</span> <span class="n">img_current_frame</span><span class="p">(</span><span class="n">img_player_left</span><span class="p">[</span><span class="n">counter</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getwidth</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">img_curent_frame</span><span class="p">.</span><span class="n">getheight</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="c1">// Update vertical position of the highlight scanline
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">highlight_pos_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">highlight_pos_y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">height</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">        <span class="n">highlight_pos_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">highlight_pos_y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">height</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="c1">//  Get color buffers of the current frame and the ice overlay
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_ice_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_ice</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_ice_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_ice</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="n">DWORD</span><span class="o">*</span> <span class="n">color_buffer_frame_img</span> <span class="o">=</span> <span class="n">GetImageBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_current_frame</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span>
@@ -2264,13 +2276,13 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">RATIO</span> <span class="o">=</span> <span class="mf">0.25f</span><span class="p">;</span>		<span class="c1">// Blending ratio
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">THRESHOLD</span> <span class="o">=</span> <span class="mf">0.84f</span><span class="p">;</span>	<span class="c1">// Highlight brightness threshold
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">DWORD</span> <span class="n">color_ice_img</span> <span class="o">=</span> <span class="n">color_buffer_ice_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span></span><span class="line"><span class="cl">                <span class="k">static</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">THRESHOLD</span> <span class="o">=</span> <span class="mf">0.84f</span><span class="p">;</span>	<span class="c1">// Highlight brightness threshold
+</span></span></span><span class="line"><span class="cl">                <span class="n">DWORD</span> <span class="n">color_ice_img</span> <span class="o">=</span> <span class="n">color_buffer_ice_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">                <span class="n">DWORD</span> <span class="n">color_frame_img</span> <span class="o">=</span> <span class="n">color_buffer_frame_img</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">((</span><span class="n">color_frame_img</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="p">)</span>	<span class="c1">// Check alpha channel (non-transparent)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">                <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="c1">// Note: Color buffer stores pixels in BGR order, so swap red and blue when extracting
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetBValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> 
+</span></span></span><span class="line"><span class="cl">                    <span class="n">BYTE</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetBValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">                                    <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetBValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">BYTE</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">BYTE</span><span class="p">)(</span><span class="n">GetGValue</span><span class="p">(</span><span class="n">color_frame_img</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl">                                    <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetGValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
@@ -2278,7 +2290,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">                                    <span class="o">*</span> <span class="n">RATIO</span> <span class="o">+</span> <span class="n">GetRValue</span><span class="p">(</span><span class="n">color_ice_img</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">RATIO</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">                    <span class="c1">// If pixel brightness at scanline exceeds threshold, set it to pure white
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="k">if</span> <span class="p">((</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">hightlight_pos_y</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">highlight_pos_y</span> <span class="o">+</span> <span class="n">THICKNESS</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">((</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">hightlight_pos_y</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">highlight_pos_y</span> <span class="o">+</span> <span class="n">THICKNESS</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                       <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="n">r</span> <span class="o">/</span> <span class="mf">255.0f</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2126f</span> <span class="o">+</span> <span class="p">(</span><span class="n">g</span> <span class="o">/</span> <span class="mf">255.0f</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.7152f</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">/</span> <span class="mf">255.0f</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0722f</span> 
 </span></span><span class="line"><span class="cl">                           <span class="o">&gt;=</span> <span class="n">TRESHOLD</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">                    <span class="p">{</span>
@@ -3003,7 +3015,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;graphics.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cm">/* =============== Key Concepts ===============
 </span></span></span><span class="line"><span class="cl"><span class="cm">* 1. Avoid blocking operations or heavy, time-consuming tasks inside the main game loop.
@@ -3033,19 +3045,19 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">is_running</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#pragma comment(lib, &#34;MSIMG32.LIB&#34;) </span><span class="c1">// Links the Windows GDI+ library for advanced image operations
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#pragma comment(lib, &#34;Winmm.lib&#34;) </span><span class="c1">// Links the Windows multimedia library
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl"><span class="cp">#pragma comment(lib, &#34;Winmm.lib&#34;) </span><span class="c1">// Links the Windows multimedia library
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Custom Transparent Image Rendering
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">putimage_alpha</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="n">IMAGE</span><span class="o">*</span> <span class="n">img</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">putimage_alpha</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="n">IMAGE</span><span class="o">*</span> <span class="n">img</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Optimize resources loading
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Atlas</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Atlas</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Atlas</span><span class="p">(</span><span class="n">LPCTSTR</span> <span class="n">path</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Load image frames
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">TCHAR</span> <span class="n">path_file</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">TCHAR</span> <span class="n">path_file</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">_stprintf_s</span><span class="p">(</span><span class="n">path_file</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
@@ -3069,7 +3081,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas_player_left</span><span class="p">;</span> <span class="c1">// Initialize in main()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas_player_right</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas_player_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas_enemy_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">Atlas</span><span class="o">*</span> <span class="n">atlas_enemy_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -3083,9 +3095,9 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Animation</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>	<span class="c1">// The atlas is shared, so we don&#39;t delete it here 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>							<span class="c1">// It should be released at a higher level (e.g., in main)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Play animation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="nf">Play</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">delta_time</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">							<span class="c1">// It should be released at a higher level (e.g., in main)
+</span></span></span><span class="line"><span class="cl">	<span class="c1">// Play animation
+</span></span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">Play</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">delta_time</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">timer</span> <span class="o">+=</span> <span class="n">delta_time</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">timer</span> <span class="o">&gt;=</span> <span class="n">interval_ms</span><span class="p">)</span>
@@ -3099,12 +3111,12 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">interval_ms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Frame interval
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 		<span class="c1">// Animation timer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 	<span class="c1">// Current frame index
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 		<span class="c1">// Animation timer
+</span></span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">idx_frame</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 	<span class="c1">// Current frame index
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Atlas</span><span class="o">*</span> <span class="n">anim_atlas</span><span class="p">;</span>	<span class="c1">// Pointer to shared atlas
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Player</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -3175,9 +3187,9 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">			<span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">SPEED</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">// Fix diagonal movement being faster than horizontal/vertical
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">int</span> <span class="n">dir_x</span> <span class="o">=</span> <span class="n">is_moving_right</span> <span class="o">-</span> <span class="n">is_moving_left</span><span class="p">;</span> <span class="c1">// Right is positive X direction
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">int</span> <span class="n">dir_y</span> <span class="o">=</span> <span class="n">is_moving_down</span> <span class="o">-</span> <span class="n">is_moving_up</span><span class="p">;</span> <span class="c1">// Down is positive Y direction
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">double</span> <span class="n">len_dir</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dir_x</span> <span class="o">*</span> <span class="n">dir_x</span> <span class="o">+</span> <span class="n">dir_y</span> <span class="o">*</span> <span class="n">dir_y</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">dir_x</span> <span class="o">=</span> <span class="n">is_moving_right</span> <span class="o">-</span> <span class="n">is_moving_left</span><span class="p">;</span> <span class="c1">// Right is positive X direction
+</span></span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">dir_y</span> <span class="o">=</span> <span class="n">is_moving_down</span> <span class="o">-</span> <span class="n">is_moving_up</span><span class="p">;</span> <span class="c1">// Down is positive Y direction
+</span></span></span><span class="line"><span class="cl">		<span class="kt">double</span> <span class="n">len_dir</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dir_x</span> <span class="o">*</span> <span class="n">dir_x</span> <span class="o">+</span> <span class="n">dir_y</span> <span class="o">*</span> <span class="n">dir_y</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">len_dir</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="kt">double</span> <span class="n">normalized_x</span> <span class="o">=</span> <span class="n">dir_x</span> <span class="o">/</span> <span class="n">len_dir</span><span class="p">;</span>
@@ -3187,7 +3199,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">		<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">//  Clamp player movement within window boundaries
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span> <span class="o">&gt;</span> <span class="n">WINDOW_WIDTH</span><span class="p">)</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">WINDOW_WIDTH</span> <span class="o">-</span> <span class="n">FRAME_WIDTH</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span> <span class="o">&gt;</span> <span class="n">WINDOW_HEIGHT</span><span class="p">)</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">WINDOW_HEIGHT</span> <span class="o">-</span> <span class="n">FRAME_HEIGHT</span><span class="p">;</span>
@@ -3196,7 +3208,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">Draw</span><span class="p">(</span><span class="kt">int</span> <span class="n">delta_time</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Draw shadow before rendering the player
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">int</span> <span class="n">shadow_pos_x</span> <span class="o">=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">FRAME_WIDTH</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">SHADOW_WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">shadow_pos_x</span> <span class="o">=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">FRAME_WIDTH</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">SHADOW_WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">shadow_pos_y</span> <span class="o">=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span> <span class="o">-</span> <span class="mi">8</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="n">putimage_alpha</span><span class="p">(</span><span class="n">shadow_pos_x</span><span class="p">,</span> <span class="n">shadow_pos_y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_shadow</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -3224,16 +3236,16 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">int</span> <span class="n">SPEED</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// Player movement speed
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">int</span> <span class="n">SHADOW_WIDTH</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>	
+</span></span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">int</span> <span class="n">SHADOW_WIDTH</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>	
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>	
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span> <span class="n">img_shadow</span><span class="p">;</span> <span class="c1">// Shadow beneath the player
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">Animation</span><span class="o">*</span> <span class="n">anim_left</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">Animation</span><span class="o">*</span> <span class="n">anim_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Animation</span><span class="o">*</span> <span class="n">anim_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">POINT</span> <span class="n">position</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span> <span class="p">};</span> <span class="c1">// Player position
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Fix stuttering caused by asynchronous message handling and key input
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">is_moving_up</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_moving_up</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_moving_down</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_moving_left</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">is_moving_right</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
@@ -3246,7 +3258,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="o">~</span><span class="n">Bullet</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">Draw</span><span class="p">()</span> <span class="k">const</span> <span class="c1">// Add &#39;const&#39; after the member function: this method does not modify any member variables
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">setlinecolor</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">		<span class="n">setfillcolor</span><span class="p">(</span><span class="n">RGB</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">		<span class="n">fillcircle</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">RADIUS</span><span class="p">);</span>
@@ -3269,7 +3281,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">		<span class="n">anim_right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animation</span><span class="p">(</span><span class="n">atlas_enemy_right</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">// Spawn boundaries for the enemy
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">enum</span> <span class="k">class</span> <span class="nc">SpawnEdge</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">enum</span> <span class="k">class</span> <span class="nc">SpawnEdge</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">Up</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">			<span class="n">Down</span><span class="p">,</span>
@@ -3278,9 +3290,9 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">		<span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">// Randomly spawn the enemy on one of the four edges
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">SpawnEdge</span> <span class="n">edge</span> <span class="o">=</span> <span class="p">(</span><span class="n">SpawnEdge</span><span class="p">)(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">SpawnEdge</span> <span class="n">edge</span> <span class="o">=</span> <span class="p">(</span><span class="n">SpawnEdge</span><span class="p">)(</span><span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Generate specific random coordinates
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">switch</span> <span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">switch</span> <span class="p">(</span><span class="n">edge</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="n">SpawnEdge</span><span class="o">::</span><span class="nl">Up</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">			<span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">WINDOW_WIDTH</span><span class="p">;</span>
@@ -3310,9 +3322,9 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">CheckBulletCollision</span><span class="p">(</span><span class="k">const</span> <span class="n">Bullet</span><span class="o">&amp;</span> <span class="n">bullet</span><span class="p">)</span> <span class="c1">// Add &#39;const&#39; before the parameter: this argument will not be modified inside the function
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Treat the bullet as a point and check if it lies within the enemy&#39;s rectangle
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">bool</span> <span class="n">is_overlap_x</span> <span class="o">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">is_overlap_x</span> <span class="o">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">is_overlap_y</span> <span class="o">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&amp;&amp;</span> <span class="n">bullet</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		
 </span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">is_overlap_x</span> <span class="o">&amp;&amp;</span> <span class="n">is_overlap_y</span><span class="p">;</span>
@@ -3321,7 +3333,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="nf">CheckPlayerCollision</span><span class="p">(</span><span class="k">const</span> <span class="n">Player</span><span class="o">&amp;</span> <span class="n">player</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="c1">// Use the center point of the enemy as the collision point
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">POINT</span> <span class="n">check_position</span> <span class="o">=</span> <span class="p">{</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">};</span>
+</span></span></span><span class="line"><span class="cl">		<span class="n">POINT</span> <span class="n">check_position</span> <span class="o">=</span> <span class="p">{</span> <span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">FRAME_WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">FRAME_HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">};</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">is_overlap_x</span> <span class="o">=</span> <span class="n">check_position</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">check_position</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">x</span> <span class="o">+</span> <span class="n">player</span><span class="p">.</span><span class="n">FRAME_WIDTH</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">is_overlap_y</span> <span class="o">=</span> <span class="n">check_position</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">y</span> <span class="o">&amp;&amp;</span> <span class="n">check_position</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">().</span><span class="n">y</span> <span class="o">+</span> <span class="n">player</span><span class="p">.</span><span class="n">FRAME_HEIGHT</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		
@@ -3386,11 +3398,11 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl"><span class="p">};</span> 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Button base class
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Button</span>
+</span></span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Button</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">Button</span><span class="p">(</span><span class="n">RECT</span> <span class="n">rect</span><span class="p">,</span> <span class="n">LPCTSTR</span> <span class="n">path_imag_idle</span><span class="p">,</span> <span class="n">LPCTSTR</span> <span class="n">path_imag_hovered</span><span class="p">,</span> <span class="n">LPCTSTR</span> <span class="n">path_imag_pushed</span><span class="p">)</span> <span class="c1">// load images
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">region</span> <span class="o">=</span> <span class="n">rect</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="n">loadimage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_idle</span><span class="p">,</span> <span class="n">path_imag_idle</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">		<span class="n">loadimage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">img_hovered</span><span class="p">,</span> <span class="n">path_imag_hovered</span><span class="p">);</span>
@@ -3477,7 +3489,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="n">is_game_started</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">		<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;play bgm repeat from 0&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// Play bgm repeatly
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">QuitGameButton</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Button</span>
@@ -3501,11 +3513,11 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="n">initgraph</span><span class="p">(</span><span class="n">WINDOW_WIDTH</span><span class="p">,</span> <span class="n">WINDOW_HEIGHT</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;open mus/bgm.mp3 alias bgm&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// load audio
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;open mus/hit.wav alias hit&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> 
+</span></span></span><span class="line"><span class="cl">	<span class="n">mciSendString</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;open mus/hit.wav alias hit&#34;</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Both the player and enemy constructors require atlas resources,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// so atlas objects must be initialized before creating player and enemy instances.
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">atlas_player_left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/player_left_%d.png&#34;</span><span class="p">),</span> <span class="n">PLAYER_ANIM_NUM</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl">	<span class="c1">// so atlas objects must be initialized before creating player and enemy instances.
+</span></span></span><span class="line"><span class="cl">	<span class="n">atlas_player_left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/player_left_%d.png&#34;</span><span class="p">),</span> <span class="n">PLAYER_ANIM_NUM</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">atlas_player_right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/player_right_%d.png&#34;</span><span class="p">),</span> <span class="n">PLAYER_ANIM_NUM</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">atlas_enemy_left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/enemy_left_%d.png&#34;</span><span class="p">),</span> <span class="n">ENEMY_ANIM_NUM</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="n">atlas_enemy_right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Atlas</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&#34;img/enemy_right_%d.png&#34;</span><span class="p">),</span> <span class="n">ENEMY_ANIM_NUM</span><span class="p">);</span>
@@ -3513,7 +3525,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="n">Player</span> <span class="n">player</span><span class="p">;</span> 
 </span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">Enemy</span><span class="o">*&gt;</span> <span class="n">enemy_list</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">Bullet</span><span class="o">&gt;</span> <span class="n">bullet_list</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// Only three bullets are needed, so raw pointers are avoided to prevent memory leaks	
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span></span><span class="line"><span class="cl">	
 </span></span><span class="line"><span class="cl">	<span class="n">ExMessage</span> <span class="n">msg</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span> <span class="n">img_menu</span><span class="p">;</span>	
 </span></span><span class="line"><span class="cl">	<span class="n">IMAGE</span> <span class="n">img_background</span><span class="p">;</span>	
@@ -3522,7 +3534,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="n">RECT</span> <span class="n">region_btn_start_game</span><span class="p">,</span> <span class="n">region_btn_quit_game</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// ================ UI ================
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">left</span> <span class="o">=</span> <span class="p">(</span><span class="n">WINDOW_WIDTH</span> <span class="o">-</span> <span class="n">BUTTON_WIDTH</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">left</span> <span class="o">=</span> <span class="p">(</span><span class="n">WINDOW_WIDTH</span> <span class="o">-</span> <span class="n">BUTTON_WIDTH</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">BUTTON_WIDTH</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">top</span> <span class="o">=</span> <span class="mi">430</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">region_btn_start_game</span><span class="p">.</span><span class="n">top</span> <span class="o">+</span> <span class="n">BUTTON_HEIGHT</span><span class="p">;</span>
@@ -3568,7 +3580,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">				<span class="n">enemy</span><span class="o">-&gt;</span><span class="n">Move</span><span class="p">(</span><span class="n">player</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1">// Collision detection: enemies vs. player
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">for</span> <span class="p">(</span><span class="n">Enemy</span><span class="o">*</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemy_list</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">			<span class="k">for</span> <span class="p">(</span><span class="n">Enemy</span><span class="o">*</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemy_list</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">			<span class="p">{</span>
 </span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="n">enemy</span><span class="o">-&gt;</span><span class="n">CheckPlayerCollision</span><span class="p">(</span><span class="n">player</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">				<span class="p">{</span>
@@ -3581,7 +3593,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">			<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">			<span class="c1">// Collision detection: enemies vs. bullets
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">for</span> <span class="p">(</span><span class="n">Enemy</span><span class="o">*</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemy_list</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">			<span class="k">for</span> <span class="p">(</span><span class="n">Enemy</span><span class="o">*</span> <span class="nl">enemy</span> <span class="p">:</span> <span class="n">enemy_list</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">			<span class="p">{</span>
 </span></span><span class="line"><span class="cl">				<span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Bullet</span><span class="o">&amp;</span> <span class="nl">bullet</span> <span class="p">:</span> <span class="n">bullet_list</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">				<span class="p">{</span>
@@ -3595,14 +3607,14 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">			<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">			<span class="c1">//  Iterate through the enemy list and remove defeated enemies
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// Avoid using iterators since the container is modified during iteration
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="p">{</span>
+</span></span></span><span class="line"><span class="cl">			<span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// Avoid using iterators since the container is modified during iteration
+</span></span></span><span class="line"><span class="cl">			<span class="p">{</span>
 </span></span><span class="line"><span class="cl">				<span class="n">Enemy</span><span class="o">*</span> <span class="n">enemy</span> <span class="o">=</span> <span class="n">enemy_list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">enemy</span><span class="o">-&gt;</span><span class="n">CheckAlive</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">				<span class="p">{</span>
 </span></span><span class="line"><span class="cl">					 <span class="c1">// Swap with the last element and remove it
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="c1">// * This is an efficient deletion method when element order doesn&#39;t matter
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>					<span class="n">swap</span><span class="p">(</span><span class="n">enemy_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
+</span></span></span><span class="line"><span class="cl">                    <span class="c1">// * This is an efficient deletion method when element order doesn&#39;t matter
+</span></span></span><span class="line"><span class="cl">					<span class="n">swap</span><span class="p">(</span><span class="n">enemy_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">enemy_list</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
 </span></span><span class="line"><span class="cl">					<span class="n">enemy_list</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">					<span class="k">delete</span> <span class="n">enemy</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">				<span class="p">}</span>
@@ -3612,7 +3624,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">		<span class="n">cleardevice</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">		<span class="c1">// ======= Draw  =======
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">is_game_started</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">is_game_started</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">		<span class="p">{</span>
 </span></span><span class="line"><span class="cl">			<span class="n">putimage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_background</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">			<span class="n">player</span><span class="p">.</span><span class="n">Draw</span><span class="p">(</span><span class="mi">1000</span> <span class="o">/</span> <span class="n">FPS</span><span class="p">);</span>
@@ -3641,7 +3653,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// Release atlas pointers after the main loop
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">delete</span> <span class="n">atlas_player_left</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl">	<span class="k">delete</span> <span class="n">atlas_player_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">delete</span> <span class="n">atlas_player_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">delete</span> <span class="n">atlas_enemy_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">delete</span> <span class="n">atlas_enemy_right</span><span class="p">;</span>
@@ -3669,16 +3681,16 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Update bullet postions
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">UpdateBullets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Bullet</span><span class="o">&gt;&amp;</span> <span class="n">bullet_list</span><span class="p">,</span> <span class="k">const</span> <span class="n">Player</span><span class="o">&amp;</span> <span class="n">player</span><span class="p">)</span>
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">UpdateBullets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Bullet</span><span class="o">&gt;&amp;</span> <span class="n">bullet_list</span><span class="p">,</span> <span class="k">const</span> <span class="n">Player</span><span class="o">&amp;</span> <span class="n">player</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// Create a pulsating effect for visual flair
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">double</span> <span class="n">RADIAL_SPEED</span> <span class="o">=</span> <span class="mf">0.0045</span><span class="p">;</span> <span class="c1">// Speed of radial oscillation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">double</span> <span class="n">TANGENT_SPEED</span> <span class="o">=</span> <span class="mf">0.0055</span><span class="p">;</span> <span class="c1">// Speed of tangential rotation
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">double</span> <span class="n">RADIAL_SPEED</span> <span class="o">=</span> <span class="mf">0.0045</span><span class="p">;</span> <span class="c1">// Speed of radial oscillation
+</span></span></span><span class="line"><span class="cl">	<span class="k">const</span> <span class="kt">double</span> <span class="n">TANGENT_SPEED</span> <span class="o">=</span> <span class="mf">0.0055</span><span class="p">;</span> <span class="c1">// Speed of tangential rotation
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">radian_interval</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">/</span> <span class="n">bullet_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="c1">// Angular spacing between bullets
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	<span class="c1">// Update each bullet&#39;s position based on the player&#39;s location
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">POINT</span> <span class="n">player_position</span> <span class="o">=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">();</span>
+</span></span></span><span class="line"><span class="cl">	<span class="n">POINT</span> <span class="n">player_position</span> <span class="o">=</span> <span class="n">player</span><span class="p">.</span><span class="n">GetPosition</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">BULLET_BASE_RADIUS</span> <span class="o">+</span> <span class="n">BULLET_RADIUS_CHANGE_RANGE</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">GetTickCount</span><span class="p">()</span> <span class="o">*</span> <span class="n">RADIAL_SPEED</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">bullet_list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">{</span>
@@ -3765,7 +3777,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_f847329bde6c0b16.webp" 
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_d394295e071989b1.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -3789,7 +3801,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_14c732af37c360d2.webp" 
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_e5d83f6feaae04dc.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -3813,7 +3825,7 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_6768cc0990888c2b.webp" 
+                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_56e39fb92708d9cb.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -3833,11 +3845,35 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
             
                 
 <article class="has-image">
+    <a href="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.9d88b009e10e58d65c068a49f8bcecd4_hu_6e3415ec20f88f5b.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【学习日志】SOLID原则项目实践"
+                        
+                        data-hash="md5-nYiwCeEOWNZcBopJ&#43;Lzs1A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【学习日志】SOLID原则项目实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/en/p/c-syntaxsmart-pointer/">
         
         
             <div class="article-image">
-                <img src="/en/p/c-syntaxsmart-pointer/cover.c2d6bbaddbba8a5650d918e15736971f_hu_6021b341494e9474.webp" 
+                <img src="/en/p/c-syntaxsmart-pointer/cover.c2d6bbaddbba8a5650d918e15736971f_hu_fde0b61f1abca2a1.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -3850,30 +3886,6 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
 
         <div class="article-details">
             <h2 class="article-title">【C&#43;&#43; Syntax】Smart Pointer</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/en/p/environment-setup-sdl2/">
-        
-        
-            <div class="article-image">
-                <img src="/en/p/environment-setup-sdl2/cover.469bf4d7f42db8fc9eda308d55ed74ec_hu_d98104b5f057749b.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【Environment Setup 】SDL2"
-                        
-                        data-hash="md5-Rpv01/QtuPye2jCNVe107A==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【Environment Setup 】SDL2</h2>
         </div>
     </a>
 </article>
@@ -3926,9 +3938,13 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
         
         
         
+        
+        
+        
+        
 
-        发表了9篇文章 ·
-        总计3万3千字
+        发表了10篇文章 ·
+        总计3万7千字
         <br>
     </section>
 
@@ -3942,7 +3958,9 @@ To simulate a freeze effect, overlay a semi-transparent icy image on top of the 
     <section class="copyright">
         &copy;
         
-        2025 Nullshow
+        2025 -
+        
+        2026 Nullshow
     </section>
 
     <section class="powerby">

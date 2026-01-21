@@ -7,7 +7,163 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 29 Nov 2025 09:19:26 +0100</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 Jan 2026 20:37:55 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Study Journey</title>
+        <link>https://nullshowjl.github.io/en/study-journey/</link>
+        <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://nullshowjl.github.io/en/study-journey/</guid>
+        <description>&lt;h2 id=&#34;游戏开发&#34;&gt;游戏开发
+&lt;/h2&gt;&lt;p&gt;I track my learning month by month, splitting everything into two parts: hands‑on projects and theory. The courses marked with an asterisk were especially helpful for me at that stage — I genuinely recommend them. &lt;em&gt;Feel free to use this list as a reference based on your own needs and where you are in your learning journey.&lt;/em&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Time&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Project Name (Practice/Hands-on)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Course Reference &amp;amp; Resource Source&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Course Name (Theory)&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Source&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2026 /1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Merge Big Watermelon&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bilibili-YouChiHui&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;* Mastering SOLID Principles in Unity Game Development&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Niraj Vishwakarma&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Space Shooter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bilibili-QIQIKerplane&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;C# intermediate&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-CodeMonkey&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flappy Bird&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;C# advanced&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-CodeMonkey&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pong&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Programming Design Patterns For Unity: Write Better Code&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-GameDev.tv/&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Asteroids&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match 3 Intermediate Game Design and Programming in Unity3D&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Thomas Yanuziello&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2048&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tank Drone War&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Niraj Vishwakarma&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mine Sweeper&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mastering Game Feel in Unity: Where Code Meets Fun!&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-GameDev.tv&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tetris&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Intermediate Unity 6 : Connect Complex Game Mechanics&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-David Makowski, Rutuparn Dalvi&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Snake&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Math For Video Games: The Fastest Way To Get Smarter At Math&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-GameDev.tv&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        <item>
         <title>Portfolio</title>
         <link>https://nullshowjl.github.io/en/portfolio/</link>
         <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
@@ -237,6 +393,17 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2026-01-19&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;3.3&#34;;
+    var link = &#34;/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/&#34;;
+    var title = &#34;【学习日志】SOLID原则项目实践&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = &#34;2025-11-22&#34;;
     var value = dataMap.get(key);
     var wordCount = &#34;0.8&#34;;

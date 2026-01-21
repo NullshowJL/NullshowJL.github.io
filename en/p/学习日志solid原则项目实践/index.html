@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏">
+<title>【学习日志】SOLID原则项目实践</title>
+
+<link rel='canonical' href='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
+
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【学习日志】SOLID原则项目实践">
+<meta property='og:description' content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏">
+<meta property='og:url' content='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
+<meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:tag' content='SOLID' /><meta property='article:published_time' content='2026-01-19T09:54:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T20:37:55&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
+<meta name="twitter:title" content="【学习日志】SOLID原则项目实践">
+<meta name="twitter:description" content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+        
+        <figure class="site-avatar">
+            <a href="/en/">
+                
+                
+
+                
+                
+                <img src="/img/avatar_hu_7adbda40a4f6f680.png" width="300"
+                     height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                
+            </a>
+            
+            <span class="emoji">✍️</span>
+            
+        </figure>
+        
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Nullshow&#39;s Tech Blog</a></h1>
+            <h2 class="site-description">Sharing and documenting my notes, experiences, and reflections from development and learning~</h2>
+        </div>
+    </header><ol class="menu-social">
+        
+        
+        
+        <li>
+            <a href='https://gitee.com/nullshow'
+                target="_blank" 
+                title="Gitee" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hexagon-letter-g" class="icon-tabler-hexagon-letter-g"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" /><path d="M14 8h-2a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2v-4h-1" /></svg>
+                
+            </a>
+        </li>
+        
+        
+        
+        <li>
+            <a href='https://github.com/NullshowJL'
+                target="_blank" 
+                title="GitHub" 
+               rel="me">
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-brand-github">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li>
+            <a href='/en/index.xml'
+                target="_blank" 
+                title="RSS" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss" class="icon-tabler-brand-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+                
+            </a>
+        </li>
+        
+    </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-home">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-user">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>Portfolio</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/study-journey/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
+                
+                <span>Study Journey</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/update-log/' >
+                
+                
+                
+                <!--
+unicode: "fea7"
+version: "3.1"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ class="icon-tabler-logs">
+  <path d="M4 12h.01" />
+  <path d="M4 6h.01" />
+  <path d="M4 18h.01" />
+  <path d="M8 18h2" />
+  <path d="M8 12h2" />
+  <path d="M8 6h2" />
+  <path d="M14 6h6" />
+  <path d="M14 12h6" />
+  <path d="M14 18h6" />
+</svg>
+
+                
+                <span>Update Log</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-archives">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-search">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-link">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                        <option value="https://nullshowjl.github.io/en/"  selected>English</option>
+                        
+                        <option value="https://nullshowjl.github.io/" >中文</option>
+                        
+                    </select>
+                </li>
+                
+                
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-left">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-right">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-hash">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#solid原则简介">SOLID原则简介</a>
+      <ol>
+        <li><a href="#意大利面条式代码">意大利面条式代码</a></li>
+        <li><a href="#solid原则是什么">SOLID原则是什么</a>
+          <ol>
+            <li><a href="#单一职责原则">单一职责原则</a></li>
+            <li><a href="#开闭原则">开闭原则</a></li>
+            <li><a href="#里氏替换原则">里氏替换原则</a></li>
+            <li><a href="#接口隔离原则">接口隔离原则</a></li>
+            <li><a href="#依赖倒置原则">依赖倒置原则</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#实践项目">实践项目</a>
+      <ol>
+        <li><a href="#游戏功能拆解">游戏/功能拆解</a>
+          <ol>
+            <li><a href="#内容">内容</a></li>
+            <li><a href="#逻辑">逻辑</a></li>
+            <li><a href="#模块整理">模块整理</a></li>
+            <li><a href="#开发步骤">开发步骤</a></li>
+          </ol>
+        </li>
+        <li><a href="#功能实现及遵循的原则">功能实现及遵循的原则</a>
+          <ol>
+            <li><a href="#1-坦克的移动">1. 坦克的移动</a></li>
+            <li><a href="#2-坦克的开火">2. 坦克的开火</a></li>
+            <li><a href="#3-坦克选择器的实现">3. 坦克选择器的实现</a></li>
+            <li><a href="#4-坦克生命值的实现">4. 坦克生命值的实现</a></li>
+            <li><a href="#5-飞机的移动">5. 飞机的移动</a></li>
+            <li><a href="#6-飞机和子弹的自动销毁">6. 飞机和子弹的自动销毁</a></li>
+            <li><a href="#7-坦克子弹飞机的碰撞检测和生命值联动">7. 坦克、子弹、飞机的碰撞检测和生命值联动</a></li>
+            <li><a href="#8-用观察者模式对ui音效游戏状态进行管理">8. 用观察者模式对UI、音效、游戏状态进行管理</a></li>
+          </ol>
+        </li>
+        <li><a href="#复盘">复盘</a>
+          <ol>
+            <li><a href="#代码复用">代码复用</a></li>
+            <li><a href="#拓展">拓展</a></li>
+          </ol>
+        </li>
+        <li><a href="#关于solid原则的建议">关于SOLID原则的建议</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
+                <img src="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_6ad396e8902704a5.webp"
+                        srcset="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_6ad396e8902704a5.webp 800w, /en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_3b9ecb93b0cd2507.webp 1600w"
+                        width="800" 
+                        height="241" 
+                        loading="lazy"
+                        alt="Featured image of post 【学习日志】SOLID原则项目实践" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
+                Study Notes
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">【学习日志】SOLID原则项目实践</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+<footer class="article-time">
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-date">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+        <time class="article-time--published">Jan 19, 2026</time>
+    </div>
+    
+
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--reading">
+            7 minute read
+        </time>
+    </div>
+    
+
+    
+    <div id="viewCount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye" class="icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+        <time class="article-time--reading">
+            
+            <span id="vercount_value_page_pv">loading... </span> views
+        </time>
+    </div>
+
+</footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/" class="link">中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><strong>教程参考</strong>：<a class="link" href="https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/"  target="_blank" rel="noopener"
+    >Udemy-Niraj Vishwakarma</a></p>
+<p><strong>素材来源</strong>：</p>
+<ul>
+<li>
+<p><a class="link" href="https://assetstore.unity.com/packages/2d/environments/2d-topdown-grassland-the-jungle-285671"  target="_blank" rel="noopener"
+    >Unity Asset Store-HobiSoLoved</a>（场景）</p>
+</li>
+<li>
+<p><a class="link" href="https://assetstore.unity.com/packages/2d/textures-materials/tank-constructor-131316"  target="_blank" rel="noopener"
+    >Unity Asset Store-Hippo</a> （坦克）</p>
+</li>
+<li>
+<p><a class="link" href="https://assetstore.unity.com/packages/2d/characters/pixel-art-space-ship-part-1-228832"  target="_blank" rel="noopener"
+    >Unity Asset Store-Crehera</a>（飞机）</p>
+</li>
+<li>
+<p><a class="link" href="https://assetstore.unity.com/packages/2d/gui/dark-ui-kit-330700"  target="_blank" rel="noopener"
+    >Unity Asset Store-kΩsmaragd</a>（UI）</p>
+</li>
+</ul>
+<p><strong>完整源码</strong>： 请见本网站“作品集”部分</p>
+<h2 id="solid原则简介">SOLID原则简介
+</h2><h3 id="意大利面条式代码">意大利面条式代码
+</h3><p>这种代码指的是一团乱麻，所有行为都高度耦合的代码。比如，在 <code>PlayerController.cs</code> 这个脚本中，玩家的 <code>Move()</code>, <code>Attack()</code>,<code> Jump()</code>&hellip;等等行为都写到了一起，此外，还有 <code>PlayAudio</code> 等其他功能。</p>
+<p>这样的代码极其脆弱且难以扩展，它就像意大利面一样，由于各个部分都缠绕在一起，你抽取了其中的一根，可能导致多个bug的出现。</p>
+<p><strong>解决方案</strong>：</p>
+<p>抛弃意大利面条式的代码结构，改为模块化结构。</p>
+<blockquote class="alert alert-note">
+    <p>在快速制作demo或者小型游戏时可以使用意大利面条式代码以快速验证效果。</p>
+<p>但是如果预计将来项目会越来越大，新引入的游戏物体和功能会越来越多，那么事先建构良好的架构和模块化将是非常重要的。</p></blockquote>
+<h3 id="solid原则是什么">SOLID原则是什么
+</h3><p>总的来说它共有五大原则：</p>
+<ul>
+<li>单一职责原则 <strong>S</strong>ingle Responsibility Principle (SRP)</li>
+<li>开闭原则 <strong>O</strong>pen-Closed Principle (OCP)</li>
+<li>里氏替换原则 <strong>L</strong>iskov Substitution Principle (LSP)</li>
+<li>接口隔离原则 <strong>I</strong>nterface Segregation Principle (ISP)</li>
+<li>依赖倒置原则 <strong>D</strong>ependency Inversion Principle (DIP)</li>
+</ul>
+<h4 id="单一职责原则">单一职责原则
+</h4><h5 id="基本原则">基本原则
+</h5><p>一个脚本，一个功能。SRP将大类的功能拆分成一个个小类，这些小类拥有独立的功能，可以复用且相互之间没有影响。就像乐高的小块积木一样，你可以用它来搭建各种风格各异的大模型。</p>
+<h5 id="好处">好处
+</h5><p>当每个脚本都有清晰的职责时，你就能随意替换它而不害怕破坏游戏的其他部分。</p>
+<h4 id="开闭原则">开闭原则
+</h4><h5 id="基本原则-1">基本原则
+</h5><p>类/模块/函数，对扩展开放、对修改关闭。</p>
+<h5 id="好处-1">好处
+</h5><p>通过创建新的类来添加新功能，从来避免破坏原来类的独立性，以此提升代码的模块化。</p>
+<h5 id="如何执行">如何执行
+</h5><ol>
+<li>为新的功能创建新的类</li>
+<li>创建接口/抽象类，在具体的功能类中去实现接口/抽象类中的方法</li>
+<li>用抽象方法去与不同的功能交互，而不是直接调用它们</li>
+<li>提升多态的应用</li>
+</ol>
+<h4 id="里氏替换原则">里氏替换原则
+</h4><h5 id="基本原则-2">基本原则
+</h5><p>超类/父类物体应该可以被其子类替代而不影响其功能。</p>
+<h5 id="好处-2">好处
+</h5><p>允许超类/父类物体可以被其子类替代，而不用直接引用每个子类，这样可以确保系统在引入新的变量时的灵活性和可扩展性。</p>
+<h5 id="如何执行-1">如何执行
+</h5><ol>
+<li>创建基类并声明所有的方法</li>
+<li>给具有相似行为的物体创建为子类</li>
+<li>在其他需要交互的脚本中，直接引用父类而非子类</li>
+</ol>
+<h4 id="接口隔离原则">接口隔离原则
+</h4><h5 id="基本原则-3">基本原则
+</h5><p>一个类不应该去依赖一个它不会使用的方法。</p>
+<h5 id="总结">总结
+</h5><p>只写需要的、只执行相关的。</p>
+<h4 id="依赖倒置原则">依赖倒置原则
+</h4><h5 id="基本原则-4">基本原则
+</h5><p>高级模块不应该与低级模块耦合，两者都应该依赖于抽象函数。</p>
+<h5 id="总结-1">总结
+</h5><p>依赖于抽象函数，而不是具体的实现。</p>
+<h5 id="如何执行-2">如何执行
+</h5><ol>
+<li>用接口创建抽象函数</li>
+<li>通过具体的类来实现接口</li>
+<li>用接口与具体的类交互</li>
+</ol>
+<h2 id="实践项目">实践项目
+</h2><p>我们通过一个2D的坦克飞机大战小游戏来展示在Unity游戏开发中如何实践SOLID原则。</p>
+<p><strong>核心玩法</strong>：</p>
+<ul>
+<li>屏幕左侧有两种坦克，一种轻型坦克，玩家可以通过按下“L”来操作它；另一种是重型坦克，通过“H”键来操作</li>
+<li>轻型坦克可以左右移动、旋转炮管、发射轻型炮弹</li>
+<li>重型坦克不能移动，但是可以旋转炮管、发射重型炮弹</li>
+<li>屏幕右侧有可以向左移动的飞机，玩家通过击中它们来增加屏幕上的分数</li>
+<li>失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）</li>
+</ul>
+<img src="1-tank-drone.gif" alt="" style="zoom:100%;"/>
+<h3 id="游戏功能拆解">游戏/功能拆解
+</h3><h4 id="内容">内容
+</h4><p>背景图片、坦克（轻型和重型）、子弹（轻型和重型）、飞机、UI（分数、开始界面、游戏界面、结束界面）、音效（开火、飞机被击中、坦克被击中）</p>
+<h4 id="逻辑">逻辑
+</h4><ol>
+<li>游戏开始，按下L键可以激活轻型坦克（移动、旋转、发射炮弹）</li>
+<li>按下H键可以激活重型坦克（旋转、发射炮弹）</li>
+<li>飞机从右往左飞，右侧屏幕飞入、左侧屏幕飞出</li>
+<li>坦克被飞机撞到即失活</li>
+<li>两家坦克都失活，游戏结束</li>
+</ol>
+<h4 id="模块整理">模块整理
+</h4><img src="2-module.webp" alt="" style="zoom:100%;"/>
+<h4 id="开发步骤">开发步骤
+</h4><ol>
+<li>场景摆放</li>
+<li>坦克部分的开发
+<ul>
+<li>移动和旋转</li>
+<li>开火</li>
+<li>实现两种坦克的选择</li>
+<li>生命值</li>
+</ul>
+</li>
+<li>飞机部分的开发
+<ul>
+<li>飞机预制体</li>
+<li>飞机的生成</li>
+<li>生命值</li>
+</ul>
+</li>
+<li>游戏管理部分开发
+<ul>
+<li>配置Game Events</li>
+<li>AudioManager</li>
+<li>UIManager</li>
+<li>GameManager</li>
+</ul>
+</li>
+</ol>
+<h3 id="功能实现及遵循的原则">功能实现及遵循的原则
+</h3><h4 id="1-坦克的移动">1. 坦克的移动
+</h4><p>在坦克的设计上遵循ISP（接口隔离）和DSP（依赖倒置）。</p>
+<img src="3-tank.webp" alt="" style="zoom:100%;"/>
+<h4 id="2-坦克的开火">2. 坦克的开火
+</h4><p>在开火时两种弹药的设计上遵循开闭原则（OCP）。我们在每次增加新的种类弹药时应该只做扩展，而不应该对 <code>TankFire.cs</code> 进行修改。在 TankFire.cs 中，应该通过接口而非直接调用相应炮弹的预制体。</p>
+<img src="4-fire.webp" alt="" style="zoom:100%;"/>
+<p>此处需要注意的是，由于两种子弹都是经过接口与 <code>TankFire.cs</code> 交互的，但是接口不继承自 <code>MonoBehaviour</code>，无法实例化，所以需要将其隐式转换为 <code>Component</code> 来解决。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">TankFire</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">IProjectile</span> <span class="n">iProjectile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Component</span> <span class="n">projectileComponent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Transform</span> <span class="n">firePos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">iProjectile</span> <span class="p">=</span> <span class="n">projectileComponent</span> <span class="k">as</span> <span class="n">IProjectile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">Space</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">iProjectile</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">iProjectile</span><span class="p">.</span><span class="n">Fire</span><span class="p">(</span><span class="n">firePos</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-坦克选择器的实现">3. 坦克选择器的实现
+</h4><p>在这一部分遵循里氏替换（LSP）的原则进行设计。</p>
+<blockquote class="alert alert-tip">
+    <p>如果项目比较小的话不用创建单独的 <code>LightEngine.cs</code> 和 <code>HeavyEngine.cs</code> ，全部写在 TankEngine 这个类中也可以。</p></blockquote>
+<img src="5-selector.webp" alt="" style="zoom:100%;"/>
+<h4 id="4-坦克生命值的实现">4. 坦克生命值的实现
+</h4><p>遵循依赖倒置原则（DIP），使用一个 IDamageable 的接口来和具体的类交互。这个具体的类可以是飞机、也可以是其他的碰撞物，如子弹、导弹等。</p>
+<img src="6-tank-health.webp" alt="" style="zoom:100%;"/>
+<h4 id="5-飞机的移动">5. 飞机的移动
+</h4><p>这部分仿照坦克移动的方式，复用 ImoveUp.cs 的代码，同样采用接口的方式实现，为将来新种类飞机的加入留下空间。</p>
+<h4 id="6-飞机和子弹的自动销毁">6. 飞机和子弹的自动销毁
+</h4><p>我在此处采用统一的脚本 <code>DestroyByTime.cs</code> ，遵循单一职责原则，并未按照课程的方式分别处理。</p>
+<h4 id="7-坦克子弹飞机的碰撞检测和生命值联动">7. 坦克、子弹、飞机的碰撞检测和生命值联动
+</h4><p>这是对第四点的依赖倒置原则的最终实现。由于子弹和飞机都是碰撞后即销毁的情况，所以并没有直接实现 IDamageable接口，在坦克的生命值系统中实现了接口，这样以后即使新增了不同的子弹，对坦克造成不同的伤害，都能轻松实现。在对飞机或者其他类型的敌人中，如果需要设计不同类型的伤害，也可以设计为继承接口的方式灵活实现。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//========== IDamageable接口 ==========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IDamageable</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">float</span> <span class="n">damageValue</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//================ 坦克的生命值系统 ===============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">HealthSystem</span> <span class="p">:</span> <span class="n">MonoBehaviour</span><span class="p">,</span> <span class="n">IDamageable</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">float</span> <span class="n">_health</span> <span class="p">=</span> <span class="m">100f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Image</span> <span class="n">healthProgressBar</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">TankEngineBase</span> <span class="n">currentTankEngine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">float</span> <span class="n">damageValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_health</span> <span class="p">-=</span> <span class="n">damageValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">_health</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_health</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">currentTankEngine</span><span class="p">.</span><span class="n">StopEngine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">progressBarValue</span> <span class="p">=</span> <span class="n">_health</span> <span class="p">/</span> <span class="m">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">healthProgressBar</span><span class="p">.</span><span class="n">fillAmount</span> <span class="p">=</span> <span class="n">progressBarValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//================ 坦克子弹 =================</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ShellHealth</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">damage</span> <span class="p">=</span> <span class="m">100f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">IDamageable</span> <span class="n">damageable</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">IDamageable</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">damageable</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">damageable</span><span class="p">.</span><span class="n">TakeDamage</span><span class="p">(</span><span class="n">damage</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//============= 飞机的生命值 ==============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DroneHealth</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">damage</span> <span class="p">=</span> <span class="m">20f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 通过接口调用TakeDamage</span>
+</span></span><span class="line"><span class="cl">        <span class="n">IDamageable</span> <span class="n">damageable</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">IDamageable</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">damageable</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">damageable</span><span class="p">.</span><span class="n">TakeDamage</span><span class="p">(</span><span class="n">damage</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="8-用观察者模式对ui音效游戏状态进行管理">8. 用观察者模式对UI、音效、游戏状态进行管理
+</h4><p>把下面的事件进行注册，这样通过统一的更新接口，观察者们在事件发生变化的时候可以相应被调用。本质是一个监听和响应系统。同时，这样遵循了单一职责原则，在 <code>AudioManager.cs</code> 和 <code>UIManager.cs</code> 等脚本中，只负责播放音效或管理UI的作用。</p>
+<img src="7-observer.webp" alt="" style="zoom:100%;"/>
+<h3 id="复盘">复盘
+</h3><p>SOLID原则扩展性强，但是脚本量也是成倍增加。在最后用观察者模式写UI的时候几乎花了一整天，调试一个bug花了一个下午。对于初学者而言，在使用观察者模式的时候，监听代码放置的位置和其他代码的顺序也很重要，是很容易踩的坑。</p>
+<h4 id="代码复用">代码复用
+</h4><p>观察者模式的写法，套路都是一样的，以 <code>AudioManager</code> 为例:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======== 1. 注册事件 =========</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//========= GameEvents.cs =========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">GameEvents</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Action</span> <span class="n">OnGameStarted</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Action</span> <span class="n">OnGameOver</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Action</span> <span class="n">OnTankFired</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Action</span> <span class="n">OnTankDamaged</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Action</span> <span class="n">OnDroneDestroy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========= 2. 在各个所需的地方监听事件 =========</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//========= TankFire.cs =========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">Space</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnTankFired</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">projectile</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">projectile</span><span class="p">.</span><span class="n">Fire</span><span class="p">(</span><span class="n">firePos</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========== HealthSystem.cs ==========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">int</span> <span class="n">damageValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnTankDamaged</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_health</span> <span class="p">-=</span> <span class="n">damageValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">_health</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_health</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currentTankEngine</span><span class="p">.</span><span class="n">StopEngine</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">progressBarValue</span> <span class="p">=</span> <span class="n">_health</span> <span class="p">/</span> <span class="m">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">healthProgressBar</span><span class="p">.</span><span class="n">fillAmount</span> <span class="p">=</span> <span class="n">progressBarValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========== DroneHealth.cs ===========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">int</span> <span class="n">damageValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnDroneDestroy</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">();</span>    <span class="c1">// 飞机被子弹击中才会播放声音</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========== 3. 统一在AudioManager中根据监听的结果做出反应 ==========</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//========== AudioMgr.cs =========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">AudioMgr</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">AudioClip</span> <span class="n">droneDestroyClip</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">AudioClip</span> <span class="n">tankFiredClip</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">AudioClip</span> <span class="n">tankDamagedClip</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">AudioSource</span> <span class="n">audiosource</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">PlayDroneDetroyAudio</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">audiosource</span><span class="p">.</span><span class="n">PlayOneShot</span><span class="p">(</span><span class="n">droneDestroyClip</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">PlayTankFiredAudio</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">audiosource</span><span class="p">.</span><span class="n">PlayOneShot</span><span class="p">(</span><span class="n">tankFiredClip</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">PlayTankDamagedAudio</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">audiosource</span><span class="p">.</span><span class="n">PlayOneShot</span><span class="p">(</span><span class="n">tankDamagedClip</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnEnable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SubscribeEvents</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnDisable</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UnSubscribeEvents</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">SubscribeEvents</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnDroneDestroy</span> <span class="p">+=</span> <span class="n">PlayDroneDetroyAudio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnTankFired</span> <span class="p">+=</span> <span class="n">PlayTankFiredAudio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnTankDamaged</span> <span class="p">+=</span> <span class="n">PlayTankDamagedAudio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">UnSubscribeEvents</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnDroneDestroy</span> <span class="p">-=</span> <span class="n">PlayDroneDetroyAudio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnTankFired</span> <span class="p">-=</span> <span class="n">PlayTankFiredAudio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnTankDamaged</span> <span class="p">-=</span> <span class="n">PlayTankDamagedAudio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="拓展">拓展
+</h4><p>将在本项目基础上增加以下部分：</p>
+<ul>
+<li>根据坦克类型给坦克增加不同的子弹：激光、导弹</li>
+<li>增加中型坦克</li>
+<li>增加不同飞机，它们的飞行速度不同</li>
+<li>改变飞机的生成规则，让游戏的难度随时间而增加</li>
+<li>不同坦克收到伤害程度不同，重型坦克最慢</li>
+</ul>
+<h3 id="关于solid原则的建议">关于SOLID原则的建议
+</h3><ul>
+<li>先想简单的解决方案</li>
+<li>永远不要强迫自己使用SOLID原则，只在需要的时候使用（这也是我的体会）</li>
+<li>不要过分设计，尤其是你的设计已经超过了项目本身的范围</li>
+<li>永远试着使用模块化方式，让每个独立的模块像乐高玩具一样可以被重复使用（这是我在其他课程中学到的最有用的方法之一，真的非常省时省力）</li>
+<li>最初在代码设计上使用SOLID原则肯定会多花时间，但是如果是长远的扩展性很多的项目，这些投入肯定是值得的</li>
+<li>应用 =&gt; 失败 =&gt; 学习 =&gt; 应用 =&gt; 你会得到惊喜！</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/game-dev/">Game Dev</a>
+        
+            <a href="/en/tags/unity/">Unity</a>
+        
+            <a href="/en/tags/solid/">SOLID</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-copyright">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Jan 21, 2026 20:37 &#43;0800
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_d394295e071989b1.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer"
+                        
+                        data-hash="md5-6W5JgXMmtEsLN/jKFJ3jVw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_e5d83f6feaae04dc.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design"
+                        
+                        data-hash="md5-tKyNI1R&#43;WLj&#43;pVsJSHaWZQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_6ae5d33c4eb615a7.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors"
+                        
+                        data-hash="md5-IHQiXxAaTJ0vQUMBCnb4sw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchfundamental/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_56e39fb92708d9cb.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Fundamental"
+                        
+                        data-hash="md5-yWQ7pEWNAN&#43;CcAbtHIGCqg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Fundamental</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/environment-setup-sdl2/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/environment-setup-sdl2/cover.469bf4d7f42db8fc9eda308d55ed74ec_hu_de758d9aaabe0f02.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【Environment Setup 】SDL2"
+                        
+                        data-hash="md5-Rpv01/QtuPye2jCNVe107A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Environment Setup 】SDL2</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+       
+    <section class="totalcount">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        发表了10篇文章 ·
+        总计3万7千字
+        <br>
+    </section>
+
+
+    
+    <section class="running-time">
+        本博客已运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+
+    <section class="copyright">
+        &copy;
+        
+        2025 -
+        
+        2026 Nullshow
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.711fbb0ee2e4cf3223d76423fbe2fc4e019ec898fb854a9d7bea4eb3169278df.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Mate';
+        src: url(https://nullshowjl.github.io/font/Mate.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'SourceCodePro';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Mate', 'WenKai', sans-serif;
+        --code-font-family: 'SourceCodePro';
+    }
+
+    body {
+        font-family: 'Mate', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+        
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Mate';
+        src: url(https://nullshowjl.github.io/font/Mate.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'SourceCodePro';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Mate', 'WenKai', sans-serif;
+        --code-font-family: 'SourceCodePro';
+    }
+
+    body {
+        font-family: 'Mate', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+    </body>
+</html>
+
+
