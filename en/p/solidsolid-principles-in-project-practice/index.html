@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
+<html lang="en" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏">
-<title>【学习日志】SOLID原则项目实践</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Building a small tank‑vs‑drone battle game in Unity while following the SOLID principles.">
+<title>【SOLID】SOLID Principles in Project Practice</title>
 
-<link rel='canonical' href='https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
+<link rel='canonical' href='https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/'>
 
-<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【学习日志】SOLID原则项目实践">
-<meta property='og:description' content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏">
-<meta property='og:url' content='https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
-<meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:tag' content='SOLID' /><meta property='article:published_time' content='2026-01-19T09:54:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T20:37:55&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
-<meta name="twitter:title" content="【学习日志】SOLID原则项目实践">
-<meta name="twitter:description" content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【SOLID】SOLID Principles in Project Practice">
+<meta property='og:description' content="Building a small tank‑vs‑drone battle game in Unity while following the SOLID principles.">
+<meta property='og:url' content='https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/'>
+<meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:tag' content='SOLID' /><meta property='article:published_time' content='2026-01-19T09:54:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T21:55:37&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/cover.webp' />
+<meta name="twitter:title" content="【SOLID】SOLID Principles in Project Practice">
+<meta name="twitter:description" content="Building a small tank‑vs‑drone battle game in Unity while following the SOLID principles."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/cover.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -43,7 +43,7 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
@@ -53,7 +53,7 @@
         
         
         <figure class="site-avatar">
-            <a href="/">
+            <a href="/en/">
                 
                 
 
@@ -72,8 +72,8 @@
         
 
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">Nullshow的技术博客</a></h1>
-            <h2 class="site-description">分享和记录我在开发和学习中的笔记、经验和感悟~</h2>
+            <h1 class="site-name"><a href="/en">Nullshow&#39;s Tech Blog</a></h1>
+            <h2 class="site-description">Sharing and documenting my notes, experiences, and reflections from development and learning~</h2>
         </div>
     </header><ol class="menu-social">
         
@@ -116,7 +116,7 @@
         
         
         <li>
-            <a href='/index.xml'
+            <a href='/en/index.xml'
                 target="_blank" 
                 title="RSS" 
                rel="me">
@@ -132,7 +132,7 @@
         
         
         <li >
-            <a href='/' >
+            <a href='/en/' >
                 
                 
                 
@@ -146,25 +146,13 @@
 
 
                 
-                <span>主页</span>
+                <span>Home</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/portfolio/' >
-                
-                
-                
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
-                
-                <span>作品集</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/about/' >
+            <a href='/en/about/' >
                 
                 
                 
@@ -177,25 +165,37 @@
 
 
                 
-                <span>关于</span>
+                <span>About</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/' >
+            <a href='/en/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>Portfolio</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/study-journey/' >
                 
                 
                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
                 
-                <span>学习历程</span>
+                <span>Study Journey</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/' >
+            <a href='/en/update-log/' >
                 
                 
                 
@@ -226,13 +226,13 @@ version: "3.1"
 </svg>
 
                 
-                <span>更新日志</span>
+                <span>Update Log</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/archives/' >
+            <a href='/en/archives/' >
                 
                 
                 
@@ -246,13 +246,13 @@ version: "3.1"
 
 
                 
-                <span>归档</span>
+                <span>Archives</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/search/' >
+            <a href='/en/search/' >
                 
                 
                 
@@ -265,13 +265,13 @@ version: "3.1"
 
 
                 
-                <span>搜索</span>
+                <span>Search</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/links/' >
+            <a href='/en/links/' >
                 
                 
                 
@@ -284,7 +284,7 @@ version: "3.1"
 
 
                 
-                <span>链接</span>
+                <span>Links</span>
             </a>
         </li>
         
@@ -305,9 +305,9 @@ version: "3.1"
 
                     <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                        <option value="https://nullshowjl.github.io/en/" >English</option>
+                        <option value="https://nullshowjl.github.io/en/"  selected>English</option>
                         
-                        <option value="https://nullshowjl.github.io/"  selected>中文</option>
+                        <option value="https://nullshowjl.github.io/" >中文</option>
                         
                     </select>
                 </li>
@@ -332,7 +332,7 @@ version: "3.1"
 
 
 
-                    <span>暗色模式</span>
+                    <span>Dark Mode</span>
                 </li>
                 
             </ol>
@@ -357,54 +357,54 @@ version: "3.1"
 
 
         </div>
-        <h2 class="widget-title section-title">目录</h2>
+        <h2 class="widget-title section-title">Table of contents</h2>
         
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#solid原则简介">SOLID原则简介</a>
+    <li><a href="#introduction-of-solid-principles">Introduction of SOLID Principles</a>
       <ol>
-        <li><a href="#意大利面条式代码">意大利面条式代码</a></li>
-        <li><a href="#solid原则是什么">SOLID原则是什么</a>
+        <li><a href="#spaghetti-code">Spaghetti Code</a></li>
+        <li><a href="#what-are-the-solid-principles">What Are the SOLID Principles?</a>
           <ol>
-            <li><a href="#单一职责原则">单一职责原则</a></li>
-            <li><a href="#开闭原则">开闭原则</a></li>
-            <li><a href="#里氏替换原则">里氏替换原则</a></li>
-            <li><a href="#接口隔离原则">接口隔离原则</a></li>
-            <li><a href="#依赖倒置原则">依赖倒置原则</a></li>
+            <li><a href="#single-responsibility-principle-srp">Single Responsibility Principle (SRP)</a></li>
+            <li><a href="#openclosed-principle-ocp">Open/Closed Principle (OCP)</a></li>
+            <li><a href="#liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)</a></li>
+            <li><a href="#interface-segregation-principle-isp">Interface Segregation Principle (ISP)</a></li>
+            <li><a href="#dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)</a></li>
           </ol>
         </li>
       </ol>
     </li>
-    <li><a href="#实践项目">实践项目</a>
+    <li><a href="#practice-project">Practice Project</a>
       <ol>
-        <li><a href="#游戏功能拆解">游戏/功能拆解</a>
+        <li><a href="#game--feature-breakdown">Game / Feature Breakdown</a>
           <ol>
-            <li><a href="#内容">内容</a></li>
-            <li><a href="#逻辑">逻辑</a></li>
-            <li><a href="#模块整理">模块整理</a></li>
-            <li><a href="#开发步骤">开发步骤</a></li>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#logic">Logic</a></li>
+            <li><a href="#module-organization">Module Organization</a></li>
+            <li><a href="#development-steps">Development Steps</a></li>
           </ol>
         </li>
-        <li><a href="#功能实现及遵循的原则">功能实现及遵循的原则</a>
+        <li><a href="#feature-implementation-and-principles-followed">Feature Implementation and Principles Followed</a>
           <ol>
-            <li><a href="#1-坦克的移动">1. 坦克的移动</a></li>
-            <li><a href="#2-坦克的开火">2. 坦克的开火</a></li>
-            <li><a href="#3-坦克选择器的实现">3. 坦克选择器的实现</a></li>
-            <li><a href="#4-坦克生命值的实现">4. 坦克生命值的实现</a></li>
-            <li><a href="#5-飞机的移动">5. 飞机的移动</a></li>
-            <li><a href="#6-飞机和子弹的自动销毁">6. 飞机和子弹的自动销毁</a></li>
-            <li><a href="#7-坦克子弹飞机的碰撞检测和生命值联动">7. 坦克、子弹、飞机的碰撞检测和生命值联动</a></li>
-            <li><a href="#8-用观察者模式对ui音效游戏状态进行管理">8. 用观察者模式对UI、音效、游戏状态进行管理</a></li>
+            <li><a href="#1-tank-movement">1. Tank Movement</a></li>
+            <li><a href="#2-tank-firing">2. Tank Firing</a></li>
+            <li><a href="#3-tank-selector-implementation">3. Tank Selector Implementation</a></li>
+            <li><a href="#4-tank-health-implementation">4. Tank Health Implementation</a></li>
+            <li><a href="#5-airplane-movement">5. Airplane Movement</a></li>
+            <li><a href="#6-automatic-destroy-of-drones-and-projectiles">6. Automatic Destroy of Drones and Projectiles</a></li>
+            <li><a href="#7-collision-detection-and-health-system-integration-tanks-projectiles-drones">7. Collision Detection and Health System Integration (Tanks, Projectiles, Drones)</a></li>
+            <li><a href="#8-managing-ui-audio-and-game-state-with-the-observer-pattern">8. Managing UI, Audio, and Game State with the Observer Pattern</a></li>
           </ol>
         </li>
-        <li><a href="#复盘">复盘</a>
+        <li><a href="#reflection">Reflection</a>
           <ol>
-            <li><a href="#代码复用">代码复用</a></li>
-            <li><a href="#拓展">拓展</a></li>
+            <li><a href="#code-reuse">Code Reuse</a></li>
+            <li><a href="#extensions">Extensions</a></li>
           </ol>
         </li>
-        <li><a href="#关于solid原则的建议">关于SOLID原则的建议</a></li>
+        <li><a href="#suggestions-on-applying-solid-principles">Suggestions on Applying SOLID Principles</a></li>
       </ol>
     </li>
   </ol>
@@ -421,13 +421,13 @@ version: "3.1"
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
-                <img src="/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_aa44ab51ebe1de30.webp"
-                        srcset="/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_aa44ab51ebe1de30.webp 800w, /p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_70793cc278c5944.webp 1600w"
+            <a href="/en/p/solidsolid-principles-in-project-practice/">
+                <img src="/en/p/solidsolid-principles-in-project-practice/cover_hu_6ad396e8902704a5.webp"
+                        srcset="/en/p/solidsolid-principles-in-project-practice/cover_hu_6ad396e8902704a5.webp 800w, /en/p/solidsolid-principles-in-project-practice/cover_hu_3b9ecb93b0cd2507.webp 1600w"
                         width="800" 
                         height="241" 
                         loading="lazy"
-                        alt="Featured image of post 【学习日志】SOLID原则项目实践" />
+                        alt="Featured image of post 【SOLID】SOLID Principles in Project Practice" />
                 
             </a>
         </div>
@@ -437,7 +437,7 @@ version: "3.1"
     
     <header class="article-category">
         
-            <a href="/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
+            <a href="/en/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
                 Study Notes
             </a>
         
@@ -446,12 +446,12 @@ version: "3.1"
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">【学习日志】SOLID原则项目实践</a>
+            <a href="/en/p/solidsolid-principles-in-project-practice/">【SOLID】SOLID Principles in Project Practice</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏
+            Building a small tank‑vs‑drone battle game in Unity while following the SOLID principles.
         </h3>
         
     </div>
@@ -487,7 +487,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            阅读时长: 7 分钟
+            10 minute read
         </time>
     </div>
     
@@ -505,25 +505,6 @@ version: "3.1"
     
 
     
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-            <div>
-                
-                    <a href="https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/" class="link">English</a>
-                
-            </div>
-        </footer>
-    
 </div>
 
 </header>
@@ -531,149 +512,177 @@ version: "3.1"
     <section class="article-content">
     
     
-    <p><strong>教程参考</strong>：<a class="link" href="https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/"  target="_blank" rel="noopener"
+    <p><strong>Course Reference</strong>：<a class="link" href="https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/"  target="_blank" rel="noopener"
     >Udemy-Niraj Vishwakarma</a></p>
-<p><strong>素材来源</strong>：</p>
+<p><strong>Asset Sources</strong>：</p>
 <ul>
 <li>
 <p><a class="link" href="https://assetstore.unity.com/packages/2d/environments/2d-topdown-grassland-the-jungle-285671"  target="_blank" rel="noopener"
-    >Unity Asset Store-HobiSoLoved</a>（场景）</p>
+    >Unity Asset Store-HobiSoLoved</a>（Background）</p>
 </li>
 <li>
 <p><a class="link" href="https://assetstore.unity.com/packages/2d/textures-materials/tank-constructor-131316"  target="_blank" rel="noopener"
-    >Unity Asset Store-Hippo</a> （坦克）</p>
+    >Unity Asset Store-Hippo</a> （Tanks）</p>
 </li>
 <li>
 <p><a class="link" href="https://assetstore.unity.com/packages/2d/characters/pixel-art-space-ship-part-1-228832"  target="_blank" rel="noopener"
-    >Unity Asset Store-Crehera</a>（飞机）</p>
+    >Unity Asset Store-Crehera</a>（Drones）</p>
 </li>
 <li>
 <p><a class="link" href="https://assetstore.unity.com/packages/2d/gui/dark-ui-kit-330700"  target="_blank" rel="noopener"
     >Unity Asset Store-kΩsmaragd</a>（UI）</p>
 </li>
 </ul>
-<p><strong>完整源码</strong>： 请见本网站“作品集”部分</p>
-<h2 id="solid原则简介">SOLID原则简介
-</h2><h3 id="意大利面条式代码">意大利面条式代码
-</h3><p>这种代码指的是一团乱麻，所有行为都高度耦合的代码。比如，在 <code>PlayerController.cs</code> 这个脚本中，玩家的 <code>Move()</code>, <code>Attack()</code>,<code> Jump()</code>&hellip;等等行为都写到了一起，此外，还有 <code>PlayAudio</code> 等其他功能。</p>
-<p>这样的代码极其脆弱且难以扩展，它就像意大利面一样，由于各个部分都缠绕在一起，你抽取了其中的一根，可能导致多个bug的出现。</p>
-<p><strong>解决方案</strong>：</p>
-<p>抛弃意大利面条式的代码结构，改为模块化结构。</p>
+<p><strong>Source Code</strong>： Please refer to <em>Portfolio</em> section on this website</p>
+<h2 id="introduction-of-solid-principles">Introduction of SOLID Principles
+</h2><h3 id="spaghetti-code">Spaghetti Code
+</h3><p>This kind of code is basically a tangled mess where everything is tightly coupled. For example, in a script like <code>PlayerController.cs</code>, you might see the player’s <code>Move()</code>, <code>Attack()</code>, <code>Jump()</code>… all crammed together, along with extra functions like <code>PlayAudio</code>.</p>
+<p>Code written this way is fragile and hard to extend. It’s like spaghetti — once everything is tangled up, pulling on one strand can easily cause multiple bugs to appear.</p>
+<p><strong>Solution</strong>:</p>
+<p>Ditch the spaghetti‑style structure and switch to a modular design.</p>
 <blockquote class="alert alert-note">
-    <p>在快速制作demo或者小型游戏时可以使用意大利面条式代码以快速验证效果。</p>
-<p>但是如果预计将来项目会越来越大，新引入的游戏物体和功能会越来越多，那么事先建构良好的架构和模块化将是非常重要的。</p></blockquote>
-<h3 id="solid原则是什么">SOLID原则是什么
-</h3><p>总的来说它共有五大原则：</p>
+    <p>Spaghetti code can be fine when you’re quickly prototyping a demo or building a small game to test ideas. But if you expect the project to grow, with more game objects and features being added, setting up a solid architecture and modular design early on becomes crucial.</p></blockquote>
+<h3 id="what-are-the-solid-principles">What Are the SOLID Principles?
+</h3><p>In short, there are five main principles:</p>
 <ul>
-<li>单一职责原则 <strong>S</strong>ingle Responsibility Principle (SRP)</li>
-<li>开闭原则 <strong>O</strong>pen-Closed Principle (OCP)</li>
-<li>里氏替换原则 <strong>L</strong>iskov Substitution Principle (LSP)</li>
-<li>接口隔离原则 <strong>I</strong>nterface Segregation Principle (ISP)</li>
-<li>依赖倒置原则 <strong>D</strong>ependency Inversion Principle (DIP)</li>
+<li><strong>S</strong>ingle Responsibility Principle (SRP)</li>
+<li><strong>O</strong>pen-Closed Principle (OCP)</li>
+<li><strong>L</strong>iskov Substitution Principle (LSP)</li>
+<li><strong>I</strong>nterface Segregation Principle (ISP)</li>
+<li><strong>D</strong>ependency Inversion Principle (DIP)</li>
 </ul>
-<h4 id="单一职责原则">单一职责原则
-</h4><h5 id="基本原则">基本原则
-</h5><p>一个脚本，一个功能。SRP将大类的功能拆分成一个个小类，这些小类拥有独立的功能，可以复用且相互之间没有影响。就像乐高的小块积木一样，你可以用它来搭建各种风格各异的大模型。</p>
-<h5 id="好处">好处
-</h5><p>当每个脚本都有清晰的职责时，你就能随意替换它而不害怕破坏游戏的其他部分。</p>
-<h4 id="开闭原则">开闭原则
-</h4><h5 id="基本原则-1">基本原则
-</h5><p>类/模块/函数，对扩展开放、对修改关闭。</p>
-<h5 id="好处-1">好处
-</h5><p>通过创建新的类来添加新功能，从来避免破坏原来类的独立性，以此提升代码的模块化。</p>
-<h5 id="如何执行">如何执行
+<h4 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)
+</h4><h5 id="core-idea">Core Idea
+</h5><p>One script, one function. SRP breaks down big classes into smaller ones, each with its own independent responsibility. These small classes can be reused and don’t interfere with each other. Think of them like Lego bricks — you can combine them to build all kinds of larger models.</p>
+<h5 id="benefits">Benefits
+</h5><p>When every script has a clear responsibility, you can swap things out freely without worrying about breaking other parts of the game.</p>
+<h4 id="openclosed-principle-ocp">Open/Closed Principle (OCP)
+</h4><h5 id="core-idea-1">Core Idea
+</h5><p>Classes, modules, and functions should be <strong>open for extension but closed for modification</strong>.</p>
+<h5 id="benefits-1">Benefits
+</h5><p>You can add new features by creating new classes, without messing with the independence of existing ones. This makes your code more modular and easier to maintain.</p>
+<h5 id="how-to-apply">How to Apply
 </h5><ol>
-<li>为新的功能创建新的类</li>
-<li>创建接口/抽象类，在具体的功能类中去实现接口/抽象类中的方法</li>
-<li>用抽象方法去与不同的功能交互，而不是直接调用它们</li>
-<li>提升多态的应用</li>
+<li>Create new classes for new features.</li>
+<li>Define interfaces or abstract classes, then implement them in your feature classes.</li>
+<li>Interact with features through abstract methods instead of calling them directly.</li>
+<li>Make good use of polymorphism.</li>
 </ol>
-<h4 id="里氏替换原则">里氏替换原则
-</h4><h5 id="基本原则-2">基本原则
-</h5><p>超类/父类物体应该可以被其子类替代而不影响其功能。</p>
-<h5 id="好处-2">好处
-</h5><p>允许超类/父类物体可以被其子类替代，而不用直接引用每个子类，这样可以确保系统在引入新的变量时的灵活性和可扩展性。</p>
-<h5 id="如何执行-1">如何执行
+<h4 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)
+</h4><h5 id="core-idea-2">Core Idea
+</h5><p>A superclass (or parent class) should be replaceable by its subclasses without breaking functionality.</p>
+<h5 id="benefits-2">Benefits
+</h5><p>This allows you to use subclasses in place of the parent class without directly referencing each one. It ensures flexibility and scalability when new variables or behaviors are introduced.</p>
+<h5 id="how-to-apply-1">How to Apply
 </h5><ol>
-<li>创建基类并声明所有的方法</li>
-<li>给具有相似行为的物体创建为子类</li>
-<li>在其他需要交互的脚本中，直接引用父类而非子类</li>
+<li>Create a base class and declare all the methods.</li>
+<li>Build subclasses for objects with similar behaviors.</li>
+<li>In other scripts, reference the parent class instead of the subclasses directly.</li>
 </ol>
-<h4 id="接口隔离原则">接口隔离原则
-</h4><h5 id="基本原则-3">基本原则
-</h5><p>一个类不应该去依赖一个它不会使用的方法。</p>
-<h5 id="总结">总结
-</h5><p>只写需要的、只执行相关的。</p>
-<h4 id="依赖倒置原则">依赖倒置原则
-</h4><h5 id="基本原则-4">基本原则
-</h5><p>高级模块不应该与低级模块耦合，两者都应该依赖于抽象函数。</p>
-<h5 id="总结-1">总结
-</h5><p>依赖于抽象函数，而不是具体的实现。</p>
-<h5 id="如何执行-2">如何执行
+<h4 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)
+</h4><h5 id="core-idea-3">Core Idea
+</h5><p>A class shouldn’t depend on methods it doesn’t use.</p>
+<h5 id="summary">Summary
+</h5><p>Write only what’s needed, and keep it relevant.</p>
+<h4 id="dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)
+</h4><h5 id="core-idea-4">Core Idea
+</h5><p>High‑level modules shouldn’t be coupled to low‑level modules. Both should depend on abstractions.</p>
+<h5 id="summary-1">Summary
+</h5><p>Depend on abstract functions, not concrete implementations.</p>
+<h5 id="how-to-apply-2">How to Apply
 </h5><ol>
-<li>用接口创建抽象函数</li>
-<li>通过具体的类来实现接口</li>
-<li>用接口与具体的类交互</li>
+<li>Use interfaces to define abstract functions.</li>
+<li>Implement those interfaces in concrete classes.</li>
+<li>Interact with concrete classes through the interfaces.</li>
 </ol>
-<h2 id="实践项目">实践项目
-</h2><p>我们通过一个2D的坦克飞机大战小游戏来展示在Unity游戏开发中如何实践SOLID原则。</p>
-<p><strong>核心玩法</strong>：</p>
+<h2 id="practice-project">Practice Project
+</h2><p>We’ll use a 2D <strong>Tank vs. Drone War game</strong> to show how the SOLID principles can be applied in Unity game development.</p>
+<p><strong>Core Gameplay</strong>:：</p>
 <ul>
-<li>屏幕左侧有两种坦克，一种轻型坦克，玩家可以通过按下“L”来操作它；另一种是重型坦克，通过“H”键来操作</li>
-<li>轻型坦克可以左右移动、旋转炮管、发射轻型炮弹</li>
-<li>重型坦克不能移动，但是可以旋转炮管、发射重型炮弹</li>
-<li>屏幕右侧有可以向左移动的飞机，玩家通过击中它们来增加屏幕上的分数</li>
-<li>失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）</li>
+<li>On the left side of the screen, there are two tanks:
+<ul>
+<li>A <strong>light tank</strong>, controlled by pressing <strong>L</strong></li>
+<li>A <strong>heavy tank</strong>, controlled by pressing <strong>H</strong></li>
+</ul>
+</li>
+<li>The light tank can move left and right, rotate its cannon, and fire light shells.</li>
+<li>The heavy tank cannot move, but it can rotate its cannon and fire heavy shells.</li>
+<li>On the right side of the screen, drones move leftward. Hitting them increases the score.</li>
+<li><strong>Lose condition</strong>: If a drone collides with a tank, that tank is destroyed and becomes unresponsive to player input. When both of the tanks are unresponsive, the player loses.</li>
 </ul>
 <img src="1-tank-drone.gif" alt="" style="zoom:100%;"/>
-<h3 id="游戏功能拆解">游戏/功能拆解
-</h3><h4 id="内容">内容
-</h4><p>背景图片、坦克（轻型和重型）、子弹（轻型和重型）、飞机、UI（分数、开始界面、游戏界面、结束界面）、音效（开火、飞机被击中、坦克被击中）</p>
-<h4 id="逻辑">逻辑
+<h3 id="game--feature-breakdown">Game / Feature Breakdown
+</h3><h4 id="content">Content
+</h4><ul>
+<li>
+<p>Background image</p>
+</li>
+<li>
+<p>Tanks (light and heavy)</p>
+</li>
+<li>
+<p>Bullets (light and heavy)</p>
+</li>
+<li>
+<p>Drones</p>
+</li>
+<li>
+<p>UI (score, start screen, gameplay screen, end screen)</p>
+</li>
+<li>
+<p>Sound effects (firing, drone hit, tank hit)</p>
+</li>
+</ul>
+<h4 id="logic">Logic
 </h4><ol>
-<li>游戏开始，按下L键可以激活轻型坦克（移动、旋转、发射炮弹）</li>
-<li>按下H键可以激活重型坦克（旋转、发射炮弹）</li>
-<li>飞机从右往左飞，右侧屏幕飞入、左侧屏幕飞出</li>
-<li>坦克被飞机撞到即失活</li>
-<li>两家坦克都失活，游戏结束</li>
+<li>When the game starts, pressing <strong>L</strong> activates the light tank (move, rotate, fire shells).</li>
+<li>Pressing <strong>H</strong> activates the heavy tank (rotate, fire shells).</li>
+<li>Drones fly from right to left — entering from the right side of the screen and exiting on the left.</li>
+<li>If a tank is hit by a drone, it becomes inactive.</li>
+<li>If both tanks are inactive, the game ends.</li>
 </ol>
-<h4 id="模块整理">模块整理
+<h4 id="module-organization">Module Organization
 </h4><img src="2-module.webp" alt="" style="zoom:100%;"/>
-<h4 id="开发步骤">开发步骤
+<h4 id="development-steps">Development Steps
 </h4><ol>
-<li>场景摆放</li>
-<li>坦克部分的开发
+<li>
+<p><strong>Scene Setup</strong></p>
+</li>
+<li>
+<p><strong>Tank Development</strong></p>
 <ul>
-<li>移动和旋转</li>
-<li>开火</li>
-<li>实现两种坦克的选择</li>
-<li>生命值</li>
+<li>Movement and rotation</li>
+<li>Firing</li>
+<li>Switching between light and heavy tanks</li>
+<li>Health system</li>
 </ul>
 </li>
-<li>飞机部分的开发
+<li>
+<p><strong>Drone Development</strong></p>
 <ul>
-<li>飞机预制体</li>
-<li>飞机的生成</li>
-<li>生命值</li>
+<li>Drone prefab</li>
+<li>Drone spawning</li>
+<li>Health system</li>
 </ul>
 </li>
-<li>游戏管理部分开发
+<li>
+<p><strong>Game Management</strong></p>
 <ul>
-<li>配置Game Events</li>
+<li>Configure game events</li>
 <li>AudioManager</li>
 <li>UIManager</li>
 <li>GameManager</li>
 </ul>
 </li>
 </ol>
-<h3 id="功能实现及遵循的原则">功能实现及遵循的原则
-</h3><h4 id="1-坦克的移动">1. 坦克的移动
-</h4><p>在坦克的设计上遵循ISP（接口隔离）和DSP（依赖倒置）。</p>
+<h3 id="feature-implementation-and-principles-followed">Feature Implementation and Principles Followed
+</h3><h4 id="1-tank-movement">1. Tank Movement
+</h4><p>In the tank design, we follow <strong>ISP (Interface Segregation Principle)</strong> and <strong>DIP (Dependency Inversion Principle)</strong>.</p>
 <img src="3-tank.webp" alt="" style="zoom:100%;"/>
-<h4 id="2-坦克的开火">2. 坦克的开火
-</h4><p>在开火时两种弹药的设计上遵循开闭原则（OCP）。我们在每次增加新的种类弹药时应该只做扩展，而不应该对 <code>TankFire.cs</code> 进行修改。在 TankFire.cs 中，应该通过接口而非直接调用相应炮弹的预制体。</p>
+<h4 id="2-tank-firing">2. Tank Firing
+</h4><p>When designing the firing system, the two types of projectile follow the <strong>Open/Closed Principle (OCP)</strong>. Each time we add a new type of projectile, we should extend the system rather than modify <code>TankFire.cs</code>. Inside <code>TankFire.cs</code>, the firing logic should interact through an interface instead of directly calling the specific shell prefab.</p>
 <img src="4-fire.webp" alt="" style="zoom:100%;"/>
-<p>此处需要注意的是，由于两种子弹都是经过接口与 <code>TankFire.cs</code> 交互的，但是接口不继承自 <code>MonoBehaviour</code>，无法实例化，所以需要将其隐式转换为 <code>Component</code> 来解决。</p>
+<p>It’s important to note that both types of projectiles interact with <code>TankFire.cs</code> through an interface. However, since the interface does not inherit from <code>MonoBehaviour</code>, it cannot be instantiated directly. To solve this, you need to implicitly cast it to a <code>Component</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -718,20 +727,20 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="3-坦克选择器的实现">3. 坦克选择器的实现
-</h4><p>在这一部分遵循里氏替换（LSP）的原则进行设计。</p>
+</div><h4 id="3-tank-selector-implementation">3. Tank Selector Implementation
+</h4><p>This part is designed following the <strong>Liskov Substitution Principle (LSP)</strong>.</p>
 <blockquote class="alert alert-tip">
-    <p>如果项目比较小的话不用创建单独的 <code>LightEngine.cs</code> 和 <code>HeavyEngine.cs</code> ，全部写在 TankEngine 这个类中也可以。</p></blockquote>
+    <p>For smaller projects, you don’t necessarily need separate <code>LightEngine.cs</code> and <code>HeavyEngine.cs</code> files — you can simply put everything inside the <code>TankEngine</code> class.</p></blockquote>
 <img src="5-selector.webp" alt="" style="zoom:100%;"/>
-<h4 id="4-坦克生命值的实现">4. 坦克生命值的实现
-</h4><p>遵循依赖倒置原则（DIP），使用一个 IDamageable 的接口来和具体的类交互。这个具体的类可以是飞机、也可以是其他的碰撞物，如子弹、导弹等。</p>
+<h4 id="4-tank-health-implementation">4. Tank Health Implementation
+</h4><p>Following the <strong>Dependency Inversion Principle (DIP)</strong>, we use an <code>IDamageable</code> interface to interact with concrete classes. These concrete classes could be drones or other colliding objects such as bullets, missiles, and so on.</p>
 <img src="6-tank-health.webp" alt="" style="zoom:100%;"/>
-<h4 id="5-飞机的移动">5. 飞机的移动
-</h4><p>这部分仿照坦克移动的方式，复用 ImoveUp.cs 的代码，同样采用接口的方式实现，为将来新种类飞机的加入留下空间。</p>
-<h4 id="6-飞机和子弹的自动销毁">6. 飞机和子弹的自动销毁
-</h4><p>我在此处采用统一的脚本 <code>DestroyByTime.cs</code> ，遵循单一职责原则，并未按照课程的方式分别处理。</p>
-<h4 id="7-坦克子弹飞机的碰撞检测和生命值联动">7. 坦克、子弹、飞机的碰撞检测和生命值联动
-</h4><p>这是对第四点的依赖倒置原则的最终实现。由于子弹和飞机都是碰撞后即销毁的情况，所以并没有直接实现 IDamageable接口，在坦克的生命值系统中实现了接口，这样以后即使新增了不同的子弹，对坦克造成不同的伤害，都能轻松实现。在对飞机或者其他类型的敌人中，如果需要设计不同类型的伤害，也可以设计为继承接口的方式灵活实现。</p>
+<h4 id="5-airplane-movement">5. Airplane Movement
+</h4><p>This part reuses the <code>ImoveUp.cs</code> code in the same way as tank movement. It’s also implemented through an interface, leaving room for adding new types of drones in the future.</p>
+<h4 id="6-automatic-destroy-of-drones-and-projectiles">6. Automatic Destroy of Drones and Projectiles
+</h4><p>Here I use a single script, <code>DestroyByTime.cs</code>, following the <strong>Single Responsibility Principle (SRP)</strong>. Unlike the course approach of handling each case separately, this unified script keeps the design simpler and cleaner.</p>
+<h4 id="7-collision-detection-and-health-system-integration-tanks-projectiles-drones">7. Collision Detection and Health System Integration (Tanks, Projectiles, Drones)
+</h4><p>This is the final application of the <strong>Dependency Inversion Principle (DIP)</strong> mentioned earlier. Since both projectiles and drones are destroyed upon collision, they don’t directly implement the <code>IDamageable</code> interface. Instead, the tank’s health system implements the interface. This way, even if new projectile types are added in the future with different damage values, they can be easily integrated. For drones or other enemy types, if different damage behaviors are needed, they can also be flexibly designed by inheriting from the interface.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -794,13 +803,13 @@ version: "3.1"
 </span><span class="lnt">58
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//========== IDamageable接口 ==========</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//========== IDamageable Interface ==========</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IDamageable</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">float</span> <span class="n">damageValue</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//================ 坦克的生命值系统 ===============</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//================ Health System of Tank ===============</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">HealthSystem</span> <span class="p">:</span> <span class="n">MonoBehaviour</span><span class="p">,</span> <span class="n">IDamageable</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">float</span> <span class="n">_health</span> <span class="p">=</span> <span class="m">100f</span><span class="p">;</span>
@@ -821,7 +830,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//================ 坦克子弹 =================</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//================ Projectile Health =================</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ShellHealth</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">damage</span> <span class="p">=</span> <span class="m">100f</span><span class="p">;</span>
@@ -837,13 +846,13 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//============= 飞机的生命值 ==============</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//============= Drone Health ==============</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DroneHealth</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">damage</span> <span class="p">=</span> <span class="m">20f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 通过接口调用TakeDamage</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Call TakeDamage by Interface</span>
 </span></span><span class="line"><span class="cl">        <span class="n">IDamageable</span> <span class="n">damageable</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">IDamageable</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">damageable</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
@@ -854,13 +863,14 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="8-用观察者模式对ui音效游戏状态进行管理">8. 用观察者模式对UI、音效、游戏状态进行管理
-</h4><p>把下面的事件进行注册，这样通过统一的更新接口，观察者们在事件发生变化的时候可以相应被调用。本质是一个监听和响应系统。同时，这样遵循了单一职责原则，在 <code>AudioManager.cs</code> 和 <code>UIManager.cs</code> 等脚本中，只负责播放音效或管理UI的作用。</p>
+</div><h4 id="8-managing-ui-audio-and-game-state-with-the-observer-pattern">8. Managing UI, Audio, and Game State with the Observer Pattern
+</h4><p>Register the following events so that, through a unified update interface, observers can be notified and respond whenever changes occur. At its core, this is a <strong>listen‑and‑respond system</strong>.</p>
+<p>By following the <strong>Single Responsibility Principle (SRP)</strong>, scripts like <code>AudioManager.cs</code> and <code>UIManager.cs</code> only handle their specific tasks — playing sounds or managing the UI — without mixing in unrelated logic.</p>
 <img src="7-observer.webp" alt="" style="zoom:100%;"/>
-<h3 id="复盘">复盘
-</h3><p>SOLID原则扩展性强，但是脚本量也是成倍增加。在最后用观察者模式写UI的时候几乎花了一整天，调试一个bug花了一个下午。对于初学者而言，在使用观察者模式的时候，监听代码放置的位置和其他代码的顺序也很重要，是很容易踩的坑。</p>
-<h4 id="代码复用">代码复用
-</h4><p>观察者模式的写法，套路都是一样的，以 <code>AudioManager</code> 为例:</p>
+<h3 id="reflection">Reflection
+</h3><p>The SOLID principles are powerful for scalability, but they also multiply the number of scripts. For example, when I implemented the UI with the Observer pattern, it took almost an entire day, and debugging a single bug cost me an entire afternoon. For beginners, one common pitfall when using the Observer pattern is the placement of listener code and the order of other logic — both are critical and easy to get wrong.</p>
+<h4 id="code-reuse">Code Reuse
+</h4><p>The Observer pattern usually follows the same routine. Take <code>AudioManager</code> as an example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -958,10 +968,9 @@ version: "3.1"
 </span><span class="lnt">93
 </span><span class="lnt">94
 </span><span class="lnt">95
-</span><span class="lnt">96
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======== 1. 注册事件 =========</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======== 1. Register events =========</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//========= GameEvents.cs =========</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">GameEvents</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -972,7 +981,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Action</span> <span class="n">OnDroneDestroy</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//========= 2. 在各个所需的地方监听事件 =========</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//========= 2. Listen to events wherever they are needed =========</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//========= TankFire.cs =========</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -983,7 +992,6 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">projectile</span><span class="p">.</span><span class="n">Fire</span><span class="p">(</span><span class="n">firePos</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -1005,11 +1013,11 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="c1">//========== DroneHealth.cs ===========</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">TakeDamage</span><span class="p">(</span><span class="kt">int</span> <span class="n">damageValue</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnDroneDestroy</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">();</span>    <span class="c1">// 飞机被子弹击中才会播放声音</span>
+</span></span><span class="line"><span class="cl">    <span class="n">GameEvents</span><span class="p">.</span><span class="n">OnDroneDestroy</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">();</span>    <span class="c1">// The sound effect only plays when a drone is hit by a projectile</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//========== 3. 统一在AudioManager中根据监听的结果做出反应 ==========</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//========== 3. Centralize responses in AudioManager based on the events being listened to ==========</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//========== AudioMgr.cs =========</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">AudioMgr</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -1059,23 +1067,23 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="拓展">拓展
-</h4><p>将在本项目基础上增加以下部分：</p>
+</div><h4 id="extensions">Extensions
+</h4><p>Building on this project, I plan to add:</p>
 <ul>
-<li>根据坦克类型给坦克增加不同的子弹：激光、导弹</li>
-<li>增加中型坦克</li>
-<li>增加不同飞机，它们的飞行速度不同</li>
-<li>改变飞机的生成规则，让游戏的难度随时间而增加</li>
-<li>不同坦克收到伤害程度不同，重型坦克最慢</li>
+<li>Different projectile types depending on the tank: lasers, missiles</li>
+<li>A medium tank</li>
+<li>Different drones with varying flight speeds</li>
+<li>Adjusted drone spawning rules so that game difficulty increases over time</li>
+<li>Different damage levels for tanks, with the heavy tank being the slowest to take damage</li>
 </ul>
-<h3 id="关于solid原则的建议">关于SOLID原则的建议
+<h3 id="suggestions-on-applying-solid-principles">Suggestions on Applying SOLID Principles
 </h3><ul>
-<li>先想简单的解决方案</li>
-<li>永远不要强迫自己使用SOLID原则，只在需要的时候使用（这也是我的体会）</li>
-<li>不要过分设计，尤其是你的设计已经超过了项目本身的范围</li>
-<li>永远试着使用模块化方式，让每个独立的模块像乐高玩具一样可以被重复使用（这是我在其他课程中学到的最有用的方法之一，真的非常省时省力）</li>
-<li>最初在代码设计上使用SOLID原则肯定会多花时间，但是如果是长远的扩展性很多的项目，这些投入肯定是值得的</li>
-<li>应用 =&gt; 失败 =&gt; 学习 =&gt; 应用 =&gt; 你会得到惊喜！</li>
+<li>Start with the easier solution</li>
+<li>Never force yourself to use SOLID principles — apply them only when needed (this is my takeaway)</li>
+<li>Avoid over‑designing, especially when your design goes beyond the scope of the project itself</li>
+<li>Always try to use a modular approach, so each independent module can be reused like LEGO blocks (this is one of the most useful methods I’ve learned from other courses — it really saves time and effort)</li>
+<li>At first, applying SOLID principles in code design will definitely take more time, but for projects with long‑term scalability, the investment is absolutely worth it</li>
+<li>Apply → Fail → Learn → Apply → and you’ll be surprised by the results!</li>
 </ul>
 
 </section>
@@ -1085,11 +1093,11 @@ version: "3.1"
     
     <section class="article-tags">
         
-            <a href="/tags/game-dev/">Game Dev</a>
+            <a href="/en/tags/game-dev/">Game Dev</a>
         
-            <a href="/tags/unity/">Unity</a>
+            <a href="/en/tags/unity/">Unity</a>
         
-            <a href="/tags/solid/">SOLID</a>
+            <a href="/en/tags/solid/">SOLID</a>
         
     </section>
 
@@ -1116,7 +1124,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Jan 21, 2026 20:37 &#43;0800
+            Last updated on Jan 21, 2026 21:55 &#43;0800
         </span>
     </section></footer>
 
@@ -1129,29 +1137,29 @@ version: "3.1"
     
 
 <aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
+    <h2 class="section-title">Related content</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
             
                 
 <article class="has-image">
-    <a href="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
         
         
             <div class="article-image">
-                <img src="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.d5dbc02814bce8e0638eacc5fc66ce99_hu_32f4ec35952ac793.webp" 
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_d394295e071989b1.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【练手日志】Unity小游戏集锦 1"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer"
                         
-                        data-hash="md5-1dvAKBS86OBjjqzF/GbOmQ==">
+                        data-hash="md5-6W5JgXMmtEsLN/jKFJ3jVw==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【练手日志】Unity小游戏集锦 1</h2>
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</h2>
         </div>
     </a>
 </article>
@@ -1159,23 +1167,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/">
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.1b012a76c5604bf796bf2aca3a991558_hu_ff7b20efb25024f9.webp" 
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_e5d83f6feaae04dc.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design"
                         
-                        data-hash="md5-GwEqdsVgS/eWvyrKOpkVWA==">
+                        data-hash="md5-tKyNI1R&#43;WLj&#43;pVsJSHaWZQ==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</h2>
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design</h2>
         </div>
     </a>
 </article>
@@ -1183,23 +1191,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
+    <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/cover.ec0863682fef9b7bb25dd0aa71367140_hu_5306f28b8aa9e474.webp" 
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_6ae5d33c4eb615a7.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors"
                         
-                        data-hash="md5-7AhjaC/vm3uyXdCqcTZxQA==">
+                        data-hash="md5-IHQiXxAaTJ0vQUMBCnb4sw==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计</h2>
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors</h2>
         </div>
     </a>
 </article>
@@ -1207,23 +1215,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/">
+    <a href="/en/p/c-game-dev-from-scratchfundamental/">
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/cover.320e6c19460333b34d72f9882077e6e3_hu_8388bbd5ce560c6b.webp" 
+                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_56e39fb92708d9cb.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Fundamental"
                         
-                        data-hash="md5-Mg5sGUYDM7NNcvmIIHfm4w==">
+                        data-hash="md5-yWQ7pEWNAN&#43;CcAbtHIGCqg==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者</h2>
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Fundamental</h2>
         </div>
     </a>
 </article>
@@ -1231,23 +1239,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">
+    <a href="/en/p/environment-setup-sdl2/">
         
         
             <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/cover.a2ea06cd2ac9a81a050fadd3f675c4b2_hu_3bbe836a0980eab5.webp" 
+                <img src="/en/p/environment-setup-sdl2/cover.469bf4d7f42db8fc9eda308d55ed74ec_hu_de758d9aaabe0f02.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】基础"
+                        alt="Featured image of post 【Environment Setup 】SDL2"
                         
-                        data-hash="md5-ouoGzSrJqBoFD63T9nXEsg==">
+                        data-hash="md5-Rpv01/QtuPye2jCNVe107A==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】基础</h2>
+            <h2 class="article-title">【Environment Setup 】SDL2</h2>
         </div>
     </a>
 </article>
@@ -1304,13 +1312,9 @@ version: "3.1"
         
         
         
-        
-        
-        
-        
 
-        发表了12篇文章 ·
-        总计6万8千字
+        发表了10篇文章 ·
+        总计3万5千字
         <br>
     </section>
 
@@ -1330,9 +1334,9 @@ version: "3.1"
     </section>
 
     <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
-                data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 
 </footer>

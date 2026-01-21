@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Wed, 21 Jan 2026 20:37:55 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 Jan 2026 21:55:37 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【开发日志】合成游戏DEMO开发</title>
         <link>https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E5%90%88%E6%88%90%E6%B8%B8%E6%88%8Fdemo%E5%BC%80%E5%8F%91/</link>
         <pubDate>Tue, 20 Jan 2026 08:19:30 +0800</pubDate>
@@ -104,12 +104,12 @@
 &lt;/h4&gt;</description>
         </item>
         <item>
-        <title>【学习日志】SOLID原则项目实践</title>
-        <link>https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</link>
+        <title>【SOLID】SOLID原则项目实践</title>
+        <link>https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</link>
         <pubDate>Mon, 19 Jan 2026 09:54:30 +0800</pubDate>
         
-        <guid>https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</guid>
-        <description>&lt;img src="https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp" alt="Featured image of post 【学习日志】SOLID原则项目实践" /&gt;&lt;p&gt;&lt;strong&gt;教程参考&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</guid>
+        <description>&lt;img src="https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp" alt="Featured image of post 【SOLID】SOLID原则项目实践" /&gt;&lt;p&gt;&lt;strong&gt;教程参考&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Udemy-Niraj Vishwakarma&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;素材来源&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
@@ -201,7 +201,7 @@
 &lt;li&gt;轻型坦克可以左右移动、旋转炮管、发射轻型炮弹&lt;/li&gt;
 &lt;li&gt;重型坦克不能移动，但是可以旋转炮管、发射重型炮弹&lt;/li&gt;
 &lt;li&gt;屏幕右侧有可以向左移动的飞机，玩家通过击中它们来增加屏幕上的分数&lt;/li&gt;
-&lt;li&gt;失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）&lt;/li&gt;
+&lt;li&gt;失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）。两辆坦克均失活时，玩家失败&lt;/li&gt;
 &lt;/ul&gt;
 &lt;img src=&#34;1-tank-drone.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
 &lt;h3 id=&#34;游戏功能拆解&#34;&gt;游戏/功能拆解
@@ -399,7 +399,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//================ 坦克子弹 =================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//================ 子弹生命值 =================&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ShellHealth&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MonoBehaviour&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;    [SerializeField]&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;damage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;100f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏">
-<title>【学习日志】SOLID原则项目实践</title>
+<title>【SOLID】SOLID原则项目实践</title>
 
-<link rel='canonical' href='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
+<link rel='canonical' href='https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
 
-<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【学习日志】SOLID原则项目实践">
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【SOLID】SOLID原则项目实践">
 <meta property='og:description' content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏">
-<meta property='og:url' content='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
-<meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:tag' content='SOLID' /><meta property='article:published_time' content='2026-01-19T09:54:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T20:37:55&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
-<meta name="twitter:title" content="【学习日志】SOLID原则项目实践">
+<meta property='og:url' content='https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/'>
+<meta property='og:site_name' content='Nullshow的技术博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:tag' content='SOLID' /><meta property='article:published_time' content='2026-01-19T09:54:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T21:55:37&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
+<meta name="twitter:title" content="【SOLID】SOLID原则项目实践">
 <meta name="twitter:description" content="在Unity中，遵循SOLID原则制作一款坦克飞机大战小游戏"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
+    <meta name="twitter:image" content='https://nullshowjl.github.io/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -43,7 +43,7 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
@@ -53,7 +53,7 @@
         
         
         <figure class="site-avatar">
-            <a href="/en/">
+            <a href="/">
                 
                 
 
@@ -72,8 +72,8 @@
         
 
         <div class="site-meta">
-            <h1 class="site-name"><a href="/en">Nullshow&#39;s Tech Blog</a></h1>
-            <h2 class="site-description">Sharing and documenting my notes, experiences, and reflections from development and learning~</h2>
+            <h1 class="site-name"><a href="/">Nullshow的技术博客</a></h1>
+            <h2 class="site-description">分享和记录我在开发和学习中的笔记、经验和感悟~</h2>
         </div>
     </header><ol class="menu-social">
         
@@ -116,7 +116,7 @@
         
         
         <li>
-            <a href='/en/index.xml'
+            <a href='/index.xml'
                 target="_blank" 
                 title="RSS" 
                rel="me">
@@ -132,7 +132,7 @@
         
         
         <li >
-            <a href='/en/' >
+            <a href='/' >
                 
                 
                 
@@ -146,13 +146,25 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/en/about/' >
+            <a href='/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>作品集</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
                 
                 
                 
@@ -165,37 +177,25 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/en/portfolio/' >
-                
-                
-                
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
-                
-                <span>Portfolio</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/en/study-journey/' >
+            <a href='/%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/' >
                 
                 
                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
                 
-                <span>Study Journey</span>
+                <span>学习历程</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/en/update-log/' >
+            <a href='/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/' >
                 
                 
                 
@@ -226,13 +226,13 @@ version: "3.1"
 </svg>
 
                 
-                <span>Update Log</span>
+                <span>更新日志</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/en/archives/' >
+            <a href='/archives/' >
                 
                 
                 
@@ -246,13 +246,13 @@ version: "3.1"
 
 
                 
-                <span>Archives</span>
+                <span>归档</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/en/search/' >
+            <a href='/search/' >
                 
                 
                 
@@ -265,13 +265,13 @@ version: "3.1"
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/en/links/' >
+            <a href='/links/' >
                 
                 
                 
@@ -284,7 +284,7 @@ version: "3.1"
 
 
                 
-                <span>Links</span>
+                <span>链接</span>
             </a>
         </li>
         
@@ -305,9 +305,9 @@ version: "3.1"
 
                     <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                        <option value="https://nullshowjl.github.io/en/"  selected>English</option>
+                        <option value="https://nullshowjl.github.io/en/" >English</option>
                         
-                        <option value="https://nullshowjl.github.io/" >中文</option>
+                        <option value="https://nullshowjl.github.io/"  selected>中文</option>
                         
                     </select>
                 </li>
@@ -332,7 +332,7 @@ version: "3.1"
 
 
 
-                    <span>Dark Mode</span>
+                    <span>暗色模式</span>
                 </li>
                 
             </ol>
@@ -357,7 +357,7 @@ version: "3.1"
 
 
         </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
+        <h2 class="widget-title section-title">目录</h2>
         
         <div class="widget--toc">
             <nav id="TableOfContents">
@@ -421,13 +421,13 @@ version: "3.1"
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
-                <img src="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_6ad396e8902704a5.webp"
-                        srcset="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_6ad396e8902704a5.webp 800w, /en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_3b9ecb93b0cd2507.webp 1600w"
+            <a href="/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">
+                <img src="/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_aa44ab51ebe1de30.webp"
+                        srcset="/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_aa44ab51ebe1de30.webp 800w, /p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover_hu_70793cc278c5944.webp 1600w"
                         width="800" 
                         height="241" 
                         loading="lazy"
-                        alt="Featured image of post 【学习日志】SOLID原则项目实践" />
+                        alt="Featured image of post 【SOLID】SOLID原则项目实践" />
                 
             </a>
         </div>
@@ -437,7 +437,7 @@ version: "3.1"
     
     <header class="article-category">
         
-            <a href="/en/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
+            <a href="/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
                 Study Notes
             </a>
         
@@ -446,7 +446,7 @@ version: "3.1"
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">【学习日志】SOLID原则项目实践</a>
+            <a href="/p/solidsolid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">【SOLID】SOLID原则项目实践</a>
         </h2>
     
         
@@ -487,7 +487,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            7 minute read
+            阅读时长: 7 分钟
         </time>
     </div>
     
@@ -504,25 +504,6 @@ version: "3.1"
 </footer>
     
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-            <div>
-                
-                    <a href="https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/" class="link">中文</a>
-                
-            </div>
-        </footer>
     
 </div>
 
@@ -623,7 +604,7 @@ version: "3.1"
 <li>轻型坦克可以左右移动、旋转炮管、发射轻型炮弹</li>
 <li>重型坦克不能移动，但是可以旋转炮管、发射重型炮弹</li>
 <li>屏幕右侧有可以向左移动的飞机，玩家通过击中它们来增加屏幕上的分数</li>
-<li>失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）</li>
+<li>失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）。两辆坦克均失活时，玩家失败</li>
 </ul>
 <img src="1-tank-drone.gif" alt="" style="zoom:100%;"/>
 <h3 id="游戏功能拆解">游戏/功能拆解
@@ -821,7 +802,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//================ 坦克子弹 =================</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//================ 子弹生命值 =================</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ShellHealth</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">damage</span> <span class="p">=</span> <span class="m">100f</span><span class="p">;</span>
@@ -1085,11 +1066,11 @@ version: "3.1"
     
     <section class="article-tags">
         
-            <a href="/en/tags/game-dev/">Game Dev</a>
+            <a href="/tags/game-dev/">Game Dev</a>
         
-            <a href="/en/tags/unity/">Unity</a>
+            <a href="/tags/unity/">Unity</a>
         
-            <a href="/en/tags/solid/">SOLID</a>
+            <a href="/tags/solid/">SOLID</a>
         
     </section>
 
@@ -1116,7 +1097,7 @@ version: "3.1"
 
 
         <span>
-            Last updated on Jan 21, 2026 20:37 &#43;0800
+            最后更新于 Jan 21, 2026 21:55 &#43;0800
         </span>
     </section></footer>
 
@@ -1129,29 +1110,29 @@ version: "3.1"
     
 
 <aside class="related-content--wrapper">
-    <h2 class="section-title">Related content</h2>
+    <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
             
                 
 <article class="has-image">
-    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
+    <a href="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/">
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_d394295e071989b1.webp" 
+                <img src="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.d5dbc02814bce8e0638eacc5fc66ce99_hu_32f4ec35952ac793.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer"
+                        alt="Featured image of post 【练手日志】Unity小游戏集锦 1"
                         
-                        data-hash="md5-6W5JgXMmtEsLN/jKFJ3jVw==">
+                        data-hash="md5-1dvAKBS86OBjjqzF/GbOmQ==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</h2>
+            <h2 class="article-title">【练手日志】Unity小游戏集锦 1</h2>
         </div>
     </a>
 </article>
@@ -1159,23 +1140,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/">
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_e5d83f6feaae04dc.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8Bgameplay%E5%B1%82%E5%AE%9E%E7%8E%B0/cover.1b012a76c5604bf796bf2aca3a991558_hu_ff7b20efb25024f9.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现"
                         
-                        data-hash="md5-tKyNI1R&#43;WLj&#43;pVsJSHaWZQ==">
+                        data-hash="md5-GwEqdsVgS/eWvyrKOpkVWA==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design</h2>
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之Gameplay层实现</h2>
         </div>
     </a>
 </article>
@@ -1183,23 +1164,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_6ae5d33c4eb615a7.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/cover.ec0863682fef9b7bb25dd0aa71367140_hu_5306f28b8aa9e474.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计"
                         
-                        data-hash="md5-IHQiXxAaTJ0vQUMBCnb4sw==">
+                        data-hash="md5-7AhjaC/vm3uyXdCqcTZxQA==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors</h2>
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计</h2>
         </div>
     </a>
 </article>
@@ -1207,23 +1188,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/en/p/c-game-dev-from-scratchfundamental/">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/">
         
         
             <div class="article-image">
-                <img src="/en/p/c-game-dev-from-scratchfundamental/cover.c9643ba4458d00df827006ed1c8182aa_hu_56e39fb92708d9cb.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/cover.320e6c19460333b34d72f9882077e6e3_hu_8388bbd5ce560c6b.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Fundamental"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者"
                         
-                        data-hash="md5-yWQ7pEWNAN&#43;CcAbtHIGCqg==">
+                        data-hash="md5-Mg5sGUYDM7NNcvmIIHfm4w==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Fundamental</h2>
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者</h2>
         </div>
     </a>
 </article>
@@ -1231,23 +1212,23 @@ version: "3.1"
             
                 
 <article class="has-image">
-    <a href="/en/p/environment-setup-sdl2/">
+    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">
         
         
             <div class="article-image">
-                <img src="/en/p/environment-setup-sdl2/cover.469bf4d7f42db8fc9eda308d55ed74ec_hu_de758d9aaabe0f02.webp" 
+                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/cover.a2ea06cd2ac9a81a050fadd3f675c4b2_hu_3bbe836a0980eab5.webp" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 【Environment Setup 】SDL2"
+                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】基础"
                         
-                        data-hash="md5-Rpv01/QtuPye2jCNVe107A==">
+                        data-hash="md5-ouoGzSrJqBoFD63T9nXEsg==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">【Environment Setup 】SDL2</h2>
+            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】基础</h2>
         </div>
     </a>
 </article>
@@ -1304,9 +1285,13 @@ version: "3.1"
         
         
         
+        
+        
+        
+        
 
-        发表了10篇文章 ·
-        总计3万7千字
+        发表了12篇文章 ·
+        总计6万8千字
         <br>
     </section>
 
@@ -1326,9 +1311,9 @@ version: "3.1"
     </section>
 
     <section class="powerby">
-        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
-                data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 
 </footer>

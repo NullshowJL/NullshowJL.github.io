@@ -2,21 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://nullshowjl.github.io/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/"
-                />
+    <loc>https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/</loc>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/en/categories/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -29,7 +19,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/game-dev/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -42,10 +32,10 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/post/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/solid/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -58,7 +48,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -71,7 +61,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/tags/unity/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -84,7 +74,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/page/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -97,7 +87,7 @@
                 />
   </url><url>
     <loc>https://nullshowjl.github.io/en/study-journey/</loc>
-    <lastmod>2026-01-21T20:37:55+08:00</lastmod>
+    <lastmod>2026-01-21T21:55:37+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"

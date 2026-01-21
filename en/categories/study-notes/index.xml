@@ -7,154 +7,182 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright><atom:link href="https://nullshowjl.github.io/en/categories/study-notes/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>【学习日志】SOLID原则项目实践</title>
-        <link>https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</link>
+        <title>【SOLID】SOLID Principles in Project Practice</title>
+        <link>https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/</link>
         <pubDate>Mon, 19 Jan 2026 09:54:30 +0800</pubDate>
         
-        <guid>https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/</guid>
-        <description>&lt;img src="https://nullshowjl.github.io/en/p/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97solid%E5%8E%9F%E5%88%99%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/cover.webp" alt="Featured image of post 【学习日志】SOLID原则项目实践" /&gt;&lt;p&gt;&lt;strong&gt;教程参考&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/</guid>
+        <description>&lt;img src="https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/cover.webp" alt="Featured image of post 【SOLID】SOLID Principles in Project Practice" /&gt;&lt;p&gt;&lt;strong&gt;Course Reference&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.udemy.com/course/mastering-solid-principles-in-unity-game-development/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Udemy-Niraj Vishwakarma&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;素材来源&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Asset Sources&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assetstore.unity.com/packages/2d/environments/2d-topdown-grassland-the-jungle-285671&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Unity Asset Store-HobiSoLoved&lt;/a&gt;（场景）&lt;/p&gt;
+    &gt;Unity Asset Store-HobiSoLoved&lt;/a&gt;（Background）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assetstore.unity.com/packages/2d/textures-materials/tank-constructor-131316&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Unity Asset Store-Hippo&lt;/a&gt; （坦克）&lt;/p&gt;
+    &gt;Unity Asset Store-Hippo&lt;/a&gt; （Tanks）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assetstore.unity.com/packages/2d/characters/pixel-art-space-ship-part-1-228832&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Unity Asset Store-Crehera&lt;/a&gt;（飞机）&lt;/p&gt;
+    &gt;Unity Asset Store-Crehera&lt;/a&gt;（Drones）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://assetstore.unity.com/packages/2d/gui/dark-ui-kit-330700&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Unity Asset Store-kΩsmaragd&lt;/a&gt;（UI）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;完整源码&lt;/strong&gt;： 请见本网站“作品集”部分&lt;/p&gt;
-&lt;h2 id=&#34;solid原则简介&#34;&gt;SOLID原则简介
-&lt;/h2&gt;&lt;h3 id=&#34;意大利面条式代码&#34;&gt;意大利面条式代码
-&lt;/h3&gt;&lt;p&gt;这种代码指的是一团乱麻，所有行为都高度耦合的代码。比如，在 &lt;code&gt;PlayerController.cs&lt;/code&gt; 这个脚本中，玩家的 &lt;code&gt;Move()&lt;/code&gt;, &lt;code&gt;Attack()&lt;/code&gt;,&lt;code&gt; Jump()&lt;/code&gt;&amp;hellip;等等行为都写到了一起，此外，还有 &lt;code&gt;PlayAudio&lt;/code&gt; 等其他功能。&lt;/p&gt;
-&lt;p&gt;这样的代码极其脆弱且难以扩展，它就像意大利面一样，由于各个部分都缠绕在一起，你抽取了其中的一根，可能导致多个bug的出现。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;抛弃意大利面条式的代码结构，改为模块化结构。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;： Please refer to &lt;em&gt;Portfolio&lt;/em&gt; section on this website&lt;/p&gt;
+&lt;h2 id=&#34;introduction-of-solid-principles&#34;&gt;Introduction of SOLID Principles
+&lt;/h2&gt;&lt;h3 id=&#34;spaghetti-code&#34;&gt;Spaghetti Code
+&lt;/h3&gt;&lt;p&gt;This kind of code is basically a tangled mess where everything is tightly coupled. For example, in a script like &lt;code&gt;PlayerController.cs&lt;/code&gt;, you might see the player’s &lt;code&gt;Move()&lt;/code&gt;, &lt;code&gt;Attack()&lt;/code&gt;, &lt;code&gt;Jump()&lt;/code&gt;… all crammed together, along with extra functions like &lt;code&gt;PlayAudio&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Code written this way is fragile and hard to extend. It’s like spaghetti — once everything is tangled up, pulling on one strand can easily cause multiple bugs to appear.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Ditch the spaghetti‑style structure and switch to a modular design.&lt;/p&gt;
 &lt;blockquote class=&#34;alert alert-note&#34;&gt;
-    &lt;p&gt;在快速制作demo或者小型游戏时可以使用意大利面条式代码以快速验证效果。&lt;/p&gt;
-&lt;p&gt;但是如果预计将来项目会越来越大，新引入的游戏物体和功能会越来越多，那么事先建构良好的架构和模块化将是非常重要的。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;solid原则是什么&#34;&gt;SOLID原则是什么
-&lt;/h3&gt;&lt;p&gt;总的来说它共有五大原则：&lt;/p&gt;
+    &lt;p&gt;Spaghetti code can be fine when you’re quickly prototyping a demo or building a small game to test ideas. But if you expect the project to grow, with more game objects and features being added, setting up a solid architecture and modular design early on becomes crucial.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;what-are-the-solid-principles&#34;&gt;What Are the SOLID Principles?
+&lt;/h3&gt;&lt;p&gt;In short, there are five main principles:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;单一职责原则 &lt;strong&gt;S&lt;/strong&gt;ingle Responsibility Principle (SRP)&lt;/li&gt;
-&lt;li&gt;开闭原则 &lt;strong&gt;O&lt;/strong&gt;pen-Closed Principle (OCP)&lt;/li&gt;
-&lt;li&gt;里氏替换原则 &lt;strong&gt;L&lt;/strong&gt;iskov Substitution Principle (LSP)&lt;/li&gt;
-&lt;li&gt;接口隔离原则 &lt;strong&gt;I&lt;/strong&gt;nterface Segregation Principle (ISP)&lt;/li&gt;
-&lt;li&gt;依赖倒置原则 &lt;strong&gt;D&lt;/strong&gt;ependency Inversion Principle (DIP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;S&lt;/strong&gt;ingle Responsibility Principle (SRP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;O&lt;/strong&gt;pen-Closed Principle (OCP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;iskov Substitution Principle (LSP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;nterface Segregation Principle (ISP)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;ependency Inversion Principle (DIP)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;单一职责原则&#34;&gt;单一职责原则
-&lt;/h4&gt;&lt;h5 id=&#34;基本原则&#34;&gt;基本原则
-&lt;/h5&gt;&lt;p&gt;一个脚本，一个功能。SRP将大类的功能拆分成一个个小类，这些小类拥有独立的功能，可以复用且相互之间没有影响。就像乐高的小块积木一样，你可以用它来搭建各种风格各异的大模型。&lt;/p&gt;
-&lt;h5 id=&#34;好处&#34;&gt;好处
-&lt;/h5&gt;&lt;p&gt;当每个脚本都有清晰的职责时，你就能随意替换它而不害怕破坏游戏的其他部分。&lt;/p&gt;
-&lt;h4 id=&#34;开闭原则&#34;&gt;开闭原则
-&lt;/h4&gt;&lt;h5 id=&#34;基本原则-1&#34;&gt;基本原则
-&lt;/h5&gt;&lt;p&gt;类/模块/函数，对扩展开放、对修改关闭。&lt;/p&gt;
-&lt;h5 id=&#34;好处-1&#34;&gt;好处
-&lt;/h5&gt;&lt;p&gt;通过创建新的类来添加新功能，从来避免破坏原来类的独立性，以此提升代码的模块化。&lt;/p&gt;
-&lt;h5 id=&#34;如何执行&#34;&gt;如何执行
+&lt;h4 id=&#34;single-responsibility-principle-srp&#34;&gt;Single Responsibility Principle (SRP)
+&lt;/h4&gt;&lt;h5 id=&#34;core-idea&#34;&gt;Core Idea
+&lt;/h5&gt;&lt;p&gt;One script, one function. SRP breaks down big classes into smaller ones, each with its own independent responsibility. These small classes can be reused and don’t interfere with each other. Think of them like Lego bricks — you can combine them to build all kinds of larger models.&lt;/p&gt;
+&lt;h5 id=&#34;benefits&#34;&gt;Benefits
+&lt;/h5&gt;&lt;p&gt;When every script has a clear responsibility, you can swap things out freely without worrying about breaking other parts of the game.&lt;/p&gt;
+&lt;h4 id=&#34;openclosed-principle-ocp&#34;&gt;Open/Closed Principle (OCP)
+&lt;/h4&gt;&lt;h5 id=&#34;core-idea-1&#34;&gt;Core Idea
+&lt;/h5&gt;&lt;p&gt;Classes, modules, and functions should be &lt;strong&gt;open for extension but closed for modification&lt;/strong&gt;.&lt;/p&gt;
+&lt;h5 id=&#34;benefits-1&#34;&gt;Benefits
+&lt;/h5&gt;&lt;p&gt;You can add new features by creating new classes, without messing with the independence of existing ones. This makes your code more modular and easier to maintain.&lt;/p&gt;
+&lt;h5 id=&#34;how-to-apply&#34;&gt;How to Apply
 &lt;/h5&gt;&lt;ol&gt;
-&lt;li&gt;为新的功能创建新的类&lt;/li&gt;
-&lt;li&gt;创建接口/抽象类，在具体的功能类中去实现接口/抽象类中的方法&lt;/li&gt;
-&lt;li&gt;用抽象方法去与不同的功能交互，而不是直接调用它们&lt;/li&gt;
-&lt;li&gt;提升多态的应用&lt;/li&gt;
+&lt;li&gt;Create new classes for new features.&lt;/li&gt;
+&lt;li&gt;Define interfaces or abstract classes, then implement them in your feature classes.&lt;/li&gt;
+&lt;li&gt;Interact with features through abstract methods instead of calling them directly.&lt;/li&gt;
+&lt;li&gt;Make good use of polymorphism.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;里氏替换原则&#34;&gt;里氏替换原则
-&lt;/h4&gt;&lt;h5 id=&#34;基本原则-2&#34;&gt;基本原则
-&lt;/h5&gt;&lt;p&gt;超类/父类物体应该可以被其子类替代而不影响其功能。&lt;/p&gt;
-&lt;h5 id=&#34;好处-2&#34;&gt;好处
-&lt;/h5&gt;&lt;p&gt;允许超类/父类物体可以被其子类替代，而不用直接引用每个子类，这样可以确保系统在引入新的变量时的灵活性和可扩展性。&lt;/p&gt;
-&lt;h5 id=&#34;如何执行-1&#34;&gt;如何执行
+&lt;h4 id=&#34;liskov-substitution-principle-lsp&#34;&gt;Liskov Substitution Principle (LSP)
+&lt;/h4&gt;&lt;h5 id=&#34;core-idea-2&#34;&gt;Core Idea
+&lt;/h5&gt;&lt;p&gt;A superclass (or parent class) should be replaceable by its subclasses without breaking functionality.&lt;/p&gt;
+&lt;h5 id=&#34;benefits-2&#34;&gt;Benefits
+&lt;/h5&gt;&lt;p&gt;This allows you to use subclasses in place of the parent class without directly referencing each one. It ensures flexibility and scalability when new variables or behaviors are introduced.&lt;/p&gt;
+&lt;h5 id=&#34;how-to-apply-1&#34;&gt;How to Apply
 &lt;/h5&gt;&lt;ol&gt;
-&lt;li&gt;创建基类并声明所有的方法&lt;/li&gt;
-&lt;li&gt;给具有相似行为的物体创建为子类&lt;/li&gt;
-&lt;li&gt;在其他需要交互的脚本中，直接引用父类而非子类&lt;/li&gt;
+&lt;li&gt;Create a base class and declare all the methods.&lt;/li&gt;
+&lt;li&gt;Build subclasses for objects with similar behaviors.&lt;/li&gt;
+&lt;li&gt;In other scripts, reference the parent class instead of the subclasses directly.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;接口隔离原则&#34;&gt;接口隔离原则
-&lt;/h4&gt;&lt;h5 id=&#34;基本原则-3&#34;&gt;基本原则
-&lt;/h5&gt;&lt;p&gt;一个类不应该去依赖一个它不会使用的方法。&lt;/p&gt;
-&lt;h5 id=&#34;总结&#34;&gt;总结
-&lt;/h5&gt;&lt;p&gt;只写需要的、只执行相关的。&lt;/p&gt;
-&lt;h4 id=&#34;依赖倒置原则&#34;&gt;依赖倒置原则
-&lt;/h4&gt;&lt;h5 id=&#34;基本原则-4&#34;&gt;基本原则
-&lt;/h5&gt;&lt;p&gt;高级模块不应该与低级模块耦合，两者都应该依赖于抽象函数。&lt;/p&gt;
-&lt;h5 id=&#34;总结-1&#34;&gt;总结
-&lt;/h5&gt;&lt;p&gt;依赖于抽象函数，而不是具体的实现。&lt;/p&gt;
-&lt;h5 id=&#34;如何执行-2&#34;&gt;如何执行
+&lt;h4 id=&#34;interface-segregation-principle-isp&#34;&gt;Interface Segregation Principle (ISP)
+&lt;/h4&gt;&lt;h5 id=&#34;core-idea-3&#34;&gt;Core Idea
+&lt;/h5&gt;&lt;p&gt;A class shouldn’t depend on methods it doesn’t use.&lt;/p&gt;
+&lt;h5 id=&#34;summary&#34;&gt;Summary
+&lt;/h5&gt;&lt;p&gt;Write only what’s needed, and keep it relevant.&lt;/p&gt;
+&lt;h4 id=&#34;dependency-inversion-principle-dip&#34;&gt;Dependency Inversion Principle (DIP)
+&lt;/h4&gt;&lt;h5 id=&#34;core-idea-4&#34;&gt;Core Idea
+&lt;/h5&gt;&lt;p&gt;High‑level modules shouldn’t be coupled to low‑level modules. Both should depend on abstractions.&lt;/p&gt;
+&lt;h5 id=&#34;summary-1&#34;&gt;Summary
+&lt;/h5&gt;&lt;p&gt;Depend on abstract functions, not concrete implementations.&lt;/p&gt;
+&lt;h5 id=&#34;how-to-apply-2&#34;&gt;How to Apply
 &lt;/h5&gt;&lt;ol&gt;
-&lt;li&gt;用接口创建抽象函数&lt;/li&gt;
-&lt;li&gt;通过具体的类来实现接口&lt;/li&gt;
-&lt;li&gt;用接口与具体的类交互&lt;/li&gt;
+&lt;li&gt;Use interfaces to define abstract functions.&lt;/li&gt;
+&lt;li&gt;Implement those interfaces in concrete classes.&lt;/li&gt;
+&lt;li&gt;Interact with concrete classes through the interfaces.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;实践项目&#34;&gt;实践项目
-&lt;/h2&gt;&lt;p&gt;我们通过一个2D的坦克飞机大战小游戏来展示在Unity游戏开发中如何实践SOLID原则。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;核心玩法&lt;/strong&gt;：&lt;/p&gt;
+&lt;h2 id=&#34;practice-project&#34;&gt;Practice Project
+&lt;/h2&gt;&lt;p&gt;We’ll use a 2D &lt;strong&gt;Tank vs. Drone War game&lt;/strong&gt; to show how the SOLID principles can be applied in Unity game development.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Core Gameplay&lt;/strong&gt;:：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;屏幕左侧有两种坦克，一种轻型坦克，玩家可以通过按下“L”来操作它；另一种是重型坦克，通过“H”键来操作&lt;/li&gt;
-&lt;li&gt;轻型坦克可以左右移动、旋转炮管、发射轻型炮弹&lt;/li&gt;
-&lt;li&gt;重型坦克不能移动，但是可以旋转炮管、发射重型炮弹&lt;/li&gt;
-&lt;li&gt;屏幕右侧有可以向左移动的飞机，玩家通过击中它们来增加屏幕上的分数&lt;/li&gt;
-&lt;li&gt;失败条件：如果飞机撞到坦克，坦克受损失活（无法通过按键操作）&lt;/li&gt;
+&lt;li&gt;On the left side of the screen, there are two tanks:
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;light tank&lt;/strong&gt;, controlled by pressing &lt;strong&gt;L&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;heavy tank&lt;/strong&gt;, controlled by pressing &lt;strong&gt;H&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The light tank can move left and right, rotate its cannon, and fire light shells.&lt;/li&gt;
+&lt;li&gt;The heavy tank cannot move, but it can rotate its cannon and fire heavy shells.&lt;/li&gt;
+&lt;li&gt;On the right side of the screen, drones move leftward. Hitting them increases the score.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lose condition&lt;/strong&gt;: If a drone collides with a tank, that tank is destroyed and becomes unresponsive to player input. When both of the tanks are unresponsive, the player loses.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;img src=&#34;1-tank-drone.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;h3 id=&#34;游戏功能拆解&#34;&gt;游戏/功能拆解
-&lt;/h3&gt;&lt;h4 id=&#34;内容&#34;&gt;内容
-&lt;/h4&gt;&lt;p&gt;背景图片、坦克（轻型和重型）、子弹（轻型和重型）、飞机、UI（分数、开始界面、游戏界面、结束界面）、音效（开火、飞机被击中、坦克被击中）&lt;/p&gt;
-&lt;h4 id=&#34;逻辑&#34;&gt;逻辑
+&lt;h3 id=&#34;game--feature-breakdown&#34;&gt;Game / Feature Breakdown
+&lt;/h3&gt;&lt;h4 id=&#34;content&#34;&gt;Content
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Background image&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tanks (light and heavy)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bullets (light and heavy)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Drones&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UI (score, start screen, gameplay screen, end screen)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sound effects (firing, drone hit, tank hit)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;logic&#34;&gt;Logic
 &lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;游戏开始，按下L键可以激活轻型坦克（移动、旋转、发射炮弹）&lt;/li&gt;
-&lt;li&gt;按下H键可以激活重型坦克（旋转、发射炮弹）&lt;/li&gt;
-&lt;li&gt;飞机从右往左飞，右侧屏幕飞入、左侧屏幕飞出&lt;/li&gt;
-&lt;li&gt;坦克被飞机撞到即失活&lt;/li&gt;
-&lt;li&gt;两家坦克都失活，游戏结束&lt;/li&gt;
+&lt;li&gt;When the game starts, pressing &lt;strong&gt;L&lt;/strong&gt; activates the light tank (move, rotate, fire shells).&lt;/li&gt;
+&lt;li&gt;Pressing &lt;strong&gt;H&lt;/strong&gt; activates the heavy tank (rotate, fire shells).&lt;/li&gt;
+&lt;li&gt;Drones fly from right to left — entering from the right side of the screen and exiting on the left.&lt;/li&gt;
+&lt;li&gt;If a tank is hit by a drone, it becomes inactive.&lt;/li&gt;
+&lt;li&gt;If both tanks are inactive, the game ends.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;模块整理&#34;&gt;模块整理
+&lt;h4 id=&#34;module-organization&#34;&gt;Module Organization
 &lt;/h4&gt;&lt;img src=&#34;2-module.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;h4 id=&#34;开发步骤&#34;&gt;开发步骤
+&lt;h4 id=&#34;development-steps&#34;&gt;Development Steps
 &lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;场景摆放&lt;/li&gt;
-&lt;li&gt;坦克部分的开发
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scene Setup&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tank Development&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;移动和旋转&lt;/li&gt;
-&lt;li&gt;开火&lt;/li&gt;
-&lt;li&gt;实现两种坦克的选择&lt;/li&gt;
-&lt;li&gt;生命值&lt;/li&gt;
+&lt;li&gt;Movement and rotation&lt;/li&gt;
+&lt;li&gt;Firing&lt;/li&gt;
+&lt;li&gt;Switching between light and heavy tanks&lt;/li&gt;
+&lt;li&gt;Health system&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;飞机部分的开发
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Drone Development&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;飞机预制体&lt;/li&gt;
-&lt;li&gt;飞机的生成&lt;/li&gt;
-&lt;li&gt;生命值&lt;/li&gt;
+&lt;li&gt;Drone prefab&lt;/li&gt;
+&lt;li&gt;Drone spawning&lt;/li&gt;
+&lt;li&gt;Health system&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;游戏管理部分开发
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Game Management&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;配置Game Events&lt;/li&gt;
+&lt;li&gt;Configure game events&lt;/li&gt;
 &lt;li&gt;AudioManager&lt;/li&gt;
 &lt;li&gt;UIManager&lt;/li&gt;
 &lt;li&gt;GameManager&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;功能实现及遵循的原则&#34;&gt;功能实现及遵循的原则
-&lt;/h3&gt;&lt;h4 id=&#34;1-坦克的移动&#34;&gt;1. 坦克的移动
-&lt;/h4&gt;&lt;p&gt;在坦克的设计上遵循ISP（接口隔离）和DSP（依赖倒置）。&lt;/p&gt;
+&lt;h3 id=&#34;feature-implementation-and-principles-followed&#34;&gt;Feature Implementation and Principles Followed
+&lt;/h3&gt;&lt;h4 id=&#34;1-tank-movement&#34;&gt;1. Tank Movement
+&lt;/h4&gt;&lt;p&gt;In the tank design, we follow &lt;strong&gt;ISP (Interface Segregation Principle)&lt;/strong&gt; and &lt;strong&gt;DIP (Dependency Inversion Principle)&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;3-tank.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;h4 id=&#34;2-坦克的开火&#34;&gt;2. 坦克的开火
-&lt;/h4&gt;&lt;p&gt;在开火时两种弹药的设计上遵循开闭原则（OCP）。我们在每次增加新的种类弹药时应该只做扩展，而不应该对 &lt;code&gt;TankFire.cs&lt;/code&gt; 进行修改。在 TankFire.cs 中，应该通过接口而非直接调用相应炮弹的预制体。&lt;/p&gt;
+&lt;h4 id=&#34;2-tank-firing&#34;&gt;2. Tank Firing
+&lt;/h4&gt;&lt;p&gt;When designing the firing system, the two types of projectile follow the &lt;strong&gt;Open/Closed Principle (OCP)&lt;/strong&gt;. Each time we add a new type of projectile, we should extend the system rather than modify &lt;code&gt;TankFire.cs&lt;/code&gt;. Inside &lt;code&gt;TankFire.cs&lt;/code&gt;, the firing logic should interact through an interface instead of directly calling the specific shell prefab.&lt;/p&gt;
 &lt;img src=&#34;4-fire.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;p&gt;此处需要注意的是，由于两种子弹都是经过接口与 &lt;code&gt;TankFire.cs&lt;/code&gt; 交互的，但是接口不继承自 &lt;code&gt;MonoBehaviour&lt;/code&gt;，无法实例化，所以需要将其隐式转换为 &lt;code&gt;Component&lt;/code&gt; 来解决。&lt;/p&gt;
+&lt;p&gt;It’s important to note that both types of projectiles interact with &lt;code&gt;TankFire.cs&lt;/code&gt; through an interface. However, since the interface does not inherit from &lt;code&gt;MonoBehaviour&lt;/code&gt;, it cannot be instantiated directly. To solve this, you need to implicitly cast it to a &lt;code&gt;Component&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -199,20 +227,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;3-坦克选择器的实现&#34;&gt;3. 坦克选择器的实现
-&lt;/h4&gt;&lt;p&gt;在这一部分遵循里氏替换（LSP）的原则进行设计。&lt;/p&gt;
+&lt;/div&gt;&lt;h4 id=&#34;3-tank-selector-implementation&#34;&gt;3. Tank Selector Implementation
+&lt;/h4&gt;&lt;p&gt;This part is designed following the &lt;strong&gt;Liskov Substitution Principle (LSP)&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote class=&#34;alert alert-tip&#34;&gt;
-    &lt;p&gt;如果项目比较小的话不用创建单独的 &lt;code&gt;LightEngine.cs&lt;/code&gt; 和 &lt;code&gt;HeavyEngine.cs&lt;/code&gt; ，全部写在 TankEngine 这个类中也可以。&lt;/p&gt;&lt;/blockquote&gt;
+    &lt;p&gt;For smaller projects, you don’t necessarily need separate &lt;code&gt;LightEngine.cs&lt;/code&gt; and &lt;code&gt;HeavyEngine.cs&lt;/code&gt; files — you can simply put everything inside the &lt;code&gt;TankEngine&lt;/code&gt; class.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;img src=&#34;5-selector.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;h4 id=&#34;4-坦克生命值的实现&#34;&gt;4. 坦克生命值的实现
-&lt;/h4&gt;&lt;p&gt;遵循依赖倒置原则（DIP），使用一个 IDamageable 的接口来和具体的类交互。这个具体的类可以是飞机、也可以是其他的碰撞物，如子弹、导弹等。&lt;/p&gt;
+&lt;h4 id=&#34;4-tank-health-implementation&#34;&gt;4. Tank Health Implementation
+&lt;/h4&gt;&lt;p&gt;Following the &lt;strong&gt;Dependency Inversion Principle (DIP)&lt;/strong&gt;, we use an &lt;code&gt;IDamageable&lt;/code&gt; interface to interact with concrete classes. These concrete classes could be drones or other colliding objects such as bullets, missiles, and so on.&lt;/p&gt;
 &lt;img src=&#34;6-tank-health.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;h4 id=&#34;5-飞机的移动&#34;&gt;5. 飞机的移动
-&lt;/h4&gt;&lt;p&gt;这部分仿照坦克移动的方式，复用 ImoveUp.cs 的代码，同样采用接口的方式实现，为将来新种类飞机的加入留下空间。&lt;/p&gt;
-&lt;h4 id=&#34;6-飞机和子弹的自动销毁&#34;&gt;6. 飞机和子弹的自动销毁
-&lt;/h4&gt;&lt;p&gt;我在此处采用统一的脚本 &lt;code&gt;DestroyByTime.cs&lt;/code&gt; ，遵循单一职责原则，并未按照课程的方式分别处理。&lt;/p&gt;
-&lt;h4 id=&#34;7-坦克子弹飞机的碰撞检测和生命值联动&#34;&gt;7. 坦克、子弹、飞机的碰撞检测和生命值联动
-&lt;/h4&gt;&lt;p&gt;这是对第四点的依赖倒置原则的最终实现。由于子弹和飞机都是碰撞后即销毁的情况，所以并没有直接实现 IDamageable接口，在坦克的生命值系统中实现了接口，这样以后即使新增了不同的子弹，对坦克造成不同的伤害，都能轻松实现。在对飞机或者其他类型的敌人中，如果需要设计不同类型的伤害，也可以设计为继承接口的方式灵活实现。&lt;/p&gt;
+&lt;h4 id=&#34;5-airplane-movement&#34;&gt;5. Airplane Movement
+&lt;/h4&gt;&lt;p&gt;This part reuses the &lt;code&gt;ImoveUp.cs&lt;/code&gt; code in the same way as tank movement. It’s also implemented through an interface, leaving room for adding new types of drones in the future.&lt;/p&gt;
+&lt;h4 id=&#34;6-automatic-destroy-of-drones-and-projectiles&#34;&gt;6. Automatic Destroy of Drones and Projectiles
+&lt;/h4&gt;&lt;p&gt;Here I use a single script, &lt;code&gt;DestroyByTime.cs&lt;/code&gt;, following the &lt;strong&gt;Single Responsibility Principle (SRP)&lt;/strong&gt;. Unlike the course approach of handling each case separately, this unified script keeps the design simpler and cleaner.&lt;/p&gt;
+&lt;h4 id=&#34;7-collision-detection-and-health-system-integration-tanks-projectiles-drones&#34;&gt;7. Collision Detection and Health System Integration (Tanks, Projectiles, Drones)
+&lt;/h4&gt;&lt;p&gt;This is the final application of the &lt;strong&gt;Dependency Inversion Principle (DIP)&lt;/strong&gt; mentioned earlier. Since both projectiles and drones are destroyed upon collision, they don’t directly implement the &lt;code&gt;IDamageable&lt;/code&gt; interface. Instead, the tank’s health system implements the interface. This way, even if new projectile types are added in the future with different damage values, they can be easily integrated. For drones or other enemy types, if different damage behaviors are needed, they can also be flexibly designed by inheriting from the interface.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -275,13 +303,13 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========== IDamageable接口 ==========&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========== IDamageable Interface ==========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;IDamageable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TakeDamage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;damageValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//================ 坦克的生命值系统 ===============&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//================ Health System of Tank ===============&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;HealthSystem&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MonoBehaviour&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;IDamageable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_health&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;100f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -302,7 +330,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//================ 坦克子弹 =================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//================ Projectile Health =================&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ShellHealth&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MonoBehaviour&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;    [SerializeField]&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;damage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;100f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -318,13 +346,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//============= 飞机的生命值 ==============&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//============= Drone Health ==============&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;DroneHealth&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MonoBehaviour&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;    [SerializeField]&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;damage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;20f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;OnCollisionEnter2D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Collision2D&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;// 通过接口调用TakeDamage&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;// Call TakeDamage by Interface&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;IDamageable&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;damageable&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gameObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetComponent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IDamageable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;damageable&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -335,13 +363,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;8-用观察者模式对ui音效游戏状态进行管理&#34;&gt;8. 用观察者模式对UI、音效、游戏状态进行管理
-&lt;/h4&gt;&lt;p&gt;把下面的事件进行注册，这样通过统一的更新接口，观察者们在事件发生变化的时候可以相应被调用。本质是一个监听和响应系统。同时，这样遵循了单一职责原则，在 &lt;code&gt;AudioManager.cs&lt;/code&gt; 和 &lt;code&gt;UIManager.cs&lt;/code&gt; 等脚本中，只负责播放音效或管理UI的作用。&lt;/p&gt;
+&lt;/div&gt;&lt;h4 id=&#34;8-managing-ui-audio-and-game-state-with-the-observer-pattern&#34;&gt;8. Managing UI, Audio, and Game State with the Observer Pattern
+&lt;/h4&gt;&lt;p&gt;Register the following events so that, through a unified update interface, observers can be notified and respond whenever changes occur. At its core, this is a &lt;strong&gt;listen‑and‑respond system&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;By following the &lt;strong&gt;Single Responsibility Principle (SRP)&lt;/strong&gt;, scripts like &lt;code&gt;AudioManager.cs&lt;/code&gt; and &lt;code&gt;UIManager.cs&lt;/code&gt; only handle their specific tasks — playing sounds or managing the UI — without mixing in unrelated logic.&lt;/p&gt;
 &lt;img src=&#34;7-observer.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
-&lt;h3 id=&#34;复盘&#34;&gt;复盘
-&lt;/h3&gt;&lt;p&gt;SOLID原则扩展性强，但是脚本量也是成倍增加。在最后用观察者模式写UI的时候几乎花了一整天，调试一个bug花了一个下午。对于初学者而言，在使用观察者模式的时候，监听代码放置的位置和其他代码的顺序也很重要，是很容易踩的坑。&lt;/p&gt;
-&lt;h4 id=&#34;代码复用&#34;&gt;代码复用
-&lt;/h4&gt;&lt;p&gt;观察者模式的写法，套路都是一样的，以 &lt;code&gt;AudioManager&lt;/code&gt; 为例:&lt;/p&gt;
+&lt;h3 id=&#34;reflection&#34;&gt;Reflection
+&lt;/h3&gt;&lt;p&gt;The SOLID principles are powerful for scalability, but they also multiply the number of scripts. For example, when I implemented the UI with the Observer pattern, it took almost an entire day, and debugging a single bug cost me an entire afternoon. For beginners, one common pitfall when using the Observer pattern is the placement of listener code and the order of other logic — both are critical and easy to get wrong.&lt;/p&gt;
+&lt;h4 id=&#34;code-reuse&#34;&gt;Code Reuse
+&lt;/h4&gt;&lt;p&gt;The Observer pattern usually follows the same routine. Take &lt;code&gt;AudioManager&lt;/code&gt; as an example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -439,10 +468,9 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;93
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;94
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;95
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;96
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//======== 1. 注册事件 =========&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//======== 1. Register events =========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========= GameEvents.cs =========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;GameEvents&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -453,7 +481,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Action&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;OnDroneDestroy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========= 2. 在各个所需的地方监听事件 =========&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========= 2. Listen to events wherever they are needed =========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========= TankFire.cs =========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -464,7 +492,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;projectile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Fire&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;firePos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -486,11 +513,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========== DroneHealth.cs ===========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TakeDamage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;damageValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;GameEvents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OnDroneDestroy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;?.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Invoke&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 飞机被子弹击中才会播放声音&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;GameEvents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OnDroneDestroy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;?.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Invoke&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// The sound effect only plays when a drone is hit by a projectile&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Destroy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gameObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========== 3. 统一在AudioManager中根据监听的结果做出反应 ==========&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========== 3. Centralize responses in AudioManager based on the events being listened to ==========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//========== AudioMgr.cs =========&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;AudioMgr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MonoBehaviour&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -540,23 +567,23 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;拓展&#34;&gt;拓展
-&lt;/h4&gt;&lt;p&gt;将在本项目基础上增加以下部分：&lt;/p&gt;
+&lt;/div&gt;&lt;h4 id=&#34;extensions&#34;&gt;Extensions
+&lt;/h4&gt;&lt;p&gt;Building on this project, I plan to add:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;根据坦克类型给坦克增加不同的子弹：激光、导弹&lt;/li&gt;
-&lt;li&gt;增加中型坦克&lt;/li&gt;
-&lt;li&gt;增加不同飞机，它们的飞行速度不同&lt;/li&gt;
-&lt;li&gt;改变飞机的生成规则，让游戏的难度随时间而增加&lt;/li&gt;
-&lt;li&gt;不同坦克收到伤害程度不同，重型坦克最慢&lt;/li&gt;
+&lt;li&gt;Different projectile types depending on the tank: lasers, missiles&lt;/li&gt;
+&lt;li&gt;A medium tank&lt;/li&gt;
+&lt;li&gt;Different drones with varying flight speeds&lt;/li&gt;
+&lt;li&gt;Adjusted drone spawning rules so that game difficulty increases over time&lt;/li&gt;
+&lt;li&gt;Different damage levels for tanks, with the heavy tank being the slowest to take damage&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;关于solid原则的建议&#34;&gt;关于SOLID原则的建议
+&lt;h3 id=&#34;suggestions-on-applying-solid-principles&#34;&gt;Suggestions on Applying SOLID Principles
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;先想简单的解决方案&lt;/li&gt;
-&lt;li&gt;永远不要强迫自己使用SOLID原则，只在需要的时候使用（这也是我的体会）&lt;/li&gt;
-&lt;li&gt;不要过分设计，尤其是你的设计已经超过了项目本身的范围&lt;/li&gt;
-&lt;li&gt;永远试着使用模块化方式，让每个独立的模块像乐高玩具一样可以被重复使用（这是我在其他课程中学到的最有用的方法之一，真的非常省时省力）&lt;/li&gt;
-&lt;li&gt;最初在代码设计上使用SOLID原则肯定会多花时间，但是如果是长远的扩展性很多的项目，这些投入肯定是值得的&lt;/li&gt;
-&lt;li&gt;应用 =&amp;gt; 失败 =&amp;gt; 学习 =&amp;gt; 应用 =&amp;gt; 你会得到惊喜！&lt;/li&gt;
+&lt;li&gt;Start with the easier solution&lt;/li&gt;
+&lt;li&gt;Never force yourself to use SOLID principles — apply them only when needed (this is my takeaway)&lt;/li&gt;
+&lt;li&gt;Avoid over‑designing, especially when your design goes beyond the scope of the project itself&lt;/li&gt;
+&lt;li&gt;Always try to use a modular approach, so each independent module can be reused like LEGO blocks (this is one of the most useful methods I’ve learned from other courses — it really saves time and effort)&lt;/li&gt;
+&lt;li&gt;At first, applying SOLID principles in code design will definitely take more time, but for projects with long‑term scalability, the investment is absolutely worth it&lt;/li&gt;
+&lt;li&gt;Apply → Fail → Learn → Apply → and you’ll be surprised by the results!&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
