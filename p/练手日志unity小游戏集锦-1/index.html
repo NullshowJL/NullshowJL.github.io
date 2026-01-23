@@ -10,7 +10,7 @@
 <meta property='og:description' content="用Unity实现的小游戏项目的笔记，通过练习希望让自己快速熟悉Unity的各个组件以及常用API，积累一些游戏常用逻辑的编程套路">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-10T09:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T21:55:37&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-10T09:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-23T17:12:34&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.webp' />
 <meta name="twitter:title" content="【练手日志】Unity小游戏集锦 1">
 <meta name="twitter:description" content="用Unity实现的小游戏项目的笔记，通过练习希望让自己快速熟悉Unity的各个组件以及常用API，积累一些游戏常用逻辑的编程套路"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.webp' />
@@ -488,14 +488,15 @@ version: "3.1"
         <li><a href="#遇到的问题及解决方法-4">遇到的问题及解决方法</a>
           <ol>
             <li><a href="#1-物体间物理碰撞层的设置">1. 物体间物理碰撞层的设置</a></li>
-            <li><a href="#2-小行星的旋转任意角度">2. 小行星的旋转任意角度</a></li>
+            <li><a href="#2-小行星初始状态的设置">2. 小行星初始状态的设置</a></li>
+            <li><a href="#3-小行星生成和移动的实现思路">3. 小行星生成和移动的实现思路</a></li>
+            <li><a href="#4-玩家无敌时间的设计思路">4. 玩家无敌时间的设计思路</a></li>
+            <li><a href="#5-粒子系统的设置">5. 粒子系统的设置</a></li>
           </ol>
         </li>
         <li><a href="#复盘-4">复盘</a>
           <ol>
             <li><a href="#代码复用-4">代码复用</a></li>
-            <li><a href="#优化">优化</a></li>
-            <li><a href="#避坑">避坑</a></li>
           </ol>
         </li>
       </ol>
@@ -580,7 +581,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            阅读时长: 20 分钟
+            阅读时长: 24 分钟
         </time>
     </div>
     
@@ -613,10 +614,12 @@ version: "3.1"
 <li><a class="link" href="#%e4%b9%92%e4%b9%93%e7%90%83" >乒乓球</a></li>
 <li><a class="link" href="#%e5%b0%8f%e8%a1%8c%e6%98%9f" >小行星</a></li>
 </ul>
+<p>这一练手系列中的游戏都是非常小的，旨在帮我自己熟悉API的用法、锻炼思维逻辑能力，以及拓展思路，所以首要任务是快速完成原型、或者总结出一些小块的复用代码；项目整体架构和可扩展性等不在此类项目范围之内。</p>
 <h2 id="合成大西瓜">合成大西瓜
 </h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.bilibili.com/video/BV18i4y1a7wR?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
     >B站-游池汇</a></p>
-<p><strong>完整源码</strong>： on Gitee</p>
+<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-merge-big-watermelon"  target="_blank" rel="noopener"
+    >on Gitee</a></p>
 <h3 id="游戏简介">游戏简介
 </h3><p>《合成大西瓜》是一款由微伞游戏（Weisun Games）2021年初推出的休闲益智类网页小游戏，因其简单上手、魔性玩法和社交传播迅速走红。</p>
 <p><strong>核心玩法</strong>：</p>
@@ -805,7 +808,8 @@ version: "3.1"
 </div><h2 id="太空射击">太空射击
 </h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.bilibili.com/video/BV1wW411N7Ew?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
     >B站-齐齐课-Plane</a></p>
-<p><strong>完整源码</strong>： on Gitee</p>
+<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-space-shooter"  target="_blank" rel="noopener"
+    >on Gitee</a></p>
 <h3 id="游戏简介-1">游戏简介
 </h3><p>《太空射击》（Space Shooter）是Unity官方的一个3D入门教程项目，旨在帮助初学者快速掌握 Unity 的基础开发流程，包括场景搭建、玩家控制、敌人生成、碰撞检测、UI 显示和音效集成等核心概念。此版本在原教程基础上进行了升级，加入了会发射子弹的敌人等。</p>
 <p><strong>核心玩法</strong>：</p>
@@ -1513,7 +1517,8 @@ version: "3.1"
 </div><h2 id="飞翔的小鸟">飞翔的小鸟
 </h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=ihvBiJ1oC9U"  target="_blank" rel="noopener"
     >油管-Zigurous</a></p>
-<p><strong>完整源码</strong>： on Gitee</p>
+<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-flappy-bird"  target="_blank" rel="noopener"
+    >on Gitee</a></p>
 <h3 id="游戏简介-2">游戏简介
 </h3><p>《飞翔的小鸟》（Flappy Bird）是一款由越南开发者Dong Nguyen于2013年发行的简易2D手机游戏。游戏因其极低的画面复杂性、极高的难度和令人“上瘾”的挫败感而迅速走红，一度成为全球现象级游戏。</p>
 <p><strong>核心玩法</strong>：</p>
@@ -1806,7 +1811,8 @@ version: "3.1"
 <h2 id="乒乓球">乒乓球
 </h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=AcpaYq0ihaM"  target="_blank" rel="noopener"
     >油管-Zigurous</a></p>
-<p><strong>完整源码</strong>： on Gitee</p>
+<p><strong>完整源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-pong"  target="_blank" rel="noopener"
+    >on Gitee</a></p>
 <h3 id="游戏简介-3">游戏简介
 </h3><p>《乒乓球》（Pong） 是电子游戏史上最早、最具影响力的街机游戏之一，由 Atari 公司于 1972 年发布。它模拟了现实中的乒乓球（Table Tennis）运动，被认为是第一个取得商业成功的电子游戏。</p>
 <p><strong>核心玩法</strong>：</p>
@@ -2019,14 +2025,15 @@ version: "3.1"
 <h2 id="小行星">小行星
 </h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=cIeWhztKyAg"  target="_blank" rel="noopener"
     >油管-Zigurous</a></p>
-<p><strong>完整源码</strong>： on Gitee</p>
+<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-asteroids"  target="_blank" rel="noopener"
+    >on Gitee</a></p>
 <h3 id="游戏简介-4">游戏简介
 </h3><p>《小行星》（Asteroids）是由 Atari 公司于 1979 年推出的一款经典街机射击游戏，以其简洁的矢量图形和紧张刺激的玩法成为电子游戏史上的里程碑之作。</p>
 <p><strong>核心玩法</strong>：</p>
 <ul>
 <li>玩家控制一艘小型飞船，在无重力的太空中自由移动（可推进、旋转、射击）
 <ul>
-<li>按下 <code>W键/ 上箭头</code> 可以旋转</li>
+<li>按下 <code>W键/ 上箭头</code> 或者 <code>S键/下箭头</code> 可以旋转</li>
 <li>按下 <code>A键/ 左键头</code>、<code>D键/右箭头</code>可以左/右推进</li>
 <li>按下 <code>空格</code> 或者点击 <code>鼠标左键</code> 可以发射子弹</li>
 </ul>
@@ -2041,11 +2048,6 @@ version: "3.1"
 <li>失败：
 <ul>
 <li>飞船碰到小行星会立即毁灭（通常有有限生命次数）</li>
-</ul>
-</li>
-<li>挑战：？
-<ul>
-<li>后期还会出现UFO 飞碟，会主动向玩家开火，增加挑战</li>
 </ul>
 </li>
 <li>其他特点：
@@ -2096,13 +2098,368 @@ version: "3.1"
 <h3 id="遇到的问题及解决方法-4">遇到的问题及解决方法
 </h3><h4 id="1-物体间物理碰撞层的设置">1. 物体间物理碰撞层的设置
 </h4><p>通过 <code>Project Setting</code> 中的 <code>Physics 2D</code> 来忽略玩家和子弹、子弹与子弹之间的碰撞检测。</p>
-<h4 id="2-小行星的旋转任意角度">2. 小行星的旋转任意角度
-</h4><p>使用 <code>Random.value</code>，这个值在0~1之间，小行星在 <code>z轴</code> 旋转，所以可以简单处理为 <code>transform.eulerAngles = new Vector3(0, 0, Random.value * 360);</code></p>
+<h4 id="2-小行星初始状态的设置">2. 小行星初始状态的设置
+</h4><p>因为此项目中的小行星有不同的变体，包括大小、图片、出现时的初始角度等多个参数都不同，所以采取的策略时在小行星的预制体中就将其全部设置好。这样做的好处是在小行星的 <code>Spawner.cs</code> 脚本里，预制体可以直接生成，做到了脚本的各司其职。<code>Asteroid.cs</code> 负责小行星本身的属性，<code>Spawner.cs</code> 脚本负责小行星的生成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Asteroid</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Sprite</span><span class="p">[]</span> <span class="n">sprites</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">size</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">speed</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">minSize</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">maxSize</span> <span class="p">=</span> <span class="m">1.5f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">SpriteRenderer</span> <span class="n">_sr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Rigidbody2D</span> <span class="n">_rb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sr</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">SpriteRenderer</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_sr</span><span class="p">.</span><span class="n">sprite</span> <span class="p">=</span> <span class="n">sprites</span><span class="p">[</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">sprites</span><span class="p">.</span><span class="n">Length</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">transform</span><span class="p">.</span><span class="n">eulerAngles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">Random</span><span class="p">.</span><span class="k">value</span> <span class="p">*</span> <span class="m">360</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//size = Random.Range(minSize, maxSize);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">one</span> <span class="p">*</span> <span class="n">size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_rb</span><span class="p">.</span><span class="n">mass</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// mass随着size变化</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">SetTrajectory</span><span class="p">(</span><span class="n">Vector2</span> <span class="n">dir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(</span><span class="n">dir</span> <span class="p">*</span> <span class="n">speed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>小行星初始的旋转角度</strong>：</p>
+<p>使用 <code>Random.value</code>，这个值在0~1之间，小行星在 <code>z轴</code> 旋转，所以可以简单处理为 <code>transform.eulerAngles = new Vector3(0, 0, Random.value * 360);</code></p>
+<p><strong>小行星的size部分处理</strong>：</p>
+<p>不能放在 <code>Asteroid.cs</code> 里，因为这个脚本后面会进行小行星分裂的逻辑，如果在 <code>Start()</code> 里对 <code>size</code> 取随机值，会导致分裂的逻辑错误。随机size的逻辑放在 <code>Spawner.cs</code> 里处理。这是我在这个项目遇到的一个大坑。</p>
+<h4 id="3-小行星生成和移动的实现思路">3. 小行星生成和移动的实现思路
+</h4><p>小行星生成在以屏幕为圆心，一定半径的圆内。它们向着圆心运动。为了增加随机性，增加了朝向圆心的偏移角度。因为是沿着 z轴 进行偏移的，所以可以用 <code>Quaternion.AngleAxis(float angle, Vector3.forward)</code> 实现。</p>
+<p>在小行星的移动上，本身方法由 <code>Asteroid.cs</code> 负责，<code>Spawner.cs</code> 通过获得一个Asteroid 的实例化对象调用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"> <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="n">InvokeRepeating</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Spawn</span><span class="p">),</span> <span class="n">spawnInterval</span><span class="p">,</span> <span class="n">spawnInterval</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 行星生成在离spawner为圆心的一定半径的位置</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnOffset</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">insideUnitCircle</span> <span class="p">*</span> <span class="n">spawnRadius</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnPos</span> <span class="p">=</span> <span class="p">(</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">+</span> <span class="n">spawnOffset</span><span class="p">;</span>   <span class="c1">// 以Spawner为圆心、一定半径内的某个随机位置</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">dir</span> <span class="p">=</span> <span class="p">((</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">spawnPos</span><span class="p">).</span><span class="n">normalized</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 在方向上加上一个角度的偏移量</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">variance</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(-</span><span class="n">trajectoryAngle</span><span class="p">,</span> <span class="n">trajectoryAngle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Quaternion</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">AngleAxis</span><span class="p">(</span><span class="n">variance</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">asteroidPrefab</span><span class="p">,</span> <span class="n">spawnPos</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>	<span class="c1">// 在此处处理生成小行星的随机尺寸问题</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">SetTrajectory</span><span class="p">(</span><span class="n">rotation</span> <span class="p">*</span> <span class="n">dir</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是，最终小行星的轨道方向是 rotaton * dir，rotation本身是一个四元数，这里将旋转作用于向量，即 旋转后的向量 = Quaternion * 原始向量</p>
+<blockquote class="alert alert-warning">
+    <p>Quaternion 必须在乘号左边！</p></blockquote>
+<p>其中的原理在数学的相关学习中再做详尽探讨，此处不再赘述。</p>
+<h5 id="关于-quaternion的补充">关于 Quaternion的补充
+</h5><p>应该避免直接修改 Quaternion 的x, y, z, w 分量，因为它们不是角度而是复杂的复数数学，直接修改会导致异常。</p>
+<blockquote class="alert alert-warning">
+    <p>始终使用Unity提供的API！</p></blockquote>
+<p><strong>常用的API</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>场景</th>
+          <th>方法</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>旋转一个向量</td>
+          <td><code>rotatedVector = quaternion * vector;</code></td>
+      </tr>
+      <tr>
+          <td>让物体看向某个方向</td>
+          <td><code>Quaternion.LookRotation(vector);</code></td>
+      </tr>
+      <tr>
+          <td>把(0,90,0)转为四元数</td>
+          <td><code>Quaternion.Euler(0, 90, 0);</code></td>
+      </tr>
+      <tr>
+          <td>获取四元数的度数</td>
+          <td><code>quaternion.eulerAngles;</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="4-玩家无敌时间的设计思路">4. 玩家无敌时间的设计思路
+</h4><p>通过更改玩家物理碰撞层的方法 <code>LayerMask.NameToLayer(layerName);</code>实现，非常简单明了，再使用 <code>Invoke</code> 来设定需要等待的时间即可。</p>
+<h4 id="5-粒子系统的设置">5. 粒子系统的设置
+</h4><p>因为我在UI的逻辑中使用了 <code>Time.scaleTime</code> 来控制游戏的结束和开始，为了避免粒子系统拖到下一轮开始游戏的那一瞬间播放，需要在面板里将粒子系统的 <code>Delta Time</code> 设置为 <code>Unscaled</code> 。</p>
 <h3 id="复盘-4">复盘
-</h3><h4 id="代码复用-4">代码复用
-</h4><h4 id="优化">优化
-</h4><h4 id="避坑">避坑
-</h4>
+</h3><p>这个项目中需要大量使用关于旋转的方法，常用的API要熟练使用。另外相关的数学知识也需要补充一下。</p>
+<p>这个项目还有两个方法值得注意，可以经常尝试使用：</p>
+<p><strong>通过传参获得另一个脚本中的对象</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======= GameManager.cs =======</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 函数的定义放在这里，因为里面很多用到的参数由GameManager统一管理</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">AsteroidDestroyed</span><span class="p">(</span><span class="n">Asteroid</span> <span class="n">asteroid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">0.75f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="m">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">1.3f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="m">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">pos</span> <span class="p">=</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">explosion</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">pos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">explosion</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========== Asteroid.cs =========</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 方法的调用由Asteroid类本身管理，在小行星碰撞后调用</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Bullet&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">*</span> <span class="m">0.5f</span> <span class="p">&gt;=</span> <span class="n">minSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">CreateHalf</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">CreateHalf</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">GameManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">AsteroidDestroyed</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>在一个脚本中调用另一个脚本中的函数</strong>：</p>
+<p>可以通过GameObject或者直接通过另一个类的游戏物体来获得：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//=========== Spawner.cs ============</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 通过实例化Asteroid对象来调用它的SetTrejactory方法</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Other codes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">asteroidPrefab</span><span class="p">,</span> <span class="n">spawnPos</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>   <span class="c1">// 在此处处理生成小行星的随机尺寸问题</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">SetTrajectory</span><span class="p">(</span><span class="n">rotation</span> <span class="p">*</span> <span class="n">dir</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="代码复用-4">代码复用
+</h4><h5 id="1-玩家无敌时间的设计">1. 玩家无敌时间的设计
+</h5><p>通过更改物理碰撞层，配合<code>Invoke</code>的使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Asteroid&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">lives</span><span class="p">--;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Invoke</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Respawn</span><span class="p">),</span> <span class="n">respawnTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Respawn</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">layer</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">NameToLayer</span><span class="p">(</span><span class="s">&#34;No Collision&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Invoke</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">ResetLayer</span><span class="p">),</span> <span class="n">invulnerableTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ResetLayer</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">layer</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">NameToLayer</span><span class="p">(</span><span class="s">&#34;Player&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2-清除场景中所有物体">2. 清除场景中所有物体
+</h5><p>在《飞翔的小鸟》和《小行星》的游戏重置中，都用到了同样的方法，使用 <code>FindObjectsOfType</code> 通过数组遍历场景中所有需要查找的物体进行销毁即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">Asteroid</span><span class="p">[]</span> <span class="n">asteroids</span> <span class="p">=</span> <span class="n">FindObjectsOfType</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">asteroids</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Destroy</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gameObject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -2139,7 +2496,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Jan 21, 2026 21:55 &#43;0800
+            最后更新于 Jan 23, 2026 17:12 &#43;0800
         </span>
     </section></footer>
 
@@ -2175,6 +2532,30 @@ version: "3.1"
 
         <div class="article-details">
             <h2 class="article-title">【SOLID】SOLID原则项目实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.d5dbc02814bce8e0638eacc5fc66ce99_hu_32f4ec35952ac793.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【练手日志】Unity小游戏集锦 1"
+                        
+                        data-hash="md5-1dvAKBS86OBjjqzF/GbOmQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【练手日志】Unity小游戏集锦 1</h2>
         </div>
     </a>
 </article>
@@ -2252,30 +2633,6 @@ version: "3.1"
 </article>
 
             
-                
-<article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/cover.a2ea06cd2ac9a81a050fadd3f675c4b2_hu_3bbe836a0980eab5.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】基础"
-                        
-                        data-hash="md5-ouoGzSrJqBoFD63T9nXEsg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】基础</h2>
-        </div>
-    </a>
-</article>
-
-            
         </div>
     </div>
 </aside>
@@ -2331,9 +2688,11 @@ version: "3.1"
         
         
         
+        
+        
 
-        发表了12篇文章 ·
-        总计6万8千字
+        发表了13篇文章 ·
+        总计8万2千字
         <br>
     </section>
 

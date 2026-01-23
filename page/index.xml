@@ -424,7 +424,18 @@
     }
     var key = &#34;2026-01-10&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;10.0&#34;;
+    var wordCount = &#34;11.7&#34;;
+    var link = &#34;/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/&#34;;
+    var title = &#34;【练手日志】Unity小游戏集锦 1&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
+    var key = &#34;2026-01-10&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;11.7&#34;;
     var link = &#34;/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/&#34;;
     var title = &#34;【练手日志】Unity小游戏集锦 1&#34;;
 
