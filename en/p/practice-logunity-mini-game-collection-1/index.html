@@ -10,7 +10,7 @@
 <meta property='og:description' content="I'm using these mini-game projects to get up to speed with Unity—learning its components, exploring frequently used APIs, and picking up common game logic patterns along the way.">
 <meta property='og:url' content='https://nullshowjl.github.io/en/p/practice-logunity-mini-game-collection-1/'>
 <meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-10T09:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-23T17:12:34&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/practice-logunity-mini-game-collection-1/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-10T09:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-24T10:28:30&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/practice-logunity-mini-game-collection-1/cover.webp' />
 <meta name="twitter:title" content="【Practice Log】Unity Mini Game Collection 1">
 <meta name="twitter:description" content="I'm using these mini-game projects to get up to speed with Unity—learning its components, exploring frequently used APIs, and picking up common game logic patterns along the way."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/practice-logunity-mini-game-collection-1/cover.webp' />
@@ -400,103 +400,103 @@ version: "3.1"
             <li><a href="#development-steps-1">Development Steps</a></li>
           </ol>
         </li>
-        <li><a href="#遇到的问题及解决方法">遇到的问题及解决方法</a>
+        <li><a href="#problems--solutions-1">Problems &amp; Solutions</a>
           <ol>
-            <li><a href="#1-背景的移动">1. 背景的移动</a></li>
-            <li><a href="#2-对刚体的运算要放在fixedupdate中">2. 对刚体的运算要放在<code>FixedUpdate()</code>中</a></li>
-            <li><a href="#3-边界检查的一种方法">3. 边界检查的一种方法</a></li>
-            <li><a href="#4-利用刚体实现物体的偏转">4. 利用刚体实现物体的偏转</a></li>
-            <li><a href="#5-组件化功能挂钩模式">5. “组件化（功能挂钩）”模式</a></li>
-            <li><a href="#6-getcomponent-调用的位置时机">6. <code>GetComponent</code> 调用的位置/时机</a></li>
-            <li><a href="#7-协程的一般写法">7. 协程的一般写法</a></li>
-            <li><a href="#8-小行星自身旋转效果的实现">8. 小行星自身旋转效果的实现</a></li>
-            <li><a href="#9-实现敌人发射子弹的两种方法">9. 实现敌人发射子弹的两种方法</a></li>
-            <li><a href="#10-敌人闪避的实现思路">10. 敌人闪避的实现思路</a></li>
-            <li><a href="#11-ontrigger和oncollison的使用时机">11. <code>OnTrigger</code>和<code>OnCollison</code>的使用时机</a></li>
-            <li><a href="#12-特效的销毁的方式方法关注点分离原则">12. 特效的销毁的方式方法（关注点分离原则）</a></li>
+            <li><a href="#1-moving-the-background">1. Moving the Background</a></li>
+            <li><a href="#2-rigidbody-calculations-should-be-placed-in">2. Rigidbody calculations should be placed in</a></li>
+            <li><a href="#3-a-simple-way-to-handle-boundary-checking">3. A Simple Way to Handle Boundary Checking</a></li>
+            <li><a href="#4-apply-tilt-to-the-object-through-rigidbody-based-rotation">4. Apply tilt to the object through Rigidbody-based rotation</a></li>
+            <li><a href="#5-component-based-feature-hook-architecture">5. Component-Based (“Feature Hook”) Architecture</a></li>
+            <li><a href="#6-when-to-call-getcomponent">6. When to Call <code>GetComponent</code></a></li>
+            <li><a href="#7-general-coroutine-usage">7. General Coroutine Usage</a></li>
+            <li><a href="#8-implementing-asteroid-selfrotation">8. Implementing Asteroid Self‑Rotation</a></li>
+            <li><a href="#9-two-ways-to-implement-enemy-shooting">9. Two Ways to Implement Enemy Shooting</a></li>
+            <li><a href="#10-implementing-enemy-dodging-behavior">10. Implementing Enemy Dodging Behavior</a></li>
+            <li><a href="#11-when-to-use-ontrigger-vs-oncollision">11. When to Use <code>OnTrigger</code> vs. <code>OnCollision</code></a></li>
+            <li><a href="#12-how-to-handle-effect-destruction-separation-of-concerns">12. How to Handle Effect Destruction (Separation of Concerns)</a></li>
           </ol>
         </li>
-        <li><a href="#复盘">复盘</a>
+        <li><a href="#reflection-1">Reflection</a>
           <ol>
-            <li><a href="#代码复用">代码复用</a></li>
+            <li><a href="#code-reuse-1">Code Reuse</a></li>
           </ol>
         </li>
       </ol>
     </li>
     <li><a href="#flappy-bird">Flappy Bird</a>
       <ol>
-        <li><a href="#游戏简介">游戏简介</a></li>
-        <li><a href="#游戏功能拆解">游戏/功能拆解</a>
+        <li><a href="#game-overview-2">Game Overview</a></li>
+        <li><a href="#game-breakdown-2">Game Breakdown</a>
           <ol>
-            <li><a href="#内容">内容</a></li>
-            <li><a href="#逻辑">逻辑</a></li>
-            <li><a href="#开发步骤">开发步骤</a></li>
+            <li><a href="#content-2">Content</a></li>
+            <li><a href="#core-logic-2">Core Logic</a></li>
+            <li><a href="#development-steps-2">Development Steps</a></li>
           </ol>
         </li>
-        <li><a href="#遇到的问题及解决方法-1">遇到的问题及解决方法</a>
+        <li><a href="#problems--solutions-2">Problems &amp; Solutions</a>
           <ol>
-            <li><a href="#1-触屏模式的写法">1. 触屏模式的写法</a></li>
-            <li><a href="#2-用invokerepeating-实现简单的动画">2. 用<code>InvokeRepeating </code>实现简单的动画</a></li>
-            <li><a href="#3-视差无尽背景的一种实现思路">3. 视差+无尽背景的一种实现思路</a></li>
-            <li><a href="#4-管道销毁的另一种思路">4. 管道销毁的另一种思路</a></li>
-            <li><a href="#5-unity中的几个坐标系">5. Unity中的几个坐标系</a></li>
-            <li><a href="#6-游戏的重启和暂停">6. 游戏的重启和暂停</a></li>
+            <li><a href="#1-implementing-touch-controls">1. Implementing Touch Controls</a></li>
+            <li><a href="#2-using-invokerepeating-to-implement-a-simple-animation">2. Using <code>InvokeRepeating</code> to Implement a Simple Animation</a></li>
+            <li><a href="#3-an-approach-to-implementing-parallax--infinite-background">3. An Approach to Implementing Parallax + Infinite Background</a></li>
+            <li><a href="#4-an-alternative-approach-to-destroying-pipes">4. An Alternative Approach to Destroying Pipes</a></li>
+            <li><a href="#5-coordinate-systems-in-unity">5. Coordinate Systems in Unity</a></li>
+            <li><a href="#6--restarting-and-pausing-the-game">6.  Restarting and Pausing the Game</a></li>
           </ol>
         </li>
-        <li><a href="#复盘-1">复盘</a>
+        <li><a href="#reflection-2">Reflection</a>
           <ol>
-            <li><a href="#代码复用-1">代码复用</a></li>
+            <li><a href="#code-reuse-2">Code Reuse</a></li>
           </ol>
         </li>
       </ol>
     </li>
     <li><a href="#pong">Pong</a>
       <ol>
-        <li><a href="#游戏简介-1">游戏简介</a></li>
-        <li><a href="#游戏功能拆解-1">游戏/功能拆解</a>
+        <li><a href="#game-overview-3">Game Overview</a></li>
+        <li><a href="#game-breakdown-3">Game Breakdown</a>
           <ol>
-            <li><a href="#内容-1">内容</a></li>
-            <li><a href="#逻辑-1">逻辑</a></li>
-            <li><a href="#开发步骤-1">开发步骤</a></li>
+            <li><a href="#content-3">Content</a></li>
+            <li><a href="#core-logic-3">Core Logic</a></li>
+            <li><a href="#development-steps-3">Development Steps</a></li>
           </ol>
         </li>
-        <li><a href="#遇到的问题及解决方法-2">遇到的问题及解决方法</a>
+        <li><a href="#problems--solutions-3">Problems &amp; Solutions</a>
           <ol>
-            <li><a href="#1-angular-drag-和-linear-drag">1. <code>Angular Drag</code> 和 <code>Linear Drag</code></a></li>
-            <li><a href="#2-fixedupdate的使用说明">2. <code>FixedUpdate</code>的使用说明</a></li>
-            <li><a href="#3-小球接触回弹效果的实现">3. 小球接触回弹效果的实现</a></li>
-            <li><a href="#4-使用-eventsystem-实现玩家和电脑的得分">4. 使用 <code>EventSystem</code> 实现玩家和电脑的得分</a></li>
+            <li><a href="#1-angular-drag-and-linear-drag">1. <code>Angular Drag</code> and <code>Linear Drag</code></a></li>
+            <li><a href="#2--notes-on-using-fixedupdate">2. Notes on Using <code>FixedUpdate</code></a></li>
+            <li><a href="#3-implementing-ball-bounce-behavior">3. Implementing Ball Bounce Behavior</a></li>
+            <li><a href="#4-using-the-eventsystem-to-handle-player-and-ai-scoring">4. Using the <code>EventSystem</code> to Handle Player and AI Scoring</a></li>
           </ol>
         </li>
-        <li><a href="#复盘-2">复盘</a>
+        <li><a href="#reflection-3">Reflection</a>
           <ol>
-            <li><a href="#代码复用-2">代码复用</a></li>
+            <li><a href="#code-reuse-3">Code Reuse</a></li>
           </ol>
         </li>
       </ol>
     </li>
     <li><a href="#asteroids">Asteroids</a>
       <ol>
-        <li><a href="#游戏简介-2">游戏简介</a></li>
-        <li><a href="#游戏功能拆解-2">游戏/功能拆解</a>
+        <li><a href="#game-overview-4">Game Overview</a></li>
+        <li><a href="#game-breakdown1">Game Breakdown1</a>
           <ol>
-            <li><a href="#内容-2">内容</a></li>
-            <li><a href="#逻辑-2">逻辑</a></li>
-            <li><a href="#开发步骤-2">开发步骤</a></li>
+            <li><a href="#content-4">Content</a></li>
+            <li><a href="#core-logic-4">Core Logic</a></li>
+            <li><a href="#development-steps-4">Development Steps</a></li>
           </ol>
         </li>
-        <li><a href="#遇到的问题及解决方法-3">遇到的问题及解决方法</a>
+        <li><a href="#problems--solutions-4">Problems &amp; Solutions</a>
           <ol>
-            <li><a href="#1-物体间物理碰撞层的设置">1. 物体间物理碰撞层的设置</a></li>
-            <li><a href="#2-小行星初始状态的设置">2. 小行星初始状态的设置</a></li>
-            <li><a href="#3-小行星生成和移动的实现思路">3. 小行星生成和移动的实现思路</a></li>
-            <li><a href="#4-玩家无敌时间的设计思路">4. 玩家无敌时间的设计思路</a></li>
-            <li><a href="#5-粒子系统的设置">5. 粒子系统的设置</a></li>
+            <li><a href="#1--configuring-collision-layers">1.  Configuring Collision Layers</a></li>
+            <li><a href="#2-setting-initial-asteroid-states">2. Setting Initial Asteroid States</a></li>
+            <li><a href="#3-approach-to-asteroid-spawning-and-movement">3. Approach to Asteroid Spawning and Movement</a></li>
+            <li><a href="#4-designing-player-invincibility-frames">4. Designing Player Invincibility Frames</a></li>
+            <li><a href="#5--particle-system-configuration">5.  Particle System Configuration</a></li>
           </ol>
         </li>
-        <li><a href="#复盘-3">复盘</a>
+        <li><a href="#reflection-4">Reflection</a>
           <ol>
-            <li><a href="#代码复用-3">代码复用</a></li>
+            <li><a href="#code-reuse-4">Code Reuse</a></li>
           </ol>
         </li>
       </ol>
@@ -581,7 +581,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            23 minute read
+            17 minute read
         </time>
     </div>
     
@@ -881,18 +881,7 @@ version: "3.1"
 <li>If the player is hit by enemy bullets or collides with asteroids/enemies, the ship is destroyed and the scene reloads</li>
 </ol>
 <h4 id="development-steps-1">Development Steps
-</h4><ol start="5">
-<li>
-<p>UI部分</p>
-<ul>
-<li>搭建UI界面</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>实现UI显示逻辑</li>
-</ul>
-<ol>
+</h4><ol>
 <li>
 <p>Background Setup</p>
 <ul>
@@ -933,10 +922,14 @@ version: "3.1"
 </ul>
 </li>
 </ol>
-<h3 id="遇到的问题及解决方法">遇到的问题及解决方法
-</h3><h4 id="1-背景的移动">1. 背景的移动
-</h4><p>让背景移动还是摄像机移动呢？通常选择让背景移动，因为游戏场景中还会有小行星、玩家、敌人等各种物体，保持摄像机不动是一种更简单的方式。</p>
-<p>需要注意的是，和做“往复”有关的计算时，因为要与绝对时间同步，所以使用 <code>Time.time</code>；在做一般位移、计时、累加时，因为需要确保与帧率无法，使用<code>Time.deltaTime</code>。</p>
+<h3 id="problems--solutions-1">Problems &amp; Solutions
+</h3><h4 id="1-moving-the-background">1. Moving the Background
+</h4><p>Should the background move, or should the camera move? In most cases, it’s easier to move the background. Since the scene contains asteroids, enemies, the player, and other objects, keeping the camera still simplifies everything.</p>
+<p>One thing to keep in mind:</p>
+<ul>
+<li>When doing any kind of <em>back‑and‑forth</em> or looping movement that needs to stay in sync with absolute time, use <code>Time.time</code>.</li>
+<li>For regular movement, timers, or accumulative values that must stay frame‑rate independent, use <code>Time.deltaTime</code>.</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -950,10 +943,10 @@ version: "3.1"
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 位移的计算（一般使用API）</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Movement calculation (usually handled with built‑in APIs)</span>
 </span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span> <span class="p">*</span> <span class="m">1</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">,</span> <span class="n">space</span><span class="p">.</span><span class="n">World</span><span class="p">);</span> <span class="c1">// 如果是自己坐标系：Space.Self</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 背景循环往复</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Looping background movement</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ScrollBG</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Repeat</span><span class="p">(</span><span class="n">_scrollSpeed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">time</span><span class="p">,</span> <span class="m">30</span><span class="p">);</span>
@@ -961,8 +954,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="2-对刚体的运算要放在fixedupdate中">2. 对刚体的运算要放在<code>FixedUpdate()</code>中
-</h4><p>因为<code>Update()</code>中每一帧的时间可能不同，取决于设备的性能、运算的复杂程度等，所以如果将刚体运算放置其中可能会出现一些卡顿等情况。</p>
+</div><h4 id="2-rigidbody-calculations-should-be-placed-in">2. Rigidbody calculations should be placed in
+</h4><p>Since the time between frames in <code>Update()</code> can vary depending on device performance and workload, running physics or Rigidbody operations there may cause jitter or inconsistent behavior. Using <code>FixedUpdate()</code> ensures physics calculations run at a stable, fixed timestep.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -981,7 +974,7 @@ version: "3.1"
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 通过对刚体的操作来控制玩家的运动</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Control the player&#39;s movement by manipulating the Rigidbody</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">FixedUpdate</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">MovePlayer</span><span class="p">();</span>
@@ -997,8 +990,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="3-边界检查的一种方法">3. 边界检查的一种方法
-</h4><p>通过在面板中直观地检查边界的位置，感觉比纯用代码控制简便。先在类内创建一个结构体并序列化，然后在代码中调用。(不要忘记将Border类实例化)</p>
+</div><h4 id="3-a-simple-way-to-handle-boundary-checking">3. A Simple Way to Handle Boundary Checking
+</h4><p>It’s often easier to visually adjust boundary positions in the Inspector rather than controlling everything purely through code. The idea is to create a struct inside the class, mark it as serializable, and then reference it in your logic. (Don’t forget to instantiate the <code>Border</code> class before using it.)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1053,7 +1046,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="4-利用刚体实现物体的偏转">4. 利用刚体实现物体的偏转
+</div><h4 id="4-apply-tilt-to-the-object-through-rigidbody-based-rotation">4. Apply tilt to the object through Rigidbody-based rotation
 </h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1063,21 +1056,25 @@ version: "3.1"
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 物体绕y轴旋转30°</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Rotate the object 30° around the Y-axis</span>
 </span></span><span class="line"><span class="cl"><span class="n">Quaternion</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 可以直接利用刚体的rotation属性</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// You can directly use the Rigidbody&#39;s rotation property</span>
 </span></span><span class="line"><span class="cl"><span class="n">_playerRb</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_playerRb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">x</span> <span class="p">*</span> <span class="p">(-</span><span class="m">1</span><span class="p">)</span> <span class="p">*</span> <span class="n">tilt</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="5-组件化功能挂钩模式">5. “组件化（功能挂钩）”模式
-</h4><p>把可复用的功能拆成小组件（例如 MoveController），再由具体行为脚本（例如 PlayerController / EnemyController）组合调用。</p>
-<p><strong>优点</strong>：复用性高、职责清晰、易测试、易维护；遵循 composition over inheritance。
-<strong>缺点</strong>：某些对象会挂多个小脚本，但这是合理的单一职责拆分，性能影响很小。
-<strong>实践要点</strong>：保持组件单一职责、用接口/事件解耦、用 RequireComponent、把共享数据放到 ScriptableObject 或配置类、用 Prefab 组合复用。</p>
-<p>“实践要点”有点难以理解。在“2048”项目中曾经看到过一次，以后对这方面的实践需要多加留意体会。</p>
-<h4 id="6-getcomponent-调用的位置时机">6. <code>GetComponent</code> 调用的位置/时机
-</h4><p>在实践中推荐的做法是，如果同一物体上获取并缓存组件用 <code>Awake()</code>，如果依赖别的对象在 <code>Awake()</code> 中完成的初始化则放到 <code>Start()</code>。</p>
+</div><h4 id="5-component-based-feature-hook-architecture">5. Component-Based (“Feature Hook”) Architecture
+</h4><p>Break reusable functionality into small, focused components (e.g., <code>MoveController</code>), then let higher-level behavior scripts (e.g., <code>PlayerController</code> / <code>EnemyController</code>) compose and use them.</p>
+<p><strong>Pros:</strong> High reusability, clear responsibilities, easy to test, easy to maintain; follows <em>composition over inheritance</em>.</p>
+<p><strong>Cons:</strong> Some objects may end up with multiple small scripts attached, but this is normal for single‑responsibility design and has minimal performance impact.</p>
+<p><strong>Best Practices:</strong> Keep each component focused on a single responsibility, use interfaces/events for decoupling, use <code>RequireComponent</code>, store shared data in ScriptableObjects or config classes, and reuse behavior through Prefabs.</p>
+<p>The “best practices” part is still a bit abstract for me. I’ve seen it once in the “2048” project, and I’ll need more hands‑on experience to fully internalize how to apply it.</p>
+<h4 id="6-when-to-call-getcomponent">6. When to Call <code>GetComponent</code>
+</h4><p>A commonly recommended pattern is:</p>
+<ul>
+<li>Use <code>Awake()</code> when retrieving and caching components on the <strong>same GameObject</strong>.</li>
+<li>Use <code>Start()</code> when the component depends on <strong>other objects</strong> that also initialize in <code>Awake()</code></li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1118,12 +1115,12 @@ version: "3.1"
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 要获得同一个物体MoveController身上的刚体组件</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Get the Rigidbody component from the same GameObject as MoveController</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MoveController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Rigidbody</span> <span class="n">rb</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>	<span class="c1">// 在Awake()中获取刚体组件</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>	<span class="c1">// Retrieve the Rigidbody in Awake()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -1134,16 +1131,16 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 依赖别的对象在 Awake() 中初始化的值，所以在 Start() 使用</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// This script depends on values initialized by other objects in their Awake(), so use Start()</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EnemyAI</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MoveController</span> <span class="n">move</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Transform</span> <span class="n">player</span><span class="p">;</span> <span class="c1">// 假设 Player 在 Awake() 设置好</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Transform</span> <span class="n">player</span><span class="p">;</span> <span class="c1">// Assume the Player finishes its setup in Awake()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">move</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">MoveController</span><span class="p">&gt;();</span>	<span class="c1">// 另一个对象MoveController在Start()中获取组件</span>
-</span></span><span class="line"><span class="cl">        <span class="n">player</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">FindWithTag</span><span class="p">(</span><span class="s">&#34;Player&#34;</span><span class="p">)?.</span><span class="n">transform</span><span class="p">;</span> <span class="c1">// 等待所有 Awake 完成后再查找使用更安全</span>
+</span></span><span class="line"><span class="cl">        <span class="n">move</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">MoveController</span><span class="p">&gt;();</span>	<span class="c1">// Another object (MoveController) gets the component in Start()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">player</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">FindWithTag</span><span class="p">(</span><span class="s">&#34;Player&#34;</span><span class="p">)?.</span><span class="n">transform</span><span class="p">;</span> <span class="c1">// Waiting until all Awake() calls are done makes the lookup safer</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
@@ -1156,12 +1153,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="7-协程的一般写法">7. 协程的一般写法
-</h4><p>需要注意以下几点：</p>
+</div><h4 id="7-general-coroutine-usage">7. General Coroutine Usage
+</h4><p>A few things to keep in mind:</p>
 <ul>
-<li>定义返回类型为 IEnumerator 的方法，方法内使用 yield return 返回等待（null、new WaitForSeconds(&hellip;)、WaitForEndOfFrame 等）</li>
-<li>用 StartCoroutine(MyCoroutine()) 启动；可用 StopCoroutine 停止*</li>
-<li>不要在主线程（比如 Start()）里写不会 yield 的 while(true)，那会卡死主线程</li>
+<li>Define a method that returns <code>IEnumerator</code>, and use <code>yield return</code> inside it to wait (e.g., <code>null</code>, <code>new WaitForSeconds(...)</code>, <code>WaitForEndOfFrame</code>, etc.)</li>
+<li>Start it with <code>StartCoroutine(MyCoroutine())</code>; you can stop it with <code>StopCoroutine</code> if needed</li>
+<li>Never write a <code>while(true)</code> loop without any <code>yield</code> inside a main-thread method (like <code>Start()</code>), or it will freeze the entire game loop</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1188,10 +1185,13 @@ version: "3.1"
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 利用协程生成和销毁敌人</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 把循环放到协程里并用 Instantiate 生成敌人，用另一个协程在延时后销毁</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Use coroutines to spawn and destroy enemies</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Run the spawn loop inside a coroutine and use Instantiate to create enemies,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// then use another coroutine to destroy them after a delay</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">SpawnEnemyWave</span><span class="p">());</span>
@@ -1212,11 +1212,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Enemy和其子弹全部和Player的子弹一样，用KillBox统一销毁</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Enemies and their bullets are all destroyed the same way as the player&#39;s bullets, </span>
+</span></span><span class="line"><span class="cl"><span class="c1">// using a unified KillBox system</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="8-小行星自身旋转效果的实现">8. 小行星自身旋转效果的实现
-</h4><p>使用API<code>Random.insideUnitSphere</code>, 返回一个随机的 <code>Vector3</code>，方向和大小在单位球体内随机分布；然后通过乘以 <code>rotationSpeed</code> 会把这个向量缩放到期望的角速度大小；最后赋值给<code>Rigidbody.angularVelocity</code>：向量的方向表示旋转轴，向量的长度表示角速度（弧度/秒），所以刚体会绕该随机轴以该速度旋转。</p>
+</div><h4 id="8-implementing-asteroid-selfrotation">8. Implementing Asteroid Self‑Rotation
+</h4><p>Use the <code>Random.insideUnitSphere</code> API, which returns a random <code>Vector3</code> whose direction and magnitude are uniformly distributed inside a unit sphere. Multiplying this vector by <code>rotationSpeed</code> scales it to the desired angular velocity. Finally, assign it to <code>Rigidbody.angularVelocity</code>: the vector’s direction represents the rotation axis, and its magnitude represents the angular speed (in radians per second). As a result, the asteroid rotates around a random axis at the given speed.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1231,9 +1232,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="9-实现敌人发射子弹的两种方法">9. 实现敌人发射子弹的两种方法
-</h4><p>方法一：和玩家发射子弹的思路类似，用累加时间的方法。</p>
-<p>方法二：使用API<code>InvokeRepeating(string methodName, float time, float repeatRate)</code> 。含义：在 <code>time</code> 秒后调用 <code>methodName</code> 方法，然后每 <code>repeatRate</code> 秒调用一次。</p>
+</div><h4 id="9-two-ways-to-implement-enemy-shooting">9. Two Ways to Implement Enemy Shooting
+</h4><p><strong>Method 1:</strong>   Use the same approach as the player’s shooting logic—accumulate time and fire when the timer exceeds a threshold.</p>
+<p><strong>Method 2:</strong>   Use the <code>InvokeRepeating(string methodName, float time, float repeatRate)</code> API. It calls <code>methodName</code> after <code>time</code> seconds, and then repeats the call every <code>repeatRate</code> seconds.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1266,7 +1267,7 @@ version: "3.1"
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 方法一的实现</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Implementation of Method 1</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">SpawnBullet</span><span class="p">();</span>
@@ -1283,7 +1284,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 方法二的实现</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Implementation of Method 2</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">InvokeRepeating</span><span class="p">(</span><span class="s">&#34;SpawnBullet&#34;</span><span class="p">,</span> <span class="n">startingTime</span><span class="p">,</span> <span class="n">cooldown</span><span class="p">);</span>
@@ -1296,14 +1297,18 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="10-敌人闪避的实现思路">10. 敌人闪避的实现思路
-</h4><p>敌人在生成一段时间（随机值）后进行闪避，如果敌人生成在屏幕的左半边则向右移动，如果在右半边则向左移动，一段时间（随机值）后停止左/右移动，继续向下移动，然后进入下一个闪避的循环，直到被自然销毁。</p>
+</div><h4 id="10-implementing-enemy-dodging-behavior">10. Implementing Enemy Dodging Behavior
+</h4><p>After an enemy has existed for a certain amount of time (a random value), it begins a dodge action. If the enemy spawns on the left half of the screen, it moves to the right; if it spawns on the right half, it moves to the left. After dodging for another random duration, it stops the horizontal movement, continues descending, and then repeats the dodge cycle until it is naturally destroyed.</p>
 <ul>
-<li>使用协程实现一段时间闪避然后继续保持竖直下行的行动</li>
-<li>为了让敌人的闪避看起来平滑和自然，使用一个加速度通过API<code>Mathf.Lerp(float a, float b, float t)</code>来实现。<code>a</code>为起点值，<code>b</code>为终点值，<code>t</code>为两个浮点数之间的插值</li>
-<li>敌人在移动过程中注意边界检查</li>
+<li>Use a coroutine to perform the dodge for a period of time, then return to straight downward movement</li>
+<li>To make the dodge motion smooth and natural, apply acceleration using <code>Mathf.Lerp(float a, float b, float t)</code>, where <code>a</code> is the start value, <code>b</code> is the target value, and <code>t</code> is the interpolation factor between 0 and 1</li>
+<li>Remember to perform boundary checks while the enemy is moving</li>
 </ul>
-<p>教程中使用<code>Mathf.MoveTowards(float current, float target, float maxDelta)</code>实现，这个API本质上与<code>Mathf.Lerp</code>相同，将值<code>current</code>平滑地向<code>target</code>靠近。但是使用这个方法需要大幅提高加速度的值，否则敌人会不产生闪避的行为。原因在于这两者的本质差别：<code>Lerp</code> 用的是比例插值（t 是个 0~1 的比率），会按比例“拉”向目标，哪怕目标在另一侧也会生成小的反向速度；<code>MoveTowards</code> 用的是绝对步长（<code>maxDelta</code>），每帧只移动固定的量。如果用于 <code>MoveTowards</code> 的 <code>maxDelta</code> 太小（比如 <code>acceleration</code> 很小），每帧的速度变化被其他物理因素（摩擦、重置、阈值判断）淹没，看起来像“没有发生闪避”。</p>
+<p>The tutorial uses <code>Mathf.MoveTowards(float current, float target, float maxDelta)</code> instead. This API is conceptually similar to <code>Lerp</code> in that it moves <code>current</code> toward <code>target</code> smoothly. However, using this method requires a much larger acceleration value; otherwise, the enemy may appear to not dodge at all. The reason lies in the fundamental difference between the two:</p>
+<ul>
+<li><code>Lerp</code> uses <strong>proportional interpolation</strong> (t is a 0–1 ratio), which pulls the value toward the target proportionally—even if the target is on the opposite side, it still produces a small counter‑directional velocity</li>
+<li><code>MoveTowards</code> uses an <strong>absolute step size</strong> (<code>maxDelta</code>), moving only a fixed amount per frame. If <code>maxDelta</code> is too small (e.g., acceleration is low), the per‑frame velocity change is overshadowed by other factors (friction, resets, threshold checks), making it look like “no dodge happened”</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1338,6 +1343,7 @@ version: "3.1"
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
@@ -1359,8 +1365,9 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WaitForSeconds</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">startingTimeMin</span><span class="p">,</span> <span class="n">startingTimeMax</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">_targetDodgeSpeed</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">dodgeSpeedMin</span><span class="p">,</span> <span class="n">dodgeSpeedMax</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 如果敌人出现在屏幕中线右侧向左闪避</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 如果出现在左侧，那么自然速度是正，向左闪避，不用改</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// If the enemy spawns on the right half of the screen, dodge to the left </span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// If it spawns on the left side, its natural horizontal speed is already positive, </span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// so it will dodge left automatically and needs no adjustment</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="p">&gt;=</span> <span class="m">0</span><span class="p">)</span>   
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">_targetDodgeSpeed</span> <span class="p">=</span> <span class="p">-</span><span class="n">_targetDodgeSpeed</span><span class="p">;</span>
@@ -1374,18 +1381,18 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="11-ontrigger和oncollison的使用时机">11. <code>OnTrigger</code>和<code>OnCollison</code>的使用时机
-</h4><p>两者都可以用于碰撞检测。</p>
-<p>OnCollision用于实际碰撞并产生物理反应的场景，所以开销较大，适用于物理交互时，如碰撞、反弹、受力等。</p>
-<p>OnTrigger只检测重叠，不自动产生物理反应，因为通常不计算接触点/冲量，所以开销比OnCollision小些，适用于范围检测、触发器区域、捡取、伤害区域等。</p>
-<h4 id="12-特效的销毁的方式方法关注点分离原则">12. 特效的销毁的方式方法（关注点分离原则）
-</h4><p>特效的销毁放在一个单独的脚本中，不要和<code>CollisionCheck</code> 脚本放在一起。这样可以是关注点分离（<code>CollisionCheck</code> 只负责触发/判定），可复用性高，便于切换为对象池而不是每次销毁。</p>
-<h3 id="复盘">复盘
-</h3><p>教程提供了一些很新颖的思路，在这个游戏中开始尝试自己写协程，并且尽量练习了上一个游戏中学到的单例模式。在一些我有疑问的时候或者觉得教程的处理超出我认知的时候问了AI，基本都得到满意的答复，感觉用这种项目驱动的学习方法真的很高效且因为有很多即时反馈，所以心理上也不太容易有疲惫感。</p>
-<p>也有一些自己看了AI的回答和教程的讲解也不太明白的地方，比如“组件单一职责、用接口/事件解耦”等，留待在以后的游戏实战项目中慢慢实践体会。</p>
-<p>还有很棒的一点是，学到了原来Unity开始界面的logo是可以替换的，马上做了一张小logo替换，效果真的不错！</p>
-<h4 id="代码复用">代码复用
-</h4><h5 id="1-滚动的无限背景">1. 滚动的无限背景
+</div><h4 id="11-when-to-use-ontrigger-vs-oncollision">11. When to Use <code>OnTrigger</code> vs. <code>OnCollision</code>
+</h4><p>Both can be used for collision detection.</p>
+<p><code>OnCollision</code> is used when actual physical interaction is required, such as collisions, bouncing, or applying forces. Since it calculates contact points and impulses, it has a higher performance cost and is suitable for real physics interactions.</p>
+<p><code>OnTrigger</code> only detects overlap and does not automatically produce physical responses. Because it usually doesn’t compute contact points or impulses, it’s cheaper than <code>OnCollision</code>. It’s ideal for area detection, trigger zones, pickups, damage areas, and similar cases.</p>
+<h4 id="12-how-to-handle-effect-destruction-separation-of-concerns">12. How to Handle Effect Destruction (Separation of Concerns)
+</h4><p>Effect destruction should be handled in a dedicated script rather than mixing it into the <code>CollisionCheck</code> script. This keeps responsibilities separated (<code>CollisionCheck</code> only handles triggering and detection), improves reusability, and makes it easier to switch to an object‑pooling system instead of destroying effects every time.</p>
+<h3 id="reflection-1">Reflection
+</h3><p>The tutorial introduced several fresh ideas. In this project, I started writing my own coroutines and continued practicing the singleton pattern learned from the previous game. Whenever I had questions or felt the tutorial’s approach exceeded my current understanding, I asked AI for clarification—and the answers were generally satisfying. This project‑driven learning style feels very efficient, and the constant feedback helps prevent mental fatigue.</p>
+<p>There are still concepts I don’t fully grasp yet, such as “single‑responsibility components” and “decoupling with interfaces/events.” I’ll need more hands‑on experience in future projects to internalize these ideas.</p>
+<p>Another fun discovery: the Unity splash screen logo can be replaced! I immediately created a small custom logo, and it looks great.</p>
+<h4 id="code-reuse-1">Code Reuse
+</h4><h5 id="1-scrolling-infinite-background">1. Scrolling Infinite Background
 </h5><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1428,7 +1435,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="2-旋转效果">2. 旋转效果
+</div><h5 id="2-rotation-effect">2. Rotation Effect
 </h5><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1440,17 +1447,17 @@ version: "3.1"
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 球体的随机旋转</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Random rotation for the sphere</span>
 </span></span><span class="line"><span class="cl"><span class="n">_rb</span><span class="p">.</span><span class="n">angularVelocity</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">insideUnitSphere</span> <span class="p">*</span> <span class="n">rotationSpeed</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 3D物体随某个轴的速度发生倾斜（此例中是随x轴上的速度）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// The 3D object tilts according to its velocity on a specific axis (x‑axis here)</span>
 </span></span><span class="line"><span class="cl"> <span class="n">_rb</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">x</span> <span class="p">*</span> <span class="p">(-</span><span class="m">1</span><span class="p">)</span> <span class="p">*</span> <span class="n">tilt</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">posX</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">border</span><span class="p">.</span><span class="n">minX</span><span class="p">,</span> <span class="n">border</span><span class="p">.</span><span class="n">maxX</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="n">_rb</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="3-movecontroller">3. <code>MoveController</code>
-</h5><p>使用刚体，可以复用在所有在z轴方向运动的物体。</p>
+</h5><p>Using a Rigidbody allows this logic to be reused for any object moving along the Z‑axis.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1486,7 +1493,7 @@ version: "3.1"
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="4-destroybytime">4. <code>DestroyByTime</code>
-</h5><p>复用在特效的自动销毁上。</p>
+</h5><p>This logic can be reused for automatically destroying visual effects or other similar things.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1512,7 +1519,7 @@ version: "3.1"
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="5-audiomanager">5. <code>AudioManager</code>
-</h5><p>复用在全部音效的管理和播放上。</p>
+</h5><p>Reusable for managing and playing all sound effects.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1555,88 +1562,84 @@ version: "3.1"
 </div>
 </div><h2 id="flappy-bird">Flappy Bird
 </h2><p><strong>Tutorial Reference and Assets Source</strong>：<a class="link" href="https://www.youtube.com/watch?v=ihvBiJ1oC9U"  target="_blank" rel="noopener"
-    >油管-Zigurous</a></p>
+    >Youtube-Zigurous</a></p>
 <p><strong>Source Code</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-flappy-bird"  target="_blank" rel="noopener"
     >on Gitee</a></p>
-<h3 id="游戏简介">游戏简介
-</h3><p>《飞翔的小鸟》（Flappy Bird）是一款由越南开发者Dong Nguyen于2013年发行的简易2D手机游戏。游戏因其极低的画面复杂性、极高的难度和令人“上瘾”的挫败感而迅速走红，一度成为全球现象级游戏。</p>
-<p><strong>核心玩法</strong>：</p>
+<h3 id="game-overview-2">Game Overview
+</h3><p><strong>Flappy Bird</strong> is a simple 2D mobile game released in 2013 by Vietnamese developer Dong Nguyen. The game became a global phenomenon due to its extremely simple visuals, extremely high difficulty, and the uniquely “addictive frustration” it creates.</p>
+<p><strong>Core Gameplay:</strong></p>
 <ul>
-<li><strong>类型</strong>：像素风格2D游戏，背景为卷轴式滚动，角色是一只简单的像素小鸟</li>
-<li><strong>目标</strong>：控制小鸟穿越由上下管道组成的障碍，飞得越远得分越高</li>
-<li><strong>操作方式</strong>：
+<li><strong>Genre:</strong> Pixel‑style 2D game with a scrolling background; the player controls a small pixel bird</li>
+<li><strong>Goal:</strong> Guide the bird through pairs of pipes; the farther you fly, the higher you score</li>
+<li><strong>Controls:</strong>
 <ul>
-<li>点击屏幕（或按任意键），小鸟向上扇动翅膀，短暂上升</li>
-<li>不操作时，小鸟受重力影响持续下落</li>
+<li>Tap the screen (or press any key) to make the bird flap upward briefly</li>
+<li>Without input, the bird continuously falls due to gravity</li>
 </ul>
 </li>
-<li><strong>障碍机制</strong>：
+<li><strong>Obstacle System:</strong>
 <ul>
-<li>场景中随机出现高低不一的“绿色管道”，小鸟需从管道间隙穿过</li>
-<li>触碰到管道、地面都会导致游戏立即结束</li>
+<li>Randomly generated green pipes of varying heights appear in the scene</li>
+<li>The bird must pass through the gap between each pair of pipes</li>
+<li>Touching a pipe or the ground results in an immediate game over</li>
 </ul>
 </li>
-<li><strong>失败条件</strong>：小鸟碰到障碍物或地面则失败</li>
-<li><strong>计分系统</strong>：每成功穿过一对管道得1分，无最高分限制</li>
+<li><strong>Failure Condition:</strong>
+<ul>
+<li>The bird hits an obstacle or the ground</li>
+</ul>
+</li>
+<li><strong>Scoring:</strong>
+<ul>
+<li>Passing through each pair of pipes awards 1 point</li>
+<li>There is no upper limit to the score</li>
+</ul>
+</li>
 </ul>
 <img src="3-flappy_bird.gif" alt="" style="zoom:100%;"/>
-<h3 id="游戏功能拆解">游戏/功能拆解
-</h3><h4 id="内容">内容
-</h4><p>场景摆放（背景视差效果、无限滚动）、动画（小鸟飞翔）、UI（分数）、音效（得分、撞击）</p>
-<h4 id="逻辑">逻辑
+<h3 id="game-breakdown-2">Game Breakdown
+</h3><h4 id="content-2">Content
+</h4><ul>
+<li>Scene layout (parallax background, infinite scrolling)</li>
+<li>Animation (bird flapping)</li>
+<li>UI (score display)</li>
+<li>Sound effects (scoring, collision)</li>
+</ul>
+<h4 id="core-logic-2">Core Logic
 </h4><ol>
-<li>小鸟自动前进并随重力作用自然下落</li>
-<li>玩家可以按下<code>W</code>键、上方向键或者点击鼠标左键让小鸟向上运动</li>
-<li>如果小鸟在前进过程中碰到了管道或地面则游戏失败</li>
-<li>显示当前的分数</li>
+<li>The bird moves forward automatically and falls naturally under gravity</li>
+<li>The player can press <code>W</code>, the <code>Up Arrow</code>, or click the <code>left mouse button</code> to make the bird move upward</li>
+<li>If the bird hits a pipe or the ground while moving forward, the game ends</li>
+<li>Display the current score</li>
 </ol>
-<h4 id="开发步骤">开发步骤
+<h4 id="development-steps-2">Development Steps
 </h4><ol>
-<li>
-<p>小鸟部分</p>
+<li>Bird
 <ul>
-<li>
-<p>小鸟的移动</p>
-</li>
-<li>
-<p>小鸟飞翔动画的实现</p>
-</li>
+<li>Bird movement</li>
+<li>Bird flapping animation</li>
 </ul>
 </li>
-<li>
-<p>背景部分</p>
+<li>Background
 <ul>
-<li>
-<p>背景的制作</p>
-</li>
-<li>
-<p>背景视差的实现</p>
-</li>
+<li>Background creation</li>
+<li>Parallax scrolling</li>
 </ul>
 </li>
-<li>
-<p>管道部分</p>
+<li>Pipes
 <ul>
-<li>管道预制体的制作</li>
-<li>管道的生成</li>
-<li>管道的运动</li>
+<li>Pipe prefab creation</li>
+<li>Pipe generation</li>
+<li>Pipe movement</li>
 </ul>
 </li>
-<li>
-<p>得分</p>
-</li>
-<li>
-<p>UI的设计/设置</p>
-</li>
-<li>
-<p>菜单交互功能的实现</p>
-</li>
-<li>
-<p>添加音效</p>
-</li>
+<li>Scoring</li>
+<li>UI design / setup</li>
+<li>Menu interaction implementation</li>
+<li>Adding sound effects</li>
 </ol>
-<h3 id="遇到的问题及解决方法-1">遇到的问题及解决方法
-</h3><h4 id="1-触屏模式的写法">1. 触屏模式的写法
+<h3 id="problems--solutions-2">Problems &amp; Solutions
+</h3><h4 id="1-implementing-touch-controls">1. Implementing Touch Controls
 </h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1651,23 +1654,22 @@ version: "3.1"
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 以控制小鸟向上移动为例</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 触屏模式</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">touchCount</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>   <span class="c1">// 只要手指接触到屏幕</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Example: controlling the bird&#39;s upward movement</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Touch input mode</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">touchCount</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>   <span class="c1">// As long as a finger is touching the screen</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Touch</span> <span class="n">touch</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetTouch</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>    <span class="c1">// 获取首次屏幕按触</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">touch</span><span class="p">.</span><span class="n">phase</span> <span class="p">==</span> <span class="n">TouchPhase</span><span class="p">.</span><span class="n">Began</span><span class="p">)</span>     <span class="c1">// 只要刚开始按触屏幕</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Touch</span> <span class="n">touch</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetTouch</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>    <span class="c1">// Get the first touch</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">touch</span><span class="p">.</span><span class="n">phase</span> <span class="p">==</span> <span class="n">TouchPhase</span><span class="p">.</span><span class="n">Began</span><span class="p">)</span>     <span class="c1">// When the touch just begins</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">strength</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="2-用invokerepeating-实现简单的动画">2. 用<code>InvokeRepeating </code>实现简单的动画
-</h4><p>需要注意的是，<code>InvokeRepeating</code> 是在 Unity 的主循环中按时间间隔调度调用指定方法，每次调用结束后会返回给引擎，等到下一个间隔再被调用。
-虽然它本质不是一个死循环，但是如果在被调的方法里写 <code>while(true)</code>（或其他不会退出的循环），该方法就不会返回，主线程会被阻塞，程序/编辑器会卡死。</p>
-<p>另外，通常把 <code>InvokeRepeating</code> 放在 <code>Start</code>（或 <code>Awake</code> 后的一次性初始化处），只需要调用一次来安排重复调用，Unity 会按指定间隔循环调用该方法。如果把 <code>InvokeRepeating</code> 放在 <code>Update</code> 中，每帧都会再次注册一个重复调用，结果会累积大量并发的定时调用，导致方法被多次/更频繁执行、逻辑错误和性能问题。</p>
-<p>用 <code>InvokeRepeating</code>实现小鸟飞翔的动画：</p>
+</div><h4 id="2-using-invokerepeating-to-implement-a-simple-animation">2. Using <code>InvokeRepeating</code> to Implement a Simple Animation
+</h4><p>It’s important to note that <code>InvokeRepeating</code> schedules a method to be called at fixed intervals within Unity’s main loop. Each invocation finishes and returns control to the engine, and the method is called again after the next interval. Although it is not an actual infinite loop, if you write a <code>while(true)</code> (or any non‑terminating loop) inside the invoked method, the method will never return, blocking the main thread and freezing the game/editor.</p>
+<p>In addition, <code>InvokeRepeating</code> is typically placed in <code>Start</code> (or any one‑time initialization after <code>Awake</code>). You only need to call it once to schedule the repeated execution, and Unity will continue calling the method at the specified interval. If you place <code>InvokeRepeating</code> inside <code>Update</code>, it will register a new repeating call every frame, resulting in a huge number of concurrent scheduled calls. This leads to the method being executed multiple times, more frequently than intended, causing logic errors and performance issues.</p>
+<p>Using <code>InvokeRepeating</code> to animate the bird’s flapping:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1698,8 +1700,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="3-视差无尽背景的一种实现思路">3. 视差+无尽背景的一种实现思路
-</h4><p>教程中将背景全部按照3D的<code>Quad</code>制作，然后将2D的图片以<code>shader：Unit/Texture</code>的方式做成<code>Material</code> 。利用material中自带的Offset实现移动效果。这种方法非常简单，复用性强。</p>
+</div><h4 id="3-an-approach-to-implementing-parallax--infinite-background">3. An Approach to Implementing Parallax + Infinite Background
+</h4><p>In the tutorial, all background elements are created as 3D <strong>Quads</strong>, and the 2D images are turned into <strong>Materials</strong> using the <code>Unlit/Texture</code> shader. The movement effect is achieved by adjusting the built‑in <strong>Offset</strong> property of the material. This method is very simple and highly reusable.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1736,8 +1738,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="4-管道销毁的另一种思路">4. 管道销毁的另一种思路
-</h4><p>按照通常的做法会在左侧屏幕边缘增加一个触发器，管道预制体碰到这个触发器后执行 <code>Destroy</code>。教程中使用了一个更简单的方法，根据像素位置来进行销毁：</p>
+</div><h4 id="4-an-alternative-approach-to-destroying-pipes">4. An Alternative Approach to Destroying Pipes
+</h4><p>The common approach is to place a trigger collider at the left edge of the screen, and when a pipe prefab enters that trigger, it gets destroyed. The tutorial uses a simpler method: destroying the pipe based on its pixel position.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1776,40 +1778,32 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="5-unity中的几个坐标系">5. Unity中的几个坐标系
-</h4><h5 id="world-坐标world">World 坐标（World）
+</div><h4 id="5-coordinate-systems-in-unity">5. Coordinate Systems in Unity
+</h4><h5 id="world-coordinates-world">World Coordinates (World)
 </h5><ul>
-<li>Unity 的世界坐标以世界原点 (0,0,0) 为参考，单位是 Unity unit（通常当作米）</li>
-<li>轴方向：X 向右，Y 向上，Z 向前（正 Z 朝向 Scene 视图的前方）</li>
-<li><code>GameObject</code> 的 <code>transform.position</code> 是世界坐标；<code>transform.localPosition</code> 是相对于父对象的局部坐标</li>
+<li>Unity’s world coordinates are based on the global origin (0,0,0), measured in Unity units (commonly treated as meters)</li>
+<li>Axis directions: X to the right, Y upward, Z forward (positive Z points toward the front of the Scene view)</li>
+<li><code>transform.position</code> represents a GameObject’s world position; <code>transform.localPosition</code> is its position relative to its parent</li>
 </ul>
-<h5 id="屏幕坐标screen">屏幕坐标（Screen）
+<h5 id="screen-coordinates-screen">Screen Coordinates (Screen)
 </h5><ul>
-<li>
-<p>以像素为单位，原点在屏幕左下角 (0,0)，右上角是 (<code>Screen.width</code>, <code>Screen.height</code>)</p>
-</li>
-<li>
-<p>旧的 <code>IMGUI（OnGUI）</code>以左上角为原点；UI 的坐标行为还会受 <code>Canvas Render Mode（Screen Space / World Space</code>）影响</p>
-</li>
+<li>Measured in pixels, with the origin at the bottom‑left corner (0,0); the top‑right corner is (<code>Screen.width</code>, <code>Screen.height</code>)</li>
+<li>Legacy <code>IMGUI (OnGUI)</code> uses the top‑left corner as the origin; UI coordinate behavior also depends on the <code>Canvas Render Mode</code> (Screen Space / World Space)</li>
 </ul>
-<h5 id="视口坐标viewport">视口坐标（Viewport）
+<h5 id="viewport-coordinates-viewport">Viewport Coordinates (Viewport)
 </h5><ul>
-<li>
-<p>归一化坐标，范围在 [0,1]，左下为 (0,0)，右上为 (1,1)</p>
-</li>
-<li>
-<p>可用 Camera.ViewportToWorldPoint / WorldToViewportPoint 转换</p>
-</li>
+<li>Normalized coordinates in the range [0,1], with (0,0) at the bottom‑left and (1,1) at the top‑right</li>
+<li>Conversion available via <code>Camera.ViewportToWorldPoint</code> and <code>WorldToViewportPoint</code></li>
 </ul>
-<p>在上述管道销毁的例子中，使用 <code>Camera.ScreenToWorldPoint(Vector3 screenPoint)</code> 对左下角屏幕坐标原点，（0, 0 ,0）即坐标原点<code>Vector3.zero</code> 进行了转换，这样才能和<code>Update</code>中的<code>transform.position.x</code>处于同一坐标系下，才有比较的可能。</p>
-<h4 id="6-游戏的重启和暂停">6. 游戏的重启和暂停
-</h4><p>最简单的方法就是使用 <code>Time.timeScale</code>。</p>
-<h3 id="复盘-1">复盘
-</h3><p>因为是2D游戏，所以可以直接使用诸如<code>Vector3.up</code>、<code>Vector3.left</code>这样的代码来表示方向，大大简化了代码。教程中的一些设计思路非常简便好用，比如把背景做成3D quad，运用API <code>_meshRenderer.material.mainTextureOffset</code> 来实现无尽背景和视差效果；还有通过将某一个点的坐标从屏幕坐标转换为世界坐标，物体通过这个点后销毁，而不是依靠传统的碰撞检测，可以节省性能；还有关于简单的动画，不用Unity自带的动画系统，转而使用 <code>InvokeRepeating</code> 配合遍历图片的方式，简单高效地解决了问题。</p>
-<p>在我自己的实践方面，练习了 GameManager 和 AudioManager 的单例模式，并重温了音效的播放和UI的交互设计。这个游戏虽然是个入门级的小游戏，但是我还是学到了很多。</p>
-<h4 id="代码复用-1">代码复用
-</h4><h5 id="spawner的一种写法">Spawner的一种写法
-</h5><p>使用 <code>InvokeRepeating</code> 达到间隔时间生成游戏物体的效果。</p>
+<p>In the pipe‑destruction example above, <code>Camera.ScreenToWorldPoint(Vector3 screenPoint)</code> is used to convert the screen‑space origin (0,0,0)—i.e., <code>Vector3.zero</code>—into world coordinates. This ensures that the value can be compared with <code>transform.position.x</code> inside <code>Update</code>, since both are then in the same coordinate system.</p>
+<h4 id="6--restarting-and-pausing-the-game">6.  Restarting and Pausing the Game
+</h4><p>The simplest approach is to use <code>Time.timeScale</code>.</p>
+<h3 id="reflection-2">Reflection
+</h3><p>Because this is a 2D game, directions like <code>Vector3.up</code> and <code>Vector3.left</code> can be used directly, which greatly simplifies the code. The tutorial introduced several elegant and practical design ideas—for example, using 3D quads for the background and applying <code>_meshRenderer.material.mainTextureOffset</code> to achieve infinite scrolling and parallax; converting a point from screen coordinates to world coordinates to determine when an object should be destroyed, instead of relying on traditional collision detection; and implementing simple animations using <code>InvokeRepeating</code> combined with iterating through sprites, avoiding the need for Unity’s built‑in animation system.</p>
+<p>In my own practice, I revisited the singleton pattern for both the <code>GameManager</code> and <code>AudioManager</code>, and refreshed my understanding of sound playback and UI interaction design. Even though this is a beginner‑level mini‑game, I still learned a lot from it.</p>
+<h4 id="code-reuse-2">Code Reuse
+</h4><h5 id="a-spawner-implementation">A Spawner Implementation
+</h5><p>Using <code>InvokeRepeating</code> to spawn game objects at fixed intervals.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1846,49 +1840,65 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>其他一些可复用的代码在上面的“问题与解决方法”部分都有提及，此处不再赘述。</p>
+</div><p>Other reusable code snippets have already been covered in the “Problems &amp; Solutions” section above, so they won’t be repeated here.</p>
 <h2 id="pong">Pong
 </h2><p><strong>Tutorial Reference and Assets Source</strong>：<a class="link" href="https://www.youtube.com/watch?v=AcpaYq0ihaM"  target="_blank" rel="noopener"
-    >油管-Zigurous</a></p>
+    >Youtube-Zigurous</a></p>
 <p><strong>Source Code</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-pong"  target="_blank" rel="noopener"
     >on Gitee</a></p>
-<h3 id="游戏简介-1">游戏简介
-</h3><p>《乒乓球》（Pong） 是电子游戏史上最早、最具影响力的街机游戏之一，由 Atari 公司于 1972 年发布。它模拟了现实中的乒乓球（Table Tennis）运动，被认为是第一个取得商业成功的电子游戏。</p>
-<p><strong>核心玩法</strong>：</p>
+<h3 id="game-overview-3">Game Overview
+</h3><p><strong>Pong</strong> is one of the earliest and most influential arcade games in video game history, released by Atari in 1972. It simulates the real‑world sport of table tennis and is widely regarded as the first commercially successful video game.</p>
+<p><strong>Core Gameplay:</strong></p>
 <ul>
-<li>游戏画面为一个二维平面，左右两侧各有一个垂直的“球拍”（paddle），中间是一个移动的小球</li>
-<li>玩家控制一侧的球拍上下移动（通常通过摇杆或按键），目标是将球反弹回对方场地</li>
-<li>如果一方未能接到球，对方得一分</li>
-<li>小球碰到上下边界会反弹，碰到左右边界则判定为得分</li>
-<li>随着游戏进行，球速可能逐渐加快，增加难度</li>
+<li>The game takes place on a 2D plane with a vertical paddle on each side and a moving ball in the center</li>
+<li>The player controls one paddle, moving it up and down (typically via joystick or buttons) to bounce the ball back toward the opponent</li>
+<li>If a player fails to return the ball, the opponent scores a point</li>
+<li>The ball bounces off the top and bottom boundaries; hitting the left or right boundary results in a score</li>
+<li>As the game progresses, the ball may gradually increase in speed, raising the difficulty</li>
 </ul>
 <img src="4-pong.gif" alt="" style="zoom:80%;"/>
-<h3 id="游戏功能拆解-1">游戏/功能拆解
-</h3><h4 id="内容-1">内容
-</h4><p>场景摆放、玩家球拍、球、电脑球拍、UI（分数）</p>
-<h4 id="逻辑-1">逻辑
+<h3 id="game-breakdown-3">Game Breakdown
+</h3><h4 id="content-3">Content
+</h4><ul>
+<li>Scene layout</li>
+</ul>
+<ul>
+<li>
+<p>Player paddle</p>
+</li>
+<li>
+<p>Ball</p>
+</li>
+<li>
+<p>AI paddle</p>
+</li>
+<li>
+<p>UI (score display)</p>
+</li>
+</ul>
+<h4 id="core-logic-3">Core Logic
 </h4><ol>
-<li>玩家通过 <code>W键/上箭头键</code> 和 <code>S键/下箭头键</code> 移动球拍击打乒乓球</li>
-<li>乒乓球碰到上下边界回弹</li>
-<li>乒乓球如果落入自己边界，对方得一分，反之亦然</li>
-<li>显示当前的分数</li>
+<li>The player moves the paddle using <code>W / Up Arrow</code> and <code>S / Down Arrow</code> to hit the ball</li>
+<li>The ball bounces off the top and bottom boundaries</li>
+<li>If the ball enters the player’s side, the opponent scores a point, and vice versa</li>
+<li>Display the current score</li>
 </ol>
-<h4 id="开发步骤-1">开发步骤
+<h4 id="development-steps-3">Development Steps
 </h4><ol>
-<li>场景摆放</li>
-<li>玩家球拍的移动</li>
-<li>球移动的实现</li>
-<li>电脑球拍AI的实现</li>
-<li>球逐渐回弹增速</li>
-<li>显示UI分数</li>
+<li>Scene layout</li>
+<li>Player paddle movement</li>
+<li>Ball movement implementation</li>
+<li>AI paddle behavior</li>
+<li>Gradual increase in ball speed after each bounce</li>
+<li>Displaying the UI score</li>
 </ol>
-<h3 id="遇到的问题及解决方法-2">遇到的问题及解决方法
-</h3><h4 id="1-angular-drag-和-linear-drag">1. <code>Angular Drag</code> 和 <code>Linear Drag</code>
-</h4><p>在 <code>Rigidbody</code> 中的 <code>Angular Drag</code> 代表角阻力系数，如果不想要旋转的效果，要把它手动设置为0（默认为0.05），同时在 <code>Constraints</code> 中禁止 <code>z轴</code> 的旋转。 在类似这个游戏的2D游戏中一般需要这样的操作。</p>
-<p><code>Linear Drag</code> 则适用于位置移动，较高的阻力值会让对象受碰撞或力影响后的旋转更快停止。</p>
-<h4 id="2-fixedupdate的使用说明">2. <code>FixedUpdate</code>的使用说明
-</h4><p>不要在 <code>FixedUpdate</code> 直接读取输入。原因是<code>FixedUpdate</code> 按物理步长调用，可能丢失输入事件或导致输入响应不稳定。</p>
-<p>正确做法是在 <code>Update()</code> 读取输入并把结果存到字段，随后在 <code>FixedUpdate()</code> 根据该字段施加力。</p>
+<h3 id="problems--solutions-3">Problems &amp; Solutions
+</h3><h4 id="1-angular-drag-and-linear-drag">1. <code>Angular Drag</code> and <code>Linear Drag</code>
+</h4><p>In a <code>Rigidbody</code>, <strong>Angular Drag</strong> represents the angular damping coefficient. If you don’t want the object to rotate, you should manually set it to <strong>0</strong> (its default value is 0.05) and also disable rotation on the <strong>Z‑axis</strong> in the <code>Constraints</code> section. This is a common setup for 2D games like this one.</p>
+<p><strong>Linear Drag</strong>, on the other hand, applies to positional movement. A higher drag value causes the object to stop moving or rotating more quickly after being affected by collisions or forces.</p>
+<h4 id="2--notes-on-using-fixedupdate">2.  Notes on Using <code>FixedUpdate</code>
+</h4><p>Avoid reading input directly inside <code>FixedUpdate</code>. Since <code>FixedUpdate</code> runs at the physics timestep, input events may be missed or become inconsistent.</p>
+<p>The correct approach is to read input inside <code>Update()</code>, store the result in a field, and then apply forces based on that field inside <code>FixedUpdate()</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1942,24 +1952,24 @@ version: "3.1"
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote class="alert alert-note">
-    <p><code>FixedUpdate</code> 主要用于与物理系统同步的更新。</p></blockquote>
-<p><strong>适合放在 <code>FixedUpdate</code> 里的任务</strong>：</p>
+    <p><code>FixedUpdate</code> is primarily used for updates that need to stay in sync with the physics system.</p></blockquote>
+<p>Tasks <strong>appropriate</strong> for <code>FixedUpdate</code>:</p>
 <ul>
-<li>应用力/扭矩（<code>Rb.AddForce / AddRelativeForce</code>）或直接设置 <code>Rigidbody.velocity</code></li>
-<li>使用 <code>Rigidbody.MovePosition / MoveRotation</code>（针对 <code>Kinematic Rigidbody</code>）</li>
-<li>与物理步长一致的计时器、物理约束与求解逻辑（确定性模拟、网络服务器物理步）</li>
-<li>基于物理状态的查询（在物理步长内做的碰撞检测/Overlap/射线检测）</li>
-<li>物理预测/插值/外推逻辑（以固定步长进行同步）</li>
+<li>Applying forces/torque (<code>Rb.AddForce / AddRelativeForce</code>) or directly setting <code>Rigidbody.velocity</code></li>
+<li>Using <code>Rigidbody.MovePosition / MoveRotation</code> (for <strong>Kinematic Rigidbodies</strong>)</li>
+<li>Timers, constraints, and solver logic that must match the physics timestep (deterministic simulation, server‑side physics steps)</li>
+<li>Physics‑based queries (collision checks, overlap tests, raycasts performed within the physics step)</li>
+<li>Physics prediction/interpolation/extrapolation logic (synchronized with the fixed timestep)</li>
 </ul>
-<p>不适合放在 <code>FixedUpdate</code> 里的任务：(需要以帧为单位或更低延迟处理)</p>
+<p>Tasks <strong>not appropriate</strong> for <code>FixedUpdate</code> (require per‑frame or lower‑latency handling):</p>
 <ul>
-<li>输入读取</li>
-<li>渲染/摄像机跟随</li>
-<li>UI 更新</li>
-<li>动画（通常在 Update 或 LateUpdate）</li>
+<li>Input reading</li>
+<li>Rendering / camera follow</li>
+<li>UI updates</li>
+<li>Animation (typically handled in <code>Update</code> or <code>LateUpdate</code>)</li>
 </ul>
-<h4 id="3-小球接触回弹效果的实现">3. 小球接触回弹效果的实现
-</h4><p>使用这样的代码无法达到效果，原因可能是方向计算错误，使用 -rb.velocity 并不等同于基于碰撞法线的反射，小球可能沿着错误的方向被推动。</p>
+<h4 id="3-implementing-ball-bounce-behavior">3. Implementing Ball Bounce Behavior
+</h4><p>Using code like this will not produce the correct effect. The issue is likely incorrect direction calculation: using <code>-rb.velocity</code> is <strong>not</strong> equivalent to reflecting the velocity based on the collision normal. As a result, the ball may be pushed in an unintended direction.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1986,7 +1996,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这里应该使用碰撞接触点的法线解决：</p>
+</div><p>It can be resolved by using the collision contact normal.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2006,22 +2016,20 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Ball&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">Rigidbody2D</span> <span class="n">rb</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">GetContact</span><span class="p">(</span><span class="m">0</span><span class="p">).</span><span class="n">normal</span><span class="p">;</span>  <span class="c1">// 碰撞点的法线</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">GetContact</span><span class="p">(</span><span class="m">0</span><span class="p">).</span><span class="n">normal</span><span class="p">;</span>  <span class="c1">// Normal of the collision contact point</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(-</span><span class="n">_dir</span> <span class="p">*</span> <span class="n">strength</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="4-使用-eventsystem-实现玩家和电脑的得分">4. 使用 <code>EventSystem</code> 实现玩家和电脑的得分
-</h4><p>感觉实现的方式和按钮很像。</p>
-<p>代码解释：</p>
+</div><h4 id="4-using-the-eventsystem-to-handle-player-and-ai-scoring">4. Using the <code>EventSystem</code> to Handle Player and AI Scoring
+</h4><p>The implementation feels very similar to how UI buttons work.</p>
+<p>Explanation of the code:</p>
 <ul>
-<li><code>TriggerEvent</code> 本质上是 <code>UnityEvent&lt;BaseEventData&gt;</code> 的一个别名/子类，可以在 Inspector 或代码里注册接收 <code>BaseEventData</code> 的回调</li>
-</ul>
-<ul>
-<li>构造一个 <code>BaseEventData</code> ，并把当前 <code>EventSystem</code> 作为来源，callback 可以读取这个 <code>eventData</code>             来获取上下文</li>
-<li>通过 <code>scoreTrigger.Invoke</code> 触发已注册的所有回调，传入 <code>eventData</code></li>
+<li><code>TriggerEvent</code> is essentially an alias/subclass of <code>UnityEvent&lt;BaseEventData&gt;</code>, allowing callbacks that receive <code>BaseEventData</code> to be registered either in the Inspector or via code</li>
+<li>A <code>BaseEventData</code> instance is created with the current <code>EventSystem</code> as its source; the callback can read this <code>eventData</code> to obtain context</li>
+<li>Calling <code>scoreTrigger.Invoke</code> triggers all registered callbacks and passes in the <code>eventData</code></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2047,98 +2055,113 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Ball&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">BaseEventData</span> <span class="n">eventData</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BaseEventData</span><span class="p">(</span><span class="n">EventSystem</span><span class="p">.</span><span class="n">current</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">scoreTrigger</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">eventData</span><span class="p">);</span> <span class="c1">// 调用已注册的eventData</span>
+</span></span><span class="line"><span class="cl">            <span class="n">scoreTrigger</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">eventData</span><span class="p">);</span> <span class="c1">// Invoke all registered callbacks with the eventData</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="复盘-2">复盘
-</h3><p>教程中使用了父类 <code>Paddle</code> 和两个子类<code>PlayerPaddle</code>和<code>ComputerPaddle</code>的方法，一些公共的代码，如获取组件等放在父类中，在两个子类中分别写自己的逻辑。在C++的项目里经常会用到继承的方法，但是在做Unity项目的时候我经常会忘记使用，在以后的实践中要提醒自己在合适的时机多多使用。</p>
-<h4 id="代码复用-2">代码复用
-</h4><p>本游戏中可复用的代码已在“问题和解决方法”部分提及：</p>
+</div><h3 id="reflection-3">Reflection
+</h3><p>The tutorial uses a base class <code>Paddle</code> along with two subclasses, <code>PlayerPaddle</code> and <code>ComputerPaddle</code>. Shared logic—such as component retrieval—is placed in the parent class, while each subclass implements its own behavior. In C++ projects, I frequently rely on inheritance, but when working in Unity I often forget to apply it. In future projects, I need to remind myself to use inheritance more often when it fits the design.</p>
+<h4 id="code-reuse-3">Code Reuse
+</h4><p>Reusable code in this project has already been discussed in the “Problems and Solutions” section:</p>
 <ul>
-<li>小球回弹的实现</li>
-<li>使用 <code>EventSystem</code> 灵活实现多个函数的回调</li>
+<li>Implementation of ball bounce behavior</li>
+<li>Using the <code>EventSystem</code> to flexibly trigger multiple callbacks</li>
 </ul>
 <h2 id="asteroids">Asteroids
 </h2><p><strong>Tutorial Reference and Assets Source</strong>：<a class="link" href="https://www.youtube.com/watch?v=cIeWhztKyAg"  target="_blank" rel="noopener"
-    >油管-Zigurous</a></p>
+    >Youtube-Zigurous</a></p>
 <p><strong>Source Code</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-asteroids"  target="_blank" rel="noopener"
     >on Gitee</a></p>
-<h3 id="游戏简介-2">游戏简介
-</h3><p>《小行星》（Asteroids）是由 Atari 公司于 1979 年推出的一款经典街机射击游戏，以其简洁的矢量图形和紧张刺激的玩法成为电子游戏史上的里程碑之作。</p>
-<p><strong>核心玩法</strong>：</p>
+<h3 id="game-overview-4">Game Overview
+</h3><p><strong>Asteroids</strong> is a classic arcade shooter released by Atari in 1979. With its minimalist vector graphics and fast‑paced gameplay, it became a landmark title in video game history.</p>
+<p><strong>Core Gameplay:</strong></p>
 <ul>
-<li>玩家控制一艘小型飞船，在无重力的太空中自由移动（可推进、旋转、射击）
+<li>The player controls a small spaceship that moves freely in zero‑gravity space (able to thrust, rotate, and shoot)
 <ul>
-<li>按下 <code>W键/ 上箭头</code> 或者 <code>S键/下箭头</code> 可以旋转</li>
-<li>按下 <code>A键/ 左键头</code>、<code>D键/右箭头</code>可以左/右推进</li>
-<li>按下 <code>空格</code> 或者点击 <code>鼠标左键</code> 可以发射子弹</li>
+<li>Press <code>W / Up Arrow</code> or <code>S / Down Arrow</code> to rotate</li>
+<li>Press <code>A / Left Arrow</code> or <code>D / Right Arrow</code> to thrust left or right</li>
+<li>Press <code>Space</code> or click the left mouse button to fire bullets</li>
 </ul>
 </li>
-<li>屏幕中不断出现大小不一的“小行星”，它们会从边缘进入并随机漂移</li>
-<li>目标：用激光炮击碎所有小行星
+<li>Asteroids of various sizes continuously appear, drifting in from the edges of the screen</li>
+<li>Objective: destroy all asteroids with laser shots
 <ul>
-<li>大/中行星被击中后会分裂成更小的碎片（例如：大 → 中 → 小 → 消失）</li>
-<li>完全清除当前波次的小行星后，进入下一关，难度递增（小行星数量/速度增加）</li>
+<li>Large and medium asteroids split into smaller fragments when hit (e.g., Large → Medium → Small → Disappear)</li>
 </ul>
 </li>
-<li>失败：
+<li>Failure:
 <ul>
-<li>飞船碰到小行星会立即毁灭（通常有有限生命次数）</li>
+<li>The spaceship is destroyed instantly upon colliding with an asteroid (typically with limited lives)</li>
 </ul>
 </li>
-<li>其他特点：
+<li>Additional Features:
 <ul>
-<li>飞船或小行星从一侧飞出，会从对侧重新进入（“卷屏”效果）</li>
-<li>飞船有动量，即使停止推进也会继续滑行，需反向推进减速</li>
+<li>The ship has momentum; it continues drifting even after thrust stops, requiring reverse thrust to slow down</li>
 </ul>
 </li>
 </ul>
 <img src="5-asteroid.gif" alt="" style="zoom:100%;"/>
-<h3 id="游戏功能拆解-2">游戏/功能拆解
-</h3><h4 id="内容-2">内容
-</h4><p>场景摆放、玩家、行星、爆炸特效</p>
-<h4 id="逻辑-2">逻辑
+<h3 id="game-breakdown1">Game Breakdown1
+</h3><h4 id="content-4">Content
+</h4><ul>
+<li>
+<p>Scene layout</p>
+</li>
+<li>
+<p>Player</p>
+</li>
+<li>
+<p>Asteroids</p>
+</li>
+<li>
+<p>Explosion effects</p>
+</li>
+</ul>
+<h4 id="core-logic-4">Core Logic
 </h4><ol>
-<li>玩家移动和射击</li>
-<li>小行星随机生成和移动</li>
-<li>小行星被玩家击中后分裂，直至消失</li>
-<li>玩家碰到小行星后，这一局失败</li>
-<li>显示当前的分数</li>
-<li>全部局数用尽，游戏结束</li>
+<li>Player movement and shooting</li>
+<li>Random asteroid spawning and movement</li>
+<li>Asteroids split when hit by the player’s bullets, until they disappear</li>
+<li>The round ends if the player collides with an asteroid</li>
+<li>Display the current score</li>
+<li>When all lives are used up, the game ends</li>
 </ol>
-<h4 id="开发步骤-2">开发步骤
+<h4 id="development-steps-4">Development Steps
 </h4><ol>
-<li>场景设置</li>
-<li>玩家部分
+<li>Scene setup</li>
+<li>Player implementation
 <ul>
-<li>移动</li>
-<li>射击</li>
+<li>Movement</li>
+<li>Shooting</li>
 </ul>
 </li>
-<li>小行星部分
+<li>Asteroid implementation
 <ul>
-<li>行星预制体（不同的形状、大小、质量、初始角度）</li>
-<li>生成行星</li>
-<li>实现分裂/销毁逻辑</li>
+<li>Asteroid prefabs (different shapes, sizes, masses, initial angles)</li>
+<li>Spawning asteroids</li>
+<li>Implementing split/destroy logic</li>
 </ul>
 </li>
-<li>一局的结束
+<li>Ending a round
 <ul>
-<li>玩家死亡与复活</li>
-<li>玩家的爆炸特效</li>
+<li>Player death and respawn</li>
+<li>Player explosion effect</li>
 </ul>
 </li>
-<li>显示UI分数</li>
-<li>全部局数用尽，游戏结束</li>
+<li>Displaying the UI score and player&rsquo;s lives</li>
+<li>Ending the game when all lives are exhausted</li>
 </ol>
-<h3 id="遇到的问题及解决方法-3">遇到的问题及解决方法
-</h3><h4 id="1-物体间物理碰撞层的设置">1. 物体间物理碰撞层的设置
-</h4><p>通过 <code>Project Setting</code> 中的 <code>Physics 2D</code> 来忽略玩家和子弹、子弹与子弹之间的碰撞检测。</p>
-<h4 id="2-小行星初始状态的设置">2. 小行星初始状态的设置
-</h4><p>因为此项目中的小行星有不同的变体，包括大小、图片、出现时的初始角度等多个参数都不同，所以采取的策略时在小行星的预制体中就将其全部设置好。这样做的好处是在小行星的 <code>Spawner.cs</code> 脚本里，预制体可以直接生成，做到了脚本的各司其职。<code>Asteroid.cs</code> 负责小行星本身的属性，<code>Spawner.cs</code> 脚本负责小行星的生成。</p>
+<h3 id="problems--solutions-4">Problems &amp; Solutions
+</h3><h4 id="1--configuring-collision-layers">1.  Configuring Collision Layers
+</h4><p>Use <code>Project Settings &gt; Physics 2D</code> to ignore collisions between the player and bullets, as well as between bullets themselves.</p>
+<h4 id="2-setting-initial-asteroid-states">2. Setting Initial Asteroid States
+</h4><p>Since the asteroids in this project have multiple variants—different sizes, sprites, masses, and initial angles—the strategy is to configure all these parameters directly in the asteroid prefabs. This allows the <code>Spawner.cs</code> script to simply instantiate the prefabs, keeping responsibilities clean and separated:</p>
+<ul>
+<li><code>Asteroid.cs</code> handles the asteroid’s own properties</li>
+<li><code>Spawner.cs</code> handles asteroid generation</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2199,7 +2222,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">        <span class="c1">//size = Random.Range(minSize, maxSize);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">one</span> <span class="p">*</span> <span class="n">size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_rb</span><span class="p">.</span><span class="n">mass</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// mass随着size变化</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_rb</span><span class="p">.</span><span class="n">mass</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// Adjust mass based on asteroid size</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -2209,13 +2232,13 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>小行星初始的旋转角度</strong>：</p>
-<p>使用 <code>Random.value</code>，这个值在0~1之间，小行星在 <code>z轴</code> 旋转，所以可以简单处理为 <code>transform.eulerAngles = new Vector3(0, 0, Random.value * 360);</code></p>
-<p><strong>小行星的size部分处理</strong>：</p>
-<p>不能放在 <code>Asteroid.cs</code> 里，因为这个脚本后面会进行小行星分裂的逻辑，如果在 <code>Start()</code> 里对 <code>size</code> 取随机值，会导致分裂的逻辑错误。随机size的逻辑放在 <code>Spawner.cs</code> 里处理。这是我在这个项目遇到的一个大坑。</p>
-<h4 id="3-小行星生成和移动的实现思路">3. 小行星生成和移动的实现思路
-</h4><p>小行星生成在以屏幕为圆心，一定半径的圆内。它们向着圆心运动。为了增加随机性，增加了朝向圆心的偏移角度。因为是沿着 z轴 进行偏移的，所以可以用 <code>Quaternion.AngleAxis(float angle, Vector3.forward)</code> 实现。</p>
-<p>在小行星的移动上，本身方法由 <code>Asteroid.cs</code> 负责，<code>Spawner.cs</code> 通过获得一个Asteroid 的实例化对象调用。</p>
+</div><p><strong>Initial Rotation of Asteroids:</strong></p>
+<p>Use <code>Random.value</code>, which returns a value between 0 and 1. Since the asteroid rotates around the <strong>Z‑axis</strong>, the rotation can be set simply as: <code>transform.eulerAngles = new Vector3(0, 0, Random.value * 360);</code></p>
+<p><strong>Handling Asteroid Size:</strong></p>
+<p>This logic <strong>cannot</strong> be placed inside <code>Asteroid.cs</code>, because that script later handles the splitting behavior. If <code>size</code> is randomized inside <code>Start()</code>, it will break the splitting logic. The correct approach is to randomize the size inside <code>Spawner.cs</code>. This was a major pitfall I encountered during the project.</p>
+<h4 id="3-approach-to-asteroid-spawning-and-movement">3. Approach to Asteroid Spawning and Movement
+</h4><p>Asteroids are spawned within a circular area centered on the screen. They move toward the center. To introduce randomness, an offset angle is added to the direction toward the center. Since the offset is applied around the <strong>Z‑axis</strong>, <code>Quaternion.AngleAxis(float angle, Vector3.forward)</code> can be used.</p>
+<p>For asteroid movement, the movement logic itself is handled by <code>Asteroid.cs</code>, while <code>Spawner.cs</code> instantiates the asteroid and calls its movement behavior.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2246,67 +2269,68 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">     <span class="n">InvokeRepeating</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Spawn</span><span class="p">),</span> <span class="n">spawnInterval</span><span class="p">,</span> <span class="n">spawnInterval</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 行星生成在离spawner为圆心的一定半径的位置</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Spawn the asteroid at a position within a certain radius from the spawner</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnOffset</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">insideUnitCircle</span> <span class="p">*</span> <span class="n">spawnRadius</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnPos</span> <span class="p">=</span> <span class="p">(</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">+</span> <span class="n">spawnOffset</span><span class="p">;</span>   <span class="c1">// 以Spawner为圆心、一定半径内的某个随机位置</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnPos</span> <span class="p">=</span> <span class="p">(</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">+</span> <span class="n">spawnOffset</span><span class="p">;</span>   <span class="c1">// Pick a random point inside the radius centered on the spawner</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">dir</span> <span class="p">=</span> <span class="p">((</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">spawnPos</span><span class="p">).</span><span class="n">normalized</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// 在方向上加上一个角度的偏移量</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Add an angular offset to the direction toward the center</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">variance</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(-</span><span class="n">trajectoryAngle</span><span class="p">,</span> <span class="n">trajectoryAngle</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Quaternion</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">AngleAxis</span><span class="p">(</span><span class="n">variance</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">asteroidPrefab</span><span class="p">,</span> <span class="n">spawnPos</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>	<span class="c1">// 在此处处理生成小行星的随机尺寸问题</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>	<span class="c1">// Handle the random size assignment for the asteroid here</span>
 </span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">SetTrajectory</span><span class="p">(</span><span class="n">rotation</span> <span class="p">*</span> <span class="n">dir</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>需要注意的是，最终小行星的轨道方向是 rotaton * dir，rotation本身是一个四元数，这里将旋转作用于向量，即 旋转后的向量 = Quaternion * 原始向量</p>
+</div><p>It’s important to note that the final movement direction of an asteroid is computed as <code>rotation * dir</code>. Since <code>rotation</code> is a quaternion, this operation applies the rotation to the vector:</p>
+<p><code>Rotated Vector = Quaternion * Original Vector</code></p>
 <blockquote class="alert alert-warning">
-    <p>Quaternion 必须在乘号左边！</p></blockquote>
-<p>其中的原理在数学的相关学习中再做详尽探讨，此处不再赘述。</p>
-<h5 id="关于-quaternion的补充">关于 Quaternion的补充
-</h5><p>应该避免直接修改 Quaternion 的x, y, z, w 分量，因为它们不是角度而是复杂的复数数学，直接修改会导致异常。</p>
+    <p>The quaternion <strong>must</strong> be on the left side of the multiplication operator.</p></blockquote>
+<p>The underlying mathematical principles will be explored in more detail when studying the related math topics, so they won’t be expanded on here.</p>
+<h5 id="additional-notes-on-quaternions">Additional Notes on Quaternions
+</h5><p>Avoid modifying the <code>x</code>, <code>y</code>, <code>z</code>, or <code>w</code> components of a quaternion directly. These values do not represent angles; they are part of a complex mathematical structure. Directly editing them will lead to incorrect behavior.</p>
 <blockquote class="alert alert-warning">
-    <p>始终使用Unity提供的API！</p></blockquote>
-<p><strong>常用的API</strong>：</p>
+    <p>Always use Unity’s built‑in API.</p></blockquote>
+<p><strong>Commonly Used API Methods:</strong></p>
 <div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th>场景</th>
-          <th>方法</th>
+          <th>Scenario</th>
+          <th>Method</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>旋转一个向量</td>
+          <td>Rotate a vector</td>
           <td><code>rotatedVector = quaternion * vector;</code></td>
       </tr>
       <tr>
-          <td>让物体看向某个方向</td>
+          <td>Make an object face a direction</td>
           <td><code>Quaternion.LookRotation(vector);</code></td>
       </tr>
       <tr>
-          <td>把(0,90,0)转为四元数</td>
+          <td>Convert (0, 90, 0) to a quaternion</td>
           <td><code>Quaternion.Euler(0, 90, 0);</code></td>
       </tr>
       <tr>
-          <td>获取四元数的度数</td>
+          <td>Get the Euler angles of a quaternion</td>
           <td><code>quaternion.eulerAngles;</code></td>
       </tr>
   </tbody>
 </table></div>
-<h4 id="4-玩家无敌时间的设计思路">4. 玩家无敌时间的设计思路
-</h4><p>通过更改玩家物理碰撞层的方法 <code>LayerMask.NameToLayer(layerName);</code>实现，非常简单明了，再使用 <code>Invoke</code> 来设定需要等待的时间即可。</p>
-<h4 id="5-粒子系统的设置">5. 粒子系统的设置
-</h4><p>因为我在UI的逻辑中使用了 <code>Time.scaleTime</code> 来控制游戏的结束和开始，为了避免粒子系统拖到下一轮开始游戏的那一瞬间播放，需要在面板里将粒子系统的 <code>Delta Time</code> 设置为 <code>Unscaled</code> 。</p>
-<h3 id="复盘-3">复盘
-</h3><p>这个项目中需要大量使用关于旋转的方法，常用的API要熟练使用。另外相关的数学知识也需要补充一下。</p>
-<p>这个项目还有两个方法值得注意，可以经常尝试使用：</p>
-<p><strong>通过传参获得另一个脚本中的对象</strong>：</p>
+<h4 id="4-designing-player-invincibility-frames">4. Designing Player Invincibility Frames
+</h4><p>This is implemented by changing the player’s physics collision layer using <code>LayerMask.NameToLayer(layerName);</code>. It’s straightforward, and <code>Invoke</code> is used to schedule the duration of the invincibility period.</p>
+<h4 id="5--particle-system-configuration">5.  Particle System Configuration
+</h4><p>Since the UI logic uses <code>Time.timeScale</code> to control game start and end states, the particle system must not accidentally play at the moment a new round begins. To prevent this, set the particle system’s <strong>Delta Time</strong> to <strong>Unscaled</strong> in the Inspector.</p>
+<h3 id="reflection-4">Reflection
+</h3><p>This project requires extensive use of rotation‑related methods, so becoming comfortable with the commonly used APIs is essential. It also highlights the need to strengthen the underlying math knowledge.</p>
+<p>There are also two techniques in this project that are worth remembering and using more often:</p>
+<p><strong>Passing references to objects from other scripts through method parameters</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2352,7 +2376,7 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======= GameManager.cs =======</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 函数的定义放在这里，因为里面很多用到的参数由GameManager统一管理</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// The function is defined here because many of its parameters are managed centrally by the GameManager</span>
 </span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">AsteroidDestroyed</span><span class="p">(</span><span class="n">Asteroid</span> <span class="n">asteroid</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">0.75f</span><span class="p">)</span>
@@ -2374,7 +2398,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">//========== Asteroid.cs =========</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 方法的调用由Asteroid类本身管理，在小行星碰撞后调用</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// The method is invoked by the Asteroid class itself when a collision occurs</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Bullet&#34;</span><span class="p">))</span>
@@ -2393,8 +2417,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>在一个脚本中调用另一个脚本中的函数</strong>：</p>
-<p>可以通过GameObject或者直接通过另一个类的游戏物体来获得：</p>
+</div><p><strong>Calling a function from another script:</strong></p>
+<p>You can obtain the reference either through a <code>GameObject</code> or directly from the other script’s component attached to a game object:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2411,21 +2435,21 @@ version: "3.1"
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//=========== Spawner.cs ============</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 通过实例化Asteroid对象来调用它的SetTrejactory方法</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Call the SetTrajectory method by instantiating an Asteroid object</span>
 </span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="c1">// Other codes</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">asteroidPrefab</span><span class="p">,</span> <span class="n">spawnPos</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>   <span class="c1">// 在此处处理生成小行星的随机尺寸问题</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>   <span class="c1">// Handle the random size assignment for the asteroid here</span>
 </span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">SetTrajectory</span><span class="p">(</span><span class="n">rotation</span> <span class="p">*</span> <span class="n">dir</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="代码复用-3">代码复用
-</h4><h5 id="1-玩家无敌时间的设计">1. 玩家无敌时间的设计
-</h5><p>通过更改物理碰撞层，配合<code>Invoke</code>的使用：</p>
+</div><h4 id="code-reuse-4">Code Reuse
+</h4><h5 id="1-designing-player-invincibility-frames">1. Designing Player Invincibility Frames
+</h5><p>This is implemented by changing the player’s physics collision layer, combined with the use of <code>Invoke</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2480,8 +2504,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="2-清除场景中所有物体">2. 清除场景中所有物体
-</h5><p>在《飞翔的小鸟》和《小行星》的游戏重置中，都用到了同样的方法，使用 <code>FindObjectsOfType</code> 通过数组遍历场景中所有需要查找的物体进行销毁即可。</p>
+</div><h5 id="2-clearing-all-objects-in-the-scene">2. Clearing All Objects in the Scene
+</h5><p>Both <em>Flappy Bird</em> and <em>Asteroids</em> use the same approach when resetting the game: use <code>FindObjectsOfType</code> to retrieve all relevant objects in the scene, iterate through the resulting array, and destroy each one.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2535,7 +2559,7 @@ version: "3.1"
 
 
         <span>
-            Last updated on Jan 23, 2026 17:12 &#43;0800
+            Last updated on Jan 24, 2026 10:28 &#43;0800
         </span>
     </section></footer>
 
@@ -2727,7 +2751,7 @@ version: "3.1"
         
 
         发表了11篇文章 ·
-        总计4万6千字
+        总计4万4千字
         <br>
     </section>
 

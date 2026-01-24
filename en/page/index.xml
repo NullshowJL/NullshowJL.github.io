@@ -406,7 +406,7 @@
     }
     var key = &#34;2026-01-10&#34;;
     var value = dataMap.get(key);
-    var wordCount = &#34;11.1&#34;;
+    var wordCount = &#34;8.1&#34;;
     var link = &#34;/en/p/practice-logunity-mini-game-collection-1/&#34;;
     var title = &#34;【Practice Log】Unity Mini Game Collection 1&#34;;
 

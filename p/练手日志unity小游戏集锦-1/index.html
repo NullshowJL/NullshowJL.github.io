@@ -10,7 +10,7 @@
 <meta property='og:description' content="用Unity实现的小游戏项目的笔记，通过练习希望让自己快速熟悉Unity的各个组件以及常用API，积累一些游戏常用逻辑的编程套路">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-10T09:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-23T17:12:34&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-10T09:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-24T10:28:30&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.webp' />
 <meta name="twitter:title" content="【练手日志】Unity小游戏集锦 1">
 <meta name="twitter:description" content="用Unity实现的小游戏项目的笔记，通过练习希望让自己快速熟悉Unity的各个组件以及常用API，积累一些游戏常用逻辑的编程套路"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.webp' />
@@ -791,18 +791,18 @@ version: "3.1"
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">PlaceFruit</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">PlaceFruit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 获取鼠标位置（屏幕坐标）</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 将其转换为世界坐标</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Vector3</span> <span class="n">mousePos</span> <span class="p">=</span> <span class="n">Camera</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">ScreenToWorldPoint</span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">mousePosition</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 鼠标左键按下，待命水果随鼠标移动</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 本例中水果只随鼠标位置在x轴移动</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetMouseButton</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>	
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 获取鼠标位置（屏幕坐标）</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 将其转换为世界坐标</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Vector3</span> <span class="n">mousePos</span> <span class="p">=</span> <span class="n">Camera</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">ScreenToWorldPoint</span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">mousePosition</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 鼠标左键按下，待命水果随鼠标移动</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 本例中水果只随鼠标位置在x轴移动</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetMouseButton</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>	
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">waitingFruit</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">mousePos</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">waitingFruit</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">waitingFruit</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">mousePos</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">waitingFruit</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="太空射击">太空射击
@@ -1120,9 +1120,9 @@ version: "3.1"
 </div><h4 id="7-协程的一般写法">7. 协程的一般写法
 </h4><p>需要注意以下几点：</p>
 <ul>
-<li>定义返回类型为 IEnumerator 的方法，方法内使用 yield return 返回等待（null、new WaitForSeconds(&hellip;)、WaitForEndOfFrame 等）</li>
-<li>用 StartCoroutine(MyCoroutine()) 启动；可用 StopCoroutine 停止*</li>
-<li>不要在主线程（比如 Start()）里写不会 yield 的 while(true)，那会卡死主线程</li>
+<li>定义返回类型为 <code>IEnumerator</code> 的方法，方法内使用 <code>yield return</code> 返回等待（<code>null</code>、<code>new WaitForSeconds(...)</code>、<code>WaitForEndOfFrame</code> 等）</li>
+<li>用 <code>StartCoroutine(MyCoroutine())</code> 启动；可用 <code>StopCoroutine</code> 停止</li>
+<li>不要在主线程（比如 <code>Start()</code>）里写不会 <code>yield</code> 的 <code>while(true)</code>，那会卡死主线程</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1759,7 +1759,7 @@ version: "3.1"
 <p>归一化坐标，范围在 [0,1]，左下为 (0,0)，右上为 (1,1)</p>
 </li>
 <li>
-<p>可用 Camera.ViewportToWorldPoint / WorldToViewportPoint 转换</p>
+<p>可用 <code>Camera.ViewportToWorldPoint / WorldToViewportPoint</code> 转换</p>
 </li>
 </ul>
 <p>在上述管道销毁的例子中，使用 <code>Camera.ScreenToWorldPoint(Vector3 screenPoint)</code> 对左下角屏幕坐标原点，（0, 0 ,0）即坐标原点<code>Vector3.zero</code> 进行了转换，这样才能和<code>Update</code>中的<code>transform.position.x</code>处于同一坐标系下，才有比较的可能。</p>
@@ -1767,7 +1767,7 @@ version: "3.1"
 </h4><p>最简单的方法就是使用 <code>Time.timeScale</code>。</p>
 <h3 id="复盘-2">复盘
 </h3><p>因为是2D游戏，所以可以直接使用诸如<code>Vector3.up</code>、<code>Vector3.left</code>这样的代码来表示方向，大大简化了代码。教程中的一些设计思路非常简便好用，比如把背景做成3D quad，运用API <code>_meshRenderer.material.mainTextureOffset</code> 来实现无尽背景和视差效果；还有通过将某一个点的坐标从屏幕坐标转换为世界坐标，物体通过这个点后销毁，而不是依靠传统的碰撞检测，可以节省性能；还有关于简单的动画，不用Unity自带的动画系统，转而使用 <code>InvokeRepeating</code> 配合遍历图片的方式，简单高效地解决了问题。</p>
-<p>在我自己的实践方面，练习了 GameManager 和 AudioManager 的单例模式，并重温了音效的播放和UI的交互设计。这个游戏虽然是个入门级的小游戏，但是我还是学到了很多。</p>
+<p>在我自己的实践方面，练习了 <code>GameManager</code> 和 <code>AudioManager</code> 的单例模式，并重温了音效的播放和UI的交互设计。这个游戏虽然是个入门级的小游戏，但是我还是学到了很多。</p>
 <h4 id="代码复用-2">代码复用
 </h4><h5 id="spawner的一种写法">Spawner的一种写法
 </h5><p>使用 <code>InvokeRepeating</code> 达到间隔时间生成游戏物体的效果。</p>
@@ -2042,7 +2042,6 @@ version: "3.1"
 <li>目标：用激光炮击碎所有小行星
 <ul>
 <li>大/中行星被击中后会分裂成更小的碎片（例如：大 → 中 → 小 → 消失）</li>
-<li>完全清除当前波次的小行星后，进入下一关，难度递增（小行星数量/速度增加）</li>
 </ul>
 </li>
 <li>失败：
@@ -2052,7 +2051,6 @@ version: "3.1"
 </li>
 <li>其他特点：
 <ul>
-<li>飞船或小行星从一侧飞出，会从对侧重新进入（“卷屏”效果）</li>
 <li>飞船有动量，即使停止推进也会继续滑行，需反向推进减速</li>
 </ul>
 </li>
@@ -2092,7 +2090,7 @@ version: "3.1"
 <li>玩家的爆炸特效</li>
 </ul>
 </li>
-<li>显示UI分数</li>
+<li>显示UI分数和玩家剩余的生命数</li>
 <li>全部局数用尽，游戏结束</li>
 </ol>
 <h3 id="遇到的问题及解决方法-4">遇到的问题及解决方法
@@ -2225,12 +2223,12 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>需要注意的是，最终小行星的轨道方向是 rotaton * dir，rotation本身是一个四元数，这里将旋转作用于向量，即 旋转后的向量 = Quaternion * 原始向量</p>
+</div><p>需要注意的是，最终小行星的轨道方向是 <code>rotaton * dir</code>，<code>rotation</code>本身是一个四元数，这里将旋转作用于向量，即 <code>旋转后的向量 = Quaternion * 原始向量</code></p>
 <blockquote class="alert alert-warning">
     <p>Quaternion 必须在乘号左边！</p></blockquote>
 <p>其中的原理在数学的相关学习中再做详尽探讨，此处不再赘述。</p>
 <h5 id="关于-quaternion的补充">关于 Quaternion的补充
-</h5><p>应该避免直接修改 Quaternion 的x, y, z, w 分量，因为它们不是角度而是复杂的复数数学，直接修改会导致异常。</p>
+</h5><p>应该避免直接修改 Quaternion 的<code>x</code>, <code>y</code>, <code>z</code>, <code>w</code> 分量，因为它们不是角度而是复杂的复数数学，直接修改会导致异常。</p>
 <blockquote class="alert alert-warning">
     <p>始终使用Unity提供的API！</p></blockquote>
 <p><strong>常用的API</strong>：</p>
@@ -2496,7 +2494,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Jan 23, 2026 17:12 &#43;0800
+            最后更新于 Jan 24, 2026 10:28 &#43;0800
         </span>
     </section></footer>
 
@@ -2512,6 +2510,30 @@ version: "3.1"
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/cover.e234c6f5d3ed6725521421ec36928286_hu_f1d3211ccc597964.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【练手日志】Unity小游戏集锦 2"
+                        
+                        data-hash="md5-4jTG9dPtZyVSFCHsNpKChg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【练手日志】Unity小游戏集锦 2</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -2532,30 +2554,6 @@ version: "3.1"
 
         <div class="article-details">
             <h2 class="article-title">【SOLID】SOLID原则项目实践</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-1/cover.d5dbc02814bce8e0638eacc5fc66ce99_hu_32f4ec35952ac793.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【练手日志】Unity小游戏集锦 1"
-                        
-                        data-hash="md5-1dvAKBS86OBjjqzF/GbOmQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【练手日志】Unity小游戏集锦 1</h2>
         </div>
     </a>
 </article>
