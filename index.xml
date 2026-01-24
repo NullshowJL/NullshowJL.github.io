@@ -1990,7 +1990,6 @@
     &gt;Unity Asset Store-kΩsmaragd&lt;/a&gt;（UI）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;完整源码&lt;/strong&gt;： 请见本网站“作品集”部分&lt;/p&gt;
 &lt;h2 id=&#34;solid原则简介&#34;&gt;SOLID原则简介
 &lt;/h2&gt;&lt;h3 id=&#34;意大利面条式代码&#34;&gt;意大利面条式代码
 &lt;/h3&gt;&lt;p&gt;这种代码指的是一团乱麻，所有行为都高度耦合的代码。比如，在 &lt;code&gt;PlayerController.cs&lt;/code&gt; 这个脚本中，玩家的 &lt;code&gt;Move()&lt;/code&gt;, &lt;code&gt;Attack()&lt;/code&gt;,&lt;code&gt; Jump()&lt;/code&gt;&amp;hellip;等等行为都写到了一起，此外，还有 &lt;code&gt;PlayAudio&lt;/code&gt; 等其他功能。&lt;/p&gt;

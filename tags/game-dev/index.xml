@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 24 Jan 2026 10:28:30 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 24 Jan 2026 10:42:42 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【练手日志】Unity小游戏集锦 2</title>
         <link>https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/</link>
         <pubDate>Fri, 23 Jan 2026 17:20:30 +0800</pubDate>
@@ -1991,7 +1991,6 @@
     &gt;Unity Asset Store-kΩsmaragd&lt;/a&gt;（UI）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;完整源码&lt;/strong&gt;： 请见本网站“作品集”部分&lt;/p&gt;
 &lt;h2 id=&#34;solid原则简介&#34;&gt;SOLID原则简介
 &lt;/h2&gt;&lt;h3 id=&#34;意大利面条式代码&#34;&gt;意大利面条式代码
 &lt;/h3&gt;&lt;p&gt;这种代码指的是一团乱麻，所有行为都高度耦合的代码。比如，在 &lt;code&gt;PlayerController.cs&lt;/code&gt; 这个脚本中，玩家的 &lt;code&gt;Move()&lt;/code&gt;, &lt;code&gt;Attack()&lt;/code&gt;,&lt;code&gt; Jump()&lt;/code&gt;&amp;hellip;等等行为都写到了一起，此外，还有 &lt;code&gt;PlayAudio&lt;/code&gt; 等其他功能。&lt;/p&gt;

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Sat, 24 Jan 2026 10:28:30 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 24 Jan 2026 10:42:42 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/en/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【SOLID】SOLID Principles in Project Practice</title>
         <link>https://nullshowjl.github.io/en/p/solidsolid-principles-in-project-practice/</link>
         <pubDate>Mon, 19 Jan 2026 09:54:30 +0800</pubDate>
@@ -34,7 +34,6 @@
     &gt;Unity Asset Store-kΩsmaragd&lt;/a&gt;（UI）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;： Please refer to &lt;em&gt;Portfolio&lt;/em&gt; section on this website&lt;/p&gt;
 &lt;h2 id=&#34;introduction-of-solid-principles&#34;&gt;Introduction of SOLID Principles
 &lt;/h2&gt;&lt;h3 id=&#34;spaghetti-code&#34;&gt;Spaghetti Code
 &lt;/h3&gt;&lt;p&gt;This kind of code is basically a tangled mess where everything is tightly coupled. For example, in a script like &lt;code&gt;PlayerController.cs&lt;/code&gt;, you might see the player’s &lt;code&gt;Move()&lt;/code&gt;, &lt;code&gt;Attack()&lt;/code&gt;, &lt;code&gt;Jump()&lt;/code&gt;… all crammed together, along with extra functions like &lt;code&gt;PlayAudio&lt;/code&gt;.&lt;/p&gt;
@@ -747,8 +746,7 @@
 &lt;h4 id=&#34;6-custom-font-scaling-issue&#34;&gt;6. Custom Font Scaling Issue
 &lt;/h4&gt;&lt;p&gt;Custom fonts didn’t scale properly using the usual font size settings, it can be fixed by scaling the entire object instead.&lt;/p&gt;
 &lt;h4 id=&#34;7-sound-effect-spam-on-landing&#34;&gt;7. Sound Effect Spam on Landing
-&lt;/h4&gt;&lt;p&gt;设定当velocity超过一定数值时才播放音效，避免因为一点移动就播放音效从而感觉很杂乱的问题。&lt;/p&gt;
-&lt;p&gt;To avoid messy audio from tiny movements, a velocity threshold can be set to help with this—only play the landing sound if the fruit’s velocity is above a certain value.&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;To avoid messy audio from tiny movements, a velocity threshold can be set to help with this—only play the landing sound if the fruit’s velocity is above a certain value.&lt;/p&gt;
 &lt;h3 id=&#34;reflection&#34;&gt;Reflection
 &lt;/h3&gt;&lt;p&gt;This was my first hands-on Unity project. I tried to write all the code myself, only checking tutorials when I got stuck—then I’d go back and implement the logic on my own. Whenever I hit an unfamiliar API, I’d dig into my old notes or check the official docs. That really helped the knowledge stick.&lt;/p&gt;
 &lt;p&gt;The demo covers the core gameplay, though there are still a few bugs. For example, sometimes the game doesn’t restart even when fruits stack past the game-over line. Also, after merging into the final watermelon, I still need to add a victory screen and scene. I’ll revisit to polish those once I’ve finished a few more practice projects.&lt;/p&gt;
