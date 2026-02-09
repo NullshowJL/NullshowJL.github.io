@@ -2510,11 +2510,11 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Study Journey</title>
-        <link>https://nullshowjl.github.io/en/study-journey/</link>
+        <title>Journey</title>
+        <link>https://nullshowjl.github.io/en/journey/</link>
         <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://nullshowjl.github.io/en/study-journey/</guid>
+        <guid>https://nullshowjl.github.io/en/journey/</guid>
         <description>&lt;h2 id=&#34;游戏开发&#34;&gt;游戏开发
 &lt;/h2&gt;&lt;p&gt;I track my learning month by month, splitting everything into two parts: hands‑on projects and theory. The courses marked with an asterisk were especially helpful for me at that stage — I genuinely recommend them. &lt;em&gt;Feel free to use this list as a reference based on your own needs and where you are in your learning journey.&lt;/em&gt;&lt;/p&gt;
 &lt;table&gt;
@@ -2529,7 +2529,7 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2026 /1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2026/1&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Merge Big Watermelon&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Bilibili-YouChiHui&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;* Mastering SOLID Principles in Unity Game Development&lt;/td&gt;
@@ -2560,8 +2560,15 @@
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Asteroids&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Youtube-Zigurous&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Match 3 Intermediate Game Design and Programming in Unity3D&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Thomas Yanuziello&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;*Learn Problem Solving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;YouTube-Code Monkey&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2026/2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;

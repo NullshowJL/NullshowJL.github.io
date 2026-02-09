@@ -29,11 +29,76 @@
 &lt;img src=&#34;1-game-circle.webp&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
 &lt;p&gt;由此，我们可以看到demo的核心模块有两个：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;合成&lt;/li&gt;
-&lt;li&gt;对话（推动剧情）&lt;/li&gt;
+&lt;li&gt;合成
+&lt;ul&gt;
+&lt;li&gt;网格系统&lt;/li&gt;
+&lt;li&gt;物品系统（等级、合成规则）&lt;/li&gt;
+&lt;li&gt;拖拽交互&lt;/li&gt;
+&lt;li&gt;动画和反馈&lt;/li&gt;
+&lt;li&gt;任务系统&lt;/li&gt;
+&lt;li&gt;资源循环&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;我计划按照模块进行开发，完成一个MVP后加入新的模块，测试新的功能。两个模块的基本逻辑在两个阶段实现，在第三阶段进行重构和稍作一些细节上的提升，使其易于在下一步扩展。&lt;/p&gt;
-&lt;h2 id=&#34;开发阶段一合成模块&#34;&gt;开发阶段一（合成模块）
+&lt;/li&gt;
+&lt;li&gt;对话（推动剧情）
+&lt;ul&gt;
+&lt;li&gt;对话系统
+&lt;ul&gt;
+&lt;li&gt;ScriptableObject 对话数据&lt;/li&gt;
+&lt;li&gt;对话触发条件&lt;/li&gt;
+&lt;li&gt;UI 对话框&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;事件系统
+&lt;ul&gt;
+&lt;li&gt;每次合成触发事件&lt;/li&gt;
+&lt;li&gt;剧情事件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;任务系统
+&lt;ul&gt;
+&lt;li&gt;合成 X 次&lt;/li&gt;
+&lt;li&gt;达到某等级&lt;/li&gt;
+&lt;li&gt;完成剧情节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;UI美化&lt;/li&gt;
+&lt;li&gt;存档系统升级
+&lt;ul&gt;
+&lt;li&gt;JSON → 二进制&lt;/li&gt;
+&lt;li&gt;多存档&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我计划从拆解一个现有merge toolkit开始，按照自己的架构对merge模块进行重写，完成一个MVP后加入新的模块，测试新的功能。两个模块的基本逻辑在两个阶段实现，在最后一个阶段进行优化和稍作一些细节上的提升，使其易于在下一步扩展。&lt;/p&gt;
+&lt;h2 id=&#34;开发阶段一拆解&#34;&gt;开发阶段一（拆解）
+&lt;/h2&gt;&lt;p&gt;目标：搞清楚模板的所有原理。&lt;/p&gt;
+&lt;h3 id=&#34;1-项目结构分析&#34;&gt;1. 项目结构分析
+&lt;/h3&gt;&lt;p&gt;Assets 目录结构&lt;/p&gt;
+&lt;p&gt;Prefabs、ScriptableObjects、Scenes&lt;/p&gt;
+&lt;p&gt;核心脚本入口（GameManager、GridManager 等）&lt;/p&gt;
+&lt;h3 id=&#34;2-网格系统&#34;&gt;2. 网格系统
+&lt;/h3&gt;&lt;p&gt;网格如何生成&lt;/p&gt;
+&lt;p&gt;坐标如何映射&lt;/p&gt;
+&lt;p&gt;物品如何放置&lt;/p&gt;
+&lt;h3 id=&#34;3-物品系统&#34;&gt;3. 物品系统
+&lt;/h3&gt;&lt;p&gt;物品数据结构&lt;/p&gt;
+&lt;p&gt;合成规则&lt;/p&gt;
+&lt;p&gt;等级提升逻辑&lt;/p&gt;
+&lt;h3 id=&#34;4-拖拽交互&#34;&gt;4. 拖拽交互
+&lt;/h3&gt;&lt;p&gt;如何检测拖拽&lt;/p&gt;
+&lt;p&gt;如何判断合成&lt;/p&gt;
+&lt;p&gt;如何处理无效拖拽&lt;/p&gt;
+&lt;h3 id=&#34;5-动画与反馈&#34;&gt;5. 动画与反馈
+&lt;/h3&gt;&lt;p&gt;合成动画&lt;/p&gt;
+&lt;p&gt;特效&lt;/p&gt;
+&lt;p&gt;UI 动画&lt;/p&gt;
+&lt;h3 id=&#34;6-存档系统&#34;&gt;6. 存档系统
+&lt;/h3&gt;&lt;p&gt;存档格式&lt;/p&gt;
+&lt;p&gt;何时保存&lt;/p&gt;
+&lt;p&gt;如何恢复&lt;/p&gt;
+&lt;h2 id=&#34;开发阶段二合成模块&#34;&gt;开发阶段二（合成模块）
 &lt;/h2&gt;&lt;p&gt;本阶段要进行合成模块的开发。&lt;/p&gt;
 &lt;h3 id=&#34;内容&#34;&gt;内容
 &lt;/h3&gt;&lt;p&gt;场景搭建、网格、物体在网格上的随机摆放、UI、音效。&lt;/p&gt;
@@ -99,7 +164,6 @@
 &lt;h3 id=&#34;遇到的问题及解决方法&#34;&gt;遇到的问题及解决方法
 &lt;/h3&gt;&lt;h4 id=&#34;1&#34;&gt;1.
 &lt;/h4&gt;&lt;h4 id=&#34;2&#34;&gt;2.
-&lt;/h4&gt;&lt;h4 id=&#34;&#34;&gt;
 &lt;/h4&gt;</description>
         </item>
         <item>

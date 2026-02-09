@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂一些的小游戏">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂/烧脑一些的小游戏练习">
 <title>【练手日志】Unity小游戏集锦 2</title>
 
 <link rel='canonical' href='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/'>
 
 <link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【练手日志】Unity小游戏集锦 2">
-<meta property='og:description' content="用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂一些的小游戏">
+<meta property='og:description' content="用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂/烧脑一些的小游戏练习">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-23T17:20:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-24T10:28:30&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-23T17:20:30&#43;08:00'/><meta property='article:modified_time' content='2026-02-09T20:17:37&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/cover.webp' />
 <meta name="twitter:title" content="【练手日志】Unity小游戏集锦 2">
-<meta name="twitter:description" content="用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂一些的小游戏"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂/烧脑一些的小游戏练习"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E7%BB%83%E6%89%8B%E6%97%A5%E5%BF%97unity%E5%B0%8F%E6%B8%B8%E6%88%8F%E9%9B%86%E9%94%A6-2/cover.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -362,7 +362,7 @@ version: "3.1"
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#合成大西瓜">合成大西瓜</a>
+    <li><a href="#2048">2048</a>
       <ol>
         <li><a href="#游戏简介">游戏简介</a></li>
         <li><a href="#游戏功能拆解">游戏/功能拆解</a>
@@ -374,129 +374,19 @@ version: "3.1"
         </li>
         <li><a href="#遇到的问题及解决方法">遇到的问题及解决方法</a>
           <ol>
-            <li><a href="#1-没有思路">1. 没有思路</a></li>
-            <li><a href="#2-屏幕坐标与世界坐标的转换">2. 屏幕坐标与世界坐标的转换</a></li>
-            <li><a href="#3-延迟执行">3. 延迟执行</a></li>
-            <li><a href="#4-单例模式的赋值">4. 单例模式的赋值</a></li>
-            <li><a href="#5-水果合成的逻辑">5. 水果合成的逻辑</a></li>
-            <li><a href="#6-自定义字体无法缩放大小">6. 自定义字体无法缩放大小</a></li>
-            <li><a href="#7-落地时音效的频繁播放">7. 落地时音效的频繁播放</a></li>
+            <li><a href="#1-导入的字体在-textmesh-pro-中使用">1. 导入的字体在 TextMesh Pro 中使用</a></li>
+            <li><a href="#2-cell-的快速设置">2. Cell 的快速设置</a></li>
+            <li><a href="#3-用-scriptableobject-来存储-tile-的状态数据">3. 用 ScriptableObject 来存储 Tile 的状态数据</a></li>
+            <li><a href="#4-网格初始化的思路">4. 网格初始化的思路</a></li>
+            <li><a href="#5-瓦片生成的实现思路">5. 瓦片生成的实现思路</a></li>
+            <li><a href="#6-瓦片移动的实现思路">6. 瓦片移动的实现思路</a></li>
+            <li><a href="#7-瓦片移动动画的实现思路">7. 瓦片移动动画的实现思路</a></li>
+            <li><a href="#8-落地时音效的频繁播放">8. 落地时音效的频繁播放</a></li>
           </ol>
         </li>
         <li><a href="#复盘">复盘</a>
           <ol>
             <li><a href="#代码复用">代码复用</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#太空射击">太空射击</a>
-      <ol>
-        <li><a href="#游戏简介-1">游戏简介</a></li>
-        <li><a href="#游戏功能拆解-1">游戏/功能拆解</a>
-          <ol>
-            <li><a href="#内容-1">内容</a></li>
-            <li><a href="#逻辑-1">逻辑</a></li>
-            <li><a href="#开发步骤-1">开发步骤</a></li>
-          </ol>
-        </li>
-        <li><a href="#遇到的问题及解决方法-1">遇到的问题及解决方法</a>
-          <ol>
-            <li><a href="#1-背景的移动">1. 背景的移动</a></li>
-            <li><a href="#2-对刚体的运算要放在fixedupdate中">2. 对刚体的运算要放在<code>FixedUpdate()</code>中</a></li>
-            <li><a href="#3-边界检查的一种方法">3. 边界检查的一种方法</a></li>
-            <li><a href="#4-利用刚体实现物体的偏转">4. 利用刚体实现物体的偏转</a></li>
-            <li><a href="#5-组件化功能挂钩模式">5. “组件化（功能挂钩）”模式</a></li>
-            <li><a href="#6-getcomponent-调用的位置时机">6. <code>GetComponent</code> 调用的位置/时机</a></li>
-            <li><a href="#7-协程的一般写法">7. 协程的一般写法</a></li>
-            <li><a href="#8-小行星自身旋转效果的实现">8. 小行星自身旋转效果的实现</a></li>
-            <li><a href="#9-实现敌人发射子弹的两种方法">9. 实现敌人发射子弹的两种方法</a></li>
-            <li><a href="#10-敌人闪避的实现思路">10. 敌人闪避的实现思路</a></li>
-            <li><a href="#11-ontrigger和oncollison的使用时机">11. <code>OnTrigger</code>和<code>OnCollison</code>的使用时机</a></li>
-            <li><a href="#12-特效的销毁的方式方法关注点分离原则">12. 特效的销毁的方式方法（关注点分离原则）</a></li>
-          </ol>
-        </li>
-        <li><a href="#复盘-1">复盘</a>
-          <ol>
-            <li><a href="#代码复用-1">代码复用</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#飞翔的小鸟">飞翔的小鸟</a>
-      <ol>
-        <li><a href="#游戏简介-2">游戏简介</a></li>
-        <li><a href="#游戏功能拆解-2">游戏/功能拆解</a>
-          <ol>
-            <li><a href="#内容-2">内容</a></li>
-            <li><a href="#逻辑-2">逻辑</a></li>
-            <li><a href="#开发步骤-2">开发步骤</a></li>
-          </ol>
-        </li>
-        <li><a href="#遇到的问题及解决方法-2">遇到的问题及解决方法</a>
-          <ol>
-            <li><a href="#1-触屏模式的写法">1. 触屏模式的写法</a></li>
-            <li><a href="#2-用invokerepeating-实现简单的动画">2. 用<code>InvokeRepeating </code>实现简单的动画</a></li>
-            <li><a href="#3-视差无尽背景的一种实现思路">3. 视差+无尽背景的一种实现思路</a></li>
-            <li><a href="#4-管道销毁的另一种思路">4. 管道销毁的另一种思路</a></li>
-            <li><a href="#5-unity中的几个坐标系">5. Unity中的几个坐标系</a></li>
-            <li><a href="#6-游戏的重启和暂停">6. 游戏的重启和暂停</a></li>
-          </ol>
-        </li>
-        <li><a href="#复盘-2">复盘</a>
-          <ol>
-            <li><a href="#代码复用-2">代码复用</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#乒乓球">乒乓球</a>
-      <ol>
-        <li><a href="#游戏简介-3">游戏简介</a></li>
-        <li><a href="#游戏功能拆解-3">游戏/功能拆解</a>
-          <ol>
-            <li><a href="#内容-3">内容</a></li>
-            <li><a href="#逻辑-3">逻辑</a></li>
-            <li><a href="#开发步骤-3">开发步骤</a></li>
-          </ol>
-        </li>
-        <li><a href="#遇到的问题及解决方法-3">遇到的问题及解决方法</a>
-          <ol>
-            <li><a href="#1-angular-drag-和-linear-drag">1. <code>Angular Drag</code> 和 <code>Linear Drag</code></a></li>
-            <li><a href="#2-fixedupdate的使用说明">2. <code>FixedUpdate</code>的使用说明</a></li>
-            <li><a href="#3-小球接触回弹效果的实现">3. 小球接触回弹效果的实现</a></li>
-            <li><a href="#4-使用-eventsystem-实现玩家和电脑的得分">4. 使用 <code>EventSystem</code> 实现玩家和电脑的得分</a></li>
-          </ol>
-        </li>
-        <li><a href="#复盘-3">复盘</a>
-          <ol>
-            <li><a href="#代码复用-3">代码复用</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#小行星">小行星</a>
-      <ol>
-        <li><a href="#游戏简介-4">游戏简介</a></li>
-        <li><a href="#游戏功能拆解-4">游戏/功能拆解</a>
-          <ol>
-            <li><a href="#内容-4">内容</a></li>
-            <li><a href="#逻辑-4">逻辑</a></li>
-            <li><a href="#开发步骤-4">开发步骤</a></li>
-          </ol>
-        </li>
-        <li><a href="#遇到的问题及解决方法-4">遇到的问题及解决方法</a>
-          <ol>
-            <li><a href="#1-物体间物理碰撞层的设置">1. 物体间物理碰撞层的设置</a></li>
-            <li><a href="#2-小行星初始状态的设置">2. 小行星初始状态的设置</a></li>
-            <li><a href="#3-小行星生成和移动的实现思路">3. 小行星生成和移动的实现思路</a></li>
-            <li><a href="#4-玩家无敌时间的设计思路">4. 玩家无敌时间的设计思路</a></li>
-            <li><a href="#5-粒子系统的设置">5. 粒子系统的设置</a></li>
-          </ol>
-        </li>
-        <li><a href="#复盘-4">复盘</a>
-          <ol>
-            <li><a href="#代码复用-4">代码复用</a></li>
           </ol>
         </li>
       </ol>
@@ -545,7 +435,7 @@ version: "3.1"
     
         
         <h3 class="article-subtitle">
-            用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂一些的小游戏
+            用Unity实现的小游戏项目的笔记，这一阶段会选逻辑更加复杂/烧脑一些的小游戏练习
         </h3>
         
     </div>
@@ -581,7 +471,7 @@ version: "3.1"
 
 
         <time class="article-time--reading">
-            阅读时长: 24 分钟
+            阅读时长: 6 分钟
         </time>
     </div>
     
@@ -614,88 +504,110 @@ version: "3.1"
 <li><a class="link" href="#%e6%89%ab%e9%9b%b7" >扫雷</a></li>
 <li><a class="link" href="#%e6%89%93%e7%a0%96%e5%9d%97" >打砖块</a></li>
 </ul>
-<p>这一练手系列中的游戏都是非常小的，旨在帮我自己熟悉API的用法、锻炼思维逻辑能力，以及拓展思路，所以首要任务是快速完成原型、或者总结出一些小块的复用代码；项目整体架构和可扩展性等不在此类项目范围之内。</p>
-<h2 id="合成大西瓜">合成大西瓜
-</h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.bilibili.com/video/BV18i4y1a7wR?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
-    >B站-游池汇</a></p>
-<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-merge-big-watermelon"  target="_blank" rel="noopener"
+<p>通过《Unity小游戏集锦1》中的5个游戏的练习，感觉自己学到和提升了很多，所以继续选了5个同样规模的小游戏，但是可能逻辑会稍微复杂一些的，继续练习。</p>
+<h2 id="2048">2048
+</h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=4NFZwPhqeRs"  target="_blank" rel="noopener"
+    >油管-Zigurous</a></p>
+<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-2048"  target="_blank" rel="noopener"
     >on Gitee</a></p>
 <h3 id="游戏简介">游戏简介
-</h3><p>《合成大西瓜》是一款由微伞游戏（Weisun Games）2021年初推出的休闲益智类网页小游戏，因其简单上手、魔性玩法和社交传播迅速走红。</p>
+</h3><p>《2048》是一款由意大利开发者 Gabriele Cirulli 于 2014 年发布的数字益智滑块游戏，因其规则简单、上手容易但极具挑战性而迅速风靡全球。</p>
 <p><strong>核心玩法</strong>：</p>
 <ul>
-<li>玩家通过点击屏幕，从上方随机掉落不同种类的水果（如葡萄、橙子、苹果等）。</li>
-<li>相同水果碰撞后会合成更大的水果，例如两个葡萄合成一个樱桃，两个樱桃合成一个橙子，依此类推，最终目标是合成出最大的“西瓜”。</li>
-<li>游戏采用类似“俄罗斯方块 + 2048”的机制：水果受重力影响堆叠，若堆积超过屏幕顶部，则游戏结束</li>
+<li><strong>游戏界面</strong>：一个 4×4 的方格棋盘。</li>
+<li><strong>初始状态</strong>：棋盘上随机出现两个数字方块，通常是 <strong>2</strong> 或 <strong>4</strong>。</li>
+<li><strong>操作方式</strong>：玩家通过上下左右滑动（或按键）控制所有方块朝指定方向移动。</li>
+<li><strong>合并规则</strong>：
+<ul>
+<li>相同数字的两个方块在碰撞时会合并为一个新方块，数值为两者之和（如 2 + 2 = 4，4 + 4 = 8，……）。</li>
+<li>每次滑动后，空位中会随机生成一个新的 <strong>2</strong> 或 <strong>4</strong>。</li>
 </ul>
-<img src="1-watermelon.gif" alt="" style="zoom:100%;"/>
+</li>
+<li><strong>目标</strong>：通过不断合并，最终得到一个 数值为 2048 的方块（达成后可继续玩以追求更高分数）。</li>
+<li><strong>失败条件</strong>：当棋盘被填满且没有任何相邻相同数字可以合并时，游戏结束。</li>
+</ul>
+<img src="1-2048.gif" alt="" style="zoom:100%;"/>
 <h3 id="游戏功能拆解">游戏/功能拆解
 </h3><h4 id="内容">内容
-</h4><p>背景图片、墙壁和地板、水果（运动中水果、待命水果）、死亡判定线、UI（分数）、音效（落地、合成）</p>
+</h4><p>画布/背景、网格、瓦片（数字、颜色）、游戏结束判定、UI（分数）</p>
 <h4 id="逻辑">逻辑
 </h4><ol>
-<li>待命水果，鼠标按下时在x轴跟随鼠标，松开鼠标水果落下</li>
-<li>水果落地时，水果之间互相碰撞、带弹性效果，相同的水果碰撞在一起会合成更大的水果</li>
-<li>水果如果抵达了死亡判定线，游戏失败，重新加载场景</li>
+<li>棋盘上随机出现两个相同的数字方块</li>
+<li>玩家上下左右滑动方块，同样的方块合并为下一个目标数字（2 - 4 - 8 -16&hellip;）</li>
+<li>当棋盘被填满而没有任何相邻数字可以合并时，游戏结束</li>
 <li>显示当前的分数</li>
 </ol>
 <h4 id="开发步骤">开发步骤
 </h4><ol>
-<li>场景摆放</li>
-<li>给水果和场景等游戏物体添加重力、碰撞、弹性等组件</li>
-<li>将水果做成预制体</li>
-<li>创建待命水果跟随鼠标移动</li>
-<li>待命水果在鼠标松开后落下</li>
-<li>相同水果合成</li>
-<li>水果碰到/超出死亡线的逻辑</li>
+<li>准备
+<ul>
+<li>项目创建</li>
+<li>导入资产及处理</li>
+<li>画布设置（背景）</li>
+</ul>
+</li>
+<li>网格设置
+<ul>
+<li>网格的初始化</li>
+</ul>
+</li>
+<li>瓦片
+<ul>
+<li>瓦片预制体的制作</li>
+<li>瓦片状态设置</li>
+</ul>
+</li>
+<li>瓦片逻辑的实现
+<ul>
+<li>瓦片的生成（随机）</li>
+<li>瓦片的移动</li>
+<li>动画</li>
+<li>瓦片的合并</li>
+</ul>
+</li>
+<li>游戏结束</li>
 <li>显示UI分数</li>
-<li>音效</li>
 </ol>
 <h3 id="遇到的问题及解决方法">遇到的问题及解决方法
-</h3><h4 id="1-没有思路">1. 没有思路
-</h4><p>仿照“把一只大象放进冰箱需要几步”，将要做的事尽可能拆成细到不能再细的步骤。开发步骤4为例，可以进一步细化为以下的步骤：</p>
+</h3><h4 id="1-导入的字体在-textmesh-pro-中使用">1. 导入的字体在 TextMesh Pro 中使用
+</h4><p>先确保安装了 TextMesh Pro，然后选中字体右键点击 Create =&gt; TextMesh Pro =&gt; Font Asset。</p>
+<h4 id="2-cell-的快速设置">2. Cell 的快速设置
+</h4><p>使用 Horizontal Layout Group 和 Vertical Layout Group。但是需要注意的是要边看边设置，否则会出现奇怪的效果。同时在此项目中，设置好了需要把这两个组件删除，否则加上瓦片移动的脚本后也会出现奇怪的效果。</p>
+<h4 id="3-用-scriptableobject-来存储-tile-的状态数据">3. 用 ScriptableObject 来存储 Tile 的状态数据
+</h4><p>一个类如果继承了 ScriptableObject，意味着它将不是“场景里的组件”，而是“可序列化的Unity资产（Asset）容器”，可以以 .asset 的形式存在，被多个对象/场景引用。此项目的应用场景是下面第二种场景。</p>
+<p><strong>使用场景</strong>：</p>
+<ol>
+<li><strong>全局配置/数值表/平衡参数</strong>
 <ul>
-<li>待命水果（1-4号水果）数组</li>
-<li>待命水果生成点</li>
-<li>随机从数组中生成待命水果</li>
-<li>鼠标点下后获取鼠标的位置，并赋值给待命水果（只改变x轴的值，y和z轴保持不变）</li>
-<li>边界检查（水果不能随鼠标一起超过两边墙壁）</li>
+<li>角色属性、武器参数、技能数据、关卡配置、掉落表等。</li>
+<li>优点：改数据不改代码，能做版本管理和复用。</li>
 </ul>
-<h4 id="2-屏幕坐标与世界坐标的转换">2. 屏幕坐标与世界坐标的转换
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 屏幕坐标 -&gt; 世界坐标</span>
-</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">screenPoint</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="n">mousePosition</span><span class="p">;</span> <span class="c1">// 例如鼠标位置</span>
-</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">worldPoint</span> <span class="p">=</span> <span class="n">Camera</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">ScreenToWorldPoint</span><span class="p">(</span><span class="n">screenPoint</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 世界坐标 -&gt; 屏幕坐标</span>
-</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">worldPos</span> <span class="p">=</span> <span class="n">player</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">screenPos</span> <span class="p">=</span> <span class="n">Camera</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">WorldToScreenPoint</span><span class="p">(</span><span class="n">worldPos</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>需要注意的是，因为main camera在世界坐标中z轴的位置在-10，所以2D的普通游戏物体从屏幕坐标转为世界坐标要处理z轴（设置为0），否则会看不见（在main camera处）。</p>
-<blockquote class="alert alert-note">
-    <p>Unity的屏幕坐标原点在左下角</p></blockquote>
-<h4 id="3-延迟执行">3. 延迟执行
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">Invoke</span><span class="p">(</span><span class="s">&#34;funcName&#34;</span><span class="p">,</span> <span class="n">second</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="4-单例模式的赋值">4. 单例模式的赋值
-</h4><div class="highlight"><div class="chroma">
+</li>
+<li><strong>“数据驱动”的资源定义（Data Asset）</strong>
+<ul>
+<li>例如“道具定义”“Tile 定义”“敌人类型定义”这种“模板数据”。</li>
+<li>优点：可被多个 Prefab/场景共享引用，避免复制粘贴配置。</li>
+</ul>
+</li>
+<li><strong>共享的引用与依赖注入风格（Project 级单例数据）</strong>
+<ul>
+<li>比如把音量设置、输入映射、全局事件通道（Event Channel）做成 。 <code>ScriptableObject</code></li>
+<li>优点：解耦对象之间的直接引用，跨场景更方便。</li>
+</ul>
+</li>
+<li><strong>编辑器友好的内容制作管线</strong>
+<ul>
+<li>设计师/策划在 Inspector 里填表、拖引用，程序只负责读取与执行。</li>
+<li>优点：内容迭代快。</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-网格初始化的思路">4. 网格初始化的思路
+</h4><p>按照游戏物体的层级由低到高：</p>
+<p>Cell（不动的单个格子）=&gt; Row（负责管理它下面的一排Cell）=&gt; Grid（网格，负责管理它下面的四排Row以及Row下面的四个格子）=&gt; Board（负责管理不动的网格+动的Tile）</p>
+<p>另外，Tile是一个个可以在单个格子（Cell）上移动的瓦片。</p>
+<img src="2-grid.webp" alt="" style="zoom:100%;"/>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -714,32 +626,186 @@ version: "3.1"
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 在指定一个类为单例模式后，不要忘记在Awake中赋值</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PlayerManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======== Cell.cs =========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Cell</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">PlayerManager</span> <span class="n">Instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Vector2Int</span> <span class="n">Coordinates</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Tile</span> <span class="n">Tile</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">GameObject</span><span class="p">[]</span> <span class="n">fruits</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Transform</span> <span class="n">createPoint</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [HideInInspector]</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">GameObject</span> <span class="n">waitingFruit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 瓦片状态</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">Empty</span> <span class="p">=&gt;</span> <span class="n">Tile</span> <span class="p">==</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">bool</span> <span class="n">Occupied</span> <span class="p">=&gt;</span> <span class="n">Tile</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========== Row.cs ==========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Row</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Cell</span><span class="p">[]</span> <span class="n">Cells</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>   <span class="c1">// 只能由这一个Row设置，而不希望由别的类来设置</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Instance</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Cells</span> <span class="p">=</span> <span class="n">GetComponentsInChildren</span><span class="p">&lt;</span><span class="n">Cell</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//========== Grid.cs ===========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Grid</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Row</span><span class="p">[]</span> <span class="n">Rows</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Cell</span><span class="p">[]</span> <span class="n">Cells</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Size</span> <span class="p">=&gt;</span> <span class="n">Cells</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Height</span> <span class="p">=&gt;</span> <span class="n">Rows</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Width</span> <span class="p">=&gt;</span> <span class="n">Size</span> <span class="p">/</span> <span class="n">Height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Rows</span> <span class="p">=</span> <span class="n">GetComponentsInChildren</span><span class="p">&lt;</span><span class="n">Row</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Cells</span> <span class="p">=</span> <span class="n">GetComponentsInChildren</span><span class="p">&lt;</span><span class="n">Cell</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Other codes</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 初始化所有的格子</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">y</span> <span class="p">&lt;</span> <span class="n">Height</span><span class="p">;</span> <span class="n">y</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">Width</span><span class="p">;</span> <span class="n">x</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Rows</span><span class="p">[</span><span class="n">y</span><span class="p">].</span><span class="n">Cells</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">Coordinates</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector2Int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="5-水果合成的逻辑">5. 水果合成的逻辑
-</h4><p>每个游戏物体的id都是唯一的，所以使用id来标识每一个物体。为了避免每个水果都合成一个更高级水果的情况，只允许id较大的那个水果生成更高等级的水果。</p>
-<h4 id="6-自定义字体无法缩放大小">6. 自定义字体无法缩放大小
-</h4><p>通过整体缩放解决（Scale）。</p>
-<h4 id="7-落地时音效的频繁播放">7. 落地时音效的频繁播放
+</div><h4 id="5-瓦片生成的实现思路">5. 瓦片生成的实现思路
+</h4><p>按照游戏物体的层级，简要来说，在这一阶段Board负责“生成什么”、Grid决定“放在哪里”、Tile执行“放进格子并确保和Cell的双向引用一致”。</p>
+<p>具体来说：</p>
+<ul>
+<li><strong>Board</strong>
+<ul>
+<li>控制游戏流程：什么时候生成新瓦片、生成几个、生成什么数字/状态</li>
+<li>维护一个 <code>_tiles</code> 列表（方便以后遍历、移动、合并、判断输赢等）</li>
+</ul>
+</li>
+<li><strong>Grid</strong>
+<ul>
+<li>管理所有 <code>Cell</code>（格子）</li>
+<li>提供工具方法：比如 <code>GetRandomEmptyCell()</code> 随机拿一个空格子</li>
+</ul>
+</li>
+<li><strong>Cell</strong>
+<ul>
+<li>单个格子的数据容器</li>
+<li><code>Cell.Tile</code> 指向“这个格子当前放着哪个 Tile”</li>
+</ul>
+</li>
+<li><strong>Tile</strong>
+<ul>
+<li>单个瓦片（UI + 数值）</li>
+<li><code>Tile.Number/State</code> 决定显示内容</li>
+<li><code>Tile.Cell</code> 记录“我现在在哪个 Cell 上”</li>
+<li><code>Spawn(cell)</code> 负责把自己放到某个格子，并把双方引用绑好</li>
+</ul>
+</li>
+</ul>
+<p><strong>需要确保Tile和Cell之间的双向绑定</strong>：</p>
+<ul>
+<li>从 <strong>Cell</strong> 看：<code>Cell.Tile</code> 能告诉我格子里是什么瓦片</li>
+<li>从 <strong>Tile</strong> 看：<code>Tile.Cell</code> 能告诉我瓦片在哪个格子</li>
+</ul>
+<p>这两者必须永远一致，否则：</p>
+<ul>
+<li>Grid 以为某格子是占用的，但视觉上瓦片已经走了（或反过来）</li>
+<li>随机找空格子会找错</li>
+<li>移动/合并判断会乱套</li>
+</ul>
+<p>所以生成/移动时就需要：</p>
+<ol>
+<li>旧关系清掉（解绑）</li>
+<li>新关系建立（绑定）</li>
+</ol>
+<h4 id="6-瓦片移动的实现思路">6. 瓦片移动的实现思路
+</h4><p><strong>整体思路</strong>：</p>
+<p>按顺序遍历所有的格子 =&gt; 对每个有瓦片的格子执行 <code>MoveTile</code> =&gt; 在<code>MoveTile</code> 时先沿指定方向探路找最终落点/合并目标 =&gt; 最后用 <code>MoveToCell</code> 一次性更新<code>Cell.Tell</code>和<code>Tell.Cell</code> 的位置。</p>
+<h5 id="tilecs">Tile.cs
+</h5><ul>
+<li>MoveToCell / Spawn：
+<ul>
+<li>清空/解绑旧格子</li>
+<li>绑定新格子</li>
+<li>让tile和cell的位置一致</li>
+</ul>
+</li>
+</ul>
+<h5 id="boardcs">Board.cs
+</h5><ul>
+<li>Update里接受玩家输入</li>
+<li>MoveTiles（全部瓦片的移动）
+<ul>
+<li>单个瓦片移动 MoveTile</li>
+<li>棋盘上所有瓦片的移动顺序（避免同一片瓦片被处理两次）</li>
+</ul>
+</li>
+<li>MoveTile
+<ul>
+<li>探路
+<ul>
+<li>前方是null（出界）</li>
+<li>前方是empty（还能走，继续更新）</li>
+<li>前方是occupied（合并/被挡住停止）</li>
+</ul>
+</li>
+<li>落子
+<ul>
+<li>有newCell（tile.MoveToCell(newCell)）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="gridcs-helper---提供cell的信息">Grid.cs (Helper - 提供cell的信息)
+</h5><ul>
+<li>GetCell</li>
+<li>GetAdjacentCell</li>
+</ul>
+<h4 id="7-瓦片移动动画的实现思路">7. 瓦片移动动画的实现思路
+</h4><h4 id="8-落地时音效的频繁播放">8. 落地时音效的频繁播放
 </h4><p>设定当velocity超过一定数值时才播放音效，避免因为一点移动就播放音效从而感觉很杂乱的问题。</p>
 <h3 id="复盘">复盘
 </h3><p>第一个练手的项目，代码上尽量都是自己写的，没有思路的时候才去看教程的思路，然后再自己写。遇到不会的API就翻阅自己以前的笔记或者查官方文档，感觉确实印象深刻了不少。</p>
@@ -805,1660 +871,6 @@ version: "3.1"
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="太空射击">太空射击
-</h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.bilibili.com/video/BV1wW411N7Ew?vd_source=b1a61d6b078b6e795dda5bac409d910e"  target="_blank" rel="noopener"
-    >B站-齐齐课-Plane</a></p>
-<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-space-shooter"  target="_blank" rel="noopener"
-    >on Gitee</a></p>
-<h3 id="游戏简介-1">游戏简介
-</h3><p>《太空射击》（Space Shooter）是Unity官方的一个3D入门教程项目，旨在帮助初学者快速掌握 Unity 的基础开发流程，包括场景搭建、玩家控制、敌人生成、碰撞检测、UI 显示和音效集成等核心概念。此版本在原教程基础上进行了升级，加入了会发射子弹的敌人等。</p>
-<p><strong>核心玩法</strong>：</p>
-<ul>
-<li><strong>类型</strong>：2D太空射击游戏（3D俯视视角）</li>
-<li><strong>目标</strong>：操控飞船在太空中生存尽可能长时间，击落不断出现的敌人和小行星。</li>
-<li><strong>操作方式</strong>：
-<ul>
-<li><strong>移动</strong>：使用 WASD 或方向键控制飞船在屏幕内自由移动</li>
-<li><strong>射击</strong>：按下鼠标左键发射子弹</li>
-</ul>
-</li>
-<li><strong>敌人行为</strong>：
-<ul>
-<li>小行星和敌人从屏幕上方随机位置生成，以不同速度向下坠落，敌人会左右移动并发射子弹</li>
-<li>玩家需躲避或摧毁它们，避免被撞击或者被敌人的子弹击中</li>
-</ul>
-</li>
-<li><strong>失败条件</strong>：飞船被小行星/子弹击中即游戏结束</li>
-<li><strong>计分系统</strong>：每摧毁一个敌人获得分数，UI 实时显示当前得分</li>
-</ul>
-<img src="2-space_shooter.gif" alt="" style="zoom:100%;"/>
-<h3 id="游戏功能拆解-1">游戏/功能拆解
-</h3><h4 id="内容-1">内容
-</h4><p>场景搭建（背景缓慢向下移动）、动画（敌人爆炸、小行星爆炸、玩家左右移动时偏转、小行星翻转）、UI（分数）、音效（背景音乐、射击、击中）</p>
-<h4 id="逻辑-1">逻辑
-</h4><ol>
-<li>玩家可以上下左右移动、发射子弹</li>
-<li>小行星在屏幕上方随机生成，匀速下落</li>
-<li>敌人在屏幕上方随机生成、以更快的速度向下移动、同时左右移动并发射子弹</li>
-<li>显示当前的分数</li>
-<li>玩家被敌人子弹击中，或者玩家被小行星/敌人碰撞，玩家死亡，重新加载游戏场景</li>
-</ol>
-<h4 id="开发步骤-1">开发步骤
-</h4><ol>
-<li>
-<p>搭建背景环境</p>
-<ul>
-<li>背景的循环移动</li>
-<li>星尘特效添加</li>
-<li>背景音乐添加</li>
-</ul>
-</li>
-<li>
-<p>玩家部分的实现</p>
-<ul>
-<li>
-<p>玩家运动控制</p>
-</li>
-<li>
-<p>玩家左右移动的偏转效果，速度越大偏转角度越大</p>
-</li>
-<li>
-<p>实现玩家的射击</p>
-</li>
-<li>
-<p>添加玩家子弹射击和音效</p>
-</li>
-</ul>
-</li>
-<li>
-<p>敌人和小行星部分的实现</p>
-<ul>
-<li>随机生成小行星和敌人</li>
-<li>小行星随机旋转效果</li>
-<li>实现敌人的射击</li>
-<li>实现敌人的左右移动（闪避）</li>
-</ul>
-</li>
-<li>
-<p>特效：实现攻击和撞击效果</p>
-</li>
-<li>
-<p>UI部分</p>
-<ul>
-<li>
-<p>搭建UI界面</p>
-</li>
-<li>
-<p>实现UI显示逻辑</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="遇到的问题及解决方法-1">遇到的问题及解决方法
-</h3><h4 id="1-背景的移动">1. 背景的移动
-</h4><p>让背景移动还是摄像机移动呢？通常选择让背景移动，因为游戏场景中还会有小行星、玩家、敌人等各种物体，保持摄像机不动是一种更简单的方式。</p>
-<p>需要注意的是，和做“往复”有关的计算时，因为要与绝对时间同步，所以使用 <code>Time.time</code>；在做一般位移、计时、累加时，因为需要确保与帧率无法，使用<code>Time.deltaTime</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 位移的计算（一般使用API）</span>
-</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span> <span class="p">*</span> <span class="m">1</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">,</span> <span class="n">space</span><span class="p">.</span><span class="n">World</span><span class="p">);</span> <span class="c1">// 如果是自己坐标系：Space.Self</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 背景循环往复</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ScrollBG</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Repeat</span><span class="p">(</span><span class="n">_scrollSpeed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">time</span><span class="p">,</span> <span class="m">30</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">_startPos</span> <span class="p">+</span> <span class="n">distance</span> <span class="p">*</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span> <span class="p">*</span> <span class="p">(-</span><span class="m">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="2-对刚体的运算要放在fixedupdate中">2. 对刚体的运算要放在<code>FixedUpdate()</code>中
-</h4><p>因为<code>Update()</code>中每一帧的时间可能不同，取决于设备的性能、运算的复杂程度等，所以如果将刚体运算放置其中可能会出现一些卡顿等情况。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 通过对刚体的操作来控制玩家的运动</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">FixedUpdate</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MovePlayer</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">MovePlayer</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">horizontalVel</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetAxis</span><span class="p">(</span><span class="s">&#34;Horizontal&#34;</span><span class="p">);</span> <span class="c1">// 0-1</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">verticalVel</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetAxis</span><span class="p">(</span><span class="s">&#34;Vertical&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Vector3</span> <span class="n">velocity</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">horizontalVel</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">verticalVel</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_playerRB</span><span class="p">.</span><span class="n">velocity</span> <span class="p">=</span> <span class="n">velocity</span> <span class="p">*</span> <span class="n">_speed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Other codes</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="3-边界检查的一种方法">3. 边界检查的一种方法
-</h4><p>通过在面板中直观地检查边界的位置，感觉比纯用代码控制简便。先在类内创建一个结构体并序列化，然后在代码中调用。(不要忘记将Border类实例化)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PlayerController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [Serializable]</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">struct</span> <span class="nc">Border</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kt">float</span> <span class="n">maxZ</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kt">float</span> <span class="n">minZ</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kt">float</span> <span class="n">minX</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kt">float</span> <span class="n">maxX</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="na">    
-</span></span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Border</span> <span class="n">_border</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Other codes</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="k">void</span> <span class="n">MovePlayer</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      	<span class="c1">// Other codes</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="c1">// Border check</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">posX</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">_playerRB</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">_border</span><span class="p">.</span><span class="n">minX</span><span class="p">,</span> <span class="n">_border</span><span class="p">.</span><span class="n">maxX</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">posZ</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">_playerRB</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">,</span> <span class="n">_border</span><span class="p">.</span><span class="n">minZ</span><span class="p">,</span> <span class="n">_border</span><span class="p">.</span><span class="n">maxZ</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_playerRB</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">posZ</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="4-利用刚体实现物体的偏转">4. 利用刚体实现物体的偏转
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 物体绕y轴旋转30°</span>
-</span></span><span class="line"><span class="cl"><span class="n">Quaternion</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 可以直接利用刚体的rotation属性</span>
-</span></span><span class="line"><span class="cl"><span class="n">_playerRb</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_playerRb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">x</span> <span class="p">*</span> <span class="p">(-</span><span class="m">1</span><span class="p">)</span> <span class="p">*</span> <span class="n">tilt</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="5-组件化功能挂钩模式">5. “组件化（功能挂钩）”模式
-</h4><p>把可复用的功能拆成小组件（例如 MoveController），再由具体行为脚本（例如 PlayerController / EnemyController）组合调用。</p>
-<p><strong>优点</strong>：复用性高、职责清晰、易测试、易维护；遵循 composition over inheritance。
-<strong>缺点</strong>：某些对象会挂多个小脚本，但这是合理的单一职责拆分，性能影响很小。
-<strong>实践要点</strong>：保持组件单一职责、用接口/事件解耦、用 RequireComponent、把共享数据放到 ScriptableObject 或配置类、用 Prefab 组合复用。</p>
-<p>“实践要点”有点难以理解。在“2048”项目中曾经看到过一次，以后对这方面的实践需要多加留意体会。</p>
-<h4 id="6-getcomponent-调用的位置时机">6. <code>GetComponent</code> 调用的位置/时机
-</h4><p>在实践中推荐的做法是，如果同一物体上获取并缓存组件用 <code>Awake()</code>，如果依赖别的对象在 <code>Awake()</code> 中完成的初始化则放到 <code>Start()</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 要获得同一个物体MoveController身上的刚体组件</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MoveController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Rigidbody</span> <span class="n">rb</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>	<span class="c1">// 在Awake()中获取刚体组件</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Move</span><span class="p">(</span><span class="n">Vector3</span> <span class="n">dir</span><span class="p">,</span> <span class="kt">float</span> <span class="n">speed</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">rb</span><span class="p">.</span><span class="n">velocity</span> <span class="p">=</span> <span class="n">dir</span><span class="p">.</span><span class="n">normalized</span> <span class="p">*</span> <span class="n">speed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 依赖别的对象在 Awake() 中初始化的值，所以在 Start() 使用</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EnemyAI</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MoveController</span> <span class="n">move</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Transform</span> <span class="n">player</span><span class="p">;</span> <span class="c1">// 假设 Player 在 Awake() 设置好</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">move</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">MoveController</span><span class="p">&gt;();</span>	<span class="c1">// 另一个对象MoveController在Start()中获取组件</span>
-</span></span><span class="line"><span class="cl">        <span class="n">player</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">FindWithTag</span><span class="p">(</span><span class="s">&#34;Player&#34;</span><span class="p">)?.</span><span class="n">transform</span><span class="p">;</span> <span class="c1">// 等待所有 Awake 完成后再查找使用更安全</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">player</span> <span class="p">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Vector3</span> <span class="n">dir</span> <span class="p">=</span> <span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">dir</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">move</span><span class="p">.</span><span class="n">Move</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="m">3f</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="7-协程的一般写法">7. 协程的一般写法
-</h4><p>需要注意以下几点：</p>
-<ul>
-<li>定义返回类型为 IEnumerator 的方法，方法内使用 yield return 返回等待（null、new WaitForSeconds(&hellip;)、WaitForEndOfFrame 等）</li>
-<li>用 StartCoroutine(MyCoroutine()) 启动；可用 StopCoroutine 停止*</li>
-<li>不要在主线程（比如 Start()）里写不会 yield 的 while(true)，那会卡死主线程</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 利用协程生成和销毁敌人</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 把循环放到协程里并用 Instantiate 生成敌人，用另一个协程在延时后销毁</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">SpawnEnemyWave</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">IEnumerator</span> <span class="n">SpawnEnemyWave</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WaitForSeconds</span><span class="p">(</span><span class="n">startSpawnTime</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">enemyCount</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">GameObject</span> <span class="n">prefab</span> <span class="p">=</span> <span class="n">enemies</span><span class="p">[</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">enemies</span><span class="p">.</span><span class="n">Length</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl">            <span class="n">GameObject</span> <span class="n">newEnemy</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">prefab</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">newEnemy</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(-</span><span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WaitForSeconds</span><span class="p">(</span><span class="n">spawnWaitingTime</span><span class="p">);</span>  
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Enemy和其子弹全部和Player的子弹一样，用KillBox统一销毁</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="8-小行星自身旋转效果的实现">8. 小行星自身旋转效果的实现
-</h4><p>使用API<code>Random.insideUnitSphere</code>, 返回一个随机的 <code>Vector3</code>，方向和大小在单位球体内随机分布；然后通过乘以 <code>rotationSpeed</code> 会把这个向量缩放到期望的角速度大小；最后赋值给<code>Rigidbody.angularVelocity</code>：向量的方向表示旋转轴，向量的长度表示角速度（弧度/秒），所以刚体会绕该随机轴以该速度旋转。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"> <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">     <span class="n">_rb</span><span class="p">.</span><span class="n">angularVelocity</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">insideUnitSphere</span> <span class="p">*</span> <span class="n">rotationSpeed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"> <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="9-实现敌人发射子弹的两种方法">9. 实现敌人发射子弹的两种方法
-</h4><p>方法一：和玩家发射子弹的思路类似，用累加时间的方法。</p>
-<p>方法二：使用API<code>InvokeRepeating(string methodName, float time, float repeatRate)</code> 。含义：在 <code>time</code> 秒后调用 <code>methodName</code> 方法，然后每 <code>repeatRate</code> 秒调用一次。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 方法一的实现</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">SpawnBullet</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">SpawnBullet</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_waitingTime</span> <span class="p">+=</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">_waitingTime</span> <span class="p">&gt;</span> <span class="n">cooldown</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Instantiate</span><span class="p">(</span><span class="n">bullet</span><span class="p">,</span> <span class="n">shootPos</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">AudioMgr</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">PlayAudio</span><span class="p">(</span><span class="n">AudioMgr</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">clips</span><span class="p">[</span><span class="m">1</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_waitingTime</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 方法二的实现</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">InvokeRepeating</span><span class="p">(</span><span class="s">&#34;SpawnBullet&#34;</span><span class="p">,</span> <span class="n">startingTime</span><span class="p">,</span> <span class="n">cooldown</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">SpawnBullet</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Instantiate</span><span class="p">(</span><span class="n">bullet</span><span class="p">,</span> <span class="n">shootPos</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AudioMgr</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">PlayAudio</span><span class="p">(</span><span class="n">AudioMgr</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">clips</span><span class="p">[</span><span class="m">1</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="10-敌人闪避的实现思路">10. 敌人闪避的实现思路
-</h4><p>敌人在生成一段时间（随机值）后进行闪避，如果敌人生成在屏幕的左半边则向右移动，如果在右半边则向左移动，一段时间（随机值）后停止左/右移动，继续向下移动，然后进入下一个闪避的循环，直到被自然销毁。</p>
-<ul>
-<li>使用协程实现一段时间闪避然后继续保持竖直下行的行动</li>
-<li>为了让敌人的闪避看起来平滑和自然，使用一个加速度通过API<code>Mathf.Lerp(float a, float b, float t)</code>来实现。<code>a</code>为起点值，<code>b</code>为终点值，<code>t</code>为两个浮点数之间的插值</li>
-<li>敌人在移动过程中注意边界检查</li>
-</ul>
-<p>教程中使用<code>Mathf.MoveTowards(float current, float target, float maxDelta)</code>实现，这个API本质上与<code>Mathf.Lerp</code>相同，将值<code>current</code>平滑地向<code>target</code>靠近。但是使用这个方法需要大幅提高加速度的值，否则敌人会不产生闪避的行为。原因在于这两者的本质差别：<code>Lerp</code> 用的是比例插值（t 是个 0~1 的比率），会按比例“拉”向目标，哪怕目标在另一侧也会生成小的反向速度；<code>MoveTowards</code> 用的是绝对步长（<code>maxDelta</code>），每帧只移动固定的量。如果用于 <code>MoveTowards</code> 的 <code>maxDelta</code> 太小（比如 <code>acceleration</code> 很小），每帧的速度变化被其他物理因素（摩擦、重置、阈值判断）淹没，看起来像“没有发生闪避”。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">Dodge</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">FixedUpdate</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// float xVel = Mathf.MoveTowards(_rb.velocity.x, _targetDodgeSpeed, Time.fixedDeltaTime * acceleration);  // 100</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">xVel</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">_targetDodgeSpeed</span><span class="p">,</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span> <span class="p">*</span> <span class="n">acceleration</span><span class="p">);</span> <span class="c1">// 20</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">xVel</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">IEnumerator</span> <span class="n">Dodge</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WaitForSeconds</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">startingTimeMin</span><span class="p">,</span> <span class="n">startingTimeMax</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">_targetDodgeSpeed</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">dodgeSpeedMin</span><span class="p">,</span> <span class="n">dodgeSpeedMax</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 如果敌人出现在屏幕中线右侧向左闪避</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// 如果出现在左侧，那么自然速度是正，向左闪避，不用改</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="p">&gt;=</span> <span class="m">0</span><span class="p">)</span>   
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">_targetDodgeSpeed</span> <span class="p">=</span> <span class="p">-</span><span class="n">_targetDodgeSpeed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kt">float</span> <span class="n">targetTime</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">movingTimeMin</span><span class="p">,</span> <span class="n">movingTimeMax</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="n">WaitForSeconds</span><span class="p">(</span><span class="n">targetTime</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_targetDodgeSpeed</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="11-ontrigger和oncollison的使用时机">11. <code>OnTrigger</code>和<code>OnCollison</code>的使用时机
-</h4><p>两者都可以用于碰撞检测。</p>
-<p>OnCollision用于实际碰撞并产生物理反应的场景，所以开销较大，适用于物理交互时，如碰撞、反弹、受力等。</p>
-<p>OnTrigger只检测重叠，不自动产生物理反应，因为通常不计算接触点/冲量，所以开销比OnCollision小些，适用于范围检测、触发器区域、捡取、伤害区域等。</p>
-<h4 id="12-特效的销毁的方式方法关注点分离原则">12. 特效的销毁的方式方法（关注点分离原则）
-</h4><p>特效的销毁放在一个单独的脚本中，不要和<code>CollisionCheck</code> 脚本放在一起。这样可以是关注点分离（<code>CollisionCheck</code> 只负责触发/判定），可复用性高，便于切换为对象池而不是每次销毁。</p>
-<h3 id="复盘-1">复盘
-</h3><p>教程提供了一些很新颖的思路，在这个游戏中开始尝试自己写协程，并且尽量练习了上一个游戏中学到的单例模式。在一些我有疑问的时候或者觉得教程的处理超出我认知的时候问了AI，基本都得到满意的答复，感觉用这种项目驱动的学习方法真的很高效且因为有很多即时反馈，所以心理上也不太容易有疲惫感。</p>
-<p>也有一些自己看了AI的回答和教程的讲解也不太明白的地方，比如“组件单一职责、用接口/事件解耦”等，留待在以后的游戏实战项目中慢慢实践体会。</p>
-<p>还有很棒的一点是，学到了原来Unity开始界面的logo是可以替换的，马上做了一张小logo替换，效果真的不错！</p>
-<h4 id="代码复用-1">代码复用
-</h4><h5 id="1-滚动的无限背景">1. 滚动的无限背景
-</h5><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="na">[SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">_scrollSpeed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">Vector3</span> <span class="n">_startPos</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">_startPos</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">ScrollBG</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ScrollBG</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">distance</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Repeat</span><span class="p">(</span><span class="n">_scrollSpeed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">time</span><span class="p">,</span> <span class="m">30</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">_startPos</span> <span class="p">+</span> <span class="n">distance</span> <span class="p">*</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span> <span class="p">*</span> <span class="p">(-</span><span class="m">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="2-旋转效果">2. 旋转效果
-</h5><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 球体的随机旋转</span>
-</span></span><span class="line"><span class="cl"><span class="n">_rb</span><span class="p">.</span><span class="n">angularVelocity</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">insideUnitSphere</span> <span class="p">*</span> <span class="n">rotationSpeed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 3D物体随某个轴的速度发生倾斜（此例中是随x轴上的速度）</span>
-</span></span><span class="line"><span class="cl"> <span class="n">_rb</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">x</span> <span class="p">*</span> <span class="p">(-</span><span class="m">1</span><span class="p">)</span> <span class="p">*</span> <span class="n">tilt</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">posX</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp</span><span class="p">(</span><span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">border</span><span class="p">.</span><span class="n">minX</span><span class="p">,</span> <span class="n">border</span><span class="p">.</span><span class="n">maxX</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">_rb</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">_rb</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="3-movecontroller">3. <code>MoveController</code>
-</h5><p>使用刚体，可以复用在所有在z轴方向运动的物体。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MoveController</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">   [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">flySpeed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="n">Rigidbody</span> <span class="n">_rb</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">   <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">_rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">   <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="k">void</span> <span class="n">FixedUpdate</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">   <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="n">_rb</span><span class="p">.</span><span class="n">velocity</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span> <span class="p">*</span> <span class="n">flySpeed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">   <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="4-destroybytime">4. <code>DestroyByTime</code>
-</h5><p>复用在特效的自动销毁上。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DestroyByTime</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">delay</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">,</span> <span class="n">delay</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="5-audiomanager">5. <code>AudioManager</code>
-</h5><p>复用在全部音效的管理和播放上。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">AudioMgr</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">AudioMgr</span> <span class="n">Instance</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">AudioClip</span><span class="p">[]</span> <span class="n">clips</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">AudioSource</span> <span class="n">_audioSource</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Instance</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_audioSource</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">AudioSource</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">PlayAudio</span><span class="p">(</span><span class="n">AudioClip</span> <span class="n">clip</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_audioSource</span><span class="p">.</span><span class="n">PlayOneShot</span><span class="p">(</span><span class="n">clip</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="飞翔的小鸟">飞翔的小鸟
-</h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=ihvBiJ1oC9U"  target="_blank" rel="noopener"
-    >油管-Zigurous</a></p>
-<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-flappy-bird"  target="_blank" rel="noopener"
-    >on Gitee</a></p>
-<h3 id="游戏简介-2">游戏简介
-</h3><p>《飞翔的小鸟》（Flappy Bird）是一款由越南开发者Dong Nguyen于2013年发行的简易2D手机游戏。游戏因其极低的画面复杂性、极高的难度和令人“上瘾”的挫败感而迅速走红，一度成为全球现象级游戏。</p>
-<p><strong>核心玩法</strong>：</p>
-<ul>
-<li><strong>类型</strong>：像素风格2D游戏，背景为卷轴式滚动，角色是一只简单的像素小鸟</li>
-<li><strong>目标</strong>：控制小鸟穿越由上下管道组成的障碍，飞得越远得分越高</li>
-<li><strong>操作方式</strong>：
-<ul>
-<li>点击屏幕（或按任意键），小鸟向上扇动翅膀，短暂上升</li>
-<li>不操作时，小鸟受重力影响持续下落</li>
-</ul>
-</li>
-<li><strong>障碍机制</strong>：
-<ul>
-<li>场景中随机出现高低不一的“绿色管道”，小鸟需从管道间隙穿过</li>
-<li>触碰到管道、地面都会导致游戏立即结束</li>
-</ul>
-</li>
-<li><strong>失败条件</strong>：小鸟碰到障碍物或地面则失败</li>
-<li><strong>计分系统</strong>：每成功穿过一对管道得1分，无最高分限制</li>
-</ul>
-<img src="3-flappy_bird.gif" alt="" style="zoom:100%;"/>
-<h3 id="游戏功能拆解-2">游戏/功能拆解
-</h3><h4 id="内容-2">内容
-</h4><p>场景摆放（背景视差效果、无限滚动）、动画（小鸟飞翔）、UI（分数）、音效（得分、撞击）</p>
-<h4 id="逻辑-2">逻辑
-</h4><ol>
-<li>小鸟自动前进并随重力作用自然下落</li>
-<li>玩家可以按下<code>W</code>键、上方向键或者点击鼠标左键让小鸟向上运动</li>
-<li>如果小鸟在前进过程中碰到了管道或地面则游戏失败</li>
-<li>显示当前的分数</li>
-</ol>
-<h4 id="开发步骤-2">开发步骤
-</h4><ol>
-<li>
-<p>小鸟部分</p>
-<ul>
-<li>
-<p>小鸟的移动</p>
-</li>
-<li>
-<p>小鸟飞翔动画的实现</p>
-</li>
-</ul>
-</li>
-<li>
-<p>背景部分</p>
-<ul>
-<li>
-<p>背景的制作</p>
-</li>
-<li>
-<p>背景视差的实现</p>
-</li>
-</ul>
-</li>
-<li>
-<p>管道部分</p>
-<ul>
-<li>管道预制体的制作</li>
-<li>管道的生成</li>
-<li>管道的运动</li>
-</ul>
-</li>
-<li>
-<p>得分</p>
-</li>
-<li>
-<p>UI的设计/设置</p>
-</li>
-<li>
-<p>菜单交互功能的实现</p>
-</li>
-<li>
-<p>添加音效</p>
-</li>
-</ol>
-<h3 id="遇到的问题及解决方法-2">遇到的问题及解决方法
-</h3><h4 id="1-触屏模式的写法">1. 触屏模式的写法
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// 以控制小鸟向上移动为例</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 触屏模式</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">touchCount</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>   <span class="c1">// 只要手指接触到屏幕</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Touch</span> <span class="n">touch</span> <span class="p">=</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetTouch</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>    <span class="c1">// 获取首次屏幕按触</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">touch</span><span class="p">.</span><span class="n">phase</span> <span class="p">==</span> <span class="n">TouchPhase</span><span class="p">.</span><span class="n">Began</span><span class="p">)</span>     <span class="c1">// 只要刚开始按触屏幕</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">strength</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="2-用invokerepeating-实现简单的动画">2. 用<code>InvokeRepeating </code>实现简单的动画
-</h4><p>需要注意的是，<code>InvokeRepeating</code> 是在 Unity 的主循环中按时间间隔调度调用指定方法，每次调用结束后会返回给引擎，等到下一个间隔再被调用。
-虽然它本质不是一个死循环，但是如果在被调的方法里写 <code>while(true)</code>（或其他不会退出的循环），该方法就不会返回，主线程会被阻塞，程序/编辑器会卡死。</p>
-<p>另外，通常把 <code>InvokeRepeating</code> 放在 <code>Start</code>（或 <code>Awake</code> 后的一次性初始化处），只需要调用一次来安排重复调用，Unity 会按指定间隔循环调用该方法。如果把 <code>InvokeRepeating</code> 放在 <code>Update</code> 中，每帧都会再次注册一个重复调用，结果会累积大量并发的定时调用，导致方法被多次/更频繁执行、逻辑错误和性能问题。</p>
-<p>用 <code>InvokeRepeating</code>实现小鸟飞翔的动画：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">InvokeRepeating</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">AnimateSprite</span><span class="p">),</span> <span class="m">0.15f</span><span class="p">,</span> <span class="m">0.15f</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">AnimateSprite</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_sr</span><span class="p">.</span><span class="n">sprite</span> <span class="p">=</span> <span class="n">sprites</span><span class="p">[</span><span class="n">_index</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_index</span><span class="p">++;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">_index</span> <span class="p">&gt;=</span> <span class="n">sprites</span><span class="p">.</span><span class="n">Length</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_index</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="3-视差无尽背景的一种实现思路">3. 视差+无尽背景的一种实现思路
-</h4><p>教程中将背景全部按照3D的<code>Quad</code>制作，然后将2D的图片以<code>shader：Unit/Texture</code>的方式做成<code>Material</code> 。利用material中自带的Offset实现移动效果。这种方法非常简单，复用性强。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Parallax</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">speed</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MeshRenderer</span> <span class="n">_meshRenderer</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_meshRenderer</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">MeshRenderer</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_meshRenderer</span><span class="p">.</span><span class="n">material</span><span class="p">.</span><span class="n">mainTextureOffset</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">Vector2</span><span class="p">(</span><span class="n">speed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="4-管道销毁的另一种思路">4. 管道销毁的另一种思路
-</h4><p>按照通常的做法会在左侧屏幕边缘增加一个触发器，管道预制体碰到这个触发器后执行 <code>Destroy</code>。教程中使用了一个更简单的方法，根据像素位置来进行销毁：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">float</span> <span class="n">_killEdge</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">_killEdge</span> <span class="p">=</span> <span class="n">Camera</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">ScreenToWorldPoint</span><span class="p">(</span><span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">).</span><span class="n">x</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Other codes</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span> <span class="p">&lt;</span> <span class="n">_killEdge</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="5-unity中的几个坐标系">5. Unity中的几个坐标系
-</h4><h5 id="world-坐标world">World 坐标（World）
-</h5><ul>
-<li>Unity 的世界坐标以世界原点 (0,0,0) 为参考，单位是 Unity unit（通常当作米）</li>
-<li>轴方向：X 向右，Y 向上，Z 向前（正 Z 朝向 Scene 视图的前方）</li>
-<li><code>GameObject</code> 的 <code>transform.position</code> 是世界坐标；<code>transform.localPosition</code> 是相对于父对象的局部坐标</li>
-</ul>
-<h5 id="屏幕坐标screen">屏幕坐标（Screen）
-</h5><ul>
-<li>
-<p>以像素为单位，原点在屏幕左下角 (0,0)，右上角是 (<code>Screen.width</code>, <code>Screen.height</code>)</p>
-</li>
-<li>
-<p>旧的 <code>IMGUI（OnGUI）</code>以左上角为原点；UI 的坐标行为还会受 <code>Canvas Render Mode（Screen Space / World Space</code>）影响</p>
-</li>
-</ul>
-<h5 id="视口坐标viewport">视口坐标（Viewport）
-</h5><ul>
-<li>
-<p>归一化坐标，范围在 [0,1]，左下为 (0,0)，右上为 (1,1)</p>
-</li>
-<li>
-<p>可用 Camera.ViewportToWorldPoint / WorldToViewportPoint 转换</p>
-</li>
-</ul>
-<p>在上述管道销毁的例子中，使用 <code>Camera.ScreenToWorldPoint(Vector3 screenPoint)</code> 对左下角屏幕坐标原点，（0, 0 ,0）即坐标原点<code>Vector3.zero</code> 进行了转换，这样才能和<code>Update</code>中的<code>transform.position.x</code>处于同一坐标系下，才有比较的可能。</p>
-<h4 id="6-游戏的重启和暂停">6. 游戏的重启和暂停
-</h4><p>最简单的方法就是使用 <code>Time.timeScale</code>。</p>
-<h3 id="复盘-2">复盘
-</h3><p>因为是2D游戏，所以可以直接使用诸如<code>Vector3.up</code>、<code>Vector3.left</code>这样的代码来表示方向，大大简化了代码。教程中的一些设计思路非常简便好用，比如把背景做成3D quad，运用API <code>_meshRenderer.material.mainTextureOffset</code> 来实现无尽背景和视差效果；还有通过将某一个点的坐标从屏幕坐标转换为世界坐标，物体通过这个点后销毁，而不是依靠传统的碰撞检测，可以节省性能；还有关于简单的动画，不用Unity自带的动画系统，转而使用 <code>InvokeRepeating</code> 配合遍历图片的方式，简单高效地解决了问题。</p>
-<p>在我自己的实践方面，练习了 GameManager 和 AudioManager 的单例模式，并重温了音效的播放和UI的交互设计。这个游戏虽然是个入门级的小游戏，但是我还是学到了很多。</p>
-<h4 id="代码复用-2">代码复用
-</h4><h5 id="spawner的一种写法">Spawner的一种写法
-</h5><p>使用 <code>InvokeRepeating</code> 达到间隔时间生成游戏物体的效果。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnEnable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">InvokeRepeating</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Spawn</span><span class="p">),</span> <span class="n">startSpawn</span><span class="p">,</span> <span class="n">spawnRate</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnDisable</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">CancelInvoke</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">pipe</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">prefab</span><span class="p">,</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">pipe</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">+=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">minHeight</span><span class="p">,</span> <span class="n">maxHeight</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其他一些可复用的代码在上面的“问题与解决方法”部分都有提及，此处不再赘述。</p>
-<h2 id="乒乓球">乒乓球
-</h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=AcpaYq0ihaM"  target="_blank" rel="noopener"
-    >油管-Zigurous</a></p>
-<p><strong>完整源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-pong"  target="_blank" rel="noopener"
-    >on Gitee</a></p>
-<h3 id="游戏简介-3">游戏简介
-</h3><p>《乒乓球》（Pong） 是电子游戏史上最早、最具影响力的街机游戏之一，由 Atari 公司于 1972 年发布。它模拟了现实中的乒乓球（Table Tennis）运动，被认为是第一个取得商业成功的电子游戏。</p>
-<p><strong>核心玩法</strong>：</p>
-<ul>
-<li>游戏画面为一个二维平面，左右两侧各有一个垂直的“球拍”（paddle），中间是一个移动的小球</li>
-<li>玩家控制一侧的球拍上下移动（通常通过摇杆或按键），目标是将球反弹回对方场地</li>
-<li>如果一方未能接到球，对方得一分</li>
-<li>小球碰到上下边界会反弹，碰到左右边界则判定为得分</li>
-<li>随着游戏进行，球速可能逐渐加快，增加难度</li>
-</ul>
-<img src="4-pong.gif" alt="" style="zoom:80%;"/>
-<h3 id="游戏功能拆解-3">游戏/功能拆解
-</h3><h4 id="内容-3">内容
-</h4><p>场景摆放、玩家球拍、球、电脑球拍、UI（分数）</p>
-<h4 id="逻辑-3">逻辑
-</h4><ol>
-<li>玩家通过 <code>W键/上箭头键</code> 和 <code>S键/下箭头键</code> 移动球拍击打乒乓球</li>
-<li>乒乓球碰到上下边界回弹</li>
-<li>乒乓球如果落入自己边界，对方得一分，反之亦然</li>
-<li>显示当前的分数</li>
-</ol>
-<h4 id="开发步骤-3">开发步骤
-</h4><ol>
-<li>场景摆放</li>
-<li>玩家球拍的移动</li>
-<li>球移动的实现</li>
-<li>电脑球拍AI的实现</li>
-<li>球逐渐回弹增速</li>
-<li>显示UI分数</li>
-</ol>
-<h3 id="遇到的问题及解决方法-3">遇到的问题及解决方法
-</h3><h4 id="1-angular-drag-和-linear-drag">1. <code>Angular Drag</code> 和 <code>Linear Drag</code>
-</h4><p>在 <code>Rigidbody</code> 中的 <code>Angular Drag</code> 代表角阻力系数，如果不想要旋转的效果，要把它手动设置为0（默认为0.05），同时在 <code>Constraints</code> 中禁止 <code>z轴</code> 的旋转。 在类似这个游戏的2D游戏中一般需要这样的操作。</p>
-<p><code>Linear Drag</code> 则适用于位置移动，较高的阻力值会让对象受碰撞或力影响后的旋转更快停止。</p>
-<h4 id="2-fixedupdate的使用说明">2. <code>FixedUpdate</code>的使用说明
-</h4><p>不要在 <code>FixedUpdate</code> 直接读取输入。原因是<code>FixedUpdate</code> 按物理步长调用，可能丢失输入事件或导致输入响应不稳定。</p>
-<p>正确做法是在 <code>Update()</code> 读取输入并把结果存到字段，随后在 <code>FixedUpdate()</code> 根据该字段施加力。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">W</span><span class="p">)</span> <span class="p">||</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">UpArrow</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">up</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">S</span><span class="p">)</span> <span class="p">||</span> <span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">DownArrow</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">down</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">FixedUpdate</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">_dir</span><span class="p">.</span><span class="n">sqrMagnitude</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(</span><span class="n">_dir</span> <span class="p">*</span> <span class="n">strength</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote class="alert alert-note">
-    <p><code>FixedUpdate</code> 主要用于与物理系统同步的更新。</p></blockquote>
-<p><strong>适合放在 <code>FixedUpdate</code> 里的任务</strong>：</p>
-<ul>
-<li>应用力/扭矩（<code>Rb.AddForce / AddRelativeForce</code>）或直接设置 <code>Rigidbody.velocity</code></li>
-<li>使用 <code>Rigidbody.MovePosition / MoveRotation</code>（针对 <code>Kinematic Rigidbody</code>）</li>
-<li>与物理步长一致的计时器、物理约束与求解逻辑（确定性模拟、网络服务器物理步）</li>
-<li>基于物理状态的查询（在物理步长内做的碰撞检测/Overlap/射线检测）</li>
-<li>物理预测/插值/外推逻辑（以固定步长进行同步）</li>
-</ul>
-<p>不适合放在 <code>FixedUpdate</code> 里的任务：(需要以帧为单位或更低延迟处理)</p>
-<ul>
-<li>输入读取</li>
-<li>渲染/摄像机跟随</li>
-<li>UI 更新</li>
-<li>动画（通常在 Update 或 LateUpdate）</li>
-</ul>
-<h4 id="3-小球接触回弹效果的实现">3. 小球接触回弹效果的实现
-</h4><p>使用这样的代码无法达到效果，原因可能是方向计算错误，使用 -rb.velocity 并不等同于基于碰撞法线的反射，小球可能沿着错误的方向被推动。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Ball&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Rigidbody2D</span> <span class="n">rb</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">rb</span><span class="p">.</span><span class="n">velocity</span><span class="p">.</span><span class="n">normalized</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(-</span><span class="n">_dir</span> <span class="p">*</span> <span class="n">strength</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里应该使用碰撞接触点的法线解决：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Ball&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Rigidbody2D</span> <span class="n">rb</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_dir</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">GetContact</span><span class="p">(</span><span class="m">0</span><span class="p">).</span><span class="n">normal</span><span class="p">;</span>  <span class="c1">// 碰撞点的法线</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(-</span><span class="n">_dir</span> <span class="p">*</span> <span class="n">strength</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="4-使用-eventsystem-实现玩家和电脑的得分">4. 使用 <code>EventSystem</code> 实现玩家和电脑的得分
-</h4><p>感觉实现的方式和按钮很像。</p>
-<p>代码解释：</p>
-<ul>
-<li><code>TriggerEvent</code> 本质上是 <code>UnityEvent&lt;BaseEventData&gt;</code> 的一个别名/子类，可以在 Inspector 或代码里注册接收 <code>BaseEventData</code> 的回调</li>
-</ul>
-<ul>
-<li>构造一个 <code>BaseEventData</code> ，并把当前 <code>EventSystem</code> 作为来源，callback 可以读取这个 <code>eventData</code>             来获取上下文</li>
-<li>通过 <code>scoreTrigger.Invoke</code> 触发已注册的所有回调，传入 <code>eventData</code></li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ScoringArea</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">EventTrigger</span><span class="p">.</span><span class="n">TriggerEvent</span> <span class="n">scoreTrigger</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Ball&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">BaseEventData</span> <span class="n">eventData</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BaseEventData</span><span class="p">(</span><span class="n">EventSystem</span><span class="p">.</span><span class="n">current</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="n">scoreTrigger</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">eventData</span><span class="p">);</span> <span class="c1">// 调用已注册的eventData</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="复盘-3">复盘
-</h3><p>教程中使用了父类 <code>Paddle</code> 和两个子类<code>PlayerPaddle</code>和<code>ComputerPaddle</code>的方法，一些公共的代码，如获取组件等放在父类中，在两个子类中分别写自己的逻辑。在C++的项目里经常会用到继承的方法，但是在做Unity项目的时候我经常会忘记使用，在以后的实践中要提醒自己在合适的时机多多使用。</p>
-<h4 id="代码复用-3">代码复用
-</h4><p>本游戏中可复用的代码已在“问题和解决方法”部分提及：</p>
-<ul>
-<li>小球回弹的实现</li>
-<li>使用 <code>EventSystem</code> 灵活实现多个函数的回调</li>
-</ul>
-<h2 id="小行星">小行星
-</h2><p><strong>教程参考及素材来源</strong>：<a class="link" href="https://www.youtube.com/watch?v=cIeWhztKyAg"  target="_blank" rel="noopener"
-    >油管-Zigurous</a></p>
-<p><strong>源码</strong>： <a class="link" href="https://gitee.com/nullshow/unity-mini-game-asteroids"  target="_blank" rel="noopener"
-    >on Gitee</a></p>
-<h3 id="游戏简介-4">游戏简介
-</h3><p>《小行星》（Asteroids）是由 Atari 公司于 1979 年推出的一款经典街机射击游戏，以其简洁的矢量图形和紧张刺激的玩法成为电子游戏史上的里程碑之作。</p>
-<p><strong>核心玩法</strong>：</p>
-<ul>
-<li>玩家控制一艘小型飞船，在无重力的太空中自由移动（可推进、旋转、射击）
-<ul>
-<li>按下 <code>W键/ 上箭头</code> 或者 <code>S键/下箭头</code> 可以旋转</li>
-<li>按下 <code>A键/ 左键头</code>、<code>D键/右箭头</code>可以左/右推进</li>
-<li>按下 <code>空格</code> 或者点击 <code>鼠标左键</code> 可以发射子弹</li>
-</ul>
-</li>
-<li>屏幕中不断出现大小不一的“小行星”，它们会从边缘进入并随机漂移</li>
-<li>目标：用激光炮击碎所有小行星
-<ul>
-<li>大/中行星被击中后会分裂成更小的碎片（例如：大 → 中 → 小 → 消失）</li>
-<li>完全清除当前波次的小行星后，进入下一关，难度递增（小行星数量/速度增加）</li>
-</ul>
-</li>
-<li>失败：
-<ul>
-<li>飞船碰到小行星会立即毁灭（通常有有限生命次数）</li>
-</ul>
-</li>
-<li>其他特点：
-<ul>
-<li>飞船或小行星从一侧飞出，会从对侧重新进入（“卷屏”效果）</li>
-<li>飞船有动量，即使停止推进也会继续滑行，需反向推进减速</li>
-</ul>
-</li>
-</ul>
-<img src="5-asteroid.gif" alt="" style="zoom:100%;"/>
-<h3 id="游戏功能拆解-4">游戏/功能拆解
-</h3><h4 id="内容-4">内容
-</h4><p>场景摆放、玩家、行星、爆炸特效</p>
-<h4 id="逻辑-4">逻辑
-</h4><ol>
-<li>玩家移动和射击</li>
-<li>小行星随机生成和移动</li>
-<li>小行星被玩家击中后分裂，直至消失</li>
-<li>玩家碰到小行星后，这一局失败</li>
-<li>显示当前的分数</li>
-<li>全部局数用尽，游戏结束</li>
-</ol>
-<h4 id="开发步骤-4">开发步骤
-</h4><ol>
-<li>场景设置</li>
-<li>玩家部分
-<ul>
-<li>移动</li>
-<li>射击</li>
-</ul>
-</li>
-<li>小行星部分
-<ul>
-<li>行星预制体（不同的形状、大小、质量、初始角度）</li>
-<li>生成行星</li>
-<li>实现分裂/销毁逻辑</li>
-</ul>
-</li>
-<li>一局的结束
-<ul>
-<li>玩家死亡与复活</li>
-<li>玩家的爆炸特效</li>
-</ul>
-</li>
-<li>显示UI分数</li>
-<li>全部局数用尽，游戏结束</li>
-</ol>
-<h3 id="遇到的问题及解决方法-4">遇到的问题及解决方法
-</h3><h4 id="1-物体间物理碰撞层的设置">1. 物体间物理碰撞层的设置
-</h4><p>通过 <code>Project Setting</code> 中的 <code>Physics 2D</code> 来忽略玩家和子弹、子弹与子弹之间的碰撞检测。</p>
-<h4 id="2-小行星初始状态的设置">2. 小行星初始状态的设置
-</h4><p>因为此项目中的小行星有不同的变体，包括大小、图片、出现时的初始角度等多个参数都不同，所以采取的策略时在小行星的预制体中就将其全部设置好。这样做的好处是在小行星的 <code>Spawner.cs</code> 脚本里，预制体可以直接生成，做到了脚本的各司其职。<code>Asteroid.cs</code> 负责小行星本身的属性，<code>Spawner.cs</code> 脚本负责小行星的生成。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Asteroid</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Sprite</span><span class="p">[]</span> <span class="n">sprites</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">size</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">speed</span> <span class="p">=</span> <span class="m">1f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">minSize</span> <span class="p">=</span> <span class="m">0.5f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">maxSize</span> <span class="p">=</span> <span class="m">1.5f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">SpriteRenderer</span> <span class="n">_sr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Rigidbody2D</span> <span class="n">_rb</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_sr</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">SpriteRenderer</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_sr</span><span class="p">.</span><span class="n">sprite</span> <span class="p">=</span> <span class="n">sprites</span><span class="p">[</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">sprites</span><span class="p">.</span><span class="n">Length</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl">        <span class="n">transform</span><span class="p">.</span><span class="n">eulerAngles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">Random</span><span class="p">.</span><span class="k">value</span> <span class="p">*</span> <span class="m">360</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">//size = Random.Range(minSize, maxSize);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">one</span> <span class="p">*</span> <span class="n">size</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_rb</span><span class="p">.</span><span class="n">mass</span> <span class="p">=</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// mass随着size变化</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">SetTrajectory</span><span class="p">(</span><span class="n">Vector2</span> <span class="n">dir</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_rb</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(</span><span class="n">dir</span> <span class="p">*</span> <span class="n">speed</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>小行星初始的旋转角度</strong>：</p>
-<p>使用 <code>Random.value</code>，这个值在0~1之间，小行星在 <code>z轴</code> 旋转，所以可以简单处理为 <code>transform.eulerAngles = new Vector3(0, 0, Random.value * 360);</code></p>
-<p><strong>小行星的size部分处理</strong>：</p>
-<p>不能放在 <code>Asteroid.cs</code> 里，因为这个脚本后面会进行小行星分裂的逻辑，如果在 <code>Start()</code> 里对 <code>size</code> 取随机值，会导致分裂的逻辑错误。随机size的逻辑放在 <code>Spawner.cs</code> 里处理。这是我在这个项目遇到的一个大坑。</p>
-<h4 id="3-小行星生成和移动的实现思路">3. 小行星生成和移动的实现思路
-</h4><p>小行星生成在以屏幕为圆心，一定半径的圆内。它们向着圆心运动。为了增加随机性，增加了朝向圆心的偏移角度。因为是沿着 z轴 进行偏移的，所以可以用 <code>Quaternion.AngleAxis(float angle, Vector3.forward)</code> 实现。</p>
-<p>在小行星的移动上，本身方法由 <code>Asteroid.cs</code> 负责，<code>Spawner.cs</code> 通过获得一个Asteroid 的实例化对象调用。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"> <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">     <span class="n">InvokeRepeating</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Spawn</span><span class="p">),</span> <span class="n">spawnInterval</span><span class="p">,</span> <span class="n">spawnInterval</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 行星生成在离spawner为圆心的一定半径的位置</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnOffset</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">insideUnitCircle</span> <span class="p">*</span> <span class="n">spawnRadius</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">spawnPos</span> <span class="p">=</span> <span class="p">(</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">+</span> <span class="n">spawnOffset</span><span class="p">;</span>   <span class="c1">// 以Spawner为圆心、一定半径内的某个随机位置</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">dir</span> <span class="p">=</span> <span class="p">((</span><span class="n">Vector2</span><span class="p">)</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">-</span> <span class="n">spawnPos</span><span class="p">).</span><span class="n">normalized</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// 在方向上加上一个角度的偏移量</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">variance</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(-</span><span class="n">trajectoryAngle</span><span class="p">,</span> <span class="n">trajectoryAngle</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Quaternion</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">AngleAxis</span><span class="p">(</span><span class="n">variance</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">forward</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">asteroidPrefab</span><span class="p">,</span> <span class="n">spawnPos</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>	<span class="c1">// 在此处处理生成小行星的随机尺寸问题</span>
-</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">SetTrajectory</span><span class="p">(</span><span class="n">rotation</span> <span class="p">*</span> <span class="n">dir</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>需要注意的是，最终小行星的轨道方向是 rotaton * dir，rotation本身是一个四元数，这里将旋转作用于向量，即 旋转后的向量 = Quaternion * 原始向量</p>
-<blockquote class="alert alert-warning">
-    <p>Quaternion 必须在乘号左边！</p></blockquote>
-<p>其中的原理在数学的相关学习中再做详尽探讨，此处不再赘述。</p>
-<h5 id="关于-quaternion的补充">关于 Quaternion的补充
-</h5><p>应该避免直接修改 Quaternion 的x, y, z, w 分量，因为它们不是角度而是复杂的复数数学，直接修改会导致异常。</p>
-<blockquote class="alert alert-warning">
-    <p>始终使用Unity提供的API！</p></blockquote>
-<p><strong>常用的API</strong>：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>场景</th>
-          <th>方法</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>旋转一个向量</td>
-          <td><code>rotatedVector = quaternion * vector;</code></td>
-      </tr>
-      <tr>
-          <td>让物体看向某个方向</td>
-          <td><code>Quaternion.LookRotation(vector);</code></td>
-      </tr>
-      <tr>
-          <td>把(0,90,0)转为四元数</td>
-          <td><code>Quaternion.Euler(0, 90, 0);</code></td>
-      </tr>
-      <tr>
-          <td>获取四元数的度数</td>
-          <td><code>quaternion.eulerAngles;</code></td>
-      </tr>
-  </tbody>
-</table></div>
-<h4 id="4-玩家无敌时间的设计思路">4. 玩家无敌时间的设计思路
-</h4><p>通过更改玩家物理碰撞层的方法 <code>LayerMask.NameToLayer(layerName);</code>实现，非常简单明了，再使用 <code>Invoke</code> 来设定需要等待的时间即可。</p>
-<h4 id="5-粒子系统的设置">5. 粒子系统的设置
-</h4><p>因为我在UI的逻辑中使用了 <code>Time.scaleTime</code> 来控制游戏的结束和开始，为了避免粒子系统拖到下一轮开始游戏的那一瞬间播放，需要在面板里将粒子系统的 <code>Delta Time</code> 设置为 <code>Unscaled</code> 。</p>
-<h3 id="复盘-4">复盘
-</h3><p>这个项目中需要大量使用关于旋转的方法，常用的API要熟练使用。另外相关的数学知识也需要补充一下。</p>
-<p>这个项目还有两个方法值得注意，可以经常尝试使用：</p>
-<p><strong>通过传参获得另一个脚本中的对象</strong>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//======= GameManager.cs =======</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 函数的定义放在这里，因为里面很多用到的参数由GameManager统一管理</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">AsteroidDestroyed</span><span class="p">(</span><span class="n">Asteroid</span> <span class="n">asteroid</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">0.75f</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="m">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">1.3f</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="m">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Vector2</span> <span class="n">pos</span> <span class="p">=</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">explosion</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">pos</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">explosion</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//========== Asteroid.cs =========</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 方法的调用由Asteroid类本身管理，在小行星碰撞后调用</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Bullet&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">*</span> <span class="m">0.5f</span> <span class="p">&gt;=</span> <span class="n">minSize</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">CreateHalf</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">            <span class="n">CreateHalf</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">GameManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">AsteroidDestroyed</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>在一个脚本中调用另一个脚本中的函数</strong>：</p>
-<p>可以通过GameObject或者直接通过另一个类的游戏物体来获得：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//=========== Spawner.cs ============</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 通过实例化Asteroid对象来调用它的SetTrejactory方法</span>
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Spawn</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// Other codes</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">GameObject</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">asteroidPrefab</span><span class="p">,</span> <span class="n">spawnPos</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Asteroid</span> <span class="n">asteroid</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">size</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">asteroid</span><span class="p">.</span><span class="n">minSize</span><span class="p">,</span> <span class="n">asteroid</span><span class="p">.</span><span class="n">maxSize</span><span class="p">);</span>   <span class="c1">// 在此处处理生成小行星的随机尺寸问题</span>
-</span></span><span class="line"><span class="cl">    <span class="n">asteroid</span><span class="p">.</span><span class="n">SetTrajectory</span><span class="p">(</span><span class="n">rotation</span> <span class="p">*</span> <span class="n">dir</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="代码复用-4">代码复用
-</h4><h5 id="1-玩家无敌时间的设计">1. 玩家无敌时间的设计
-</h5><p>通过更改物理碰撞层，配合<code>Invoke</code>的使用：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="s">&#34;Asteroid&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">GameManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">lives</span><span class="p">--;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">Invoke</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Respawn</span><span class="p">),</span> <span class="n">respawnTime</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Respawn</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">layer</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">NameToLayer</span><span class="p">(</span><span class="s">&#34;No Collision&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Invoke</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">ResetLayer</span><span class="p">),</span> <span class="n">invulnerableTime</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ResetLayer</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">gameObject</span><span class="p">.</span><span class="n">layer</span> <span class="p">=</span> <span class="n">LayerMask</span><span class="p">.</span><span class="n">NameToLayer</span><span class="p">(</span><span class="s">&#34;Player&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="2-清除场景中所有物体">2. 清除场景中所有物体
-</h5><p>在《飞翔的小鸟》和《小行星》的游戏重置中，都用到了同样的方法，使用 <code>FindObjectsOfType</code> 通过数组遍历场景中所有需要查找的物体进行销毁即可。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">Asteroid</span><span class="p">[]</span> <span class="n">asteroids</span> <span class="p">=</span> <span class="n">FindObjectsOfType</span><span class="p">&lt;</span><span class="n">Asteroid</span><span class="p">&gt;();</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">asteroids</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Destroy</span><span class="p">(</span><span class="n">asteroids</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gameObject</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
 </div>
 </section>
 
@@ -2496,7 +908,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Jan 24, 2026 10:28 &#43;0800
+            最后更新于 Feb 09, 2026 20:17 &#43;0800
         </span>
     </section></footer>
 
@@ -2512,6 +924,54 @@ version: "3.1"
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/cover.a53b8e3559671b2a34dc56989cd055fe_hu_1f5b87636206f2ca.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【Unity】从一个入门级小游戏学习商业化代码的写法"
+                        
+                        data-hash="md5-pTuONVlnGyo03FaYnNBV/g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Unity】从一个入门级小游戏学习商业化代码的写法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/unity%E7%94%A8unity%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E4%B8%89%E6%B6%88%E6%B8%B8%E6%88%8F/">
+        
+        
+            <div class="article-image">
+                <img src="/p/unity%E7%94%A8unity%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E4%B8%89%E6%B6%88%E6%B8%B8%E6%88%8F/cover.9b94936f2650f11587a9d3d2cc58a921_hu_c18fc6099f3d27b0.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【Unity】用Unity开发一个三消游戏"
+                        
+                        data-hash="md5-m5STbyZQ8RWHqdPSzFipIQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Unity】用Unity开发一个三消游戏</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -2585,54 +1045,6 @@ version: "3.1"
 </article>
 
             
-                
-<article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%A4%8D%E7%89%A9%E6%98%8E%E6%98%9F%E5%A4%A7%E4%B9%B1%E6%96%97%E4%B9%8B%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/cover.ec0863682fef9b7bb25dd0aa71367140_hu_5306f28b8aa9e474.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计"
-                        
-                        data-hash="md5-7AhjaC/vm3uyXdCqcTZxQA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】植物明星大乱斗之框架设计</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84c-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8F%90%E7%93%A6%E7%89%B9%E5%B9%B8%E5%AD%98%E8%80%85/cover.320e6c19460333b34d72f9882077e6e3_hu_8388bbd5ce560c6b.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者"
-                        
-                        data-hash="md5-Mg5sGUYDM7NNcvmIIHfm4w==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【从零开始的C&#43;&#43;游戏开发】提瓦特幸存者</h2>
-        </div>
-    </a>
-</article>
-
-            
         </div>
     </div>
 </aside>
@@ -2690,9 +1102,13 @@ version: "3.1"
         
         
         
+        
+        
+        
+        
 
-        发表了13篇文章 ·
-        总计8万2千字
+        发表了15篇文章 ·
+        总计8万5千字
         <br>
     </section>
 

@@ -10,7 +10,7 @@
 <meta property='og:description' content="记录我开发一个合成游戏原型的思考和经过">
 <meta property='og:url' content='https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E5%90%88%E6%88%90%E6%B8%B8%E6%88%8Fdemo%E5%BC%80%E5%8F%91/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-20T08:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-01-21T20:37:55&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E5%90%88%E6%88%90%E6%B8%B8%E6%88%8Fdemo%E5%BC%80%E5%8F%91/cover.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-20T08:19:30&#43;08:00'/><meta property='article:modified_time' content='2026-02-09T20:17:37&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E5%90%88%E6%88%90%E6%B8%B8%E6%88%8Fdemo%E5%BC%80%E5%8F%91/cover.webp' />
 <meta name="twitter:title" content="【开发日志】合成游戏DEMO开发">
 <meta name="twitter:description" content="记录我开发一个合成游戏原型的思考和经过"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E5%90%88%E6%88%90%E6%B8%B8%E6%88%8Fdemo%E5%BC%80%E5%8F%91/cover.webp' />
@@ -364,7 +364,17 @@ version: "3.1"
   <ol>
     <li><a href="#项目简述">项目简述</a></li>
     <li><a href="#游戏功能拆解">游戏/功能拆解</a></li>
-    <li><a href="#开发阶段一合成模块">开发阶段一（合成模块）</a>
+    <li><a href="#开发阶段一拆解">开发阶段一（拆解）</a>
+      <ol>
+        <li><a href="#1-项目结构分析">1. 项目结构分析</a></li>
+        <li><a href="#2-网格系统">2. 网格系统</a></li>
+        <li><a href="#3-物品系统">3. 物品系统</a></li>
+        <li><a href="#4-拖拽交互">4. 拖拽交互</a></li>
+        <li><a href="#5-动画与反馈">5. 动画与反馈</a></li>
+        <li><a href="#6-存档系统">6. 存档系统</a></li>
+      </ol>
+    </li>
+    <li><a href="#开发阶段二合成模块">开发阶段二（合成模块）</a>
       <ol>
         <li><a href="#内容">内容</a></li>
         <li><a href="#逻辑">逻辑</a></li>
@@ -374,7 +384,6 @@ version: "3.1"
           <ol>
             <li><a href="#1">1.</a></li>
             <li><a href="#2">2.</a></li>
-            <li></li>
           </ol>
         </li>
       </ol>
@@ -501,11 +510,76 @@ version: "3.1"
 <img src="1-game-circle.webp" alt="" style="zoom:100%;"/>
 <p>由此，我们可以看到demo的核心模块有两个：</p>
 <ul>
-<li>合成</li>
-<li>对话（推动剧情）</li>
+<li>合成
+<ul>
+<li>网格系统</li>
+<li>物品系统（等级、合成规则）</li>
+<li>拖拽交互</li>
+<li>动画和反馈</li>
+<li>任务系统</li>
+<li>资源循环</li>
 </ul>
-<p>我计划按照模块进行开发，完成一个MVP后加入新的模块，测试新的功能。两个模块的基本逻辑在两个阶段实现，在第三阶段进行重构和稍作一些细节上的提升，使其易于在下一步扩展。</p>
-<h2 id="开发阶段一合成模块">开发阶段一（合成模块）
+</li>
+<li>对话（推动剧情）
+<ul>
+<li>对话系统
+<ul>
+<li>ScriptableObject 对话数据</li>
+<li>对话触发条件</li>
+<li>UI 对话框</li>
+</ul>
+</li>
+<li>事件系统
+<ul>
+<li>每次合成触发事件</li>
+<li>剧情事件</li>
+</ul>
+</li>
+<li>任务系统
+<ul>
+<li>合成 X 次</li>
+<li>达到某等级</li>
+<li>完成剧情节点</li>
+</ul>
+</li>
+<li>UI美化</li>
+<li>存档系统升级
+<ul>
+<li>JSON → 二进制</li>
+<li>多存档</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>我计划从拆解一个现有merge toolkit开始，按照自己的架构对merge模块进行重写，完成一个MVP后加入新的模块，测试新的功能。两个模块的基本逻辑在两个阶段实现，在最后一个阶段进行优化和稍作一些细节上的提升，使其易于在下一步扩展。</p>
+<h2 id="开发阶段一拆解">开发阶段一（拆解）
+</h2><p>目标：搞清楚模板的所有原理。</p>
+<h3 id="1-项目结构分析">1. 项目结构分析
+</h3><p>Assets 目录结构</p>
+<p>Prefabs、ScriptableObjects、Scenes</p>
+<p>核心脚本入口（GameManager、GridManager 等）</p>
+<h3 id="2-网格系统">2. 网格系统
+</h3><p>网格如何生成</p>
+<p>坐标如何映射</p>
+<p>物品如何放置</p>
+<h3 id="3-物品系统">3. 物品系统
+</h3><p>物品数据结构</p>
+<p>合成规则</p>
+<p>等级提升逻辑</p>
+<h3 id="4-拖拽交互">4. 拖拽交互
+</h3><p>如何检测拖拽</p>
+<p>如何判断合成</p>
+<p>如何处理无效拖拽</p>
+<h3 id="5-动画与反馈">5. 动画与反馈
+</h3><p>合成动画</p>
+<p>特效</p>
+<p>UI 动画</p>
+<h3 id="6-存档系统">6. 存档系统
+</h3><p>存档格式</p>
+<p>何时保存</p>
+<p>如何恢复</p>
+<h2 id="开发阶段二合成模块">开发阶段二（合成模块）
 </h2><p>本阶段要进行合成模块的开发。</p>
 <h3 id="内容">内容
 </h3><p>场景搭建、网格、物体在网格上的随机摆放、UI、音效。</p>
@@ -571,7 +645,6 @@ version: "3.1"
 <h3 id="遇到的问题及解决方法">遇到的问题及解决方法
 </h3><h4 id="1">1.
 </h4><h4 id="2">2.
-</h4><h4 id="">
 </h4>
 </section>
 
@@ -609,7 +682,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Jan 21, 2026 20:37 &#43;0800
+            最后更新于 Feb 09, 2026 20:17 &#43;0800
         </span>
     </section></footer>
 
@@ -625,6 +698,54 @@ version: "3.1"
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/cover.a53b8e3559671b2a34dc56989cd055fe_hu_1f5b87636206f2ca.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【Unity】从一个入门级小游戏学习商业化代码的写法"
+                        
+                        data-hash="md5-pTuONVlnGyo03FaYnNBV/g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Unity】从一个入门级小游戏学习商业化代码的写法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/unity%E7%94%A8unity%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E4%B8%89%E6%B6%88%E6%B8%B8%E6%88%8F/">
+        
+        
+            <div class="article-image">
+                <img src="/p/unity%E7%94%A8unity%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E4%B8%89%E6%B6%88%E6%B8%B8%E6%88%8F/cover.9b94936f2650f11587a9d3d2cc58a921_hu_c18fc6099f3d27b0.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【Unity】用Unity开发一个三消游戏"
+                        
+                        data-hash="md5-m5STbyZQ8RWHqdPSzFipIQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Unity】用Unity开发一个三消游戏</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -698,30 +819,6 @@ version: "3.1"
 </article>
 
             
-                
-<article class="has-image">
-    <a href="/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/cover.4343ecf0578563b24602f22bac61ca24_hu_796b3b62cef97be6.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 【开发日志】我的技术博客网站"
-                        
-                        data-hash="md5-Q0Ps8FeFY7JGAvIrrGHKJA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">【开发日志】我的技术博客网站</h2>
-        </div>
-    </a>
-</article>
-
-            
         </div>
     </div>
 </aside>
@@ -779,9 +876,13 @@ version: "3.1"
         
         
         
+        
+        
+        
+        
 
-        发表了13篇文章 ·
-        总计8万2千字
+        发表了15篇文章 ·
+        总计8万5千字
         <br>
     </section>
 
