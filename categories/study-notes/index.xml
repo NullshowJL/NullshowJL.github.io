@@ -23,7 +23,7 @@
 &lt;li&gt;在指定着陆点轻柔降落可获得更高分数&lt;/li&gt;
 &lt;li&gt;需要管理速度、角度与燃料&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;0-show.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
+&lt;img src=&#34;./0-show.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
 &lt;p&gt;《Lua Lander》是油管游戏开发大佬Code Monkey在此基础上做的复刻和扩展。除了保留以上核心机制外，项目的&lt;strong&gt;扩展玩法&lt;/strong&gt;包括：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;更复杂的着陆判定（速度+角度）&lt;/li&gt;
@@ -42,51 +42,65 @@
 &lt;li&gt;主菜单、暂停菜单、游戏结束场景&lt;/li&gt;
 &lt;li&gt;音效与音乐系统&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;1-show.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
+&lt;img src=&#34;./1-show.gif&#34; alt=&#34;&#34; style=&#34;zoom:100%;&#34;/&gt;
 &lt;h2 id=&#34;学习目标&#34;&gt;学习目标
 &lt;/h2&gt;&lt;p&gt;Code Monkey喜欢做的游戏一般系统复杂、项目规模大、对可维护性要求高，所以他的教程不管是哪个级别的都会采用更专业的结构，展现如何将clean code、good practice融合进他的项目之中。我希望从这个项目中不仅能学到他解决问题的思路、怎么写干净的代码，还能学到架构项目的正确方式、真正的游戏工程师思维，为以后自己做复杂项目打下基础。&lt;/p&gt;
 &lt;p&gt;所以在这个项目中我将采用步步跟随的方式，总结他的方法和思路，以便可以用在以后自己的项目中。&lt;/p&gt;
 &lt;h2 id=&#34;开发步骤&#34;&gt;开发步骤
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;post processing处理（可以放在任意步骤）&lt;/li&gt;
-&lt;li&gt;lander的开发
+&lt;/h2&gt;&lt;p&gt;整个游戏大概按照下面步骤开发：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;post processing处理（可以放在任意步骤）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ander的开发&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;lander的运动&lt;/li&gt;
 &lt;li&gt;动力的视觉效果&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;terrain的开发
+&lt;li&gt;
+&lt;p&gt;terrain的开发&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用sprite shape&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;摄像机跟随
+&lt;li&gt;
+&lt;p&gt;摄像机跟随&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;cinemachine&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;背景的设置&lt;/li&gt;
-&lt;li&gt;landing
+&lt;li&gt;
+&lt;p&gt;背景的设置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;landing&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;landing的判定&lt;/li&gt;
 &lt;li&gt;landing在平台上&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;landing pad预制体
+&lt;li&gt;
+&lt;p&gt;landing pad预制体&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;prefab variant （大小不同、得分倍率不同的平台）&lt;/li&gt;
 &lt;li&gt;得分倍率动态指示&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;燃料机制的实现
+&lt;li&gt;
+&lt;p&gt;燃料机制的实现&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;设置燃料额度&lt;/li&gt;
 &lt;li&gt;lander拾取燃料&lt;/li&gt;
 &lt;li&gt;金币（与燃料类似）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;GameManager&lt;/li&gt;
-&lt;li&gt;UI
+&lt;li&gt;
+&lt;p&gt;GameManager&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UI&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;数据统计板&lt;/li&gt;
 &lt;li&gt;加速指示箭头&lt;/li&gt;
@@ -99,48 +113,62 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;游戏状态设置
+&lt;li&gt;
+&lt;p&gt;游戏状态设置&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Start&lt;/li&gt;
 &lt;li&gt;Restart&lt;/li&gt;
 &lt;li&gt;Gameover&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;爆炸特效&lt;/li&gt;
-&lt;li&gt;新关卡
+&lt;li&gt;
+&lt;p&gt;爆炸特效&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新关卡&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用prefab的方法&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;全景地图&lt;/li&gt;
-&lt;li&gt;Input System
+&lt;li&gt;
+&lt;p&gt;全景地图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Input System&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;button/ Key&lt;/li&gt;
 &lt;li&gt;Touch&lt;/li&gt;
 &lt;li&gt;Joy Stick&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Main Menu Scene&lt;/li&gt;
-&lt;li&gt;PauseUI
+&lt;li&gt;
+&lt;p&gt;Main Menu Scene&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PauseUI&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;点击按钮&lt;/li&gt;
 &lt;li&gt;按下 Esc 键&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;GameOverScene
+&lt;li&gt;
+&lt;p&gt;GameOverScene&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;total score&lt;/li&gt;
 &lt;li&gt;返回主菜单按钮&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SoundManager 和 MusicManager
+&lt;li&gt;
+&lt;p&gt;SoundManager 和 MusicManager&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;保持背景音乐在关卡切换后仍然持续播放&lt;/li&gt;
 &lt;li&gt;音量按钮&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Polish&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;Polish&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;思路及关键步骤&#34;&gt;思路及关键步骤
 &lt;/h2&gt;&lt;h3 id=&#34;postprocessing&#34;&gt;PostProcessing
 &lt;/h3&gt;&lt;p&gt;可以通过 Volume =&amp;gt; Global Volume =&amp;gt; Add Override 来对游戏中的图片和 Game 界面的背景进行视觉效果的调整。虽然此项目只调整了 Bloom 和 Vignette，但是还有大量的参数可调，到时可以根据需要去探索使用。&lt;/p&gt;
@@ -166,10 +194,8 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;碰撞体、逻辑中心点更好控制&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;逻辑物体通常需要一个“干净的 Transform”来作为移动中心/ 碰撞中心/ 旋转中心/ AI逻辑参考点；而视觉往往不是严格的对齐中心，还需要特别处理。&lt;/p&gt;
-&lt;ul&gt;
+&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;更容易做 Prefab 复用&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;逻辑 prefab 不变，视觉 prefab 可以换皮肤、换主题、换颜色、换模型等。&lt;/p&gt;
@@ -999,7 +1025,7 @@
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;自己创建 InputActions =&amp;gt; Edit Asset =&amp;gt; Action Maps，在Action Maps中为 Player 添加输入，对 player 的三种操作（up/ left/ right）绑定对应的按键：&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;2-input.webp&#34; alt=&#34;&#34; style=&#34;zoom:70%;&#34;/&gt;
+&lt;img src=&#34;./2-input.webp&#34; alt=&#34;&#34; style=&#34;zoom:70%;&#34;/&gt;
 &lt;p&gt;然后在面板上勾选创建C# class，这样可以直接通过脚本控制，是Code Monkey推荐的方法，而不是使用字符串。由此，我们自己创建的InputActions生成了一个自己的C#脚本。&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;创建自己的GameInput脚本&lt;/li&gt;
@@ -1050,10 +1076,10 @@
 &lt;li&gt;给三个圆设置 On-Screen Button 组件&lt;/li&gt;
 &lt;li&gt;可以通过simulator来查看在不同触摸设备上的效果&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;3-simulator.webp&#34; alt=&#34;&#34; style=&#34;zoom:70%;&#34;/&gt;
+&lt;img src=&#34;./3-simulator.webp&#34; alt=&#34;&#34; style=&#34;zoom:70%;&#34;/&gt;
 &lt;h4 id=&#34;joystick输入&#34;&gt;JoyStick输入
 &lt;/h4&gt;&lt;p&gt;不同于按键，手柄的 Action 类型要选择 Value =&amp;gt; Vector2。&lt;/p&gt;
-&lt;img src=&#34;4-joystick.webp&#34; alt=&#34;&#34; style=&#34;zoom:70%;&#34;/&gt;
+&lt;img src=&#34;./4-joystick.webp&#34; alt=&#34;&#34; style=&#34;zoom:70%;&#34;/&gt;
 &lt;p&gt;然后和按键的输入一样，在相应的脚本中添加即可。&lt;/p&gt;
 &lt;h3 id=&#34;使用-sceneloader-来管理场景&#34;&gt;使用 SceneLoader 来管理场景
 &lt;/h3&gt;&lt;p&gt;为了避免在加载场景时使用“magic number” &lt;code&gt;SceneManager.LoadScene(0);&lt;/code&gt;，我们使用脚本来控制场景的加载。&lt;/p&gt;
@@ -1133,7 +1159,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;保持背景音乐在关卡切换时不重头播放&#34;&gt;保持背景音乐在关卡切换时不重头播放
+&lt;/div&gt;&lt;h3 id=&#34;保持背景音乐在关卡切换时不从头播放&#34;&gt;保持背景音乐在关卡切换时不从头播放
 &lt;/h3&gt;&lt;p&gt;可以通过将音乐播放的时间设置为静态的来处理。（需要跨越关卡保持统一数据的，此教程中都是通过设置为static来解决）。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1175,21 +1201,17 @@
 &lt;/h2&gt;&lt;h3 id=&#34;关于事件的取消注册&#34;&gt;关于事件的取消注册
 &lt;/h3&gt;&lt;p&gt;在这个项目中多处用到了事件机制来实现代码的解耦，但是绝大多数情况没有进行取消注册的操作。但这并非最佳实践。&lt;/p&gt;
 &lt;p&gt;在以下情况下，不取消操作暂时是安全的：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;相同的生命周期：LanderVisual 和 lander 组件在同一个 GameObject 上&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h4 id=&#34;相同的生命周期landervisual-和-lander-组件在同一个-gameobject-上&#34;&gt;相同的生命周期：LanderVisual 和 lander 组件在同一个 GameObject 上
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;lander&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GetComponent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Lander&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;();&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 同一个对象上&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;lander&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GetComponent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Lander&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;();&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 同一个对象&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;同时销毁：当 lander 爆炸时，整个 GameObject 被禁用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h4 id=&#34;同时销毁当-lander-爆炸时整个-gameobject-被禁用&#34;&gt;同时销毁：当 lander 爆炸时，整个 GameObject 被禁用
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -1197,12 +1219,8 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;gameObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetActive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// LanderVisual 和 Lander 一起被禁用&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Unity 会在对象销毁时自动清理这些引用&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;最佳实践是使对象在被销毁时取消注册：&lt;/p&gt;
+&lt;/div&gt;&lt;h4 id=&#34;unity-会在对象销毁时自动清理这些引用&#34;&gt;Unity 会在对象销毁时自动清理这些引用
+&lt;/h4&gt;&lt;p&gt;最佳实践是使对象在被销毁时取消注册：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1231,8 +1249,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;以下情况下必须进行取消注册的操作&#34;&gt;以下情况下必须进行取消注册的操作：
-&lt;/h4&gt;&lt;ol&gt;
+&lt;/div&gt;&lt;h3 id=&#34;以下情况下必须进行取消注册的操作&#34;&gt;以下情况下必须进行取消注册的操作：
+&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;订阅者生命周期比发布者短&lt;/li&gt;
 &lt;li&gt;订阅者可能被多次创建/销毁（不取消注册会导致重复订阅）&lt;/li&gt;
 &lt;li&gt;跨场景的事件&lt;/li&gt;
@@ -1253,21 +1271,21 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;注册位置&lt;/th&gt;
-          &lt;th&gt;取消注册位置&lt;/th&gt;
-          &lt;th&gt;使用场景&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;注册位置&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;取消注册位置&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;使用场景&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;Awake() / Start()&lt;/td&gt;
-          &lt;td&gt;OnDestroy()&lt;/td&gt;
-          &lt;td&gt;对象生命周期内只需注册一次&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Awake() / Start()&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;OnDestroy()&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;对象生命周期内只需注册一次&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;OnEnable()&lt;/td&gt;
-          &lt;td&gt;OnDisable()&lt;/td&gt;
-          &lt;td&gt;对象会被重复启用/禁用&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;OnEnable()&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;OnDisable()&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;对象会被重复启用/禁用&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1338,51 +1356,51 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;项目&lt;/th&gt;
-          &lt;th&gt;Scene 做关卡&lt;/th&gt;
-          &lt;th&gt;Prefab 做关卡&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;项目&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Scene 做关卡&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Prefab 做关卡&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;适合的游戏类型&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;大型场景、剧情关卡、独立世界&lt;/td&gt;
-          &lt;td&gt;多关卡、重复结构、程序生成、roguelike&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;适合的游戏类型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;大型场景、剧情关卡、独立世界&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;多关卡、重复结构、程序生成、roguelike&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;加载方式&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;切换场景（LoadScene）&lt;/td&gt;
-          &lt;td&gt;在同一场景中实例化 Prefab&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;加载方式&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;切换场景（LoadScene）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;在同一场景中实例化 Prefab&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;编辑体验&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;直观、所见即所得&lt;/td&gt;
-          &lt;td&gt;模块化、可组合&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;编辑体验&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;直观、所见即所得&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;模块化、可组合&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;性能&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;场景切换有开销&lt;/td&gt;
-          &lt;td&gt;Prefab 实例化更快&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;性能&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;场景切换有开销&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Prefab 实例化更快&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;复用性&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;低（每个 Scene 独立）&lt;/td&gt;
-          &lt;td&gt;高（Prefab 可重复使用）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;复用性&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;低（每个 Scene 独立）&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;高（Prefab 可重复使用）&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;动态生成&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;不方便&lt;/td&gt;
-          &lt;td&gt;非常方便&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;动态生成&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;不方便&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非常方便&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;多人协作&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;场景容易冲突&lt;/td&gt;
-          &lt;td&gt;Prefab 冲突更少&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;多人协作&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;场景容易冲突&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Prefab 冲突更少&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;关卡数量&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;少量关卡&lt;/td&gt;
-          &lt;td&gt;大量关卡&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;关卡数量&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;少量关卡&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;大量关卡&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1399,8 +1417,7 @@
 &lt;/ul&gt;
 &lt;p&gt;我计划先放一下，等再学习练习一段时间后尝试自己实现。&lt;/p&gt;
 &lt;p&gt;另外，Code Monkey是我跟随学习的第一位专业游戏开发者，我会再学习2名专业游戏开发者的课程，学习他们的代码风格和对游戏整体的架构，然后尝试形成我自己的风格。&lt;/p&gt;
-&lt;h3 id=&#34;&#34;&gt;
-&lt;/h3&gt;</description>
+</description>
         </item>
         <item>
         <title>【Unity】用Unity开发一个三消游戏</title>

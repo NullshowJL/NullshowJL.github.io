@@ -10,7 +10,7 @@
 <meta property='og:description' content="从一个入门级小游戏，学习专业独立游戏开发者如何架构和写一个项目">
 <meta property='og:url' content='https://nullshowjl.github.io/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/'>
 <meta property='og:site_name' content='Nullshow的技术博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-31T08:43:30&#43;08:00'/><meta property='article:modified_time' content='2026-02-09T20:17:37&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/cover.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-31T08:43:30&#43;08:00'/><meta property='article:modified_time' content='2026-02-09T21:33:34&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/cover.jpg' />
 <meta name="twitter:title" content="【Unity】从一个入门级小游戏学习商业化代码的写法">
 <meta name="twitter:description" content="从一个入门级小游戏，学习专业独立游戏开发者如何架构和写一个项目"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://nullshowjl.github.io/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/cover.jpg' />
@@ -404,14 +404,20 @@ version: "3.1"
           </ol>
         </li>
         <li><a href="#使用-sceneloader-来管理场景">使用 SceneLoader 来管理场景</a></li>
-        <li><a href="#保持背景音乐在关卡切换时不重头播放">保持背景音乐在关卡切换时不重头播放</a></li>
+        <li><a href="#保持背景音乐在关卡切换时不从头播放">保持背景音乐在关卡切换时不从头播放</a></li>
       </ol>
     </li>
     <li><a href="#扩展-1">扩展</a>
       <ol>
         <li><a href="#关于事件的取消注册">关于事件的取消注册</a>
           <ol>
-            <li><a href="#以下情况下必须进行取消注册的操作">以下情况下必须进行取消注册的操作：</a></li>
+            <li><a href="#相同的生命周期landervisual-和-lander-组件在同一个-gameobject-上">相同的生命周期：LanderVisual 和 lander 组件在同一个 GameObject 上</a></li>
+            <li><a href="#同时销毁当-lander-爆炸时整个-gameobject-被禁用">同时销毁：当 lander 爆炸时，整个 GameObject 被禁用</a></li>
+            <li><a href="#unity-会在对象销毁时自动清理这些引用">Unity 会在对象销毁时自动清理这些引用</a></li>
+          </ol>
+        </li>
+        <li><a href="#以下情况下必须进行取消注册的操作">以下情况下必须进行取消注册的操作：</a>
+          <ol>
             <li><a href="#取消注册的地方">取消注册的地方</a></li>
           </ol>
         </li>
@@ -419,11 +425,7 @@ version: "3.1"
         <li><a href="#polish">Polish</a></li>
       </ol>
     </li>
-    <li><a href="#复盘和下一步">复盘和下一步</a>
-      <ol>
-        <li></li>
-      </ol>
-    </li>
+    <li><a href="#复盘和下一步">复盘和下一步</a></li>
   </ol>
 </nav>
         </div>
@@ -540,7 +542,7 @@ version: "3.1"
 <li>在指定着陆点轻柔降落可获得更高分数</li>
 <li>需要管理速度、角度与燃料</li>
 </ul>
-<img src="0-show.gif" alt="" style="zoom:100%;"/>
+<img src="./0-show.gif" alt="" style="zoom:100%;"/>
 <p>《Lua Lander》是油管游戏开发大佬Code Monkey在此基础上做的复刻和扩展。除了保留以上核心机制外，项目的<strong>扩展玩法</strong>包括：</p>
 <ul>
 <li>更复杂的着陆判定（速度+角度）</li>
@@ -559,51 +561,65 @@ version: "3.1"
 <li>主菜单、暂停菜单、游戏结束场景</li>
 <li>音效与音乐系统</li>
 </ul>
-<img src="1-show.gif" alt="" style="zoom:100%;"/>
+<img src="./1-show.gif" alt="" style="zoom:100%;"/>
 <h2 id="学习目标">学习目标
 </h2><p>Code Monkey喜欢做的游戏一般系统复杂、项目规模大、对可维护性要求高，所以他的教程不管是哪个级别的都会采用更专业的结构，展现如何将clean code、good practice融合进他的项目之中。我希望从这个项目中不仅能学到他解决问题的思路、怎么写干净的代码，还能学到架构项目的正确方式、真正的游戏工程师思维，为以后自己做复杂项目打下基础。</p>
 <p>所以在这个项目中我将采用步步跟随的方式，总结他的方法和思路，以便可以用在以后自己的项目中。</p>
 <h2 id="开发步骤">开发步骤
-</h2><ol>
-<li>post processing处理（可以放在任意步骤）</li>
-<li>lander的开发
+</h2><p>整个游戏大概按照下面步骤开发：</p>
+<ul>
+<li>
+<p>post processing处理（可以放在任意步骤）</p>
+</li>
+<li>
+<p>ander的开发</p>
 <ul>
 <li>lander的运动</li>
 <li>动力的视觉效果</li>
 </ul>
 </li>
-<li>terrain的开发
+<li>
+<p>terrain的开发</p>
 <ul>
 <li>使用sprite shape</li>
 </ul>
 </li>
-<li>摄像机跟随
+<li>
+<p>摄像机跟随</p>
 <ul>
 <li>cinemachine</li>
 </ul>
 </li>
-<li>背景的设置</li>
-<li>landing
+<li>
+<p>背景的设置</p>
+</li>
+<li>
+<p>landing</p>
 <ul>
 <li>landing的判定</li>
 <li>landing在平台上</li>
 </ul>
 </li>
-<li>landing pad预制体
+<li>
+<p>landing pad预制体</p>
 <ul>
 <li>prefab variant （大小不同、得分倍率不同的平台）</li>
 <li>得分倍率动态指示</li>
 </ul>
 </li>
-<li>燃料机制的实现
+<li>
+<p>燃料机制的实现</p>
 <ul>
 <li>设置燃料额度</li>
 <li>lander拾取燃料</li>
 <li>金币（与燃料类似）</li>
 </ul>
 </li>
-<li>GameManager</li>
-<li>UI
+<li>
+<p>GameManager</p>
+</li>
+<li>
+<p>UI</p>
 <ul>
 <li>数据统计板</li>
 <li>加速指示箭头</li>
@@ -616,48 +632,62 @@ version: "3.1"
 </li>
 </ul>
 </li>
-<li>游戏状态设置
+<li>
+<p>游戏状态设置</p>
 <ul>
 <li>Start</li>
 <li>Restart</li>
 <li>Gameover</li>
 </ul>
 </li>
-<li>爆炸特效</li>
-<li>新关卡
+<li>
+<p>爆炸特效</p>
+</li>
+<li>
+<p>新关卡</p>
 <ul>
 <li>使用prefab的方法</li>
 </ul>
 </li>
-<li>全景地图</li>
-<li>Input System
+<li>
+<p>全景地图</p>
+</li>
+<li>
+<p>Input System</p>
 <ul>
 <li>button/ Key</li>
 <li>Touch</li>
 <li>Joy Stick</li>
 </ul>
 </li>
-<li>Main Menu Scene</li>
-<li>PauseUI
+<li>
+<p>Main Menu Scene</p>
+</li>
+<li>
+<p>PauseUI</p>
 <ul>
 <li>点击按钮</li>
 <li>按下 Esc 键</li>
 </ul>
 </li>
-<li>GameOverScene
+<li>
+<p>GameOverScene</p>
 <ul>
 <li>total score</li>
 <li>返回主菜单按钮</li>
 </ul>
 </li>
-<li>SoundManager 和 MusicManager
+<li>
+<p>SoundManager 和 MusicManager</p>
 <ul>
 <li>保持背景音乐在关卡切换后仍然持续播放</li>
 <li>音量按钮</li>
 </ul>
 </li>
-<li>Polish</li>
-</ol>
+<li>
+<p>Polish</p>
+</li>
+</ul>
 <h2 id="思路及关键步骤">思路及关键步骤
 </h2><h3 id="postprocessing">PostProcessing
 </h3><p>可以通过 Volume =&gt; Global Volume =&gt; Add Override 来对游戏中的图片和 Game 界面的背景进行视觉效果的调整。虽然此项目只调整了 Bloom 和 Vignette，但是还有大量的参数可调，到时可以根据需要去探索使用。</p>
@@ -683,10 +713,8 @@ version: "3.1"
 </li>
 <li>
 <p><strong>碰撞体、逻辑中心点更好控制</strong></p>
-</li>
-</ul>
 <p>逻辑物体通常需要一个“干净的 Transform”来作为移动中心/ 碰撞中心/ 旋转中心/ AI逻辑参考点；而视觉往往不是严格的对齐中心，还需要特别处理。</p>
-<ul>
+</li>
 <li>
 <p><strong>更容易做 Prefab 复用</strong></p>
 <p>逻辑 prefab 不变，视觉 prefab 可以换皮肤、换主题、换颜色、换模型等。</p>
@@ -1516,7 +1544,7 @@ version: "3.1"
 </h3><ol>
 <li>自己创建 InputActions =&gt; Edit Asset =&gt; Action Maps，在Action Maps中为 Player 添加输入，对 player 的三种操作（up/ left/ right）绑定对应的按键：</li>
 </ol>
-<img src="2-input.webp" alt="" style="zoom:70%;"/>
+<img src="./2-input.webp" alt="" style="zoom:70%;"/>
 <p>然后在面板上勾选创建C# class，这样可以直接通过脚本控制，是Code Monkey推荐的方法，而不是使用字符串。由此，我们自己创建的InputActions生成了一个自己的C#脚本。</p>
 <ol start="2">
 <li>创建自己的GameInput脚本</li>
@@ -1567,10 +1595,10 @@ version: "3.1"
 <li>给三个圆设置 On-Screen Button 组件</li>
 <li>可以通过simulator来查看在不同触摸设备上的效果</li>
 </ol>
-<img src="3-simulator.webp" alt="" style="zoom:70%;"/>
+<img src="./3-simulator.webp" alt="" style="zoom:70%;"/>
 <h4 id="joystick输入">JoyStick输入
 </h4><p>不同于按键，手柄的 Action 类型要选择 Value =&gt; Vector2。</p>
-<img src="4-joystick.webp" alt="" style="zoom:70%;"/>
+<img src="./4-joystick.webp" alt="" style="zoom:70%;"/>
 <p>然后和按键的输入一样，在相应的脚本中添加即可。</p>
 <h3 id="使用-sceneloader-来管理场景">使用 SceneLoader 来管理场景
 </h3><p>为了避免在加载场景时使用“magic number” <code>SceneManager.LoadScene(0);</code>，我们使用脚本来控制场景的加载。</p>
@@ -1650,7 +1678,7 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="保持背景音乐在关卡切换时不重头播放">保持背景音乐在关卡切换时不重头播放
+</div><h3 id="保持背景音乐在关卡切换时不从头播放">保持背景音乐在关卡切换时不从头播放
 </h3><p>可以通过将音乐播放的时间设置为静态的来处理。（需要跨越关卡保持统一数据的，此教程中都是通过设置为static来解决）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1692,21 +1720,17 @@ version: "3.1"
 </h2><h3 id="关于事件的取消注册">关于事件的取消注册
 </h3><p>在这个项目中多处用到了事件机制来实现代码的解耦，但是绝大多数情况没有进行取消注册的操作。但这并非最佳实践。</p>
 <p>在以下情况下，不取消操作暂时是安全的：</p>
-<ol>
-<li>
-<p>相同的生命周期：LanderVisual 和 lander 组件在同一个 GameObject 上</p>
-<div class="highlight"><div class="chroma">
+<h4 id="相同的生命周期landervisual-和-lander-组件在同一个-gameobject-上">相同的生命周期：LanderVisual 和 lander 组件在同一个 GameObject 上
+</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">lander</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Lander</span><span class="p">&gt;();</span>  <span class="c1">// 同一个对象上</span>
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">lander</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Lander</span><span class="p">&gt;();</span>  <span class="c1">// 同一个对象</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>同时销毁：当 lander 爆炸时，整个 GameObject 被禁用</p>
-<div class="highlight"><div class="chroma">
+</div><h4 id="同时销毁当-lander-爆炸时整个-gameobject-被禁用">同时销毁：当 lander 爆炸时，整个 GameObject 被禁用
+</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -1714,12 +1738,8 @@ version: "3.1"
 <pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// LanderVisual 和 Lander 一起被禁用</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>Unity 会在对象销毁时自动清理这些引用</p>
-</li>
-</ol>
-<p>最佳实践是使对象在被销毁时取消注册：</p>
+</div><h4 id="unity-会在对象销毁时自动清理这些引用">Unity 会在对象销毁时自动清理这些引用
+</h4><p>最佳实践是使对象在被销毁时取消注册：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1748,8 +1768,8 @@ version: "3.1"
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="以下情况下必须进行取消注册的操作">以下情况下必须进行取消注册的操作：
-</h4><ol>
+</div><h3 id="以下情况下必须进行取消注册的操作">以下情况下必须进行取消注册的操作：
+</h3><ol>
 <li>订阅者生命周期比发布者短</li>
 <li>订阅者可能被多次创建/销毁（不取消注册会导致重复订阅）</li>
 <li>跨场景的事件</li>
@@ -1770,21 +1790,21 @@ version: "3.1"
 <div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th>注册位置</th>
-          <th>取消注册位置</th>
-          <th>使用场景</th>
+          <th style="text-align: left">注册位置</th>
+          <th style="text-align: left">取消注册位置</th>
+          <th style="text-align: left">使用场景</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Awake() / Start()</td>
-          <td>OnDestroy()</td>
-          <td>对象生命周期内只需注册一次</td>
+          <td style="text-align: left">Awake() / Start()</td>
+          <td style="text-align: left">OnDestroy()</td>
+          <td style="text-align: left">对象生命周期内只需注册一次</td>
       </tr>
       <tr>
-          <td>OnEnable()</td>
-          <td>OnDisable()</td>
-          <td>对象会被重复启用/禁用</td>
+          <td style="text-align: left">OnEnable()</td>
+          <td style="text-align: left">OnDisable()</td>
+          <td style="text-align: left">对象会被重复启用/禁用</td>
       </tr>
   </tbody>
 </table></div>
@@ -1855,51 +1875,51 @@ version: "3.1"
 <div class="table-wrapper"><table>
   <thead>
       <tr>
-          <th>项目</th>
-          <th>Scene 做关卡</th>
-          <th>Prefab 做关卡</th>
+          <th style="text-align: left">项目</th>
+          <th style="text-align: left">Scene 做关卡</th>
+          <th style="text-align: left">Prefab 做关卡</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><strong>适合的游戏类型</strong></td>
-          <td>大型场景、剧情关卡、独立世界</td>
-          <td>多关卡、重复结构、程序生成、roguelike</td>
+          <td style="text-align: left"><strong>适合的游戏类型</strong></td>
+          <td style="text-align: left">大型场景、剧情关卡、独立世界</td>
+          <td style="text-align: left">多关卡、重复结构、程序生成、roguelike</td>
       </tr>
       <tr>
-          <td><strong>加载方式</strong></td>
-          <td>切换场景（LoadScene）</td>
-          <td>在同一场景中实例化 Prefab</td>
+          <td style="text-align: left"><strong>加载方式</strong></td>
+          <td style="text-align: left">切换场景（LoadScene）</td>
+          <td style="text-align: left">在同一场景中实例化 Prefab</td>
       </tr>
       <tr>
-          <td><strong>编辑体验</strong></td>
-          <td>直观、所见即所得</td>
-          <td>模块化、可组合</td>
+          <td style="text-align: left"><strong>编辑体验</strong></td>
+          <td style="text-align: left">直观、所见即所得</td>
+          <td style="text-align: left">模块化、可组合</td>
       </tr>
       <tr>
-          <td><strong>性能</strong></td>
-          <td>场景切换有开销</td>
-          <td>Prefab 实例化更快</td>
+          <td style="text-align: left"><strong>性能</strong></td>
+          <td style="text-align: left">场景切换有开销</td>
+          <td style="text-align: left">Prefab 实例化更快</td>
       </tr>
       <tr>
-          <td><strong>复用性</strong></td>
-          <td>低（每个 Scene 独立）</td>
-          <td>高（Prefab 可重复使用）</td>
+          <td style="text-align: left"><strong>复用性</strong></td>
+          <td style="text-align: left">低（每个 Scene 独立）</td>
+          <td style="text-align: left">高（Prefab 可重复使用）</td>
       </tr>
       <tr>
-          <td><strong>动态生成</strong></td>
-          <td>不方便</td>
-          <td>非常方便</td>
+          <td style="text-align: left"><strong>动态生成</strong></td>
+          <td style="text-align: left">不方便</td>
+          <td style="text-align: left">非常方便</td>
       </tr>
       <tr>
-          <td><strong>多人协作</strong></td>
-          <td>场景容易冲突</td>
-          <td>Prefab 冲突更少</td>
+          <td style="text-align: left"><strong>多人协作</strong></td>
+          <td style="text-align: left">场景容易冲突</td>
+          <td style="text-align: left">Prefab 冲突更少</td>
       </tr>
       <tr>
-          <td><strong>关卡数量</strong></td>
-          <td>少量关卡</td>
-          <td>大量关卡</td>
+          <td style="text-align: left"><strong>关卡数量</strong></td>
+          <td style="text-align: left">少量关卡</td>
+          <td style="text-align: left">大量关卡</td>
       </tr>
   </tbody>
 </table></div>
@@ -1916,8 +1936,7 @@ version: "3.1"
 </ul>
 <p>我计划先放一下，等再学习练习一段时间后尝试自己实现。</p>
 <p>另外，Code Monkey是我跟随学习的第一位专业游戏开发者，我会再学习2名专业游戏开发者的课程，学习他们的代码风格和对游戏整体的架构，然后尝试形成我自己的风格。</p>
-<h3 id="">
-</h3>
+
 </section>
 
 
@@ -1954,7 +1973,7 @@ version: "3.1"
 
 
         <span>
-            最后更新于 Feb 09, 2026 20:17 &#43;0800
+            最后更新于 Feb 09, 2026 21:33 &#43;0800
         </span>
     </section></footer>
 
