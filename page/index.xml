@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Mon, 09 Feb 2026 20:17:37 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 10 Feb 2026 19:00:25 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>学习历程</title>
         <link>https://nullshowjl.github.io/%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/</link>
         <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
@@ -72,13 +72,13 @@
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;勇士传说&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;B站-麦扣 重构项目&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Unity 3D Beginner/Intermediate Course - Chaos Kitchen (Single Player)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Unity 3D Beginner/Intermediate Course - Chaos Kitchen (Single Player)&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;油管-Code Monkey/ B站&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Unity 2D Game Developer Course Farming RPG&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Rob Ager/ B站 重构项目&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Snake&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;油管-Code Monkey&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;代码大全&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;书-Steve McConnell&lt;/td&gt;
       &lt;/tr&gt;
@@ -91,10 +91,17 @@
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Snake&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;油管-Code Monkey&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Math For Video Games: The Fastest Way To Get Smarter At Math&lt;/strong&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Udemy-GameDev.tv/ B站&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Design Patterns for Game Programming&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Penny de Byl/ B站&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
@@ -107,8 +114,8 @@
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Make a Complete Unity Game-Alien Blaster&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;油管-Jason Weimann (GameDev)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unity 2D Game Developer Course Farming RPG&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Rob Ager/ B站&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
@@ -184,8 +191,8 @@
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Design Patterns for Game Programming&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Udemy-Penny de Byl/ B站&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
@@ -231,21 +238,21 @@
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;小游戏&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Code Monkey multiplayer课程&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;油管-Code Monkey&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;工具类&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Make Online Games Using Unity&amp;rsquo;s Multiplayer Framework&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Udemy-GameDev&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;算法实现&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;Node 后端初体验（第一季 + 第二季）&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;官网-siki学院&lt;/td&gt;

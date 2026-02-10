@@ -400,6 +400,17 @@
   
   var dataMap = new Map();
   
+    var key = &#34;2026-01-31&#34;;
+    var value = dataMap.get(key);
+    var wordCount = &#34;5.3&#34;;
+    var link = &#34;/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/&#34;;
+    var title = &#34;【Unity】Learning Commercial-Grade Coding from a Beginner Mini Game&#34;;
+
+    
+    
+    if (value == null || wordCount &gt; value[0]) {
+      dataMap.set(key, {wordCount, link, title});
+    }
     var key = &#34;2026-01-19&#34;;
     var value = dataMap.get(key);
     var wordCount = &#34;2.0&#34;;

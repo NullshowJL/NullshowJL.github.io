@@ -1,0 +1,2971 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Using a simple beginner-level mini game as a starting point, study how professional indie game developers structure and build a project">
+<title>【Unity】Learning Commercial-Grade Coding from a Beginner Mini Game</title>
+
+<link rel='canonical' href='https://nullshowjl.github.io/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/'>
+
+<link rel="stylesheet" href="/scss/style.min.3b99540141ea6d96ea57a2341f6a138640e2de77d5547ecfa3a88330ad283de6.css"><meta property='og:title' content="【Unity】Learning Commercial-Grade Coding from a Beginner Mini Game">
+<meta property='og:description' content="Using a simple beginner-level mini game as a starting point, study how professional indie game developers structure and build a project">
+<meta property='og:url' content='https://nullshowjl.github.io/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/'>
+<meta property='og:site_name' content='Nullshow&#39;s Tech Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Game Dev' /><meta property='article:tag' content='Unity' /><meta property='article:published_time' content='2026-01-31T08:43:30&#43;08:00'/><meta property='article:modified_time' content='2026-02-10T19:00:25&#43;08:00'/><meta property='og:image' content='https://nullshowjl.github.io/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/cover.jpg' />
+<meta name="twitter:title" content="【Unity】Learning Commercial-Grade Coding from a Beginner Mini Game">
+<meta name="twitter:description" content="Using a simple beginner-level mini game as a starting point, study how professional indie game developers structure and build a project"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://nullshowjl.github.io/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/cover.jpg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+        
+        <figure class="site-avatar">
+            <a href="/en/">
+                
+                
+
+                
+                
+                <img src="/img/avatar_hu_7adbda40a4f6f680.png" width="300"
+                     height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                
+            </a>
+            
+            <span class="emoji">✍️</span>
+            
+        </figure>
+        
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Nullshow&#39;s Tech Blog</a></h1>
+            <h2 class="site-description">Sharing and documenting my notes, experiences, and reflections from development and learning~</h2>
+        </div>
+    </header><ol class="menu-social">
+        
+        
+        
+        <li>
+            <a href='https://gitee.com/nullshow'
+                target="_blank" 
+                title="Gitee" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-hexagon-letter-g" class="icon-tabler-hexagon-letter-g"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z" /><path d="M14 8h-2a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2v-4h-1" /></svg>
+                
+            </a>
+        </li>
+        
+        
+        
+        <li>
+            <a href='https://github.com/NullshowJL'
+                target="_blank" 
+                title="GitHub" 
+               rel="me">
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-brand-github">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li>
+            <a href='/en/index.xml'
+                target="_blank" 
+                title="RSS" 
+               rel="me">
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss" class="icon-tabler-brand-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+                
+            </a>
+        </li>
+        
+    </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-home">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-user">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/journey/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trekking" class="icon-tabler-journey"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M7 21l2 -4" /><path d="M13 21v-4l-3 -3l1 -6l3 4l3 2" /><path d="M10 14l-1.827 -1.218a2 2 0 0 1 -.831 -2.15l.28 -1.117a2 2 0 0 1 1.939 -1.515h1.439l4 1l3 -2" /><path d="M17 12v9" /><path d="M16 20h2" /></svg>
+                
+                <span>Journey</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/portfolio/' >
+                
+                
+                
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-gamepad-2" class="icon-tabler-device-gamepad"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /><path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /><path d="M8 9v2" /><path d="M7 10h2" /><path d="M14 10h2" /></svg>
+                
+                <span>Portfolio</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/update-log/' >
+                
+                
+                
+                <!--
+unicode: "fea7"
+version: "3.1"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#000000"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ class="icon-tabler-logs">
+  <path d="M4 12h.01" />
+  <path d="M4 6h.01" />
+  <path d="M4 18h.01" />
+  <path d="M8 18h2" />
+  <path d="M8 12h2" />
+  <path d="M8 6h2" />
+  <path d="M14 6h6" />
+  <path d="M14 12h6" />
+  <path d="M14 18h6" />
+</svg>
+
+                
+                <span>Update Log</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-archives">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-search">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-link">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-language">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                        <option value="https://nullshowjl.github.io/en/"  selected>English</option>
+                        
+                        <option value="https://nullshowjl.github.io/" >中文</option>
+                        
+                    </select>
+                </li>
+                
+                
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-left">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-toggle-right">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-hash">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#project-overview">Project Overview</a></li>
+    <li><a href="#learning-goals">Learning Goals</a></li>
+    <li><a href="#development-breakdown">Development Breakdown</a></li>
+    <li><a href="#key-insights-and-critical-steps">Key Insights and Critical Steps</a>
+      <ol>
+        <li><a href="#postprocessing">PostProcessing</a></li>
+        <li><a href="#separation-of-visuals-and-logic">Separation of Visuals and Logic</a></li>
+        <li><a href="#code-clarity-matters">Code Clarity Matters</a></li>
+        <li><a href="#input-handling-in-unity">Input Handling in Unity</a></li>
+        <li><a href="#input-placement">Input Placement</a></li>
+        <li><a href="#coordinate-system-setup">Coordinate System Setup</a></li>
+        <li><a href="#landing-implementation-logic">Landing Implementation Logic</a></li>
+        <li><a href="#dont-use-strings-to-identify-game-objects">Don’t Use Strings to Identify Game Objects</a></li>
+        <li><a href="#thruster-visual-effect-implementation">Thruster Visual Effect Implementation</a></li>
+        <li><a href="#timedeltatime-and-timefixeddeltatime"><code>Time.deltaTime</code> and <code>Time.fixedDeltaTime</code></a>
+          <ol>
+            <li><a href="#using-deltatime-in-update">Using <code>deltaTime</code> in <code>Update()</code></a></li>
+            <li><a href="#using-timefixeddeltatime-in-fixedupdate">Using <code>Time.fixedDeltaTime</code> in <code>FixedUpdate()</code></a></li>
+            <li><a href="#key-differences">Key Differences</a></li>
+          </ol>
+        </li>
+        <li><a href="#eventhandler"><code>EventHandler</code></a></li>
+        <li><a href="#temporarily-adding-color-to-text">Temporarily Adding Color to Text</a></li>
+        <li><a href="#using-a-state-machine-to-manage-game-states">Using a State Machine to Manage Game States</a></li>
+        <li><a href="#button-click-handling">Button Click Handling</a></li>
+        <li><a href="#handling-unchanging-level-number">Handling Unchanging Level Number</a></li>
+        <li><a href="#showing-a-full-map-preview-at-level-start">Showing a Full-Map Preview at Level Start</a>
+          <ol>
+            <li><a href="#create-an-empty-gameobject-named-cinemachinecamera2d-and-attach-the-custom-zoom-script-to-it">Create an empty GameObject named <code>CinemachineCamera2D</code> and attach the custom zoom script to it</a></li>
+            <li><a href="#set-the-zoom-out-value-in-gamelevel-so-each-level-can-be-configured-flexibly">Set the zoom-out value in <strong>GameLevel</strong> so each level can be configured flexibly</a></li>
+            <li><a href="#configure-it-in-gamemanager">Configure it in <strong>GameManager</strong></a></li>
+            <li><a href="#smooth-transition-when-switching-camera">Smooth transition when switching camera</a></li>
+          </ol>
+        </li>
+        <li><a href="#input-improvement-support-multiple-input-systems">Input improvement (support multiple input systems)</a>
+          <ol>
+            <li><a href="#extension">Extension</a></li>
+            <li><a href="#touch-input">Touch input</a></li>
+            <li><a href="#joystick-input">JoyStick Input</a></li>
+          </ol>
+        </li>
+        <li><a href="#using-sceneloader-to-manage-scenes">Using <strong>SceneLoader</strong> to manage scenes</a></li>
+        <li><a href="#keep-background-music-from-restarting-when-switching-levels">Keep background music from restarting when switching levels</a></li>
+      </ol>
+    </li>
+    <li><a href="#extension-1">Extension</a>
+      <ol>
+        <li><a href="#about-event-unregistration">About event unregistration</a>
+          <ol>
+            <li><a href="#same-lifecycle-landervisual-and-lander-components-are-on-the-same-gameobject">Same lifecycle: <strong>LanderVisual</strong> and <strong>Lander</strong> components are on the same GameObject</a></li>
+            <li><a href="#destroyed-together-when-the-lander-explodes-the-whole-gameobject-is-disabled">Destroyed together: when the lander explodes, the whole GameObject is disabled</a></li>
+            <li><a href="#unity-automatically-cleans-up-these-references-when-the-object-is-destroyed">Unity automatically cleans up these references when the object is destroyed</a></li>
+          </ol>
+        </li>
+        <li><a href="#cases-where-event-unregistration-is-required">Cases where event unregistration is required</a>
+          <ol>
+            <li><a href="#where-to-unregister">Where to unregister</a></li>
+          </ol>
+        </li>
+        <li><a href="#separating-visual-and-logic">Separating visual and logic</a></li>
+        <li><a href="#polish">Polish</a></li>
+      </ol>
+    </li>
+    <li><a href="#review-and-next-steps">Review and Next Steps</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/">
+                <img src="/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/cover_hu_8e572981fef33a16.jpg"
+                        srcset="/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/cover_hu_8e572981fef33a16.jpg 800w, /en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/cover_hu_6a8617e5f23fb73d.jpg 1600w"
+                        width="800" 
+                        height="240" 
+                        loading="lazy"
+                        alt="Featured image of post 【Unity】Learning Commercial-Grade Coding from a Beginner Mini Game" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/study-notes/" style="background-color: #2a9d8f; color: #fff;">
+                Study Notes
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/unitylearning-commercial-grade-coding-from-a-beginner-mini-game/">【Unity】Learning Commercial-Grade Coding from a Beginner Mini Game</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Using a simple beginner-level mini game as a starting point, study how professional indie game developers structure and build a project
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+<footer class="article-time">
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-date">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+        <time class="article-time--published">Jan 31, 2026</time>
+    </div>
+    
+
+    
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--reading">
+            11 minute read
+        </time>
+    </div>
+    
+
+    
+    <div id="viewCount">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye" class="icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+        <time class="article-time--reading">
+            
+            <span id="vercount_value_page_pv">loading... </span> views
+        </time>
+    </div>
+
+</footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><strong>Course Reference and Asset Source</strong>：<a class="link" href="https://www.youtube.com/watch?v=nGKd4yTP3M8&amp;t=19395s"  target="_blank" rel="noopener"
+    >Youtube-Code Monkey</a></p>
+<h2 id="project-overview">Project Overview
+</h2><p>《Lua Lander》是一个受经典游戏《Lunar Lander》启发的 2D 物理小游戏，核心玩法是操控小型飞船在外星地表安全着陆。</p>
+<p>&ldquo;Lua Lander&rdquo; is a 2D physics-based mini game inspired by the classic arcade game <em>Lunar Lander</em>. The core gameplay revolves around carefully piloting a small spacecraft to land safely on an alien surface.</p>
+<p><strong>Key mechanics of the original <em>Lunar Lander</em> include:</strong></p>
+<ul>
+<li>Using thrust and rotation to control the ship&rsquo;s direction and velocity</li>
+<li>Avoiding crashes caused by excessive speed or steep landing angles</li>
+<li>Gently touching down on designated landing pads to earn higher scores</li>
+<li>Managing limited resources: speed, angle, and fuel</li>
+</ul>
+<img src="./0-show.gif" alt="" style="zoom:100%;"/>
+<p>&ldquo;Lua Lander&rdquo; is a faithful recreation and expansion by Code Monkey, a well-known game development creator on YouTube. While preserving the original mechanics, the project introduces several <strong>enhanced gameplay features</strong>:</p>
+<ul>
+<li>More nuanced landing validation based on both velocity and angle</li>
+<li>Multiple landing platforms with score multipliers</li>
+<li>Fuel consumption system that adds flight cost management</li>
+<li>Coin collection for bonus points</li>
+<li>Thruster visual effects powered by a particle system and event-driven logic</li>
+</ul>
+<p>Beyond gameplay, the project also includes <strong>system-level improvements</strong>:</p>
+<ul>
+<li>A complete UI system</li>
+<li>A game state machine (Start → Playing → Game Over)</li>
+<li>Multi-level design using prefabs rather than separate scenes</li>
+<li>Level preview with Cinemachine and a custom 2D zoom solution</li>
+<li>Multi-input support (keyboard, gamepad, and touchscreen)</li>
+<li>Dedicated screens for main menu, pause menu, and game over</li>
+<li>Integrated sound effects and background music system</li>
+</ul>
+<img src="./1-show.gif" alt="" style="zoom:100%;"/>
+<h2 id="learning-goals">Learning Goals
+</h2><p>Code Monkey tends to build games with complex systems, large-scale projects, and high maintainability requirements. Consequently, his tutorials—regardless of difficulty level—consistently adopt professional-grade structures that demonstrate how to integrate clean code principles and industry best practices into real-world Unity projects.</p>
+<p>From this project, I aim not only to understand his problem-solving approaches and techniques for writing clean, readable code, but also to learn how to properly architect a game project and cultivate genuine game engineer thinking—laying a solid foundation for building my own complex projects in the future.</p>
+<p>Therefore, I’ll closely follow along with his development process, carefully documenting his methods and design decisions so I can apply them to my own work later.</p>
+<h2 id="development-breakdown">Development Breakdown
+</h2><p>The game was developed roughly in the following sequence:</p>
+<ul>
+<li>Post-processing effects (can be added at any stage)</li>
+<li>Lander implementation
+<ul>
+<li>Physics-based movement</li>
+<li>Visual effects for thrusters</li>
+</ul>
+</li>
+<li>Terrain creation
+<ul>
+<li>Using Sprite Shape</li>
+</ul>
+</li>
+<li>Camera follow system
+<ul>
+<li>Implemented with Cinemachine</li>
+</ul>
+</li>
+<li>Background setup</li>
+<li>Landing logic
+<ul>
+<li>Landing validation (based on speed and angle)</li>
+<li>Landing detection on platforms</li>
+</ul>
+</li>
+<li>Landing pad prefabs
+<ul>
+<li>Prefab Variants (platforms with different sizes and score multipliers)</li>
+<li>Dynamic visual indicator for score multiplier</li>
+</ul>
+</li>
+<li>Fuel system
+<ul>
+<li>Fuel capacity management</li>
+<li>Lander collecting fuel pickups</li>
+<li>Coin collection (implemented similarly to fuel)</li>
+</ul>
+</li>
+<li>GameManager</li>
+<li>UI system
+<ul>
+<li>Stats panel (fuel, score, etc.)</li>
+<li>Thrust direction indicator</li>
+<li>Fuel progress bar</li>
+<li>Game Over UI
+<ul>
+<li>Final score and stats summary</li>
+<li>Restart button</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Game state management
+<ul>
+<li>Start</li>
+<li>Restart</li>
+<li>Game Over</li>
+</ul>
+</li>
+<li>Explosion VFX</li>
+<li>New levels
+<ul>
+<li>Built using prefabs (not separate scenes)</li>
+</ul>
+</li>
+<li>Minimap / overview map</li>
+<li>Input System
+<ul>
+<li>Keyboard/button input</li>
+<li>Touch input</li>
+<li>Joystick/gamepad support</li>
+</ul>
+</li>
+<li>Main Menu Scene</li>
+<li>Pause UI
+<ul>
+<li>Triggered by UI button or Esc key</li>
+</ul>
+</li>
+<li>Game Over Scene
+<ul>
+<li>Displays total score</li>
+<li>Button to return to main menu</li>
+</ul>
+</li>
+<li>SoundManager &amp; MusicManager
+<ul>
+<li>Persistent background music across level transitions</li>
+<li>Volume control buttons</li>
+</ul>
+</li>
+<li>Polish (final touches, tuning, and refinement)</li>
+</ul>
+<h2 id="key-insights-and-critical-steps">Key Insights and Critical Steps
+</h2><h3 id="postprocessing">PostProcessing
+</h3><p>Visual enhancements like <strong>Bloom</strong> and <strong>Vignette</strong> were applied using Unity’s <strong>Volume → Global Volume → Add Override</strong> system. This affects both the in-game view and the Scene/Game window background. While only two effects were used here, Unity’s post-processing stack offers many more parameters—exposure, color grading, depth of field, etc.—that can be explored later as needed for mood, polish, or visual clarity.</p>
+<h3 id="separation-of-visuals-and-logic">Separation of Visuals and Logic
+</h3><p>A powerful architectural pattern used in this project:</p>
+<ul>
+<li>Create an <strong>empty root GameObject</strong> to hold all <strong>logic scripts</strong> (movement, physics, state, input handling, etc.).</li>
+<li>Attach the <strong>Sprite Renderer</strong> (or any visual element) as a <strong>child object</strong>, solely responsible for rendering.</li>
+<li>Additional visual elements—like particle effects, trails, or decals—are also added as separate child objects.</li>
+</ul>
+<p>This approach, though simple, delivers significant benefits:</p>
+<ul>
+<li><strong>Decoupled logic and presentation</strong>
+Logic scripts no longer depend on visual components (e.g., <code>SpriteRenderer</code>, <code>Animator</code>). They operate purely on data and state, making code cleaner, more testable, and easier to debug.</li>
+<li><strong>Effortless visual iteration</strong>
+Swapping sprites for animations, 2D art for 3D models, or changing visual styles becomes trivial—just replace or modify child objects. No need to touch core logic.</li>
+<li><strong>Independent visual transformations</strong>
+The visual child can rotate, scale, shake, or animate without affecting the parent’s stable transform—critical for effects like screen shake, hit reactions, or spinning thrusters while maintaining consistent physics behavior.</li>
+<li><strong>Precise control over collision and logic origin</strong>
+The root object’s transform serves as the true “center” for physics, AI, or gameplay logic, unaffected by artistic offsets in sprite pivots or mesh origins.</li>
+<li><strong>Prefab flexibility and reuse</strong>
+The same logic prefab can be paired with different visual variants (e.g., themed skins, difficulty-based appearances) simply by swapping child prefabs—ideal for scalable, maintainable projects.</li>
+</ul>
+<h3 id="code-clarity-matters">Code Clarity Matters
+</h3><p>Even when optional, <strong>explicitly declare access modifiers</strong> (e.g., <code>private</code>, <code>public</code>, <code>protected</code>).
+While C# defaults class members to <code>private</code> and interface methods to <code>public</code>, writing them out improves readability—especially in team environments or when reviewing code months later. Clear intent = fewer bugs and faster onboarding.</p>
+<h3 id="input-handling-in-unity">Input Handling in Unity
+</h3><p>As of <strong>Unity 6</strong>, both input systems remain available:</p>
+<ul>
+<li>The <strong>legacy Input Manager</strong> (<code>Input.GetKey</code>, etc.)</li>
+<li>The newer, more robust <strong>Input System package</strong> (with support for keyboard, gamepad, touch, and custom devices)</li>
+</ul>
+<p>This project uses the <strong>new Input System</strong>, which enables:</p>
+<ul>
+<li>Unified handling of multiple input devices (keyboard, controller, touchscreen)</li>
+<li>Clean separation of input actions from gameplay logic</li>
+<li>Runtime rebinding and better platform portability</li>
+</ul>
+<p>For future projects targeting multiple platforms (especially mobile + desktop + console), adopting the new Input System is strongly recommended—it aligns with modern Unity best practices and scales far better than the legacy approach.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Previous version</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKey</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">UpArrow</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;Up&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Unity6</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">UpArrowKey</span><span class="p">.</span><span class="n">isPressed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;Up&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="input-placement">Input Placement
+</h3><p>Generally, input should be placed in <code>Update()</code>, because <code>Update</code> checks every frame for input. However, in this project, input can be directly placed in <code>FixedUpdate()</code> because we’re using <code>isPressed</code>—meaning that as long as a key is held down (<code>isPressed</code> / <code>GetKey</code>), it will still be detected even when checked at the fixed timestep of <code>FixedUpdate</code>.</p>
+<p>However, if you’re using APIs that detect the exact moment a key is pressed or released (<code>GetKeyDown</code> / <code>GetKeyUp</code>), it’s recommended to place them in <code>Update()</code>, as they might be missed in <code>FixedUpdate</code>.</p>
+<p>Additionally, any physics-related updates must always be placed in <code>FixedUpdate()</code>.</p>
+<blockquote class="alert alert-note">
+    <p>If you must put movement logic in <code>Update()</code>, always multiply by <code>Time.deltaTime</code> to ensure consistent speed across computers with different framerates.
+Although you don’t need to multiply by <code>Time.fixedDeltaTime</code> in <code>FixedUpdate</code>, adding it doesn’t hurt.</p></blockquote>
+<h3 id="coordinate-system-setup">Coordinate System Setup
+</h3><p>Because we’ve adopted the visual/logic separation approach, we must set the gizmo coordinate system to <strong>Pivot</strong> and <strong>Local</strong>.</p>
+<p>If set to <strong>Center</strong>, the pivot point becomes the center between the parent and child objects. Setting it to <strong>Pivot</strong> ensures each object uses its own origin as the center.</p>
+<p>In this project, we want the lander to move upward relative to <strong>its own orientation</strong> when the up arrow key is pressed. Therefore, the coordinate reference must be set to <strong>Local</strong>. If set to <strong>Global</strong>, pressing the up arrow would always move the lander toward the screen’s top, regardless of its current rotation.</p>
+<h3 id="landing-implementation-logic">Landing Implementation Logic
+</h3><p>Landing validation has two aspects:</p>
+<ul>
+<li>The ship must be nearly upright upon landing.</li>
+<li>The ship must land gently (at low speed).</li>
+</ul>
+<p>For landing softness, we use <code>Collision.relativeVelocity</code>—a read-only property of the <code>Collision</code> class that represents the relative linear velocity between the two colliding objects.</p>
+<p>For landing angle validation, we use the dot product between two vectors: the object’s local up vector (<code>transform.up</code>) and the world’s up vector (<code>Vector2.up</code>).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============ Lander.cs ===========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">softLandingVelocityMagnitude</span> <span class="p">=</span> <span class="m">3f</span><span class="p">;</span>	<span class="c1">//  Set based on in-game performance metrics</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">relativeVelocity</span><span class="p">.</span><span class="n">magnitude</span> <span class="p">&gt;</span> <span class="n">softLandingVelocityMagnitude</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print</span><span class="p">(</span><span class="s">&#34;Landing too hard!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">minDotVector</span> <span class="p">=</span> <span class="m">0.92f</span><span class="p">;</span>	<span class="c1">//  Set based on in-game performance metrics</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">dotVector</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">Dot</span><span class="p">(</span><span class="n">Vector2</span><span class="p">.</span><span class="n">up</span><span class="p">,</span> <span class="n">transform</span><span class="p">.</span><span class="n">up</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="n">dotVector</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dotVector</span> <span class="p">&lt;</span> <span class="n">minDotVector</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print</span><span class="p">(</span><span class="s">&#34;landing angle too steep!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s">&#34;Safe landing!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote class="alert alert-tip">
+    <p>How to determine appropriate threshold values?
+If you’re unsure what value to use for a certain condition, print it out in the console and observe the actual values during gameplay under different scenarios. In this project, the landing/crash thresholds were determined exactly this way.</p></blockquote>
+<h3 id="dont-use-strings-to-identify-game-objects">Don’t Use Strings to Identify Game Objects
+</h3><p>Strings should only be used for display text—never for finding objects or relying on Unity’s built-in Tags. It’s extremely error-prone: a typo, incorrect capitalization, or an accidental trailing space will cause the lookup to fail silently.</p>
+<blockquote class="alert alert-note">
+    <p>Use component-based queries instead.</p></blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">// Identify whether it&#39;s a landing pad</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">&lt;</span><span class="n">LandingPad</span><span class="p">&gt;(</span><span class="k">out</span> <span class="n">LandingPad</span> <span class="n">landingPad</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s">&#34;landing pad&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="thruster-visual-effect-implementation">Thruster Visual Effect Implementation
+</h3><p>Again, for the sake of decoupling, <code>Lander.cs</code> should contain no visual-related code. Therefore, events are used to trigger effects.</p>
+<p>Additionally, the Particle System—like <code>transform.position</code>—is read-only, meaning you cannot modify it directly. Instead, you must access and adjust it indirectly through its <code>EmissionModule</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">ParticleSystem</span><span class="p">.</span><span class="n">EmissionModule</span> <span class="n">emissionModule</span> <span class="p">=</span> <span class="n">leftThrusterParticalSystem</span><span class="p">.</span><span class="n">emission</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">emissionModule</span><span class="p">.</span><span class="n">enabled</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="timedeltatime-and-timefixeddeltatime"><code>Time.deltaTime</code> and <code>Time.fixedDeltaTime</code>
+</h3><h4 id="using-deltatime-in-update">Using <code>deltaTime</code> in <code>Update()</code>
+</h4><ul>
+<li><strong>Purpose</strong>: Compensate for variable frame rates</li>
+<li><code>Update()</code> is called at a frequency dependent on the current frame rate (e.g., 30fps, 60fps, 144fps)</li>
+<li><code>deltaTime</code> records the actual time elapsed since the last frame</li>
+<li>Multiplying movement by <code>deltaTime</code> ensures consistent real-world speed across different frame rates</li>
+</ul>
+<h4 id="using-timefixeddeltatime-in-fixedupdate">Using <code>Time.fixedDeltaTime</code> in <code>FixedUpdate()</code>
+</h4><ul>
+<li><strong>Purpose</strong>: Enable physics simulation with a fixed timestep</li>
+<li><code>FixedUpdate()</code> is called at fixed intervals (default: 0.02 seconds, i.e., 50 times per second), independent of frame rate</li>
+<li><code>Time.fixedDeltaTime</code> holds this fixed interval value (usually constant)</li>
+<li>The physics engine requires a fixed timestep to ensure stable and predictable simulations</li>
+</ul>
+<h4 id="key-differences">Key Differences
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th><code>Update()</code> + <code>deltaTime</code></th>
+          <th><code>FixedUpdate()</code> + <code>fixedDeltaTime</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Time Interval</strong></td>
+          <td>Variable (frame-rate dependent)</td>
+          <td>Fixed (default 0.02 seconds)</td>
+      </tr>
+      <tr>
+          <td><strong>Purpose</strong></td>
+          <td>Compensate for frame-rate differences</td>
+          <td>Ensure stable physics simulation</td>
+      </tr>
+      <tr>
+          <td><strong>Use Case</strong></td>
+          <td>Rendering, input, non-physics logic</td>
+          <td>Physics calculations, Rigidbody operations</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="eventhandler"><code>EventHandler</code>
+</h3><p>Because this project is relatively small, and <code>GameManager</code> centrally manages all game data while <code>Lander</code> is the core gameplay object, directly referencing <code>GameManager</code> as a singleton from <code>Lander.cs</code> would be acceptable (tight coupling between <code>Lander</code> and <code>GameManager</code>).</p>
+<p>However, an alternative—and more decoupled—approach is to use event listening: <code>GameManager</code> reacts to events raised by <code>Lander.cs</code> via <code>EventHandler</code>. This project adopts the latter strategy.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//=============== Lander.cs ===============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnTriggerEnter2D</span><span class="p">(</span><span class="n">Collider2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">TryGetComponent</span><span class="p">(</span><span class="k">out</span> <span class="n">CoinPickup</span> <span class="n">coinPickup</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">OnCoinPickup</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">coinPickup</span><span class="p">.</span><span class="n">DestroySelf</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//============== GameManager.cs =============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GameManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Lander</span> <span class="n">lander</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span> <span class="p">=</span> <span class="n">lander</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Lander</span><span class="p">&gt;();</span> <span class="c1">// Since we&#39;re getting a component from another unrelated GameObject, do it in Start()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span><span class="p">.</span><span class="n">OnCoinPickup</span> <span class="p">+=</span> <span class="n">Lander_PickupCoin</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Lander_PickupCoin</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">AddScore</span><span class="p">(</span><span class="m">500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">AddScore</span><span class="p">(</span><span class="kt">int</span> <span class="n">addScoreAmount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">+=</span> <span class="n">addScoreAmount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print</span><span class="p">(</span><span class="n">score</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Even though the parameters <code>object sender</code> and <code>EventArgs e</code> aren’t used inside <code>Lander_PickupCoin</code>, they must remain in the method signature because:</p>
+<ol>
+<li><strong>Event signature matching</strong>: The <code>lander.OnCoinPickup</code> event expects a handler with this exact signature</li>
+<li><strong>C# event pattern</strong>: This follows the standard .NET <code>EventHandler</code> delegate convention</li>
+</ol>
+<p>Removing these parameters would cause a compilation error.</p>
+<p><strong>Purpose of the parameters</strong>:</p>
+<ul>
+<li><code>object sender</code>: Identifies which object triggered the event (here, the <code>lander</code> instance)</li>
+<li><code>EventArgs e</code>: Carries event-specific data (e.g., coin value)</li>
+</ul>
+<p>If you explicitly want to indicate these parameters are unused, you can use <strong>discard syntax</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Lander_PickupCoin</span><span class="p">(</span><span class="kt">object</span> <span class="n">_</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">_</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AddScore</span><span class="p">(</span><span class="m">500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Example of using parameters in <code>EventHandler</code></strong></p>
+<p>For instance, when implementing “award different scores based on landing quality”:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//========== Lander.cs ==========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">event</span> <span class="n">EventHandler</span><span class="p">&lt;</span><span class="n">OnLandedEventArgs</span><span class="p">&gt;</span> <span class="n">OnLanded</span><span class="p">;</span>     <span class="c1">// / Different landing outcomes yield different scores, so pass score via EventArgs</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OnLandedEventArgs</span> <span class="p">:</span> <span class="n">EventArgs</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Landing on a platform</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">other</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">score</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">RoundToInt</span><span class="p">(</span><span class="n">landingSpeedScore</span> <span class="p">+</span> <span class="n">landingAngleScore</span><span class="p">)</span> <span class="p">*</span> <span class="n">landingPad</span><span class="p">.</span><span class="n">GetScoreMultiplier</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s">&#34;score: &#34;</span> <span class="p">+</span> <span class="n">score</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OnLanded</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">new</span> <span class="n">OnLandedEventArgs</span>	<span class="c1">// Pass score when invoking</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="p">=</span> <span class="n">score</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//============ GameManager.cs ===========</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GameManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Actually use the score parameter</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Lander_OnLanded</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">Lander</span><span class="p">.</span><span class="n">OnLandedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">AddScore</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">score</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="temporarily-adding-color-to-text">Temporarily Adding Color to Text
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"> <span class="n">titleTxtMesh</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&#34;&lt;color=#ff0000&gt;CRUSH!&lt;/color&gt;&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="using-a-state-machine-to-manage-game-states">Using a State Machine to Manage Game States
+</h3><p>Define game states using an <code>enum</code>, then link them to input. This is implemented directly in the <code>Lander</code>/<code>Player</code> script and remains quite straightforward.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============ Lander.cs ============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">State</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">WaitingToStart</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Normal</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Gameover</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="kd">private</span> <span class="k">void</span> <span class="n">FixedUpdate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">switch</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="k">case</span> <span class="n">State</span><span class="p">.</span><span class="n">WaitingToStart</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">             <span class="k">if</span> <span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">upArrowKey</span><span class="p">.</span><span class="n">isPressed</span> <span class="p">||</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">rightArrowKey</span><span class="p">.</span><span class="n">isPressed</span> <span class="p">||</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">leftArrowKey</span><span class="p">.</span><span class="n">isPressed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                 <span class="c1">// Start game on any key press</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">landerRigidbody2D</span><span class="p">.</span><span class="n">gravityScale</span> <span class="p">=</span> <span class="n">GRAVITY_NORMAL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">SetState</span><span class="p">(</span><span class="n">State</span><span class="p">.</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">             <span class="p">}</span>
+</span></span><span class="line"><span class="cl">             <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">         <span class="k">case</span> <span class="n">State</span><span class="p">.</span><span class="n">Normal</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">             <span class="k">if</span> <span class="p">(</span><span class="n">fuelAmount</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">             <span class="k">if</span> <span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">upArrowKey</span><span class="p">.</span><span class="n">isPressed</span> <span class="p">||</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">rightArrowKey</span><span class="p">.</span><span class="n">isPressed</span> <span class="p">||</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">leftArrowKey</span><span class="p">.</span><span class="n">isPressed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">ConsumeFuel</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">             <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">             <span class="k">if</span> <span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">upArrowKey</span><span class="p">.</span><span class="n">isPressed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">landerRigidbody2D</span><span class="p">.</span><span class="n">AddForce</span><span class="p">(</span><span class="n">force</span> <span class="p">*</span> <span class="n">transform</span><span class="p">.</span><span class="n">up</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                 <span class="c1">// Broadcast event</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">OnUpForce</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">             <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">             <span class="k">if</span> <span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">leftArrowKey</span><span class="p">.</span><span class="n">isPressed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">landerRigidbody2D</span><span class="p">.</span><span class="n">AddTorque</span><span class="p">(</span><span class="n">turnSpeed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">OnLeftForce</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">             <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">             <span class="k">if</span> <span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">rightArrowKey</span><span class="p">.</span><span class="n">isPressed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">landerRigidbody2D</span><span class="p">.</span><span class="n">AddTorque</span><span class="p">(-</span><span class="n">turnSpeed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">OnRightForce</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">             <span class="p">}</span>
+</span></span><span class="line"><span class="cl">             <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">         <span class="k">case</span> <span class="n">State</span><span class="p">.</span><span class="n">Gameover</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">             <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">}</span>      
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Explosion Effect Implementation</strong>:</p>
+<p>This is also handled via events. However, note that the subscription to <code>OnLanded</code> (which triggers the explosion) is registered in <code>Start()</code>, not in <code>Awake()</code> like the thruster effects—due to three reasons:</p>
+<ul>
+<li><strong>One-time event</strong>: It only fires once during the entire game</li>
+<li><strong>Potential dependencies</strong>: Explosion effects or game state systems may rely on other objects initialized in their own <code>Awake()</code></li>
+<li><strong>No immediate need</strong>: Landing doesn’t occur instantly at game start</li>
+</ul>
+<p><strong>Summary: Benefits of registering the explosion event in <code>Start()</code></strong>:</p>
+<ol>
+<li><strong>Code organization</strong>: Separates initialization of frequent events (<code>Awake</code>) from one-off game logic (<code>Start</code>)</li>
+<li><strong>Avoids potential issues</strong>: Ensures more predictable subscription order if other scripts also listen to <code>OnLanded</code> in their <code>Awake()</code></li>
+</ol>
+<h3 id="button-click-handling">Button Click Handling
+</h3><p>The project doesn’t use Unity’s “bind button in the Inspector” approach. Instead, button callbacks are registered directly in code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="na">[SerializeField]</span> <span class="kd">private</span> <span class="n">Button</span> <span class="n">nextBtn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nextBtn</span><span class="p">.</span><span class="n">onClick</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(()</span> <span class="p">=&gt;</span>	<span class="c1">// Lambda syntax is used here since there are no parameters or return values—this is the most concise way</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    	<span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadScene</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After adding multiple levels, a callback function determines whether clicking the button loads the next level or restarts the current one. An <code>Action</code> delegate is used to store the function reference—not for its event capabilities, but for its flexibility in assignment.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//=========== LandedUI.cs ============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">LandedUI</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="na">    
+</span></span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Button</span> <span class="n">nextBtn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Action</span> <span class="n">nextBtnClickAction</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">nextBtn</span><span class="p">.</span><span class="n">onClick</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nextBtnClickAction</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Lander</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">OnLanded</span> <span class="p">+=</span> <span class="n">Lander_OnLanded</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Hide</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Lander_OnLanded</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">Lander</span><span class="p">.</span><span class="n">OnLandedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">landingType</span> <span class="p">==</span> <span class="n">Lander</span><span class="p">.</span><span class="n">LandingType</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">titleTxtMesh</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&#34;SUCCESSFUL LANDING!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nextBtnClickAction</span> <span class="p">=</span> <span class="n">GameManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">GoToNextLevel</span><span class="p">;</span>	<span class="c1">// Assign different callback based on landing outcome</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">titleTxtMesh</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&#34;&lt;color=#ff0000&gt;CRUSH!&lt;/color&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nextBtnClickAction</span> <span class="p">=</span> <span class="n">GameManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">RetryLevel</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="handling-unchanging-level-number">Handling Unchanging Level Number
+</h3><p>The <code>levelNumber</code> was initially a regular instance variable. However, since <code>GameManager</code> gets destroyed when a scene reloads, the variable resets to its default value (e.g., 1), preventing progression to the next level.</p>
+<p>The solution used in the tutorial is to declare <code>levelNumber</code> as <code>static</code>. This keeps it alive in memory across scene reloads. When the new <code>GameManager</code> instance is created in the reloaded scene, it reads the preserved static value and correctly loads the next level.</p>
+<h3 id="showing-a-full-map-preview-at-level-start">Showing a Full-Map Preview at Level Start
+</h3><p>Since each level has a different map layout, this script must be attached to every level scene. It controls the <code>CinemachineCamera</code> to switch the follow target between the pre-game overview state and the in-game lander-following state.</p>
+<p>Unity’s <strong>2D Cinemachine setup</strong> (<code>CinemachineVirtualCamera</code> + <code>Framing Transposer 2D</code>) does <strong>not</strong> include built-in zoom functionality. Therefore, a custom script is required to implement zoom behavior.</p>
+<p>In contrast, in <strong>3D mode</strong>, <code>CinemachineVirtualCamera</code> provides built-in zoom via the <strong>Lens → Field of View (FOV)</strong> or <strong>Orthographic Size</strong> properties, which can be directly adjusted for zoom effects.</p>
+<h4 id="create-an-empty-gameobject-named-cinemachinecamera2d-and-attach-the-custom-zoom-script-to-it">Create an empty GameObject named <code>CinemachineCamera2D</code> and attach the custom zoom script to it
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============== CinemachineCameraZoom2D.cs ===============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">CinemachineCameraZoom2D</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">const</span> <span class="kt">int</span> <span class="n">NORMAL_ORTHOGRAPHIC_SIZE</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">CinemachineCameraZoom2D</span> <span class="n">Instance</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="kd">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">CinemachineCamera</span> <span class="n">cinemachineCamera</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">float</span> <span class="n">targetOrthographicSize</span> <span class="p">=</span> <span class="m">10f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Instance</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cinemachineCamera</span><span class="p">.</span><span class="n">Lens</span><span class="p">.</span><span class="n">OrthographicSize</span> <span class="p">=</span> <span class="n">targetOrthographicSize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">SetTargetOrthographicSize</span><span class="p">(</span><span class="kt">float</span> <span class="n">targetOrthographicSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="n">targetOrthographicSize</span> <span class="p">=</span> <span class="n">targetOrthographicSize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">SetNormalOrthographicSize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SetTargetOrthographicSize</span><span class="p">(</span><span class="n">NORMAL_ORTHOGRAPHIC_SIZE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="set-the-zoom-out-value-in-gamelevel-so-each-level-can-be-configured-flexibly">Set the zoom-out value in <strong>GameLevel</strong> so each level can be configured flexibly
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============== GameLevel.cs ===============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GameLevel</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="kt">float</span> <span class="n">zoomedOutOrthographicSize</span><span class="p">;</span>   <span class="c1">// Put this value in GameLevel so each level can set it freely</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">GetZoomOutOrthographicSize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">zoomedOutOrthographicSize</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="configure-it-in-gamemanager">Configure it in <strong>GameManager</strong>
+</h4><p>When the level is loaded and the player has not started yet, let Cinemachine zoom out to show the full view. When the player presses a key to start, reset the Cinemachine camera range back to normal.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============== GameManager.cs ==============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">GameManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> 	<span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">LoadCurrentLevel</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="n">GameLevel</span> <span class="n">level</span> <span class="k">in</span> <span class="n">gameLevelList</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">level</span><span class="p">.</span><span class="n">GetLevelNumber</span><span class="p">()</span> <span class="p">==</span> <span class="n">levelNumber</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">GameLevel</span> <span class="n">spawnedLevel</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Lander</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">spawnedLevel</span><span class="p">.</span><span class="n">GetLanderStartingPos</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="c1">// Use Cinemachine to show the map </span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// Essentially set Cinemachine’s tracking target to the map center </span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// instead of following the lander right away</span>
+</span></span><span class="line"><span class="cl">                <span class="n">cinemachineCamera</span><span class="p">.</span><span class="n">Target</span><span class="p">.</span><span class="n">TrackingTarget</span> <span class="p">=</span> <span class="n">spawnedLevel</span><span class="p">.</span><span class="n">GetCameraStartTargetTransform</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// zoom out</span>
+</span></span><span class="line"><span class="cl">                <span class="n">CinemachineCameraZoom2D</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">SetTargetOrthographicSize</span><span class="p">(</span><span class="n">spawnedLevel</span><span class="p">.</span><span class="n">GetZoomOutOrthographicSize</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Lander_OnStateChange</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">Lander</span><span class="p">.</span><span class="n">OnStateChangeEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// After the game starts, Cinemachine follows the lander</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cinemachineCamera</span><span class="p">.</span><span class="n">Target</span><span class="p">.</span><span class="n">TrackingTarget</span> <span class="p">=</span> <span class="n">Lander</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Cancel zoom out, restore normal camera settings</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CinemachineCameraZoom2D</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">SetNormalOrthographicSize</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="smooth-transition-when-switching-camera">Smooth transition when switching camera
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============== CinemachineCameraZoom2D.cs ===============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Smooth camera transition using Lerp</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">zoomSpeed</span> <span class="p">=</span> <span class="m">2f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cinemachineCamera</span><span class="p">.</span><span class="n">Lens</span><span class="p">.</span><span class="n">OrthographicSize</span> <span class="p">=</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">Mathf</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="n">cinemachineCamera</span><span class="p">.</span><span class="n">Lens</span><span class="p">.</span><span class="n">OrthographicSize</span><span class="p">,</span> <span class="n">targetOrthographicSize</span><span class="p">,</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span> <span class="p">*</span> <span class="n">zoomSpeed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="input-improvement-support-multiple-input-systems">Input improvement (support multiple input systems)
+</h3><ol>
+<li>Create your own <strong>InputActions</strong> =&gt; Edit Asset =&gt; Action Maps. In Action Maps, add inputs for Player, and bind keys for the three player actions (up / left / right).</li>
+</ol>
+<img src="./2-input.webp" alt="" style="zoom:70%;"/>
+<p>Then check the box to create a C# class. This way you can control it directly through scripts. This is the method recommended by Code Monkey, instead of using strings. As a result, the InputActions we created generate their own C# script.</p>
+<ol start="2">
+<li>Create your own <strong>GameInput</strong> script</li>
+</ol>
+<p>Create an empty GameObject and attach a new script to it. This script acts as a middle layer, so other scripts don’t directly depend on InputActions.cs (tight coupling). The benefits are:</p>
+<ul>
+<li><strong>Decoupling</strong> – Game logic does not directly depend on InputActions implementation</li>
+<li><strong>Single entry point</strong> – All input is managed in one place</li>
+<li><strong>Easy testing</strong> – Input can be easily mocked (Mock GameInput)</li>
+<li><strong>Flexible extension</strong> – Future features like input recording or replay only require changes in GameInput</li>
+</ul>
+<h4 id="extension">Extension
+</h4><h5 id="drawbacks-of-the-old-input-system">Drawbacks of the old Input System
+</h5><p>Unity’s old input system (<code>Input.GetKey()</code>, <code>Input.GetAxis()</code>, etc.) has these problems:</p>
+<ul>
+<li>Hard-coded input checks – Keys are fixed in code (e.g., <code>Input.GetKey(KeyCode.W)</code>)</li>
+<li>Difficult to rebind – Players cannot customize key bindings</li>
+<li>Poor multi-device support – Handling controllers, touch screens, etc. is complicated</li>
+<li>Lack of flexibility – Input logic is scattered everywhere, hard to maintain</li>
+</ul>
+<h5 id="advantages-of-the-new-input-system">Advantages of the new Input System
+</h5><p>InputActions provide:</p>
+<ul>
+<li><strong>Config-driven</strong> – Configure input via the visual editor, no code changes needed</li>
+<li><strong>Device-independent</strong> – One Action can support keyboard, controller, and touch at the same time</li>
+<li><strong>Easy rebinding</strong> – Change key bindings dynamically at runtime</li>
+<li><strong>Better performance</strong> – Event-driven instead of frame-by-frame polling</li>
+</ul>
+<h5 id="good-practice">Good practice
+</h5><p>Since input is also a kind of resource, you need to call <strong>Enable</strong> and <strong>Disable</strong> properly:</p>
+<p>When calling <strong>Enable</strong>, internally it will:</p>
+<ul>
+<li>Register listeners with Unity’s input system</li>
+<li>Start receiving input events from hardware (keyboard, controller, etc.)</li>
+<li>Consume system resources and memory</li>
+</ul>
+<p>When calling <strong>Disable</strong>, internally it will:</p>
+<ul>
+<li>Unregister all listeners</li>
+<li>Stop processing input events</li>
+<li>Release related resources</li>
+</ul>
+<h4 id="touch-input">Touch input
+</h4><p>GamePad binding and keyboard binding are the same. Touch input is slightly different.</p>
+<ol>
+<li>Create an empty GameObject <strong>TouchUI</strong> under Canvas</li>
+<li>Create three UIImage circles under TouchUI</li>
+<li>Add <strong>On-Screen Button</strong> components to the three circles</li>
+<li>Use the simulator to preview effects on different touch devices</li>
+</ol>
+<img src="./3-simulator.webp" alt="" style="zoom:70%;"/>
+<h4 id="joystick-input">JoyStick Input
+</h4><p>Unlike button input, the Action type for joystick needs to be set to <strong>Value =&gt; Vector2</strong>.</p>
+<img src="./4-joystick.webp" alt="" style="zoom:70%;"/>
+<p>Just like button input, you simply add it in the corresponding script.</p>
+<h3 id="using-sceneloader-to-manage-scenes">Using <strong>SceneLoader</strong> to manage scenes
+</h3><p>To avoid using “magic numbers” like <code>SceneManager.LoadScene(0);</code> when loading scenes, we use a script to control scene loading.</p>
+<p>Since it will exist globally, we set it as a static class that does not inherit from MonoBehaviour. Note that in this case, all members inside the class must also be static.</p>
+<p>In addition, the tutorial avoids using magic numbers or direct strings by setting scenes as an <strong>enum</strong>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="c1">//============ MainMenuUI.cs ============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MainMenuUI</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Button</span> <span class="n">playBtn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [SerializeField]</span> <span class="kd">private</span> <span class="n">Button</span> <span class="n">quitBtn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">playBtn</span><span class="p">.</span><span class="n">onClick</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">SceneLoader</span><span class="p">.</span><span class="n">LoadScene</span><span class="p">(</span><span class="n">SceneLoader</span><span class="p">.</span><span class="n">Scene</span><span class="p">.</span><span class="n">GameScene</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">quitBtn</span><span class="p">.</span><span class="n">onClick</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Application</span><span class="p">.</span><span class="n">Quit</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//============== SceneLoader.cs ===============</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">SceneLoader</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Scene</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MainMenuScene</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">GameScene</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">LoadScene</span><span class="p">(</span><span class="n">Scene</span> <span class="n">scene</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadScene</span><span class="p">(</span><span class="n">scene</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="keep-background-music-from-restarting-when-switching-levels">Keep background music from restarting when switching levels
+</h3><p>You can handle this by making the music playback time <strong>static</strong>. (In this tutorial, any data that needs to stay consistent across levels is solved by setting it as static.)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MusicManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">AudioSource</span> <span class="n">musicAudioSource</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="n">musicTime</span> <span class="p">=</span> <span class="m">0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">musicAudioSource</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">AudioSource</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">musicAudioSource</span><span class="p">.</span><span class="n">time</span> <span class="p">=</span> <span class="n">musicTime</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">Update</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">musicTime</span> <span class="p">=</span> <span class="n">musicAudioSource</span><span class="p">.</span><span class="n">time</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="extension-1">Extension
+</h2><h3 id="about-event-unregistration">About event unregistration
+</h3><p>In this project, events are used in many places to achieve decoupling. However, in most cases there is no unregistration. This is not best practice.</p>
+<p>It is temporarily safe not to unregister in the following situations:</p>
+<h4 id="same-lifecycle-landervisual-and-lander-components-are-on-the-same-gameobject">Same lifecycle: <strong>LanderVisual</strong> and <strong>Lander</strong> components are on the same GameObject
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">lander</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Lander</span><span class="p">&gt;();</span>  <span class="c1">// same object</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="destroyed-together-when-the-lander-explodes-the-whole-gameobject-is-disabled">Destroyed together: when the lander explodes, the whole GameObject is disabled
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="n">gameObject</span><span class="p">.</span><span class="n">SetActive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// LanderVisual and Lander are disabled together</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="unity-automatically-cleans-up-these-references-when-the-object-is-destroyed">Unity automatically cleans up these references when the object is destroyed
+</h4><p>Best practice is to unregister events when the object is destroyed:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c#" data-lang="c#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">OnDestroy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">lander</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span><span class="p">.</span><span class="n">OnUpForce</span> <span class="p">-=</span> <span class="n">Lander_OnUpForce</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span><span class="p">.</span><span class="n">OnLeftForce</span> <span class="p">-=</span> <span class="n">Lander_OnLeftForce</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span><span class="p">.</span><span class="n">OnRightForce</span> <span class="p">-=</span> <span class="n">Lander_OnRightForce</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span><span class="p">.</span><span class="n">OnBeforeForce</span> <span class="p">-=</span> <span class="n">Lander_OnBeforeForce</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lander</span><span class="p">.</span><span class="n">OnLanded</span> <span class="p">-=</span> <span class="n">Lander_OnLanded</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="cases-where-event-unregistration-is-required">Cases where event unregistration is required
+</h3><ol>
+<li>The subscriber’s lifecycle is shorter than the publisher’s</li>
+<li>The subscriber may be created/destroyed multiple times (without unregistration, it will cause duplicate subscriptions)</li>
+<li>Cross-scene events</li>
+</ol>
+<blockquote class="alert alert-tip">
+    <p>Making a habit of unregistering events is safer. It helps avoid:</p>
+<ul>
+<li>Memory leaks</li>
+<li>Duplicate triggers</li>
+<li>Hard-to-track bugs</li>
+</ul></blockquote>
+<blockquote class="alert alert-note">
+    <p>Always follow this rule: <strong>Unregister in the corresponding cleanup method where you registered.</strong></p></blockquote>
+<h4 id="where-to-unregister">Where to unregister
+</h4><p>Unregistration usually happens in <strong>Destroy</strong> or <strong>Disable</strong>. Which one to choose? It depends on the timing of event unregistration.</p>
+<p><strong>Core principle: pairing</strong></p>
+<p>Event registration and unregistration should be paired in the corresponding lifecycle methods:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Registration</th>
+          <th>Unregistration</th>
+          <th>Usage scenario</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Awake() / Start()</td>
+          <td>OnDestroy()</td>
+          <td>Register once during object lifecycle</td>
+      </tr>
+      <tr>
+          <td>OnEnable()</td>
+          <td>OnDisable()</td>
+          <td>Object may be enabled/disabled repeatedly</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="separating-visual-and-logic">Separating visual and logic
+</h3><p>In this project, Code Monkey attaches all visual scripts to the main GameObject, while the sprite is just a clean image. This <strong>approach is suitable for:</strong></p>
+<ul>
+<li>Small projects</li>
+<li>Simple visuals</li>
+<li>No skin system</li>
+<li>No complex animations</li>
+<li>No multi-layer visual components</li>
+<li>Low coupling between logic and visuals</li>
+</ul>
+<p>Another approach is to put visual scripts on child objects of the sprite. This is common in larger projects, <strong>suitable for:</strong></p>
+<ul>
+<li>Characters with multi-layer visuals</li>
+<li>Skin systems</li>
+<li>Animation state machines</li>
+<li>UI bindings</li>
+<li>Particles, effects, lighting</li>
+<li>Multiplayer sync (visuals not involved in sync)</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Complete decoupling</li>
+<li>Visuals can be replaced</li>
+<li>Logic can be reused</li>
+<li>Prefabs are more modular</li>
+<li>Better suited for large projects</li>
+</ul>
+<h3 id="polish">Polish
+</h3><p>Code Monkey repeatedly emphasizes the importance of polish, and I agree. However, my main purpose in taking this course is to see how professional indie developers use <strong>clean code</strong> and <strong>modular design</strong> to build loosely coupled, scalable games. So for now, I will skip the polish part.</p>
+<p>I plan to take a dedicated course later to learn polish techniques.</p>
+<p>Here I note the plugins Code Monkey used in the course, so I can reference them when needed:</p>
+<ul>
+<li>Feel（Code Monkey有review视频）</li>
+<li>All in 1 Sprite Shader （Code Monkey有review视频）</li>
+<li>Text Animatior</li>
+<li>Hot Reload</li>
+<li>Code Monkey Toolkit</li>
+</ul>
+<h2 id="review-and-next-steps">Review and Next Steps
+</h2><p>Even though this is just an entry-level course, I still learned a lot. The main points include:</p>
+<ul>
+<li>
+<p><strong>Separation of visual and logic</strong></p>
+<p>For a project of this size, no scripts are attached to the sprite; everything is placed in an empty GameObject</p>
+</li>
+<li>
+<p><strong>Single Responsibility Principle</strong></p>
+<p>Each class and function is relatively small, responsible for only one thing</p>
+</li>
+<li>
+<p><strong>Observer Pattern</strong></p>
+<p>Used extensively for decoupling, including UI, sound effects, etc</p>
+</li>
+<li>
+<p><strong>Advantages of using C# standard EventHandler</strong></p>
+<p>Besides proper naming, it allows adding parameters, which is sometimes very useful</p>
+</li>
+<li>
+<p><strong>Input System usage</strong></p>
+<p>Compared to the old input system, the new one requires almost no code changes when connecting different input devices, which is very convenient</p>
+</li>
+<li>
+<p><strong>Using prefabs to add levels</strong></p>
+<p>This is the first time I learned this method. Summary comparison between using <strong>Scene</strong> and <strong>Prefab</strong> for level design:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Item</th>
+          <th>Scene for levels</th>
+          <th>Prefab for levels</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Best suited for</strong></td>
+          <td>Large scenes, story levels, worlds</td>
+          <td>Multi-level, repeated structures, procedural, roguelike</td>
+      </tr>
+      <tr>
+          <td><strong>Loading method</strong></td>
+          <td>Switch scenes (LoadScene)</td>
+          <td>Instantiate Prefab in the same scene</td>
+      </tr>
+      <tr>
+          <td><strong>Editing experience</strong></td>
+          <td>Intuitive, what you see is what you get</td>
+          <td>Modular, composable</td>
+      </tr>
+      <tr>
+          <td><strong>Performance</strong></td>
+          <td>Scene switching has overhead</td>
+          <td>Prefab instantiation is faster</td>
+      </tr>
+      <tr>
+          <td><strong>Reusability</strong></td>
+          <td>Low (each Scene is independent)</td>
+          <td>High (Prefabs can be reused)</td>
+      </tr>
+      <tr>
+          <td><strong>Dynamic generation</strong></td>
+          <td>Not convenient</td>
+          <td>Very convenient</td>
+      </tr>
+      <tr>
+          <td><strong>Team collaboration</strong></td>
+          <td>Scenes prone to conflicts</td>
+          <td>Prefabs less likely to conflict</td>
+      </tr>
+      <tr>
+          <td><strong>Number of levels</strong></td>
+          <td>Few levels</td>
+          <td>Many levels</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ul>
+<p><strong>Next Steps</strong>:</p>
+<p>The original course also includes some bonus game mechanics:</p>
+<ul>
+<li>Cargo transport</li>
+<li>Key switches</li>
+<li>Wind zones</li>
+<li>Dynamic meteors</li>
+<li>Turret shooting</li>
+</ul>
+<p>I plan to set these aside for now and try implementing them myself after more study and practice.</p>
+<p>In addition, Code Monkey is the first professional game developer I’ve followed. I will study courses from two more professional developers, learn their coding styles and overall game architecture, and then try to form my own style.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/game-dev/">Game Dev</a>
+        
+            <a href="/en/tags/unity/">Unity</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-copyright">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-clock">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Feb 10, 2026 19:00 &#43;0800
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/p/solidsolid-principles-in-project-practice/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/solidsolid-principles-in-project-practice/cover.9d88b009e10e58d65c068a49f8bcecd4_hu_6e3415ec20f88f5b.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【SOLID】SOLID Principles in Project Practice"
+                        
+                        data-hash="md5-nYiwCeEOWNZcBopJ&#43;Lzs1A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【SOLID】SOLID Principles in Project Practice</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/practice-logunity-mini-game-collection-1/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/practice-logunity-mini-game-collection-1/cover.209d45e09d8b92515bcefec12dab4db0_hu_407e0c900cb47023.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【Practice Log】Unity Mini Game Collection 1"
+                        
+                        data-hash="md5-IJ1F4J2LklFbzv7BLatNsA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【Practice Log】Unity Mini Game Collection 1</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-gameplay-layer/cover.e96e49817326b44b0b37f8ca149de357_hu_d394295e071989b1.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer"
+                        
+                        data-hash="md5-6W5JgXMmtEsLN/jKFJ3jVw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Gameplay Layer</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchplant-star-brawl-framework-design/cover.b4ac8d23547e58b8fea55b0948769665_hu_e5d83f6feaae04dc.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design"
+                        
+                        data-hash="md5-tKyNI1R&#43;WLj&#43;pVsJSHaWZQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Plant Star Brawl - Framework Design</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/p/c-game-dev-from-scratchteyvat-survivors/">
+        
+        
+            <div class="article-image">
+                <img src="/en/p/c-game-dev-from-scratchteyvat-survivors/cover.2074225f101a4c9d2f4143010a76f8b3_hu_6ae5d33c4eb615a7.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors"
+                        
+                        data-hash="md5-IHQiXxAaTJ0vQUMBCnb4sw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【C&#43;&#43; Game Dev from Scratch】Teyvat Survivors</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+       
+    <section class="totalcount">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        发表了12篇文章 ·
+        总计4万9千字
+        <br>
+    </section>
+
+
+    
+    <section class="running-time">
+        本博客已运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+
+    <section class="copyright">
+        &copy;
+        
+        2025 -
+        
+        2026 Nullshow
+    </section>
+
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+                data-version="3.31.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.711fbb0ee2e4cf3223d76423fbe2fc4e019ec898fb854a9d7bea4eb3169278df.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Mate';
+        src: url(https://nullshowjl.github.io/font/Mate.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'SourceCodePro';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Mate', 'WenKai', sans-serif;
+        --code-font-family: 'SourceCodePro';
+    }
+
+    body {
+        font-family: 'Mate', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+        
+<script>
+(() => {
+    
+    if (window.__L2D_WIDGET_INITED__) return;
+    window.__L2D_WIDGET_INITED__ = true;
+
+    const cdnPath = "https://cdn.jsdelivr.net/gh/letere-gzj/live2d-widget-v3@main";
+    const config = {
+        path: {
+            homePath: "/",
+            modelPath: "https://cdn.jsdelivr.net/gh/NullshowJL/hugo-static-resources@3aa0848/",
+            cssPath: '\/waifu\/waifu.css',
+            tipsJsonPath: '\/waifu\/waifu-tips.json',
+            tipsJsPath: cdnPath + "/waifu-tips.js",
+            live2dCorePath: cdnPath + "/Core/live2dcubismcore.js",
+            live2dSdkPath: cdnPath + "/live2d-sdk.js"
+        },
+        tools: ["hitokoto", "asteroids", "express", "switch-model", "switch-texture", "photo", "info", "quit"],
+        drag: { enable: true, direction: ["x", "y"] },
+        switchType: "order"
+    };
+
+    if (screen.width >= 768) {
+        Promise.all([
+            loadExternalResource(config.path.cssPath, "css"),
+            loadExternalResource(config.path.live2dCorePath, "js"),
+            loadExternalResource(config.path.live2dSdkPath, "js"),
+            loadExternalResource(config.path.tipsJsPath, "js")
+        ]).then(() => {
+            initWidget({
+                waifuPath: config.path.tipsJsonPath,
+                cdnPath: config.path.modelPath,
+                tools: config.tools,
+                dragEnable: config.drag.enable,
+                dragDirection: config.drag.direction,
+                switchType: config.switchType
+            });
+        });
+    }
+
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            } else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+})();
+</script>
+
+<style>
+     
+    #waifu #waifu-tool,
+    #waifu .waifu-tool,
+    #waifu .waifu-toolbar,
+    #waifu .waifu-tools {
+        transform: translateY(-50px);
+        z-index: 1001;  
+    }
+</style>
+
+
+<style>
+    @font-face {
+        font-family: 'WenKai';
+        src: url(https://nullshowjl.github.io/font/WenKai.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Mate';
+        src: url(https://nullshowjl.github.io/font/Mate.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'SourceCodePro';
+        src: url(https://nullshowjl.github.io/font/SourceCodePro.ttf) format('truetype');
+    }
+
+    :root {
+        --base-font-family: 'Mate', 'WenKai', sans-serif;
+        --code-font-family: 'SourceCodePro';
+    }
+
+    body {
+        font-family: 'Mate', 'WenKai', sans-serif;
+        font-display: swap;
+    }
+
+    code,
+    pre {
+        font-family: var(--code-font-family), monospace;
+        white-space: pre;
+         
+        tab-size: 4;
+         
+    }
+</style>
+
+
+<style>
+  #TableOfContents > ul ul,
+  #TableOfContents > ul ol,
+  #TableOfContents > ol ul,
+  #TableOfContents > ol ol { display: none; }
+  #TableOfContents .open { display: block; }
+</style>
+
+<script>
+    function initTocHide() {
+        const toc = document.querySelector(".widget--toc");
+        if (!toc) return;
+
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".open").forEach((ul) => ul.classList.remove("open"));
+
+            const currentLi = document.querySelector(".active-class");
+            if (!currentLi) return;
+
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open");
+            }
+
+            let ul = currentLi.parentElement;
+            while (ul && (ul.localName === "ul" || ul.localName === "ol")) {
+                ul.classList.add("open");
+                ul = ul.parentElement?.parentElement;
+            }
+        });
+    }
+
+    initTocHide();
+</script>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: left: 60%;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://nullshowjl.github.io/icons/backTop.svg');
+        background-size: cover;
+    }
+</style>
+
+<script>
+    function initScrollTop() {
+        const rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) return;
+
+        const btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop;
+        rightSideBar.appendChild(btn);
+
+        window.onscroll = () => {
+            const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            btn.style.display = scrollTop > 20 ? "block" : "none";
+        };
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    initScrollTop();
+</script>
+
+
+<style>
+    .highlight {
+        max-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .code-show {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    const codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) return;
+
+    codeBlocks.forEach((codeBlock) => {
+      if (codeBlock.querySelector(".code-more-box")) return;
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) return;
+
+      const codeMoreBox = document.createElement("div");
+      codeMoreBox.classList.add("code-more-box");
+
+      const codeMoreBtn = document.createElement("span");
+      codeMoreBtn.classList.add("code-more-btn");
+
+      const img = document.createElement("img");
+      img.classList.add("code-more-img");
+      img.src = 'https:\/\/nullshowjl.github.io\/icons\/codeMore.png';
+
+      codeMoreBtn.appendChild(img);
+      codeMoreBtn.addEventListener("click", () => {
+        codeBlock.classList.add("code-show");
+        codeMoreBox.remove();
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox);
+    });
+  }
+
+  initCodeMoreBox();
+</script>
+
+
+<script defer src="https://cn.vercount.one/js"></script>
+
+<script>
+    function showHideView() {
+        const viewCounts = document.querySelectorAll("#viewCount");
+        if (!viewCounts.length) return;
+
+        const article = document.querySelector(".article-page");
+        if (!article) {
+            viewCounts.forEach((ele) => {
+                ele.style.display = "none";
+            });
+        }
+    }
+
+    showHideView();
+</script>
+
+
+
+
+
+<div id="particles-js"></div>
+
+<script src="https://nullshowjl.github.io/background/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'https:\/\/nullshowjl.github.io\/background\/particlesjs-config.json', function () {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+
+<div id="jsi-flying-fish-container" class="flying-fish-container"></div>
+
+<script src="/js/renderer.js"></script>
+<script>
+    window.onload = () => {
+        if (typeof RENDERER !== 'undefined') {
+            RENDERER.init();
+        }
+    };
+</script>
+
+
+<script>
+    (() => {
+        const start = new Date('2025-09-14'); 
+        const now = new Date();
+
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        const result = `${years}年${months}月${days}天`;
+        const runningEl = document.getElementById('runningdays');
+        if (runningEl) {
+            runningEl.textContent = result;
+        }
+    })();
+</script>
+
+
+    </body>
+</html>
+
+

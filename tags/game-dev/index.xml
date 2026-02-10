@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nullshow</copyright>
-        <lastBuildDate>Mon, 09 Feb 2026 21:33:34 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 10 Feb 2026 19:00:25 +0800</lastBuildDate><atom:link href="https://nullshowjl.github.io/tags/game-dev/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【Unity】从一个入门级小游戏学习商业化代码的写法</title>
         <link>https://nullshowjl.github.io/p/unity%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%85%A5%E9%97%A8%E7%BA%A7%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%AD%A6%E4%B9%A0%E5%95%86%E4%B8%9A%E5%8C%96%E4%BB%A3%E7%A0%81%E7%9A%84%E5%86%99%E6%B3%95/</link>
         <pubDate>Sat, 31 Jan 2026 08:43:30 +0800</pubDate>
@@ -248,7 +248,7 @@
 &lt;p&gt;此外，关于物理特性的更新，一律需要放在 FixedUpdate 中。&lt;/p&gt;
 &lt;blockquote class=&#34;alert alert-note&#34;&gt;
     &lt;p&gt;如果不得不放在 Update 中，一定要乘以 Time.deltaTime，以确保在不同帧率的计算机上移动的速度是一样的。&lt;/p&gt;
-&lt;p&gt;虽然在 FixedUp 里无需加上 Time.deltaTime，但是加上也无所谓&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;虽然在 FixedUp 里无需加上 Time.fixedDeltaTime，但是加上也无所谓&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;坐标系的设定&#34;&gt;坐标系的设定
 &lt;/h3&gt;&lt;p&gt;由于采用了visual和logic分离的方式，所以要确保坐标系设置为 Pivot 和 Local。因为如果设置为 Center，那么中心点将是子物体和父物体之间的中心位置，设置为 Pivot，中心会是各个物体本身的中心点。&lt;/p&gt;
 &lt;p&gt;而在此项目中我们希望按下 向上箭头键 后，lander朝着自己本身的上方移动，那么需要将坐标参考设置为 Local。如果设置为 Global，那么不管lander本身朝向何方，我们按下 向上箭头键，lander会永远朝着屏幕上方移动。&lt;/p&gt;
